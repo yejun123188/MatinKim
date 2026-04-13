@@ -108,14 +108,14 @@
 }
 
 /* 카피라이트 */
-.copyright {
+.footer .copyright {
     margin: 10px 0 0;
     font-size: 14px;
     color: #000;
 }
 
 /* SNS */
-.sns-list {
+.footer .sns-list {
     display: flex;
     justify-content: flex-start;
     gap: 12px;
@@ -124,7 +124,7 @@
     list-style: none;
 }
 
-.sns-list li a {
+.footer .sns-list li a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,7 +134,7 @@
     background: #666;
 }
 
-.sns-list li a img {
+.footer .sns-list li a img {
     width: 24px;
     height: 24px;
     object-fit: contain;
@@ -145,11 +145,11 @@
 /* 고객센터 */
 
 
-.custom-link {
+.footer .custom-link {
     margin-bottom: 12px;
 }
 
-.customer-center .custom-link a {
+.footer .customer-center .custom-link a {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -158,21 +158,21 @@
     line-height: 1;
 }
 
-.customer-center strong {
+.footer .customer-center strong {
     display: block;
     font-size: 16px;
     font-weight: 700;
     color: #000;
 }
 
-.customer-center p {
+.footer .customer-center p {
     margin: 0 0 4px;
     font-size: 12px;
     line-height: 1.5;
     color: #000;
 }
 
-.customer-center span {
+.footer .customer-center span {
     display: block;
     font-size: 26px;
     font-weight: 500;
@@ -204,7 +204,7 @@
         width: 100%;
     }
 
-    .customer-center span {
+    .footer .customer-center span {
         font-size: 28px;
     }
 }
@@ -232,12 +232,12 @@
         font-size: 10px;
     }
 
-    .sns-list li a {
+    .footer .sns-list li a {
         width: 26px;
         height: 26px;
     }
 
-    .customer-center span {
+    .footer .customer-center span {
         font-size: 24px;
     }
 }

@@ -23,8 +23,9 @@ export default function Instagram() {
         )
     }
     return (
-        <section>
+        <section className='insta'>
             <div className="inner">
+
                 <h2 className='insta-h2'><img src="./images/insta-icon/Ellipse.png" alt="log" /><span>matinkim_Magazine</span></h2>
                 <div className="insta-list-wrap">
                     <ul>
