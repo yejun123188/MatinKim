@@ -5,5 +5,5 @@ export default function Footer() {
     <div className="inner">
       <div>Footer</div>
     </div>
-  );
+  )
 }
