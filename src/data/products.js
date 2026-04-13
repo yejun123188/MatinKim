@@ -1,4 +1,4 @@
-[
+export const products=[
   {
     "id": "9064",
     "name": "SKETCH GRAFFITI WAFFLE HOODY ZIP UP IN LIGHT BEIGE",
@@ -7,7 +7,9 @@
       "시즌 아트워크인 수채화 톤 그래픽이 포인트"
     ],
     "price": "168,000",
-    "colors": ["LIGHT BEIGE"],
+    "colors": [
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9064&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/6bfd49525868233399c4acd45aa51985.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/a2b1860f19b713db8fe4f820ca26e792.jpg",
@@ -28,7 +30,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202603/ef1e139a9ff5c49bcea7e532783b631f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -40,7 +44,11 @@
       "프론트 스몰 로고와 백 로고 컬러 배색이 포인트"
     ],
     "price": "158,000",
-    "colors": ["CREAM", "DARK BROWN", "BLUE"],
+    "colors": [
+      "CREAM",
+      "DARK BROWN",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9063&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/1a18015bcda329b472f07c569db7de7d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/dcc3c8f10f85c2cccd0ab3255b106952.jpg",
@@ -71,7 +79,11 @@
       "프론트 스몰 로고와 백 로고 컬러 배색이 포인트"
     ],
     "price": "158,000",
-    "colors": ["DARK BROWN", "CREAM", "BLUE"],
+    "colors": [
+      "DARK BROWN",
+      "CREAM",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9062&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/f234be8e1ed50efae7e203595a0ccab3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/4769ee9d730dfcc8ea1774ce4457af70.jpg",
@@ -103,7 +115,11 @@
       "프론트 스몰 로고와 백 로고 컬러 배색이 포인트"
     ],
     "price": "158,000",
-    "colors": ["BLUE", "CREAM", "DARK BROWN"],
+    "colors": [
+      "BLUE",
+      "CREAM",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9061&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/71f7f10a1ee910a81be2a5e4584b6900.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/4d165d8d2ee4640a7474902706ca1249.jpg",
@@ -133,7 +149,11 @@
       "프론트 스몰 로고와 백 로고 컬러 배색이 포인트"
     ],
     "price": "168,000",
-    "colors": ["LIGHT GREY", "CHARCOAL", "BLUE"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9060&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/b326914cd808212efcb2225dfb97be31.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/a6fdad3629ddcfcb89de8c30da1a37f8.jpg",
@@ -166,7 +186,11 @@
       "프론트 스몰 로고와 백 로고 컬러 배색이 포인트"
     ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "LIGHT GREY", "BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9059&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/99970bc3fb46c5dd38bb75e38781fac1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/c9ae6aeecb29f899aa760f6a220a2e6f.jpg",
@@ -184,7 +208,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202603/9cdd84152ebd9fcf57c3a25ddf67138b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -196,7 +222,11 @@
       "프론트 스몰 로고와 백 로고 컬러 배색이 포인트"
     ],
     "price": "168,000",
-    "colors": ["BLUE", "LIGHT GREY", "CHARCOAL"],
+    "colors": [
+      "BLUE",
+      "LIGHT GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9058&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/f3c5445844d02f01f0e29f11d44e0904.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/d5bf85978f16cc4be4300da43bec21f5.jpg",
@@ -226,7 +256,10 @@
       "탄탄한 실루엣과 스몰 자수 로고가 포인트"
     ],
     "price": "238,000",
-    "colors": ["WHITE", "LIGHT BEIGE"],
+    "colors": [
+      "WHITE",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9057&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/cad203d9be5ce9c6baa49b2b8f1630db.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/81a890a2592349618f0c34f703a50259.jpg",
@@ -262,7 +295,10 @@
       "탄탄한 실루엣과 스몰 자수 로고가 포인트"
     ],
     "price": "238,000",
-    "colors": ["LIGHT BEIGE", "WHITE"],
+    "colors": [
+      "LIGHT BEIGE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9056&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/2302ecbe47b858f39e535eef3de2e755.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/a20dd78f6ec04815c27045ed58c8a22a.jpg",
@@ -297,7 +333,10 @@
       "MATINKIM 레터링이 입체적으로 스며든 조직감이 포인트"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9055&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/772803ee0a15ef09435d1870a9c1def7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/3347b5d5490d124cc8334faaa6021554.jpg",
@@ -327,7 +366,10 @@
       "MATINKIM 레터링이 입체적으로 스며든 조직감이 포인트"
     ],
     "price": "218,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9054&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/c04b2e90c6108d7ae6dbc08348bfbf35.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/9db38df840c77ac661308a326e77dc4a.jpg",
@@ -358,7 +400,14 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 점퍼"
     ],
     "price": "162,000",
-    "colors": ["DARK GREY", "BLACK", "WHITE", "PINK", "MINT", "IVORY"],
+    "colors": [
+      "DARK GREY",
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "MINT",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8984&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/ea4fd5058899077d00f9683ae02af700.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/7ec8cf0488d7e97023d3961b282eee85.jpg",
@@ -387,7 +436,14 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 점퍼"
     ],
     "price": "162,000",
-    "colors": ["MINT", "BLACK", "WHITE", "PINK", "DARK GREY", "IVORY"],
+    "colors": [
+      "MINT",
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "DARK GREY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8992&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/843e02c72d2b0cede6d398209df367db.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/9f43de0823b2429af7ec6c27c21fed94.jpg",
@@ -404,7 +460,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202602/cbbe2115f72831158d35e3cc9d3be0d2.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -489,7 +547,11 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 맨즈 점퍼"
     ],
     "price": "162,000",
-    "colors": ["BLACK", "IVORY", "DARK GREY"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "DARK GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8987&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/6de4b64cbafab0270ef31b2ae8f71cbb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/53db8239e141f0ab7656ca298b057e9f.jpg",
@@ -512,7 +574,11 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 맨즈 점퍼"
     ],
     "price": "162,000",
-    "colors": ["IVORY", "DARK GREY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "DARK GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8986&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/1e8e8f2b44fa8373e96224d8c1494a92.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/7992791204a743e868aaa5f2fe3dd2f5.jpg",
@@ -535,7 +601,11 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 맨즈 점퍼"
     ],
     "price": "162,000",
-    "colors": ["DARK GREY", "IVORY", "BLACK"],
+    "colors": [
+      "DARK GREY",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8985&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/bdf51394bef919bfd8aa3d9dd4cc76d3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/82787df06fc6362e5a597999d908850a.jpg",
@@ -552,7 +622,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202602/0cc9ffa2fd14dbeecb12b4ab5d81e7dd.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -565,7 +637,10 @@
       "밑단과 후드 스트링으로 핏 조절 가능"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8968&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/f155f3a81053148b96c45a5413a58838.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/ef161ea619f7dddc4f85ed31d4f1b9ce.jpg",
@@ -583,7 +658,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202602/a1da38522bde8e217987d63ad2fef3c2.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -596,7 +673,10 @@
       "밑단과 후드 스트링으로 핏 조절 가능"
     ],
     "price": "158,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8967&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/5347e6eff96c81c9969036f5d09393c9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/27e7873770671c7abe4f3ef43d2291c2.jpg",
@@ -627,7 +707,11 @@
       "밑단과 후드 스트링으로 다양한 실루엣 연출 가능"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "LIGHT GREY", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8966&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/3245a7f1d3ed0828f4645b69143240fd.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/d5bb4ae1def5a89bd74af08f9f28a8bb.jpg",
@@ -663,7 +747,11 @@
       "밑단과 후드 스트링으로 다양한 실루엣 연출 가능"
     ],
     "price": "168,000",
-    "colors": ["LIGHT GREY", "BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8965&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/8b888c1f6b8819fb1ea61c5cf87081e6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/a5e1b5e6467034f2984aae48fb1d9ea1.jpg",
@@ -699,7 +787,11 @@
       "밑단과 후드 스트링으로 다양한 실루엣 연출 가능"
     ],
     "price": "168,000",
-    "colors": ["LIGHT BEIGE", "BLACK", "LIGHT GREY"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8964&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/829d014dbdbacf39889f19f9fadbd9d4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/37271e41ed5ea07039829dcfa288e35b.jpg",
@@ -734,7 +826,9 @@
       "은은한 도트 패턴과 유광 배색감이 포인트"
     ],
     "price": "238,000",
-    "colors": ["STRONG BLACK"],
+    "colors": [
+      "STRONG BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8891&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/02ea2c224dc8d0bb0a68297eb38c1ea6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/b0a45ec409a63acfbc5a59217ffdb255.jpg",
@@ -764,7 +858,10 @@
       "매트한 나일로 혼방 원단에 유광 배색감이 포인트"
     ],
     "price": "258,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8893&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/d497abce0d5e107a0a78a96ca62ace74.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/645c326fef9b2b96beaecd8ef5cadde7.jpg",
@@ -794,7 +891,10 @@
       "매트한 나일로 혼방 원단에 유광 배색감이 포인트"
     ],
     "price": "258,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8892&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/579f80d70787b32031348d87b035a14b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/4f17160516f5279f8785e84c711ec4a9.jpg",
@@ -812,7 +912,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202602/3ee8e6ef8fba6c5019967dd59977fb1b.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -824,7 +926,9 @@
       "앞판의 양각로고 및 뒷판의 로고 프린팅 포인트"
     ],
     "price": "248,000",
-    "colors": ["CHARCOAL"],
+    "colors": [
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8896&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/5bb08e682c0f50a05c36274bd8dd5346.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/7ac008307691fafaffb4fb3537a0c57a.jpg",
@@ -859,7 +963,10 @@
       "시즌 그래픽 프린팅 포인트"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8895&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/ab433acea37708edf7f4a224956fa9ab.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/bb4a480ed13806a28dee9a744cb7e2d4.jpg",
@@ -893,7 +1000,10 @@
       "시즌 그래픽 프린팅 포인트"
     ],
     "price": "178,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8894&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/69717511881105f99744fb1bee0b8807.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/eb7b124e38f2ad282a8ab247749784ce.jpg",
@@ -926,7 +1036,11 @@
       "가슴과 뒷판의 로고가 포인트인 부드러운 터치감의 페이크 레더 소재 세미오버핏 집업 점퍼"
     ],
     "price": "278,000",
-    "colors": ["BLACK", "BROWN", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "BROWN",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8712&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/3f28ee9ca0e6783c22f1a9330a44f0ec.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/20d08a636b8f823eea39791863d2ba76.jpg",
@@ -960,7 +1074,11 @@
       "가슴과 뒷판의 로고가 포인트인 부드러운 터치감의 페이크 레더 소재 세미오버핏 집업 점퍼"
     ],
     "price": "278,000",
-    "colors": ["BROWN", "BLACK", "LIGHT GREY"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8713&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/2763fc05087f52df55265b2e4b1a8cf4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/c5802861b808b0eae3ce6482fde02bfa.jpg",
@@ -983,7 +1101,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/24ffc402f15ac38a53243737e4116e50.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -994,7 +1114,11 @@
       "가슴과 뒷판의 로고가 포인트인 부드러운 터치감의 페이크 레더 소재 세미오버핏 집업 점퍼"
     ],
     "price": "278,000",
-    "colors": ["LIGHT GREY", "BLACK", "BROWN"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8714&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/10c6c1c8168e29bb09e625ae8882f402.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/5add0042df1b71b62f786abe9c50343c.jpg",
@@ -1028,7 +1152,10 @@
       "광택감있는 나일론 소재를 사용하여 셔링 디테일을 더한 MA-2스타일의 점퍼"
     ],
     "price": "248,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8715&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/fd0306d456bf2a4f77a65e017c4d5d4a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/6d62783738a90738a84627af70d32591.jpg",
@@ -1056,7 +1183,10 @@
       "광택감있는 나일론 소재를 사용하여 셔링 디테일을 더한 MA-2스타일의 점퍼"
     ],
     "price": "248,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8716&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/63b509b0a09e4869f3202f0912e32c14.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/5f2547c50785c9a3692474a20b956084.jpg",
@@ -1084,7 +1214,9 @@
       "가슴과 뒷판의 로고 포인트와 퀼팅 안감으로 보온성을 더한 부드러운 터치감의 페이크 레더 소재 세미오버핏 집업 점퍼"
     ],
     "price": "298,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8717&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/8410349ca4f6a62664ca4b660e388bd2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/4582e90a61e8377da2e5b9108296fe9e.jpg",
@@ -1118,7 +1250,9 @@
       "부드러운 인조가죽을 사용해 워싱감이 포인트인 슬림핏 레이싱 자켓"
     ],
     "price": "328,000",
-    "colors": ["CHARCOAL"],
+    "colors": [
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8718&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/bf808c9c917136add347912660e302f8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/3e693e819b5bc00810594e116517081e.jpg",
@@ -1135,7 +1269,10 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/b1cf7f33acf8650e88799ed040a66424.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1146,7 +1283,12 @@
       "앞판과 뒤판의 로고가 포인트인 부드러운 코튼 소재의 하이넥 오버핏 집업"
     ],
     "price": "178,000",
-    "colors": ["CREAM", "LIGHT GREY", "CHARCOAL", "PINK"],
+    "colors": [
+      "CREAM",
+      "LIGHT GREY",
+      "CHARCOAL",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8721&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/e2d374576362564840855bc55efd2fa3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/a610a7c643e554ae6c80db180886c116.jpg",
@@ -1181,7 +1323,12 @@
       "앞판과 뒤판의 로고가 포인트인 부드러운 코튼 소재의 하이넥 오버핏 집업"
     ],
     "price": "178,000",
-    "colors": ["LIGHT GREY", "CHARCOAL", "CREAM", "PINK"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL",
+      "CREAM",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8719&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/e618fe8a5aed9e59efafd495ab105c01.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/bb9ab5a2f6072d494786414b2adc303e.jpg",
@@ -1204,7 +1351,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/c1101ee8c3332f40cf5543afaa171cbd.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1215,7 +1364,12 @@
       "앞판과 뒤판의 로고가 포인트인 부드러운 코튼 소재의 하이넥 오버핏 집업"
     ],
     "price": "178,000",
-    "colors": ["CHARCOAL", "LIGHT GREY", "CREAM", "PINK"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY",
+      "CREAM",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8720&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/c7c1c5926a49a746cb394689fbf8a8ba.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/58728ffa9213cdb029b151c2dc999e63.jpg",
@@ -1238,7 +1392,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/a7e34b98556a86c25cc8692648eca495.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1249,7 +1405,12 @@
       "앞판과 뒤판의 로고가 포인트인 부드러운 코튼 소재의 하이넥 오버핏 집업"
     ],
     "price": "178,000",
-    "colors": ["PINK", "LIGHT GREY", "CHARCOAL", "CREAM"],
+    "colors": [
+      "PINK",
+      "LIGHT GREY",
+      "CHARCOAL",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8722&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/bf7b3a6cda2e10c4fe36cd39461e8b4c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/3b949eed885097ec862031c221a9d80a.jpg",
@@ -1272,7 +1433,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/2487680ca2db416f260bc93f20c0a750.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1283,7 +1446,10 @@
       "더티 워싱 가공을 더해 빈티지한 무드를 강조한 트러커 자켓"
     ],
     "price": "268,000",
-    "colors": ["WHITE", "BLUE"],
+    "colors": [
+      "WHITE",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8724&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/988af886fc0da7340e07ff33096f973d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/9af3870d23141f2ae87ac116803d3d86.jpg",
@@ -1312,7 +1478,10 @@
       "더티 워싱 가공을 더해 빈티지한 무드를 강조한 트러커 자켓"
     ],
     "price": "268,000",
-    "colors": ["BLUE", "WHITE"],
+    "colors": [
+      "BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8725&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/b3f1e3c2bf7f649115e764149e30f2f1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/3283bfa67e87a13ef52d60cf0100a9b4.jpg",
@@ -1341,7 +1510,9 @@
       "광택감이 강하게 코팅된 나일론 혼방 소재로, 벌룬핏 실루엣이 포인트인 숏한 기장감의 니트 배색 봄버 점퍼"
     ],
     "price": "328,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8723&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/3d729c18e6b069738935ed766e95d8f1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/ca919d93d9026119b5d6ed38b21196ac.jpg",
@@ -1365,9 +1536,14 @@
   {
     "id": "8726",
     "name": "HIGH NECK EMBROIDERED LOGO ZIP UP FOR WOMEN IN BLACK",
-    "bullet_points": ["크롭 기장의 슬림핏 립 니트 집업 가디건"],
+    "bullet_points": [
+      "크롭 기장의 슬림핏 립 니트 집업 가디건"
+    ],
     "price": "188,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8726&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/431b3611fc451ad09d31ca263ef88b59.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/463b1622a93ed4e0a55f1cdc4c8da470.jpg",
@@ -1391,9 +1567,14 @@
   {
     "id": "8727",
     "name": "HIGH NECK EMBROIDERED LOGO ZIP UP FOR WOMEN IN IVORY",
-    "bullet_points": ["크롭 기장의 슬림핏 립 니트 집업 가디건"],
+    "bullet_points": [
+      "크롭 기장의 슬림핏 립 니트 집업 가디건"
+    ],
     "price": "188,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8727&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/270d4885357d4055c58313838e603892.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/21f0b4ac5a11c24e1aeebfa9b6f9596b.jpg",
@@ -1417,9 +1598,14 @@
   {
     "id": "8728",
     "name": "HIGH NECK EMBROIDERED LOGO ZIP UP FOR MEN IN BLACK",
-    "bullet_points": ["깔끔하고 편안한 디자인의 맨즈 니트 집업 가디건"],
+    "bullet_points": [
+      "깔끔하고 편안한 디자인의 맨즈 니트 집업 가디건"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8728&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/2e93f9cf2aa90dfd15c863270c2d74bc.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/de9851acf3e228e407fcb1234cf66357.jpg",
@@ -1436,16 +1622,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/00d7ef513551a4e0baf7761a2ca032b4.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8729",
     "name": "HIGH NECK EMBROIDERED LOGO ZIP UP FOR MEN IN GREY",
-    "bullet_points": ["깔끔하고 편안한 디자인의 맨즈 니트 집업 가디건"],
+    "bullet_points": [
+      "깔끔하고 편안한 디자인의 맨즈 니트 집업 가디건"
+    ],
     "price": "198,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8729&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/4772590a2f36473a384828a0f0f12c56.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/ea3e97ac980ba048fd7351c5feb3418a.jpg",
@@ -1469,9 +1663,14 @@
   {
     "id": "8821",
     "name": "BACK LOGO ESSENTIAL HOODY ZIP UP IN BLACK",
-    "bullet_points": ["뒷면 MATINKIM 로고가 포인트인 이지한 무드의 후드 집업"],
+    "bullet_points": [
+      "뒷면 MATINKIM 로고가 포인트인 이지한 무드의 후드 집업"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8821&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/66281cf48535fc75ca541a8c022a137f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/f378b25a3ee8280baf1872795787a79e.jpg",
@@ -1501,9 +1700,14 @@
   {
     "id": "8820",
     "name": "BACK LOGO ESSENTIAL HOODY ZIP UP IN GREY",
-    "bullet_points": ["뒷면 MATINKIM 로고가 포인트인 이지한 무드의 후드 집업"],
+    "bullet_points": [
+      "뒷면 MATINKIM 로고가 포인트인 이지한 무드의 후드 집업"
+    ],
     "price": "148,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8820&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/a1a8aaffe8a993befb6f41a69e8565f7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/d6beaa43b0678608a74999699fc95069.jpg",
@@ -1526,7 +1730,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/ff8e94c0ce124504093833d1d1f36815.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1537,7 +1743,12 @@
       "앞판의 스프레이 프린팅이 포인트인 드롭 숄더 디자인의 크롭 후드집업"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "GREY", "WHITE", "NAVY"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "WHITE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8730&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/949f3e5b5e57f373d4a5e49b13b8f1d9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/b9b098a97e9482325d19f3bcec43bb20.jpg",
@@ -1554,7 +1765,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/cb6a75ff90ef39f408ce1ebadcf9e67b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1565,7 +1778,12 @@
       "앞판의 스프레이 프린팅이 포인트인 드롭 숄더 디자인의 크롭 후드집업"
     ],
     "price": "158,000",
-    "colors": ["GREY", "BLACK", "WHITE", "NAVY"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "WHITE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8731&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/657caf92939a2127efd0c7470014adc4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/82cace9e6a7711453787ee876798f934.jpg",
@@ -1582,7 +1800,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/326cb9d29fa5b1651ef73f13aa250c7a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1593,7 +1813,12 @@
       "앞판의 스프레이 프린팅이 포인트인 드롭 숄더 디자인의 후드집업"
     ],
     "price": "168,000",
-    "colors": ["WHITE", "BLACK", "GREY", "NAVY"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "GREY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8732&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/3cd5a984831db5f309faec75425b2151.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/3e5662d70439bd6d10f4341ad632cc85.jpg",
@@ -1615,7 +1840,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/7e356bdb9a298c8fe78b7ce5c976333d.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1626,7 +1853,12 @@
       "앞판의 스프레이 프린팅이 포인트인 드롭 숄더 디자인의 후드집업"
     ],
     "price": "168,000",
-    "colors": ["NAVY", "BLACK", "GREY", "WHITE"],
+    "colors": [
+      "NAVY",
+      "BLACK",
+      "GREY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8733&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/0b791eadeb3aff6d12a221dc63e3c8cc.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/62fa4010d3bff157f107e2a403499949.jpg",
@@ -1655,9 +1887,13 @@
   {
     "id": "8734",
     "name": "WASHED COTTON HOODY ZIP UP IN BLACK",
-    "bullet_points": ["빈티지한 워싱이 돋보이는 우븐 소재 후드 집업"],
+    "bullet_points": [
+      "빈티지한 워싱이 돋보이는 우븐 소재 후드 집업"
+    ],
     "price": "258,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8734&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/d8dfe810d8068ec8799bd316bf6a18eb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/61cedbccffe9faf832aa531fc5be9724.jpg",
@@ -1674,7 +1910,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202601/44debe278afc37e26b7a8a6563da4876.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1685,7 +1923,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["BLACK", "DARK BROWN", "IVORY", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "DARK BROWN",
+      "IVORY",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8512&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/4e139801465439ed2e1f817af65d710d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/0fcefd750b6fbf27d4ec5c264c3de094.jpg",
@@ -1713,7 +1956,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["IVORY", "DARK BROWN", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "DARK BROWN",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8511&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/628357fbe64c20bd70a15ade691525d8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/6424bdbdca56308c92cb6485623c7773.jpg",
@@ -1741,7 +1989,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["LIGHT GREY", "DARK BROWN", "IVORY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "DARK BROWN",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8510&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/cc43d9ed3f50c75fae13d0e4974abdd9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/ca4b5d5f5704532348dbe726237844a8.jpg",
@@ -1769,7 +2022,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["DARK BROWN", "IVORY", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "DARK BROWN",
+      "IVORY",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8509&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/3f54305363eb9e51e447e4265e5a597d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/a2da238bfb6ac1ab9cfb01f1ebe443cb.jpg",
@@ -1797,7 +2055,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["BLACK", "DARK BROWN", "IVORY", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "DARK BROWN",
+      "IVORY",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8508&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/75753ac2a19d9521a3807e8a9bd66705.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/8b6ded4aa6f8ab4a2de846fbb18fe3d0.jpg",
@@ -1825,7 +2088,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["IVORY", "DARK BROWN", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "DARK BROWN",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8507&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/42a6d65968e81d803be0054a62e93ff7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/2da66751d3c2095f196a5406dd1e35f1.jpg",
@@ -1853,7 +2121,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["LIGHT GREY", "DARK BROWN", "IVORY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "DARK BROWN",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8506&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/75a9f1ea88083fdc622cbf5eb410e742.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/4fa76cce1c507e589c08cece4c31f1b3.jpg",
@@ -1881,7 +2154,12 @@
       "글로시한 광택감이 돋보이는 소재를 사용해 완성한 베이직핏 다운 점퍼"
     ],
     "price": "298,000",
-    "colors": ["DARK BROWN", "LIGHT GREY", "BLACK", "IVORY"],
+    "colors": [
+      "DARK BROWN",
+      "LIGHT GREY",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8505&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/4c04ff5ad5df94a52524c319325de862.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/6b983db430aa5800f3c8577dcd936f0b.jpg",
@@ -1909,7 +2187,9 @@
       "은은한 레오파드 무늬의 부드러운 퍼를 사용한 베이직한 핏의 크롭한 기장감의 퍼자켓"
     ],
     "price": "368,000",
-    "colors": ["BROWN"],
+    "colors": [
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8681&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/d98e36c707daae2ad72754e96159941f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/ea82707011701ce73756c1a42384d733.jpg",
@@ -1937,7 +2217,10 @@
       "사이드심에 버튼이 부착되어 있어 다양한 스타일링 연출이 가능한 가디건"
     ],
     "price": "218,000",
-    "colors": ["CHARCOAL", "LIGHT BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8680&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/6f774ac2c752e48cf323ac86038934ea.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/00593bdf72b4d6b3fab0665336942b5d.jpg",
@@ -1954,7 +2237,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/68eef912287b7a8e03e44572f8e7594c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -1965,7 +2250,10 @@
       "사이드심에 버튼이 부착되어 있어 다양한 스타일링 연출이 가능한 가디건"
     ],
     "price": "218,000",
-    "colors": ["LIGHT BLUE", "CHARCOAL"],
+    "colors": [
+      "LIGHT BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8679&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/c3a058dcd66e10f4e16aebfc5148dd91.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/8f85f8838bbc4f901f6e076eae4fffb9.jpg",
@@ -1993,7 +2281,10 @@
       "두가지의 컬러가 믹스된 장모 퍼를 사용한 크롭기장의 퍼 자켓"
     ],
     "price": "328,000",
-    "colors": ["IVORY", "BEIGE"],
+    "colors": [
+      "IVORY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8574&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/766e802690ac445f2a551d49d9c8ab34.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/d32509fb2ffac4b7364a276c617299d2.jpg",
@@ -2021,7 +2312,10 @@
       "두가지의 컬러가 믹스된 장모 퍼를 사용한 크롭기장의 퍼 자켓"
     ],
     "price": "328,000",
-    "colors": ["BEIGE", "IVORY"],
+    "colors": [
+      "BEIGE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8575&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/fe787bf5b17853b5ce982e0687f4552e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/785ec52298c611f5c1ccbee93802ea3f.jpg",
@@ -2045,9 +2339,14 @@
   {
     "id": "8556",
     "name": "REVERSIBLE HOODY MUSTANG IN BLACK",
-    "bullet_points": ["리버시블이 가능한 오버핏 후드 무스탕 집업 점퍼"],
+    "bullet_points": [
+      "리버시블이 가능한 오버핏 후드 무스탕 집업 점퍼"
+    ],
     "price": "478,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8556&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/fe6193f9c4413ed4824b55ee11503bb5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/1756bcb1838a7a941c67bffc85155fe9.jpg",
@@ -2064,16 +2363,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/d24e23f7909537ecd6bd18a89d15386f.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8557",
     "name": "REVERSIBLE HOODY MUSTANG IN BEIGE",
-    "bullet_points": ["리버시블이 가능한 오버핏 후드 무스탕 집업 점퍼"],
+    "bullet_points": [
+      "리버시블이 가능한 오버핏 후드 무스탕 집업 점퍼"
+    ],
     "price": "478,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8557&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/aca4b140b27a8befc8f3b3d2efe6baf4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/d1afaccdf34a141cadefe18c1ff896ed.jpg",
@@ -2101,7 +2407,9 @@
       "퍼 안감과 카라, 그리고 고급스러운 브라운컬러가 포인트인 무스탕 점퍼"
     ],
     "price": "428,000",
-    "colors": ["DARK BROWN"],
+    "colors": [
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8558&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/0f7f08dec0987b11ff417f5f92f8a22c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/cde34d39d75d2bc2bc9881f23d503c55.jpg",
@@ -2118,7 +2426,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/53b993a08fbd60ab9ef02aa5361e6067.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -2129,7 +2439,10 @@
       "볼륨감 있는 실루엣과 은은한 광택이 돋보이는 레더 봄버 재킷"
     ],
     "price": "328,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8562&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/f2bded108e6adc48e6c8a6f28f57ca18.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/3252ad4e293de33faa44a27caf16133d.jpg",
@@ -2156,7 +2469,10 @@
       "볼륨감 있는 실루엣과 은은한 광택이 돋보이는 레더 봄버 재킷"
     ],
     "price": "328,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8563&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/cd77e54b5028b498e5dfeaa908854a94.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/55d9f756bbddd80173259a56047ea3bd.jpg",
@@ -2184,7 +2500,9 @@
       "볼륨감 있는 실루엣과 은은한 광택이 돋보이는 레더 봄버 재킷"
     ],
     "price": "328,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8564&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/e973a5b4a28d20a91dff5f4d51105ba2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/e6c10c910e826c7f0cb6f7070ca81da0.jpg",
@@ -2208,9 +2526,14 @@
   {
     "id": "8555",
     "name": "FUR HOODY BOMBER DOWN JUMPER IN DARK GREY",
-    "bullet_points": ["퍼 배색이 들어간 MA-1 형태의 숏 후디 다운 점퍼"],
+    "bullet_points": [
+      "퍼 배색이 들어간 MA-1 형태의 숏 후디 다운 점퍼"
+    ],
     "price": "378,000",
-    "colors": ["DARK GREY", "BLACK"],
+    "colors": [
+      "DARK GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8555&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/5f93ceb4492afebdac02d345bf844ecf.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/f8efde7be16b279cedf090f0a6285e0b.jpg",
@@ -2233,9 +2556,14 @@
   {
     "id": "8554",
     "name": "FUR HOODY BOMBER DOWN JUMPER IN BLACK",
-    "bullet_points": ["퍼 배색이 들어간 MA-1 형태의 숏 후디 다운 점퍼"],
+    "bullet_points": [
+      "퍼 배색이 들어간 MA-1 형태의 숏 후디 다운 점퍼"
+    ],
     "price": "378,000",
-    "colors": ["BLACK", "DARK GREY"],
+    "colors": [
+      "BLACK",
+      "DARK GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8554&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/d61f99935cbaf19c0d0c53bb300e7b1d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/f887b14b16e9d0d926cb5fa9b269e2c8.jpg",
@@ -2252,16 +2580,22 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/8130c9389ca4cf7ea5f2de06a948445b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8559",
     "name": "LEOPARD DOWN JUMPER IN MIX",
-    "bullet_points": ["유니크한 레오파드 패턴이 돋보이는 다운 재킷"],
+    "bullet_points": [
+      "유니크한 레오파드 패턴이 돋보이는 다운 재킷"
+    ],
     "price": "358,000",
-    "colors": ["MIX"],
+    "colors": [
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8559&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/4e3fa8dfdc435473abee6dca4d503b19.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/fa8610d85b295560d33f912b9c6eecf4.jpg",
@@ -2288,7 +2622,10 @@
       "은은한 광택의 나일론 소재에 전체적인 셔링 디테일을 더해 볼륨감 있는 실루엣을 완성한 다운 재킷"
     ],
     "price": "358,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8560&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/33091c3e0777d08625627e3f96b8664b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/44fc5e799aca98342a2087354b42a2be.jpg",
@@ -2316,7 +2653,10 @@
       "은은한 광택의 나일론 소재에 전체적인 셔링 디테일을 더해 볼륨감 있는 실루엣을 완성한 다운 재킷"
     ],
     "price": "358,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8561&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/5185ccc5cdf64fdfaf24084cc72eb71f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/478a07c1d9b7e890f565b795af3e89b9.jpg",
@@ -2339,9 +2679,14 @@
   {
     "id": "8565",
     "name": "HAIRY HIGH NECK ZIP UP JUMPER IN LIGHT BEIGE",
-    "bullet_points": ["헤어리한 질감이 돋보이는 하이넥 집업 점퍼"],
+    "bullet_points": [
+      "헤어리한 질감이 돋보이는 하이넥 집업 점퍼"
+    ],
     "price": "328,000",
-    "colors": ["LIGHT BEIGE", "LIGHT GREY"],
+    "colors": [
+      "LIGHT BEIGE",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8565&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/336e5b581f0de45f708a43fda6d244cb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/af8e2727119b1e2f25048d86da2dd3fc.jpg",
@@ -2365,9 +2710,14 @@
   {
     "id": "8576",
     "name": "HAIRY HIGH NECK ZIP UP JUMPER IN LIGHT GREY",
-    "bullet_points": ["헤어리한 질감이 돋보이는 하이넥 집업 점퍼"],
+    "bullet_points": [
+      "헤어리한 질감이 돋보이는 하이넥 집업 점퍼"
+    ],
     "price": "328,000",
-    "colors": ["LIGHT GREY", "LIGHT BEIGE"],
+    "colors": [
+      "LIGHT GREY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8576&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/c634c7977311f00859c1846272324d68.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/fb80d8a03b3fb2a3773b396db85d8068.jpg",
@@ -2391,9 +2741,13 @@
   {
     "id": "8566",
     "name": "CURVED POINT WOOL JUMPER FOR MEN IN NAVY",
-    "bullet_points": ["울과 폴리에스터 혼방 소재로 제작된 하이넥 집업 점퍼"],
+    "bullet_points": [
+      "울과 폴리에스터 혼방 소재로 제작된 하이넥 집업 점퍼"
+    ],
     "price": "358,000",
-    "colors": ["NAVY"],
+    "colors": [
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8566&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/b1fb52a674cd91a4e2168d3fda26f18c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/1572fdb91a401616837742ef16ff3999.jpg",
@@ -2417,9 +2771,15 @@
   {
     "id": "8515",
     "name": "BACK LOGO HOODY SHORT DOWN JUMPER IN BLACK",
-    "bullet_points": ["워싱한 듯한 빈티지한 무드를 준 크롭 후드 덕다운"],
+    "bullet_points": [
+      "워싱한 듯한 빈티지한 무드를 준 크롭 후드 덕다운"
+    ],
     "price": "298,000",
-    "colors": ["BLACK", "CHARCOAL", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8515&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/09b7a5771081ba3665037c9054f6cce7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/e8c91c8b03edd9d0075e18b2c6d86d1d.jpg",
@@ -2442,9 +2802,15 @@
   {
     "id": "8514",
     "name": "BACK LOGO HOODY SHORT DOWN JUMPER IN CHARCOAL",
-    "bullet_points": ["워싱한 듯한 빈티지한 무드를 준 크롭 후드 덕다운"],
+    "bullet_points": [
+      "워싱한 듯한 빈티지한 무드를 준 크롭 후드 덕다운"
+    ],
     "price": "298,000",
-    "colors": ["CHARCOAL", "BLACK", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8514&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/c21e9cd5cfe12cdd9160d882dac01d3c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/ea8a095bb04d974a21d614f13fd3927d.jpg",
@@ -2468,9 +2834,15 @@
   {
     "id": "8513",
     "name": "BACK LOGO HOODY SHORT DOWN JUMPER IN BEIGE",
-    "bullet_points": ["워싱한 듯한 빈티지한 무드를 준 크롭 후드 덕다운"],
+    "bullet_points": [
+      "워싱한 듯한 빈티지한 무드를 준 크롭 후드 덕다운"
+    ],
     "price": "298,000",
-    "colors": ["BEIGE", "CHARCOAL", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8513&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/d9169d0ae86666a6024eabe3f3c56a95.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/f5d56de03a8f980acf15f3dab157b7c2.jpg",
@@ -2498,7 +2870,9 @@
       "은은한 광택이 있는 소재를 사용해 베이스볼 점퍼의 형태의 덕다운 점퍼"
     ],
     "price": "328,000",
-    "colors": ["CHARCOAL"],
+    "colors": [
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8494&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/eff447e05a3da288d79f3b5077630718.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/30884cb03aa5608d637f8c08b368307d.jpg",
@@ -2515,7 +2889,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/75f9f696970085b323e9729f64edf1f1.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -2526,7 +2902,10 @@
       "니트배색과 워싱된 코듀로이 소재의 믹스가 포인트인 트러커 변형 점퍼"
     ],
     "price": "268,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8493&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/11211b96f6268f9b9065bb437612323b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/a28227843fc4562a4e00bd9a53e1894c.jpg",
@@ -2554,7 +2933,10 @@
       "니트배색과 워싱된 코듀로이 소재의 믹스가 포인트인 트러커 변형 점퍼"
     ],
     "price": "268,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8492&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/ed0fcd3613d9c4cd7e0a24f1e69963d6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/89d946dd609b2a6e7442ea11173126c7.jpg",
@@ -2571,16 +2953,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/eb9ba7b62247d27ddfb2e20bd2b54ec9.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8491",
     "name": "FAUX LEATHER OUT POCKET JUMPER IN CHARCOAL",
-    "bullet_points": ["베이직한 핏의 크롭한 기장감의 빅 아웃포켓 레자 점퍼"],
+    "bullet_points": [
+      "베이직한 핏의 크롭한 기장감의 빅 아웃포켓 레자 점퍼"
+    ],
     "price": "348,000",
-    "colors": ["CHARCOAL", "LIGHT GREY"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8491&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/98f95fec33557f105f2e1a26779186de.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/2961c77dc6b4aadec3d6e280ae2e8865.jpg",
@@ -2604,9 +2993,14 @@
   {
     "id": "8490",
     "name": "FAUX LEATHER OUT POCKET JUMPER IN LIGHT GREY",
-    "bullet_points": ["베이직한 핏의 크롭한 기장감의 빅 아웃포켓 레자 점퍼"],
+    "bullet_points": [
+      "베이직한 핏의 크롭한 기장감의 빅 아웃포켓 레자 점퍼"
+    ],
     "price": "348,000",
-    "colors": ["LIGHT GREY", "CHARCOAL"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8490&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/d16435b5150e246784b8d1259565df5b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/907f6e41c0909e911fe3f7d3314d1200.jpg",
@@ -2634,7 +3028,9 @@
       "루즈한 핏에 뒤판 로고 안쪽에 잼스톤 장식을 넣어 화려하게 장식한 레더 배색 울 점퍼"
     ],
     "price": "348,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8489&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/e2cb1938366b0104df87929f69903a55.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/d1d6c720c83cb3a2b1712bf6793847fb.jpg",
@@ -2651,7 +3047,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/8bf10704f4f6bfc801d8a5011f41ff30.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -2662,7 +3060,9 @@
       "루즈한 핏에 뒤판 로고 안쪽에 잼스톤 장식을 넣어 화려하게 장식한 레더 배색 울 점퍼"
     ],
     "price": "348,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8488&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/555cf3069feadfb8e3564eb88068e0a0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/24073d22d293008bae25bab3ee16e6a1.jpg",
@@ -2690,7 +3090,10 @@
       "후드 안쪽 플리스 원단 사용하여 보온성을 개선한 레자 가죽 소재의 후드 점퍼"
     ],
     "price": "398,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8487&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/ebcf46041b3973eafc9996ccc7e13aff.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/c9a9356e6bb38bc3f3cec09f201badc4.jpg",
@@ -2718,7 +3121,10 @@
       "후드 안쪽 플리스 원단 사용하여 보온성을 개선한 레자 가죽 소재의 후드 점퍼"
     ],
     "price": "398,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8486&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/5ede225bd54e90a2bd065cd68781d32a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/271ffd8334857a75f34f35900ee4628b.jpg",
@@ -2746,7 +3152,10 @@
       "배색으로 들어간 파이삥과 하트로고 장식이 포인트인 트랙점퍼"
     ],
     "price": "158,000",
-    "colors": ["NAVY", "BROWN"],
+    "colors": [
+      "NAVY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8485&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/58a3583dfab846e96f40b29c8a6ec7f5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/75d0dfe7964d728eb573138c14eccc23.jpg",
@@ -2768,7 +3177,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/e5046d84baa4af54bde0c12807405693.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -2779,7 +3190,10 @@
       "배색으로 들어간 파이삥과 하트로고 장식이 포인트인 트랙점퍼"
     ],
     "price": "158,000",
-    "colors": ["BROWN", "NAVY"],
+    "colors": [
+      "BROWN",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8484&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/5ae321e37ef24663fe07c69cf462d85f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/efeb5e72c931265b53b1fc9fb2e49049.png",
@@ -2809,9 +3223,14 @@
   {
     "id": "8483",
     "name": "HIGH NECK BUTTON POINT ZIP UP JUMPER IN BLACK",
-    "bullet_points": ["하이넥 카라가 포인트인 루즈핏 블루종 자켓"],
+    "bullet_points": [
+      "하이넥 카라가 포인트인 루즈핏 블루종 자켓"
+    ],
     "price": "298,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8483&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/1b371262e80fab8c4bdd389683a82009.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/62f6de7886846a4325720e58592361e8.jpg",
@@ -2835,9 +3254,14 @@
   {
     "id": "8482",
     "name": "HIGH NECK BUTTON POINT ZIP UP JUMPER IN KHAKI",
-    "bullet_points": ["하이넥 카라가 포인트인 루즈핏 블루종 자켓"],
+    "bullet_points": [
+      "하이넥 카라가 포인트인 루즈핏 블루종 자켓"
+    ],
     "price": "298,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8482&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/a50d0344d5e6e6058b25f19c67f2094f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/05b7bbf2a1dfaa1f66025118b613c612.jpg",
@@ -2860,9 +3284,14 @@
   {
     "id": "8481",
     "name": "HAIRY OVERFIT STITCH SINGLE JACKET IN BLACK",
-    "bullet_points": ["헤어리한 방모소재를 사용한 오버핏 싱글자켓"],
+    "bullet_points": [
+      "헤어리한 방모소재를 사용한 오버핏 싱글자켓"
+    ],
     "price": "358,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8481&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/9e241a76c69228b0b28915be6eeafaff.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/e6ab6b6d2bbe7ea1bec25cb472794210.jpg",
@@ -2886,9 +3315,14 @@
   {
     "id": "8480",
     "name": "HAIRY OVERFIT STITCH SINGLE JACKET IN GREY",
-    "bullet_points": ["헤어리한 방모소재를 사용한 오버핏 싱글자켓"],
+    "bullet_points": [
+      "헤어리한 방모소재를 사용한 오버핏 싱글자켓"
+    ],
     "price": "358,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8480&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/01f90809becf65e22f9f2a3815ac4d60.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/c3c651d2d17b3b8ff3e475280fea49fd.jpg",
@@ -2916,7 +3350,10 @@
       "레귤러 핏의 후디 베스트로 앞판 이 입술 포켓과 마뗑킴의 사틴 자수 디테일"
     ],
     "price": "168,000",
-    "colors": ["IVORY", "DARK BROWN"],
+    "colors": [
+      "IVORY",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8479&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/1e97ba01b14b26526513f8b056046d86.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/4d02083141df47828d2fde79fa926827.jpg",
@@ -2949,7 +3386,10 @@
       "레귤러 핏의 후디 베스트로 앞판 이 입술 포켓과 마뗑킴의 사틴 자수 디테일"
     ],
     "price": "168,000",
-    "colors": ["DARK BROWN", "IVORY"],
+    "colors": [
+      "DARK BROWN",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8477&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/c743e8dc6076f15b1fb0eea7ea27504e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/e00ff25b4a672eb43e8841e9d84d83ae.jpg",
@@ -2978,9 +3418,15 @@
   {
     "id": "8407",
     "name": "QUILTING HOODY LIGHTWEIGHT JUMPER (DOWN BLENDED) IN BLACK",
-    "bullet_points": ["스포티 무드의 다이아몬트 퀄팅 경량 아우터"],
+    "bullet_points": [
+      "스포티 무드의 다이아몬트 퀄팅 경량 아우터"
+    ],
     "price": "258,000",
-    "colors": ["BLACK", "MINT", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "MINT",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8407&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/f817c5750b6a287fa4d77091abf1f8e0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/48cdd61f63ee3319260c25a88e29af1d.jpg",
@@ -3002,16 +3448,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/32dc8c4915b028409913da5394c32d61.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8406",
     "name": "QUILTING HOODY LIGHTWEIGHT JUMPER (DOWN BLENDED) IN BEIGE",
-    "bullet_points": ["스포티 무드의 다이아몬트 퀄팅 경량 아우터"],
+    "bullet_points": [
+      "스포티 무드의 다이아몬트 퀄팅 경량 아우터"
+    ],
     "price": "258,000",
-    "colors": ["BEIGE", "BLACK", "MINT"],
+    "colors": [
+      "BEIGE",
+      "BLACK",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8406&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/28a64516cd8de299833e329ae5d708d0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/a1a962d4eb05b28d568ad2cdc5c17c91.jpg",
@@ -3033,16 +3487,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/ca93d098bb6470556a6c9e3f2b5e6c31.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8405",
     "name": "QUILTING HOODY LIGHTWEIGHT JUMPER (DOWN BLENDED) IN MINT",
-    "bullet_points": ["스포티 무드의 다이아몬트 퀄팅 경량 아우터"],
+    "bullet_points": [
+      "스포티 무드의 다이아몬트 퀄팅 경량 아우터"
+    ],
     "price": "258,000",
-    "colors": ["MINT", "BLACK", "BEIGE"],
+    "colors": [
+      "MINT",
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8405&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/14d7cf8f22086b73c6b1135ddf8dad46.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/9144f7ab5a61a84d0a9ece62056bde74.jpg",
@@ -3075,7 +3537,11 @@
       "언밸런스한 절개 라인으로 감도 있는 실루엣을 완성한 레귤러 핏 베스트"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "KHAKI BROWN", "GREY"],
+    "colors": [
+      "BLACK",
+      "KHAKI BROWN",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8404&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/c5ae207338f315c35747b9c98064f28d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/5b9c11192bd590b1091e67e0ce6f072e.jpg",
@@ -3103,7 +3569,11 @@
       "언밸런스한 절개 라인으로 감도 있는 실루엣을 완성한 레귤러 핏 베스트"
     ],
     "price": "218,000",
-    "colors": ["GREY", "KHAKI BROWN", "BLACK"],
+    "colors": [
+      "GREY",
+      "KHAKI BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8403&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/4049a7381a6ecdc152b1360af1a38e82.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/2ac4ed4f5a7be5761be705d82ef149ef.jpg",
@@ -3131,7 +3601,11 @@
       "언밸런스한 절개 라인으로 감도 있는 실루엣을 완성한 레귤러 핏 베스트"
     ],
     "price": "218,000",
-    "colors": ["KHAKI BROWN", "GREY", "BLACK"],
+    "colors": [
+      "KHAKI BROWN",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8402&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/8af472d4c76c690c347c90bf56e8fe73.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/f8863b8f694fba84cfa4a19a6ff6e0a9.jpg",
@@ -3159,7 +3633,11 @@
       "언밸런스한 절개 라인으로 감도 있는 실루엣을 완성한 레귤러 핏 베스트"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "GREY", "KHAKI BROWN"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "KHAKI BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8401&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/17517dd782406790ed878ae0de0de6c6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/6472cbb241cfd0a330e005634ee4b732.jpg",
@@ -3187,7 +3665,11 @@
       "언밸런스한 절개 라인으로 감도 있는 실루엣을 완성한 레귤러 핏 베스트"
     ],
     "price": "218,000",
-    "colors": ["GREY", "BLACK", "KHAKI BROWN"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "KHAKI BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8400&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/3b9c5d46a0b43c9b739d1a70fbf1096c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/6dae08a38b6b22ece3af500bebdb3d8d.jpg",
@@ -3215,7 +3697,11 @@
       "언밸런스한 절개 라인으로 감도 있는 실루엣을 완성한 레귤러 핏 베스트"
     ],
     "price": "218,000",
-    "colors": ["KHAKI BROWN", "BLACK", "GREY"],
+    "colors": [
+      "KHAKI BROWN",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8399&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/bbf33efdaf0da2b5d5a0115164b0eb0e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/a24d5bad459d45d8410f0b7e761372ee.jpg",
@@ -3243,7 +3729,9 @@
       "루즈한 핏에 수술을 푼 러프한 디테일이 특징인 트위드 자켓"
     ],
     "price": "358,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8398&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/08abdff5b73133bdedc6a939922a37fb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/5fafb6959047f9f95f21a37dd2caaca1.jpg",
@@ -3267,9 +3755,14 @@
   {
     "id": "8397",
     "name": "DRAWSTRING POINT ZIP UP HOODY IN BLACK",
-    "bullet_points": ["넥셔링과 로고로 포인트를 준 코튼 소재의 후드집업"],
+    "bullet_points": [
+      "넥셔링과 로고로 포인트를 준 코튼 소재의 후드집업"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "BURGUNDY"],
+    "colors": [
+      "BLACK",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8397&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/f7caf667e508716dbd1ca43c466b3b34.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/c2afe44ba576d339178d7afda28efcae.jpg",
@@ -3286,16 +3779,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/d1b4f4740ccf34336f150addd0c910ec.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8396",
     "name": "DRAWSTRING POINT ZIP UP HOODY IN BURGUNDY",
-    "bullet_points": ["넥셔링과 로고로 포인트를 준 코튼 소재의 후드집업"],
+    "bullet_points": [
+      "넥셔링과 로고로 포인트를 준 코튼 소재의 후드집업"
+    ],
     "price": "168,000",
-    "colors": ["BURGUNDY", "BLACK"],
+    "colors": [
+      "BURGUNDY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8396&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/ab8cfdfac22a338dab26f490d7f09b53.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/1c377d9d4186cedcddfd848836339fe0.jpg",
@@ -3323,7 +3823,10 @@
       "캐주얼한 배색 포인트와 백에 니트 원단으로 패치된 로고가 포인트"
     ],
     "price": "198,000",
-    "colors": ["IVORY", "DARK BROWN"],
+    "colors": [
+      "IVORY",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8393&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/ed6b00cd3cfd14c132a43038f2cda864.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/bcc5c69dcf078791922f42a20fd0930f.jpg",
@@ -3340,7 +3843,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/c737c230563d569955e7c813d28f7de8.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -3351,7 +3856,10 @@
       "캐주얼한 배색 포인트와 백에 니트 원단으로 패치된 로고가 포인트"
     ],
     "price": "198,000",
-    "colors": ["DARK BROWN", "IVORY"],
+    "colors": [
+      "DARK BROWN",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8392&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/35297394f28b88419fdafcb20ea8b0f1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/c9e6ef0a7207d4a2be6b44e0468ca0e0.jpg",
@@ -3379,7 +3887,10 @@
       "캐주얼한 배색 포인트와 백에 니트 원단으로 패치된 로고가 포인트"
     ],
     "price": "198,000",
-    "colors": ["IVORY", "DARK BROWN"],
+    "colors": [
+      "IVORY",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8394&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/bb84736038fdad3e791405bc70291d6d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/840a8a643e441c77e156f0056ada12f3.jpg",
@@ -3407,7 +3918,10 @@
       "캐주얼한 배색 포인트와 백에 니트 원단으로 패치된 로고가 포인트"
     ],
     "price": "198,000",
-    "colors": ["DARK BROWN", "IVORY"],
+    "colors": [
+      "DARK BROWN",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8395&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/cd8518fe502ff00ccbdd7f43df94005e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/990346b4eef8f98410fc9dbe07ed5216.jpg",
@@ -3435,7 +3949,11 @@
       "톤온톤 컬러 배색으로 레이어드 되었으며,뒷판의 면패치라벨이 포인트인 슬림한 핏의 니트 가디건"
     ],
     "price": "168,000",
-    "colors": ["GREY", "BROWN", "LILAC"],
+    "colors": [
+      "GREY",
+      "BROWN",
+      "LILAC"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8385&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/51e172a8f001ec0ada566b6e73abe770.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/9c0915db74eb1c3b759d6631cad2e21c.jpg",
@@ -3452,7 +3970,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/af6c58f5e3c1f3fa026ee28d6e18cfff.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -3463,7 +3983,11 @@
       "톤온톤 컬러 배색으로 레이어드 되었으며,뒷판의 면패치라벨이 포인트인 슬림한 핏의 니트 가디건"
     ],
     "price": "168,000",
-    "colors": ["BROWN", "LILAC", "GREY"],
+    "colors": [
+      "BROWN",
+      "LILAC",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8384&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/68e42efe545d56f0e948f50dfecbbec8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/a38b9436798d095d6c33df108ee5367b.jpg",
@@ -3491,7 +4015,11 @@
       "톤온톤 컬러 배색으로 레이어드 되었으며,뒷판의 면패치라벨이 포인트인 슬림한 핏의 니트 가디건"
     ],
     "price": "168,000",
-    "colors": ["LILAC", "BROWN", "GREY"],
+    "colors": [
+      "LILAC",
+      "BROWN",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8383&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/a607ba702156060da1fa238da0e8c2c9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/4b3bc45efc4e1f4f227f98bdbd8873ac.jpg",
@@ -3515,9 +4043,14 @@
   {
     "id": "8250",
     "name": "SUEDE MIX LEATHER ZIP UP JUMPER FOR WOMEN IN BLACK",
-    "bullet_points": ["레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"],
+    "bullet_points": [
+      "레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"
+    ],
     "price": "288,000",
-    "colors": ["BLACK", "PINK"],
+    "colors": [
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8250&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/58f634fed9da1d23830ac3310cdd63df.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/0485e82aaf63c0313b07ab94601e15db.jpg",
@@ -3534,16 +4067,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/4e4f7069b595ab50350def9046ff87fb.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8249",
     "name": "SUEDE MIX LEATHER ZIP UP JUMPER FOR WOMEN IN PINK",
-    "bullet_points": ["레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"],
+    "bullet_points": [
+      "레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"
+    ],
     "price": "288,000",
-    "colors": ["PINK", "BLACK"],
+    "colors": [
+      "PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8249&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/abcd7bbb42b7c53a2b649c14e3b79742.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/2df45f17b540287687d6bd8987680041.jpg",
@@ -3567,9 +4107,14 @@
   {
     "id": "8248",
     "name": "SUEDE MIX LEATHER ZIP UP JUMPER FOR MEN IN BLACK",
-    "bullet_points": ["레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"],
+    "bullet_points": [
+      "레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"
+    ],
     "price": "288,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8248&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/41ece570f76d2023236f5c0e707a9fc4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/f4c3a15484c42e4caad3f05cd3ea3097.jpg",
@@ -3586,16 +4131,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/e5caae0419f1d55e413a9bbd729487b9.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8247",
     "name": "SUEDE MIX LEATHER ZIP UP JUMPER FOR MEN IN BROWN",
-    "bullet_points": ["레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"],
+    "bullet_points": [
+      "레더와 스웨이드 소재로 제작된 캐주얼 집업 점퍼"
+    ],
     "price": "288,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8247&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/3c26db5c33089a6a058e855497add78e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/c496b6aee90d5529d5cc9d25911b4602.jpg",
@@ -3612,7 +4164,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/7a4094b0d046c5f73bece3ea3efee9ae.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -3623,7 +4177,10 @@
       "부드러운 터치감의 원사와 자카드 로고가 포인트인 루즈핏 니트 집업"
     ],
     "price": "208,000",
-    "colors": ["BLACK", "PINK"],
+    "colors": [
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8246&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/f4411c5c131f47c35b5bb09dfa2b9c1d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/ec3c6867e580c39ed82166a9fd3e473e.jpg",
@@ -3640,7 +4197,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/8da719d27a8f8f121290032017874ec6.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -3651,7 +4210,10 @@
       "부드러운 터치감의 원사와 자카드 로고가 포인트인 루즈핏 니트 집업"
     ],
     "price": "208,000",
-    "colors": ["PINK", "BLACK"],
+    "colors": [
+      "PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8245&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/f4b3c86ef30e27a4f24e80fba5339f18.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/a075e86c194961c3a86b92f4f7b9a620.jpg",
@@ -3679,7 +4241,10 @@
       "부드러운 터치감의 원사와 자카드 로고가 포인트인 루즈핏 니트 집업"
     ],
     "price": "208,000",
-    "colors": ["BLACK", "PINK"],
+    "colors": [
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8244&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/c0e01bcb9ab2c712627d9972eded3e42.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/afea9560954f34e093b4983a063e9ecb.jpg",
@@ -3707,7 +4272,10 @@
       "부드러운 터치감의 원사와 자카드 로고가 포인트인 루즈핏 니트 집업"
     ],
     "price": "208,000",
-    "colors": ["PINK", "BLACK"],
+    "colors": [
+      "PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8243&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/876d7eb3abaf817574c1cf420c829aaf.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/71a9f9203b81cfb326bb1703ccaf6e75.jpg",
@@ -3731,9 +4299,15 @@
   {
     "id": "8253",
     "name": "CASHMERE BLENDED ROUND KNIT CARDIGAN IN BLACK",
-    "bullet_points": ["심플한 디테일의 캐시미어 원사 혼용 라운드넥 가디건"],
+    "bullet_points": [
+      "심플한 디테일의 캐시미어 원사 혼용 라운드넥 가디건"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "GREY", "OLIVE"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8253&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/8f02454945cbc1bf46a7caa495210d5b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/6f0dbc4ac7c2e8086412a7a790f0a185.jpg",
@@ -3762,9 +4336,15 @@
   {
     "id": "8252",
     "name": "CASHMERE BLENDED ROUND KNIT CARDIGAN IN GREY",
-    "bullet_points": ["심플한 디테일의 캐시미어 원사 혼용 라운드넥 가디건"],
+    "bullet_points": [
+      "심플한 디테일의 캐시미어 원사 혼용 라운드넥 가디건"
+    ],
     "price": "168,000",
-    "colors": ["GREY", "BLACK", "OLIVE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8252&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/fb36c18b351f1a30f98eab0eade06777.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/d59e5179892848680b07d75c05cf1c4d.jpg",
@@ -3793,9 +4373,15 @@
   {
     "id": "8251",
     "name": "CASHMERE BLENDED ROUND KNIT CARDIGAN IN OLIVE",
-    "bullet_points": ["심플한 디테일의 캐시미어 원사 혼용 라운드넥 가디건"],
+    "bullet_points": [
+      "심플한 디테일의 캐시미어 원사 혼용 라운드넥 가디건"
+    ],
     "price": "168,000",
-    "colors": ["OLIVE", "BLACK", "GREY"],
+    "colors": [
+      "OLIVE",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8251&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/a04a0ae272fd2abd3940f9207a3dec82.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/7deffa1095b85339be001d4567152717.jpg",
@@ -3817,16 +4403,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/a9b44ca8e89a6041d125342a9db0f907.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8202",
     "name": "GRAFFITI ARTWORK CROP HOODY ZIP UP IN CHARCOAL",
-    "bullet_points": ["오버핏으로 캐주얼하게 착용이 가능한 크롭 후드집업"],
+    "bullet_points": [
+      "오버핏으로 캐주얼하게 착용이 가능한 크롭 후드집업"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "GREY"],
+    "colors": [
+      "CHARCOAL",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8202&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/9207b103b767bf7422782f70928f74ef.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/d2d9f698de6996a5170ccdae76fe37b2.jpg",
@@ -3845,9 +4438,14 @@
   {
     "id": "8203",
     "name": "GRAFFITI ARTWORK CROP HOODY ZIP UP IN GREY",
-    "bullet_points": ["오버핏으로 캐주얼하게 착용이 가능한 크롭 후드집업"],
+    "bullet_points": [
+      "오버핏으로 캐주얼하게 착용이 가능한 크롭 후드집업"
+    ],
     "price": "168,000",
-    "colors": ["GREY", "CHARCOAL"],
+    "colors": [
+      "GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8203&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/05bd79475674c1bc33a07d45357b3057.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/5058e303caadd15256f907d456dd7d9a.jpg",
@@ -3866,9 +4464,14 @@
   {
     "id": "8204",
     "name": "GRAFFITI ARTWORK HOODY ZIP UP IN CHARCOAL",
-    "bullet_points": ["오버핏으로 캐주얼하게 착용이 가능한 후드집업"],
+    "bullet_points": [
+      "오버핏으로 캐주얼하게 착용이 가능한 후드집업"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8204&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/1af3d43b42fd78d1cb14edef6abda97e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/e7f61a489221d6217750f2c7e24ae8de.jpg",
@@ -3887,9 +4490,14 @@
   {
     "id": "8205",
     "name": "GRAFFITI ARTWORK HOODY ZIP UP IN SMOKE BLUE",
-    "bullet_points": ["오버핏으로 캐주얼하게 착용이 가능한 후드집업"],
+    "bullet_points": [
+      "오버핏으로 캐주얼하게 착용이 가능한 후드집업"
+    ],
     "price": "168,000",
-    "colors": ["SMOKE BLUE", "CHARCOAL"],
+    "colors": [
+      "SMOKE BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8205&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/388d473e73086cf9fc2687cf8e0553b5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/23e4d07a1b86e0b072cb0d29246d67e4.jpg",
@@ -3901,7 +4509,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/38684f2b351f2ea873cbe058e59738bf.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -3912,7 +4522,10 @@
       "반더블 여밈과 크랙진듯한 워싱감이 돋보이는 스탠다드핏 미디 가죽 자켓"
     ],
     "price": "328,000",
-    "colors": ["BLACK", "DARK BROWN"],
+    "colors": [
+      "BLACK",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8228&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/f8dfbf1db5d98b892e2f651a02b15871.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/29eb42f03e79071074d85f284884572a.jpg",
@@ -3929,7 +4542,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/713db7ce679b54d85f60f120895f56c2.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -3940,7 +4555,10 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8099&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/ab672f5480389d5d33d7d464fb08ad39.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/ea8af912253a1ed89e035120f6fb66e4.jpg",
@@ -3970,7 +4588,10 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8100&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/9a8b5adfaad3709b2d207a2c9b300804.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/f97354ae469f9d2485a2bc2bcfcfb321.jpg",
@@ -4000,7 +4621,10 @@
       "몸판과 같은 컬러의 우븐 배색이 포인트인 크롭 기장의 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "LIGHT GREY"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8577&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/2da93e1d1a17f50fb1cc6d86386163d4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/b16e8e4d3004a0e952e0394ac705d99a.jpg",
@@ -4017,16 +4641,22 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/af7a45b3f7fa9b48ae18fcc051dadbfa.jpg"
     ],
     "soldout": true,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8583",
     "name": "PIGMENT DYED COLLARLESS ZIP UP JUMPER FOR MEN IN CHARCOAL",
-    "bullet_points": ["몸판과 같은 컬러의 우븐 배색이 포인트인 오버핏 집업"],
+    "bullet_points": [
+      "몸판과 같은 컬러의 우븐 배색이 포인트인 오버핏 집업"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL"],
+    "colors": [
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8583&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/97abfe0096cf91367043b403d04b2fa1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/5929e3100b7c39d4693cd28e9b84262f.jpg",
@@ -4054,7 +4684,10 @@
       "몸판과 같은 컬러의 우븐 배색이 포인트인 크롭 기장의 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["LIGHT GREY", "CHARCOAL"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8578&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/72eb5e689262eb4b30bdf335505cc6a3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/1b3121697995bf15d2ae097f20816db8.jpg",
@@ -4082,7 +4715,10 @@
       "반더블 여밈과 크랙진듯한 워싱감이 돋보이는 스탠다드핏 미디 가죽 자켓"
     ],
     "price": "328,000",
-    "colors": ["DARK BROWN", "BLACK"],
+    "colors": [
+      "DARK BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8227&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/e7614d67e39d66960925ca99e7aa76c2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/4bc3b22d42be05990c5719a7c6beebb0.jpg",
@@ -4106,9 +4742,13 @@
   {
     "id": "8226",
     "name": "FAUX LEATHER DOUBLE JACKET FOR MEN IN BLACK",
-    "bullet_points": ["앞판 립포켓이 포인트인 세미 오버핏 레더 자켓"],
+    "bullet_points": [
+      "앞판 립포켓이 포인트인 세미 오버핏 레더 자켓"
+    ],
     "price": "358,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8226&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/39ee109fd69e8a9e31eb993433eb70ec.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/90d74fca7bcf269cd1fcd494d5777c18.jpg",
@@ -4125,16 +4765,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/2a22ba78857cb42af7af83b537b25aeb.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8225",
     "name": "BACK LOGO WASHED HOODY ZIP UP FOR MEN IN CHARCOAL",
-    "bullet_points": ["아플리케 자수 로고가 포인트인 오버핏 워싱 후드 집업"],
+    "bullet_points": [
+      "아플리케 자수 로고가 포인트인 오버핏 워싱 후드 집업"
+    ],
     "price": "178,000",
-    "colors": ["CHARCOAL", "COCOA", "BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "COCOA",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8225&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/ac78c305e30cd0a4ffb20f2383a02c06.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/24017c9bc35144e5e3719251423a1bed.jpg",
@@ -4158,9 +4806,15 @@
   {
     "id": "8224",
     "name": "BACK LOGO WASHED HOODY ZIP UP FOR MEN IN BLUE",
-    "bullet_points": ["아플리케 자수 로고가 포인트인 오버핏 워싱 후드 집업"],
+    "bullet_points": [
+      "아플리케 자수 로고가 포인트인 오버핏 워싱 후드 집업"
+    ],
     "price": "178,000",
-    "colors": ["BLUE", "COCOA", "CHARCOAL"],
+    "colors": [
+      "BLUE",
+      "COCOA",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8224&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/08347bb7ac646020e9c037983ab8577e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/62a3bf5a0859ff3f25d19afb4e018cdf.jpg",
@@ -4184,9 +4838,15 @@
   {
     "id": "8223",
     "name": "BACK LOGO WASHED HOODY ZIP UP FOR MEN IN COCOA",
-    "bullet_points": ["아플리케 자수 로고가 포인트인 오버핏 워싱 후드 집업"],
+    "bullet_points": [
+      "아플리케 자수 로고가 포인트인 오버핏 워싱 후드 집업"
+    ],
     "price": "178,000",
-    "colors": ["COCOA", "BLUE", "CHARCOAL"],
+    "colors": [
+      "COCOA",
+      "BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8223&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/005fe4faf05ba3aa117e560f45225679.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/08d9d1acfed0723811e1d5df94349937.jpg",
@@ -4210,9 +4870,14 @@
   {
     "id": "8222",
     "name": "LOGO POINT DAMAGE SLIM HOODY CARDIGAN IN CHARCOAL",
-    "bullet_points": ["데미지와 소매의 로고자수가 포인트인 슬림핏 후디 가디건"],
+    "bullet_points": [
+      "데미지와 소매의 로고자수가 포인트인 슬림핏 후디 가디건"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "KHAKI BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "KHAKI BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8222&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/4bb4b6b70aa95671fbb4a8aa00b97576.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/d2c106977ee97cb06792fbcf86905f2c.jpg",
@@ -4229,16 +4894,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/ad45fa4a6c70a8aa07d4f05d21e9cbe5.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8221",
     "name": "LOGO POINT DAMAGE SLIM HOODY CARDIGAN IN KHAKI BROWN",
-    "bullet_points": ["데미지와 소매의 로고자수가 포인트인 슬림핏 후디 가디건"],
+    "bullet_points": [
+      "데미지와 소매의 로고자수가 포인트인 슬림핏 후디 가디건"
+    ],
     "price": "168,000",
-    "colors": ["KHAKI BROWN", "CHARCOAL"],
+    "colors": [
+      "KHAKI BROWN",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8221&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/46d57369d162a22a790af1239fb800b7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/f9f44104e6a480b358aac70c35a94389.jpg",
@@ -4255,16 +4927,22 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/f54eb25046519ade4617df3c7b579064.jpg"
     ],
     "soldout": true,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8220",
     "name": "HOOK POINT TWO WAY CROSS CARDIGAN IN BLACK",
-    "bullet_points": ["_"],
+    "bullet_points": [
+      "_"
+    ],
     "price": "178,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8220&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/c595478c138b003cd8c2836aa1f0b862.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/122441ad979436aba9c5f355e2123da9.jpg",
@@ -4281,7 +4959,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/8b84335f670df2719088dba5a124773b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -4292,7 +4972,10 @@
       "후크 디테일과 단추 여밈으로 다양한 연출이 가능한 숄카라 가디건"
     ],
     "price": "178,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8219&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/01684fa032178f88ad5fef50eefb3c58.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/29ec5c0d07e3ddd4f94bbcf677ef8537.jpg",
@@ -4320,7 +5003,9 @@
       "앞판의 포켓이 포인트이며 허리 스트링으로 다양한 연출이 가능한 루즈핏 데님 코트"
     ],
     "price": "348,000",
-    "colors": ["BLUE"],
+    "colors": [
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8162&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/ddaa82d03d341eb3e7de5a6e530a9605.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/309789d94aed9b8a4325c8ea37270714.jpg",
@@ -4344,9 +5029,14 @@
   {
     "id": "8161",
     "name": "UTILITY BOMBER JUMPER FOR WOMEN IN BLACK",
-    "bullet_points": ["전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"],
+    "bullet_points": [
+      "전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"
+    ],
     "price": "248,000",
-    "colors": ["BLACK", "KHAKI BROWN"],
+    "colors": [
+      "BLACK",
+      "KHAKI BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8161&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/0fbad366179fc77f879644813aad54d6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/3d60ab060650431371ea8905fc57dd1f.jpg",
@@ -4363,16 +5053,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/ea172b0da72a5b2e7fcf1bade7d5d66d.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8160",
     "name": "UTILITY BOMBER JUMPER FOR WOMEN IN KHAKI BROWN",
-    "bullet_points": ["전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"],
+    "bullet_points": [
+      "전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"
+    ],
     "price": "248,000",
-    "colors": ["KHAKI BROWN", "BLACK"],
+    "colors": [
+      "KHAKI BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8160&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/435bddaa3a0482136cfea13477c80c79.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/5c42a762b52b51d07fe46cae32fad293.jpg",
@@ -4396,9 +5093,14 @@
   {
     "id": "8159",
     "name": "UTILITY BOMBER JUMPER FOR MEN IN BLACK",
-    "bullet_points": ["전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"],
+    "bullet_points": [
+      "전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"
+    ],
     "price": "248,000",
-    "colors": ["BLACK", "KHAKI BROWN"],
+    "colors": [
+      "BLACK",
+      "KHAKI BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8159&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/260275d29c70a5102a09a28f50c18b00.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/66d7862baba7d4ec44b0f08c8129c427.jpg",
@@ -4422,9 +5124,14 @@
   {
     "id": "8158",
     "name": "UTILITY BOMBER JUMPER FOR MEN IN KHAKI BROWN",
-    "bullet_points": ["전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"],
+    "bullet_points": [
+      "전판의 포켓과 등판의 자수로고가 포인트인 오버핏 점퍼"
+    ],
     "price": "248,000",
-    "colors": ["KHAKI BROWN", "BLACK"],
+    "colors": [
+      "KHAKI BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8158&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/4f4fb525cc02450cd06b92219f76ff58.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/33ae0474025658246351906432fd147c.jpg",
@@ -4448,9 +5155,14 @@
   {
     "id": "8157",
     "name": "LEATHER COLLAR POINT WORK JACKET FOR MEN IN BLACK",
-    "bullet_points": ["카라와 소매 끝단 속면 레더 배색이 포인트인 워크자켓"],
+    "bullet_points": [
+      "카라와 소매 끝단 속면 레더 배색이 포인트인 워크자켓"
+    ],
     "price": "298,000",
-    "colors": ["BLACK", "DARK BROWN"],
+    "colors": [
+      "BLACK",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8157&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/64d8d4ecf808c49980759555bc9adcde.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/8b80e7f75c024458086fc353bc16a80f.jpg",
@@ -4474,9 +5186,14 @@
   {
     "id": "8156",
     "name": "LEATHER COLLAR POINT WORK JACKET FOR MEN IN DARK BROWN",
-    "bullet_points": ["카라와 소매 끝단 속면 레더 배색이 포인트인 워크자켓"],
+    "bullet_points": [
+      "카라와 소매 끝단 속면 레더 배색이 포인트인 워크자켓"
+    ],
     "price": "298,000",
-    "colors": ["DARK BROWN", "BLACK"],
+    "colors": [
+      "DARK BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8156&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/9e8d3ddac400739bca6a2a315a2e730a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/d6fdae00debebaa394b7b3229fd07cc6.jpg",
@@ -4493,16 +5210,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/f65fa79aae38e02f36f1ca74df420ab4.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8110",
     "name": "FAUX LEATHER HOODY CROP JUMPER IN BLACK",
-    "bullet_points": ["등판의 배색 로고가 포인트인 레더 크롭 후드 점퍼"],
+    "bullet_points": [
+      "등판의 배색 로고가 포인트인 레더 크롭 후드 점퍼"
+    ],
     "price": "278,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8110&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/356372c74cbe83822882d5b10f658e36.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/9ce0ce93bf46c69e5aa91f0a90880a75.jpg",
@@ -4527,9 +5251,14 @@
   {
     "id": "8109",
     "name": "FAUX LEATHER HOODY CROP JUMPER IN BROWN",
-    "bullet_points": ["등판의 배색 로고가 포인트인 레더 크롭 후드 점퍼"],
+    "bullet_points": [
+      "등판의 배색 로고가 포인트인 레더 크롭 후드 점퍼"
+    ],
     "price": "278,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8109&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/49b883111fa420287c04d88a4f7afa9d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/94b2398066b712a5f21895e48309fc2e.jpg",
@@ -4554,9 +5283,14 @@
   {
     "id": "8108",
     "name": "APPLIQUE LOGO SHIRRING BOMBER JUMPER FOR WOMEN IN BLACK",
-    "bullet_points": ["앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"],
+    "bullet_points": [
+      "앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"
+    ],
     "price": "278,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8108&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/0e9de32c93da9a9a9766ed1b763f051c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/be87356fcbe8a2072ba206448199b2b4.jpg",
@@ -4581,9 +5315,14 @@
   {
     "id": "8107",
     "name": "APPLIQUE LOGO SHIRRING BOMBER JUMPER FOR WOMEN IN KHAKI",
-    "bullet_points": ["앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"],
+    "bullet_points": [
+      "앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"
+    ],
     "price": "278,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8107&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/5fa16e89e387e5c1a3cf573f02c913c0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/10b54b467d05b61ebc5ea2f06c3bb497.jpg",
@@ -4608,9 +5347,14 @@
   {
     "id": "8106",
     "name": "APPLIQUE LOGO SHIRRING BOMBER JUMPER FOR MEN IN BLACK",
-    "bullet_points": ["앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"],
+    "bullet_points": [
+      "앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"
+    ],
     "price": "278,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8106&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/87cff36c7e580fa074017de88cdc14e8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/b3388278d6fb1a4bc856ee44bbaf9ef2.jpg",
@@ -4629,16 +5373,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/7eb34ab14b85c0ad4a0c5114f2fbf0b7.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8105",
     "name": "APPLIQUE LOGO SHIRRING BOMBER JUMPER FOR MEN IN KHAKI",
-    "bullet_points": ["앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"],
+    "bullet_points": [
+      "앞판의 셔링이 포인트인 나일론 소재 숏 점퍼"
+    ],
     "price": "278,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8105&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/d8e094c844c633e8e6d29c68dae9a921.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/38654ad19fbd6d46aa5556202166f33f.jpg",
@@ -4662,9 +5413,13 @@
   {
     "id": "8104",
     "name": "CUT OUT POINT STRING BLAZER IN BLACK",
-    "bullet_points": ["랩 형식으로 여밈이 가능한 슬림핏 블레이져 자켓"],
+    "bullet_points": [
+      "랩 형식으로 여밈이 가능한 슬림핏 블레이져 자켓"
+    ],
     "price": "278,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8104&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/44feb95c1a290135d130be4c49fbe20d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/cd910034bd95398bf31245865b298f5c.jpg",
@@ -4692,9 +5447,14 @@
   {
     "id": "8114",
     "name": "FAUX LEATHER BELTED RIDER JUMPER IN CHARCOAL",
-    "bullet_points": ["어깨와 밑단의 벨트가 포인트인 오버핏 라이더 자켓"],
+    "bullet_points": [
+      "어깨와 밑단의 벨트가 포인트인 오버핏 라이더 자켓"
+    ],
     "price": "348,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8114&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/95bb30fbf84a43a42368e2bfcfdf510b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/76fd8c1e9e1303f6a9bbdd1df53f34b1.jpg",
@@ -4726,9 +5486,14 @@
   {
     "id": "8113",
     "name": "FAUX LEATHER BELTED RIDER JUMPER IN BEIGE",
-    "bullet_points": ["어깨와 밑단의 벨트가 포인트인 오버핏 라이더 자켓"],
+    "bullet_points": [
+      "어깨와 밑단의 벨트가 포인트인 오버핏 라이더 자켓"
+    ],
     "price": "348,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8113&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/3b15382736adef12e12739b9b88b94d4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/dd752152fdf924356047900cbbd72e54.jpg",
@@ -4748,16 +5513,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/2969e5e7c4a17bf77d4f392851ae1a4a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8089",
     "name": "STITCH POINT HIGH NECK JUMPER IN BLACK",
-    "bullet_points": ["광택감과 배색 스티치가 포인트인 캐주얼 하이넥 점퍼"],
+    "bullet_points": [
+      "광택감과 배색 스티치가 포인트인 캐주얼 하이넥 점퍼"
+    ],
     "price": "258,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8089&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/bdf67380a3453d429b19c862bf507604.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/9d0376cfc6388fca7faac60e5bc9090f.jpg",
@@ -4786,9 +5558,14 @@
   {
     "id": "8088",
     "name": "STITCH POINT HIGH NECK JUMPER IN BROWN",
-    "bullet_points": ["광택감과 배색 스티치가 포인트인 캐주얼 하이넥 점퍼"],
+    "bullet_points": [
+      "광택감과 배색 스티치가 포인트인 캐주얼 하이넥 점퍼"
+    ],
     "price": "258,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8088&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/e803c84048e12b44ed7b7abbf1b5f39f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/be0e34ab83871045d329612120cd4284.jpg",
@@ -4817,9 +5594,14 @@
   {
     "id": "8087",
     "name": "WESTERN DETAIL DENIM LIKE BLOUSON IN BLACK",
-    "bullet_points": ["광택감과 배색 스티치가 포인트인 베이직 실루엣의 점퍼"],
+    "bullet_points": [
+      "광택감과 배색 스티치가 포인트인 베이직 실루엣의 점퍼"
+    ],
     "price": "258,000",
-    "colors": ["BLACK", "NAVY"],
+    "colors": [
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8087&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/aa90ebb74cd36f76c2162bce2d3cbfc7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/e973e3efb9e412102666679d0e30c2c9.jpg",
@@ -4836,16 +5618,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/00f0bd0140f325a5ab8da081d9311d16.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8086",
     "name": "WESTERN DETAIL DENIM LIKE BLOUSON IN NAVY",
-    "bullet_points": ["광택감과 배색 스티치가 포인트인 베이직 실루엣의 점퍼"],
+    "bullet_points": [
+      "광택감과 배색 스티치가 포인트인 베이직 실루엣의 점퍼"
+    ],
     "price": "258,000",
-    "colors": ["NAVY", "BLACK"],
+    "colors": [
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8086&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/4ae93c828f1ef5e68e6385767b9bc747.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/e8d6d7d7163f67a7640f94a61bc1017a.jpg",
@@ -4869,9 +5658,14 @@
   {
     "id": "8085",
     "name": "WASHED SLIM BIKER JUMPER IN CHARCOAL",
-    "bullet_points": ["마뗑킴 금속 디테일이 포인트인 슬림핏 바이커 자켓"],
+    "bullet_points": [
+      "마뗑킴 금속 디테일이 포인트인 슬림핏 바이커 자켓"
+    ],
     "price": "248,000",
-    "colors": ["CHARCOAL", "KHAKI"],
+    "colors": [
+      "CHARCOAL",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8085&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/9358fe7d2efa8b3f56af7a423d01bbf4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/ed877a5b2766a7c184411930c1758a24.jpg",
@@ -4895,9 +5689,14 @@
   {
     "id": "8084",
     "name": "WASHED SLIM BIKER JUMPER IN LIGHT KHAKI",
-    "bullet_points": ["마뗑킴 금속 디테일이 포인트인 슬림핏 바이커 자켓"],
+    "bullet_points": [
+      "마뗑킴 금속 디테일이 포인트인 슬림핏 바이커 자켓"
+    ],
     "price": "248,000",
-    "colors": ["LIGHT KHAKI", "CHARCOAL"],
+    "colors": [
+      "LIGHT KHAKI",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8084&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/6a9b057d17b9d188f48222ef7c621d87.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/68e94d5ab869f6bf1336ab89cb4ee542.jpg",
@@ -4914,7 +5713,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/cb20ce2ef9708e7bd6987ed31bec4c30.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -4925,7 +5726,11 @@
       "은은한 광택감과 엠보 로고 자수가 포인트인 오버핏 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "BLUE", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7973&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/2894a345bac98b0e6c0d75d9bc0ff9f7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/d8f78396f19fe35a5392489c000da2fb.jpg",
@@ -4953,7 +5758,11 @@
       "은은한 광택감과 엠보 로고 자수가 포인트인 오버핏 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["BROWN", "BLUE", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7972&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/d2390e9e3513001f0ccf4b045a1315ba.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/88ee1d579cf443ef24d779cefdccd891.jpg",
@@ -4981,7 +5790,11 @@
       "은은한 광택감과 엠보 로고 자수가 포인트인 오버핏 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["BLUE", "BROWN", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7971&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/92aea5dfb4c51dd9d9570af0bf47ee96.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/6ee669965466d635e9aff5039fe8ec71.jpg",
@@ -5009,7 +5822,11 @@
       "은은한 광택감과 엠보 로고 자수가 포인트인 오버핏 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "BLUE", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7970&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/a8fc31de587ab23bd58d79d20c15fa97.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/36e45a6570c57ad5ad72bc5910ddcdc6.jpg",
@@ -5037,7 +5854,11 @@
       "은은한 광택감과 엠보 로고 자수가 포인트인 오버핏 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["BROWN", "BLUE", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7969&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/635a5be9604adba136337f22e3036f53.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/261fc6748677a93dec240b3ef90685ce.jpg",
@@ -5066,7 +5887,11 @@
       "은은한 광택감과 엠보 로고 자수가 포인트인 오버핏 후드 집업"
     ],
     "price": "168,000",
-    "colors": ["BLUE", "BROWN", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7968&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/6f698f38cf7f9b1d667e84d3beecdbc4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/ff57748057b3626d16ab3478b903b886.jpg",
@@ -5090,9 +5915,15 @@
   {
     "id": "8008",
     "name": "SLEEVE STRING DETAIL HOODY ZIP UP IN CHARCOAL",
-    "bullet_points": ["라글란 라인의 페미닌한 실루엣으로 연출 가능한 후드집업"],
+    "bullet_points": [
+      "라글란 라인의 페미닌한 실루엣으로 연출 가능한 후드집업"
+    ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "RED", "GREY"],
+    "colors": [
+      "CHARCOAL",
+      "RED",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8008&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/19f698fa89485e4583091e99ef21747e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/d5259257f3c9f26da5b48f8c5ba33fd3.jpg",
@@ -5120,9 +5951,15 @@
   {
     "id": "8006",
     "name": "SLEEVE STRING DETAIL HOODY ZIP UP IN GREY",
-    "bullet_points": ["라글란 라인의 페미닌한 실루엣으로 연출 가능한 후드집업"],
+    "bullet_points": [
+      "라글란 라인의 페미닌한 실루엣으로 연출 가능한 후드집업"
+    ],
     "price": "158,000",
-    "colors": ["GREY", "RED", "CHARCOAL"],
+    "colors": [
+      "GREY",
+      "RED",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8006&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/ffe7a9ea5a727e531de271d3437a5fba.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/01fbafd78d079b87f8cf06fe013e44bb.jpg",
@@ -5143,16 +5980,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/0a53b484e2e26120ae54184783e6e665.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "8005",
     "name": "SLEEVE STRING DETAIL HOODY ZIP UP IN RED",
-    "bullet_points": ["라글란 라인의 페미닌한 실루엣으로 연출 가능한 후드집업"],
+    "bullet_points": [
+      "라글란 라인의 페미닌한 실루엣으로 연출 가능한 후드집업"
+    ],
     "price": "158,000",
-    "colors": ["RED", "GREY", "CHARCOAL"],
+    "colors": [
+      "RED",
+      "GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8005&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/a01bc2e9a7fd3fbfa5f7598828ff65ab.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/7a14a71aa9a634bbf17be499619d1889.jpg",
@@ -5184,7 +6029,10 @@
       "MATIN KIM 로고 컷팅 디테일과 소매와 밑단 데미지가 포인트인 후드 집업"
     ],
     "price": "198,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7351&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/d4c0286dbed108007d1aa2c092aff860.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/7ad6333035c633a69103e481e859e4bf.jpg",
@@ -5204,7 +6052,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/b299ab22abcd619da96e2d9c47eda11d.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -5215,7 +6065,11 @@
       "MATIN KIM 로고 컷팅 디테일과 소매와 밑단 데미지가 포인트인 후드 집업"
     ],
     "price": "198,000",
-    "colors": ["GREY", "BLACK", "BEIGE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7352&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/cbed8f1b759afb4c23725a5cffb21cef.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/dc0e03103ca35006f5f395c8e31c99d3.jpg",
@@ -5249,7 +6103,10 @@
       "MATIN KIM 로고 컷팅 디테일과 소매와 밑단 데미지가 포인트인 후드 집업"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7353&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/46efcd72aef28d29e0a1bdc2090a0a66.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/e320feeacadf4f3ecdf521a889add61f.jpg",
@@ -5268,7 +6125,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/8d796d599763bc9713b2babca1161dae.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -5279,7 +6138,10 @@
       "뒷판 아플리케 자수가 포인트인 여유로운 실루엣의 크롭 점퍼"
     ],
     "price": "188,000",
-    "colors": ["CREAM", "DARK BROWN"],
+    "colors": [
+      "CREAM",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7912&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/fa7f33ad6c701af0b01b4bac7c348dd4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/265b543f2d25d80aceecbbc6c3ab1cd2.jpg",
@@ -5302,7 +6164,10 @@
       "뒷판 아플리케 자수가 포인트인 여유로운 실루엣의 크롭 점퍼"
     ],
     "price": "188,000",
-    "colors": ["DARK BROWN", "CREAM"],
+    "colors": [
+      "DARK BROWN",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6440&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/8f52eeb68d369b0be70fa0a5e769c29d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/be04ab96eb18d4ca666a2a23a1c5f9c1.jpg",
@@ -5325,7 +6190,11 @@
       "은은한 광택감의 코팅과 등판 로고나염이 돋보이며 밑단 스트링을 통해 다양한 연출이 가능한 루즈핏 후드 점퍼"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "IVORY", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7911&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/5b3e69f2ffae33dc2086d2e850c7451f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/75a0bd7a56d37420d3b05b4fc4f916fd.jpg",
@@ -5348,7 +6217,11 @@
       "은은한 광택감의 코팅과 등판 로고나염이 돋보이며 밑단 스트링을 통해 다양한 연출이 가능한 루즈핏 후드 점퍼"
     ],
     "price": "178,000",
-    "colors": ["IVORY", "BLACK", "LIGHT GREY"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7910&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/db0b48043cd45ad31cc485bc00129836.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/21566d2b3144fde9018a2e206e3e6013.jpg",
@@ -5371,7 +6244,11 @@
       "은은한 광택감의 코팅과 등판 로고나염이 돋보이며 밑단 스트링을 통해 다양한 연출이 가능한 루즈핏 후드 점퍼"
     ],
     "price": "178,000",
-    "colors": ["LIGHT GREY", "BLACK", "IVORY"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7909&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/80c0b588c189f6af6fbbf8471368d957.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/fd9177d88d10ba95d9ae3b8ffeca26b2.jpg",
@@ -5390,7 +6267,9 @@
   {
     "id": "7885",
     "name": "STITCH POINT SLIM SHIRKET IN LIGHT BEIGE",
-    "bullet_points": ["금속 스냅여밈과 배색 스티치가 포인트인 슬림핏 셔츠자켓"],
+    "bullet_points": [
+      "금속 스냅여밈과 배색 스티치가 포인트인 슬림핏 셔츠자켓"
+    ],
     "price": "198,000",
     "colors": [],
     "link": "https://matinkim.com/product/detail.html?product_no=7885&cate_no=26&display_group=1",
@@ -5417,9 +6296,13 @@
   {
     "id": "7886",
     "name": "STITCH POINT SLIM SHIRKET IN KHAKI",
-    "bullet_points": ["금속 스냅여밈과 배색 스티치가 포인트인 슬림핏 셔츠자켓"],
+    "bullet_points": [
+      "금속 스냅여밈과 배색 스티치가 포인트인 슬림핏 셔츠자켓"
+    ],
     "price": "198,000",
-    "colors": ["KHAKI"],
+    "colors": [
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7886&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/1a1eefeda04cc8244d90e6dfd20c63ef.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8c212220afe8e5bcc891dcee48ec967f.jpg",
@@ -5448,7 +6331,9 @@
       "미니멀한 디자인과 투웨이 지퍼가 포인트인 울 혼방 소재 블루종"
     ],
     "price": "218,000",
-    "colors": ["BEIGE"],
+    "colors": [
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7783&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/1e0c91942ed9687ad54ea628cdb86fbe.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/4c9e657826fe08fcc036a90a228a7bfa.jpg",
@@ -5477,7 +6362,10 @@
       "여름용 니트 소재에 페이크 포켓 디테일을 더한 하이넥 니트 베스트"
     ],
     "price": "198,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7664&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/0a3d18c856966e26f8453d43b8a969a9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/7c27d7a2052ef482d1dc9401f36d02be.jpg",
@@ -5508,7 +6396,10 @@
       "여름용 니트 소재에 페이크 포켓 디테일을 더한 하이넥 니트 베스트"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7666&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/f8e34a74e2d13b6512a0796ac7ee0281.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/db3be72b2e5f386839373d1c4a68939e.jpg",
@@ -5539,7 +6430,9 @@
       "가벼운 나일론 소재로 라인 디테일이 포인트인 캐주얼 크롭 윈드브레이커"
     ],
     "price": "258,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7430&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/cecde222819fdfbe1346a8bde64860cb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/ed5468620c8341336da8955d29bc5a5b.jpg",
@@ -5572,7 +6465,11 @@
       "가벼운 나일론 소재로 라인 디테일이 포인트인 캐주얼 크롭 윈드브레이커"
     ],
     "price": "258,000",
-    "colors": ["LIGHT BEIGE", "BURGUNDY", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BURGUNDY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7457&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/338dd610c377f7109eaa9555238ca6ed.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/279bdfc04fef06b13b10b771e92977e2.jpg",
@@ -5606,7 +6503,11 @@
       "가벼운 나일론 소재로 라인 디테일이 포인트인 캐주얼 크롭 윈드브레이커"
     ],
     "price": "258,000",
-    "colors": ["BURGUNDY", "LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "BURGUNDY",
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7456&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/daaeb454f68ed0d7cb2b191f80e70859.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/1d65a09c8c702ab10963114c67e9161e.jpg",
@@ -5636,9 +6537,14 @@
   {
     "id": "7452",
     "name": "LAYERED POINT STRING LIGHT JUMPER IN BLACK",
-    "bullet_points": ["스트링으로 다양한 연출이 가능한 루즈핏 코튼 자켓"],
+    "bullet_points": [
+      "스트링으로 다양한 연출이 가능한 루즈핏 코튼 자켓"
+    ],
     "price": "258,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7452&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/946c6049dadabc79016bcca238c8b6ef.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/5b2fe4b824c49a2f0a2ae8605acfc353.jpg",
@@ -5659,16 +6565,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/7788cf9c7f040d80195cb7f781cf9d6b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "7451",
     "name": "LAYERED POINT STRING LIGHT JUMPER IN IVORY",
-    "bullet_points": ["스트링으로 다양한 연출이 가능한 루즈핏 코튼 자켓"],
+    "bullet_points": [
+      "스트링으로 다양한 연출이 가능한 루즈핏 코튼 자켓"
+    ],
     "price": "258,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7451&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/5f1e2b04fa2f7fdd99e232676872e0df.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/751391e7b8b7c581b116ced6f7076ec4.jpg",
@@ -5702,7 +6615,12 @@
       "메쉬 안감으로 캐주얼하게 착용 가능한 오버핏 실루엣 나일론 점퍼"
     ],
     "price": "258,000",
-    "colors": ["BLACK", "LIGHT BLUE", "BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE",
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7455&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/766bcfcea249a4b69cff2b00dd954b5f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/070d7c1d5854acd821efa0ac93c58491.jpg",
@@ -5733,7 +6651,11 @@
       "메쉬 안감으로 캐주얼하게 착용 가능한 오버핏 실루엣 나일론 점퍼"
     ],
     "price": "258,000",
-    "colors": ["LIGHT BEIGE", "LIGHT BLUE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7453&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/1df5e0d0959fd39011f794a137eb3ff4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/6a09758a19c97b3a1d66e32737691d8e.jpg",
@@ -5754,7 +6676,9 @@
       "https://matinkim.com/web/product/extra/small/202504/8a6343abf04458f0af58d6c8ab9d03f2.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -5765,7 +6689,11 @@
       "메쉬 안감으로 캐주얼하게 착용 가능한 오버핏 실루엣 나일론 점퍼"
     ],
     "price": "258,000",
-    "colors": ["LIGHT BLUE", "LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7454&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/fb2426fbb05bf7694d31daada1e2d794.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/8fe5e85e9e4cdf6e836aae1288f0072c.jpg",
@@ -5792,9 +6720,14 @@
   {
     "id": "7447",
     "name": "TWO TONE MESH KNIT HOODY ZIP UP IN BLACK",
-    "bullet_points": ["투톤 매쉬 디자인과 로고 포인트가 특징인 니트 후드 집업"],
+    "bullet_points": [
+      "투톤 매쉬 디자인과 로고 포인트가 특징인 니트 후드 집업"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7447&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/0b1ef2cfa7767229c5cd2b6323bdfb5c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/f380e1b4c2afbb53df0a00fab77d176a.jpg",
@@ -5819,16 +6752,23 @@
       "https://matinkim.com/web/product/extra/small/202504/3ec333384fde0c82dc1e20f20760cf3e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "7446",
     "name": "TWO TONE MESH KNIT HOODY ZIP UP IN IVORY",
-    "bullet_points": ["투톤 매쉬 디자인과 로고 포인트가 특징인 니트 후드 집업"],
+    "bullet_points": [
+      "투톤 매쉬 디자인과 로고 포인트가 특징인 니트 후드 집업"
+    ],
     "price": "198,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7446&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/1e40860f559167d4a56ca4186f203173.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/31fd6248fd815e7a8ed3604c637f8e5d.jpg",
@@ -5859,9 +6799,15 @@
   {
     "id": "7445",
     "name": "TWO TONE MESH KNIT HOODY ZIP UP IN KHAKI",
-    "bullet_points": ["투톤 매쉬 디자인과 로고 포인트가 특징인 니트 후드 집업"],
+    "bullet_points": [
+      "투톤 매쉬 디자인과 로고 포인트가 특징인 니트 후드 집업"
+    ],
     "price": "198,000",
-    "colors": ["KHAKI", "BLACK", "IVORY"],
+    "colors": [
+      "KHAKI",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7445&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/7ed788902807c4435d558d5d74a28eb7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/6bc6a8eba85cded73ad2fa9f47444fcb.jpg",
@@ -5887,16 +6833,22 @@
       "https://matinkim.com/web/product/extra/small/202504/c04704210544bf5be9c34f381412a286.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "7450",
     "name": "STRIPE HERRINGBONE POCKET CROP JACKET IN BLACK",
-    "bullet_points": ["단추가 포인트인 레이온 혼방 크롭 자켓"],
+    "bullet_points": [
+      "단추가 포인트인 레이온 혼방 크롭 자켓"
+    ],
     "price": "268,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7450&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/531717937c4ea855e3c9183552056262.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/2420282a39a4bc7e9e446eb0ec951a3e.jpg",
@@ -5917,16 +6869,25 @@
       "https://matinkim.com/web/product/extra/small/202504/d1f0156fe2e67278eaa392a215accfae.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "7439",
     "name": "WRINKLE HOODY BUTTON KNIT VEST IN BLACK",
-    "bullet_points": ["주름진 원단 디테일이 포인트인 슬림핏 로고 후디 베스트"],
+    "bullet_points": [
+      "주름진 원단 디테일이 포인트인 슬림핏 로고 후디 베스트"
+    ],
     "price": "188,000",
-    "colors": ["BLACK", "IVORY", "RED"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7439&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/37ea90912e9f262be78c731cc5978605.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/c551f369de0dbae26ce7863f21102048.jpg",
@@ -5953,9 +6914,15 @@
   {
     "id": "7438",
     "name": "WRINKLE HOODY BUTTON KNIT VEST IN IVORY",
-    "bullet_points": ["주름진 원단 디테일이 포인트인 슬림핏 로고 후디 베스트"],
+    "bullet_points": [
+      "주름진 원단 디테일이 포인트인 슬림핏 로고 후디 베스트"
+    ],
     "price": "188,000",
-    "colors": ["IVORY", "BLACK", "RED"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7438&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/4ca21d7a739d9ddd34dc681f852002ae.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/de73b10d83f08281589a434decef501a.jpg",
@@ -5976,16 +6943,24 @@
       "https://matinkim.com/web/product/extra/small/202504/7dcad7b33598fe5b19d0726c7f26ae26.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "7437",
     "name": "WRINKLE HOODY BUTTON KNIT VEST IN RED",
-    "bullet_points": ["주름진 원단 디테일이 포인트인 슬림핏 로고 후디 베스트"],
+    "bullet_points": [
+      "주름진 원단 디테일이 포인트인 슬림핏 로고 후디 베스트"
+    ],
     "price": "188,000",
-    "colors": ["RED", "BLACK", "IVORY"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7437&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/816cb5e1184c6efe3ba07d920a3e279e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/3de896be9f74be66537840218f403966.jpg",
@@ -6007,16 +6982,23 @@
       "https://matinkim.com/web/product/extra/small/202504/80e603a9020f43b554458a4c1d89c843.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
   {
     "id": "7357",
     "name": "BACK LOGO CRINKLE BLOUSON FOR WOMEN IN BLACK",
-    "bullet_points": ["광택감이 은은하게 돋보이는 캐주얼한 무드의 블루종 집업"],
+    "bullet_points": [
+      "광택감이 은은하게 돋보이는 캐주얼한 무드의 블루종 집업"
+    ],
     "price": "238,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7357&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/a6aa8f5be53c190bfa909916fa6d5f5b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/170c8a0a0f9f962b4384db6489d356f2.jpg",
@@ -6042,9 +7024,14 @@
   {
     "id": "7356",
     "name": "BACK LOGO CRINKLE BLOUSON FOR WOMEN IN KHAKI",
-    "bullet_points": ["광택감이 은은하게 돋보이는 캐주얼한 무드의 블루종 집업"],
+    "bullet_points": [
+      "광택감이 은은하게 돋보이는 캐주얼한 무드의 블루종 집업"
+    ],
     "price": "238,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7356&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/b4e4847aecf182a695d9065b0eb602b2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/f38a02b44b269a84e5f81e0ab26b7c2f.jpg",
@@ -6070,9 +7057,13 @@
   {
     "id": "7354",
     "name": "BACK LOGO CRINKLE BLOUSON FOR MEN IN KHAKI",
-    "bullet_points": ["광택감이 은은하게 돋보이는 캐주얼한 무드의 블루종 집업"],
+    "bullet_points": [
+      "광택감이 은은하게 돋보이는 캐주얼한 무드의 블루종 집업"
+    ],
     "price": "238,000",
-    "colors": ["KHAKI"],
+    "colors": [
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7354&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/2b91e1049883bce055cca85a310f230b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/8dc289c426890e54b4ca89582fe4f746.jpg",
@@ -6090,7 +7081,9 @@
       "https://matinkim.com/web/product/extra/small/202503/a93dd863d44b023e52416d7ab470e1cb.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -6138,7 +7131,14 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 점퍼"
     ],
     "price": "162,000",
-    "colors": ["BLACK", "WHITE", "PINK", "DARK GREY", "MINT", "IVORY"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "DARK GREY",
+      "MINT",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5038&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202401/c4e19e28a1cdb5d0697fcd73ef3c745e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/ff279f6688902a5972cd9f244cce18ad.jpg",
@@ -6157,7 +7157,9 @@
       "https://matinkim.com/web/product/extra/small/202411/a4442e299de8f8aa19f1df2a0c14f75b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -6168,7 +7170,14 @@
       "MATIN KIM 로고 프린팅과 배색 스티치 디테일이 포인트가 되는 오일 코팅된 얇은 코튼 원단으로 제작된 데일리 점퍼"
     ],
     "price": "162,000",
-    "colors": ["IVORY", "BLACK", "WHITE", "PINK", "DARK GREY", "MINT"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "DARK GREY",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8994&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/42a9a9da4400c4a169ceaeebc93f6a18.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/81e030082a0833892facff09290cc963.jpg",
@@ -6196,7 +7205,10 @@
       "곡선으로 떨어지는 셔링 디테일과 결감이 포인트인 숏 블루종 점퍼"
     ],
     "price": "218,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5269&cate_no=26&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202402/d501d8476e8c8ee6ee44203513c66ed3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202502/f53435669ee870c358e30769e3cb5102.jpg",
@@ -6213,7 +7225,9 @@
       "https://matinkim.com/web/product/extra/small/202402/e6cc9b8a365683771ace147da7d29285.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Outerwears"
   },
@@ -6225,7 +7239,10 @@
       "앞판 크랙 디테일과 원형 MATINKIM 로고 그래픽이 포인트"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9090&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/8dc9992401697e17c0b0d45a50e4bb16.jpg",
@@ -6254,7 +7271,10 @@
       "앞판 크랙 디테일과 원형 MATINKIM 로고 그래픽이 포인트"
     ],
     "price": "68,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9089&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/070026686b1304f20beeaf2ca8bef560.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/33a4a832a83273ba2889216b9d9e1821.jpg",
@@ -6271,7 +7291,9 @@
       "https://matinkim.com/web/product/extra/small/202604/9df188f806a1bf9f4065c4a0cf4a5a8c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -6283,7 +7305,10 @@
       "스트랩 디테일과 MATIN KIM 로고 자수 포인트"
     ],
     "price": "178,000",
-    "colors": ["CREAM", "DARK NAVY"],
+    "colors": [
+      "CREAM",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9053&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/7dffbf97838eab404f8cb2d99df94aca.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/a9a7a949274d6248c7c3c55141de75c4.jpg",
@@ -6315,7 +7340,10 @@
       "스트랩 디테일과 MATIN KIM 로고 자수 포인트"
     ],
     "price": "178,000",
-    "colors": ["DARK NAVY", "CREAM"],
+    "colors": [
+      "DARK NAVY",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9052&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/567ca8652498edd720935b92969c5f73.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/fc81b424b45089914f2f8af2a59209e1.jpg",
@@ -6345,7 +7373,10 @@
       "소매 그라데이션 아트워크가 포인트"
     ],
     "price": "168,000",
-    "colors": ["IVORY", "LIGHT BLUE"],
+    "colors": [
+      "IVORY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9051&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/5a47f6a34d73ed0b2e87142d66b6b6c9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/836deabbf47a17d16a88c3ee6e0e4f07.jpg",
@@ -6363,7 +7394,9 @@
       "https://matinkim.com/web/product/extra/small/202603/f29d6cefa8ee08ba944b880b52914699.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -6375,7 +7408,10 @@
       "소매 그라데이션 아트워크가 포인트"
     ],
     "price": "168,000",
-    "colors": ["LIGHT BLUE", "IVORY"],
+    "colors": [
+      "LIGHT BLUE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9050&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/f6da852b2bd2223179cd8fae77ef4aa4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/0c059a50aadc7a9468af7ed0921719f4.jpg",
@@ -6393,7 +7429,9 @@
       "https://matinkim.com/web/product/extra/small/202603/4e04967d1b25abf0d7cd1ca4d725e387.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -6405,7 +7443,10 @@
       "프론트 레이스와 스트링 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["CREAM", "NAVY"],
+    "colors": [
+      "CREAM",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9049&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/20e54e1cced01aec52754ee57c519b04.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/5f8f494dc44e9660a66ffc6b3b17388d.jpg",
@@ -6422,7 +7463,9 @@
       "https://matinkim.com/web/product/extra/small/202603/f42affc45359eb20ebee63bc56d861a9.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -6434,7 +7477,10 @@
       "프론트 레이스와 스트링 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["NAVY", "CREAM"],
+    "colors": [
+      "NAVY",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9048&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/370b8b1bb1f7eed989126b3ad3a21ac5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/d20befbb9041c321e5cedc072c721d8f.jpg",
@@ -6465,7 +7511,10 @@
       "비대칭적인 버튼 라인과 롱 스트랩 디테일이 포인트"
     ],
     "price": "118,000",
-    "colors": ["NAVY", "OLIVE"],
+    "colors": [
+      "NAVY",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9047&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/4c7e95700f324adcde20d93a7e221aed.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/44fd84876dbda01f4b5a116cb0d497f4.jpg",
@@ -6497,7 +7546,10 @@
       "비대칭적인 버튼 라인과 롱 스트랩 디테일이 포인트"
     ],
     "price": "118,000",
-    "colors": ["OLIVE", "NAVY"],
+    "colors": [
+      "OLIVE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9046&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/7dc2c20f04701847a41ed2ea094887e4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/780cd67197b06baaa9dde3e2fb6c2f0a.jpg",
@@ -6527,7 +7579,10 @@
       "넥 라인 배색과 트위스트 디테일이 포인트"
     ],
     "price": "98,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9045&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/0f69dcba50dd8d8e29bb7f80e366d88a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/f74bba08b8f3d34ab93a388ef2115641.jpg",
@@ -6556,7 +7611,10 @@
       "넥 라인 배색과 트위스트 디테일이 포인트"
     ],
     "price": "98,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9044&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/577817ee3fc489349811b62ada82b3cb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/685882d9095297686bca40bee7129878.jpg",
@@ -6585,7 +7643,11 @@
       "MATINKIM 크랙 로고 프린트와 넥 슬리브 배색이 포인트"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "CREAM", "NAVY"],
+    "colors": [
+      "WHITE",
+      "CREAM",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9043&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/2c5ae97cac77127ba048c6d407bca23d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/e8bed5e224a1669f6dedfcae8c57a2dc.jpg",
@@ -6614,7 +7676,11 @@
       "MATINKIM 크랙 로고 프린트와 넥 슬리브 배색이 포인트"
     ],
     "price": "58,000",
-    "colors": ["CREAM", "WHITE", "NAVY"],
+    "colors": [
+      "CREAM",
+      "WHITE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9042&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/8ce9f9746b1a6e875380ef56ce3f30b6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/65d85c9f189bb1f381319b3d4aceb171.jpg",
@@ -6644,7 +7710,11 @@
       "MATINKIM 크랙 로고 프린트와 넥 슬리브 배색이 포인트"
     ],
     "price": "58,000",
-    "colors": ["NAVY", "WHITE", "CREAM"],
+    "colors": [
+      "NAVY",
+      "WHITE",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9041&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/a23d48873b0b305015400d092aff5f66.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/da1b2b945a192302eb9709c585aaf57d.jpg",
@@ -6661,7 +7731,9 @@
       "https://matinkim.com/web/product/extra/small/202603/e88b4cec6f430552aaef4052a0a89c6f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -6673,7 +7745,10 @@
       "MATINKIM 크랙 로고 프린트와 넥 슬리브 배색이 포인트"
     ],
     "price": "68,000",
-    "colors": ["CREAM", "CHARCOAL"],
+    "colors": [
+      "CREAM",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9040&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/c3670a0d0091eebc002dfee305f01049.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/06da28860d69832fed0647334e0cd0ee.jpg",
@@ -6703,7 +7778,10 @@
       "MATINKIM 크랙 로고 프린트와 넥 슬리브 배색이 포인트"
     ],
     "price": "68,000",
-    "colors": ["CHARCOAL", "CREAM"],
+    "colors": [
+      "CHARCOAL",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9039&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/9a8b13e165cf97b14ef51093ce2001f2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/4a39d58241ad2dfb3ac0f6e2a8b6fa2b.jpg",
@@ -6732,7 +7810,10 @@
       "소매 밑단 레이어드 배색이 포인트"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "LIGHT BLUE"],
+    "colors": [
+      "WHITE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9038&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/4381e2b653236704ff05883adc3bda49.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/45124aad0a10c72f3287fcc671e065f5.jpg",
@@ -6761,7 +7842,10 @@
       "소매 밑단 레이어드 배색이 포인트"
     ],
     "price": "88,000",
-    "colors": ["LIGHT BLUE", "WHITE"],
+    "colors": [
+      "LIGHT BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9037&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/6567cba7e710e2e75a089007fcdfd14a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/4baf70ab7beace153af4b80bfe61da9e.jpg",
@@ -6778,7 +7862,9 @@
       "https://matinkim.com/web/product/extra/small/202603/256841e838dc81c23eacf768da25d5a1.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -6790,7 +7876,10 @@
       "프론트·백 로고 그래픽이 포인트"
     ],
     "price": "68,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9036&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/48991fd77a9e3bddbecb103fb9e5b9c4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/1ea2a87db81f51af3cee9cbbb9f3be12.jpg",
@@ -6825,7 +7914,10 @@
       "프론트·백 로고 그래픽이 포인트"
     ],
     "price": "68,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9035&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/138f998289a6f8a6ef652823249e2445.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/151f7c37d1d129535704b42cb8d57644.jpg",
@@ -6859,7 +7951,9 @@
       "소매와 사이드 라인에 더해진 레드 스티치가 포인트"
     ],
     "price": "78,000",
-    "colors": ["LIGHT BEIGE"],
+    "colors": [
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9034&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/61b2d05e56a5c7a435b49d89e32d4bde.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/e3c33be0c47eb749367933233a9b85b3.jpg",
@@ -6888,7 +7982,11 @@
       "아치 형태의 프론트 그래픽이 포인트"
     ],
     "price": "58,000",
-    "colors": ["CHARCOAL", "LIGHT GREY", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9033&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/c11ee6e5239a8b28c9626551ed838982.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/ae89ead37c8ffa7c4febe5c1a2ccb022.jpg",
@@ -6920,7 +8018,11 @@
       "아치 형태의 프론트 그래픽이 포인트"
     ],
     "price": "58,000",
-    "colors": ["LIGHT GREY", "CHARCOAL", "BEIGE"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9032&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/cc6e4401f2494cf3eb64a2d90d14494c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/0a9cd4d1498cb2cf8a6f4f79cb2cff63.jpg",
@@ -6951,7 +8053,11 @@
       "아치 형태의 프론트 그래픽이 포인트"
     ],
     "price": "58,000",
-    "colors": ["BEIGE", "CHARCOAL", "LIGHT GREY"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9031&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/0568875c081320038fd55fbaeb7c4bf5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/0a1f5a8016573710612a078045f59a2c.jpg",
@@ -6980,7 +8086,10 @@
       "커브드 절개 포켓과 스몰 로고 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["CHARCOAL", "SKY"],
+    "colors": [
+      "CHARCOAL",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9030&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/e866663a715bed73f1ca2c8158c01b27.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/741016eb220322abb4163aee66fe2ec2.jpg",
@@ -7000,7 +8109,9 @@
       "https://matinkim.com/web/product/extra/small/202603/d0f7925e56cb0d45c2668d7be0eb45a6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7012,7 +8123,10 @@
       "커브드 절개 포켓과 스몰 로고 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["SKY", "CHARCOAL"],
+    "colors": [
+      "SKY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9029&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/35e22b5a20747fee4d87af3d44aebf01.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/7195d92c4a0d16d3ebff86332d23a1c6.jpg",
@@ -7039,9 +8153,14 @@
   {
     "id": "9071",
     "name": "PIGMENT LOGO CROP TOP IN DARK GREY",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 크롭 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 크롭 탑"
+    ],
     "price": "48,000",
-    "colors": ["DARK GREY", "POWDER BLUE"],
+    "colors": [
+      "DARK GREY",
+      "POWDER BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9071&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/aeb104ea2b3c1a6431a1cd86c8c52aa1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/d620a5421ce8ab0b0e070e94c5efeeb2.jpg",
@@ -7060,9 +8179,14 @@
   {
     "id": "9070",
     "name": "PIGMENT LOGO CROP TOP IN POWDER BLUE",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 크롭 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 크롭 탑"
+    ],
     "price": "48,000",
-    "colors": ["POWDER BLUE", "DARK GREY"],
+    "colors": [
+      "POWDER BLUE",
+      "DARK GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9070&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/a486a3b65cb0ac3cb7bf66429fc95d8f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/478488dec31b27c9231c57a320a5f1b1.jpg",
@@ -7081,9 +8205,14 @@
   {
     "id": "9067",
     "name": "PIGMENT LOGO TOP IN DARK GREY",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 탑"
+    ],
     "price": "58,000",
-    "colors": ["GREY", "POWDER BLUE"],
+    "colors": [
+      "GREY",
+      "POWDER BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9067&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/793f6f703946501d2015521dc439a5b7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/8285128ead7fb74f7ec3f6697cc8bb84.jpg",
@@ -7095,16 +8224,23 @@
       "https://matinkim.com/web/product/extra/small/202603/31c2092a3e60582cb3d4142810b78d24.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "9066",
     "name": "PIGMENT LOGO TOP IN POWDER BLUE",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM의 피그먼트 로고 탑"
+    ],
     "price": "58,000",
-    "colors": ["BLUE", "DARK GREY"],
+    "colors": [
+      "BLUE",
+      "DARK GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9066&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/92fb63feb8fb9c0d28e6aa719a19ad9d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/df97841f389776b408d4d72f1d227606.jpg",
@@ -7128,7 +8264,10 @@
       "네크라인 연출을 자유롭게 조절할 수 있으며, 가벼운 착용감으로 사계절 활용 가능"
     ],
     "price": "168,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8962&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/132a5b05c89c5a661976e64fdb31a105.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3b5fe7eb0bcd8ae3ac53578fd82e692d.jpg",
@@ -7158,7 +8297,10 @@
       "네크라인 연출을 자유롭게 조절할 수 있으며, 가벼운 착용감으로 사계절 활용 가능"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8963&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/b9bbfdacce620d259adc74a0d034b239.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/80caa939810a0affe89c14c22c5a882c.jpg",
@@ -7189,7 +8331,10 @@
       "밑단 볼륨과 어깨 스냅 디테일로 입체적인 실루엣과 다양한 연출이 가능"
     ],
     "price": "158,000",
-    "colors": ["LIGHT GREY", "LIGHT YELLOW"],
+    "colors": [
+      "LIGHT GREY",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8961&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/37719999c1a5c13a3fc9e8cb9ef5e05f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/8c969ee3b9990f31c256a6cd34c74792.jpg",
@@ -7212,7 +8357,10 @@
       "https://matinkim.com/web/product/extra/small/202602/947af90bdb8d623d1b82944c88e92c5c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7225,7 +8373,10 @@
       "밑단 볼륨과 어깨 스냅 디테일로 입체적인 실루엣과 다양한 연출이 가능"
     ],
     "price": "158,000",
-    "colors": ["LIGHT YELLOW", "LIGHT GREY"],
+    "colors": [
+      "LIGHT YELLOW",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8960&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/cd99413e9a34397a91037a651fd2fbc6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/d24698422cff6a1219a28882272726ba.jpg",
@@ -7261,7 +8412,10 @@
       "여유로운 실루엣으로 자연스러운 스타일링이 가능"
     ],
     "price": "158,000",
-    "colors": ["IVORY", "LIGHT BLUE"],
+    "colors": [
+      "IVORY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8959&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/99ff8da661b39ff21e012afd9022d960.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/40ee7631fb2dcf97b81e8bddb9ce06e2.jpg",
@@ -7291,7 +8445,10 @@
       "여유로운 실루엣으로 자연스러운 스타일링이 가능"
     ],
     "price": "158,000",
-    "colors": ["LIGHT BLUE", "IVORY"],
+    "colors": [
+      "LIGHT BLUE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8958&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/3359fda06b0dd3bae05f289b87dc6f43.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/ade12fe38f08e488cdd1c96d7eac3f30.jpg",
@@ -7319,7 +8476,10 @@
       "센터 프론트에 로고 라벨과 프린팅을 믹스한 크롭 반팔 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8957&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/1f2403a8473f52d5f99b14a4fa708539.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/b21e082b0d46058718940f085bc591d8.jpg",
@@ -7347,7 +8507,10 @@
       "센터 프론트에 로고 라벨과 프린팅을 믹스한 크롭 반팔 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8956&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/e361a2d3834ce53321e570ac307c552e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/143f044d7768e993629a2a1fda0c38c2.jpg",
@@ -7364,7 +8527,9 @@
       "https://matinkim.com/web/product/extra/small/202602/cbe39e20301378b631447955e9cedad5.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7375,7 +8540,10 @@
       "센터 프론트에 로고 라벨과 프린팅을 믹스한 세미 오버핏 반팔 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8955&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/9bbb9cf8dde5934b375e1d38c9416afa.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/dcea76833848326b45d22c1a69d115d1.jpg",
@@ -7403,7 +8571,10 @@
       "센터 프론트에 로고 라벨과 프린팅을 믹스한 세미 오버핏 반팔 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8954&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/605a9d61b6ecd2bea5891d59fe9994f7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/69c3ac8ec407c186d9bab78ff45c0ca6.jpg",
@@ -7431,7 +8602,10 @@
       "MATIN KIM 로고 프린트로 포인트를 준 오버핏 실루엣의 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8977&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/cce9c8a833c082f6d7277d9ee0c2e79f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/12f996df0a2172fa75ca5e9a5b6df8c6.jpg",
@@ -7460,7 +8634,10 @@
       "피그먼트 워싱을 더해 빈티지한 무드 강조"
     ],
     "price": "78,000",
-    "colors": ["IVORY", "CHARCOAL"],
+    "colors": [
+      "IVORY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8972&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/14c73d1c4eba978cac36406d99855d94.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/8757f45833cc842f9b7e432f5ff0830e.jpg",
@@ -7484,7 +8661,10 @@
       "피그먼트 워싱을 더해 빈티지한 무드 강조"
     ],
     "price": "78,000",
-    "colors": ["CHARCOAL", "IVORY"],
+    "colors": [
+      "CHARCOAL",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8971&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/acba209e443cec2c0e4235d669feb8cb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/fe30b93e9e767113b14cb87544dd15e3.jpg",
@@ -7508,7 +8688,10 @@
       "피그먼트 워싱을 더해 빈티지한 무드 강조"
     ],
     "price": "98,000",
-    "colors": ["LIGHT GREY", "BEIGE"],
+    "colors": [
+      "LIGHT GREY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8974&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/f86c2f7c75c777b312013e44025eab13.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/0132169e1ca913b33e08eec0f1cddfc5.jpg",
@@ -7520,7 +8703,9 @@
       "https://matinkim.com/web/product/extra/small/202602/2f757f53e381089341fba0752de795ec.jpg"
     ],
     "soldout": true,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7532,7 +8717,10 @@
       "피그먼트 워싱을 더해 빈티지한 무드 강조"
     ],
     "price": "98,000",
-    "colors": ["BEIGE", "LIGHT GREY"],
+    "colors": [
+      "BEIGE",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8973&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/58b5ed9cbd3b5bc29b2760c6afade19b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/bd802c4ccbeab5fcf973ab25b74b32b5.jpg",
@@ -7557,7 +8745,10 @@
       "올풀림 디테일을 더해 빈티지한 러프 무드 강조"
     ],
     "price": "178,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8898&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/53a537b9e02d07a72b194dcf3729e27e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/69bd0d13ccca572d5e40b278d08b68ad.jpg",
@@ -7575,7 +8766,9 @@
       "https://matinkim.com/web/product/extra/small/202602/eb20804c8bd4765a55c0f85d6ea6564e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7588,7 +8781,10 @@
       "올풀림 디테일을 더해 빈티지한 러프 무드 강조"
     ],
     "price": "178,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8897&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/b66c9da2a3a4ba6a601e29ab6c53d376.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3b9f577178413a852b7dd0d3ce034978.jpg",
@@ -7618,7 +8814,10 @@
       "배색 스티치와 그래픽 원단 패치 포인트"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8900&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/3188f49f9c6c923827fc37c8340d10ff.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/bb8e8f7aada4779710d66e8a7b29cbe9.jpg",
@@ -7647,7 +8846,10 @@
       "배색 스티치와 그래픽 원단 패치 포인트"
     ],
     "price": "178,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8899&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/c4c7c29fb72b6fcd5332a915b5a9c9b7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/c764ee425f3844f572bf907ab5bc985d.jpg",
@@ -7676,7 +8878,10 @@
       "올풀림 및 밑단 컷팅 디테일 포인트"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8902&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/ac92d2f0d7006815f50e8117d77a3212.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/831e1b335f631afc9e6e48142b9d647f.jpg",
@@ -7710,7 +8915,10 @@
       "올풀림 및 밑단 컷팅 디테일 포인트"
     ],
     "price": "168,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8901&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/97339e5235af2ce2b6fd3b5fee238eab.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/f62047f8b6ca304ec2b08051c6fb6efe.jpg",
@@ -7732,7 +8940,9 @@
       "https://matinkim.com/web/product/extra/small/202602/fb322957cb049db99d4daf5920f5b384.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7744,7 +8954,10 @@
       "가벼운 모헤어 텍스처와 드라이한 터치의 원단 대비가 어우러져 빈티지한 무드 연출"
     ],
     "price": "148,000",
-    "colors": ["LIGHT YELLOW", "NAVY"],
+    "colors": [
+      "LIGHT YELLOW",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8904&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/01727440376f77341bf1e1ab6bf977a0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/d41de9f3cc4d6b4f1e2539175b3fc217.jpg",
@@ -7778,7 +8991,10 @@
       "가벼운 모헤어 텍스처와 드라이한 터치의 원단 대비가 어우러져 빈티지한 무드 연출"
     ],
     "price": "148,000",
-    "colors": ["NAVY", "LIGHT YELLOW"],
+    "colors": [
+      "NAVY",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8903&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4abc026d5075c996beba260305269138.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/d07e06518076cdc15192e9592a3df871.jpg",
@@ -7800,7 +9016,9 @@
       "https://matinkim.com/web/product/extra/small/202602/76f527038f60c1a0d0c30fb13faf170c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7812,7 +9030,10 @@
       "부드럽고 신축성이 있는 코튼 원단 타이와 네크 스트링 디테일로 다양한 연출 가능"
     ],
     "price": "128,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8906&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/572bc86c6eaaf91f46c7c6e030fe09ae.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/2d0724d09c4bdd41de4449bf81c2f557.jpg",
@@ -7841,7 +9062,10 @@
       "부드럽고 신축성이 있는 코튼 원단 타이와 네크 스트링 디테일로 다양한 연출 가능"
     ],
     "price": "128,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8905&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/c53b03bb8511d6149a265655f407b936.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/a026316e696327e24ab479b23bbfae53.jpg",
@@ -7870,7 +9094,10 @@
       "스트라이프 소매 레이어드 디자인과 프리핸드 로고 프린트가 특징"
     ],
     "price": "98,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8908&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4dc5db2d61173693dcfbc8d555da836e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/2631809153f2efa33880881613f343b8.jpg",
@@ -7899,7 +9126,10 @@
       "스트라이프 소매 레이어드 디자인과 프리핸드 로고 프린트가 특징"
     ],
     "price": "98,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8907&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/6598435bbb648ff2274439a31941f4db.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/96557249170cc082161f69498b4a32ac.jpg",
@@ -7917,7 +9147,9 @@
       "https://matinkim.com/web/product/extra/small/202602/6436d3849d78898e868b7ca59b0b769f.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7929,7 +9161,10 @@
       "라운드 형태의 밑단 디자인이 특징"
     ],
     "price": "58,000",
-    "colors": ["CREAM", "NAVY"],
+    "colors": [
+      "CREAM",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8910&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/5b2d6dc80a7f3cae301b340d1b8457d4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/2eab4be7b193a6745f5872c7813e3e5d.jpg",
@@ -7958,7 +9193,10 @@
       "라운드 형태의 밑단 디자인이 특징"
     ],
     "price": "58,000",
-    "colors": ["NAVY", "CREAM"],
+    "colors": [
+      "NAVY",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8909&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/9aadde03afa6bb68da03d824903c979d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/605c08fc360bf7bb6d784654db3d38b0.jpg",
@@ -7975,7 +9213,9 @@
       "https://matinkim.com/web/product/extra/small/202602/65d014fdad0237918642378aecc8e55b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -7987,7 +9227,10 @@
       "앞판 레터링 로고 그래픽이 포인트"
     ],
     "price": "68,000",
-    "colors": ["CHARCOAL", "NAVY"],
+    "colors": [
+      "CHARCOAL",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8912&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/1408d10993331b2b93ac49f67ccde07a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/6a147a6e6ae01b60d88fb159a7b3ed32.jpg",
@@ -8009,7 +9252,9 @@
       "https://matinkim.com/web/product/extra/small/202602/30a154870620c2eec6138f73dab4245d.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8021,7 +9266,10 @@
       "앞판 레터링 로고 그래픽이 포인트"
     ],
     "price": "68,000",
-    "colors": ["NAVY", "CHARCOAL"],
+    "colors": [
+      "NAVY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8911&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/8d4d4d4dccd4f3f725d50646061d53e3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/eb3ee2c0d11fd1500681a7f51bed0f40.jpg",
@@ -8055,7 +9303,10 @@
       "여유있는 핏으로 남녀 모두 착용이 가능하며, 프리핸드 그래픽 프린트가 특징"
     ],
     "price": "78,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8914&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/62bb37f8b268b77bc713afa4688664b3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/f1fe52e9d1a257b4d38bde38c7896dd9.jpg",
@@ -8089,7 +9340,10 @@
       "여유있는 핏으로 남녀 모두 착용이 가능하며, 프리핸드 그래픽 프린트가 특징"
     ],
     "price": "78,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8913&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/ed163a49ea76ebc5d70b1e7e50cacdf1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/18d0d44f5703cad0ecc79f13796ba85b.jpg",
@@ -8111,7 +9365,9 @@
       "https://matinkim.com/web/product/extra/small/202602/92eb8d2861d5ae4f44714e966b12b037.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8123,7 +9379,9 @@
       "스트랩을 이용해 다양한 실루엣으로 착용 가능"
     ],
     "price": "188,000",
-    "colors": ["WHITE"],
+    "colors": [
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8915&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/8b18402f49a077b9c9d7eb6f73be030e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/29dca57745bdbadf6fec87af583df7a6.jpg",
@@ -8151,7 +9409,10 @@
       "어깨 및 암홀 라인의 배색 스티치와 뒤판의 로고가 포인트이며, 빈티지한 질감이 돋보이는 니트 가디건"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "SMOKE BLUE"],
+    "colors": [
+      "BLACK",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8735&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/dc61f9f466be2e26ff5dbecd1f632026.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/9bc17b30d54076c5a1feade56a43489e.jpg",
@@ -8174,7 +9435,9 @@
       "https://matinkim.com/web/product/extra/small/202601/38ef0d90cbcbd07737c19c3556f8d669.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8185,7 +9448,10 @@
       "어깨 및 암홀 라인의 배색 스티치와 뒤판의 로고가 포인트이며, 빈티지한 질감이 돋보이는 니트 가디건"
     ],
     "price": "198,000",
-    "colors": ["SMOKE BLUE", "BLACK"],
+    "colors": [
+      "SMOKE BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8736&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/c9a1de32630ec6d810b9024b15a868ef.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/bead50856c63bbe2512d8493357f8d40.jpg",
@@ -8215,9 +9481,14 @@
   {
     "id": "8737",
     "name": "MATIN KIM SPELL POINT KNIT ZIP UP VEST IN BLACK",
-    "bullet_points": ["앞판 로고 포인트 위에 캥거루 포켓을 더한 니트 베스트"],
+    "bullet_points": [
+      "앞판 로고 포인트 위에 캥거루 포켓을 더한 니트 베스트"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8737&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/eb4dca540471cb36643d50d567c947af.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/2c41e14659e1b35c2b1ecd2492a8dd32.jpg",
@@ -8246,9 +9517,14 @@
   {
     "id": "8738",
     "name": "MATIN KIM SPELL POINT KNIT ZIP UP VEST IN IVORY",
-    "bullet_points": ["앞판 로고 포인트 위에 캥거루 포켓을 더한 니트 베스트"],
+    "bullet_points": [
+      "앞판 로고 포인트 위에 캥거루 포켓을 더한 니트 베스트"
+    ],
     "price": "148,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8738&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/15c1f236dbbbc84d90da1a3478baad53.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/00950457662164e3da0069885c35b819.jpg",
@@ -8277,9 +9553,14 @@
   {
     "id": "8739",
     "name": "MATIN SPELL POINT KNIT ZIP UP IN BLACK",
-    "bullet_points": ["앞판 로고 포인트에 포켓을 더한 니트 집업"],
+    "bullet_points": [
+      "앞판 로고 포인트에 포켓을 더한 니트 집업"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8739&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/9d8b6d72ec7ea34937bc2a24036c8568.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/e5f4834b3cbca1b3506e707ee77d457c.jpg",
@@ -8291,16 +9572,23 @@
       "https://matinkim.com/web/product/extra/small/202601/80a3218d956a8d85666368e2646fe061.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8740",
     "name": "MATIN SPELL POINT KNIT ZIP UP IN IVORY",
-    "bullet_points": ["앞판 로고 포인트에 포켓을 더한 니트 집업"],
+    "bullet_points": [
+      "앞판 로고 포인트에 포켓을 더한 니트 집업"
+    ],
     "price": "198,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8740&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/8ee7f1bc72fa90e06093baeb6d82757d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/9e59c15470770f76c9d1955d8a19b142.jpg",
@@ -8323,7 +9611,10 @@
       "앞판의 로고와 언밸런스 기장이 포인트인 미니멀한 무드의 니트 풀오버"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8741&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4ddae294b2e741031c2e9ab16f98a627.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/65e81e154d6929237504564b050a4b58.jpg",
@@ -8340,7 +9631,9 @@
       "https://matinkim.com/web/product/extra/small/202601/0936dd15930cafd9474f2b078df3f046.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8351,7 +9644,10 @@
       "앞판의 로고와 언밸런스 기장이 포인트인 미니멀한 무드의 니트 풀오버"
     ],
     "price": "168,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8742&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/a19ff8a6c3f03c900fd00e1a1eb17c22.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/2d8a8ff0e9898a5ad5e2010478423509.jpg",
@@ -8373,7 +9669,9 @@
       "https://matinkim.com/web/product/extra/small/202601/4739d059e83ed9d9beac541714145f3c.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8384,7 +9682,10 @@
       "옆선의 트임으로 다양한 연출 가능하며, 비침과 데미지가 포인트인 루즈핏 니트 풀오버"
     ],
     "price": "158,000",
-    "colors": ["IVORY", "KHAKI"],
+    "colors": [
+      "IVORY",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8743&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/8bedf96b5f4f89d022ebe89c993aeaca.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/664a1e6af8ca5e4771a0aec377f7d4fa.jpg",
@@ -8412,7 +9713,10 @@
       "옆선의 트임으로 다양한 연출 가능하며, 비침과 데미지가 포인트인 루즈핏 니트 풀오버"
     ],
     "price": "158,000",
-    "colors": ["KHAKI", "IVORY"],
+    "colors": [
+      "KHAKI",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8744&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/d84a097d9945a31d665e063648da8718.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/96df61d460b51eda75c8570ae87a27bd.jpg",
@@ -8440,7 +9744,10 @@
       "래글런 소매 라인의 배색 스티치와 앞판의 금속 장식이 포인트인 세미 크롭 기장의 슬림핏 니트 풀오버"
     ],
     "price": "158,000",
-    "colors": ["GREY", "DARK BROWN"],
+    "colors": [
+      "GREY",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8745&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/e83208099332496ed39333f2a8b28a14.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/d9d2c29cb082fc9f380756394cc1b412.jpg",
@@ -8457,7 +9764,9 @@
       "https://matinkim.com/web/product/extra/small/202601/f1b237cf4218f3b06a8474d939cc9566.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8468,7 +9777,10 @@
       "래글런 소매 라인의 배색 스티치와 앞판의 금속 장식이 포인트인 세미 크롭 기장의 슬림핏 니트 풀오버"
     ],
     "price": "158,000",
-    "colors": ["DARK BROWN", "GREY"],
+    "colors": [
+      "DARK BROWN",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8746&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/0623e9361f527cddc014ef17d0e9e2fe.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/b5d28207f26b9b0fbed81439ce758eef.jpg",
@@ -8496,7 +9808,10 @@
       "스프레이 프린팅과 총알 구제 장식 디테일의 카모플라주 패턴 오버사이즈 후드 티셔츠"
     ],
     "price": "158,000",
-    "colors": ["CAMEL", "KHAKI"],
+    "colors": [
+      "CAMEL",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8747&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/936b8cea2beddb7e4a022e380d8cdb4a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f0724ea0f432b9b78ea17ab958cf6b5f.jpg",
@@ -8519,7 +9834,9 @@
       "https://matinkim.com/web/product/extra/small/202601/a885590a57b6a9f97606e7444fada65e.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -8530,7 +9847,10 @@
       "스프레이 프린팅과 총알 구제 장식 디테일의 카모플라주 패턴 오버사이즈 후드 티셔츠"
     ],
     "price": "158,000",
-    "colors": ["KHAKI", "CAMEL"],
+    "colors": [
+      "KHAKI",
+      "CAMEL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8748&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/c0516777d0dc2036aec75db147d57462.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ca2806d2072285058693983b7024906d.jpg",
@@ -8564,7 +9884,10 @@
       "밑단의 데끼 디테일과 빈티지한 로고 그래픽이 포인트인 드롭 숄더 디자인의 후드 티셔츠"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "LIGHT BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8749&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/bef50353cf8a4aed610d80163e008a60.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ede042595489e07abe0b2e6eac099a2a.jpg",
@@ -8597,7 +9920,10 @@
       "밑단의 데끼 디테일과 빈티지한 로고 그래픽이 포인트인 드롭 숄더 디자인의 후드 티셔츠"
     ],
     "price": "158,000",
-    "colors": ["LIGHT BEIGE", "CHARCOAL"],
+    "colors": [
+      "LIGHT BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8750&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/94f88f11dbf2b641df84bacbd38fb400.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/bb291cd57b04a288330f9cb3e61e210f.jpg",
@@ -8630,7 +9956,10 @@
       "뒷면 힙 라인에 스프레이 느낌의 로고 프린트로 스트릿한 무드를 더한 오버핏 반소매 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "NAVY"],
+    "colors": [
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8751&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/1b3af5bbdeb77378864bc8cf452a0fce.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/fde46119c1b4bcf9b73d06a368929eb2.jpg",
@@ -8658,7 +9987,10 @@
       "뒷면 힙 라인에 스프레이 느낌의 로고 프린트로 스트릿한 무드를 더한 오버핏 반소매 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["NAVY", "BLACK"],
+    "colors": [
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8752&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/93f4c5c62cf02d8d95ee74bc0c3d0388.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/df9b7c17ada1888450b750e73de8c629.jpg",
@@ -8691,7 +10023,11 @@
       "한쪽 어꺠를 드러내는 언발란스 연출이 가능하며 소매와 등판의 낙서 프린팅이 포인트인 보트넥 디자인의 오버핏 긴팔 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["BLACK", "WHITE", "GREY"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8753&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/8f660451cfb2a8e3075635a2c0ee2db6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/8566b654088c6783bd7d78bce017f85a.jpg",
@@ -8719,7 +10055,11 @@
       "한쪽 어꺠를 드러내는 언발란스 연출이 가능하며 소매와 등판의 낙서 프린팅이 포인트인 보트넥 디자인의 오버핏 긴팔 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["WHITE", "BLACK", "GREY"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8754&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/d9be0407eaca2565d96aac6c2dc4d7cf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/e5fae04d0610724d1c86440e94dd99a7.jpg",
@@ -8747,7 +10087,11 @@
       "한쪽 어꺠를 드러내는 언발란스 연출이 가능하며 소매와 등판의 낙서 프린팅이 포인트인 보트넥 디자인의 오버핏 긴팔 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["GREY", "BLACK", "WHITE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8755&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/b76d4c6be0e767c9b82fe48fca1284ed.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/c58157b4f3e8af34f33c2d67674918f5.jpg",
@@ -8775,7 +10119,10 @@
       "레이어드된 네크라인 구조와 앞판에 크게 들어간 아트웍이 잘린 듯이 연출한 피그 워싱 소재의 레이어드 티셔츠"
     ],
     "price": "128,000",
-    "colors": ["KHAKI", "BEIGE"],
+    "colors": [
+      "KHAKI",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8756&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/93c041eee65053190ac1d632924d5175.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/c0dd547ccf4a87bc99eadbee4f400791.jpg",
@@ -8803,7 +10150,10 @@
       "레이어드된 네크라인 구조와 앞판에 크게 들어간 아트웍이 잘린 듯이 연출한 피그 워싱 소재의 레이어드 티셔츠"
     ],
     "price": "128,000",
-    "colors": ["BEIGE", "KHAKI"],
+    "colors": [
+      "BEIGE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8757&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/76eb1130a95698cf8b0dc6106dccbda1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f5b67df9c48e5d2838a57479a924c334.jpg",
@@ -8831,7 +10181,11 @@
       "중심 절개 라인과 언발란스한 로고 프린트가 포인트인 롱슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "WHITE", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8758&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/87efa3fe7cf08ef9c021c0caf9e31323.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/62f004ff6219b341f8fcfaa1f05a9eac.jpg",
@@ -8864,7 +10218,11 @@
       "중심 절개 라인과 언발란스한 로고 프린트가 포인트인 롱슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "BLACK", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8759&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/b859b6b8c2c8aedc6180c7b4405b0045.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/82beec1fbe33f5c9791e715d3f352f08.jpg",
@@ -8898,7 +10256,11 @@
       "중심 절개 라인과 언발란스한 로고 프린트가 포인트인 롱슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "BLACK", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8760&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/f1ec4bfcf5b3a899898fef862b35b5dc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f6f71297c2cc68a5480a9e215168b7dc.jpg",
@@ -8931,7 +10293,10 @@
       "빈티지한 무드의 워싱과 데미지 디테일이 포인트인 반소매 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["CHARCOAL", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8761&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/a3d42e086adac9aa3ad28fd7d13fd4b3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f789e5d9b67be5fdfaa33c5aac5f82f6.jpg",
@@ -8959,7 +10324,10 @@
       "빈티지한 무드의 워싱과 데미지 디테일이 포인트인 반소매 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["SMOKE BLUE", "CHARCOAL"],
+    "colors": [
+      "SMOKE BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8762&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/075f89317d8759cf7df89bb8e59b18bd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/b586f5916719068be6ccad1a1eab9b2c.jpg",
@@ -8987,7 +10355,11 @@
       "빈티지한 워싱 디테일과 앞판의 로고 프린트가 포인트인 롱슬리브 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["IVORY", "CHARCOAL", "SMOKE BLUE"],
+    "colors": [
+      "IVORY",
+      "CHARCOAL",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8763&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/8b504fdf8f3b089f3b950d9b06294836.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/9a5e662e57556fa9f26d816b06181d88.jpg",
@@ -9009,7 +10381,9 @@
       "https://matinkim.com/web/product/extra/small/202601/c787ebb548eea021ea87bfbc30ec0a1e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -9020,7 +10394,11 @@
       "빈티지한 워싱 디테일과 앞판의 로고 프린트가 포인트인 롱슬리브 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["CHARCOAL", "IVORY", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "IVORY",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8764&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/3c0152414f84224819fd8c42bbd853c2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/a8b2b5f3c80cec7188060d2060a53369.jpg",
@@ -9053,7 +10431,11 @@
       "빈티지한 워싱 디테일과 앞판의 로고 프린트가 포인트인 롱슬리브 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["SMOKE BLUE", "IVORY", "CHARCOAL"],
+    "colors": [
+      "SMOKE BLUE",
+      "IVORY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8765&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/1e557037a54828adaa7639f522bb1e8a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/2e5c795397efc64c0f9a6000d2ff84ad.jpg",
@@ -9086,7 +10468,10 @@
       "빈티지한 워싱 디테일과 앞판 및 옆선의 프린트가 포인트인 반소매 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8766&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/1cd8e47a02fe0e66603cdeab697f76d2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/05db07c0038f8b366df595499b927de1.jpg",
@@ -9119,7 +10504,10 @@
       "빈티지한 워싱 디테일과 앞판 및 옆선의 프린트가 포인트인 반소매 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8767&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/a5d1e05e11bab767002e0f5b7ebb3adf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/8880ec2109e65fb5e2cc2b5bcb8472ce.jpg",
@@ -9152,7 +10540,11 @@
       "곳곳의 데끼 디테일과 반팔 소매를 걷어 올리면 드러나는 워싱이 묻지 않은 부분이 디자인 포인트이며, 반팔과 긴팔 소매가 레이어드된 스프레이 워싱 져지 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["BLACK", "KHAKI", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "KHAKI",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8768&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/5b4890f56776af5c7703a9903425b232.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/522ee83c67f3ed4b098f9c7a63c5a16d.jpg",
@@ -9180,7 +10572,11 @@
       "곳곳의 데끼 디테일과 반팔 소매를 걷어 올리면 드러나는 워싱이 묻지 않은 부분이 디자인 포인트이며, 반팔과 긴팔 소매가 레이어드된 스프레이 워싱 져지 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["KHAKI", "BLACK", "LIGHT BLUE"],
+    "colors": [
+      "KHAKI",
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8769&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/9cb0ba509f7e175cfd167c37cfcc82f4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/506fadcbb924580512e980295b9cfea3.jpg",
@@ -9197,7 +10593,10 @@
       "https://matinkim.com/web/product/extra/small/202601/32024d4c4d2bc8e926119098b37bffe3.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -9208,7 +10607,11 @@
       "곳곳의 데끼 디테일과 반팔 소매를 걷어 올리면 드러나는 워싱이 묻지 않은 부분이 디자인 포인트이며, 반팔과 긴팔 소매가 레이어드된 스프레이 워싱 져지 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["LIGHT BLUE", "BLACK", "KHAKI"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8770&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/9a7c8a5bfd96102e67015948701a0628.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/97bec9c55a229b92db30f61901ad208a.jpg",
@@ -9236,7 +10639,10 @@
       "제품 곳곳에 배치된 로고 프린팅과 가슴 중앙의 박스 로고가 포인트인 루즈핏 롱슬리브 와플 티셔츠"
     ],
     "price": "108,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8771&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4f18c5f30aa64c64f1ded34e69f70d25.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/c74125e2feb45c57833e6a1690889434.jpg",
@@ -9262,7 +10668,10 @@
     "name": "SLEEVE LOGO WAFFLE TOP FOR MEN IN IVORY",
     "bullet_points": [],
     "price": "108,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8772&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/84e8f81dce69d1ca4d8ce27e01d1b68f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/39af2e65afa0148b07c02a44da6cf968.jpg",
@@ -9290,7 +10699,10 @@
       "가슴 포켓의 로고 자수가 포인트인 코튼 소재의 오버핏 셔츠"
     ],
     "price": "178,000",
-    "colors": ["WHITE", "LIGHT BLUE"],
+    "colors": [
+      "WHITE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8773&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/0eb3a8048c9a026d5017ad3274c40564.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/33ce8845e44ef4e521785ad7b82ac4a4.jpg",
@@ -9323,7 +10735,10 @@
       "워싱 디테일과 가슴 포켓의 로고 자수가 포인트인 코튼 소재의 오버핏 스트라이프 셔츠"
     ],
     "price": "178,000",
-    "colors": ["LIGHT BLUE", "WHITE"],
+    "colors": [
+      "LIGHT BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8774&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/3c377a9e4802ee8d740ab640e9bb7927.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/8d02437224aacfd7985b1a12b26746f3.jpg",
@@ -9356,7 +10771,10 @@
       "헤비쭈리 소재와 스톤 워싱이 적용되어 빈티지 무드를 주는 스웻셔츠"
     ],
     "price": "148,000",
-    "colors": ["GREY", "CHARCOAL"],
+    "colors": [
+      "GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8608&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/7135021b9f3fba6a334cf56cf51a8c30.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/ace5d5c6b81d23d6813b795bd2075dd4.jpg",
@@ -9390,7 +10808,10 @@
       "헤비쭈리 소재와 스톤 워싱이 적용되어 빈티지 무드를 주는 스웻셔츠"
     ],
     "price": "148,000",
-    "colors": ["CHARCOAL", "GREY"],
+    "colors": [
+      "CHARCOAL",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8830&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/242e88dcb5e875d7a2e059fc5d099928.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/c38124b8b4a13b90f7e0a2dc5ac8a1ab.jpg",
@@ -9419,9 +10840,13 @@
   {
     "id": "8674",
     "name": "SHERPA FLEECE HALF ZIP UP TOP IN NAVY",
-    "bullet_points": ["세미오버핏 셰르파 하프 집업 탑"],
+    "bullet_points": [
+      "세미오버핏 셰르파 하프 집업 탑"
+    ],
     "price": "168,000",
-    "colors": ["NAVY"],
+    "colors": [
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8674&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/7f867bb66833d174f4db522a2aec354f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/c4bf21806cb2601b37efacac5011863e.jpg",
@@ -9450,9 +10875,14 @@
   {
     "id": "8673",
     "name": "HAIRY CABLE KNIT PULLOVER IN BLACK",
-    "bullet_points": ["릴랙스한핏의 스트라이프 풀오버 니트"],
+    "bullet_points": [
+      "릴랙스한핏의 스트라이프 풀오버 니트"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8673&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/a11abe69a75d6c82e3a15af68057d7d9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/d809fed88b8141ad838a93ec55051c8f.jpg",
@@ -9476,9 +10906,14 @@
   {
     "id": "8672",
     "name": "HAIRY CABLE KNIT PULLOVER IN LIGHT BEIGE",
-    "bullet_points": ["릴랙스한핏의 스트라이프 풀오버 니트"],
+    "bullet_points": [
+      "릴랙스한핏의 스트라이프 풀오버 니트"
+    ],
     "price": "168,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8672&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/bd4968ac00771abf2311ce09c8cf74d2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/8ecb58c777893f865ca139ecc3f8b63d.jpg",
@@ -9506,7 +10941,10 @@
       "가슴부터 팔까지 이어지는 로고가 포인트인 베이직한 핏의 헨리넥 니트 탑"
     ],
     "price": "158,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8589&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/bc5eb2f132fbd2b64f11a06e1938d27d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/e0acd58cb18f6788ba9c7f3acb2a7c04.jpg",
@@ -9534,7 +10972,10 @@
       "가슴부터 팔까지 이어지는 로고가 포인트인 베이직한 핏의 헨리넥 니트 탑"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8588&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/385d868a1c1b24abbea58828a7fdd66f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/3b5a6140e580772e66f3d11c64e7be82.jpg",
@@ -9558,9 +10999,13 @@
   {
     "id": "8583",
     "name": "PIGMENT DYED COLLARLESS ZIP UP JUMPER FOR MEN IN CHARCOAL",
-    "bullet_points": ["몸판과 같은 컬러의 우븐 배색이 포인트인 오버핏 집업"],
+    "bullet_points": [
+      "몸판과 같은 컬러의 우븐 배색이 포인트인 오버핏 집업"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL"],
+    "colors": [
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8583&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/97abfe0096cf91367043b403d04b2fa1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/5929e3100b7c39d4693cd28e9b84262f.jpg",
@@ -9588,7 +11033,10 @@
       "전판에 로고 그래픽이 디지털프린팅으로 찍힌 크롭 기장의 가디건"
     ],
     "price": "168,000",
-    "colors": ["IVORY", "NAVY"],
+    "colors": [
+      "IVORY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8586&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/5407a1238ea28edf371670cc7952e958.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/b63704c5c2d45ad700cef55707b10a42.jpg",
@@ -9616,7 +11064,10 @@
       "전판에 로고 그래픽이 디지털프린팅으로 찍힌 크롭 기장의 가디건"
     ],
     "price": "168,000",
-    "colors": ["NAVY", "IVORY"],
+    "colors": [
+      "NAVY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8587&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/157e1723f40432ddb0c770a45c052e06.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/8387039e75ff282edc0646d4a2582a5a.jpg",
@@ -9640,9 +11091,14 @@
   {
     "id": "8569",
     "name": "HANDMADE COLLAR KNIT CARDIGAN FOR WOMEN IN BLACK",
-    "bullet_points": ["헤비 원사로 제작된 카라 니트 자켓"],
+    "bullet_points": [
+      "헤비 원사로 제작된 카라 니트 자켓"
+    ],
     "price": "238,000",
-    "colors": ["BLACK", "BUTTER"],
+    "colors": [
+      "BLACK",
+      "BUTTER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8569&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/734e70ae85ebccd7fa7929096b1672bd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/ea6c6e6ffba4c18303dbfc50871176e7.jpg",
@@ -9666,9 +11122,14 @@
   {
     "id": "8570",
     "name": "HANDMADE COLLAR KNIT CARDIGAN FOR WOMEN IN BUTTER",
-    "bullet_points": ["헤비 원사로 제작된 카라 니트 자켓"],
+    "bullet_points": [
+      "헤비 원사로 제작된 카라 니트 자켓"
+    ],
     "price": "238,000",
-    "colors": ["BUTTER", "BLACK"],
+    "colors": [
+      "BUTTER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8570&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/68659ce2804511f6d6881261f74d93ec.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/535fe509e1891a8cdb2585c385950bd7.jpg",
@@ -9692,9 +11153,14 @@
   {
     "id": "8567",
     "name": "HANDMADE COLLAR KNIT CARDIGAN FOR MEN IN BLACK",
-    "bullet_points": ["헤비 원사로 제작된 카라 니트 자켓"],
+    "bullet_points": [
+      "헤비 원사로 제작된 카라 니트 자켓"
+    ],
     "price": "238,000",
-    "colors": ["BLACK", "BUTTER"],
+    "colors": [
+      "BLACK",
+      "BUTTER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8567&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/f5080dd50919c2b5b538d3d8e4112d82.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/189c9f79f70b051a6890b61adb874196.jpg",
@@ -9718,9 +11184,14 @@
   {
     "id": "8568",
     "name": "HANDMADE COLLAR KNIT CARDIGAN FOR MEN IN BUTTER",
-    "bullet_points": ["헤비 원사로 제작된 카라 니트 자켓"],
+    "bullet_points": [
+      "헤비 원사로 제작된 카라 니트 자켓"
+    ],
     "price": "238,000",
-    "colors": ["BUTTER", "BLACK"],
+    "colors": [
+      "BUTTER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8568&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/76d8618cf919f4b3895540881663f52f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/3b25386e2e5c0ec5c81754207fca2d12.jpg",
@@ -9737,7 +11208,9 @@
       "https://matinkim.com/web/product/extra/small/202510/2a1b7edf255819da415c2a38a8668d91.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -9748,7 +11221,10 @@
       "부드러운 터치감의 울 혼방 원사로 제작된 하프집업 니트탑"
     ],
     "price": "188,000",
-    "colors": ["NAVY", "LIGHT BEIGE"],
+    "colors": [
+      "NAVY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8595&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/42ec65922d68331144b7d1ff772ee73a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/5b35460bd315aac8a0bbfadfb76960ea.jpg",
@@ -9776,7 +11252,10 @@
       "부드러운 터치감의 울 혼방 원사로 제작된 하프집업 니트탑"
     ],
     "price": "188,000",
-    "colors": ["LIGHT BEIGE", "NAVY"],
+    "colors": [
+      "LIGHT BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8601&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/2c409395ee7f1f8be0498916b14bc37c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/0d75799aebe43757a4dfedeb8680b59c.jpg",
@@ -9804,7 +11283,10 @@
       "부드러운 터치감의 울 혼방 원사로 제작된 하프집업 니트탑"
     ],
     "price": "188,000",
-    "colors": ["NAVY", "DARK BEIGE"],
+    "colors": [
+      "NAVY",
+      "DARK BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8593&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/f8c3b710a5451ed562dc96a0fcca1482.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/e3b8c3585cf428e19179ff09278d22ca.jpg",
@@ -9832,7 +11314,10 @@
       "부드러운 터치감의 울 혼방 원사로 제작된 하프집업 니트탑"
     ],
     "price": "188,000",
-    "colors": ["DARK BEIGE", "NAVY"],
+    "colors": [
+      "DARK BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8594&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/559280b46d026fdf1aaf182b4df4d1ec.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/937512c836d1224aca6b198e8961ca14.jpg",
@@ -9856,9 +11341,14 @@
   {
     "id": "8581",
     "name": "MATIN PONI CONI KNIT ZIP UP IN BROWN",
-    "bullet_points": ["귀여운 포니코니가 포인트인 니트 집업 아우터"],
+    "bullet_points": [
+      "귀여운 포니코니가 포인트인 니트 집업 아우터"
+    ],
     "price": "178,000",
-    "colors": ["BROWN", "MINT"],
+    "colors": [
+      "BROWN",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8581&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/653fd5dcce85352b5d107a14f7786786.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/d1ba4f7b74afc605800a0d86f20c953e.jpg",
@@ -9875,16 +11365,23 @@
       "https://matinkim.com/web/product/extra/small/202510/e0b04e873f4bd6cf08e37640767677ac.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8582",
     "name": "MATIN PONI CONI KNIT ZIP UP IN MINT",
-    "bullet_points": ["귀여운 포니코니가 포인트인 니트 집업 아우터"],
+    "bullet_points": [
+      "귀여운 포니코니가 포인트인 니트 집업 아우터"
+    ],
     "price": "178,000",
-    "colors": ["MINT", "BROWN"],
+    "colors": [
+      "MINT",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8582&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/c34396a51f355a875f424d8a4414cedc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/3b043443a662806a07275c527e453bdd.jpg",
@@ -9908,9 +11405,14 @@
   {
     "id": "8584",
     "name": "BOUCLE KNIT ZIP UP CARDIGAN IN CHARCOAL",
-    "bullet_points": ["볼륨이 있는 부클 원사로 외관이 포인트인 집업 아우터"],
+    "bullet_points": [
+      "볼륨이 있는 부클 원사로 외관이 포인트인 집업 아우터"
+    ],
     "price": "198,000",
-    "colors": ["CHARCOAL", "LIGHT BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8584&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/ba8b091035199376465790549dc5d16b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/23705d2c411b7cac0c010aac4d3d5483.jpg",
@@ -9934,9 +11436,14 @@
   {
     "id": "8585",
     "name": "BOUCLE KNIT ZIP UP CARDIGAN IN LIGHT BEIGE",
-    "bullet_points": ["볼륨이 있는 부클 원사로 외관이 포인트인 집업 아우터"],
+    "bullet_points": [
+      "볼륨이 있는 부클 원사로 외관이 포인트인 집업 아우터"
+    ],
     "price": "198,000",
-    "colors": ["LIGHT BEIGE", "CHARCOAL"],
+    "colors": [
+      "LIGHT BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8585&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/6d80f1e90a95057601de7bf99f2b373e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/389f7009def40466daa167537868a8d9.jpg",
@@ -9960,9 +11467,14 @@
   {
     "id": "8604",
     "name": "MATIN MIXED YARN KNIT PULLOVER IN GREY",
-    "bullet_points": ["칼라믹스(멜란지)된 원사 포인트의 로고 풀오버"],
+    "bullet_points": [
+      "칼라믹스(멜란지)된 원사 포인트의 로고 풀오버"
+    ],
     "price": "158,000",
-    "colors": ["GREY", "DARK NAVY"],
+    "colors": [
+      "GREY",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8604&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/0408ec0f0aeff5d5ecf6fabf3bf56062.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/1324ba5bdc6cd18f707c925e1c912ef4.jpg",
@@ -9991,9 +11503,14 @@
   {
     "id": "8605",
     "name": "MATIN MIXED YARN KNIT PULLOVER IN DARK NAVY",
-    "bullet_points": ["칼라믹스(멜란지)된 원사 포인트의 로고 풀오버"],
+    "bullet_points": [
+      "칼라믹스(멜란지)된 원사 포인트의 로고 풀오버"
+    ],
     "price": "158,000",
-    "colors": ["DARK NAVY", "GREY"],
+    "colors": [
+      "DARK NAVY",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8605&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/5e8cd57a204b1b85baf7e044d0bfbd84.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/4357e7e69a4a470ecb62adbeffa96dd5.jpg",
@@ -10026,7 +11543,10 @@
       "버튼으로 탈부착 가능한 스커트로 다양한 연출이 가능한 라운드 니트"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8602&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/efdce597e4aed084e7eab4ced77c2252.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/75071b4b70963539afd1faba4cd6aa5d.jpg",
@@ -10054,7 +11574,10 @@
       "버튼으로 탈부착 가능한 스커트로 다양한 연출이 가능한 라운드 니트"
     ],
     "price": "198,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8603&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/f135b3185ce0aebb054ab2171cfc8f1a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/123bc77e4562ad262b643f163cdc587d.jpg",
@@ -10110,7 +11633,10 @@
       "하트 자수 포인트가 있는 루즈한 핏의 스트라이프 티카라 풀오버"
     ],
     "price": "178,000",
-    "colors": ["BROWN", "IVORY"],
+    "colors": [
+      "BROWN",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8607&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/25a3aa0b6cd9da22127b12c13f319d4f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/29f3fe3153697839b4e8a290373599c4.jpg",
@@ -10134,9 +11660,14 @@
   {
     "id": "8615",
     "name": "MUFFLER POINT HOODY PULLOVER IN BROWN",
-    "bullet_points": ["머플러 후드 포인트가 있는 풀오버로 캐주얼한 룩 연출"],
+    "bullet_points": [
+      "머플러 후드 포인트가 있는 풀오버로 캐주얼한 룩 연출"
+    ],
     "price": "188,000",
-    "colors": ["BROWN", "BLUE"],
+    "colors": [
+      "BROWN",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8615&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/2712a131a81c080144eaff4c62c2206c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/7f05d6b3957bd56957001ee90bf4e514.jpg",
@@ -10160,9 +11691,14 @@
   {
     "id": "8616",
     "name": "MUFFLER POINT HOODY PULLOVER IN BLUE",
-    "bullet_points": ["머플러 후드 포인트가 있는 풀오버로 캐주얼한 룩 연출"],
+    "bullet_points": [
+      "머플러 후드 포인트가 있는 풀오버로 캐주얼한 룩 연출"
+    ],
     "price": "188,000",
-    "colors": ["BLUE", "BROWN"],
+    "colors": [
+      "BLUE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8616&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/bbb8b8bbda40a28f537ed4234a97dac3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/500440afe03a942d01a5098fd4a66ded.jpg",
@@ -10190,7 +11726,11 @@
       "후디 안에 이너웨어 레이어드 티셔츠와 동일한 도안과 사이즈의 프린트티셔츠"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "SKY", "PURPLE"],
+    "colors": [
+      "CHARCOAL",
+      "SKY",
+      "PURPLE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8476&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/068c7cd7509e0c03e263856a0e726171.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/bc139e77b9918b7ba1d9a2337641fa4d.jpg",
@@ -10207,7 +11747,9 @@
       "https://matinkim.com/web/product/extra/small/202510/96104d9551f2fb7297ce77a02bb62422.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -10218,7 +11760,11 @@
       "후디 안에 이너웨어 레이어드 티셔츠와 동일한 도안과 사이즈의 프린트티셔츠"
     ],
     "price": "158,000",
-    "colors": ["SKY", "PURPLE", "CHARCOAL"],
+    "colors": [
+      "SKY",
+      "PURPLE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8475&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/c10a546018b15335e912e04a4c2ebcf8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/53aba197d22273aa4dca9a05de4a2df7.jpg",
@@ -10246,7 +11792,11 @@
       "후디 안에 이너웨어 레이어드 티셔츠와 동일한 도안과 사이즈의 프린트티셔츠"
     ],
     "price": "158,000",
-    "colors": ["PURPLE", "SKY", "CHARCOAL"],
+    "colors": [
+      "PURPLE",
+      "SKY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8474&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/9d77290498e5d7199a4bb98c92f14f51.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/8efc92856318e96f9912f79ae16ba483.jpg",
@@ -10274,7 +11824,10 @@
       "워싱 처리된 코튼 원단으로 자연스러운 컬러감과 빈티지한 질감을 살린 후디"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "NAVY"],
+    "colors": [
+      "CHARCOAL",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8613&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/29fbdd10085e134333163392ade91ea4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/163c9705dda04ffbc0dc02e0eaf8e64e.jpg",
@@ -10302,7 +11855,10 @@
       "워싱 처리된 코튼 원단으로 자연스러운 컬러감과 빈티지한 질감을 살린 후디"
     ],
     "price": "158,000",
-    "colors": ["NAVY", "CHARCOAL"],
+    "colors": [
+      "NAVY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8614&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/cc6fa41899b3acd2cf0a5bfbd959db89.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/1a4b8d7b0c9e27b36abf6c70312a491f.jpg",
@@ -10319,16 +11875,24 @@
       "https://matinkim.com/web/product/extra/small/202510/f32cca5d3561858de7349cab1419ffd9.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8590",
     "name": "BACK LOGO COLLAR KNIT TOP FOR WOMEN IN IVORY",
-    "bullet_points": ["베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"],
+    "bullet_points": [
+      "베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"
+    ],
     "price": "178,000",
-    "colors": ["IVORY", "GREY", "DARK NAVY"],
+    "colors": [
+      "IVORY",
+      "GREY",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8590&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/66bcf5404ed723b65fa7e104e6adb323.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/0432e12be17f51634378d4ef87678ec8.jpg",
@@ -10352,9 +11916,15 @@
   {
     "id": "8591",
     "name": "BACK LOGO COLLAR KNIT TOP FOR WOMEN IN GREY",
-    "bullet_points": ["베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"],
+    "bullet_points": [
+      "베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"
+    ],
     "price": "178,000",
-    "colors": ["GREY", "IVORY", "DARK NAVY"],
+    "colors": [
+      "GREY",
+      "IVORY",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8591&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/4bfd721444d7587580528a979570624f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/5eee4e03ae2b66eb4f54ce354690d172.jpg",
@@ -10378,9 +11948,15 @@
   {
     "id": "8592",
     "name": "BACK LOGO COLLAR KNIT TOP FOR WOMEN IN DARK NAVY",
-    "bullet_points": ["베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"],
+    "bullet_points": [
+      "베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"
+    ],
     "price": "178,000",
-    "colors": ["DARK NAVY", "GREY", "IVORY"],
+    "colors": [
+      "DARK NAVY",
+      "GREY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8592&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/33d8fffca35a3cfd8f2a779a298d9a59.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/389838fa519cc3e4a0418e8fb5e801cc.jpg",
@@ -10404,9 +11980,15 @@
   {
     "id": "8596",
     "name": "BACK LOGO COLLAR KNIT TOP FOR MEN IN IVORY",
-    "bullet_points": ["베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"],
+    "bullet_points": [
+      "베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"
+    ],
     "price": "178,000",
-    "colors": ["IVORY", "GREY", "DARK NAVY"],
+    "colors": [
+      "IVORY",
+      "GREY",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8596&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/09f07b3e9619bbb45fa780fcca2b973a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/df1e8376156785e309d44c83c43a40e6.jpg",
@@ -10430,9 +12012,15 @@
   {
     "id": "8597",
     "name": "BACK LOGO COLLAR KNIT TOP FOR MEN IN GREY",
-    "bullet_points": ["베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"],
+    "bullet_points": [
+      "베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"
+    ],
     "price": "178,000",
-    "colors": ["GREY", "IVORY", "DARK NAVY"],
+    "colors": [
+      "GREY",
+      "IVORY",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8597&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/71fa5e0b7c988a227fecd706f848780c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/9238c88757ba4584b179d3e63302ba04.jpg",
@@ -10456,9 +12044,15 @@
   {
     "id": "8598",
     "name": "BACK LOGO COLLAR KNIT TOP FOR MEN IN DARK NAVY",
-    "bullet_points": ["베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"],
+    "bullet_points": [
+      "베이직한 실루엣 속에 브랜드 감각이 드러나는 카라 니트"
+    ],
     "price": "178,000",
-    "colors": ["DARK NAVY", "GREY", "IVORY"],
+    "colors": [
+      "DARK NAVY",
+      "GREY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8598&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/3cbff69f57929e20e18ea7f22c2621a9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/79ca4f7ce8a673a5506fc6c61dc637fa.jpg",
@@ -10482,9 +12076,15 @@
   {
     "id": "8610",
     "name": "BUTTON SLIT HALF NECK TOP IN GREY",
-    "bullet_points": ["네크 스냅, 몸판과 소매 가에루빠가 포인트인 하이넥 이너"],
+    "bullet_points": [
+      "네크 스냅, 몸판과 소매 가에루빠가 포인트인 하이넥 이너"
+    ],
     "price": "88,000",
-    "colors": ["GREY", "BEIGE", "NAVY"],
+    "colors": [
+      "GREY",
+      "BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8610&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/0bb7956d006a2fdefb027dcda5364db7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/b5f5f31d4aac2b47ad2b213c298a4ce8.jpg",
@@ -10508,9 +12108,15 @@
   {
     "id": "8611",
     "name": "BUTTON SLIT HALF NECK TOP IN NAVY",
-    "bullet_points": ["네크 스냅, 몸판과 소매 가에루빠가 포인트인 하이넥 이너"],
+    "bullet_points": [
+      "네크 스냅, 몸판과 소매 가에루빠가 포인트인 하이넥 이너"
+    ],
     "price": "88,000",
-    "colors": ["NAVY", "GREY", "BEIGE"],
+    "colors": [
+      "NAVY",
+      "GREY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8611&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/fc7a46b413b140c2261883974bd7c3e0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/c0f90fa8833bce461719825b553e328e.jpg",
@@ -10527,16 +12133,24 @@
       "https://matinkim.com/web/product/extra/small/202510/61f43aab78e1293c5e233ad87d522036.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8612",
     "name": "BUTTON SLIT HALF NECK TOP IN BEIGE",
-    "bullet_points": ["네크 스냅, 몸판과 소매 가에루빠가 포인트인 하이넥 이너"],
+    "bullet_points": [
+      "네크 스냅, 몸판과 소매 가에루빠가 포인트인 하이넥 이너"
+    ],
     "price": "88,000",
-    "colors": ["BEIGE", "GREY", "NAVY"],
+    "colors": [
+      "BEIGE",
+      "GREY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8612&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/58cb527d0cc15228adf6cafebd0eb889.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/9c94c6b0b42ad45e53443f7b61e85fa0.jpg",
@@ -10564,7 +12178,10 @@
       "슬림한 실루엣과 보트넥 디자인의 티셔츠형 기본 이너 니트 탑"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8473&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/d01b277f20fdcd1b196671b70ced705c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/5abe80b7ee29ba985944295c3619084e.jpg",
@@ -10581,7 +12198,9 @@
       "https://matinkim.com/web/product/extra/small/202510/d9f8b56bd63eb1426740df2b15f973f7.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -10592,7 +12211,10 @@
       "슬림한 실루엣과 보트넥 디자인의 티셔츠형 기본 이너 니트 탑"
     ],
     "price": "138,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8472&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/659115ec90621ca6aba3bb0361682896.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/89055a6df12e019cc3965367da103b9c.jpg",
@@ -10620,7 +12242,10 @@
       "롱슬리브가 두개 합쳐진듯한 디자인의 위빙 포인트 레이어링 롱 슬리브"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8471&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/f55091646659cf4d19e53b6ed28ad513.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/2120a4e2c7e0245d0315b3093a14a774.jpg",
@@ -10648,7 +12273,10 @@
       "롱슬리브가 두개 합쳐진듯한 디자인의 위빙 포인트 레이어링 롱 슬리브"
     ],
     "price": "138,000",
-    "colors": ["LIGHT GREY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8470&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/34ff8b296dd6770c85d63363f18b59f4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/f05a61e3f53eefce09af79ac2a9cd938.jpg",
@@ -10672,9 +12300,14 @@
   {
     "id": "8391",
     "name": "SHINY CABLE PULLOVER IN NAVY",
-    "bullet_points": ["은은한 반짝이 원사가 들어가있는 꽈베기 조직의 슬림핏"],
+    "bullet_points": [
+      "은은한 반짝이 원사가 들어가있는 꽈베기 조직의 슬림핏"
+    ],
     "price": "148,000",
-    "colors": ["NAVY", "PINK"],
+    "colors": [
+      "NAVY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8391&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/7b2ff67f45de3a7fffb39f1ba5f423c9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/923e058003f6590b61a000219b2076d9.jpg",
@@ -10691,16 +12324,23 @@
       "https://matinkim.com/web/product/extra/small/202509/8eac677e437b3e40b8483894976c9909.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8390",
     "name": "SHINY CABLE PULLOVER IN PINK",
-    "bullet_points": ["은은한 반짝이 원사가 들어가있는 꽈베기 조직의 슬림핏"],
+    "bullet_points": [
+      "은은한 반짝이 원사가 들어가있는 꽈베기 조직의 슬림핏"
+    ],
     "price": "148,000",
-    "colors": ["PINK", "NAVY"],
+    "colors": [
+      "PINK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8390&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/b2833927c39e8ad7b73f7cc58a3edb16.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/69bbcef161e705bd917d3bef5269cf0b.jpg",
@@ -10728,7 +12368,10 @@
       "넓은 보트넥으로 데미지 포인트와 로고 아트웍이 특징인 루즈핏 풀오버"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8389&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/d4929a6a732e78700a08e19dbd578b64.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/02c5be622b15058b5d8dc2aa7d4730be.jpg",
@@ -10756,7 +12399,10 @@
       "넓은 보트넥으로 데미지 포인트와 로고 아트웍이 특징인 루즈핏 풀오버"
     ],
     "price": "158,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8388&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/38e83a2d04f55c12a254f11bbba90b56.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/2a4596d80b66bfd44a006d155cd5c00d.jpg",
@@ -10784,7 +12430,10 @@
       "코튼소재의 체크 원단에 러프한 데끼 포인트를 준 워싱 오버 셔츠"
     ],
     "price": "178,000",
-    "colors": ["NAVY", "PINK"],
+    "colors": [
+      "NAVY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8387&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/997a10edb3d83d758c6d246ff5f0df44.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/85c42bc669aa21c646a6c2e4af0ab9f2.jpg",
@@ -10801,7 +12450,9 @@
       "https://matinkim.com/web/product/extra/small/202509/24c1bfe7167c950cb8992d172827d656.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -10812,7 +12463,10 @@
       "코튼소재의 체크 원단에 러프한 데끼 포인트를 준 워싱 오버 셔츠"
     ],
     "price": "178,000",
-    "colors": ["PINK", "NAVY"],
+    "colors": [
+      "PINK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8386&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/4781dd873c840f8b8388753680e73b9f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/b22f834a964f93be6e96402b2e8f9a28.jpg",
@@ -10836,9 +12490,14 @@
   {
     "id": "8382",
     "name": "LAYERED POINT SLIM TOP IN CHARCOAL",
-    "bullet_points": ["스판성 있는 소재로 제작된 레이어드 롱 슬리브"],
+    "bullet_points": [
+      "스판성 있는 소재로 제작된 레이어드 롱 슬리브"
+    ],
     "price": "138,000",
-    "colors": ["CHARCOAL", "BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8382&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/b11e4cf6fea4ef33dbce4638419cee3b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/05fabeea000bc80064f6e3db130a4f23.jpg",
@@ -10855,16 +12514,23 @@
       "https://matinkim.com/web/product/extra/small/202509/0fb45f713b6d2e96d46d8bf6cbc3014d.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8381",
     "name": "LAYERED POINT SLIM TOP IN BROWN",
-    "bullet_points": ["스판성 있는 소재로 제작된 레이어드 롱 슬리브"],
+    "bullet_points": [
+      "스판성 있는 소재로 제작된 레이어드 롱 슬리브"
+    ],
     "price": "138,000",
-    "colors": ["BROWN", "CHARCOAL"],
+    "colors": [
+      "BROWN",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8381&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/77ab9823b7dfc5a342af2ad97936ba93.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/5dffaacdd10ab81586fff140e5175a38.jpg",
@@ -10892,7 +12558,11 @@
       "앞판의 패치 형태로 부착된 로고 그래픽이 포인트인 코튼 원단의 롱슬리브"
     ],
     "price": "108,000",
-    "colors": ["WHITE", "GREY", "SMOKE BLUE"],
+    "colors": [
+      "WHITE",
+      "GREY",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8380&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/b120809c3f56b1c537f0c1a59cbd233b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/70867d3d66f323fc3c6639a20fa50092.jpg",
@@ -10925,7 +12595,11 @@
       "앞판의 패치 형태로 부착된 로고 그래픽이 포인트인 코튼 원단의 롱슬리브"
     ],
     "price": "108,000",
-    "colors": ["GREY", "SMOKE BLUE", "WHITE"],
+    "colors": [
+      "GREY",
+      "SMOKE BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8379&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/148396e440f651df0b90c45b8dfedcb5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/2567f7cbfaf84a0f8297d22323f0c600.jpg",
@@ -10958,7 +12632,11 @@
       "앞판의 패치 형태로 부착된 로고 그래픽이 포인트인 코튼 원단의 롱슬리브"
     ],
     "price": "108,000",
-    "colors": ["SMOKE BLUE", "GREY", "WHITE"],
+    "colors": [
+      "SMOKE BLUE",
+      "GREY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8378&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/7742253cf14acd30c9cd8abe6ac1b509.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/53c7bfff5f3af998a149b783853fd829.jpg",
@@ -10991,7 +12669,11 @@
       "배색감과 앞판의 스터드로 된 로고 그래픽이 포인트인 코튼소재로 제작된 하프탑"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "SMOKE BLUE", "WHITE"],
+    "colors": [
+      "BLACK",
+      "SMOKE BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8377&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/8550c315036da0cb0083aa00d779c4c4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/d488eb1d2edfaadd52ab63e7d0dfd7be.jpg",
@@ -11019,7 +12701,11 @@
       "배색감과 앞판의 스터드로 된 로고 그래픽이 포인트인 코튼소재로 제작된 하프탑"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "SMOKE BLUE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "SMOKE BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8376&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/7daca8a4f27b8597cce83ef4e7d31d61.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/16092ca325bbdebce07c8f36a9c456d6.jpg",
@@ -11036,7 +12722,9 @@
       "https://matinkim.com/web/product/extra/small/202509/35ad7b206316d3700a5f0c0797b948c7.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -11047,7 +12735,11 @@
       "배색감과 앞판의 스터드로 된 로고 그래픽이 포인트인 코튼소재로 제작된 하프탑"
     ],
     "price": "58,000",
-    "colors": ["SMOKE BLUE", "WHITE", "BLACK"],
+    "colors": [
+      "SMOKE BLUE",
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8375&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4c12bb0bc6ad476d1b8e069a3abef30f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/573bb02579184e35b41a5605521963c3.jpg",
@@ -11064,16 +12756,24 @@
       "https://matinkim.com/web/product/extra/small/202509/d01704768a87d259ad3cf53fbc64985f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8374",
     "name": "WAVY LOGO GRAPHIC TOP FOR MEN IN WHITE",
-    "bullet_points": ["코튼 소재를 사용해 제작한 루즈한 실루엣의 반팔 티셔츠"],
+    "bullet_points": [
+      "코튼 소재를 사용해 제작한 루즈한 실루엣의 반팔 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["WHITE", "BLUE", "NAVY"],
+    "colors": [
+      "WHITE",
+      "BLUE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8374&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/e3654ae1a60457a783a3f6a693248049.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/72c8e0ab2c368e2877d2fd38dbb59714.jpg",
@@ -11097,9 +12797,15 @@
   {
     "id": "8373",
     "name": "WAVY LOGO GRAPHIC TOP FOR MEN IN NAVY",
-    "bullet_points": ["코튼 소재를 사용해 제작한 루즈한 실루엣의 반팔 티셔츠"],
+    "bullet_points": [
+      "코튼 소재를 사용해 제작한 루즈한 실루엣의 반팔 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["NAVY", "BLUE", "WHITE"],
+    "colors": [
+      "NAVY",
+      "BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8373&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/efc7def9cebe2c781b147b54bba54f76.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/695f37e5e1caa7c3aeb4787589255a3f.jpg",
@@ -11116,16 +12822,24 @@
       "https://matinkim.com/web/product/extra/small/202509/a970110e6691e02338864b38e9714a6e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8372",
     "name": "WAVY LOGO GRAPHIC TOP FOR MEN IN BLUE",
-    "bullet_points": ["코튼 소재를 사용해 제작한 루즈한 실루엣의 반팔 티셔츠"],
+    "bullet_points": [
+      "코튼 소재를 사용해 제작한 루즈한 실루엣의 반팔 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["BLUE", "NAVY", "WHITE"],
+    "colors": [
+      "BLUE",
+      "NAVY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8372&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/3cafd36e2845f31018f35de1bf97b792.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/9356e6f48bc9ce64891a117d9ffeb62e.jpg",
@@ -11149,9 +12863,15 @@
   {
     "id": "8242",
     "name": "CASHMERE BLENDED ROUND KNIT PULLOVER IN BLACK",
-    "bullet_points": ["심플한 디테일의 캐시미어 원사 혼용 라운드넥 니트"],
+    "bullet_points": [
+      "심플한 디테일의 캐시미어 원사 혼용 라운드넥 니트"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "GREY", "OLIVE"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8242&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/f7084b8a496204e0db87653cf3136b35.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/1faef74f593a3a30b8fbd4ea9fb17498.jpg",
@@ -11180,9 +12900,15 @@
   {
     "id": "8241",
     "name": "CASHMERE BLENDED ROUND KNIT PULLOVER IN GREY",
-    "bullet_points": ["심플한 디테일의 캐시미어 원사 혼용 라운드넥 니트"],
+    "bullet_points": [
+      "심플한 디테일의 캐시미어 원사 혼용 라운드넥 니트"
+    ],
     "price": "148,000",
-    "colors": ["GREY", "BLACK", "OLIVE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8241&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/b7883527b1e85fec237275bd333d386e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/12dd2bb1463784d9947664e1832a0111.jpg",
@@ -11211,9 +12937,15 @@
   {
     "id": "8240",
     "name": "CASHMERE BLENDED ROUND KNIT PULLOVER IN OLIVE",
-    "bullet_points": ["심플한 디테일의 캐시미어 원사 혼용 라운드넥 니트"],
+    "bullet_points": [
+      "심플한 디테일의 캐시미어 원사 혼용 라운드넥 니트"
+    ],
     "price": "148,000",
-    "colors": ["OLIVE", "BLACK", "GREY"],
+    "colors": [
+      "OLIVE",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8240&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/8a54fb8a716bb2e0b296979dc5121808.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/826dde30813fbda69b7fd56930dc5386.jpg",
@@ -11239,9 +12971,15 @@
   {
     "id": "8239",
     "name": "GLITTER SLIM LOGO KNIT TOP IN LIGHT GREY",
-    "bullet_points": ["다트 디테일이 포인트인 슬림핏 로고 니트"],
+    "bullet_points": [
+      "다트 디테일이 포인트인 슬림핏 로고 니트"
+    ],
     "price": "148,000",
-    "colors": ["LIGHT GREY", "NAVY", "PINK"],
+    "colors": [
+      "LIGHT GREY",
+      "NAVY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8239&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/85bb2e1547373ca4bc674f42239a5260.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/8070e749a15d76bdc5922484e0954221.jpg",
@@ -11265,9 +13003,15 @@
   {
     "id": "8238",
     "name": "GLITTER SLIM LOGO KNIT TOP IN NAVY",
-    "bullet_points": ["다트 디테일이 포인트인 슬림핏 로고 니트"],
+    "bullet_points": [
+      "다트 디테일이 포인트인 슬림핏 로고 니트"
+    ],
     "price": "148,000",
-    "colors": ["NAVY", "LIGHT GREY", "PINK"],
+    "colors": [
+      "NAVY",
+      "LIGHT GREY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8238&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/77f29659217d77cde69cfd98afcfdf83.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/534e5841ac03200f5e56371bba844e7d.jpg",
@@ -11284,16 +13028,24 @@
       "https://matinkim.com/web/product/extra/small/202509/41818ac3cd91e907f549a2bc2e7c7fa5.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8237",
     "name": "GLITTER SLIM LOGO KNIT TOP IN PINK",
-    "bullet_points": ["다트 디테일이 포인트인 슬림핏 로고 니트"],
+    "bullet_points": [
+      "다트 디테일이 포인트인 슬림핏 로고 니트"
+    ],
     "price": "148,000",
-    "colors": ["PINK", "LIGHT GREY", "NAVY"],
+    "colors": [
+      "PINK",
+      "LIGHT GREY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8237&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/f00d706fe239eded82a890cc3e6162fa.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/fc01302df33e2d9324e4f662c6d0f881.jpg",
@@ -11310,16 +13062,25 @@
       "https://matinkim.com/web/product/extra/small/202509/701cfde3acdeb6231ccd783d2d72c1a4.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8236",
     "name": "COLOR TRIM LINE LOGO PULLOVER IN BLACK",
-    "bullet_points": ["배색 스티치가 포인트인 기본 실루엣 니트"],
+    "bullet_points": [
+      "배색 스티치가 포인트인 기본 실루엣 니트"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "IVORY", "LIGHT BLUE", "PINK"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "LIGHT BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8236&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/23cf93732743b785458595fbc5ee5fb9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/79350f0341dfde1882cd45a0ff6f19dc.jpg",
@@ -11348,9 +13109,16 @@
   {
     "id": "8235",
     "name": "COLOR TRIM LINE LOGO PULLOVER IN IVORY",
-    "bullet_points": ["배색 스티치가 포인트인 기본 실루엣 니트"],
+    "bullet_points": [
+      "배색 스티치가 포인트인 기본 실루엣 니트"
+    ],
     "price": "148,000",
-    "colors": ["IVORY", "BLACK", "LIGHT BLUE", "PINK"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "LIGHT BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8235&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/addea565ccf8ba7ac26560b3c2cc2562.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/b97575fd296322ba95d62b42c5a3a91d.jpg",
@@ -11379,9 +13147,16 @@
   {
     "id": "8234",
     "name": "COLOR TRIM LINE LOGO PULLOVER IN LIGHT BLUE",
-    "bullet_points": ["배색 스티치가 포인트인 기본 실루엣 니트"],
+    "bullet_points": [
+      "배색 스티치가 포인트인 기본 실루엣 니트"
+    ],
     "price": "148,000",
-    "colors": ["LIGHT BLUE", "BLACK", "IVORY", "PINK"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK",
+      "IVORY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8234&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/1e76c08608e83887153e1215c943777b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/b8c7fc3152fc4406491bfa4b903874c6.jpg",
@@ -11403,16 +13178,25 @@
       "https://matinkim.com/web/product/extra/small/202509/1a0fdd6b6a97061992626905133b4c39.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8233",
     "name": "COLOR TRIM LINE LOGO PULLOVER IN PINK",
-    "bullet_points": ["배색 스티치가 포인트인 기본 실루엣 니트"],
+    "bullet_points": [
+      "배색 스티치가 포인트인 기본 실루엣 니트"
+    ],
     "price": "148,000",
-    "colors": ["PINK", "BLACK", "IVORY", "LIGHT BLUE"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "IVORY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8233&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/5466ddf3f3679d10c8a5ec6f0433a097.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/c555473c1738a01b4f1b9cc82a01da8b.jpg",
@@ -11445,7 +13229,10 @@
       "그래피티를 모티브로한 그래픽과 로고가 포인트인 슬림핏 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8201&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/e54c8efaa0aaaa5d42bfd4fd4125e4e4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/da7fa2b9162db1e8fa7b9032987d63f6.jpg",
@@ -11468,7 +13255,10 @@
       "그래피티를 모티브로한 그래픽과 로고가 포인트인 슬림핏 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["CHARCOAL", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8200&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/d1126e35ba094a5e8a6a6eb58e36d2b3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/ae7ff20486ba4c6ab7d00e5913f91b81.jpg",
@@ -11480,7 +13270,9 @@
       "https://matinkim.com/web/product/extra/small/202509/4c1423f0f61312050984ba232ebd33dc.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -11491,7 +13283,10 @@
       "그래피티를 모티브로한 그래픽과 로고가 포인트인 오버핏 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["WHITE", "GREY"],
+    "colors": [
+      "WHITE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8199&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/fb8c4aed853620c8c18c09a5b19c8ec4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/6c38efa6029ea1f11df578642378c48f.jpg",
@@ -11514,7 +13309,10 @@
       "그래피티를 모티브로한 그래픽과 로고가 포인트인 오버핏 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["GREY", "WHITE"],
+    "colors": [
+      "GREY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8198&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/15383b3a55609a78e18872cffc27a101.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/7c8c3dc1719be025256d9c0b2c5fd476.jpg",
@@ -11537,7 +13335,10 @@
       "로고 프린트와 래글런 소매처럼 보이는 그래픽이 포인트인 슬림핏 롱 슬리브 탑"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8197&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/5f7e89ee0c3c955eb572531a63f2380a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/c773138590c99bc4bf71d77f8b85b294.jpg",
@@ -11560,7 +13361,10 @@
       "로고 프린트와 래글런 소매처럼 보이는 그래픽이 포인트인 슬림핏 롱 슬리브 탑"
     ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8196&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/22c17185e974ca29533819930494908c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/9bf1d5189af69e26fb92601869a373bd.jpg",
@@ -11572,7 +13376,9 @@
       "https://matinkim.com/web/product/extra/small/202509/ca996b1b681c2fcac16154ccae768bb8.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -11583,7 +13389,10 @@
       "자카드 로고 프린트와 래글런 소매처럼 보이는 그래픽이 포인트인 롱 슬리브 탑"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8195&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/48b400206168b80666199564e2989a77.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/9e5e9e41f7bfebf6fe9f7239d44f7b02.jpg",
@@ -11606,7 +13415,10 @@
       "자카드 로고 프린트와 래글런 소매처럼 보이는 그래픽이 포인트인 롱 슬리브 탑"
     ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8194&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/4fc4d29b2841d0d7dc6e4a4751f17960.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/1ab9304d8dead3bfceaa6318ed19c922.jpg",
@@ -11625,9 +13437,14 @@
   {
     "id": "8193",
     "name": "FRONT GRAPHIC CHECK SHIRT IN CHARCOAL",
-    "bullet_points": ["불규칙한 그래픽이 포인트인 오버핏 체크 셔츠"],
+    "bullet_points": [
+      "불규칙한 그래픽이 포인트인 오버핏 체크 셔츠"
+    ],
     "price": "148,000",
-    "colors": ["CHARCOAL", "PINK"],
+    "colors": [
+      "CHARCOAL",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8193&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/884fe26f1c0f25d1d91884c6914334f1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/ca0891188e75bb92ed19c9bbda740d2d.jpg",
@@ -11646,9 +13463,14 @@
   {
     "id": "8192",
     "name": "FRONT GRAPHIC CHECK SHIRT IN PINK",
-    "bullet_points": ["불규칙한 그래픽이 포인트인 오버핏 체크 셔츠"],
+    "bullet_points": [
+      "불규칙한 그래픽이 포인트인 오버핏 체크 셔츠"
+    ],
     "price": "148,000",
-    "colors": ["PINK", "CHARCOAL"],
+    "colors": [
+      "PINK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8192&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/1a90dd9e21ae93fb89846ca2786582e7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/3222a4dc6cbf1a1caf0cf06b0d53d5a1.jpg",
@@ -11660,7 +13482,9 @@
       "https://matinkim.com/web/product/extra/small/202509/53137fc10b0183346baf21edd5f9eff3.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -11671,7 +13495,10 @@
       "몸판의 구제 디테일과 아플리케 로고가 포인트인 캐주얼 스웻셔츠"
     ],
     "price": "148,000",
-    "colors": ["KHAKI", "PINK"],
+    "colors": [
+      "KHAKI",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8218&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/a946a23c2021e3cfd5d29c2c8e39a092.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/412ae549c3041d02e8172144e5d7fd8a.jpg",
@@ -11704,7 +13531,10 @@
       "몸판의 구제 디테일과 아플리케 로고가 포인트인 캐주얼 스웻셔츠"
     ],
     "price": "148,000",
-    "colors": ["PINK", "KHAKI"],
+    "colors": [
+      "PINK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8217&cate_no=27&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/4d07e53e34dcf317a69142edcb206885.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/60561f8b66edcb0c516298bebc2bbc54.jpg",
@@ -11721,7 +13551,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/08176610783dc64534697917701ccfeb.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -11732,7 +13564,12 @@
       "몸판의 구제 디테일과 아플리케 로고가 포인트인 캐주얼 후드티"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "RED", "BLUE", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "RED",
+      "BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8216&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/7a89094234988fdcfe396055b8ac0921.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/09a68d77260d9160da1e7ea25547735e.jpg",
@@ -11744,7 +13581,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/acf5062cac526882ad41055a7578c148.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -11755,7 +13594,12 @@
       "몸판의 구제 디테일과 아플리케 로고가 포인트인 캐주얼 후드티"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "RED", "BLUE", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "RED",
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8215&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/dd0d089ed173cbc6082f4bb9ebb7b9b9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/4bc127852ffc12d82e17f5142803774f.jpg",
@@ -11788,7 +13632,12 @@
       "몸판의 구제 디테일과 아플리케 로고가 포인트인 캐주얼 후드티"
     ],
     "price": "158,000",
-    "colors": ["BLUE", "RED", "CHARCOAL", "BLACK"],
+    "colors": [
+      "BLUE",
+      "RED",
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8214&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/cb67e29b3036bc6ce81d1793966bed9b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/cfe14f585c016cd80f7560dfce077a9c.jpg",
@@ -11821,7 +13670,12 @@
       "몸판의 구제 디테일과 아플리케 로고가 포인트인 캐주얼 후드티"
     ],
     "price": "158,000",
-    "colors": ["RED", "BLUE", "CHARCOAL", "BLACK"],
+    "colors": [
+      "RED",
+      "BLUE",
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8213&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/7d2360ff31be4f2fcdddd68aaab3eea9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/8e91a564b67eb1f5b4abd673cd5fa2ca.jpg",
@@ -11843,16 +13697,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/fbd4423eb4284ec5bc12e9e3aa2d70f4.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "8155",
     "name": "DOODLE LOGO GRAPHIC TOP IN CHARCOAL",
-    "bullet_points": ["프린팅과 자수의 조화가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "프린팅과 자수의 조화가 포인트인 오버핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["CHARCOAL", "LILAC"],
+    "colors": [
+      "CHARCOAL",
+      "LILAC"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8155&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/5f1f21379220e38dc7499db5ef7224e9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/b76cc82851d10f60a78a2e20dc2b6ab1.jpg",
@@ -11876,9 +13737,14 @@
   {
     "id": "8154",
     "name": "DOODLE LOGO GRAPHIC TOP IN LILAC",
-    "bullet_points": ["프린팅과 자수의 조화가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "프린팅과 자수의 조화가 포인트인 오버핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["LILAC", "CHARCOAL"],
+    "colors": [
+      "LILAC",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8154&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/c85e274b90dc89090ab85f5a72c3cfda.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/e0cb99d8b161bb4258bb2e8fd76c50f6.jpg",
@@ -11902,9 +13768,15 @@
   {
     "id": "8153",
     "name": "VINTAGE LOGO GRAPHIC TOP IN CHARCOAL",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 루즈핏 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 루즈핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["CHARCOAL", "NAVY", "BURGUNDY"],
+    "colors": [
+      "CHARCOAL",
+      "NAVY",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8153&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/978110c0ee1380e89f5fc9343b3b8a66.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/6432e89ca40b27f618caf5a3eeca3f13.jpg",
@@ -11928,9 +13800,15 @@
   {
     "id": "8152",
     "name": "VINTAGE LOGO GRAPHIC TOP IN NAVY",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 루즈핏 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 루즈핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["NAVY", "BURGUNDY", "CHARCOAL"],
+    "colors": [
+      "NAVY",
+      "BURGUNDY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8152&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/978d1e3b829173c4b5cb7176f5d3fa34.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/5bc3853c3506f42ec1c7e2cb311160c8.jpg",
@@ -11956,9 +13834,15 @@
   {
     "id": "8151",
     "name": "VINTAGE LOGO GRAPHIC TOP IN BURGUNDY",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 루즈핏 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 루즈핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["BURGUNDY", "NAVY", "CHARCOAL"],
+    "colors": [
+      "BURGUNDY",
+      "NAVY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8151&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/e4c8938e42e5b7b2e565ef01c170d247.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/3b02c156a8430db7e387c3fecc360d3f.jpg",
@@ -11988,7 +13872,10 @@
       "소매부분의 셔링과 앞판의 로고 프린트가 포인트인 헨리넥 롱 슬리브"
     ],
     "price": "98,000",
-    "colors": ["BLACK", "BURGUNDY"],
+    "colors": [
+      "BLACK",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8150&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/354409d6fed482ca13ebb06f6f2dba78.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/b2685fa5460b50d9233ef4bec66080d6.jpg",
@@ -12016,7 +13903,10 @@
       "소매부분의 셔링과 앞판의 로고 프린트가 포인트인 헨리넥 롱 슬리브"
     ],
     "price": "98,000",
-    "colors": ["BURGUNDY", "BLACK"],
+    "colors": [
+      "BURGUNDY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8149&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/2d553dfc2e5527404c8446f922030e2f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/9b605f4c89b0ee9fd16ea40e39faa7ea.jpg",
@@ -12033,7 +13923,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/c3fcaca56423b035aa2d56c7dc5bf792.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -12044,7 +13936,10 @@
       "전면에 턱 주름과 로고 프린트가 포인트인 오버핏 슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8148&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/5d38492042497ff54d45d47b0d41aef4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/176f386510e9b511129346839676e650.jpg",
@@ -12072,7 +13967,10 @@
       "전면에 턱 주름과 로고 프린트가 포인트인 오버핏 슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8147&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/666c602d4b65500149b9186f3de30c78.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/979e23f04ac56dc826ea0631b8219ab0.jpg",
@@ -12100,7 +13998,10 @@
       "전면에 턱 주름과 로고 프린트가 포인트인 오버핏 슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "LIGHT KHAKI"],
+    "colors": [
+      "BLACK",
+      "LIGHT KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8146&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/c1dbe5d83227b949e6113a5c004bbd26.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/14c49c457ede703a0fc95205dba90bce.jpg",
@@ -12128,7 +14029,10 @@
       "전면에 턱 주름과 로고 프린트가 포인트인 오버핏 슬리브 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["LIGHT KHAKI", "BLACK"],
+    "colors": [
+      "LIGHT KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8145&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/568b0998e2bc0206a3d2bc9a02515a84.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/51d4c338be6454549b0e9020d586251c.jpg",
@@ -12156,7 +14060,10 @@
       "밑단의 손자수와 넥라인의 버튼이 포인트인 후드 슬림 니트 탑"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8144&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/493ae7e1c4f7873c35cef7c022a178fd.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/48d8c9cd1d916e088ed61917defc969a.jpg",
@@ -12184,7 +14091,10 @@
       "밑단의 손자수와 넥라인의 버튼이 포인트인 후드 슬림 니트 탑"
     ],
     "price": "158,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8143&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/2a184290079e9341813b126b7dd537fb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/70e740bcaf45f1512a4f08bad65579b2.jpg",
@@ -12212,7 +14122,10 @@
       "어깨에 위치한 홀과 밑단의 스트링 조임으로 다양한 연출이 가능한 크롭 스웻셔츠"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8142&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/323c954090bb15ca9cbdba52d22bc246.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/5fb6692e4adc102986507e9677879321.jpg",
@@ -12240,7 +14153,10 @@
       "어깨에 위치한 홀과 밑단의 스트링 조임으로 다양한 연출이 가능한 크롭 스웻셔츠"
     ],
     "price": "158,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8141&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/2014ef557e888f17b5d11950153e70c6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/45c0220496d89192a20be3dd58be58ea.jpg",
@@ -12268,7 +14184,10 @@
       "앞판의 절개라인과 가슴 부분의 디자인 입술포켓이 포인트인 코튼 셔츠"
     ],
     "price": "168,000",
-    "colors": ["BEIGE", "BROWN"],
+    "colors": [
+      "BEIGE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8140&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/105e619f5c6bb2acd843069fe8709dea.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/7eee5552ae3743df62896ddcbf154b39.jpg",
@@ -12296,7 +14215,10 @@
       "앞판의 절개라인과 가슴 부분의 디자인 입술포켓이 포인트인 코튼 셔츠"
     ],
     "price": "168,000",
-    "colors": ["BROWN", "BEIGE"],
+    "colors": [
+      "BROWN",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8139&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/75ec2acd21aa62a124fa1675e3bdd1a0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/da3ae142e445663294e8a784e082fb80.jpg",
@@ -12313,7 +14235,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/00c3f12d48632f5991b4d37a515f18b1.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -12324,7 +14248,11 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "GREY", "BURGUNDY"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8103&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/142e6a9379c951d7235122c13cf8737a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/35f4023850671262757452e60025c7bb.jpg",
@@ -12353,7 +14281,11 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["GREY", "BLACK", "BURGUNDY"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8102&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/cbd13fa9a7a67f44c094a23006311fb9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/061df5186baffc8aceb58b299c1104ca.jpg",
@@ -12382,7 +14314,11 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["BURGUNDY", "BLACK", "GREY"],
+    "colors": [
+      "BURGUNDY",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8101&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/6647d9eb3ea650b4724e2de453e8e822.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/2f7295efef9b284f95c96651cb0d9d52.jpg",
@@ -12411,7 +14347,10 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8100&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/9a8b5adfaad3709b2d207a2c9b300804.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/f97354ae469f9d2485a2bc2bcfcfb321.jpg",
@@ -12441,7 +14380,10 @@
       "앞판과 어깨선의 컬러 테이프와 로고 프린팅이 포인트인 하프 집업"
     ],
     "price": "168,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8099&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/ab672f5480389d5d33d7d464fb08ad39.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/ea8af912253a1ed89e035120f6fb66e4.jpg",
@@ -12467,9 +14409,14 @@
   {
     "id": "8083",
     "name": "LOGO POINT TERRY CROP TOP IN NAVY",
-    "bullet_points": ["터치감이 부드러운 테리 소재로 제작된 캐주얼 로고 탑"],
+    "bullet_points": [
+      "터치감이 부드러운 테리 소재로 제작된 캐주얼 로고 탑"
+    ],
     "price": "68,000",
-    "colors": ["NAVY", "LIGHT GREEN"],
+    "colors": [
+      "NAVY",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8083&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/68d423fdfb7f1026d97cb7883d72352e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/8509101913a4030819b9f07ce01bb81c.jpg",
@@ -12493,9 +14440,14 @@
   {
     "id": "8082",
     "name": "LOGO POINT TERRY CROP TOP IN LIGHT GREEN",
-    "bullet_points": ["터치감이 부드러운 테리 소재로 제작된 캐주얼 로고 탑"],
+    "bullet_points": [
+      "터치감이 부드러운 테리 소재로 제작된 캐주얼 로고 탑"
+    ],
     "price": "68,000",
-    "colors": ["LIGHT GREEN", "NAVY"],
+    "colors": [
+      "LIGHT GREEN",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8082&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/cb853b41ecc57b231dc2fcdf03370bf6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/4b1a3c4bbc1237b6d82f6849d84933b4.jpg",
@@ -12523,7 +14475,11 @@
       "로고 프린팅과 넥 아래 미니라벨을 리버시블로 연출 가능한 로고 탑"
     ],
     "price": "58,000",
-    "colors": ["IVORY", "LIGHT ORANGE", "GREY"],
+    "colors": [
+      "IVORY",
+      "LIGHT ORANGE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8081&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/856e2ae8ec469f4d1db93a362d12e93c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/1d320be227b70c5983efba990e473db1.jpg",
@@ -12553,7 +14509,11 @@
       "로고 프린팅과 넥 아래 미니라벨을 리버시블로 연출 가능한 로고 탑"
     ],
     "price": "58,000",
-    "colors": ["GREY", "IVORY", "LIGHT ORANGE"],
+    "colors": [
+      "GREY",
+      "IVORY",
+      "LIGHT ORANGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8080&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/2ea89d3be2a82f5f5e141d8afa72ad1a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/833e5e982f83cf381db26bf0a8839239.jpg",
@@ -12583,7 +14543,11 @@
       "로고 프린팅과 넥 아래 미니라벨을 리버시블로 연출 가능한 로고 탑"
     ],
     "price": "58,000",
-    "colors": ["LIGHT ORANGE", "IVORY", "GREY"],
+    "colors": [
+      "LIGHT ORANGE",
+      "IVORY",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8079&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/aee7f1746fe4eba233ba18f88f6284f5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/7cd2c9af5b08800da8d7d49a096ff042.jpg",
@@ -12609,9 +14573,14 @@
   {
     "id": "8078",
     "name": "DIAGONAL TEXTURE KNIT TOP IN LIGHT BEIGE",
-    "bullet_points": ["사선 스카시 조직감이 포인트인 보트넥 탑"],
+    "bullet_points": [
+      "사선 스카시 조직감이 포인트인 보트넥 탑"
+    ],
     "price": "138,000",
-    "colors": ["LIGHT BEIGE", "BURGUNDY"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8078&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/1956f19e7e07a2129545f992d9397bf9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/9c9b55c7d490dfbfb2b7df98460474cf.jpg",
@@ -12635,9 +14604,14 @@
   {
     "id": "8077",
     "name": "DIAGONAL TEXTURE KNIT TOP IN BURGUNDY",
-    "bullet_points": ["사선 스카시 조직감이 포인트인 보트넥 탑"],
+    "bullet_points": [
+      "사선 스카시 조직감이 포인트인 보트넥 탑"
+    ],
     "price": "138,000",
-    "colors": ["BURGUNDY", "LIGHT BEIGE"],
+    "colors": [
+      "BURGUNDY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8077&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/6bfdd30807dd7bf6de8b558f8cf6d6a2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/2ff0e8fdc303b309a9516dad3e8635cb.jpg",
@@ -12665,7 +14639,10 @@
       "뒷판의 자카드 로고와 앞판의 언발란스한 지퍼 디테일이 포인트인 슬림핏 하이넥 집업"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8076&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/1c6956cd8a30fd765039fd59588b6ee3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/5bc7cd49bd9e0e0b423a44e58cc2e482.jpg",
@@ -12694,7 +14671,10 @@
       "뒷판의 자카드 로고와 앞판의 언발란스한 지퍼 디테일이 포인트인 슬림핏 하이넥 집업"
     ],
     "price": "158,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8075&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/bca928db8479246b6e109668e1064e86.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/9aef4d0fe2b944868d11a8f2600a65ce.jpg",
@@ -12719,9 +14699,15 @@
   {
     "id": "8074",
     "name": "SNAP DETAIL SLIM TOP IN BLACK",
-    "bullet_points": ["스냅버튼으로 다양하게 연출 가능한 슬림핏 롱 슬리브"],
+    "bullet_points": [
+      "스냅버튼으로 다양하게 연출 가능한 슬림핏 롱 슬리브"
+    ],
     "price": "118,000",
-    "colors": ["BLACK", "IVORY", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8074&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/73b54edb11f6b60c63eeef13969e0262.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/01b60734d4fb0d8306f8bbd61a79a464.jpg",
@@ -12746,9 +14732,15 @@
   {
     "id": "8073",
     "name": "SNAP DETAIL SLIM TOP IN IVORY",
-    "bullet_points": ["스냅버튼으로 다양하게 연출 가능한 슬림핏 롱 슬리브"],
+    "bullet_points": [
+      "스냅버튼으로 다양하게 연출 가능한 슬림핏 롱 슬리브"
+    ],
     "price": "118,000",
-    "colors": ["IVORY", "LIGHT BLUE", "BLACK"],
+    "colors": [
+      "IVORY",
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8073&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/558ec34c3bc995e0b41e3fb56f8b2356.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/1aa5477bf095114c7048008a9a7f7eef.jpg",
@@ -12773,9 +14765,15 @@
   {
     "id": "8072",
     "name": "SNAP DETAIL SLIM TOP IN LIGHT BLUE",
-    "bullet_points": ["스냅버튼으로 다양하게 연출 가능한 슬림핏 롱 슬리브"],
+    "bullet_points": [
+      "스냅버튼으로 다양하게 연출 가능한 슬림핏 롱 슬리브"
+    ],
     "price": "118,000",
-    "colors": ["LIGHT BLUE", "IVORY", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8072&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/14fae1beac16349a13901ae85815931d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/e0e47eebe86e7f96df46dbbcabe6b342.jpg",
@@ -12800,9 +14798,15 @@
   {
     "id": "7967",
     "name": "STAMP LOGO GRAPHIC CROP TOP IN BLACK",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "WHITE", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7967&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/d368aa6046fde341e0566ad27dffb50c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/5703a2501f7468bfe0b117e628c588ee.jpg",
@@ -12827,9 +14831,15 @@
   {
     "id": "7966",
     "name": "STAMP LOGO GRAPHIC CROP TOP IN WHITE",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["WHITE", "BEIGE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7966&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/c82d7af3e108f669e96f21d237644227.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/31c325171951ec9160c63c9fedf596fe.jpg",
@@ -12854,9 +14864,15 @@
   {
     "id": "7965",
     "name": "STAMP LOGO GRAPHIC CROP TOP IN BEIGE",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["BEIGE", "WHITE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7965&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/2dc79a0ff2f831420289423d7a9cfbbf.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/74acd264241bb92798671bcca737afeb.jpg",
@@ -12881,7 +14897,9 @@
   {
     "id": "7964",
     "name": "STAMP LOGO GRAPHIC OVERSIZE TOP FOR MEN IN BLACK",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 오버핏 티셔츠"
+    ],
     "price": "78,000",
     "colors": [],
     "link": "https://matinkim.com/product/detail.html?product_no=7964&cate_no=27&display_group=1",
@@ -12907,7 +14925,9 @@
   {
     "id": "7963",
     "name": "STAMP LOGO GRAPHIC OVERSIZE TOP FOR MEN IN WHITE",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 오버핏 티셔츠"
+    ],
     "price": "78,000",
     "colors": [],
     "link": "https://matinkim.com/product/detail.html?product_no=7963&cate_no=27&display_group=1",
@@ -12926,14 +14946,18 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/5c8886925feaf42add552b6de2b61298.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7962",
     "name": "STAMP LOGO GRAPHIC OVERSIZE TOP FOR MEN IN BRICK",
-    "bullet_points": ["로고 그래픽 프린트가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 그래픽 프린트가 포인트인 오버핏 티셔츠"
+    ],
     "price": "78,000",
     "colors": [],
     "link": "https://matinkim.com/product/detail.html?product_no=7962&cate_no=27&display_group=1",
@@ -12959,9 +14983,15 @@
   {
     "id": "7961",
     "name": "TWIST POINT SLIM TOP IN DARK NAVY",
-    "bullet_points": ["언발란스한 디테일이 포인트인 슬림핏 크롭 티셔츠"],
+    "bullet_points": [
+      "언발란스한 디테일이 포인트인 슬림핏 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["DARK NAVY", "LIME", "BURGUNDY"],
+    "colors": [
+      "DARK NAVY",
+      "LIME",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7961&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/fdf9ab3add983504a1bc6faa227ba97f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/3868d04a2c4280872286f32d1ebb6729.jpg",
@@ -12978,16 +15008,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/aa06ffb874295ddcbc8090ff7d2eb14e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7960",
     "name": "TWIST POINT SLIM TOP IN BURGUNDY",
-    "bullet_points": ["언발란스한 디테일이 포인트인 슬림핏 크롭 티셔츠"],
+    "bullet_points": [
+      "언발란스한 디테일이 포인트인 슬림핏 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["BURGUNDY", "LIME", "DARK NAVY"],
+    "colors": [
+      "BURGUNDY",
+      "LIME",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7960&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/a93fbadc2246a8a6dde075c91bbe054c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/f8bf705da529c9c08fd9be2865d30c34.jpg",
@@ -13004,16 +15042,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/3b06f888896c2b76228f14e16bbf7cd9.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7959",
     "name": "TWIST POINT SLIM TOP IN LIME",
-    "bullet_points": ["언발란스한 디테일이 포인트인 슬림핏 크롭 티셔츠"],
+    "bullet_points": [
+      "언발란스한 디테일이 포인트인 슬림핏 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["LIME", "BURGUNDY", "DARK NAVY"],
+    "colors": [
+      "LIME",
+      "BURGUNDY",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7959&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/96fbf8af7866e8f04fabe97ed65ff810.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/8dfb49880a0279d4ea6aeda8d903364e.jpg",
@@ -13037,9 +15083,15 @@
   {
     "id": "7958",
     "name": "MINI LABEL SHIRRING TOP IN BLACK",
-    "bullet_points": ["로고 미니 라벨과 주름 장식이 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "로고 미니 라벨과 주름 장식이 포인트인 크롭 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "RED", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "RED",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7958&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/f93c8e384a50a84b2123c53bce4c44de.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/58b8cfaac5a3c0ab4881f1116ff9d736.jpg",
@@ -13063,9 +15115,15 @@
   {
     "id": "7957",
     "name": "MINI LABEL SHIRRING TOP IN BEIGE",
-    "bullet_points": ["로고 미니 라벨과 주름 장식이 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "로고 미니 라벨과 주름 장식이 포인트인 크롭 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["BEIGE", "RED", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "RED",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7957&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/29e31d1d833e2c52d5b519c2033e56fc.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/fa4bfc94aa98ef0e1f4a5a45ee213d6c.jpg",
@@ -13089,9 +15147,15 @@
   {
     "id": "7956",
     "name": "MINI LABEL SHIRRING TOP IN RED",
-    "bullet_points": ["로고 미니 라벨과 주름 장식이 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "로고 미니 라벨과 주름 장식이 포인트인 크롭 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["RED", "BEIGE", "BLACK"],
+    "colors": [
+      "RED",
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7956&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/4728cdb4bb67fe63853e6df4c3888fde.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/af1e80fbae5f03df31f511e8a6c90dc0.jpg",
@@ -13108,7 +15172,10 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/28a4c8c5dbf13f0b2325576153782c29.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13119,7 +15186,12 @@
       "부드러운 코튼 소재와 로고 자수가 포인트인 슬림핏 캐주얼 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "WHITE", "LIGHT BLUE", "RED"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "LIGHT BLUE",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7434&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/d61ef00e62ebca603ae358c85de87b01.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/c6b640b7ce793dd37a61f4b1723f389a.jpg",
@@ -13149,7 +15221,12 @@
       "부드러운 코튼 소재와 로고 자수가 포인트인 슬림핏 캐주얼 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "BLACK", "LIGHT BLUE", "RED"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "LIGHT BLUE",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7433&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/542418e27a6735e3056db1f207eef207.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/c653ba2b4da63f6fabf261c9656c8346.jpg",
@@ -13179,7 +15256,12 @@
       "부드러운 코튼 소재와 로고 자수가 포인트인 슬림핏 캐주얼 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["LIGHT BLUE", "BLACK", "WHITE", "RED"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK",
+      "WHITE",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7432&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/3b0c6d1a3b77c63aa6f907c82f6c96ca.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/83185a58e3dc58f14b886ec9f48e023e.jpg",
@@ -13208,7 +15290,12 @@
       "부드러운 코튼 소재와 로고 자수가 포인트인 슬림핏 캐주얼 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["RED", "BLACK", "WHITE", "LIGHT BLUE"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "WHITE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7431&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/56ca07902c484d093693d21b4483c518.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/cbfab89eca0caf1fc5b26703eaf68a63.jpg",
@@ -13240,7 +15327,11 @@
       "플라워 로고 자수 스티치와 배색 컬러가 포인트인 나그랑 반팔티"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "PINK", "PURPLE"],
+    "colors": [
+      "BLACK",
+      "PINK",
+      "PURPLE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7766&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/bf0b082dd8fc0daf104571abaa0dc523.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/fbca19016cbb06b64015a60fa69bd9b4.jpg",
@@ -13258,7 +15349,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/72a34bcf5c2b101ece517018c3c145da.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13269,7 +15362,11 @@
       "플라워 로고 자수 스티치와 배색 컬러가 포인트인 나그랑 반팔티"
     ],
     "price": "58,000",
-    "colors": ["PURPLE", "BLACK", "PINK"],
+    "colors": [
+      "PURPLE",
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7768&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3a31bcfb9f427d67497cdca7c8e14982.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/f55fe9f8cfc8cb88c74ee7aa26e2dfce.jpg",
@@ -13297,7 +15394,11 @@
       "플라워 로고 자수 스티치와 배색 컬러가 포인트인 나그랑 반팔티"
     ],
     "price": "58,000",
-    "colors": ["PINK", "PURPLE", "BLACK"],
+    "colors": [
+      "PINK",
+      "PURPLE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7767&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/0a84edcd840f86588c46f5a207341c0b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/4535bfe2ea5a725ad61369aa54f587f5.jpg",
@@ -13315,16 +15416,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/6f3b02182195ba3c24d8d911daa96483.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7686",
     "name": "VINTAGE WASHED LOGO TOP FOR MEN IN CHARCOAL",
-    "bullet_points": ["캐주얼하게 착용가능한 코튼 오버핏 로고탑"],
+    "bullet_points": [
+      "캐주얼하게 착용가능한 코튼 오버핏 로고탑"
+    ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "KHAKI", "PINK"],
+    "colors": [
+      "CHARCOAL",
+      "KHAKI",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7686&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/300e040f15692ea1bae5a910a4588386.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/de07b091223d0bff2db87e27fa19c43f.jpg",
@@ -13346,9 +15455,15 @@
   {
     "id": "7683",
     "name": "VINTAGE WASHED LOGO TOP FOR WOMEN IN CHARCOAL",
-    "bullet_points": ["캐주얼하게 착용가능한 코튼 오버핏 로고탑"],
+    "bullet_points": [
+      "캐주얼하게 착용가능한 코튼 오버핏 로고탑"
+    ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "PINK", "KHAKI"],
+    "colors": [
+      "CHARCOAL",
+      "PINK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7683&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/581f4ff29753277bbb979fe3bdfdc172.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/bd8495736ecb67f9526c66fe8c431942.jpg",
@@ -13377,7 +15492,10 @@
       "사선진 스트라이프 패턴과 밑단이 포인트인 슬림핏 니트 슬리브리스"
     ],
     "price": "138,000",
-    "colors": ["BROWN", "BLUE"],
+    "colors": [
+      "BROWN",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7884&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/1de54cd256ee7839dc23e86b476a4889.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/93d1cbb745804dd6db0e758dc2799cb1.jpg",
@@ -13408,7 +15526,10 @@
       "사선진 스트라이프 패턴과 밑단이 포인트인 슬림핏 니트 슬리브리스"
     ],
     "price": "138,000",
-    "colors": ["BLUE", "BROWN"],
+    "colors": [
+      "BLUE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7883&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/b067aa56aa2ee395f11631d9a0b9e1a2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8dbf581824d65d82dfe36e7558dc35e1.jpg",
@@ -13437,7 +15558,10 @@
       "앞판의 사선절개가 포인트이며 스트링으로 다양한 연출이 가능한 오프숄더 탑"
     ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7882&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/f0bf9633eb658b06037a2cf0a89dc6dd.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8e71a33386ad3f353f112773edac81ad.jpg",
@@ -13468,7 +15592,10 @@
       "앞판의 사선절개가 포인트이며 스트링으로 다양한 연출이 가능한 오프숄더 탑"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7881&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/823294d5567ef6dd844410170cd31cf5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/5c26986e57b21a020a6089f34418824e.jpg",
@@ -13496,7 +15623,10 @@
       "레이어드 된 형태로 단추 여밈이 포인트인 여름 니트 소재 홀터넥 니트 탑"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "LIGHT YELLOW"],
+    "colors": [
+      "BLACK",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7860&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/4ea97de08c833ee9f93e8443f4cfe034.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/935a72b6da65d6a0b9eb623d89c0857a.jpg",
@@ -13525,7 +15655,9 @@
       "레이어드 된 형태로 단추 여밈이 포인트인 여름 니트 소재 홀터넥 니트 탑"
     ],
     "price": "138,000",
-    "colors": ["LIGHT YELLOW"],
+    "colors": [
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7859&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/1142f0b684dae003dfda341c8cc5e579.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/29d97c785eea8a54493b941a8e88afb9.jpg",
@@ -13555,7 +15687,10 @@
       "러플진 매듭으로 다양한 연출이 가능한 여름 니트 소재 튜브탑"
     ],
     "price": "118,000",
-    "colors": ["BLACK", "OLIVE"],
+    "colors": [
+      "BLACK",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7858&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/9f838698d37dc964da07d8606f0c11f4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/03b7f71fcd50fcc6bd851d15dd14fae4.jpg",
@@ -13584,7 +15719,10 @@
       "러플진 매듭으로 다양한 연출이 가능한 여름 니트 소재 튜브탑"
     ],
     "price": "118,000",
-    "colors": ["OLIVE", "BLACK"],
+    "colors": [
+      "OLIVE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7857&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/f0bfb57ff3db4ba3094999ffaa9d0216.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/75647b89c2525fbb4e6541e7ee71349e.jpg",
@@ -13610,9 +15748,15 @@
   {
     "id": "7856",
     "name": "LOGO APPLIQUE SLIM TANK TOP IN BLACK",
-    "bullet_points": ["로고 아플리케 자수가 포인트인 슬림핏 슬리브리스"],
+    "bullet_points": [
+      "로고 아플리케 자수가 포인트인 슬림핏 슬리브리스"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "WHITE", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7856&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/6be2fa34f1413e7b0f62a08beed9a792.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/5669e18d6e5803ed46f69c5cfe8d762b.jpg",
@@ -13632,16 +15776,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202506/ebf23e16fbae24f84d58d441a167fb7c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7855",
     "name": "LOGO APPLIQUE SLIM TANK TOP IN WHITE",
-    "bullet_points": ["로고 아플리케 자수가 포인트인 슬림핏 슬리브리스"],
+    "bullet_points": [
+      "로고 아플리케 자수가 포인트인 슬림핏 슬리브리스"
+    ],
     "price": "48,000",
-    "colors": ["WHITE", "KHAKI", "BLACK"],
+    "colors": [
+      "WHITE",
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7855&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/a7e75f5e3940798477f4fba548ab340e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/de7a677c4b02590d5925b2d3afb39b11.jpg",
@@ -13666,9 +15818,15 @@
   {
     "id": "7854",
     "name": "LOGO APPLIQUE SLIM TANK TOP IN KHAKI",
-    "bullet_points": ["로고 아플리케 자수가 포인트인 슬림핏 슬리브리스"],
+    "bullet_points": [
+      "로고 아플리케 자수가 포인트인 슬림핏 슬리브리스"
+    ],
     "price": "48,000",
-    "colors": ["KHAKI", "BLACK", "WHITE"],
+    "colors": [
+      "KHAKI",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7854&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202506/4dabd06000b549e403ec2630a27ac065.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202506/dab95b888f65e659cf328d7ee7cf68fa.jpg",
@@ -13695,7 +15853,11 @@
       "셔링 매듭으로 언발란스한 디자인이 포인트인 슬림핏 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "MINT", "LIGHT YELLOW"],
+    "colors": [
+      "BLACK",
+      "MINT",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7853&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/457116c4c6484e0878cfd264b98fa607.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/e72325ba2463e79795da5dd6f0d317ac.jpg",
@@ -13714,7 +15876,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/e1de8212f0f18c713fd43d1cf3ea4903.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13725,7 +15889,11 @@
       "셔링 매듭으로 언발란스한 디자인이 포인트인 슬림핏 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["LIGHT YELLOW", "BLACK", "MINT"],
+    "colors": [
+      "LIGHT YELLOW",
+      "BLACK",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7852&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/25406b12c7b85c47246a71f3357cf749.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8c38b0db1c902031bc18036061d43892.jpg",
@@ -13742,7 +15910,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/d96064834016cf6c7af12bf75d82680e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13753,7 +15923,11 @@
       "셔링 매듭으로 언발란스한 디자인이 포인트인 슬림핏 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["MINT", "LIGHT YELLOW", "BLACK"],
+    "colors": [
+      "MINT",
+      "LIGHT YELLOW",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7851&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/d6bad33475b3d80de0f27cd2358fb19a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/639776e16fa84605ca9ecc8d35880c06.jpg",
@@ -13781,7 +15955,11 @@
       "MATIN KIM 로고 프린팅과 연결된 스티치 실이 포인트인 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "BLUE", "WHITE"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7850&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/9919ac3e995866447e543de08585d4f5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/1dbf51b980705534349ce598e61a7260.jpg",
@@ -13797,7 +15975,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/74a196173060b9bafce9ba7ecd9931b1.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13808,7 +15988,11 @@
       "MATIN KIM 로고 프린팅과 연결된 스티치 실이 포인트인 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "TURQUISE BLUE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "TURQUISE BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7849&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/2eaaa2ddf5a1747381707b0c6f72f810.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/fb04d9f7c4ab1e67bf6dc394e3bd3c3a.jpg",
@@ -13835,7 +16019,11 @@
       "MATIN KIM 로고 프린팅과 연결된 스티치 실이 포인트인 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["TURQUISE BLUE", "WHITE", "BLACK"],
+    "colors": [
+      "TURQUISE BLUE",
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7848&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/47d0c6d40f23e26f982bb00e2d457297.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/0bf5a49b18765b819986ffce13ea2e0a.jpg",
@@ -13862,7 +16050,11 @@
       "MATIN KIM 로고 프린팅과 연결된 스티치 실이 포인트인 오버핏 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["WHITE", "TURQUISE BLUE", "KHAKI"],
+    "colors": [
+      "WHITE",
+      "TURQUISE BLUE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7847&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/e4fb682c68fc3f22ba3f09b93e88f863.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/729fa1cadc12b60e0e6e00d9e9032cba.jpg",
@@ -13891,7 +16083,11 @@
       "MATIN KIM 로고 프린팅과 연결된 스티치 실이 포인트인 오버핏 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["KHAKI", "TURQUISE BLUE", "WHITE"],
+    "colors": [
+      "KHAKI",
+      "TURQUISE BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7846&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/5e6074af43266358d5131e416dbcaafc.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/fb4ad4d60cfe3eab67422c5912678e7a.jpg",
@@ -13917,7 +16113,11 @@
       "MATIN KIM 로고 프린팅과 연결된 스티치 실이 포인트인 오버핏 티셔츠"
     ],
     "price": "78,000",
-    "colors": ["TURQUISE BLUE", "WHITE", "KHAKI"],
+    "colors": [
+      "TURQUISE BLUE",
+      "WHITE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7845&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/b65c94dffe6e4935aea548cd8a13061e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/878e38378bac283a636a3bce25ed1523.jpg",
@@ -13935,7 +16135,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/94f104151dc49ad999024e2e30542208.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13946,7 +16148,10 @@
       "배색 스티치와 로고 자수가 포인트인 세미 슬림핏 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7844&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3ea344f208c94dd1a30cc492e3c9a995.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/438726cfae6bdf0aa5f865e8bb60c0f1.jpg",
@@ -13963,7 +16168,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/9a28dd4ce06c193f3104e6b30f29ea4f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -13974,7 +16181,10 @@
       "배색 스티치와 로고 자수가 포인트인 세미 슬림핏 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7843&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/ef1a605ae52577ac441558e2d3772d50.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/d78954c8b63bfb1abc7d365b88a55101.jpg",
@@ -14000,9 +16210,15 @@
   {
     "id": "7842",
     "name": "BUBBLY GRAPHIC PRINTING TOP IN BLACK",
-    "bullet_points": ["버블 그래픽 로고가 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "버블 그래픽 로고가 포인트인 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "LILAC", "LIGHT YELLOW"],
+    "colors": [
+      "BLACK",
+      "LILAC",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7842&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3dd0e226df00c2844a6626fa04bd5b17.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/9d1a33d48ff049120167d570f6d2edb0.jpg",
@@ -14019,16 +16235,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/c8bb09091d95e4a5c92bc21b704dd6fb.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7841",
     "name": "BUBBLY GRAPHIC PRINTING TOP IN LIGHT YELLOW",
-    "bullet_points": ["버블 그래픽 로고가 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "버블 그래픽 로고가 포인트인 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["LIGHT YELLOW", "LILAC", "BLACK"],
+    "colors": [
+      "LIGHT YELLOW",
+      "LILAC",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7841&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/55c459a3a3b39d8c08c7017274c12cd0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/c5a5de07efa5c380183c946b76048dd6.jpg",
@@ -14051,9 +16275,15 @@
   {
     "id": "7840",
     "name": "BUBBLY GRAPHIC PRINTING TOP IN LILAC",
-    "bullet_points": ["버블 그래픽 로고가 포인트인 크롭 티셔츠"],
+    "bullet_points": [
+      "버블 그래픽 로고가 포인트인 크롭 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["LILAC", "LIGHT YELLOW", "BLACK"],
+    "colors": [
+      "LILAC",
+      "LIGHT YELLOW",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7840&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/69c2676ba0b286e0feb3c164ab940771.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/6fdb968232897865ac56cc05e3d06f1a.jpg",
@@ -14078,9 +16308,15 @@
   {
     "id": "7839",
     "name": "SWEAT PRINTING LOGO TOP FOR MEN IN WHITE",
-    "bullet_points": ["MATIN KIM 그래픽 로고가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "MATIN KIM 그래픽 로고가 포인트인 오버핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["WHITE", "TURQUISE BLUE", "LIGHT YELLOW"],
+    "colors": [
+      "WHITE",
+      "TURQUISE BLUE",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7839&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/e6afdea3a5324e01e77e023b496fb94b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/ed3524855a1d5b84cf7509f1f16e995e.jpg",
@@ -14107,9 +16343,14 @@
   {
     "id": "7838",
     "name": "SWEAT PRINTING LOGO TOP FOR MEN IN LIGHT YELLOW",
-    "bullet_points": ["MATIN KIM 그래픽 로고가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "MATIN KIM 그래픽 로고가 포인트인 오버핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["LIGHT YELLOW", "TURQUISE BLUE"],
+    "colors": [
+      "LIGHT YELLOW",
+      "TURQUISE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7838&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/4446b4b4edd6271a8a4eb5a7bc53aa8a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/a6d03c4e26dcafadff3eeb4ea47c72de.jpg",
@@ -14135,9 +16376,14 @@
   {
     "id": "7837",
     "name": "SWEAT PRINTING LOGO TOP FOR MEN IN TURQUOISE BLUE",
-    "bullet_points": ["MATIN KIM 그래픽 로고가 포인트인 오버핏 티셔츠"],
+    "bullet_points": [
+      "MATIN KIM 그래픽 로고가 포인트인 오버핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["TURQUISE BLUE", "LIGHT YELLOW"],
+    "colors": [
+      "TURQUISE BLUE",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7837&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/2d9a6dc164e299adf0c8acbbd5550d7e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/202e784bddf24e0380e27e4d81e77949.jpg",
@@ -14166,7 +16412,10 @@
       "언발란스한 카라 형태와 자개 단추가 포인트인 오버핏 셔츠"
     ],
     "price": "158,000",
-    "colors": ["IVORY", "KHAKI BROWN"],
+    "colors": [
+      "IVORY",
+      "KHAKI BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7836&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/9ba3b7d4fee055bd569ce927e6f2966d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/3ccd75928460f998df24c7625daada77.jpg",
@@ -14185,7 +16434,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/995f06142afef8742345a2ff93790ac1.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -14196,7 +16447,10 @@
       "언발란스한 카라 형태와 자개 단추가 포인트인 오버핏 셔츠"
     ],
     "price": "158,000",
-    "colors": ["KHAKI BROWN", "IVORY"],
+    "colors": [
+      "KHAKI BROWN",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7835&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/1ffdd9b3df33915ee1d8b38599c7ccfe.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/c5bba130a2089ed287c330722915bbde.jpg",
@@ -14223,9 +16477,14 @@
   {
     "id": "7834",
     "name": "ZIGZAG STITCH POINT SHIRT FOR MEN IN WHITE",
-    "bullet_points": ["배색의 지그재그 스티치가 포인트인 오버핏 셔츠"],
+    "bullet_points": [
+      "배색의 지그재그 스티치가 포인트인 오버핏 셔츠"
+    ],
     "price": "178,000",
-    "colors": ["WHITE", "LIGHT GREEN"],
+    "colors": [
+      "WHITE",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7834&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/0364f365950c44db1c492fdb3cd1db8d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/3dd94c497d2ee21b8548c7a852feab82.jpg",
@@ -14253,9 +16512,14 @@
   {
     "id": "7833",
     "name": "ZIGZAG STITCH POINT SHIRT FOR MEN IN LIGHT GREEN",
-    "bullet_points": ["배색의 지그재그 스티치가 포인트인 오버핏 셔츠"],
+    "bullet_points": [
+      "배색의 지그재그 스티치가 포인트인 오버핏 셔츠"
+    ],
     "price": "178,000",
-    "colors": ["LIGHT GREEN", "WHITE"],
+    "colors": [
+      "LIGHT GREEN",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7833&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/47074732a53d1338d90e43b9674ad01e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/d9f586a4be852b0b361ca23332b40186.jpg",
@@ -14285,7 +16549,10 @@
       "앞판 중심의 절개와 네크라인 금속 장식이 포인트인 슬리브리스 탑"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7782&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/e01ebddc5d012c4e405ed510027be44c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/6239b80a4db6ed51be41814b296676d5.jpg",
@@ -14315,7 +16582,11 @@
       "앞판 중심의 절개와 네크라인 금속 장식이 포인트인 슬리브리스 탑"
     ],
     "price": "68,000",
-    "colors": ["WHITE", "GREY", "BLACK"],
+    "colors": [
+      "WHITE",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7780&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/36833f21ffdba81c73814bbc5ea894b3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/bba662ca256c7d01e48b5b8208589451.jpg",
@@ -14346,7 +16617,10 @@
       "앞판 중심의 절개와 네크라인 금속 장식이 포인트인 슬리브리스 탑"
     ],
     "price": "68,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7781&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/8cf301a9b0df5c1821e1e45716a02381.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/073870e753f14170f02ece54279f94a2.jpg",
@@ -14377,7 +16651,11 @@
       "홀터넥끈으로 다채롭게 활용이 가능하며 컬러감이 돋보이는 슬리브리스 탑"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "BLUE", "LIGHT YELLOW"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7779&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/989c08b3d6aa7764175e403582e05176.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/919ca4dec3c2c55ea9792db7692e350d.jpg",
@@ -14406,7 +16684,11 @@
       "홀터넥끈으로 다채롭게 활용이 가능하며 컬러감이 돋보이는 슬리브리스 탑"
     ],
     "price": "48,000",
-    "colors": ["LIGHT YELLOW", "BLACK", "BLUE"],
+    "colors": [
+      "LIGHT YELLOW",
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7778&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/0b1d9f2d6def1ea151f216c7cb377ee0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/cee16719f3a4a02a2152d09fa55d452b.jpg",
@@ -14434,7 +16716,11 @@
       "홀터넥끈으로 다채롭게 활용이 가능하며 컬러감이 돋보이는 슬리브리스 탑"
     ],
     "price": "48,000",
-    "colors": ["BLUE", "BLACK", "LIGHT YELLOW"],
+    "colors": [
+      "BLUE",
+      "BLACK",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7777&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/d74ce4c202a2274ca6bde828d80c7a0c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/3cd2cffe8c9703a7c4d1c615fe5e6fe4.jpg",
@@ -14453,16 +16739,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/8e259da6b9912ff3b883bb70d143f014.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7776",
     "name": "PATTERN ARTWORK LOGO CROP TOP IN BLACK",
-    "bullet_points": ["로고 아트윅이 포인트인 캐주얼 무드 티셔츠"],
+    "bullet_points": [
+      "로고 아트윅이 포인트인 캐주얼 무드 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7776&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/acdeb924a000246cdf266a85071263b0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/d2782ee02d3672dbdc5a9598bad0dc97.jpg",
@@ -14480,16 +16773,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/c0fe4f4c473234fd1f1652afeb6100d6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7775",
     "name": "PATTERN ARTWORK LOGO CROP TOP IN WHITE",
-    "bullet_points": ["로고 아트윅이 포인트인 캐주얼 무드 티셔츠"],
+    "bullet_points": [
+      "로고 아트윅이 포인트인 캐주얼 무드 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7775&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/6a6d2f217a0707fba3ac80993f8ee890.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/57e8530ae435cb535eec32d5cd07f2a7.jpg",
@@ -14519,7 +16819,11 @@
       "로고 패치워크 아트윅이 전판 프린트 되어 캐주얼 무드의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "PINK", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "PINK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7774&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/86efae2bd3318995b29a81becfbd6a18.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8d0e8727d366acae94067f34e962391b.jpg",
@@ -14538,7 +16842,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/b2f2da4a46b7b2d0389f3e6cef492224.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -14549,7 +16855,11 @@
       "로고 패치워크 아트윅이 전판 프린트 되어 캐주얼 무드의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["LIGHT BLUE", "PINK", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7773&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/327ec3ac76a7bfc7e87f8322515afdfd.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/30e67cb6c06dbb479fb9d54bfdef0146.jpg",
@@ -14579,7 +16889,11 @@
       "로고 패치워크 아트윅이 전판 프린트 되어 캐주얼 무드의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["PINK", "LIGHT BLUE", "BLACK"],
+    "colors": [
+      "PINK",
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7772&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/9aa7e8238753656062f90e6833f6655b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/07d1b3f2454799b6c8ab98455f9a7e3d.jpg",
@@ -14605,9 +16919,15 @@
   {
     "id": "7771",
     "name": "DUSTY TYPO GRAPHIC CROP TOP IN WHITE",
-    "bullet_points": ["스템프 레터링 프린트가 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "스템프 레터링 프린트가 포인트인 슬림핏 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["WHITE", "RED", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "RED",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7771&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/ab0bd5fb62979d044e36fdc80b8904ab.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/6f9bcf872d616e5bd1ea6f73f641353f.jpg",
@@ -14626,16 +16946,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/ec84f254c0cd4c759b74029611b21dc2.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7770",
     "name": "DUSTY TYPO GRAPHIC CROP TOP IN CHARCOAL",
-    "bullet_points": ["스템프 레터링 프린트가 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "스템프 레터링 프린트가 포인트인 슬림핏 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["CHARCOAL", "RED", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "RED",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7770&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/8a2890e69e465f2880e7218db4a941ca.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/2d665e639377a034d14aa535808452e6.jpg",
@@ -14660,9 +16988,15 @@
   {
     "id": "7769",
     "name": "DUSTY TYPO GRAPHIC CROP TOP IN RED",
-    "bullet_points": ["스템프 레터링 프린트가 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "스템프 레터링 프린트가 포인트인 슬림핏 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["RED", "CHARCOAL", "WHITE"],
+    "colors": [
+      "RED",
+      "CHARCOAL",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7769&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3d2427b9b826c29a46bef6701f6d0f9e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/d605864894a36026d2d95a525c0cdf05.jpg",
@@ -14691,7 +17025,12 @@
       "아치형의 MATIN KIM 로고 프린팅이 포인트인 캐주얼 무드의 반팔티"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "GREY", "MINT", "WHITE"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "MINT",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7765&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/6189a1aa4d0f67a76156bb80f839e934.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/4360748279c7d708eea486490683d729.jpg",
@@ -14721,7 +17060,12 @@
       "아치형의 MATIN KIM 로고 프린팅이 포인트인 캐주얼 무드의 반팔티"
     ],
     "price": "68,000",
-    "colors": ["WHITE", "BLACK", "GREY", "MINT"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "GREY",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7764&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/7eeb200d003de69493b1b71e0ec50d05.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/bdfa614d682b46749b6f8484d28b104e.jpg",
@@ -14750,7 +17094,12 @@
       "아치형의 MATIN KIM 로고 프린팅이 포인트인 캐주얼 무드의 반팔티"
     ],
     "price": "68,000",
-    "colors": ["GREY", "MINT", "WHITE", "BLACK"],
+    "colors": [
+      "GREY",
+      "MINT",
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7763&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/a0c8b48bbc13b119f384799f30bf279f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/880b92abe915b17a95c921893df6a556.jpg",
@@ -14780,7 +17129,12 @@
       "아치형의 MATIN KIM 로고 프린팅이 포인트인 캐주얼 무드의 반팔티"
     ],
     "price": "68,000",
-    "colors": ["MINT", "WHITE", "BLACK", "GREY"],
+    "colors": [
+      "MINT",
+      "WHITE",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7762&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3d7a4c37dfdc472fa584e1056bf2e3b0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/f8a806d38bc3d932b4b5554c4515345d.jpg",
@@ -14804,9 +17158,15 @@
   {
     "id": "7760",
     "name": "PAIRING LOGO PRINTING TOP FOR WOMEN IN BLACK",
-    "bullet_points": ["로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["BLACK", "BLUE", "PEACH"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "PEACH"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7760&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/35504f16b941761ef6181edc6bc00c97.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/22ef8cf295befb9852d75300304ee43b.jpg",
@@ -14822,16 +17182,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/698d62e67ac31f83892136f2c0d156bd.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7761",
     "name": "PAIRING LOGO PRINTING TOP FOR WOMEN IN PEACH",
-    "bullet_points": ["로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["PEACH", "BLUE"],
+    "colors": [
+      "PEACH",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7761&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/34d705e7963c21b7abffba34b52345c6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/73025a0b7a93cae87845acd7f2aca574.jpg",
@@ -14848,16 +17215,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/d42b517a63d848d0e0efb33805c9ec62.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7759",
     "name": "PAIRING LOGO PRINTING TOP FOR WOMEN IN BLUE",
-    "bullet_points": ["로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"
+    ],
     "price": "78,000",
-    "colors": ["BLUE", "PEACH"],
+    "colors": [
+      "BLUE",
+      "PEACH"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7759&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/0fbd401167f3acc13fb440b913691ed3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/7e89d0c92ee909d59bcfa17812be24f2.jpg",
@@ -14874,16 +17248,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/08a9573407b34e2223f1e99d68abcee9.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7758",
     "name": "PAIRING LOGO PRINTING TOP FOR MEN IN BLACK",
-    "bullet_points": ["로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7758&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/74571d83bf73c479a3b5e1c6be37a846.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/d46fa615a4b64508a162e9f1e655df9e.jpg",
@@ -14906,9 +17287,14 @@
   {
     "id": "7756",
     "name": "PAIRING LOGO PRINTING TOP FOR MEN IN LIGHT GREY",
-    "bullet_points": ["로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["LIGHT GREY", "BLUE"],
+    "colors": [
+      "LIGHT GREY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7756&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/87c2ba7361125dbc58a42761cfd17ee0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/c00d8838a888d17afcd08f9b6da3e0f5.jpg",
@@ -14924,16 +17310,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/87fcacd3a5453e3d0a10f560e859c231.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7757",
     "name": "PAIRING LOGO PRINTING TOP FOR MEN IN BLUE",
-    "bullet_points": ["로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"],
+    "bullet_points": [
+      "로고 프린팅이 포인트인 베이직한 디자인의 오버핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7757&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3f0a7a49efec4734361f7322221c63a5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/2b223758f849ea0555a55dbaeeeac9e6.jpg",
@@ -14958,9 +17351,15 @@
   {
     "id": "7755",
     "name": "EMBROIDERY SMALL LOGO OVERSIZE TOP IN BLACK",
-    "bullet_points": ["마뗑킴의 로고가 볼륨 자수로 적용된 오버핏 티셔츠"],
+    "bullet_points": [
+      "마뗑킴의 로고가 볼륨 자수로 적용된 오버핏 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "WHITE", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7755&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/95022f60d999c05db5213e88838f3e94.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/d8b64b011db9168814ec4e3ae0aca186.jpg",
@@ -14985,9 +17384,15 @@
   {
     "id": "7753",
     "name": "EMBROIDERY SMALL LOGO OVERSIZE TOP IN WHITE",
-    "bullet_points": ["마뗑킴의 로고가 볼륨 자수로 적용된 오버핏 티셔츠"],
+    "bullet_points": [
+      "마뗑킴의 로고가 볼륨 자수로 적용된 오버핏 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["WHITE", "KHAKI", "BLACK"],
+    "colors": [
+      "WHITE",
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7753&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/7f7850faef54531f125ccfab436e948b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/9874bc83f4063c5237d798043ab7bfe9.jpg",
@@ -15012,9 +17417,15 @@
   {
     "id": "7754",
     "name": "EMBROIDERY SMALL LOGO OVERSIZE TOP IN KHAKI",
-    "bullet_points": ["마뗑킴의 로고가 볼륨 자수로 적용된 오버핏 티셔츠"],
+    "bullet_points": [
+      "마뗑킴의 로고가 볼륨 자수로 적용된 오버핏 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["KHAKI", "BLACK", "WHITE"],
+    "colors": [
+      "KHAKI",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7754&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/f5b2c657d3443cc7add79b38b1f4fc84.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/19d1768365d14f496a6e1f2ee38331c7.jpg",
@@ -15039,9 +17450,15 @@
   {
     "id": "7750",
     "name": "LOGO POINT LETTERING GRAPHIC TOP IN BLACK",
-    "bullet_points": ["레터링 그래픽 프린트가 포인트인 티셔츠"],
+    "bullet_points": [
+      "레터링 그래픽 프린트가 포인트인 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "LIGHT GREEN", "PURPLE"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREEN",
+      "PURPLE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7750&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/2b9d99166c1a24c98e5d89e39c865c3d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/87a2f6b1bbb604fa51347d74e3c49148.jpg",
@@ -15059,16 +17476,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/01fca21a772363a25028e557897d9dab.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7752",
     "name": "LOGO POINT LETTERING GRAPHIC TOP IN PURPLE",
-    "bullet_points": ["레터링 그래픽 프린트가 포인트인 티셔츠"],
+    "bullet_points": [
+      "레터링 그래픽 프린트가 포인트인 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["PURPLE", "BLACK", "LIGHT GREEN"],
+    "colors": [
+      "PURPLE",
+      "BLACK",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7752&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/98fe245220b9bd81cfba3e759200bf23.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/a6eb730bc50c6e0275fd4b295d4afad5.jpg",
@@ -15092,9 +17517,15 @@
   {
     "id": "7751",
     "name": "LOGO POINT LETTERING GRAPHIC TOP IN LIGHT GREEN",
-    "bullet_points": ["레터링 그래픽 프린트가 포인트인 티셔츠"],
+    "bullet_points": [
+      "레터링 그래픽 프린트가 포인트인 티셔츠"
+    ],
     "price": "48,000",
-    "colors": ["LIGHT GREEN", "BLACK", "PURPLE"],
+    "colors": [
+      "LIGHT GREEN",
+      "BLACK",
+      "PURPLE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7751&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/fc35da442a3c8cc558c32ef798f0fdec.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/61c14e8f061437d930b7a0b3a115b247.jpg",
@@ -15111,16 +17542,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/77e5b1e45896cd424ab748f2d2942c1d.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7749",
     "name": "MATIN WAVE PRINTING LOGO TOP IN WHITE",
-    "bullet_points": ["곡선 형식 로고 프린트가 포인트인 캐주얼 오버핏 티셔츠"],
+    "bullet_points": [
+      "곡선 형식 로고 프린트가 포인트인 캐주얼 오버핏 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["WHITE", "YELLOW"],
+    "colors": [
+      "WHITE",
+      "YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7749&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/8cf375dc9ee3f8fbf8f1113968a9bd95.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/b2fbb4a1365e7eb51c0c4157b1e3c136.jpg",
@@ -15146,9 +17585,15 @@
   {
     "id": "7748",
     "name": "MATIN WAVE PRINTING LOGO TOP IN GREY",
-    "bullet_points": ["곡선 형식 로고 프린트가 포인트인 캐주얼 오버핏 티셔츠"],
+    "bullet_points": [
+      "곡선 형식 로고 프린트가 포인트인 캐주얼 오버핏 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["GREY", "YELLOW", "WHITE"],
+    "colors": [
+      "GREY",
+      "YELLOW",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7748&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/64d68d802ffbffdf39cdbb0868a16fe6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/f85b6e4dce26c5b0aaf2aca480ee1f76.jpg",
@@ -15174,9 +17619,14 @@
   {
     "id": "7747",
     "name": "MATIN WAVE PRINTING LOGO TOP IN YELLOW",
-    "bullet_points": ["곡선 형식 로고 프린트가 포인트인 캐주얼 오버핏 티셔츠"],
+    "bullet_points": [
+      "곡선 형식 로고 프린트가 포인트인 캐주얼 오버핏 티셔츠"
+    ],
     "price": "68,000",
-    "colors": ["YELLOW", "WHITE"],
+    "colors": [
+      "YELLOW",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7747&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/3e2600fc792672e55d7a3a4d3c4acc0e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/69c106bbb4f4f5f8425a71c16f4221ba.jpg",
@@ -15201,9 +17651,13 @@
   {
     "id": "7746",
     "name": "SEE THROUGH PRINTING TOP IN BLACK",
-    "bullet_points": ["모래로 그린듯한 프린팅 그래픽이 포인트인 나그랑 티셔츠"],
+    "bullet_points": [
+      "모래로 그린듯한 프린팅 그래픽이 포인트인 나그랑 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7746&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/6f3bd29a5293fdc02147d02cdee11c2a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/a9070eec0884f31626644bac25306c43.jpg",
@@ -15229,9 +17683,14 @@
   {
     "id": "7745",
     "name": "SEE THROUGH PRINTING TOP IN KHAKI BEIGE",
-    "bullet_points": ["모래로 그린듯한 프린팅 그래픽이 포인트인 나그랑 티셔츠"],
+    "bullet_points": [
+      "모래로 그린듯한 프린팅 그래픽이 포인트인 나그랑 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["KHAKI BEIGE", "BLACK"],
+    "colors": [
+      "KHAKI BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7745&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/13009e5e40dfe008f6c58d4c04a1f363.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/13008ad35fd4b92a191c913213faa53c.jpg",
@@ -15252,7 +17711,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/09d78bba49b4886488b101047417bfbd.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -15263,7 +17724,10 @@
       "어깨 밑단에 스트링이 들어가 실루엣 변형이 가능한 피케 티셔츠"
     ],
     "price": "98,000",
-    "colors": ["GREY", "LIGHT YELLOW"],
+    "colors": [
+      "GREY",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7742&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/50fcf58b06df269f7b7a1f6ef5293057.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/97b2dec0e16ce0b72c20daf6107f20a2.jpg",
@@ -15295,7 +17759,10 @@
       "어깨 밑단에 스트링이 들어가 실루엣 변형이 가능한 피케 티셔츠"
     ],
     "price": "98,000",
-    "colors": ["LIGHT YELLOW", "BROWN"],
+    "colors": [
+      "LIGHT YELLOW",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7743&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/e87df1f90ed9c9825cf4006cea2208e2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/12dc0046dbe64449671a338ae2aa8d0a.jpg",
@@ -15327,7 +17794,9 @@
       "어깨 밑단에 스트링이 들어가 실루엣 변형이 가능한 피케 티셔츠"
     ],
     "price": "98,000",
-    "colors": ["MIX"],
+    "colors": [
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7744&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/bea91676b5c5d06c7b6fae28db37abc8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/04151f09d5116f3d36fb51399575468f.jpg",
@@ -15349,7 +17818,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/db78c08f3ef8f54dddecf4e25939090a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -15360,7 +17831,10 @@
       "드레이핑과 턱 디테일이 포인트로 다양한 연출이 가능한 골지 슬리브리스 탑"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7668&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/039c88d72f09e5f0e63d8ac2ec9ff4c7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/3675901eaf33f076544bec2d99eb3fe8.jpg",
@@ -15381,7 +17855,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/933bb517738875f800a9784454419e0f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -15392,7 +17868,9 @@
       "드레이핑과 턱 디테일이 포인트로 다양한 연출이 가능한 골지 슬리브리스 탑"
     ],
     "price": "58,000",
-    "colors": ["WHITE"],
+    "colors": [
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7667&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/7d18cf85769633a046583b8b341fef30.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/e86572dfc2a045bf55ebf18a6985628c.jpg",
@@ -15422,7 +17900,11 @@
       "전반적인 빈티지한 무드와 블러된듯한 마뗑킴 로고에 스티치가 어우러지는 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "CHARCOAL", "YELLOW"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL",
+      "YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7709&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/8cc4b0740cc71d6f493f0914ce1efd96.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/e36ae64cdd24340e0c2bd9221253583d.jpg",
@@ -15448,7 +17930,11 @@
       "전반적인 빈티지한 무드와 블러된듯한 마뗑킴 로고에 스티치가 어우러지는 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "WHITE", "YELLOW"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE",
+      "YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7710&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/9b52ff24b80c919aeb5c17274cb00a9a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/1eebf968ffce3ff721c049bb21cd50a2.jpg",
@@ -15475,7 +17961,11 @@
       "전반적인 빈티지한 무드와 블러된듯한 마뗑킴 로고에 스티치가 어우러지는 티셔츠"
     ],
     "price": "88,000",
-    "colors": ["YELLOW", "WHITE", "CHARCOAL"],
+    "colors": [
+      "YELLOW",
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7711&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/916c846fe1863fce37de47c9564e203b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/2de4c27b723fca80aae6840092d09267.jpg",
@@ -15498,9 +17988,14 @@
   {
     "id": "7678",
     "name": "THREE QUARTER LOGO SLIM TOP IN WHITE",
-    "bullet_points": ["배색 스티치와 그래픽 로고가 포인트인 슬림핏 7부 탑"],
+    "bullet_points": [
+      "배색 스티치와 그래픽 로고가 포인트인 슬림핏 7부 탑"
+    ],
     "price": "78,000",
-    "colors": ["WHITE", "BLUE"],
+    "colors": [
+      "WHITE",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7678&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/abd4acad21c822d632ef30bcba15def0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/80bf5c64868a8b8ed9f983fcf4cfc0ee.jpg",
@@ -15523,9 +18018,13 @@
   {
     "id": "7677",
     "name": "THREE QUARTER LOGO SLIM TOP IN LIGHT BLUE",
-    "bullet_points": ["배색 스티치와 그래픽 로고가 포인트인 슬림핏 7부 탑"],
+    "bullet_points": [
+      "배색 스티치와 그래픽 로고가 포인트인 슬림핏 7부 탑"
+    ],
     "price": "78,000",
-    "colors": ["LIGHT BLUE"],
+    "colors": [
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7677&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/fc4bb31416b09d83189ae826256f3406.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/7cbde0c8a32b076417a7da718edd1cf0.jpg",
@@ -15554,7 +18053,11 @@
       "사선 트임과 단추 여밈 디테일로 포인트를 준 크롭 기장의 하프탑"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "BLUE", "IVORY"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7676&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/82ed58d034fea73d93ee180574623a09.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/2c00310a3bcf0dd8e5eb11b9f0282f37.jpg",
@@ -15585,7 +18088,11 @@
       "사선 트임과 단추 여밈 디테일로 포인트를 준 크롭 기장의 하프탑"
     ],
     "price": "68,000",
-    "colors": ["IVORY", "BLUE", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7675&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/87ded075265fe9e5334bf502cf3277ae.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/5a12c93ee8abcbefde1a0bfa968e3076.jpg",
@@ -15605,7 +18112,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/14624d471a2e97769c655e1a13818850.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -15616,7 +18125,11 @@
       "사선 트임과 단추 여밈 디테일로 포인트를 준 크롭 기장의 하프탑"
     ],
     "price": "68,000",
-    "colors": ["BLUE", "IVORY", "BLACK"],
+    "colors": [
+      "BLUE",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7674&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a9214f1899f9da362b861e23172920db.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8771a756c98abf27817ff5bb1967764a.jpg",
@@ -15640,9 +18153,13 @@
   {
     "id": "7671",
     "name": "APPLIQUE LOGO PATCH TOP IN CREAM",
-    "bullet_points": ["로고 아플리케 자수가 포인트인 베이직 코튼 티셔츠"],
+    "bullet_points": [
+      "로고 아플리케 자수가 포인트인 베이직 코튼 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["CREAM"],
+    "colors": [
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7671&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/db84871fd28cb42562fd1d20305954df.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/04f74b68c77f27bdcfa890797d0847b9.jpg",
@@ -15657,16 +18174,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/f97abe75945684a8e28d897f2288fa79.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7670",
     "name": "APPLIQUE LOGO PATCH TOP IN CHARCOAL",
-    "bullet_points": ["로고 아플리케 자수가 포인트인 베이직 코튼 티셔츠"],
+    "bullet_points": [
+      "로고 아플리케 자수가 포인트인 베이직 코튼 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["CHARCOAL", "LILAC", "CREAM"],
+    "colors": [
+      "CHARCOAL",
+      "LILAC",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7670&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/f1c46881ede81a861025327908d165b6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/a58ed9e7225899cdd33c6a836ab6eef8.jpg",
@@ -15688,9 +18213,14 @@
   {
     "id": "7669",
     "name": "APPLIQUE LOGO PATCH TOP IN LILAC",
-    "bullet_points": ["로고 아플리케 자수가 포인트인 베이직 코튼 티셔츠"],
+    "bullet_points": [
+      "로고 아플리케 자수가 포인트인 베이직 코튼 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["LILAC", "CREAM"],
+    "colors": [
+      "LILAC",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7669&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/b30af48c486fba7f16363ade035bb1f1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/6adb2e1705e032bb684bf32432e1dba2.jpg",
@@ -15715,9 +18245,15 @@
   {
     "id": "7682",
     "name": "VINTAGE WASHED LOGO TOP FOR WOMEN IN KHAKI",
-    "bullet_points": ["캐주얼하게 착용가능한 코튼 오버핏 로고탑"],
+    "bullet_points": [
+      "캐주얼하게 착용가능한 코튼 오버핏 로고탑"
+    ],
     "price": "88,000",
-    "colors": ["KHAKI", "CHARCOAL", "PINK"],
+    "colors": [
+      "KHAKI",
+      "CHARCOAL",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7682&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/0a06038b72341f5c0045f130bc6e0636.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/89c185395c654ff6d18605171faa756a.jpg",
@@ -15741,9 +18277,15 @@
   {
     "id": "7681",
     "name": "VINTAGE WASHED LOGO TOP FOR WOMEN IN PINK",
-    "bullet_points": ["캐주얼하게 착용가능한 코튼 오버핏 로고탑"],
+    "bullet_points": [
+      "캐주얼하게 착용가능한 코튼 오버핏 로고탑"
+    ],
     "price": "88,000",
-    "colors": ["PINK", "KHAKI", "CHARCOAL"],
+    "colors": [
+      "PINK",
+      "KHAKI",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7681&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/bbcfb85bfe03aa022e59554032a63781.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/9c19c6c3c143e35e050e047a5345649e.jpg",
@@ -15769,9 +18311,15 @@
   {
     "id": "7685",
     "name": "VINTAGE WASHED LOGO TOP FOR MEN IN KHAKI",
-    "bullet_points": ["캐주얼하게 착용가능한 코튼 오버핏 로고탑"],
+    "bullet_points": [
+      "캐주얼하게 착용가능한 코튼 오버핏 로고탑"
+    ],
     "price": "88,000",
-    "colors": ["KHAKI", "PINK", "CHARCOAL"],
+    "colors": [
+      "KHAKI",
+      "PINK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7685&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/651b2ea95972a0690dd32f328c4cff0d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8499dd21755889143c18055c256c6847.jpg",
@@ -15797,9 +18345,15 @@
   {
     "id": "7684",
     "name": "VINTAGE WASHED LOGO TOP FOR MEN IN PINK",
-    "bullet_points": ["캐주얼하게 착용가능한 코튼 오버핏 로고탑"],
+    "bullet_points": [
+      "캐주얼하게 착용가능한 코튼 오버핏 로고탑"
+    ],
     "price": "88,000",
-    "colors": ["PINK", "CHARCOAL", "KHAKI"],
+    "colors": [
+      "PINK",
+      "CHARCOAL",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7684&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/0f1b7ecd8be7d01425067aa4b0829ea9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/b37785561d554a28205555400b78314e.jpg",
@@ -15828,7 +18382,9 @@
       "페미닌한 무드와 언발란스 버튼 포인트의 슬림핏 스트라이프 셔츠"
     ],
     "price": "168,000",
-    "colors": ["LIGHT BLUE"],
+    "colors": [
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7712&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/ae6c66db3d2ef7f491a78d88051a1946.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/f77161d544542d1dc379ff7864d87915.jpg",
@@ -15855,7 +18411,9 @@
       "시원한 원사와 카라 짜임 포인트로 캐주얼하게 연출 가능한 크롭 기장의 하프 가디건"
     ],
     "price": "158,000",
-    "colors": ["IVORY"],
+    "colors": [
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7680&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e77a174c19b0fe3c924bd2104d2dbf37.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/8dfef9e006874e24619c832d5c359825.jpg",
@@ -15885,7 +18443,10 @@
       "시원한 원사와 카라 짜임 포인트로 캐주얼하게 연출 가능한 크롭 기장의 하프 가디건"
     ],
     "price": "158,000",
-    "colors": ["OLIVE", "IVORY"],
+    "colors": [
+      "OLIVE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7679&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e0ba5bb989a304485ece084e87a5f929.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/3b6274ff44c8ee3b491f46f4c1bd4b7a.jpg",
@@ -15904,7 +18465,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/cffb24795bcd88b5c8c7b544fcaba6e5.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -15915,7 +18478,11 @@
       "랩 형태의 앞판과 불규칙한 니트 짜임이 포인트인 슬림핏 후드 슬리브리스"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "IVORY", "LIGHT PINK"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7473&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e1a7ddb20e502dffb8b5e70a7758a73d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/709feb09f0525d264fa8b72578b7a2c3.jpg",
@@ -15946,7 +18513,9 @@
       "랩 형태의 앞판과 불규칙한 니트 짜임이 포인트인 슬림핏 후드 슬리브리스"
     ],
     "price": "148,000",
-    "colors": ["LIGHT PINK"],
+    "colors": [
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7471&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/3c6a59a1d7434f20393c4674a1059f66.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/5073e71ba020925903f12889f7f6b6de.jpg",
@@ -15979,7 +18548,11 @@
       "랩 형태의 앞판과 불규칙한 니트 짜임이 포인트인 슬림핏 후드 슬리브리스"
     ],
     "price": "148,000",
-    "colors": ["IVORY", "BLACK", "LIGHT PINK"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7472&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/c755d07a67b0cb2e92f6dbc08ef8d486.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/1539ed4a172f65d73c7a8d375c3c4d24.jpg",
@@ -16008,7 +18581,11 @@
       "부드러운 린넨 혼방 소재와 허리 스트링으로 다양한 연출이 가능한 롱 가디건"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "WHITE", "MINT"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7462&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/783681d8bc6faabd870cfba631f0e013.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/16899a5d3fd9ae1cfabe24afac0deac4.jpg",
@@ -16041,7 +18618,11 @@
       "부드러운 린넨 혼방 소재와 허리 스트링으로 다양한 연출이 가능한 롱 가디건"
     ],
     "price": "168,000",
-    "colors": ["WHITE", "BLACK", "MINT"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7461&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/82e18d464dd15dd004499ebca66a622c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/fffeca95d8da5c130a022e4d68ab4ae8.jpg",
@@ -16075,7 +18656,11 @@
       "부드러운 린넨 혼방 소재와 허리 스트링으로 다양한 연출이 가능한 롱 가디건"
     ],
     "price": "168,000",
-    "colors": ["MINT", "WHITE", "BLACK"],
+    "colors": [
+      "MINT",
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7460&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/8df15797666ad5600b4a97d817dd4346.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/86d53132309ee5e49cf5d6601fc73592.jpg",
@@ -16107,7 +18692,10 @@
       "볼레로 레이어드 디테일과 자개 장식이 포인트인 슬림핏 텐셀 반팔 탑"
     ],
     "price": "78,000",
-    "colors": ["DARK NAVY", "LIGHT GREEN"],
+    "colors": [
+      "DARK NAVY",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7463&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/8526144b32bcec3c816968f632d34c97.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/fdb95826840ece827b3796ac4265c965.jpg",
@@ -16138,7 +18726,10 @@
       "볼레로 레이어드 디테일과 자개 장식이 포인트인 슬림핏 텐셀 반팔 탑"
     ],
     "price": "78,000",
-    "colors": ["LIGHT GREEN", "DARK NAVY"],
+    "colors": [
+      "LIGHT GREEN",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7464&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a387c6b317739fa05a74f52fe463af5b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/99b7f922b78be6ac3f86b83706d60b96.jpg",
@@ -16156,16 +18747,25 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/c1c483aaa62cb0c888999de98a274dc5.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7470",
     "name": "STITCH POINT SMALL LOGO TOP IN BLACK",
-    "bullet_points": ["배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "LIGHT YELLOW", "PINK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "LIGHT YELLOW",
+      "PINK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7470&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/432a7fd611dc0030242cd37dea854ea3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/d7ac9d8aa00c9f017aef8546e5718e34.jpg",
@@ -16190,9 +18790,14 @@
   {
     "id": "7467",
     "name": "STITCH POINT SMALL LOGO TOP IN BROWN",
-    "bullet_points": ["배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["BROWN", "PINK"],
+    "colors": [
+      "BROWN",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7467&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/8b729aad0f1b6a7b26dc0fec7c0ace40.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/62fedd71de0d00e4389dffd63e7eb83b.jpg",
@@ -16218,9 +18823,16 @@
   {
     "id": "7469",
     "name": "STITCH POINT SMALL LOGO TOP IN LIGHT YELLOW",
-    "bullet_points": ["배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["LIGHT YELLOW", "BLACK", "PINK", "BROWN"],
+    "colors": [
+      "LIGHT YELLOW",
+      "BLACK",
+      "PINK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7469&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a1246de16548b4cb7091db16992031b5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/f71e300d9273eac959b6e755475fb2cc.jpg",
@@ -16245,9 +18857,14 @@
   {
     "id": "7468",
     "name": "STITCH POINT SMALL LOGO TOP IN PINK",
-    "bullet_points": ["배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"],
+    "bullet_points": [
+      "배색 스티치와 로고 프린팅이 포인트인 슬림핏 티셔츠"
+    ],
     "price": "58,000",
-    "colors": ["PINK", "BROWN"],
+    "colors": [
+      "PINK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7468&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e9af1b8488272f2e48b3c400687e2d71.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/be7b145acd8cb82b436c01bf6801de09.jpg",
@@ -16267,16 +18884,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/7e904b284a0614255c81e49ba7ea03f2.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7466",
     "name": "FOR LOVERS LOGO POINT TOP IN CHARCOAL",
-    "bullet_points": ["탄탄한 코튼 소재의 캐주얼 오버핏 티셔츠"],
+    "bullet_points": [
+      "탄탄한 코튼 소재의 캐주얼 오버핏 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["CHARCOAL", "LIGHT GREY"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7466&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/0c6e0cd0fe85d53db12f4ca47e673609.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/703915868907f023993affead2179a85.jpg",
@@ -16294,16 +18919,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/3cae4f606bb8f8befd7e365178dbe02e.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7465",
     "name": "FOR LOVERS LOGO POINT TOP IN LIGHT GREY",
-    "bullet_points": ["탄탄한 코튼 소재의 캐주얼 오버핏 티셔츠"],
+    "bullet_points": [
+      "탄탄한 코튼 소재의 캐주얼 오버핏 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["LIGHT GREY", "CHARCOAL"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7465&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/b5e729cd7ef5f4915d92179616f0536e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/100c3d3fe732684a660f6863688350b9.jpg",
@@ -16333,7 +18965,10 @@
       "절개 데미지 디테일과 스트라이프 패턴이 포인트인 오버핏 카라 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["SMOKE BLUE", "GREY"],
+    "colors": [
+      "SMOKE BLUE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7474&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/21bbd00a559ab1e982c3bc17ca1337a4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/1157b830bb23e8314ff75423ea509155.jpg",
@@ -16364,7 +18999,10 @@
       "스카시 조직과 로고 디테일로 캐주얼하게 연출 가능한 니트 베스트 집업"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7411&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/ec16cef88ff7a9efd6d7a283f5355a11.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/1be1f81f74cf67ad1cacf30de226098e.jpg",
@@ -16395,7 +19033,10 @@
       "스카시 조직과 로고 디테일로 캐주얼하게 연출 가능한 니트 베스트 집업"
     ],
     "price": "178,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7410&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/cb7031e5c52fa9a1d595a732bc88f569.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/c1b078cf9b033c37f7f54581f79b2d99.jpg",
@@ -16425,7 +19066,9 @@
       "홀로그램 로고와 절개 디테일이 포인트인 슬림핏 골지 슬리브리스"
     ],
     "price": "68,000",
-    "colors": ["LIGHT GREEN"],
+    "colors": [
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7448&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/1a50ad7e0b70ca1d25546d2b1f4ec8d9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/a7a95c2cf7ab00fd08fab6ab253c8c94.jpg",
@@ -16456,7 +19099,9 @@
       "은은한 광택감과 스카프 디테일이 포인트인 슬림핏 골지 니트 탑"
     ],
     "price": "158,000",
-    "colors": ["MINT"],
+    "colors": [
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7435&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/0bcbdd7082c07d75d823b737607331ff.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/75d827161ca68dd16d7354448951ec8c.jpg",
@@ -16484,9 +19129,14 @@
   {
     "id": "7442",
     "name": "COLOR POINT LAYERED TOP FOR WOMEN IN IVORY",
-    "bullet_points": ["배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"],
+    "bullet_points": [
+      "배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["IVORY", "RED"],
+    "colors": [
+      "IVORY",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7442&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/d8c1f0f5b6cd0affb8ec95b5baee867f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/323a00256900e523e6bce4ffe85df5b6.jpg",
@@ -16504,16 +19154,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/3cb59886b2ec277d223567e94f281568.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7441",
     "name": "COLOR POINT LAYERED TOP FOR WOMEN IN BROWN",
-    "bullet_points": ["배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"],
+    "bullet_points": [
+      "배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["BROWN", "IVORY", "RED"],
+    "colors": [
+      "BROWN",
+      "IVORY",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7441&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/3a897e6219d68c6d866eca379d688cca.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/ea35f094579e6714fc3be2fe0b78523f.jpg",
@@ -16540,9 +19198,14 @@
   {
     "id": "7440",
     "name": "COLOR POINT LAYERED TOP FOR WOMEN IN RED",
-    "bullet_points": ["배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"],
+    "bullet_points": [
+      "배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"
+    ],
     "price": "98,000",
-    "colors": ["RED", "IVORY"],
+    "colors": [
+      "RED",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7440&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/2b0d5c92ef8a0380e374002e06644a4f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/0469be5a6ed0e1dbf9321a8a19db37d3.jpg",
@@ -16568,9 +19231,14 @@
   {
     "id": "7444",
     "name": "COLOR POINT LAYERED TOP FOR MEN IN BLACK",
-    "bullet_points": ["배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"],
+    "bullet_points": [
+      "배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"
+    ],
     "price": "108,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7444&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/9d4fd79cc3d516ff473c55dad1e930a0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/0283b3f88794747834b25e9372d5956a.jpg",
@@ -16594,9 +19262,14 @@
   {
     "id": "7443",
     "name": "COLOR POINT LAYERED TOP FOR MEN IN BROWN",
-    "bullet_points": ["배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"],
+    "bullet_points": [
+      "배색 레이어드 디자인이 포인트인 캐주얼 코튼 티셔츠"
+    ],
     "price": "108,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7443&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/8ff8aabd8c3b6e7f610b6ed39fe5cbc8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/dd17814afd36b0e89d8ee805c6c5e550.jpg",
@@ -16621,9 +19294,13 @@
   {
     "id": "7350",
     "name": "ROUGH TWEED KNIT VEST IN BLACK",
-    "bullet_points": ["좌우 언발란스한 트위드 조직감이 포인트인 니트 베스트"],
+    "bullet_points": [
+      "좌우 언발란스한 트위드 조직감이 포인트인 니트 베스트"
+    ],
     "price": "178,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7350&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/9f455c36d23786043d8557e9dd8c8249.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/26d2af0c7e25c6c1d3ba85cb48534c77.jpg",
@@ -16653,7 +19330,11 @@
       "배색 스티치 포인트와 밑단 슬릿으로 슬림하게 연출 가능한 크롭 가디건"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "LIGHT BLUE", "LIGHT GREEN"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7348&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/9a0c0ea66b1f9a51030a4bddc911663e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/a774d2f6f8c08e8c4c08e55b113b735f.jpg",
@@ -16688,7 +19369,11 @@
       "배색 스티치 포인트와 밑단 슬릿으로 슬림하게 연출 가능한 크롭 가디건"
     ],
     "price": "168,000",
-    "colors": ["MINT", "BLACK", "LIGHT BLUE"],
+    "colors": [
+      "MINT",
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7347&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/fca383dfb19d540ee39da3f0a5bd5318.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/49d83c675ac32b00c404bfa3ff758049.jpg",
@@ -16722,7 +19407,11 @@
       "배색 스티치 포인트와 밑단 슬릿으로 슬림하게 연출 가능한 크롭 가디건"
     ],
     "price": "168,000",
-    "colors": ["LIGHT BLUE", "BLACK", "LIGHT GREEN"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7346&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/68594d85710ff07ab90f00803faf3a45.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/64aee4687163017e27202677df2b9f06.jpg",
@@ -16754,7 +19443,10 @@
       "시스루 나일론 소재로 MATIN KIM 비치는 로고가 포인트인 크롭 가디건"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "SKY"],
+    "colors": [
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7345&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/ff16cb63fecbfba30164eece3cbe40be.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/04d01d5439b49a491773fd1046996c14.jpg",
@@ -16784,7 +19476,11 @@
       "시스루 나일론 소재로 MATIN KIM 비치는 로고가 포인트인 크롭 가디건"
     ],
     "price": "218,000",
-    "colors": ["IVORY", "BLACK", "SKY"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7344&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/c033fa4006d2f774258667493d7588cb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/a6513f76d5160a0e561b68393fcbaa38.jpg",
@@ -16802,7 +19498,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/b84938ccbcfef8bb8c3b48510566fc19.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -16813,7 +19511,10 @@
       "시스루 나일론 소재로 MATIN KIM 비치는 로고가 포인트인 크롭 가디건"
     ],
     "price": "218,000",
-    "colors": ["SKY", "BLACK"],
+    "colors": [
+      "SKY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7343&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/9270aeb3d4f5cedfc712936a55c27f8d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/b0c760392e47a186ab257e4f664736bf.jpg",
@@ -16844,7 +19545,10 @@
       "시스루 나일론 소재로 MATIN KIM 비치는 로고가 포인트인 캐주얼한 무드의 가디건"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "SKY"],
+    "colors": [
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7342&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/96b82d312cef0126e11a097d238f5bb2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/5ec89a452c1b15ba273b3d38fe013137.jpg",
@@ -16872,7 +19576,11 @@
       "시스루 나일론 소재로 MATIN KIM 비치는 로고가 포인트인 캐주얼한 무드의 가디건"
     ],
     "price": "218,000",
-    "colors": ["IVORY", "BLACK", "SKY"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7341&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/17dbac79333b28c2c86019517093ca8a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/fb1c5619e26e08b7d905adb6732bc095.jpg",
@@ -16901,7 +19609,9 @@
       "시스루 나일론 소재로 MATIN KIM 비치는 로고가 포인트인 캐주얼한 무드의 가디건"
     ],
     "price": "218,000",
-    "colors": ["SKY"],
+    "colors": [
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7340&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/e26c2460a403e84dc0c9f1a4404b1d28.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/f2c39d9f1e15d5b0bb9066a9a5715339.jpg",
@@ -16921,16 +19631,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/a4ab01489ed9482ab87942c47c8b5647.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
   {
     "id": "7339",
     "name": "POCKET FOLDOVER SHIRT FOR MEN IN CHARCOAL",
-    "bullet_points": ["앞판 오픈 포켓이 포인트인 코튼 혼방소재의 셔츠"],
+    "bullet_points": [
+      "앞판 오픈 포켓이 포인트인 코튼 혼방소재의 셔츠"
+    ],
     "price": "218,000",
-    "colors": ["CHARCOAL", "LIGHT BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7339&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/9e3c6cecdd1745fc5f5710598d8f91e3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/74a19bcfddf82636a9f56552b3e0e930.jpg",
@@ -16958,9 +19675,14 @@
   {
     "id": "7338",
     "name": "POCKET FOLDOVER SHIRT FOR MEN IN LIGHT BLUE",
-    "bullet_points": ["앞판 오픈 포켓이 포인트인 코튼 혼방소재의 셔츠"],
+    "bullet_points": [
+      "앞판 오픈 포켓이 포인트인 코튼 혼방소재의 셔츠"
+    ],
     "price": "218,000",
-    "colors": ["LIGHT BLUE", "CHARCOAL"],
+    "colors": [
+      "LIGHT BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7338&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/643aa03707d04005f507e4c8b0ae6fa4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/5ecac7437de96d2355294a7682c4e8d8.jpg",
@@ -16992,7 +19714,11 @@
       "컬러 배색의 로고 자카드가 포인트인 시원한 터치감의 풀오버 니트"
     ],
     "price": "158,000",
-    "colors": ["IVORY", "OLIVE", "LIGHT BLUE"],
+    "colors": [
+      "IVORY",
+      "OLIVE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7337&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/f58e4e94ab238d78e6acc93e2dca4107.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/f3162bc39a4e57d99c5847ccd0af30e5.jpg",
@@ -17012,7 +19738,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/e5b4388b13dd1ddfb06660ce38105c3e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -17023,7 +19751,11 @@
       "컬러 배색의 로고 자카드가 포인트인 시원한 터치감의 풀오버 니트"
     ],
     "price": "158,000",
-    "colors": ["OLIVE", "IVORY", "LIGHT BLUE"],
+    "colors": [
+      "OLIVE",
+      "IVORY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7336&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/ae412982a6f0499826ce811526be8389.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/5cd20b89a14d8997bf1a65d4bd71385c.jpg",
@@ -17055,7 +19787,11 @@
       "컬러 배색의 로고 자카드가 포인트인 시원한 터치감의 풀오버 니트"
     ],
     "price": "158,000",
-    "colors": ["LIGHT BLUE", "IVORY", "OLIVE"],
+    "colors": [
+      "LIGHT BLUE",
+      "IVORY",
+      "OLIVE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7335&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/50c1cc6e9c1f40c115d9ef31f23ef6ab.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/4b5bc7ebb40ec585619866e2b95012cc.jpg",
@@ -17087,7 +19823,11 @@
       "MATIN KIM 로고를 스티커 그래픽으로 포인트를 준 베이직한 실루엣의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["WHITE", "PINK", "LIME"],
+    "colors": [
+      "WHITE",
+      "PINK",
+      "LIME"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7334&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/29054fc3c5323e5ab45b1d3bd6bd782d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/54a8bfe3d272affa0f0d6e4dceb2f761.jpg",
@@ -17117,7 +19857,12 @@
       "MATIN KIM 로고를 스티커 그래픽으로 포인트를 준 베이직한 실루엣의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["CHARCOAL", "WHITE", "PINK", "LIME"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE",
+      "PINK",
+      "LIME"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7333&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/4ce083ca92fe6d9d832b16951a2b953c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/ba74c4dd8c0d1a0d97324c150e7d82c3.jpg",
@@ -17144,7 +19889,11 @@
       "MATIN KIM 로고를 스티커 그래픽으로 포인트를 준 베이직한 실루엣의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["PINK", "WHITE", "LIME"],
+    "colors": [
+      "PINK",
+      "WHITE",
+      "LIME"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7332&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/2156781544d27e78028d6e37617f6014.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/89d978d288120b0d471277a1ffa4a5fd.jpg",
@@ -17173,7 +19922,11 @@
       "MATIN KIM 로고를 스티커 그래픽으로 포인트를 준 베이직한 실루엣의 티셔츠"
     ],
     "price": "48,000",
-    "colors": ["LIME", "WHITE", "PINK"],
+    "colors": [
+      "LIME",
+      "WHITE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7331&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/9df93efa692ccf91e103cb7f5a2c1b92.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/cb02dc838e1d4cbeea2fc3fc9599194f.jpg",
@@ -17204,7 +19957,11 @@
       "MATIN KIM 로고 프린팅과 앞뒷판 핀턱이 포인트인 캐주얼한 무드의 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["WHITE", "LIGHT YELLOW", "LIGHT BLUE"],
+    "colors": [
+      "WHITE",
+      "LIGHT YELLOW",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7330&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/a09a2b2cb83df0fe885f856dfedf7214.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/a7d9649b5a38102c684deb458a18baf8.jpg",
@@ -17232,7 +19989,11 @@
       "MATIN KIM 로고 프린팅과 앞뒷판 핀턱이 포인트인 캐주얼한 무드의 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["LIGHT YELLOW", "WHITE", "LIGHT BLUE"],
+    "colors": [
+      "LIGHT YELLOW",
+      "WHITE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7329&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/7283975df486f02d665a0ad30e9836da.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/5329f09bed0d21b46b626bbf18837020.jpg",
@@ -17263,7 +20024,11 @@
       "MATIN KIM 로고 프린팅과 앞뒷판 핀턱이 포인트인 캐주얼한 무드의 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["LIGHT BLUE", "WHITE", "LIGHT YELLOW"],
+    "colors": [
+      "LIGHT BLUE",
+      "WHITE",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7327&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/72776bf671219fd997b59dbe7a6acf22.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/5b62518c47b165782191ef6d2d71ae39.jpg",
@@ -17292,7 +20057,12 @@
       "MATIN KIM 로고 프린팅과 앞뒷판 핀턱이 포인트인 캐주얼한 무드의 티셔츠"
     ],
     "price": "118,000",
-    "colors": ["LIGHT KHAKI", "WHITE", "LIGHT YELLOW", "LIGHT BLUE"],
+    "colors": [
+      "LIGHT KHAKI",
+      "WHITE",
+      "LIGHT YELLOW",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7328&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/093cd39e8714da36f2083e2f780d0507.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/68730808bddd2a61fa21d255c73196c5.jpg",
@@ -17317,9 +20087,15 @@
   {
     "id": "7326",
     "name": "RABBIT PRINTING RAGLAN SLIM TOP IN WHITE",
-    "bullet_points": ["MATIN KIM 로고와 래빗 프린팅이 들어간 슬림핏 티셔츠"],
+    "bullet_points": [
+      "MATIN KIM 로고와 래빗 프린팅이 들어간 슬림핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["WHITE", "BEIGE", "NAVY"],
+    "colors": [
+      "WHITE",
+      "BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7326&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/0d5ea05aa65a1ea133d809e6c6316ebf.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/b7b9c3f18383b23aaca52b549042e26b.jpg",
@@ -17345,9 +20121,15 @@
   {
     "id": "7325",
     "name": "RABBIT PRINTING RAGLAN SLIM TOP IN BEIGE",
-    "bullet_points": ["MATIN KIM 로고와 래빗 프린팅이 들어간 슬림핏 티셔츠"],
+    "bullet_points": [
+      "MATIN KIM 로고와 래빗 프린팅이 들어간 슬림핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["BEIGE", "WHITE", "NAVY"],
+    "colors": [
+      "BEIGE",
+      "WHITE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7325&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/39d697531379f81823c993d78cd6cfee.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/86669edc67de6622693acb6285d4c349.jpg",
@@ -17372,9 +20154,15 @@
   {
     "id": "7324",
     "name": "RABBIT PRINTING RAGLAN SLIM TOP IN NAVY",
-    "bullet_points": ["MATIN KIM 로고와 래빗 프린팅이 들어간 슬림핏 티셔츠"],
+    "bullet_points": [
+      "MATIN KIM 로고와 래빗 프린팅이 들어간 슬림핏 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["NAVY", "WHITE", "BEIGE"],
+    "colors": [
+      "NAVY",
+      "WHITE",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7324&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/b8fa99033ef1f818e640e879b082accf.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/b778cb21a94b3febdf7645abec97714d.jpg",
@@ -17404,7 +20192,10 @@
       "MATIN KIM 로고 프린트로 포인트를 준 오버핏 실루엣의 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7107&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202502/f10d25f715de69e8d912f1e6994ebf55.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202502/b8ebc675566e3b964b6d2b24c7d39b5c.jpg",
@@ -17436,7 +20227,10 @@
       "가슴 중앙 마뗑킴 로고와 뒷면 타이포 프린트가 포인트인 슬리브 탑"
     ],
     "price": "98,000",
-    "colors": ["STRONG BLACK", "WHITE"],
+    "colors": [
+      "STRONG BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7157&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/1d0a64345cf76d5ccbba7142195dc590.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/a0b9741973ad7c6a17f04b412f9d562b.jpg",
@@ -17458,7 +20252,9 @@
       "가슴 중앙 마뗑킴 로고와 뒷면 타이포 프린트가 포인트인 슬리브 탑"
     ],
     "price": "98,000",
-    "colors": ["WHITE"],
+    "colors": [
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4372&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/d30cfd35bc443ef6013e4d76e3c865d4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/259cac2baeb811ae9de222801c02a974.jpg",
@@ -17469,7 +20265,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/1d3e6b892b042f6e9448e5153d1a93e6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -17480,7 +20278,9 @@
       "핀턱 디테일과 가슴 중앙 로고가 포인트인 골지 원단으로 슬림한 실루엣을 연출하는 슬리브리스"
     ],
     "price": "38,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5252&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202402/e5d6c755cfb86d8e8102a15a3ac094cb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202402/35f5e146cb8f22946e16bee1cf80ce5c.jpg",
@@ -17508,7 +20308,10 @@
       "핀턱 디테일과 가슴 중앙 로고가 포인트인 골지 원단으로 슬림한 실루엣을 연출하는 슬리브리스"
     ],
     "price": "38,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5251&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202402/aae41e4633655adc6df2fff6d720147f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202402/062386ca28a698402cc9505aaec9a4c0.jpg",
@@ -17525,7 +20328,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202402/ac3853bebbae525d291a29fb567f5958.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -17536,7 +20341,10 @@
       "마뗑킴 시그니처 원형 자수 디테일이 포인트인 텐션감 좋은 소재의 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5213&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202402/67a7a4c40bbe3544110b8523d8fee0d1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202402/edc0aa6ea0dcba0fd6b2f9147d239272.jpg",
@@ -17564,7 +20372,10 @@
       "마뗑킴 시그니처 원형 자수 디테일이 포인트인 텐션감 좋은 소재의 크롭 티셔츠"
     ],
     "price": "58,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5212&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202402/76ce708f68bf71e8bdc4245ab3bdfe2d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202402/d32beaba822737ce4270883c237b2604.jpg",
@@ -17581,7 +20392,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202402/48fa8c66d5f44dae93f9fe51506fd7b6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -17592,7 +20405,11 @@
       "톤온톤 배색의 로고와 절개 디테일이 포인트인 피그먼트 크롭 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["CHARCOAL", "SMOKE PINK", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "SMOKE PINK",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5681&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202406/bf034001e40b0faddcd7ca4dedfe865d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202406/817b92bbf95b93c971586205e2bbf351.jpg",
@@ -17620,7 +20437,11 @@
       "톤온톤 배색의 로고와 절개 디테일이 포인트인 피그먼트 크롭 티셔츠"
     ],
     "price": "68,000",
-    "colors": ["SMOKE BLUE", "CHARCOAL", "SMOKE PINK"],
+    "colors": [
+      "SMOKE BLUE",
+      "CHARCOAL",
+      "SMOKE PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5679&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202406/b2df87063f0ad3150482534556f9bb51.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202406/20ac4fbb98cb1ff3a6bbbf9340d8d488.jpg",
@@ -17644,9 +20465,14 @@
   {
     "id": "5697",
     "name": "TWINKLE GRAPHIC LOGO TOP FOR MEN IN CHARCOAL",
-    "bullet_points": ["우주 그래픽이 돋보이는 오버핏 코튼 티셔츠"],
+    "bullet_points": [
+      "우주 그래픽이 돋보이는 오버핏 코튼 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5697&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202406/2282e2d7c3c8db80755c19891232838b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202406/a3fb6ff45148f24f1f7c1136280371d6.jpg",
@@ -17670,9 +20496,15 @@
   {
     "id": "5557",
     "name": "VINTAGE DETAIL BACK LOGO TOP FOR MEN IN WHITE",
-    "bullet_points": ["워싱감이 빈티지한 무드를 연출해주는 티셔츠"],
+    "bullet_points": [
+      "워싱감이 빈티지한 무드를 연출해주는 티셔츠"
+    ],
     "price": "88,000",
-    "colors": ["WHITE", "BLACK", "BEIGE"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5557&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/fb959d0cdb7e71defacc26021f7bdc6d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/80ff30bdddbf5a7db934f6f8c78bca05.jpg",
@@ -17685,7 +20517,9 @@
       "https://matinkim.com/web/product/extra/small/202503/1e6f70699c20137174faf1124097bbe1.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -17696,7 +20530,10 @@
       "가슴 중앙 마뗑킴 로고와 뒷면 타이포 프린트가 포인트인 슬리브 탑"
     ],
     "price": "98,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4373&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202412/70a1c4ce9b1c67b35f061ac039e40665.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202412/2cb8e385775c65ebd9b140b01854baa4.jpg",
@@ -17736,7 +20573,9 @@
       "https://matinkim.com/web/product/extra/small/202304/89160bcab2df27a24e6276e5816de206.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Tops"
   },
@@ -17747,7 +20586,12 @@
       "부드러운 촉감의 원단으로 MATIN KIM 로고 자수가 베이직한 느낌을 주는 박스티"
     ],
     "price": "68,000",
-    "colors": ["WHITE", "NAVY", "GREEN", "BLACK"],
+    "colors": [
+      "WHITE",
+      "NAVY",
+      "GREEN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3834&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202304/f275130d3ad09906c09e6c2d718ca465.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202502/17be754df374b8ed1ca31483a719e88a.jpg",
@@ -17775,7 +20619,10 @@
       "레이어드에 따라 다양한 스타일링 연출이 가능하며, 라인 배색으로 포인트를 준 니트 베스트"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3682&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202303/ad79457b660ab5822c6cf0a4d7bc4477.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/d0e77a38548eae37ff1252b7bd83619c.jpg",
@@ -17812,7 +20659,10 @@
       "레이어드에 따라 다양한 스타일링 연출이 가능하며, 라인 배색으로 포인트를 준 니트 베스트"
     ],
     "price": "148,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3681&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202303/a915c72e57e2041a78f5c8f3ce684453.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/ebf84c50ae1db7db87594953126ed65e.jpg",
@@ -17842,7 +20692,9 @@
       "베이직한 아이템으로 MATIN KIM 로고 자수와 프린트를 녹여내어 이지하게 착용 가능한 로고 박스티"
     ],
     "price": "68,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5088&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202401/2735a7f8196f6a06b93845b8d95d6591.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202401/e5c741f004ba1d4a50b511dc1d22caf2.jpg",
@@ -17870,7 +20722,10 @@
       "베이직한 아이템으로 MATIN KIM 로고 자수와 프린트를 녹여내어 이지하게 착용 가능한 로고 크롭티"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5090&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202401/f24a5bd6fd943ce8959f8f50fd9cdae1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202401/a6622b5b8d7a0c3ac092ae166e0a042d.jpg",
@@ -17898,7 +20753,10 @@
       "베이직한 아이템으로 MATIN KIM 로고 자수와 프린트를 녹여내어 이지하게 착용 가능한 로고 크롭티"
     ],
     "price": "48,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5089&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202401/58349ec046d75943306afa5406d9725a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202401/d13bd1a438f590fef2fcda3ffb819201.jpg",
@@ -17922,9 +20780,14 @@
   {
     "id": "4131",
     "name": "MATIN KIM LOGO CROP TOP IN WHITE",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM 의 베이직한 로고 크롭 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM 의 베이직한 로고 크롭 탑"
+    ],
     "price": "38,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4131&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/07eec1a22f9a3d6b086a23ffe8f2d373.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/25bcab6c778e8f7b8cd438a5d38616d6.jpg",
@@ -17943,9 +20806,14 @@
   {
     "id": "4132",
     "name": "MATIN KIM LOGO CROP TOP IN BLACK",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM 의 베이직한 로고 크롭 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM 의 베이직한 로고 크롭 탑"
+    ],
     "price": "38,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4132&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/5f7b26807f18d1e30e87d480e4ef714d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/36e2a7bf9f9b2493a958eb094fff1c3c.jpg",
@@ -17964,9 +20832,14 @@
   {
     "id": "5319",
     "name": "MATIN KIM LOGO TOP IN BLACK",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM의 베이직한 로고 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM의 베이직한 로고 탑"
+    ],
     "price": "48,000",
-    "colors": ["STRONG BLACK", "WHITE"],
+    "colors": [
+      "STRONG BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5319&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/1eb00f805fc66a682b104b0f8d0b2825.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/3a61e6d697954f3b82c1a16b995588e2.jpg",
@@ -17985,9 +20858,14 @@
   {
     "id": "5320",
     "name": "MATIN KIM LOGO TOP IN WHITE",
-    "bullet_points": ["새롭게 리뉴얼된 MATIN KIM의 베이직한 로고 탑"],
+    "bullet_points": [
+      "새롭게 리뉴얼된 MATIN KIM의 베이직한 로고 탑"
+    ],
     "price": "48,000",
-    "colors": ["OFF WHITE", "BLACK"],
+    "colors": [
+      "OFF WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5320&cate_no=27&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/3cb676e67c22e9cee7e2e74acce00c54.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/af52198da90593a9c4742c9c4f910aa6.jpg",
@@ -18011,7 +20889,10 @@
       "카고 포켓 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["GREY", "CAMEL"],
+    "colors": [
+      "GREY",
+      "CAMEL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9088&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/0437f3f32ea4c29392710e3801f8fdec.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/2bed8b56c1ba25855bcc43befc317723.jpg",
@@ -18029,7 +20910,9 @@
       "https://matinkim.com/web/product/extra/small/202604/e35e39e5f7277b6f3d9e577b8b277ce6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18041,7 +20924,10 @@
       "카고 포켓 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["CAMEL", "GREY"],
+    "colors": [
+      "CAMEL",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9087&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/2cd3e78b7ec204e7bf4fb0001b18725e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/d1b282cdb0d2555adb92d7d3b44ddf20.jpg",
@@ -18071,7 +20957,11 @@
       "카고 포켓 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["WHITE", "CHARCOAL", "BEIGE"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9086&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/19a4f4e6d531bcb897c889f3d124343d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/199dd0b1fcc23409a63ff30c384452b6.jpg",
@@ -18089,7 +20979,9 @@
       "https://matinkim.com/web/product/extra/small/202604/3c6e94c383d3f97547daf63e8d9e8c9c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18101,7 +20993,11 @@
       "카고 포켓 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["CHARCOAL", "WHITE", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9085&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/bcc070d7ddcfa7e39cf5e1dc4b54b218.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/a52157952f61b0371d6ec7b03489eadc.jpg",
@@ -18131,7 +21027,11 @@
       "카고 포켓 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["BEIGE", "WHITE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9084&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/af24497fdacbac8b575687c878af7669.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/1b9fed18efce02448f275bf6d293da50.jpg",
@@ -18161,7 +21061,10 @@
       "내추럴한 컷오프 디테일과 배색 스트링이 포인트"
     ],
     "price": "168,000",
-    "colors": ["GREY", "LIGHT BLUE"],
+    "colors": [
+      "GREY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9083&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/37a7afb0b3a0419c183eebc71ecc3af9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/69ba0daba659af276291220cb816cb5c.jpg",
@@ -18191,7 +21094,10 @@
       "내추럴한 컷오프 디테일과 배색 스트링이 포인트"
     ],
     "price": "168,000",
-    "colors": ["LIGHT BLUE", "GREY"],
+    "colors": [
+      "LIGHT BLUE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9082&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/1bd5550d930b83d9add90c7cf94992e8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/4f71ad79c5b4906ad9667923ee656256.jpg",
@@ -18209,7 +21115,9 @@
       "https://matinkim.com/web/product/extra/small/202603/06ef66359d553164629225bc7050b977.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18221,7 +21129,10 @@
       "가로 컷팅과 빈티지한 포켓 데미지 디테일이 포인트"
     ],
     "price": "188,000",
-    "colors": ["WHITE", "PINK"],
+    "colors": [
+      "WHITE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9028&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/4d76cbc81d2ae966393c3dfea4d448fd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/7fb80a94c7211103c24736dbbc72fc74.jpg",
@@ -18251,7 +21162,10 @@
       "가로 컷팅과 빈티지한 포켓 데미지 디테일이 포인트"
     ],
     "price": "188,000",
-    "colors": ["PINK", "WHITE"],
+    "colors": [
+      "PINK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9027&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/87d58c7ba1d396a033b1739bd56b14a1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/96adb2908b8d0fa8940bc48783a4f7b6.jpg",
@@ -18281,7 +21195,10 @@
       "가로 컷팅과 빈티지한 포켓 데미지 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["BLUE", "KHAKI"],
+    "colors": [
+      "BLUE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9026&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202604/b6d6fea4e8e40b61c783dbe651864842.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202604/c0e902db268c1cb1103f121f8484a610.jpg",
@@ -18311,7 +21228,10 @@
       "가로 컷팅과 빈티지한 포켓 데미지 디테일이 포인트"
     ],
     "price": "198,000",
-    "colors": ["KHAKI", "BLUE"],
+    "colors": [
+      "KHAKI",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9025&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/eda1a9062de609ef7f1f7bcb5891a7ba.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/2f8d64b56ede7f7eb593e747f33402ed.jpg",
@@ -18340,7 +21260,10 @@
       "입체 카고 포켓과 절개 스티치 라인이 포인트"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9024&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/0bd81ea23b44344cef9f71c47a4ebafe.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/36ec9490ac0454c98d2e9464d142020e.jpg",
@@ -18372,7 +21295,10 @@
     "name": "MULTI PANEL PARACHUTE PANTS IN LIGHT GREY",
     "bullet_points": [],
     "price": "168,000",
-    "colors": ["LIGHT GREY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9023&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/0652b50e9df425dfb4c42ed9459eb153.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/53571aff46040e44a8718038e8cce57e.jpg",
@@ -18406,7 +21332,9 @@
       "시즌 아트워크인 수채화 톤 그래픽이 포인트"
     ],
     "price": "148,000",
-    "colors": ["LIGHT BEIGE"],
+    "colors": [
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9022&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/494ee01bb7876781cd9b1307d4695a11.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/2fa431d4bc8e2914a819e93a894a5911.jpg",
@@ -18439,7 +21367,10 @@
       "허리 밴딩과 루즈한 실루엣이 포인트"
     ],
     "price": "128,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9021&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/6aa3f22a9ca6f7af2339e5de2dd7fbf0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/7dcdeb8b67bed04ded17a2fbbd31a944.jpg",
@@ -18456,7 +21387,9 @@
       "https://matinkim.com/web/product/extra/small/202603/f94f47c0c237b16ae6c4f0a807e4e97a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18468,7 +21401,10 @@
       "허리 밴딩과 루즈한 실루엣이 포인트"
     ],
     "price": "128,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9020&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/7fa6935ebc41b9afd9af9ba23cadbe4e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/73020cd9c8e568a3fecdc393949426a3.jpg",
@@ -18497,7 +21433,10 @@
       "MATINKIM 레터링이 입체적으로 스며든 조직감이 포인트"
     ],
     "price": "108,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9019&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/3a4fa236a7dc1f2a3a3d88406743d735.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/615312964eea7ff1fc523d16dbaf2263.jpg",
@@ -18526,7 +21465,10 @@
       "MATINKIM 레터링이 입체적으로 스며든 조직감이 포인트"
     ],
     "price": "108,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9018&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/3155274f2916e9c51762c9f534528b0d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/099bbbdc1a8a75cb4f069ab24d75ec1b.jpg",
@@ -18550,9 +21492,13 @@
   {
     "id": "8953",
     "name": "PANEL SEMI WIDE DENIM PANTS IN LIGHT BLUE",
-    "bullet_points": ["절개 디테일이 포인트인 세미 와이드핏 데님 팬츠"],
+    "bullet_points": [
+      "절개 디테일이 포인트인 세미 와이드핏 데님 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["LIGHT BLUE"],
+    "colors": [
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8953&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/d050f90b172118386946e9ba844866a8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/4c12b28dba5407f4757e30c1b577c6a1.jpg",
@@ -18581,7 +21527,10 @@
       "포켓 아래 레터링 로고 자수가 포인트이며, 허리 밴드 및 스트링으로 남녀 모두 편안한 착용 가능"
     ],
     "price": "178,000",
-    "colors": ["IVORY", "KHAKI"],
+    "colors": [
+      "IVORY",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8952&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/a1b812469950bfbca1f3d010200e0e43.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/0e538fdb38b98d24e808072c273f83da.jpg",
@@ -18611,7 +21560,10 @@
       "포켓 아래 레터링 로고 자수가 포인트이며, 허리 밴드 및 스트링으로 남녀 모두 편안한 착용 가능"
     ],
     "price": "178,000",
-    "colors": ["KHAKI", "IVORY"],
+    "colors": [
+      "KHAKI",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8951&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/81faf6d86da8fd09bbea691a8dfd02af.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/9b53f07fc16a1c548301914c2f3a7091.jpg",
@@ -18634,7 +21586,9 @@
       "https://matinkim.com/web/product/extra/small/202602/e4108a809d74d6f51996a3748ab26272.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18647,7 +21601,10 @@
       "버클을 통해 허리 사이즈를 조절할 수 있으며, 밑단 스트링으로 다양한 연출 가능"
     ],
     "price": "158,000",
-    "colors": ["NAVY", "BEIGE"],
+    "colors": [
+      "NAVY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8950&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/eeb2bb2946f215212a3c8bf351c24b8a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/41a77aa858bc98a03e4abd28dc9905c9.jpg",
@@ -18677,7 +21634,10 @@
       "버클을 통해 허리 사이즈를 조절할 수 있으며, 밑단 스트링으로 다양한 연출 가능"
     ],
     "price": "158,000",
-    "colors": ["BEIGE", "NAVY"],
+    "colors": [
+      "BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8949&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/f433200b5589b8baf13db53bd05c3dbf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/7534e8a697cbb8ae0efd43208357eed7.jpg",
@@ -18694,7 +21654,9 @@
       "https://matinkim.com/web/product/extra/small/202602/731f353a1dc301220ea1f58bb9fa2246.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18706,7 +21668,9 @@
       "어진 부분에 원단 한겹을 덧대어 편안하게 착용 가능"
     ],
     "price": "198,000",
-    "colors": ["LIGHT BLUE"],
+    "colors": [
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8916&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/e64a727d298e1d5c193cb9f0e45380a8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/f45adbfe40978fb023cc7efb9c02b04e.jpg",
@@ -18736,7 +21700,10 @@
       "전체적으로 들어간 배색 스티치가 포인트이며, 곡진 실루엣으로 멋스러운 연출 가능"
     ],
     "price": "178,000",
-    "colors": ["IVORY", "BROWN"],
+    "colors": [
+      "IVORY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8918&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/42f8a46bedb0f45dd190df8c0052a895.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/9fd9f7bd7b0d53118ae61fd965617856.jpg",
@@ -18766,7 +21733,10 @@
       "전체적으로 들어간 배색 스티치가 포인트이며, 곡진 실루엣으로 멋스러운 연출 가능"
     ],
     "price": "178,000",
-    "colors": ["BROWN", "IVORY"],
+    "colors": [
+      "BROWN",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8917&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/4757d5f3df77ee9cd61d7696c47c5321.jpg",
@@ -18797,7 +21767,10 @@
       "밑단 컷팅 디자인으로 러프한 무드 강조"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "NAVY"],
+    "colors": [
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8920&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/35e61f321f70b3fdd46ae2ba774f0d46.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/604d6371aa4e93b72170394a5c53e6d1.jpg",
@@ -18827,7 +21800,10 @@
       "밑단 컷팅 디자인으로 러프한 무드 강조"
     ],
     "price": "158,000",
-    "colors": ["NAVY", "BLACK"],
+    "colors": [
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8919&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/50564e22c24fc441b91c3c41f07e83ca.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/1061e2f7461f6a1f48c68b7bb97930de.jpg",
@@ -18844,7 +21820,9 @@
       "https://matinkim.com/web/product/extra/small/202602/8b8d3f4fcb87a225cb6b60fcfeb70cae.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18856,7 +21834,10 @@
       "자유롭게 실루엣을 조절할 수 있으며, 단품 또는 팬츠와 레이어드해 다양한 연출 가능"
     ],
     "price": "168,000",
-    "colors": ["NAVY", "BLACK"],
+    "colors": [
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8921&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/5efa8094669ed39d1df45ea5e79e08f2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/51bfd7c3f2765d05278531810f2f6075.jpg",
@@ -18885,7 +21866,10 @@
       "자유롭게 실루엣을 조절할 수 있으며, 단품 또는 팬츠와 레이어드해 다양한 연출 가능"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "NAVY"],
+    "colors": [
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8922&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/e691518f50cb002e9916370813fb6151.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/f36db36cef992a66137ea2317e732027.jpg",
@@ -18913,7 +21897,10 @@
       "사이드에 MATINKIM 로고가 포인트인 이지한 무드의 스웻 팬츠"
     ],
     "price": "118,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8822&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/ac4ed4c9fd891b66d4548cb839c71883.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/df5630a45dbf233ac729ee3c272d02ac.jpg",
@@ -18946,7 +21933,10 @@
       "사이드에 MATINKIM 로고가 포인트인 이지한 무드의 스웻 팬츠"
     ],
     "price": "118,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8823&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/c725da5603d6d6b98e8ae6c83dd9dcd8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/75da1ca6288868e8be93a84db61a482c.jpg",
@@ -18968,7 +21958,9 @@
       "https://matinkim.com/web/product/extra/small/202601/f6296ecd8e3f3c9e1328f5e65294702c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -18979,7 +21971,10 @@
       "주머니 하단과 바지 밑단의 디스트로이드 디테일이 포인트인 레귤러핏 디스트로이드 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8826&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/1897c20ef6aeb53fcfa86c3de0f44901.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ef1dd797ae7bb77a663071869eced806.jpg",
@@ -18996,7 +21991,9 @@
       "https://matinkim.com/web/product/extra/small/202601/42eec5084e2bdd8000e9672b00cc5a66.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19007,7 +22004,10 @@
       "주머니 하단과 바지 밑단의 디스트로이드 디테일이 포인트인 레귤러핏 디스트로이드 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8827&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/0ffd28ce2608ee9366197b07d11b1ec3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/80683528fbc41e50f3e527a855c279e1.jpg",
@@ -19035,7 +22035,10 @@
       "각각 다른 세가지 원단으로 레이어드한 스커트. 세겹의 단차와 밑단의 스트랩이 포인트이며, 단품 또는 레이어드로 착용 가능"
     ],
     "price": "168,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8828&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/5bd706597b573cc44dca1481bf855dcf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/2390f6f0b353d63421a67a1b2dd65080.jpg",
@@ -19063,7 +22066,10 @@
       "각각 다른 세가지 원단으로 레이어드한 스커트. 세겹의 단차와 밑단의 스트랩이 포인트이며, 단품 또는 레이어드로 착용 가능"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8829&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/de3ffa0bac09950ceeec35048a8bf92e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/18ec5092856cfe675511ad1e9b9cc27c.jpg",
@@ -19080,7 +22086,9 @@
       "https://matinkim.com/web/product/extra/small/202601/bb9e6b73f20a27b07ad639355a8eb71e.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19091,7 +22099,10 @@
       "허리 밴드와 밑단 내장 스트링으로 사이즈 조절이 용이하며, 빈티지한 워싱 디테일이 포인트인 스웻 팬츠"
     ],
     "price": "148,000",
-    "colors": ["IVORY", "CHARCOAL"],
+    "colors": [
+      "IVORY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8775&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/474badc8bd886b12ada00bb81c9147a6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/bbe66f13dd620feae32dbae8b1a51f47.jpg",
@@ -19124,7 +22135,10 @@
       "허리 밴드와 밑단 내장 스트링으로 사이즈 조절이 용이하며, 빈티지한 워싱 디테일이 포인트인 스웻 팬츠"
     ],
     "price": "148,000",
-    "colors": ["CHARCOAL", "IVORY"],
+    "colors": [
+      "CHARCOAL",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8776&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/f8a94aca73df020f1e6b6ce46d888e14.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/bd6454f9b4b33f638e5e4d5cbddcf613.jpg",
@@ -19157,7 +22171,10 @@
       "허리 밴드 및 내장 스트링으로 사이즈 조절이 용이하며, 빈티지한 워싱 디테일이 포인트인 버뮤다 스웻 팬츠"
     ],
     "price": "108,000",
-    "colors": ["CHARCOAL", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8777&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/19ecc120a1020836d360f7c09a09d893.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/c9540d47236805c1d737f880379e084e.jpg",
@@ -19180,7 +22197,9 @@
       "https://matinkim.com/web/product/extra/small/202601/e98f3e7f23f09ac03adaaef1897f9f90.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19191,7 +22210,10 @@
       "허리 밴드 및 내장 스트링으로 사이즈 조절이 용이하며, 빈티지한 워싱 디테일이 포인트인 버뮤다 스웻 팬츠"
     ],
     "price": "108,000",
-    "colors": ["SMOKE BLUE", "CHARCOAL"],
+    "colors": [
+      "SMOKE BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8778&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4fbf834ba9ddd64b0dd6b95bcd0ac893.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/df656c48f13565e57cabf5ea4c5aadf0.jpg",
@@ -19221,9 +22243,14 @@
   {
     "id": "8779",
     "name": "FRONT LAYERED DISTRESSED DENIM PANTS IN BLACK",
-    "bullet_points": ["레이어드 디테일이 돋보이는 세미 와이드핏 데님 팬츠"],
+    "bullet_points": [
+      "레이어드 디테일이 돋보이는 세미 와이드핏 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8779&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/f81227eae6bb7aad8fb7351d9ab74cdc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/c3bbdd0b7d664d5e171ea69e8a59e0c7.jpg",
@@ -19247,9 +22274,14 @@
   {
     "id": "8780",
     "name": "FRONT LAYERED DISTRESSED DENIM PANTS IN BLUE",
-    "bullet_points": ["레이어드 디테일이 돋보이는 세미 와이드핏 데님 팬츠"],
+    "bullet_points": [
+      "레이어드 디테일이 돋보이는 세미 와이드핏 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8780&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4ba8a322204b64c2d5cc2d024be0e024.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/e6cb2d54e1c0945713eb5d851b5c875c.jpg",
@@ -19266,7 +22298,9 @@
       "https://matinkim.com/web/product/extra/small/202601/9ffa98c1101bfa103c89578156c63b57.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19277,7 +22311,10 @@
       "캣브러쉬와 빈티지한 하이라이트 워싱이 포인트이며 밑단을 러프하게 풀어 완성한 슬림 부츠컷 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["GREY", "BLUE"],
+    "colors": [
+      "GREY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8781&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/5db4c5228527dded043eacb31e045176.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f22e510bf12d98a26fc80e78ae6fe6ba.jpg",
@@ -19294,7 +22331,9 @@
       "https://matinkim.com/web/product/extra/small/202601/82be5d84f14d48a1222f85ee28e98b77.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19305,7 +22344,10 @@
       "캣브러쉬와 빈티지한 하이라이트 워싱이 포인트이며 밑단을 러프하게 풀어 완성한 슬림 부츠컷 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["BLUE", "GREY"],
+    "colors": [
+      "BLUE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8782&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/d6c3c9d21f8b7850a17f4ca45e132781.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/a2a54d21c6edab06864f6d74ef39b323.jpg",
@@ -19333,7 +22375,10 @@
       "전체적으로 클래식한 워싱 베이스에 은은한 더티 워싱으로 빈티지한 무드를 더한 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8783&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/0d491c35f5773ccdb831cd87d4d9f06b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ab9572d60bf202326f8c0410f81dd9f9.jpg",
@@ -19366,7 +22411,10 @@
       "전체적으로 클래식한 워싱 베이스에 은은한 더티 워싱으로 빈티지한 무드를 더한 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["LIGHT BLUE", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8784&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/30b42b37f2aa96c553dcb881b8b074d4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/c7dd8543dd8285193e1d7bf0f2b0f93c.jpg",
@@ -19399,7 +22447,10 @@
       "커브드 실루엣과 다트 디테일이 포인트인 탄탄한 코튼 소재의 루즈핏 데님 팬츠"
     ],
     "price": "168,000",
-    "colors": ["DARK NAVY", "KHAKI"],
+    "colors": [
+      "DARK NAVY",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8785&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/63ca7db52107f84b5d53472af6a793e1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/38f75667fec213f19a84d0eff4d3bca8.jpg",
@@ -19432,7 +22483,10 @@
       "커브드 실루엣과 다트 디테일이 포인트인 탄탄한 코튼 소재의 루즈핏 데님 팬츠"
     ],
     "price": "168,000",
-    "colors": ["KHAKI", "DARK NAVY"],
+    "colors": [
+      "KHAKI",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8786&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/5571200ccf22ca815ee1047bae1c44a8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/07eed02baea2740ce48f19c94a52b27a.jpg",
@@ -19461,9 +22515,14 @@
   {
     "id": "8787",
     "name": "VINTAGE WASHED DOUBLE KNEE DENIM PANTS FOR MEN IN WHITE",
-    "bullet_points": ["컷아웃 디테일과 빈티지한 워싱이 포인트인 데님 팬츠"],
+    "bullet_points": [
+      "컷아웃 디테일과 빈티지한 워싱이 포인트인 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["WHITE", "BLUE"],
+    "colors": [
+      "WHITE",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8787&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/12241d90f68ecd393d547e420a104c77.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/5856a78e55ad80112710c67236c4f9cc.jpg",
@@ -19488,9 +22547,14 @@
   {
     "id": "8788",
     "name": "VINTAGE WASHED DOUBLE KNEE DENIM PANTS FOR MEN IN BLUE",
-    "bullet_points": ["컷아웃 디테일과 빈티지한 워싱이 포인트인 데님 팬츠"],
+    "bullet_points": [
+      "컷아웃 디테일과 빈티지한 워싱이 포인트인 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLUE", "WHITE"],
+    "colors": [
+      "BLUE",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8788&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/48c7975f52437a65533a4f686b37ba3c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f7e74fa1b22bb075160981152ff14944.jpg",
@@ -19508,7 +22572,9 @@
       "https://matinkim.com/web/product/extra/small/202601/04bc9bbf2637f111a0f010d246ba0c5a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19519,7 +22585,10 @@
       "밑단 탈착으로 버뮤다 팬츠로도 착용이 가능하며, 밑단 스트링으로 사이즈 조절이 용이한 포켓 디테일의 오버핏 카고 팬츠"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8789&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/2fa745391a05d67f7a9b8388d12a9c5f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/906af04c6d019859f9e4ede96ad11ef2.jpg",
@@ -19547,7 +22616,10 @@
       "밑단 탈착으로 버뮤다 팬츠로도 착용이 가능하며, 밑단 스트링으로 사이즈 조절이 용이한 포켓 디테일의 오버핏 카고 팬츠"
     ],
     "price": "218,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8790&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/9ad198a77ee3c6b209d65dd7c9b8c051.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/1474378e92df56cfae7c03119ab2838d.jpg",
@@ -19564,7 +22636,9 @@
       "https://matinkim.com/web/product/extra/small/202601/8d4c74717dc2d0fc1152189f3718eb73.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19575,7 +22649,10 @@
       "허리 밴드와 밑단 내장 스트링으로 사이즈 조절이 용이하며, 스몰 로고 자수가 포인트인 오버핏 코튼 팬츠"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8791&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/9f0c33a95126cceafe02ea6fdd78b6f0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/7f78113e3308f72b5d360906bd39d895.jpg",
@@ -19608,7 +22685,10 @@
       "허리 밴드와 밑단 내장 스트링으로 사이즈 조절이 용이하며, 스몰 로고 자수가 포인트인 오버핏 코튼 팬츠"
     ],
     "price": "158,000",
-    "colors": ["LIGHT GREY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8792&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/6840dff7c8ac81380f055da8dc4e3859.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/b2a6ea14429c30b1cc62d3b2bf9b3715.jpg",
@@ -19641,7 +22721,9 @@
       "다양한 포켓 배치와 뜯어진 듯한 마감 디테일이 포인트인 빈티지한 워싱의 카고 팬츠"
     ],
     "price": "198,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8793&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/f20d744033c3ec3715d75281f0b26924.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/eadb888bd1fedfadad877ac2d3f0ca49.jpg",
@@ -19665,9 +22747,14 @@
   {
     "id": "8641",
     "name": "BIG POCKET TWO TONE WIDE PANTS IN BEIGE",
-    "bullet_points": ["두가지 소재가 믹스 되어있는 와이드한 실루엣의 팬츠"],
+    "bullet_points": [
+      "두가지 소재가 믹스 되어있는 와이드한 실루엣의 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8641&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/0904887e884caccd8742968f5d77896b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/f7ae7627021e456369819f99e7feb7f5.jpg",
@@ -19684,16 +22771,23 @@
       "https://matinkim.com/web/product/extra/small/202510/2ec2682ab8a285a86e9cd9b0b0786d59.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8640",
     "name": "BIG POCKET TWO TONE WIDE PANTS IN CHARCOAL",
-    "bullet_points": ["두가지 소재가 믹스 되어있는 와이드한 실루엣의 팬츠"],
+    "bullet_points": [
+      "두가지 소재가 믹스 되어있는 와이드한 실루엣의 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8640&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4a831497a53cdaddceada05d4837f230.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/e874e5374085c695159158d4d4714040.jpg",
@@ -19720,7 +22814,9 @@
       "루즈핏 빅포켓 코팅 카고 스트링 팬츠. 탄탄한 소재감으로 가먼트상태로 코팅을 먹여 완성한 블랙 데님팬츠"
     ],
     "price": "218,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8639&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/52f3920ac32afd7770afe4c335f0bb56.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/42268634c4c6e1533bf3691fc266ab11.jpg",
@@ -19736,7 +22832,9 @@
       "https://matinkim.com/web/product/extra/small/202510/3561a4ef4f2d999b6d1dd56d75e4480f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -19747,7 +22845,10 @@
       "밑단 이스트링으로 조거핏으로 투웨이 가능한 세미 와이드핏 셰르파 팬츠"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "NAVY"],
+    "colors": [
+      "CHARCOAL",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8671&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/64c04a30c5ac9fd5fae87f255ea86e72.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/4436e06023e4ecd09027092be0c3065c.jpg",
@@ -19775,7 +22876,10 @@
       "밑단 이스트링으로 조거핏으로 투웨이 가능한 세미 와이드핏 셰르파 팬츠"
     ],
     "price": "158,000",
-    "colors": ["NAVY", "CHARCOAL"],
+    "colors": [
+      "NAVY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8670&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/778262a49e39fadb492405d2203a9f07.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/a74ada125d7639097278fa8643f7c553.jpg",
@@ -19803,7 +22907,10 @@
       "코튼성 데님에 워싱된 벨벳터치 뒤판의 디테일이 앞으로 돌아나온 형태의 세미 하이웨이스트 와이드 팬츠"
     ],
     "price": "198,000",
-    "colors": ["NAVY", "KHAKI"],
+    "colors": [
+      "NAVY",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8669&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/1dfb78e0b9d55044f3e8cb31f444e0f4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/eb1d646ae4c0884d0071b1738e9b76de.jpg",
@@ -19830,7 +22937,10 @@
       "코튼성 데님에 워싱된 벨벳터치 뒤판의 디테일이 앞으로 돌아나온 형태의 세미 하이웨이스트 와이드 팬츠"
     ],
     "price": "198,000",
-    "colors": ["KHAKI", "NAVY"],
+    "colors": [
+      "KHAKI",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8668&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/97dd0d41bf92b6a7fd843b5a53e0b1c5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/06a96b0bddaa307c76fac69172e55207.jpg",
@@ -19854,9 +22964,14 @@
   {
     "id": "8644",
     "name": "WASHED CORDUROY PANTS FOR MEN IN CHARCOAL",
-    "bullet_points": ["코듀로이 루즈핏 스트레이트 팬츠"],
+    "bullet_points": [
+      "코듀로이 루즈핏 스트레이트 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8644&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/dcfe6eeb3aa5e997863e80ff2353a001.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/d0a2359d2221cfb250edacc86aeebc6d.jpg",
@@ -19881,9 +22996,14 @@
   {
     "id": "8645",
     "name": "WASHED CORDUROY PANTS FOR MEN IN BLUE",
-    "bullet_points": ["코듀로이 루즈핏 스트레이트 팬츠"],
+    "bullet_points": [
+      "코듀로이 루즈핏 스트레이트 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["BLUE", "CHARCOAL"],
+    "colors": [
+      "BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8645&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/5d32b82ce1d2ef8598f87cb42bff03e6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/4332102071ee29841d26ba195706a267.jpg",
@@ -19907,9 +23027,14 @@
   {
     "id": "8642",
     "name": "DISTRESSED DOUBLE KNEE WORK PANTS FOR MEN IN BLACK",
-    "bullet_points": ["캔버스 카팬터 루즈핏 스트레이트 팬츠"],
+    "bullet_points": [
+      "캔버스 카팬터 루즈핏 스트레이트 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8642&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/77a28b428d45978895d1340b137ed13f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/8d3c87ce0a095bf4781ca45e82e3e1dc.jpg",
@@ -19934,9 +23059,14 @@
   {
     "id": "8643",
     "name": "DISTRESSED DOUBLE KNEE WORK PANTS FOR MEN IN BROWN",
-    "bullet_points": ["캔버스 카팬터 루즈핏 스트레이트 팬츠"],
+    "bullet_points": [
+      "캔버스 카팬터 루즈핏 스트레이트 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8643&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/926a339872a984a591207d965c6fa0f7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/bf7e8954901af1250a00ec3276b5429c.jpg",
@@ -19965,7 +23095,10 @@
       "플레어지는 핏의 랩 형식 세미 미디 기장의 워싱 코듀로이 스커트"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8469&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/04a20b91503b52a0b0d8885122cd9efb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/5d5c5fde74744b09b4c8d9a48748509e.jpg",
@@ -19993,7 +23126,10 @@
       "플레어지는 핏의 랩 형식 세미 미디 기장의 워싱 코듀로이 스커트"
     ],
     "price": "158,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8468&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/056aea946e38e8a394c486bdf6574895.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/05aa157a6e05ffab938df50f5effa0a8.jpg",
@@ -20010,7 +23146,9 @@
       "https://matinkim.com/web/product/extra/small/202510/400291513d1360438d4cb0d69fbee334.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -20021,7 +23159,11 @@
       "몸판과 같은 컬러의 우븐 배색 빅 입체포켓이 포인트인 카고 팬츠"
     ],
     "price": "158,000",
-    "colors": ["LIGHT GREY", "CHARCOAL", "PINK"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8653&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/cab066cfacfc2e0f94fbad6a95c0396f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/023ed1c7c1fa74d6755e07c65939c857.jpg",
@@ -20039,7 +23181,9 @@
       "https://matinkim.com/web/product/extra/small/202510/54234ca0dfb1d3d8bac09c9e1357ffcc.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -20050,7 +23194,11 @@
       "몸판과 같은 컬러의 우븐 배색 빅 입체포켓이 포인트인 카고 팬츠"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "LIGHT GREY", "PINK"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8652&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/8afdb1193a985cdc6aa02a6e2bd7d204.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/1743330b824a1e16b6d4adf00c051c88.jpg",
@@ -20068,7 +23216,9 @@
       "https://matinkim.com/web/product/extra/small/202510/3a32d28592f84a41a5ed3405db15fc92.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -20079,7 +23229,11 @@
       "몸판과 같은 컬러의 우븐 배색 빅 입체포켓이 포인트인 카고 팬츠"
     ],
     "price": "158,000",
-    "colors": ["PINK", "CHARCOAL", "LIGHT GREY"],
+    "colors": [
+      "PINK",
+      "CHARCOAL",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8654&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/9418008b35039e5b4e2e6261b93edeff.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f2c24a59d2c63aff412a710348b66a04.jpg",
@@ -20108,7 +23262,11 @@
       "몸판과 같은 컬러의 우븐 배색 빅 입체포켓이 포인트인 카고 팬츠"
     ],
     "price": "158,000",
-    "colors": ["LIGHT GREY", "CHARCOAL", "PINK"],
+    "colors": [
+      "LIGHT GREY",
+      "CHARCOAL",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8637&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4daf2277fd2827fe2c8d4656f466987c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/5c955ed7b2c87a59baf7e92dedc532f4.jpg",
@@ -20137,7 +23295,11 @@
       "몸판과 같은 컬러의 우븐 배색 빅 입체포켓이 포인트인 카고 팬츠"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "LIGHT GREY", "PINK"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT GREY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8655&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/8533634af62ec25542d559c3a6719fb2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/6f264689d551619280084e322620174d.jpg",
@@ -20155,7 +23317,9 @@
       "https://matinkim.com/web/product/extra/small/202510/481ed00ccac81f6c2ba872b0ea5eac1f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -20166,7 +23330,11 @@
       "몸판과 같은 컬러의 우븐 배색 빅 입체포켓이 포인트인 카고 팬츠"
     ],
     "price": "158,000",
-    "colors": ["PINK", "CHARCOAL", "LIGHT GREY"],
+    "colors": [
+      "PINK",
+      "CHARCOAL",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8636&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4c8985fb26e0b80fcaa8dd2d531a4346.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ae35526635ba4c43f9d289b88f746212.jpg",
@@ -20195,7 +23363,9 @@
       "마뗑킴 특유의 러프한 디테일을 가미해 완성한 와이드핏 워싱 데님 팬츠"
     ],
     "price": "198,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8467&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/6843c181821cb55c1308d151daa54a97.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/53aa5ad3dc074229a73d6f7e78cd00d2.jpg",
@@ -20223,7 +23393,10 @@
       "앞판에 데미지 속패치 디테일과 뒤판의 로고 형압 디테일이 있는 와이드 데님팬츠"
     ],
     "price": "188,000",
-    "colors": ["CHARCOAL", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8466&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/92b60d395f84940971dcfa21124e4238.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/c639ea25c4736e58a40ca2d13bd038a3.jpg",
@@ -20251,7 +23424,10 @@
       "앞판에 데미지 속패치 디테일과 뒤판의 로고 형압 디테일이 있는 와이드 데님팬츠"
     ],
     "price": "188,000",
-    "colors": ["SMOKE BLUE", "CHARCOAL"],
+    "colors": [
+      "SMOKE BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8465&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/2d26e0f2b79bc0bfe42ffaaafe6f914b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/0e6443c600edc17b7dcc1ac818d850a4.jpg",
@@ -20276,9 +23452,14 @@
   {
     "id": "8464",
     "name": "HEART LOGO TRACK PANTS IN NAVY",
-    "bullet_points": ["약간의 광택이 있는 소재를 사용한 트랙 와이드 팬츠"],
+    "bullet_points": [
+      "약간의 광택이 있는 소재를 사용한 트랙 와이드 팬츠"
+    ],
     "price": "138,000",
-    "colors": ["NAVY", "BROWN"],
+    "colors": [
+      "NAVY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8464&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/e2348a484d0b575dfc94adf69d518049.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/09472d4ce379f3dd8425a4c2e2b65916.jpg",
@@ -20301,16 +23482,23 @@
       "https://matinkim.com/web/product/extra/small/202510/6a3ba3e7c2010b1a83265a6fde4ba506.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8463",
     "name": "HEART LOGO TRACK PANTS IN BROWN",
-    "bullet_points": ["약간의 광택이 있는 소재를 사용한 트랙 와이드 팬츠"],
+    "bullet_points": [
+      "약간의 광택이 있는 소재를 사용한 트랙 와이드 팬츠"
+    ],
     "price": "138,000",
-    "colors": ["BROWN", "NAVY"],
+    "colors": [
+      "BROWN",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8463&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/6aa1dfc0b396fb465a6582ab9298019e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/9a582d77dff29c808605bd7e36f50c93.jpg",
@@ -20334,9 +23522,14 @@
   {
     "id": "8371",
     "name": "WASHED FLARE DENIM PANTS FOR MEN IN BLUE",
-    "bullet_points": ["로우컷팅 디테일 플레어핏의 데님 팬츠"],
+    "bullet_points": [
+      "로우컷팅 디테일 플레어핏의 데님 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["BLUE", "LIGHT BLUE"],
+    "colors": [
+      "BLUE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8371&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/c2f726a56dd96691b523b747f52eec1c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/c26cb7eb2179a7c450c6353bbb9f107f.jpg",
@@ -20353,16 +23546,23 @@
       "https://matinkim.com/web/product/extra/small/202509/cce6bdfb5ceb45bc7b4d58395e1e03b3.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8370",
     "name": "WASHED FLARE DENIM PANTS FOR MEN IN LIGHT BLUE",
-    "bullet_points": ["로우컷팅 디테일 플레어핏의 데님 팬츠"],
+    "bullet_points": [
+      "로우컷팅 디테일 플레어핏의 데님 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["LIGHT BLUE", "BLUE"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8370&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/c16f6a24b1d041d39cfdaf54dd5dd53d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/36e173570879c00fc9983df75d3a3983.jpg",
@@ -20386,9 +23586,14 @@
   {
     "id": "8369",
     "name": "DRAWSTRING POINT SWEATPANTS IN BLACK",
-    "bullet_points": ["밑단 아웃 포켓이 포인트인 코튼 소재의 스웻 팬츠"],
+    "bullet_points": [
+      "밑단 아웃 포켓이 포인트인 코튼 소재의 스웻 팬츠"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "BURGUNDY"],
+    "colors": [
+      "BLACK",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8369&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4df933f2d744a044c54a20bcd0b00fcd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/beca95c5da1c8b62e293c2cbe2dc484d.jpg",
@@ -20412,9 +23617,14 @@
   {
     "id": "8368",
     "name": "DRAWSTRING POINT SWEATPANTS IN BURGUNDY",
-    "bullet_points": ["밑단 아웃 포켓이 포인트인 코튼 소재의 스웻 팬츠"],
+    "bullet_points": [
+      "밑단 아웃 포켓이 포인트인 코튼 소재의 스웻 팬츠"
+    ],
     "price": "158,000",
-    "colors": ["BURGUNDY", "BLACK"],
+    "colors": [
+      "BURGUNDY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8368&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/9a4a3a587ddbc88894e9b5a189141610.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/82f4723a54829d13406f8c527e747cdd.jpg",
@@ -20438,9 +23648,14 @@
   {
     "id": "8231",
     "name": "SIDE ZIPPER PLEATS MIDI SKIRT IN LIGHT BEIGE",
-    "bullet_points": ["사이드 지퍼가 포인트인 스웨이드 미디 플리츠 스커트"],
+    "bullet_points": [
+      "사이드 지퍼가 포인트인 스웨이드 미디 플리츠 스커트"
+    ],
     "price": "198,000",
-    "colors": ["LIGHT BEIGE", "DARK BROWN"],
+    "colors": [
+      "LIGHT BEIGE",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8231&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/c82c2a7502018b9f96835587f16b103d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/0772351bcd93f9668eebf39e166fda77.jpg",
@@ -20457,16 +23672,23 @@
       "https://matinkim.com/web/product/extra/small/202509/dcbba42d1c984201a5f19ef4beedeee3.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8232",
     "name": "SIDE ZIPPER PLEATS MIDI SKIRT IN DARK BROWN",
-    "bullet_points": ["사이드 지퍼가 포인트인 스웨이드 미디 플리츠 스커트"],
+    "bullet_points": [
+      "사이드 지퍼가 포인트인 스웨이드 미디 플리츠 스커트"
+    ],
     "price": "198,000",
-    "colors": ["DARK BROWN", "LIGHT BEIGE"],
+    "colors": [
+      "DARK BROWN",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8232&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/fa68a31cc3f256469e4b68f974fa2a73.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/e4c9faf105f57c59894fb1d3cb7f8592.jpg",
@@ -20483,16 +23705,23 @@
       "https://matinkim.com/web/product/extra/small/202509/310f1a99a437fd50831e6b11ef06c4d1.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8230",
     "name": "SEMI BOOTS CUT WASHED DENIM PANTS IN NAVY",
-    "bullet_points": ["빈티지한 워싱감이 포인트인 세미부츠컷 팬츠"],
+    "bullet_points": [
+      "빈티지한 워싱감이 포인트인 세미부츠컷 팬츠"
+    ],
     "price": "188,000",
-    "colors": ["NAVY", "BLUE"],
+    "colors": [
+      "NAVY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8230&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/d68b46f4dfd351825acd25320035470f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/e5a0c3fa63f33c42b2f9fb352fa8e350.jpg",
@@ -20509,16 +23738,23 @@
       "https://matinkim.com/web/product/extra/small/202509/650e772097e28d5d82351248ac02746f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8229",
     "name": "SEMI BOOTS CUT WASHED DENIM PANTS IN BLUE",
-    "bullet_points": ["빈티지한 워싱감이 포인트인 세미부츠컷 팬츠"],
+    "bullet_points": [
+      "빈티지한 워싱감이 포인트인 세미부츠컷 팬츠"
+    ],
     "price": "188,000",
-    "colors": ["BLUE", "NAVY"],
+    "colors": [
+      "BLUE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8229&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/fc1a8d4807ef9a897c21118964eef5ab.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/3052faf1e8d1cbfb60c5ace022984370.jpg",
@@ -20542,9 +23778,14 @@
   {
     "id": "8191",
     "name": "GRAFFITI ARTWORK SWEATPANTS IN CHARCOAL",
-    "bullet_points": ["하단 스트링으로 투웨이 연출이 가능한 루즈핏 스웻 팬츠"],
+    "bullet_points": [
+      "하단 스트링으로 투웨이 연출이 가능한 루즈핏 스웻 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["CHARCOAL", "SMOKE BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8191&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/b71533f0a4428cf64e1896d4a36e7fe8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/bb75179b7ba95cf56e19f150e0b4d637.jpg",
@@ -20563,9 +23804,14 @@
   {
     "id": "8190",
     "name": "GRAFFITI ARTWORK SWEATPANTS IN SMOKE BLUE",
-    "bullet_points": ["하단 스트링으로 투웨이 연출이 가능한 루즈핏 스웻 팬츠"],
+    "bullet_points": [
+      "하단 스트링으로 투웨이 연출이 가능한 루즈핏 스웻 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["SMOKE BLUE", "CHARCOAL"],
+    "colors": [
+      "SMOKE BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8190&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/68fb9bf0891f8e7177aa8b0854deeac1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/d03d908e4a1e2a85e847c37fe405c391.jpg",
@@ -20584,9 +23830,14 @@
   {
     "id": "8189",
     "name": "CHECK LAYERED SKIRT IN GREY",
-    "bullet_points": ["사이즈 조절이 가능한 체크 레이어드 스커트"],
+    "bullet_points": [
+      "사이즈 조절이 가능한 체크 레이어드 스커트"
+    ],
     "price": "78,000",
-    "colors": ["GREY", "ORANGE"],
+    "colors": [
+      "GREY",
+      "ORANGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8189&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/6318971abaf76a175f59b1b3460f62ed.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/f9000ecc97254d686326d95b5d464586.jpg",
@@ -20598,16 +23849,23 @@
       "https://matinkim.com/web/product/extra/small/202509/f326bc494b118adf45a7c38428b4d3b5.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8188",
     "name": "CHECK LAYERED SKIRT IN ORANGE",
-    "bullet_points": ["사이즈 조절이 가능한 체크 레이어드 스커트"],
+    "bullet_points": [
+      "사이즈 조절이 가능한 체크 레이어드 스커트"
+    ],
     "price": "78,000",
-    "colors": ["ORANGE", "GREY"],
+    "colors": [
+      "ORANGE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8188&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/fba56f3288b09919ca098bbe091d9c42.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/0f1d5cba5ea7457529f8a30f250da1de.jpg",
@@ -20630,7 +23888,10 @@
       "밑단 데미지 포인트와 빈티지한 워싱감이 돋보이는 데님 롱 스커트"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8212&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/a9f7462417b28b43977e63da2ebdbaa8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/3009c62c46e6c20824afa1d029588444.jpg",
@@ -20658,7 +23919,10 @@
       "밑단 데미지 포인트와 빈티지한 워싱감이 돋보이는 데님 롱 스커트"
     ],
     "price": "168,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8211&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/0371e34fc692406b7daabdb0e894d60e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/01a47f71b132352eeb241affd009bbe5.jpg",
@@ -20686,7 +23950,10 @@
       "밑단 이스트링으로 다양한 연출이 가능한 와이드핏 스웻팬츠"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "BLUE"],
+    "colors": [
+      "CHARCOAL",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8210&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/ba68160e6877fa5cb08b13dd6442495e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/ddfcd272b3d085f08773087a9fe3ae49.jpg",
@@ -20703,7 +23970,9 @@
       "https://matinkim.com/web/product/extra/small/202509/78cc82564cbd4507d01fe8f5b8465bad.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -20714,7 +23983,10 @@
       "밑단 이스트링으로 다양한 연출이 가능한 와이드핏 스웻팬츠"
     ],
     "price": "158,000",
-    "colors": ["BLUE", "CHARCOAL"],
+    "colors": [
+      "BLUE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8209&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/19176233ba45558bfb27882d7451f468.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/37ee554e21ddfaa5ad7c33335200654b.jpg",
@@ -20738,9 +24010,14 @@
   {
     "id": "8138",
     "name": "COLOR POINT WASHED DENIM PANTS IN PINK",
-    "bullet_points": ["앞판의 엠보 워싱 디테일과 컬러감이 포인트인 데님 팬츠"],
+    "bullet_points": [
+      "앞판의 엠보 워싱 디테일과 컬러감이 포인트인 데님 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["PINK", "KHAKI"],
+    "colors": [
+      "PINK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8138&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/fe998b96fd0a7f349acdef1ea46c80f6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/1abc641e784a94f9ef3c5d45712f03ab.jpg",
@@ -20757,16 +24034,24 @@
       "https://matinkim.com/web/product/extra/small/202508/efff69d21e07bd558c3b7b540349f9dc.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8137",
     "name": "COLOR POINT WASHED DENIM PANTS IN KHAKI",
-    "bullet_points": ["앞판의 엠보 워싱 디테일과 컬러감이 포인트인 데님 팬츠"],
+    "bullet_points": [
+      "앞판의 엠보 워싱 디테일과 컬러감이 포인트인 데님 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["KHAKI", "PINK"],
+    "colors": [
+      "KHAKI",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8137&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/fa5d786e53291333ec7108c1542f2dbf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/85fffdba002481df660df135fc580c42.jpg",
@@ -20794,7 +24079,9 @@
       "허리의 스트링이 포인트인 페미닌한 무드의 슬림핏 셔링 미디 스커트"
     ],
     "price": "168,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8136&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/25ad96886013318aade200fa94b5ee53.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/e9bcdb1fecb408b35ebe4d2ec4576634.jpg",
@@ -20818,9 +24105,14 @@
   {
     "id": "8135",
     "name": "BOOTS CUT SLIM CARGO SWEATPANTS IN BLACK",
-    "bullet_points": ["밑단의 포켓 디테일이 포인트인 슬림핏 부츠컷 쭈리 팬츠"],
+    "bullet_points": [
+      "밑단의 포켓 디테일이 포인트인 슬림핏 부츠컷 쭈리 팬츠"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8135&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/903a2ef8c90c6587e223f6a30e91e166.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/eaf3329c94b834054ca20c3d45a47b1d.jpg",
@@ -20844,9 +24136,14 @@
   {
     "id": "8134",
     "name": "BOOTS CUT SLIM CARGO SWEATPANTS IN GREY",
-    "bullet_points": ["밑단의 포켓 디테일이 포인트인 슬림핏 부츠컷 쭈리 팬츠"],
+    "bullet_points": [
+      "밑단의 포켓 디테일이 포인트인 슬림핏 부츠컷 쭈리 팬츠"
+    ],
     "price": "158,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8134&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/5f9cedf5aebefa60a69432236a8143c8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/e65d7d2f9c41c66261e8fbae3efa643f.jpg",
@@ -20874,7 +24171,10 @@
       "카본 코팅 원단과 메탈 장식의 조합이 포인트인 버뮤다 코튼 팬츠"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8133&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/69a5194c6612ca493afb14ab87a8c18e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/43f96a3f10490bb8beeec6d8cf45a579.jpg",
@@ -20902,7 +24202,10 @@
       "카본 코팅 원단과 메탈 장식의 조합이 포인트인 버뮤다 코튼 팬츠"
     ],
     "price": "178,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8132&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/1ea086cdd214f08639abbc349300a9e5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/25c4cfd7b95eefd42412d21547888f9d.jpg",
@@ -20930,7 +24233,10 @@
       "카펜터 데님의 루프 디테일이 포인트인 세미 와이드핏 데님 팬츠"
     ],
     "price": "218,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8131&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/bf2ce812c68f983f3a850f0f23d3ccc3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/cdb5820af5b57f2510c180b22e1b7367.jpg",
@@ -20958,7 +24264,10 @@
       "카펜터 데님의 루프 디테일이 포인트인 세미 와이드핏 데님 팬츠"
     ],
     "price": "218,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8130&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/e91258ace3cf737f1ccdeb6861276215.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/e15107c3e6fc5034350501d101bc282d.jpg",
@@ -20986,7 +24295,10 @@
       "더티 오일 워싱으로 빈티지한 무드로 착용 가능한 세미 와이드핏 데님 팬츠"
     ],
     "price": "198,000",
-    "colors": ["BLUE", "LIGHT BLUE"],
+    "colors": [
+      "BLUE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8129&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/0ddb50639a475461345861ca81f62009.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/9dd36ba47cfba35d9b44eda26a2729b8.jpg",
@@ -21014,7 +24326,10 @@
       "더티 오일 워싱으로 빈티지한 무드로 착용 가능한 세미 와이드핏 데님 팬츠"
     ],
     "price": "198,000",
-    "colors": ["LIGHT BLUE", "BLUE"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8128&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/6b54d760dfdc1eeae003ff1010e651a8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/f4697cf85cdb9c78caab1007e5caf731.jpg",
@@ -21042,7 +24357,10 @@
       "팬츠와 레이어드하여 캐주얼하게 착용가능한 니트 랩 스커트"
     ],
     "price": "108,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8097&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/527754b040498a594317e760a2ee13b1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/db14aa7b1413c923c3de805d433a9fbe.jpg",
@@ -21070,7 +24388,10 @@
       "팬츠와 레이어드하여 캐주얼하게 착용가능한 니트 랩 스커트"
     ],
     "price": "108,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8096&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/b2792cd470d7a707229d18de73e25ce9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/5fdf8a5fadc5f478fb2627a2c6392f31.jpg",
@@ -21095,9 +24416,14 @@
   {
     "id": "8112",
     "name": "SIDE PINTUCK POINT PANTS IN CHARCOAL",
-    "bullet_points": ["워싱과 금속 디테일이 포인트인 세미 와이드핏 팬츠"],
+    "bullet_points": [
+      "워싱과 금속 디테일이 포인트인 세미 와이드핏 팬츠"
+    ],
     "price": "188,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8112&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/21fa8d4558367735ff02886953dd0987.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/efb68c6b14540f91eeee7942c07e20ba.jpg",
@@ -21122,9 +24448,14 @@
   {
     "id": "8111",
     "name": "SIDE PINTUCK POINT PANTS IN BEIGE",
-    "bullet_points": ["워싱과 금속 디테일이 포인트인 세미 와이드핏 팬츠"],
+    "bullet_points": [
+      "워싱과 금속 디테일이 포인트인 세미 와이드핏 팬츠"
+    ],
     "price": "188,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8111&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/b94ea026c89ae00ead9a909013c46e63.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/2315dc3f35d8d399192dc519d038c586.jpg",
@@ -21153,7 +24484,9 @@
       "더티 워싱과 뒷 허리의 비조가 포인트인 세미와이드 핏 데님 팬츠"
     ],
     "price": "198,000",
-    "colors": ["SMOKE BLUE"],
+    "colors": [
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8095&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/c042e89b9fa6f4a4d621ceb5992422d7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/f81fb03b090c87c55c741d79dc07254c.jpg",
@@ -21171,7 +24504,9 @@
       "https://matinkim.com/web/product/extra/small/202508/b956f9d5b3f8e5569034faaaf232239f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -21182,7 +24517,9 @@
       "허리의 배색감과 스트링으로 다양한 연출이 가능한 부츠컷 슬랙스"
     ],
     "price": "178,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8094&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/0fdcf4c8bafa91c81798b0b368fc02cb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/48072a615afade1cd70270658ec35cbf.jpg",
@@ -21207,9 +24544,14 @@
   {
     "id": "8071",
     "name": "BACK TUCK DETAIL DENIM LIKE PANTS IN BLACK",
-    "bullet_points": ["백 라인의 턱 디테일이 포인트인 세미 부츠컷 팬츠"],
+    "bullet_points": [
+      "백 라인의 턱 디테일이 포인트인 세미 부츠컷 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "NAVY"],
+    "colors": [
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8071&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/7d006aca0e7fed9549685627cad95a50.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/e9c4e3633277c73b77ed23f02251d1f4.jpg",
@@ -21233,9 +24575,14 @@
   {
     "id": "8070",
     "name": "BACK TUCK DETAIL DENIM LIKE PANTS IN NAVY",
-    "bullet_points": ["백 라인의 턱 디테일이 포인트인 세미 부츠컷 팬츠"],
+    "bullet_points": [
+      "백 라인의 턱 디테일이 포인트인 세미 부츠컷 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["NAVY", "BLACK"],
+    "colors": [
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8070&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/fb7dcff9eaed790d67fd27eb064582c2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/8444871fbfa92c3201191fde1d3ef6a1.jpg",
@@ -21259,9 +24606,14 @@
   {
     "id": "8069",
     "name": "GLOSSY BANDING TRACK PANTS IN BLACK",
-    "bullet_points": ["절개라인과 배색 스티치가 포인트인 나일론 소재 트랙팬츠"],
+    "bullet_points": [
+      "절개라인과 배색 스티치가 포인트인 나일론 소재 트랙팬츠"
+    ],
     "price": "178,000",
-    "colors": ["BLACK", "MINT"],
+    "colors": [
+      "BLACK",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8069&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/6437b6afd247bac0293418707acfd9f2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/d1720472c5a0ae8abd81987c0e22bbb9.jpg",
@@ -21286,9 +24638,14 @@
   {
     "id": "8068",
     "name": "GLOSSY BANDING TRACK PANTS IN MINT",
-    "bullet_points": ["절개라인과 배색 스티치가 포인트인 나일론 소재 트랙팬츠"],
+    "bullet_points": [
+      "절개라인과 배색 스티치가 포인트인 나일론 소재 트랙팬츠"
+    ],
     "price": "178,000",
-    "colors": ["MINT", "BLACK"],
+    "colors": [
+      "MINT",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8068&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/8bb36e0e9e8c7b9c75b7736eaa51fc26.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/a5c3deb88d27ba28735dd431de0bebdd.jpg",
@@ -21313,9 +24670,14 @@
   {
     "id": "8067",
     "name": "WASHED WIDE CARGO PANTS FOR MEN IN BLACK",
-    "bullet_points": ["은은한 워싱 포인트이 포인트인 캐주얼 코튼 카고 팬츠"],
+    "bullet_points": [
+      "은은한 워싱 포인트이 포인트인 캐주얼 코튼 카고 팬츠"
+    ],
     "price": "218,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8067&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/b49fa7a5017afb083472dbd0556e2467.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/0fd6f1e55e9db17f0b975a09173ce480.jpg",
@@ -21332,16 +24694,23 @@
       "https://matinkim.com/web/product/extra/small/202508/5dff7e2a2a3c60249f240686c0f9b4b3.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8066",
     "name": "WASHED WIDE CARGO PANTS FOR MEN IN CHARCOAL",
-    "bullet_points": ["은은한 워싱 포인트이 포인트인 캐주얼 코튼 카고 팬츠"],
+    "bullet_points": [
+      "은은한 워싱 포인트이 포인트인 캐주얼 코튼 카고 팬츠"
+    ],
     "price": "218,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8066&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/fc364ce473c9a3e790aa224849b36d28.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/2a52c6f6fb39d060e61874644569c553.jpg",
@@ -21365,9 +24734,14 @@
   {
     "id": "8065",
     "name": "WASHED MERMAID LONG SKIRT IN CHARCOAL",
-    "bullet_points": ["워싱과 금속 디테일이 포인트인 머메이드 핏 롱 스커트"],
+    "bullet_points": [
+      "워싱과 금속 디테일이 포인트인 머메이드 핏 롱 스커트"
+    ],
     "price": "198,000",
-    "colors": ["CHARCOAL", "LIGHT KHAKI"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8065&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/5043e24a04cf0b3fb9f4f4fe956a2bc5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/07e7600f352b667fbe5ef972a4fa5b8c.jpg",
@@ -21391,9 +24765,14 @@
   {
     "id": "8064",
     "name": "WASHED MERMAID LONG SKIRT IN LIGHT KHAKI",
-    "bullet_points": ["워싱과 금속 디테일이 포인트인 머메이드 핏 롱 스커트"],
+    "bullet_points": [
+      "워싱과 금속 디테일이 포인트인 머메이드 핏 롱 스커트"
+    ],
     "price": "198,000",
-    "colors": ["LIGHT KHAKI", "CHARCOAL"],
+    "colors": [
+      "LIGHT KHAKI",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8064&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/9793c21e3a63815fd9f2549588ec274a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/40f3147dac796e0bb70ea6e897b96d79.jpg",
@@ -21421,7 +24800,10 @@
       "옆선의 배색 파이핑과 로고나염이 포인트인 나일론 트랙 팬츠"
     ],
     "price": "158,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8063&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/87bb77c9a5e8d25c546cdd675fabd3a5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/e9b488834eb68acbf99f8019ab0b8fd3.jpg",
@@ -21450,7 +24832,10 @@
       "옆선의 배색 파이핑과 로고나염이 포인트인 나일론 트랙 팬츠"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8062&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/3d4d18c2336e8c7dbf19e320c825f4f9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/451844614433c08f7211700ea2e9b05f.jpg",
@@ -21475,9 +24860,14 @@
   {
     "id": "7955",
     "name": "BACK POCKET GLITTER BERMUDA SWEATPANTS FOR WOMEN IN BLACK",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"
+    ],
     "price": "108,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7955&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/948181c43b4eb5993ed1aaf31190227f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/92b4c561270735a6c4ec7006a1699bae.jpg",
@@ -21502,9 +24892,14 @@
   {
     "id": "7954",
     "name": "BACK POCKET GLITTER BERMUDA SWEATPANTS FOR WOMEN IN BLUE",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"
+    ],
     "price": "108,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7954&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/b36483de4efec0bc6c89429c42356082.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/0e681374533b0a82cbb6d5908c1a9935.jpg",
@@ -21522,16 +24917,23 @@
       "https://matinkim.com/web/product/extra/small/202508/a7fe5d6f64ebcf86e42d310187863b26.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7949",
     "name": "BACK POCKET GLITTER BERMUDA SWEATPANTS FOR MEN IN BLACK",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"
+    ],
     "price": "108,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7949&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/52d136b3d1b68ec4a65996c5a69b27f4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/94573c57e484abeef2f97830305f36dd.jpg",
@@ -21555,9 +24957,14 @@
   {
     "id": "7948",
     "name": "BACK POCKET GLITTER BERMUDA SWEATPANTS FOR MEN IN BLUE",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 버뮤다 팬츠"
+    ],
     "price": "108,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7948&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/2eb8af60358d3ecb1d67430d188e74fb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/8989dceeaa2bc7bc4e045225ae486775.jpg",
@@ -21581,9 +24988,14 @@
   {
     "id": "7951",
     "name": "BACK POCKET GLITTER SWEATPANTS FOR WOMEN IN BLACK",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7951&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/ab755f9a669a8c7034d3d9423557d4a5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/d5e18168d195f14dc7fe415aa1941c57.jpg",
@@ -21600,16 +25012,23 @@
       "https://matinkim.com/web/product/extra/small/202508/7c25f52eb1127513d12c25e39609305c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7950",
     "name": "BACK POCKET GLITTER SWEATPANTS FOR WOMEN IN BROWN",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7950&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/3263e7a6d17ee66e4ec0a4761de5283e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/286531acb52015bf90b207c7501e602e.jpg",
@@ -21633,9 +25052,14 @@
   {
     "id": "7953",
     "name": "BACK POCKET GLITTER SWEATPANTS FOR MEN IN BLACK",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7953&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/dad10b3d02ff334705f59d9edcf472f7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/1553c8e8d62c745d5b5e99d32e77f15e.jpg",
@@ -21659,9 +25083,14 @@
   {
     "id": "7952",
     "name": "BACK POCKET GLITTER SWEATPANTS FOR MEN IN BROWN",
-    "bullet_points": ["사선 라인과 금속라벨이 포인트인 글리터 팬츠"],
+    "bullet_points": [
+      "사선 라인과 금속라벨이 포인트인 글리터 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7952&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/793332f16499b10a2ab70370f77f68ef.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/629cfd606cb6ffc5fd590e3c24110495.jpg",
@@ -21685,9 +25114,15 @@
   {
     "id": "8007",
     "name": "STRING DETAIL SWEATPANTS IN CHARCOAL",
-    "bullet_points": ["밑단 스트링으로 다양한 실루엣 연출이 가능한 스웻팬츠"],
+    "bullet_points": [
+      "밑단 스트링으로 다양한 실루엣 연출이 가능한 스웻팬츠"
+    ],
     "price": "148,000",
-    "colors": ["CHARCOAL", "RED", "GREY"],
+    "colors": [
+      "CHARCOAL",
+      "RED",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8007&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/bd6c98b17693cdace461019b871787ed.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/7320f5b44f2df3327fc241081b0dd3f8.jpg",
@@ -21705,16 +25140,24 @@
       "https://matinkim.com/web/product/extra/small/202508/1d73b35999aa2413c4cfe1eb8c725e0e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "8010",
     "name": "STRING DETAIL SWEATPANTS IN GREY",
-    "bullet_points": ["밑단 스트링으로 다양한 실루엣 연출이 가능한 스웻팬츠"],
+    "bullet_points": [
+      "밑단 스트링으로 다양한 실루엣 연출이 가능한 스웻팬츠"
+    ],
     "price": "148,000",
-    "colors": ["GREY", "RED", "CHARCOAL"],
+    "colors": [
+      "GREY",
+      "RED",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8010&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/26725a6faa3aa3586fc595df0474709d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/4faa3b9da94532a41fb8b5ffef04bffa.jpg",
@@ -21739,9 +25182,15 @@
   {
     "id": "8009",
     "name": "STRING DETAIL SWEATPANTS IN RED",
-    "bullet_points": ["밑단 스트링으로 다양한 실루엣 연출이 가능한 스웻팬츠"],
+    "bullet_points": [
+      "밑단 스트링으로 다양한 실루엣 연출이 가능한 스웻팬츠"
+    ],
     "price": "148,000",
-    "colors": ["RED", "GREY", "CHARCOAL"],
+    "colors": [
+      "RED",
+      "GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8009&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/bb495e989b76e10512b14f77ee50be1b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/ccd1e78be8f0774bb6105f37dac6ae77.jpg",
@@ -21766,9 +25215,14 @@
   {
     "id": "8004",
     "name": "POCKET FOLDOVER WRAP MINI SKIRT IN BLACK",
-    "bullet_points": ["포켓과 배색 스티치가 포인트인 랩 미니 스커트"],
+    "bullet_points": [
+      "포켓과 배색 스티치가 포인트인 랩 미니 스커트"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "INDIAN PINK"],
+    "colors": [
+      "BLACK",
+      "INDIAN PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8004&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/0577a51dc0d429052c511399a6d943f9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/956548c14382800e02062b39c17326f5.jpg",
@@ -21792,9 +25246,14 @@
   {
     "id": "8003",
     "name": "POCKET FOLDOVER WRAP MINI SKIRT IN INDIAN PINK",
-    "bullet_points": ["포켓과 배색 스티치가 포인트인 랩 미니 스커트"],
+    "bullet_points": [
+      "포켓과 배색 스티치가 포인트인 랩 미니 스커트"
+    ],
     "price": "158,000",
-    "colors": ["INDIAN PINK", "BLACK"],
+    "colors": [
+      "INDIAN PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8003&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/9d9ee2b61b87634d6bf156621e0a5571.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/301b75dd62388db5cc2cf2c1d1198bdb.jpg",
@@ -21818,9 +25277,14 @@
   {
     "id": "7876",
     "name": "STITCH POINT BELTED WRAP SKIRT IN KHAKI",
-    "bullet_points": ["스트랩과 배색 스티치가 포인트인 랩 스커트"],
+    "bullet_points": [
+      "스트랩과 배색 스티치가 포인트인 랩 스커트"
+    ],
     "price": "198,000",
-    "colors": ["KHAKI", "LIGHT BEIGE"],
+    "colors": [
+      "KHAKI",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7876&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/3df535a32c545cc1318740d574cf8f38.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/b93db2e573a2252196ecbf25d0c59406.jpg",
@@ -21845,9 +25309,14 @@
   {
     "id": "7875",
     "name": "STITCH POINT BELTED WRAP SKIRT IN LIGHT BEIGE",
-    "bullet_points": ["스트랩과 배색 스티치가 포인트인 랩 스커트"],
+    "bullet_points": [
+      "스트랩과 배색 스티치가 포인트인 랩 스커트"
+    ],
     "price": "198,000",
-    "colors": ["LIGHT BEIGE", "KHAKI"],
+    "colors": [
+      "LIGHT BEIGE",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7875&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/b562a903f224b89c3ddc8813a0841ebd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/0c4138d03f91fc65c7ca7b54865fabc6.jpg",
@@ -21867,16 +25336,23 @@
       "https://matinkim.com/web/product/extra/small/202505/a7f58c79b63f697fae59ee4d692a1b40.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7877",
     "name": "OUT POCKET NYLON BANDING SHORTS IN LIME",
-    "bullet_points": ["포켓과 금속 장식 디테일이 포인트인 숏 팬츠"],
+    "bullet_points": [
+      "포켓과 금속 장식 디테일이 포인트인 숏 팬츠"
+    ],
     "price": "78,000",
-    "colors": ["LIME", "BLACK"],
+    "colors": [
+      "LIME",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7877&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/7a9ce659102fd7fede5c7cfdc5b8723d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/ab16f1c218a1ac7794aef953231598ed.jpg",
@@ -21896,7 +25372,9 @@
       "https://matinkim.com/web/product/extra/small/202505/ff2cbdfa7aed35084677661427bb3962.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -21907,7 +25385,10 @@
       "배색 디테일이 포인트로 레이어드 연출이 가능한 롱 스커트"
     ],
     "price": "188,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7874&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/626a3eaca0e490f5468e7c97139881b1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/0817a86f67bdddfe5aabf0cf5ea9f76e.jpg",
@@ -21926,7 +25407,9 @@
       "https://matinkim.com/web/product/extra/small/202505/6f83eabe55d8616e0a36815dadd42e54.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -21937,7 +25420,10 @@
       "배색 디테일이 포인트로 레이어드 연출이 가능한 롱 스커트"
     ],
     "price": "188,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7873&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/a29ab4c895f2c4863ad815aefee8b46a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/804a4916304e03d33bb065dce68d541e.jpg",
@@ -21956,16 +25442,22 @@
       "https://matinkim.com/web/product/extra/small/202505/cc1956f1fe49b4e618759fdbc4c71d98.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7832",
     "name": "BIG POCKET VOLUME SHORTS IN BLACK",
-    "bullet_points": ["입체 포켓과 버튼이 포인트인 캐주얼 숏 팬츠"],
+    "bullet_points": [
+      "입체 포켓과 버튼이 포인트인 캐주얼 숏 팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7832&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/2c937aaefcdbbdf619d68a643bf81de8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/ef88f8e2c5d9d313c5384385d82b3cb4.jpg",
@@ -21984,16 +25476,23 @@
       "https://matinkim.com/web/product/extra/small/202505/db82137269003a6b754cf74887a437ea.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7830",
     "name": "EMBO WASHED DENIM PANTS FOR MEN IN IVORY",
-    "bullet_points": ["워싱과 엠보 디테일이 포인트인 스트레이트핏 데님 팬츠"],
+    "bullet_points": [
+      "워싱과 엠보 디테일이 포인트인 스트레이트핏 데님 팬츠"
+    ],
     "price": "218,000",
-    "colors": ["IVORY", "BLUE"],
+    "colors": [
+      "IVORY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7830&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/b6d9ac490068939000f454533c186f8f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/64e04ffe71604a4c681fe181fa6ac88e.jpg",
@@ -22019,9 +25518,14 @@
   {
     "id": "7829",
     "name": "EMBO WASHED DENIM PANTS FOR MEN IN BLUE",
-    "bullet_points": ["워싱과 엠보 디테일이 포인트인 스트레이트핏 데님 팬츠"],
+    "bullet_points": [
+      "워싱과 엠보 디테일이 포인트인 스트레이트핏 데님 팬츠"
+    ],
     "price": "218,000",
-    "colors": ["BLUE", "IVORY"],
+    "colors": [
+      "BLUE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7829&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/312c07f43d8117d4c1e05195563008b5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/691b4b4455767872f4f2202c60f7a4c6.jpg",
@@ -22041,7 +25545,9 @@
       "https://matinkim.com/web/product/extra/small/202505/d51df65b9e163935e62f67cdd28dbea4.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -22052,7 +25558,10 @@
       "후면 워싱 디테일이 포인트인 스트레이트핏 캐주얼 데님 팬츠"
     ],
     "price": "188,000",
-    "colors": ["BLACK", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7828&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/f55d3b9a0e681d87464aef5bf5b97991.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/a354fad1f249463efc004b379705b4e8.jpg",
@@ -22082,7 +25591,10 @@
       "후면 워싱 디테일이 포인트인 스트레이트핏 캐주얼 데님 팬츠"
     ],
     "price": "188,000",
-    "colors": ["LIGHT BLUE", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7827&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/8247d5f1d97435115ace6065a487e67a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/21e959781527f9a8d2ba7f3e3b3947a2.jpg",
@@ -22111,9 +25623,14 @@
   {
     "id": "7826",
     "name": "FLOWER PATTERN FLARE DENIM PANTS IN BLACK",
-    "bullet_points": ["플라워 패턴이 포인트인 플레어핏 데님 팬츠"],
+    "bullet_points": [
+      "플라워 패턴이 포인트인 플레어핏 데님 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7826&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/959d3cd1c201d885f5b1e054965bef60.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/03ce1ed5ab81d2d976f249916c84af53.jpg",
@@ -22132,16 +25649,24 @@
       "https://matinkim.com/web/product/extra/small/202505/39124c2570b3003380766cb659cb5c08.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7825",
     "name": "FLOWER PATTERN FLARE DENIM PANTS IN BLUE",
-    "bullet_points": ["플라워 패턴이 포인트인 플레어핏 데님 팬츠"],
+    "bullet_points": [
+      "플라워 패턴이 포인트인 플레어핏 데님 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7825&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/548c336ead7c806bdce7d93946e74def.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/5fd9cc7afff7ed5d323aa0343f51a257.jpg",
@@ -22166,9 +25691,14 @@
   {
     "id": "7824",
     "name": "STRING NYLON CARGO PANTS IN BLACK",
-    "bullet_points": ["스트링과 포켓 디테일이 돋보이는 오버핏 카고 팬츠"],
+    "bullet_points": [
+      "스트링과 포켓 디테일이 돋보이는 오버핏 카고 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7824&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/08e124bfbe720a1e563a2daae20562f3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/7b2a7b4c8437c42a7772775c3da00a42.jpg",
@@ -22196,9 +25726,14 @@
   {
     "id": "7823",
     "name": "STRING NYLON CARGO PANTS IN KHAKI",
-    "bullet_points": ["스트링과 포켓 디테일이 돋보이는 오버핏 카고 팬츠"],
+    "bullet_points": [
+      "스트링과 포켓 디테일이 돋보이는 오버핏 카고 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7823&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/984739237ab835646d43a8c1b4a333ae.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/3ce56062a3e9c5bd7c70487f9d593d11.jpg",
@@ -22223,9 +25758,15 @@
   {
     "id": "7822",
     "name": "STRING NYLON CARGO PANTS IN LIGHT PINK",
-    "bullet_points": ["스트링과 포켓 디테일이 돋보이는 오버핏 카고 팬츠"],
+    "bullet_points": [
+      "스트링과 포켓 디테일이 돋보이는 오버핏 카고 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["LIGHT PINK", "KHAKI", "BLACK"],
+    "colors": [
+      "LIGHT PINK",
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7822&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/1ec3046427a9d23af10d36c163913ccd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/9645c45079d66f6c1951a35e7e27802b.jpg",
@@ -22252,9 +25793,14 @@
   {
     "id": "7821",
     "name": "STRING NYLON CARGO SKIRT IN BLACK",
-    "bullet_points": ["스트링과 포켓 디테일이 돋보이는 H라인 카고 스커트"],
+    "bullet_points": [
+      "스트링과 포켓 디테일이 돋보이는 H라인 카고 스커트"
+    ],
     "price": "188,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7821&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/b9152a9aebffedf68c38ce216c384464.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/3a27474ffe06ab1c59285cdca4441a80.jpg",
@@ -22280,9 +25826,14 @@
   {
     "id": "7820",
     "name": "STRING NYLON CARGO SKIRT IN KHAKI",
-    "bullet_points": ["스트링과 포켓 디테일이 돋보이는 H라인 카고 스커트"],
+    "bullet_points": [
+      "스트링과 포켓 디테일이 돋보이는 H라인 카고 스커트"
+    ],
     "price": "188,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7820&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/5a8ba5a2e36de424da1bcb143c28c122.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/c78b3538c24609a66464cf0597f00719.jpg",
@@ -22309,9 +25860,14 @@
   {
     "id": "7819",
     "name": "FOLDOVER LAYERED MAXI WRAP SKIRT IN BLACK",
-    "bullet_points": ["레이어드하여 착용 가능한 니트 소재 랩 스커트"],
+    "bullet_points": [
+      "레이어드하여 착용 가능한 니트 소재 랩 스커트"
+    ],
     "price": "98,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7819&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/b3c6f8f08b237c936fcdc6211952abb3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/d92bb09bea68695818571f0aac079674.jpg",
@@ -22337,9 +25893,14 @@
   {
     "id": "7818",
     "name": "FOLDOVER LAYERED MAXI WRAP SKIRT IN IVORY",
-    "bullet_points": ["_"],
+    "bullet_points": [
+      "_"
+    ],
     "price": "98,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7818&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/2a111bcb6583fbec3fd85c4d50e1d09b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/b61df7c2a47f143e94674e2addac8cc6.jpg",
@@ -22370,7 +25931,10 @@
       "리본 스트립과 배색 필기체 로고 자카드가 포인트인 투톤 미니 스커트"
     ],
     "price": "128,000",
-    "colors": ["BROWN", "BLUE"],
+    "colors": [
+      "BROWN",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7739&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/f436f3c907c46e25173797144c547ef4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/9946eea9176fb4be1292b92f9689a3a4.jpg",
@@ -22401,7 +25965,10 @@
       "리본 스트립과 배색 필기체 로고 자카드가 포인트인 투톤 미니 스커트"
     ],
     "price": "128,000",
-    "colors": ["BLUE", "BROWN"],
+    "colors": [
+      "BLUE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7740&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/44bd69306c792bdd30901461686343f7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/6c3fea583008cd8e5b41836ba30e77d8.jpg",
@@ -22425,9 +25992,14 @@
   {
     "id": "7738",
     "name": "STITCH POINT DENIM SHORTS IN BLACK",
-    "bullet_points": ["탄탄한 코튼 소재 데님 숏팬츠"],
+    "bullet_points": [
+      "탄탄한 코튼 소재 데님 숏팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7738&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/74070d020c505ed23d4248ba5ee5e4b7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/774c84f41547f09792eb10a9e8f94eb2.jpg",
@@ -22450,9 +26022,13 @@
   {
     "id": "7737",
     "name": "STITCH POINT DENIM SHORTS IN BLUE",
-    "bullet_points": ["탄탄한 코튼 소재 데님 숏팬츠"],
+    "bullet_points": [
+      "탄탄한 코튼 소재 데님 숏팬츠"
+    ],
     "price": "148,000",
-    "colors": ["BLUE"],
+    "colors": [
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7737&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/ea074151ac9aa4ec4a2928f5928da5dd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/58b182217451be5b8a556e4a54629d5a.jpg",
@@ -22478,9 +26054,14 @@
   {
     "id": "7736",
     "name": "SIDE POCKET POINT MIDI SKIRT IN CHARCOAL",
-    "bullet_points": ["언발란스한 디자인과 포켓이 포인트인 미디 스커트"],
+    "bullet_points": [
+      "언발란스한 디자인과 포켓이 포인트인 미디 스커트"
+    ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "LIGHT KHAKI"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7736&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/bef22d73cc5d1e7a5af209efdba9644f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/897d13b1a98cd4c39f039871262a2aba.jpg",
@@ -22500,16 +26081,23 @@
       "https://matinkim.com/web/product/extra/small/202505/6139447215ed8e1cdcf8642f17be4650.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7735",
     "name": "SIDE POCKET POINT MIDI SKIRT IN LIGHT KHAKI",
-    "bullet_points": ["언발란스한 디자인과 포켓이 포인트인 미디 스커트"],
+    "bullet_points": [
+      "언발란스한 디자인과 포켓이 포인트인 미디 스커트"
+    ],
     "price": "158,000",
-    "colors": ["LIGHT KHAKI", "CHARCOAL"],
+    "colors": [
+      "LIGHT KHAKI",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7735&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/807d4c26390189e5d5218912b8aabfb5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/53cc2255dcfcd54c72b7487224225cb8.jpg",
@@ -22534,9 +26122,14 @@
   {
     "id": "7734",
     "name": "BUTTON POINT STRING WIDE PANTS IN BLACK",
-    "bullet_points": ["스트링과 버튼 디테일이 포인트인 스트레이트핏 팬츠"],
+    "bullet_points": [
+      "스트링과 버튼 디테일이 포인트인 스트레이트핏 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7734&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/9ce286894f781f667e07f6a5d1cd7f16.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/adf8d95f3bf1573d99568d5218177a66.jpg",
@@ -22556,16 +26149,23 @@
       "https://matinkim.com/web/product/extra/small/202505/3d15a166e5d0ba110d303f23a0ab0580.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7733",
     "name": "BUTTON POINT STRING WIDE PANTS IN KHAKI",
-    "bullet_points": ["스트링과 버튼 디테일이 포인트인 스트레이트핏 팬츠"],
+    "bullet_points": [
+      "스트링과 버튼 디테일이 포인트인 스트레이트핏 팬츠"
+    ],
     "price": "178,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7733&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/7088553f095374ea4b98ff2a801166af.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/b034e58dca45fb636ea19220c7ef0f70.jpg",
@@ -22591,9 +26191,13 @@
   {
     "id": "7731",
     "name": "COLOR BRUSH BERMUDA DENIM CARGO PANTS IN LIGHT PINK",
-    "bullet_points": ["그라데이션 컬러감이 포인트인 버뮤다 팬츠"],
+    "bullet_points": [
+      "그라데이션 컬러감이 포인트인 버뮤다 팬츠"
+    ],
     "price": "188,000",
-    "colors": ["LIGHT PINK"],
+    "colors": [
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7731&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/db1e73fb9c2c29d8365c1eaa8c02f3ed.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/99c6b9314461e8e5722ee3f8944fad7b.jpg",
@@ -22613,16 +26217,23 @@
       "https://matinkim.com/web/product/extra/small/202505/21f1268b5c0655ea3d2c16047dc04585.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7730",
     "name": "DAMAGE POINT WASHED WIDE DENIM PANTS IN LIGHT GREY",
-    "bullet_points": ["빈티지한 데미지 워싱이 포인트인 루즈핏 데님 팬츠"],
+    "bullet_points": [
+      "빈티지한 데미지 워싱이 포인트인 루즈핏 데님 팬츠"
+    ],
     "price": "188,000",
-    "colors": ["LIGHT GREY", "BLUE"],
+    "colors": [
+      "LIGHT GREY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7730&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/1a656a1e8a71f7aa158f5f8cd2d4b8c8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/2ead16c567ef9f13b62e7be3a8f8ec57.jpg",
@@ -22650,9 +26261,14 @@
   {
     "id": "7728",
     "name": "VINTAGE PAINTING CARPENTER PANTS FOR MEN IN GREY",
-    "bullet_points": ["더티워싱이 포인트인 카펜터 루즈핏 데님 팬츠"],
+    "bullet_points": [
+      "더티워싱이 포인트인 카펜터 루즈핏 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["GREY", "BEIGE"],
+    "colors": [
+      "GREY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7728&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/d9336354a1d5256772a06c6400d2c91e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/02f9514e038fee41e77f58a5e0c41e95.jpg",
@@ -22678,9 +26294,14 @@
   {
     "id": "7727",
     "name": "VINTAGE PAINTING CARPENTER PANTS FOR MEN IN BEIGE",
-    "bullet_points": ["더티워싱이 포인트인 카펜터 루즈핏 데님 팬츠"],
+    "bullet_points": [
+      "더티워싱이 포인트인 카펜터 루즈핏 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BEIGE", "GREY"],
+    "colors": [
+      "BEIGE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7727&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/afa45d22b6b0a55ba26311a2629bca7e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/fcb7a4edaedaabf2b08cf68afa14724d.jpg",
@@ -22706,9 +26327,13 @@
   {
     "id": "7726",
     "name": "GRADATION WASHED DENIM PANTS FOR MEN IN BLUE",
-    "bullet_points": ["워싱 디테일이 진하게 들어간 부츠컷 데님 팬츠"],
+    "bullet_points": [
+      "워싱 디테일이 진하게 들어간 부츠컷 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLUE"],
+    "colors": [
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7726&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/71074854930c8fc62f3cdca0198bcb55.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/18a2d9f9f21d4ca9c4448d203e218c9e.jpg",
@@ -22733,7 +26358,9 @@
       "핀턱 디테일과 이중 밴딩 포인트로 찰랑이는 터치감을 살린 캐주얼 무드의 편안한 스웻팬츠"
     ],
     "price": "208,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7696&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/2f03ac783562382e38dcc159d7cbda85.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/46c605c63430c4e296685459bb9f9b06.jpg",
@@ -22751,7 +26378,10 @@
       "https://matinkim.com/web/product/extra/small/202504/bfc279ccae8100166f73af90ffac5931.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -22762,7 +26392,10 @@
       "리본 스트링 디테일로 캐주얼하면서도 페미닌하게 연출 가능한 루즈핏 7부 배기팬츠"
     ],
     "price": "98,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7688&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/8ddd72a5b5ff80bdc841be7780af2245.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/ae84c2adcb11657b8ee39409c5a3c504.jpg",
@@ -22778,7 +26411,9 @@
       "https://matinkim.com/web/product/extra/small/202504/d44f2dfd3836b7a8ddb30bfd7ddf7e1b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -22789,7 +26424,10 @@
       "리본 스트링 디테일로 캐주얼하면서도 페미닌하게 연출 가능한 루즈핏 7부 배기팬츠"
     ],
     "price": "98,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7687&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/0667cca06215d984379e885315d8210b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/ecba54a472d266094a4584a037b54d65.jpg",
@@ -22818,7 +26456,11 @@
       "탄탄한 코튼 소재와 컷팅·데미지 디테일로 캐주얼 무드를 살린 루즈핏 데님 팬츠"
     ],
     "price": "148,000",
-    "colors": ["WHITE", "RED", "BLUE"],
+    "colors": [
+      "WHITE",
+      "RED",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7691&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/128d215fb94c3c10c3bbc3e0178cf5bf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/5967036c345d96867cb84457d46eec5e.jpg",
@@ -22850,7 +26492,11 @@
       "탄탄한 코튼 소재와 컷팅·데미지 디테일로 캐주얼 무드를 살린 루즈핏 데님 팬츠"
     ],
     "price": "148,000",
-    "colors": ["BLUE", "RED", "WHITE"],
+    "colors": [
+      "BLUE",
+      "RED",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7690&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/4ff999c334f06d673f926df1c0cb2994.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/35d057b483630271f11170bb881688c7.jpg",
@@ -22870,7 +26516,9 @@
       "https://matinkim.com/web/product/extra/small/202504/1c41fd8025e993ad6d47be273ae8dad8.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -22881,7 +26529,9 @@
       "탄탄한 코튼 소재와 컷팅·데미지 디테일로 캐주얼 무드를 살린 루즈핏 데님 팬츠"
     ],
     "price": "148,000",
-    "colors": ["RED"],
+    "colors": [
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7689&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/ba7f8cadd5df45d000ccce04dd546ef3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/0239897eeb9b0614d75da3aeb00e55e9.jpg",
@@ -22911,7 +26561,10 @@
       "부드러운 여름 데님 원단과 디컨스트럭션 디자인, 러프한 워싱이 매력적인 스트레이트핏 데님팬츠"
     ],
     "price": "198,000",
-    "colors": ["LIGHT BLUE", "SMOKE BLUE"],
+    "colors": [
+      "LIGHT BLUE",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7695&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/f1d343711ced54535e5904eda6199805.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/70495b45a12e1cc41ce5755b5a53af63.jpg",
@@ -22941,7 +26594,10 @@
       "부드러운 여름 데님 원단과 디컨스트럭션 디자인, 러프한 워싱이 매력적인 스트레이트핏 데님팬츠"
     ],
     "price": "198,000",
-    "colors": ["SMOKE BLUE", "LIGHT BLUE"],
+    "colors": [
+      "SMOKE BLUE",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7694&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/e557b77015f7107c59069e93ed157c40.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/e6bd2b73f751621d2cb4fd63990135b3.jpg",
@@ -22970,7 +26626,10 @@
       "배색 스티치와 밑단 스트링 포인트로 캐주얼하게 연출 가능한 와이드 실루엣 나일론 팬츠 스웻팬츠"
     ],
     "price": "178,000",
-    "colors": ["CHARCOAL", "NAVY"],
+    "colors": [
+      "CHARCOAL",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7698&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/40ad71511e8cbf780f5630074e8553e8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/3d104daef3fcd4cffd5736e16074e136.jpg",
@@ -23000,7 +26659,10 @@
       "배색 스티치와 밑단 스트링 포인트로 캐주얼하게 연출 가능한 와이드 실루엣 나일론 팬츠 스웻팬츠"
     ],
     "price": "178,000",
-    "colors": ["NAVY", "CHARCOAL"],
+    "colors": [
+      "NAVY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7697&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/06ad0218c6b4ecf4553b621c72dcc3c7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/01b922fcf7d8f8eb367d654995ae2e28.jpg",
@@ -23023,7 +26685,9 @@
       "https://matinkim.com/web/product/extra/small/202504/7184abb9eb5a7f415725f2f1ab5ae81e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23034,7 +26698,10 @@
       "탄탄한 코튼 다이마루 소재와 뒤 요크 금속장식 포인트로 이지하면서 쿨하게 연출 가능한 루즈핏 스웻팬츠"
     ],
     "price": "118,000",
-    "colors": ["GREY", "CHARCOAL"],
+    "colors": [
+      "GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7693&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/303ed05482a2d461ce3e53609a471f45.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/587e255cc1bf6d157d37fcd79fbd4028.jpg",
@@ -23065,7 +26732,10 @@
       "탄탄한 코튼 다이마루 소재와 뒤 요크 금속장식 포인트로 이지하면서 쿨하게 연출 가능한 루즈핏 스웻팬츠"
     ],
     "price": "118,000",
-    "colors": ["CHARCOAL", "GREY"],
+    "colors": [
+      "CHARCOAL",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7692&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/68b165d47496f7ca968ffe073cf7fb35.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/55666a16d7322caf75a3f5c1f2874925.jpg",
@@ -23084,7 +26754,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/c1cf38d39598b11c462d27b2a9e64d99.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23095,7 +26767,10 @@
       "레이어드 된 형태와 사이드의 셔링 디테일이 포인트인 맥시 스커트"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7714&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/8b7c02a5e2c7fe9f613b57eb934dba46.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/b7a98588736b36caa6abec8518460910.jpg",
@@ -23126,7 +26801,10 @@
       "레이어드 된 형태와 사이드의 셔링 디테일이 포인트인 맥시 스커트"
     ],
     "price": "198,000",
-    "colors": ["LIGHT GREY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7715&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/15e31d883c4c71ffa68f7f26181f01ca.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/58c956c19ad63ce72e15de4cd3d1d158.jpg",
@@ -23146,16 +26824,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/d839cf33f60aba2fa9d98b594e0cfbc5.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7483",
     "name": "DENIM MIXED FLARE SKIRT IN IVORY",
-    "bullet_points": ["배색 원단과 언발란스한 라인이 포인트인 랩 스커트"],
+    "bullet_points": [
+      "배색 원단과 언발란스한 라인이 포인트인 랩 스커트"
+    ],
     "price": "238,000",
-    "colors": ["IVORY", "LIGHT BLUE"],
+    "colors": [
+      "IVORY",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7483&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/705e085e0426cad4fd48e5354b63d916.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/407c4c011ac5e9a80e4e0f81ee1c95db.jpg",
@@ -23184,9 +26869,14 @@
   {
     "id": "7482",
     "name": "DENIM MIXED FLARE SKIRT IN LIGHT BLUE",
-    "bullet_points": ["배색 원단과 언발란스한 라인이 포인트인 랩 스커트"],
+    "bullet_points": [
+      "배색 원단과 언발란스한 라인이 포인트인 랩 스커트"
+    ],
     "price": "238,000",
-    "colors": ["LIGHT BLUE", "IVORY"],
+    "colors": [
+      "LIGHT BLUE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7482&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/3e961a460089fbaf239e6fd895a28a23.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/ba1e13a115251ceec7d89646b4586400.jpg",
@@ -23208,7 +26898,10 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/7b88c18fa4326715509ad6eddfc55f90.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23219,7 +26912,10 @@
       "스트링 디테일로 다양한 연출이 가능한 나일론 버뮤다 팬츠"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7479&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/46c601d75b424ca7636293d485c4ad82.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/088699e7965f7b174e8bb556c7e3ca96.jpg",
@@ -23249,7 +26945,10 @@
       "스트링 디테일로 다양한 연출이 가능한 나일론 버뮤다 팬츠"
     ],
     "price": "158,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7478&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/b3b57c7cce45f9a99dbe7225b8cc9394.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/d24cfa424873df60dece56c040acf413.jpg",
@@ -23281,7 +26980,10 @@
       "은은한 코팅과 포켓 디테일이 돋보이는 루즈핏 하프 데님 팬츠"
     ],
     "price": "188,000",
-    "colors": ["CHARCOAL", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7477&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/4a8dc6f5120478405fbec0f755fc17f9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/4f92d9a5998151d9cdeb2b9babbbac9e.jpg",
@@ -23299,7 +27001,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/2560b9541c38bdf87246ac0b1b2a50ca.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23310,7 +27014,10 @@
       "은은한 코팅과 포켓 디테일이 돋보이는 루즈핏 하프 데님 팬츠"
     ],
     "price": "188,000",
-    "colors": ["BEIGE", "CHARCOAL"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7476&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/b7d4eb2d3b255122c00110491fc207ea.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/3050c8cdaf86ff450ff5992794973353.jpg",
@@ -23337,9 +27044,14 @@
   {
     "id": "7480",
     "name": "ROUGH CUT LINE POINT DENIM PANTS IN SMOKE BLUE",
-    "bullet_points": ["러프한 디테일이 돋보이는 여름용 데님 팬츠"],
+    "bullet_points": [
+      "러프한 디테일이 돋보이는 여름용 데님 팬츠"
+    ],
     "price": "258,000",
-    "colors": ["SMOKE BLUE", "BLUE"],
+    "colors": [
+      "SMOKE BLUE",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7480&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/dfe0f65729129715e6f0983971cb7c74.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/3dbb939b739be90a06dc46c8d4ec37c2.jpg",
@@ -23367,9 +27079,14 @@
   {
     "id": "7481",
     "name": "ROUGH CUT LINE POINT DENIM PANTS IN BLUE",
-    "bullet_points": ["러프한 디테일이 돋보이는 여름용 데님 팬츠"],
+    "bullet_points": [
+      "러프한 디테일이 돋보이는 여름용 데님 팬츠"
+    ],
     "price": "258,000",
-    "colors": ["BLUE", "SMOKE BLUE"],
+    "colors": [
+      "BLUE",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7481&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/e8fef1e4d91d02416cfc908dc4fb500e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/fd7aa7d1b636a5e123449d458253dd2a.jpg",
@@ -23397,9 +27114,13 @@
   {
     "id": "7413",
     "name": "STRIPE HERRINGBONE WRAP MINI SKIRT IN BLACK",
-    "bullet_points": ["은은한 스트라이프 조직이 포인트인 랩 미니 스커트"],
+    "bullet_points": [
+      "은은한 스트라이프 조직이 포인트인 랩 미니 스커트"
+    ],
     "price": "168,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7413&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/8bea363ccfc5b2d94313adf38a80e9af.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/9d05bd405294938dbca495472b16a803.jpg",
@@ -23430,7 +27151,10 @@
       "전면은 플리츠 스커트, 후면은 버뮤다 팬츠로 믹스된 플리츠 버뮤다 팬츠"
     ],
     "price": "178,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7422&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/d12b2be3516b4074f065b2554f075541.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/844827812657ee8a26cdcef511a44f7e.jpg",
@@ -23463,7 +27187,10 @@
       "전면은 플리츠 스커트, 후면은 버뮤다 팬츠로 믹스된 플리츠 버뮤다 팬츠"
     ],
     "price": "178,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7421&cate_no=28&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/9fbcb94da7452c88f84e4c96d508df84.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/39c5e93c778b1ec9d0007263fb690407.jpg",
@@ -23484,7 +27211,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/028d9afce3158fdc72806be84e3f785a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23495,7 +27224,11 @@
       "광택감 있는 나일론 원단과 메쉬 안감으로 캐주얼하게 착용 가능한 하프 팬츠"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "LIGHT BLUE", "MINT"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7416&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/1b1c951da723ce84c94dc4ae1804a2bd.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/2c955d6159631ceedec9c3366cb7b381.jpg",
@@ -23526,7 +27259,10 @@
       "광택감 있는 나일론 원단과 메쉬 안감으로 캐주얼하게 착용 가능한 하프 팬츠"
     ],
     "price": "158,000",
-    "colors": ["MINT", "LIGHT BLUE"],
+    "colors": [
+      "MINT",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7414&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/75eef168e5bef7c24401485ff3bb4781.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/838a64facfe468105c6436ccf25b50e6.jpg",
@@ -23545,7 +27281,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/902e140aac925c29cd075612588da42e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23556,7 +27294,10 @@
       "광택감 있는 나일론 원단과 메쉬 안감으로 캐주얼하게 착용 가능한 하프 팬츠"
     ],
     "price": "158,000",
-    "colors": ["LIGHT BLUE", "MINT"],
+    "colors": [
+      "LIGHT BLUE",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7415&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e759e6b5a4d6864da7bf15c7ea801070.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/8e013ab972092c037991ce26a55e2524.jpg",
@@ -23584,9 +27325,14 @@
   {
     "id": "7426",
     "name": "SEMI SLIMFIT BERMUDA PANTS IN CHARCOAL",
-    "bullet_points": ["카고 포켓 디테일이 포인트인 슬림핏 코튼 버뮤다 팬츠"],
+    "bullet_points": [
+      "카고 포켓 디테일이 포인트인 슬림핏 코튼 버뮤다 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "KHAKI"],
+    "colors": [
+      "CHARCOAL",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7426&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/92a77d3c7faf0a2fac20ff12d0fd86cc.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/73e43f87d4b6197a3afa2e5bcf051a1c.jpg",
@@ -23615,9 +27361,14 @@
   {
     "id": "7425",
     "name": "SEMI SLIMFIT BERMUDA PANTS IN KHAKI",
-    "bullet_points": ["카고 포켓 디테일이 포인트인 슬림핏 코튼 버뮤다 팬츠"],
+    "bullet_points": [
+      "카고 포켓 디테일이 포인트인 슬림핏 코튼 버뮤다 팬츠"
+    ],
     "price": "168,000",
-    "colors": ["KHAKI", "CHARCOAL"],
+    "colors": [
+      "KHAKI",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7425&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/467c7da78c11c5a4ac29159e8bae95f1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/75765d1720722910ceac8c72e821696b.jpg",
@@ -23649,7 +27400,10 @@
       "혼솔 지퍼 디테일로 다양한 연출이 가능한 세미 와이드 나일론 팬츠"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7418&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e002212faa11f9f3ce6cd2216116674c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/cd4d3201de8146b6fabae3f0fb7ff7a7.jpg",
@@ -23670,7 +27424,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/8c41a9363b84df994a56d75e27aa7a56.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23681,7 +27437,10 @@
       "혼솔 지퍼 디테일로 다양한 연출이 가능한 세미 와이드 나일론 팬츠"
     ],
     "price": "198,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7417&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/d3fa7473d9e02bdf85a380053839c1b8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/fe64ad8e9c95efb1abe7885c85a45980.jpg",
@@ -23714,7 +27473,10 @@
       "빈티지 워싱과 허리 비조 디테일이 포인트인 와이드 실루엣 팬츠"
     ],
     "price": "228,000",
-    "colors": ["CHARCOAL", "BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7420&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/165e2070f3818c59047fcdb003b39e40.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/85e64d27df46611900855901ae90b069.jpg",
@@ -23745,7 +27507,10 @@
       "빈티지 워싱과 허리 비조 디테일이 포인트인 와이드 실루엣 팬츠"
     ],
     "price": "228,000",
-    "colors": ["BROWN", "CHARCOAL"],
+    "colors": [
+      "BROWN",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7419&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/45fdcefb8c28ba1ca193c40938ee6ac5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/11ff564a09f1b84d8272baa99da5cbb6.jpg",
@@ -23776,7 +27541,10 @@
       "은은한 글리터감과 화이트 도트가 포인트인 루즈핏 데님 팬츠"
     ],
     "price": "208,000",
-    "colors": ["NAVY", "BLUE"],
+    "colors": [
+      "NAVY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7424&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a58f47f81a500f46b02987c5c2bc266a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/b7e77c6194f0335ee0aa3938c62e23b6.jpg",
@@ -23795,7 +27563,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/50a0d3b71ee13a85677e8a67e916a3d2.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23806,7 +27576,10 @@
       "은은한 글리터감과 화이트 도트가 포인트인 루즈핏 데님 팬츠"
     ],
     "price": "208,000",
-    "colors": ["BLUE", "NAVY"],
+    "colors": [
+      "BLUE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7423&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/bccebb30cee61eb59e3e23a47866aa76.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/19a4a8ead3ff986b01cdb3cc95733e9b.jpg",
@@ -23835,7 +27608,10 @@
       "허리 데미지와 컬러감이 돋보이는 워싱이 포인트인 루즈핏 데님 팬츠"
     ],
     "price": "208,000",
-    "colors": ["NAVY", "LIGHT BEIGE"],
+    "colors": [
+      "NAVY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7391&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e919b48edc65c4467c8d5f2a0daead7e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/27cee6b39285cb4381b719462c2d494a.jpg",
@@ -23866,7 +27642,10 @@
       "허리 데미지와 컬러감이 돋보이는 워싱이 포인트인 루즈핏 데님 팬츠"
     ],
     "price": "208,000",
-    "colors": ["LIGHT BEIGE", "NAVY"],
+    "colors": [
+      "LIGHT BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7390&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/b01649f90aa368c3529a6cfe6b11fa83.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/acab78a0244f6639a40aca0741b27836.jpg",
@@ -23897,7 +27676,10 @@
       "언발란스한 절개 라인과 아일렛 장식 포인트로 다양한 연출이 가능한 미니 스커트"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7323&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/25559df99e54c89999d77aeb4bf7b710.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/49b0b3249b5a80c0480a0319967323ba.jpg",
@@ -23917,7 +27699,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/a9b39ac04ae4dbfc5ddc24c2c8cfcf98.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -23928,7 +27712,10 @@
       "언발란스한 절개 라인과 아일렛 장식 포인트로 다양한 연출이 가능한 미니 스커트"
     ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7322&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/a75fa2f57df01e4f0801e593c3534dfb.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/bb2eefc8fda0ce8678be50f7c4fcc667.jpg",
@@ -23958,7 +27745,10 @@
       "입체 포켓과 배색 스티치가 포인트인 은은한 워싱감의 코튼 나일론 팬츠"
     ],
     "price": "188,000",
-    "colors": ["GREY", "NAVY"],
+    "colors": [
+      "GREY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7321&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/2bbdd2b0cf1e39cba7c51a702a43657e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/df795d5968bed3ade65e7a6658ec1e75.jpg",
@@ -23988,7 +27778,10 @@
       "입체 포켓과 배색 스티치가 포인트인 은은한 워싱감의 코튼 나일론 팬츠"
     ],
     "price": "188,000",
-    "colors": ["NAVY", "GREY"],
+    "colors": [
+      "NAVY",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7320&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/a7d78b49e6773873b6b30accb46adb01.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/f4aa9e1f0c88e612b63c8c82fd97a685.jpg",
@@ -24015,9 +27808,13 @@
   {
     "id": "7358",
     "name": "UNBALANCE CUT POINT VINTAGE COTTON PANTS IN BEIGE",
-    "bullet_points": ["빈티지한 느낌의 더티워싱이 포인트인 데님 팬츠"],
+    "bullet_points": [
+      "빈티지한 느낌의 더티워싱이 포인트인 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BEIGE"],
+    "colors": [
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7358&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/5aa7cf818944eae165c7e2e1978964ac.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/00601dab53a51b0bc507f3b512165074.jpg",
@@ -24038,16 +27835,22 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/f5102b499c6f134bd0fa33899f3fbac6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
   {
     "id": "7319",
     "name": "UNBALANCE CUT POINT DENIM PANTS IN BLUE",
-    "bullet_points": ["절개 데미지가 포인트인 루즈한 실루엣의 데님 팬츠"],
+    "bullet_points": [
+      "절개 데미지가 포인트인 루즈한 실루엣의 데님 팬츠"
+    ],
     "price": "198,000",
-    "colors": ["BLUE"],
+    "colors": [
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7319&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/e26f59ac351254bccdf686310dfa0e9c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/689e4a4adfa3792bc32b9a7256d02eb2.jpg",
@@ -24078,7 +27881,9 @@
       "허리 스냅 포인트로 사이즈 조절이 가능하며 입체감이 돋보이는 레드컬러의 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["RED"],
+    "colors": [
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7318&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/dc62d1449282ac118e42ff0586399268.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/f28f226ddbebdd9f68d3e7d70213b002.jpg",
@@ -24109,7 +27914,10 @@
       "허리 스냅 포인트로 사이즈 조절이 가능하며 입체감이 돋보이는 코튼 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["WHITE", "CHARCOAL"],
+    "colors": [
+      "WHITE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7317&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/845cfc938cb2a7e9a3527c2775f3066a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/f9d9ad41b66b127267d035b05db0601e.jpg",
@@ -24129,7 +27937,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/ca26af5303541bf77e06523639fd2283.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -24140,7 +27950,10 @@
       "허리 스냅 포인트로 사이즈 조절이 가능하며 입체감이 돋보이는 코튼 데님 팬츠"
     ],
     "price": "178,000",
-    "colors": ["CHARCOAL", "WHITE"],
+    "colors": [
+      "CHARCOAL",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7316&cate_no=28&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/1c283170080d5b04bd267c5218d8e658.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/e0f1757ac1ebdfeaedb185d9edd7cf77.jpg",
@@ -24163,7 +27976,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202503/0bbb77821aaab44cc60eae8874183e90.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "CLOTHING",
     "category2": "Bottoms"
   },
@@ -24174,7 +27989,9 @@
       "배색 디테일이 포인트로 레이어드 연출이 가능한 슬리브리스 원피스"
     ],
     "price": "198,000",
-    "colors": ["IVORY"],
+    "colors": [
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7879&cate_no=42&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/0480a4aa1427c07279eb06f1bd4e568e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/7748d76d659981072557ba9f89bb50b0.jpg",
@@ -24196,7 +28013,10 @@
       "https://matinkim.com/web/product/extra/small/202505/f16320b0d28e17ce78f9b6fb56c2d34b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "CLOTHING",
     "category2": "Dresses"
   },
@@ -24207,7 +28027,10 @@
       "배색 디테일이 포인트로 레이어드 연출이 가능한 슬리브리스 원피스"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7880&cate_no=42&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/964eb699ed56e9c777f9d1fcb2bb3cba.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/fae69e363f5f1326f377ec301ca04589.jpg",
@@ -24241,7 +28064,9 @@
       "스트랩으로 숄더·크로스 연출 가능"
     ],
     "price": "168,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9015&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/77391c84a3faae2d73084a5bc136ea37.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/22c64e8f858ad04a4f1aa806ada1dbd7.jpg",
@@ -24255,7 +28080,9 @@
       "https://matinkim.com/web/product/extra/small/202603/05910e8490c0a15d00efac6c09d0d82b.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24267,7 +28094,10 @@
       "사이드 타이와 프론트 로고 장식이 포인트"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9017&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/2a1373fc3d899c299e889e3c6e5de395.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/980133f65190e86a007ecb21e3b829ff.jpg",
@@ -24292,7 +28122,10 @@
       "사이드 타이와 프론트 로고 장식이 포인트"
     ],
     "price": "148,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9016&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/852a269ed76bd30c1a20a17f1530fda6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/28a9a00197c056a903ac52616448bc7e.jpg",
@@ -24305,7 +28138,9 @@
       "https://matinkim.com/web/product/extra/small/202603/e2ac3a1e73bd5b3d2341b796815ef3ba.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24317,7 +28152,11 @@
       "커브드 지퍼 디테일과 롱핸들 디자인 포인트"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "LIGHT GREY", "RED"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9014&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/e3699bc868325b2b69f04dcdd7bc3704.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/136381017b59e54426e9fac833acfc15.jpg",
@@ -24342,7 +28181,11 @@
       "커브드 지퍼 디테일과 롱핸들 디자인 포인트"
     ],
     "price": "148,000",
-    "colors": ["LIGHT GREY", "BLACK", "RED"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9013&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/2c58c5426a23785f0d642e0c7607e518.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/96fb4e8fd037ff73057fc9f4a8b52ea5.jpg",
@@ -24355,7 +28198,9 @@
       "https://matinkim.com/web/product/extra/small/202603/9a41d73dbc8dbb578ba7e8f6ba1d3418.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24367,7 +28212,11 @@
       "커브드 지퍼 디테일과 롱핸들 디자인 포인트"
     ],
     "price": "148,000",
-    "colors": ["RED", "BLACK", "LIGHT GREY"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9012&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/cc0d5314a5b5cbf3081a24e76e8e4ee7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/597dd81d8fb38d1445e02332619535b6.jpg",
@@ -24380,7 +28229,9 @@
       "https://matinkim.com/web/product/extra/small/202603/7fbff52d96b172cfedd5969b313fb4f2.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24392,7 +28243,10 @@
       "MATINKIM 스티치 로고 디테일이 포인트"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "SKY"],
+    "colors": [
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9008&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/a420246b7681adb6d33b068e83f44594.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/92d5300726bad223d35df438d676abfd.jpg",
@@ -24416,7 +28270,10 @@
       "MATINKIM 스티치 로고 디테일이 포인트"
     ],
     "price": "58,000",
-    "colors": ["SKY", "BLACK"],
+    "colors": [
+      "SKY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9007&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/72562441073325edfbf664ede9e72748.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/9ab2ec77b10c32ab25af9662fa52ce1b.jpg",
@@ -24440,7 +28297,11 @@
       "MATINKIM 스티치 로고 디테일이 포인트"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "BLUE", "SKY"],
+    "colors": [
+      "BLACK",
+      "BLUE",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9011&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/ac47e4b20e0ceea4f931cb6e65833ef7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/d840006df6050446112a3129a728f74a.jpg",
@@ -24464,7 +28325,11 @@
       "MATINKIM 스티치 로고 디테일이 포인트"
     ],
     "price": "88,000",
-    "colors": ["BLUE", "BLACK", "SKY"],
+    "colors": [
+      "BLUE",
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9010&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/4cd494f0254c5c102da347e86c5284c7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/01c1253625796d264e73a901059f7dd9.jpg",
@@ -24488,7 +28353,11 @@
       "MATINKIM 스티치 로고 디테일이 포인트"
     ],
     "price": "88,000",
-    "colors": ["SKY", "BLACK", "BLUE"],
+    "colors": [
+      "SKY",
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9009&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/c34d6cf49d42a12d0814867f39403bb2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/c148501e4b91e6e7b24104c97df315ed.jpg",
@@ -24512,7 +28381,11 @@
       "메탈 참 장식이 더해진 포인트 아이템"
     ],
     "price": "118,000",
-    "colors": ["BLACK", "SILVER", "PINK"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8998&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/f75469c1d58166c0990b189ce0f1356c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/a75ae0e2f0e0b857ab74c668bcef8a19.jpg",
@@ -24525,7 +28398,9 @@
       "https://matinkim.com/web/product/extra/small/202603/a185e022da1bb8804add38294ccd521c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24537,7 +28412,11 @@
       "메탈 참 장식이 더해진 포인트 아이템"
     ],
     "price": "118,000",
-    "colors": ["SILVER", "BLACK", "PINK"],
+    "colors": [
+      "SILVER",
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8997&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/38011b8838b31f231c076b2adda7bef4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/0f51077490825ecf7b71ab83ccbcbb70.jpg",
@@ -24562,7 +28441,11 @@
       "메탈 참 장식이 더해진 포인트 아이템"
     ],
     "price": "118,000",
-    "colors": ["PINK", "BLACK", "SILVER"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8996&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/9922519b2282729f18b5730f27b9dfe8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/bd221421a57f97b18dd0c751b47dd528.jpg",
@@ -24575,7 +28458,9 @@
       "https://matinkim.com/web/product/extra/small/202603/8c4c0ff92d123d353c693c0e5886705b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24587,7 +28472,10 @@
       "지퍼 포켓과 엠보 로고 디테일이 포인트인 아이템"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9000&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/652cefaedfb9201b780640a31c5787c7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/cad4f72e78e0a2b45b5464bccf3931b0.jpg",
@@ -24612,7 +28500,10 @@
       "지퍼 포켓과 엠보 로고 디테일이 포인트인 아이템"
     ],
     "price": "158,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8999&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/d706688ab6b4d6bb0a0115d103ce89b0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/50eea810937e74585d15b77d3df1ce73.jpg",
@@ -24632,9 +28523,17 @@
   {
     "id": "8981",
     "name": "HALF SHIRRING RIBBON ROUND BAG IN LIGHT PINK",
-    "bullet_points": ["양쪽 끈의 셔링과 리본이 포인트인 라운드백"],
+    "bullet_points": [
+      "양쪽 끈의 셔링과 리본이 포인트인 라운드백"
+    ],
     "price": "138,000",
-    "colors": ["LIGHT PINK", "BLACK", "IVORY", "DARK BROWN", "SKY"],
+    "colors": [
+      "LIGHT PINK",
+      "BLACK",
+      "IVORY",
+      "DARK BROWN",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8981&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/7e2ac5a84c3a432860e59141e59111eb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/97a665e4e2860e7d09b986a5faef5d7f.jpg",
@@ -24654,9 +28553,17 @@
   {
     "id": "8982",
     "name": "HALF SHIRRING RIBBON ROUND BAG IN SKY",
-    "bullet_points": ["양쪽 끈의 셔링과 리본이 포인트인 라운드백"],
+    "bullet_points": [
+      "양쪽 끈의 셔링과 리본이 포인트인 라운드백"
+    ],
     "price": "138,000",
-    "colors": ["SKY", "BLACK", "IVORY", "DARK BROWN", "LIGHT PINK"],
+    "colors": [
+      "SKY",
+      "BLACK",
+      "IVORY",
+      "DARK BROWN",
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8982&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/d75f4baac1289b35e449bdcc6b39b25a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/179b59c7fdb5b300faa54b2191a45203.jpg",
@@ -24681,7 +28588,10 @@
       "러프한 그래픽 로고가 포인트"
     ],
     "price": "48,000",
-    "colors": ["KHAKI", "GREY"],
+    "colors": [
+      "KHAKI",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8945&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/5abf6386830b136aed06a02f267762a1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/e10dfe604e9ac39db99283115ce06bac.jpg",
@@ -24706,7 +28616,10 @@
       "러프한 그래픽 로고가 포인트"
     ],
     "price": "48,000",
-    "colors": ["GREY", "KHAKI"],
+    "colors": [
+      "GREY",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8946&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/51776a2c66cb619b0f32bb4f16ccd7e6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/cb08d41ccf361a4767895ec2a944fbdd.jpg",
@@ -24731,7 +28644,10 @@
       "크로스와 숄더 스트랩으로 2가지 연출 가능"
     ],
     "price": "58,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8947&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/3677a4840a722ae7a9c2988d198efb18.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/ba7b8afd01d70329fb07a61f6b4cdd34.jpg",
@@ -24756,7 +28672,10 @@
       "크로스와 숄더 스트랩으로 2가지 연출 가능"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8948&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/8a89baa5b092c27fc68509ba8d66331a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/bb0d67f74879d62315b59a0a7cc43063.jpg",
@@ -24780,7 +28699,10 @@
       "빈티지한 무드의 말 그래픽 프린팅이 포인트인 코튼 에코백"
     ],
     "price": "48,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8969&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4c9fa79732cd4c59131d08378fbf78e7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/ce88638d532bf2f4dc4a3a6b9e1c2559.jpg",
@@ -24803,7 +28725,10 @@
       "빈티지한 무드의 말 그래픽 프린팅이 포인트인 코튼 에코백"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8970&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/a90d2b09d0f7dfebca2c55985cad9717.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/52d966264e804524f56a05a404332305.jpg",
@@ -24827,7 +28752,10 @@
       "앞판 로고 메탈 장식 포인트"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8923&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/d7af98bd267f93489d567fe6715d314b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/4f6f364d3edaf1415aa82f7d4bfca4e7.jpg",
@@ -24840,7 +28768,9 @@
       "https://matinkim.com/web/product/extra/small/202602/ff7e0948916e3c3c2dba9a5fb13efb86.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -24852,7 +28782,10 @@
       "앞판 로고 메탈 장식 포인트"
     ],
     "price": "148,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8924&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/a66b1e76e238408e57f1112cd43fec40.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3bd8d897af0c06b595727e41e3a2f4fb.jpg",
@@ -24877,7 +28810,10 @@
       "트위스트 숄더 디테일과 3가지 참 장식이 포인트"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8926&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/a857b585d4e140d9b74f51b6e622a082.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/88a5bbfb338c3e8b28fbca8e8dbe66c9.jpg",
@@ -24902,7 +28838,10 @@
       "트위스트 숄더 디테일과 3가지 참 장식이 포인트"
     ],
     "price": "138,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8925&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/050b86495ff7747a869ea1a6bb92d370.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/4cdef78c281fb8cabccc9d35d4756ab9.jpg",
@@ -24927,7 +28866,9 @@
       "트위스트 숄더 디테일과 4가지 참 장식이 포인트"
     ],
     "price": "158,000",
-    "colors": ["DARK BROWN"],
+    "colors": [
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8927&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/9721a55845688a9194a86ddeb5cf86f0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/380cb8cf3ea5f0ac4167ccc691211e3c.jpg",
@@ -24952,7 +28893,10 @@
       "수납 공간이 실용적인 벨티드 디자인의 스몰사이즈 숄더 버킷백"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8794&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/b6590ca00d07a795dc1abf135809a294.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/fe9b6f2b20dce38564f108e4e0647f28.jpg",
@@ -24976,7 +28920,10 @@
       "수납 공간이 실용적인 벨티드 디자인의 스몰사이즈 숄더 버킷백"
     ],
     "price": "138,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8795&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/6bbf7b0a7e1003070122b21107d11f94.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/46bd2a1b816602dde843b411abb95679.jpg",
@@ -25000,7 +28947,9 @@
       "수납 공간이 실용적인 벨티드 디자인의 미들사이즈 숄더 버킷백"
     ],
     "price": "158,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8796&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/eb340b808d49043600174afc1fa37d67.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/b3710646c917eea5983c7ca6d31628ba.jpg",
@@ -25024,7 +28973,10 @@
       "양옆 포켓과 마뗑킴 원형장식의 참이 포인트인 와이드한 기장감의 숄더백"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8797&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4ce9b98b9489994e345444fbbb78ad5b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/6f18586b434b30075a8b3b80e60f3dea.jpg",
@@ -25048,7 +29000,10 @@
       "양옆 포켓과 마뗑킴 원형장식의 참이 포인트인 와이드한 기장감의 숄더백"
     ],
     "price": "138,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8798&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/bf742b7c16833e94215455ae20aacbc2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/4d4a082fff44956b788b22731c3609c8.jpg",
@@ -25072,7 +29027,9 @@
       "양옆 포켓과 마뗑킴 원형장식의 참이 포인트인 와이드한 기장감의 빅숄더백"
     ],
     "price": "168,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8799&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/ddd928dd54ad0471e7d0dc0340301ba5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/6797ff72a8506a6c65da1a8acabee7b9.jpg",
@@ -25096,7 +29053,10 @@
       "아플리케 로고자수 디테일이 들어간 빈티지 워싱 져지 소재 숄더백"
     ],
     "price": "108,000",
-    "colors": ["GREY", "LIGHT BEIGE"],
+    "colors": [
+      "GREY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8800&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/e88ecd7718a43269b1f4abb6512910b0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/b4a4946d0d1bedf7ba6ac2ee9bc4b1ca.jpg",
@@ -25120,7 +29080,10 @@
       "아플리케 로고자수 디테일이 들어간 빈티지 워싱 져지 소재 숄더백"
     ],
     "price": "108,000",
-    "colors": ["LIGHT BEIGE", "GREY"],
+    "colors": [
+      "LIGHT BEIGE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8801&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/c9304bd9d6ab609c4edbe8c04a16f474.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/e7b52a7a9f69b6b707d8624b52d6461a.jpg",
@@ -25140,9 +29103,13 @@
   {
     "id": "8802",
     "name": "MATIN LOGO STUD ECOBAG IN BLACK",
-    "bullet_points": ["스터드 로고 디테일의 코튼 소재 에코백"],
+    "bullet_points": [
+      "스터드 로고 디테일의 코튼 소재 에코백"
+    ],
     "price": "48,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8802&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/d5114d3a8ce9701086de213201f708f6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/3a7da835d56623e1caf003c368735fb7.jpg",
@@ -25154,7 +29121,9 @@
       "https://matinkim.com/web/product/extra/small/202601/0dec4b06c7bce1d5b1782675aa188d85.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -25165,7 +29134,10 @@
       "아일렛 장식과 사이드 매듭 디테일이 들어간 로고 프린트 코튼 소재 에코백"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8803&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/c382c8bc17ddb241ff53d74c18bc50ab.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ce7a4b0efeddb8726793f78e21c6d80f.jpg",
@@ -25188,7 +29160,10 @@
       "아일렛 장식 과 사이드 매듭 디테일이 들어간 로고 프린트 코튼 소재 에코백"
     ],
     "price": "58,000",
-    "colors": ["BEIGE", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8804&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/7f9ba3494da592438544d95b15362fa9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/9c4f5bd45df79204365936cb4640147c.jpg",
@@ -25207,9 +29182,17 @@
   {
     "id": "8707",
     "name": "MATIN LIGHT MINI ECOBAG IN BLACK",
-    "bullet_points": ["MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"],
+    "bullet_points": [
+      "MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"
+    ],
     "price": "23,000",
-    "colors": ["BLACK", "WHITE", "PINK", "LILAC", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "LILAC",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8707&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/c0482bb1e6c08e6ebbf9a1a4aadbfe42.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/a4bee0f000d3552f15cbcf2dc98f6d61.jpg",
@@ -25220,16 +29203,26 @@
       "https://matinkim.com/web/product/extra/small/202512/ce4992fac31128ed303362579898e342.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8711",
     "name": "MATIN LIGHT MINI ECOBAG IN WHITE",
-    "bullet_points": ["MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"],
+    "bullet_points": [
+      "MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"
+    ],
     "price": "23,000",
-    "colors": ["WHITE", "BLACK", "PINK", "LILAC", "LIGHT BLUE"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "PINK",
+      "LILAC",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8711&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/4142d2f252287f7a8a0db531cbb57790.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/1789c7d520673c15a1fbc7056201c409.jpg",
@@ -25247,9 +29240,17 @@
   {
     "id": "8710",
     "name": "MATIN LIGHT MINI ECOBAG IN PINK",
-    "bullet_points": ["MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"],
+    "bullet_points": [
+      "MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"
+    ],
     "price": "23,000",
-    "colors": ["PINK", "BLACK", "WHITE", "LILAC", "LIGHT BLUE"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "WHITE",
+      "LILAC",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8710&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/aa8f09209fb29e0e7ff86a631c5252c0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/cdebde162a9613accc6002e2162224b5.jpg",
@@ -25267,9 +29268,17 @@
   {
     "id": "8709",
     "name": "MATIN LIGHT MINI ECOBAG IN LILAC",
-    "bullet_points": ["MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"],
+    "bullet_points": [
+      "MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"
+    ],
     "price": "23,000",
-    "colors": ["LILAC", "BLACK", "WHITE", "PINK", "LIGHT BLUE"],
+    "colors": [
+      "LILAC",
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8709&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/fb46336b60fa8a0af35bbed9cff47ca7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/6fd793af6d67baf4c42030cff09e398b.jpg",
@@ -25287,9 +29296,17 @@
   {
     "id": "8708",
     "name": "MATIN LIGHT MINI ECOBAG IN LIGHT BLUE",
-    "bullet_points": ["MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"],
+    "bullet_points": [
+      "MATIN KIM 로고 프린트가 포인트인 파스텔톤 에코백"
+    ],
     "price": "23,000",
-    "colors": ["LIGHT BLUE", "BLACK", "WHITE", "PINK", "LILAC"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK",
+      "WHITE",
+      "PINK",
+      "LILAC"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8708&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/265f5c1ff572bf6f4575669a40ff2ede.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/e1a5ed7d18d7dade3ad03324f2a07e3a.jpg",
@@ -25309,7 +29326,9 @@
     "name": "SIDE STRING SUEDE BIG SHOULDER BAG IN BEIGE",
     "bullet_points": [],
     "price": "158,000",
-    "colors": ["BEIGE"],
+    "colors": [
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8694&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/63a1ee329285e5911f33eeeeb242e794.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/810f3869ebf4b1a6182da23a8bc03f5e.jpg",
@@ -25328,9 +29347,14 @@
   {
     "id": "8664",
     "name": "SOFT FUR MINI SHOULDER BAG IN IVORY",
-    "bullet_points": ["부드러운 터치감의 인조퍼를 사용한 미니 숄더백"],
+    "bullet_points": [
+      "부드러운 터치감의 인조퍼를 사용한 미니 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["IVORY", "PINK"],
+    "colors": [
+      "IVORY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8664&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/1fe9b7a2d6206ca104c447c3ea7a5baf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/97150ab5df1c5d36480f1f42f55abcf2.jpg",
@@ -25349,9 +29373,14 @@
   {
     "id": "8663",
     "name": "SOFT FUR MINI SHOULDER BAG IN PINK",
-    "bullet_points": ["부드러운 터치감의 인조퍼를 사용한 미니 숄더백"],
+    "bullet_points": [
+      "부드러운 터치감의 인조퍼를 사용한 미니 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["PINK", "IVORY"],
+    "colors": [
+      "PINK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8663&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/2e17980746310357752848ab4c5d608c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/861acce01050957ed00b7898f1ba8309.jpg",
@@ -25370,9 +29399,14 @@
   {
     "id": "8617",
     "name": "MATIN LOGO QUILTING ECOBAG IN BLACK",
-    "bullet_points": ["전면 로고 퀼팅 자수 디테일의 쇼퍼백"],
+    "bullet_points": [
+      "전면 로고 퀼팅 자수 디테일의 쇼퍼백"
+    ],
     "price": "88,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8617&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/81c1cfe634b9faa484f6ac3659c221a1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/ba1342d4af278c1ca22bf3b8be3f9dd0.jpg",
@@ -25391,9 +29425,14 @@
   {
     "id": "8618",
     "name": "MATIN LOGO QUILTING ECOBAG IN SILVER",
-    "bullet_points": ["전면 로고 퀼팅 자수 디테일의 쇼퍼백"],
+    "bullet_points": [
+      "전면 로고 퀼팅 자수 디테일의 쇼퍼백"
+    ],
     "price": "88,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8618&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/50c4e086e9aa16438667f78de0bac700.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/7ece62341406dfda2580afcd0dbd3deb.jpg",
@@ -25412,9 +29451,14 @@
   {
     "id": "8619",
     "name": "GLOSSY LOGO STITCH MINI SHOULDER BAG IN BLACK",
-    "bullet_points": ["로고 퀼팅 자수 디테일의 미니 쇼퍼백"],
+    "bullet_points": [
+      "로고 퀼팅 자수 디테일의 미니 쇼퍼백"
+    ],
     "price": "98,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8619&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/f52c1c589ef44f6ea51f5a7716ca498c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/4df0c2593e6ab006817334162c886ca2.jpg",
@@ -25432,9 +29476,14 @@
   {
     "id": "8620",
     "name": "GLOSSY LOGO STITCH MINI SHOULDER BAG IN SILVER",
-    "bullet_points": ["로고 퀼팅 자수 디테일의 미니 쇼퍼백"],
+    "bullet_points": [
+      "로고 퀼팅 자수 디테일의 미니 쇼퍼백"
+    ],
     "price": "98,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8620&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/74b0ed8de3ff8e81b7b40c2c2014435e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/93fd4755595bc4a1473fec6c88c1758e.jpg",
@@ -25452,9 +29501,13 @@
   {
     "id": "8646",
     "name": "GLOSSY LOGO STITCH CROSS BAG IN BLACK",
-    "bullet_points": ["로고 퀼팅 자수 디테일의 투웨이 숄더백"],
+    "bullet_points": [
+      "로고 퀼팅 자수 디테일의 투웨이 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8646&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/2382f63baeb94a862a39b576df9316aa.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/804c10535d465812b4620f901403bef0.jpg",
@@ -25476,7 +29529,11 @@
       "메탈 사각 락장식과 여성스러운 체인 스트랩 디테일의 퀼팅 미니백팩"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "SILVER", "PINK"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8462&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/a06b72fddd2de1446c5065abee541d00.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/35249fe8ccfdef5ef8ec0c0827ebfc79.jpg",
@@ -25499,7 +29556,11 @@
       "메탈 사각 락장식과 여성스러운 체인 스트랩 디테일의 퀼팅 미니백팩"
     ],
     "price": "168,000",
-    "colors": ["SILVER", "BLACK", "PINK"],
+    "colors": [
+      "SILVER",
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8461&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/d2b12b54d57adc4c7f2163bede4c6ebe.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/943a1e2ca1498bdf3734df641b47df65.jpg",
@@ -25522,7 +29583,11 @@
       "메탈 사각 락장식과 여성스러운 체인 스트랩 디테일의 퀼팅 미니백팩"
     ],
     "price": "168,000",
-    "colors": ["PINK", "SILVER", "BLACK"],
+    "colors": [
+      "PINK",
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8460&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/8dc5285dbdc9a19e0a705fae63d9c386.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/ba10cca41aeaab9aacd1e11461cc31c4.jpg",
@@ -25545,7 +29610,10 @@
       "메탈 사각 락장식과 여성스러운 체인 스트랩 디테일이 들어간 미듐사이즈의 퀼팅 백팩"
     ],
     "price": "198,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8459&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/169a67bdf61042e8bb73067649dea208.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/acc0554426106e48a849220accd2ed09.jpg",
@@ -25568,7 +29636,10 @@
       "메탈 사각 락장식과 여성스러운 체인 스트랩 디테일이 들어간 미듐사이즈의 퀼팅 백팩"
     ],
     "price": "198,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8458&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/fc7ae7e11ad4893154392eed25961f3e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/f47e7b0682a4c2cc1670bfbe02cac4a5.jpg",
@@ -25580,7 +29651,9 @@
       "https://matinkim.com/web/product/extra/small/202510/58e78695c39f07059097b21c9be5b888.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -25591,7 +29664,9 @@
       "가방 앞판 포켓 포인트로 스트랩을 이용해 배낭 연출이 가능한 투웨이 백"
     ],
     "price": "178,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7409&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/b09cc7d77494fc93a904ba07c255ad1f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/f2f03dbdbf8b706d386cc585c72d61fe.jpg",
@@ -25610,9 +29685,13 @@
   {
     "id": "7865",
     "name": "DOUBLE POCKET TWO WAY BAG IN CREAM",
-    "bullet_points": ["앞판의 포켓이 돋보이는 페이크 레더 소재 투웨이 백"],
+    "bullet_points": [
+      "앞판의 포켓이 돋보이는 페이크 레더 소재 투웨이 백"
+    ],
     "price": "178,000",
-    "colors": ["CREAM"],
+    "colors": [
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7865&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/8bee6e9b65143cf0ecccd95d9506ce90.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/57f77d3cde9797add60001d9347c0083.jpg",
@@ -25624,7 +29703,9 @@
       "https://matinkim.com/web/product/extra/small/202505/5f75deef1ae9f88090301bf62e316a42.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -25635,7 +29716,12 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "PINK", "BURGUNDY", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "PINK",
+      "BURGUNDY",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8360&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/a7b1aea6fa6983b4a6f78146afa618af.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/ae23c5f5d83348644e1e951ba3a1c351.jpg",
@@ -25658,7 +29744,12 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "148,000",
-    "colors": ["LIGHT GREY", "PINK", "BURGUNDY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "PINK",
+      "BURGUNDY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8359&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/15d57ae28170308fc9879a6caaf499a8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/db406af45e7d612305e988ed1675e143.jpg",
@@ -25681,7 +29772,12 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "148,000",
-    "colors": ["BURGUNDY", "PINK", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "BURGUNDY",
+      "PINK",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8358&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/5ca76047b2579c60dc693ec02fdc80f3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/55ff4e0431ea97acf71a31c829bd8878.jpg",
@@ -25704,7 +29800,12 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "148,000",
-    "colors": ["PINK", "BURGUNDY", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "PINK",
+      "BURGUNDY",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8357&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/4f2c988990c152d0d1ac169b6267a3f3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/84f385ac030aef556a7a02ef2c7f9023.jpg",
@@ -25727,7 +29828,9 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "168,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8516&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/723e1f48c2a7ed5b89148140edac4318.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/bf8dc38dddb7269db2991f52c3242562.jpg",
@@ -25750,7 +29853,9 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "168,000",
-    "colors": ["GREY"],
+    "colors": [
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8518&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/b05b36c5af62635283461f64b13ff92e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/f5e88c86a6d4728e8b8ccea6c3fdeb5a.jpg",
@@ -25762,7 +29867,9 @@
       "https://matinkim.com/web/product/extra/small/202510/6abe2a7e7de3b0bfe5da377d07578505.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -25773,7 +29880,9 @@
       "시그니처 메탈 플레이트 장식이 들어간 퀼팅 디테일의 미듐사이즈 숄더백"
     ],
     "price": "168,000",
-    "colors": ["DARK BROWN"],
+    "colors": [
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8517&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/e1035a80916704eb0b2ba2ca1d60888d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/8c2e323d4fb534aa0507fa2dd00203b4.jpg",
@@ -25796,7 +29905,11 @@
       "시그니처 메탈 플레이트 장식과 스터드 장식이 들어간 미디움 사이즈의 숄더백"
     ],
     "price": "148,000",
-    "colors": ["BLACK", "COCOA", "BEIGE"],
+    "colors": [
+      "BLACK",
+      "COCOA",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8367&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/71dabe5c0def47b67fb6c7b25e2e77c7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/1d250115c02032d71d9a55c799c764f1.jpg",
@@ -25819,7 +29932,11 @@
       "시그니처 메탈 플레이트 장식과 스터드 장식이 들어간 미디움 사이즈의 숄더백"
     ],
     "price": "148,000",
-    "colors": ["BEIGE", "COCOA", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "COCOA",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8366&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/b8e20f2dce632d79bb937eb38d4e7fac.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/3683070ebc5e4058e2298185afab2e92.jpg",
@@ -25842,7 +29959,11 @@
       "시그니처 메탈 플레이트 장식과 스터드 장식이 들어간 미디움 사이즈의 숄더백"
     ],
     "price": "148,000",
-    "colors": ["COCOA", "BEIGE", "BLACK"],
+    "colors": [
+      "COCOA",
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8365&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/524ebdfb2b6317aa917acf6c2b6f0d2d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/55733047ef9bd27402406a62a0361d74.jpg",
@@ -25865,7 +29986,10 @@
       "시그니처 메탈 플레이트 장식과 스터드 장식이 들어간 라지 사이즈의 숄더백"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8364&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/6af35b407e810042a6c8545716fc0844.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/d130774485ad45029a952f0b1e99f472.jpg",
@@ -25888,7 +30012,10 @@
       "시그니처 메탈 플레이트 장식과 스터드 장식이 들어간 라지 사이즈의 숄더백"
     ],
     "price": "168,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8363&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/43d596ced2e298aedebf0c11e7e52da0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/8941f8937857cea5c63188306a1c9824.jpg",
@@ -25907,9 +30034,14 @@
   {
     "id": "8362",
     "name": "SUEDE MINI ARC HOBO BAG IN BEIGE",
-    "bullet_points": ["로고 스카시 장식이 들어간 스웨이드 미니 호보백"],
+    "bullet_points": [
+      "로고 스카시 장식이 들어간 스웨이드 미니 호보백"
+    ],
     "price": "138,000",
-    "colors": ["BEIGE", "BROWN"],
+    "colors": [
+      "BEIGE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8362&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/a5795f94b12829354b31a337586b7bd5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/cd8b949f5f44b55cd81e0454826e3774.jpg",
@@ -25921,16 +30053,23 @@
       "https://matinkim.com/web/product/extra/small/202509/c5761172991c494b02b70e8a6f37c53d.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8361",
     "name": "SUEDE MINI ARC HOBO BAG IN BROWN",
-    "bullet_points": ["로고 스카시 장식이 들어간 스웨이드 미니 호보백"],
+    "bullet_points": [
+      "로고 스카시 장식이 들어간 스웨이드 미니 호보백"
+    ],
     "price": "138,000",
-    "colors": ["BROWN", "BEIGE"],
+    "colors": [
+      "BROWN",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8361&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/fbbef312c026f54d799d1c31e8f40f14.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/ad70349cf52b465ac1081ce24d6daf47.jpg",
@@ -25973,7 +30112,9 @@
       "https://matinkim.com/web/product/extra/small/202509/1f5b19004f811e7fd81c536edf1cd936.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -26004,7 +30145,9 @@
       "https://matinkim.com/web/product/extra/small/202509/fa4f49447387ddbd4ec132e3a1314078.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -26066,7 +30209,9 @@
       "https://matinkim.com/web/product/extra/small/202509/b90a42450c1b83ca87a0ac0f434c2f55.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -26166,9 +30311,15 @@
   {
     "id": "8256",
     "name": "RIVET POINT QUAD SHOULDER BAG IN BLACK",
-    "bullet_points": ["리벳포인트 사이드포켓 디테일 레더 숄더백"],
+    "bullet_points": [
+      "리벳포인트 사이드포켓 디테일 레더 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "CHARCOAL", "BROWN"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8256&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/3b3e794c03c61a0c649d5e7f3fc81c26.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/0b658cf401e5644a4b16ef4aed06d154.jpg",
@@ -26180,16 +30331,24 @@
       "https://matinkim.com/web/product/extra/small/202509/d18dca2d40707122065b24dd07cffbec.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8255",
     "name": "RIVET POINT QUAD SHOULDER BAG IN CHARCOAL",
-    "bullet_points": ["리벳포인트 사이드포켓 디테일 레더 숄더백"],
+    "bullet_points": [
+      "리벳포인트 사이드포켓 디테일 레더 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "BLACK", "BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8255&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/a1d6d59ce02580dc4a2bf855f7eb17bc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/ab788b0e2ee1eda727d3ec04a0982621.jpg",
@@ -26201,16 +30360,24 @@
       "https://matinkim.com/web/product/extra/small/202509/42a9052e93d195371c17473fd8f56f2e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8254",
     "name": "RIVET POINT QUAD SHOULDER BAG IN BROWN",
-    "bullet_points": ["리벳포인트 사이드포켓 디테일 레더 숄더백"],
+    "bullet_points": [
+      "리벳포인트 사이드포켓 디테일 레더 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BROWN", "BLACK", "CHARCOAL"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8254&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/f4ecee43e14fd0533c6b2c6c3c1f2750.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/95b5dc640e8002a6cbf8c8ec04ba3c34.jpg",
@@ -26229,9 +30396,14 @@
   {
     "id": "8208",
     "name": "SIDE STRING LEATHER BIG SHOULDER BAG IN BLACK",
-    "bullet_points": ["사이드 리본 스트링 디테일이 포인트인 레더 빅 숄더백"],
+    "bullet_points": [
+      "사이드 리본 스트링 디테일이 포인트인 레더 빅 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8208&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/7c8a8f5b1d8c14ef61b66315c8fbbaea.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/70031aff13e11ed7289c40aa2fa435bf.jpg",
@@ -26243,16 +30415,23 @@
       "https://matinkim.com/web/product/extra/small/202509/51797890316145a3a157e68646956899.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8207",
     "name": "SIDE STRING LEATHER BIG SHOULDER BAG IN BROWN",
-    "bullet_points": ["사이드 리본 스트링 디테일이 포인트인 레더 빅 숄더백"],
+    "bullet_points": [
+      "사이드 리본 스트링 디테일이 포인트인 레더 빅 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8207&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/9ce768f2d7171a1f3cc7a5b1ca18ad50.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/4925ff0c41275b9eb88cef016b6734d9.jpg",
@@ -26271,9 +30450,15 @@
   {
     "id": "8123",
     "name": "POCKETPACK MINI BAG IN BLACK",
-    "bullet_points": ["탑라인 메탈 플레이트 월렛백"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 월렛백"
+    ],
     "price": "138,000",
-    "colors": ["BLACK", "IVORY", "BURGUNDY"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8123&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/59ffc999a184c43827d37024de6494cc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/1100ae3621a55d71ad6b4e7ca727e8d8.jpg",
@@ -26293,9 +30478,15 @@
   {
     "id": "8122",
     "name": "POCKETPACK MINI BAG IN IVORY",
-    "bullet_points": ["탑라인 메탈 플레이트 월렛백"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 월렛백"
+    ],
     "price": "138,000",
-    "colors": ["IVORY", "BLACK", "BURGUNDY"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8122&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/e20c43e1f48980cdf59afc2dca552189.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/ca935cda63a0b2e1dbb3ae69341b116b.jpg",
@@ -26315,9 +30506,15 @@
   {
     "id": "8121",
     "name": "POCKETPACK MINI BAG IN BURGUNDY",
-    "bullet_points": ["탑라인 메탈 플레이트 월렛백"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 월렛백"
+    ],
     "price": "138,000",
-    "colors": ["BURGUNDY", "BLACK", "IVORY"],
+    "colors": [
+      "BURGUNDY",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8121&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/27bf212acf1098a13d4adb0c1eee87d9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/fe1ecf18e21ba2acb8ac0e738d4ed46c.jpg",
@@ -26330,16 +30527,23 @@
       "https://matinkim.com/web/product/extra/small/202508/48cffdcee63a21479b208ad4f540932e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8120",
     "name": "APPLIQUE LOGO JERSEY SHOULDER BAG IN GREY",
-    "bullet_points": ["빈티지 워싱 져지 소재 숄더백"],
+    "bullet_points": [
+      "빈티지 워싱 져지 소재 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["GREY", "CHARCOAL"],
+    "colors": [
+      "GREY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8120&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/4691269d7bb4fa272529afc5f1128a6c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/d5f55d2f1dde265a5e9fffa915eabccb.jpg",
@@ -26351,16 +30555,23 @@
       "https://matinkim.com/web/product/extra/small/202508/acfe2c93fbbd35e7385622fb27b5eea9.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8119",
     "name": "APPLIQUE LOGO JERSEY SHOULDER BAG IN CHARCOAL",
-    "bullet_points": ["빈티지 워싱 져지 소재 숄더백"],
+    "bullet_points": [
+      "빈티지 워싱 져지 소재 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["CHARCOAL", "GREY"],
+    "colors": [
+      "CHARCOAL",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8119&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/2448b7f4c40bd02561bc146ba97a1b96.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/3f5ae01926989cdbbc47d39596cbff2e.jpg",
@@ -26379,9 +30590,14 @@
   {
     "id": "8055",
     "name": "MATIN POCKET UTILITY SMALL BACK PACK IN BLACK",
-    "bullet_points": ["멀티포켓 유틸리티 나일론 미니 백팩"],
+    "bullet_points": [
+      "멀티포켓 유틸리티 나일론 미니 백팩"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8055&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/82c1e26965a4754bce0ac30ebe4d8de7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/1049f7318614e90b8ba65a939b135b8b.jpg",
@@ -26400,9 +30616,14 @@
   {
     "id": "8054",
     "name": "MATIN POCKET UTILITY SMALL BACK PACK IN CHARCOAL",
-    "bullet_points": ["멀티포켓 유틸리티 나일론 미니 백팩"],
+    "bullet_points": [
+      "멀티포켓 유틸리티 나일론 미니 백팩"
+    ],
     "price": "168,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8054&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/cb831879b148a350b29e6437ecda9e68.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/e76dbda72a21c6ac8cfcd2c26211135a.jpg",
@@ -26421,9 +30642,14 @@
   {
     "id": "8052",
     "name": "MATIN POCKET UTILITY LARGE BACK PACK IN BLACK",
-    "bullet_points": ["멀티포켓 유틸리티 나일론 백팩"],
+    "bullet_points": [
+      "멀티포켓 유틸리티 나일론 백팩"
+    ],
     "price": "198,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8052&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/321ac351d8c76b75744d50ab0b071d49.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/597e2392d579efe2d72edc21c0db08dc.jpg",
@@ -26436,16 +30662,23 @@
       "https://matinkim.com/web/product/extra/small/202602/7b750a2dfbc81732f174afeb7643db09.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8051",
     "name": "MATIN POCKET UTILITY LARGE BACK PACK IN CHARCOAL",
-    "bullet_points": ["멀티포켓 유틸리티 나일론 백팩"],
+    "bullet_points": [
+      "멀티포켓 유틸리티 나일론 백팩"
+    ],
     "price": "198,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8051&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/ec2c5db8c4fd08cf29d793a4d5325756.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/1fb503b191e59bbcfa3b372240de12a4.jpg",
@@ -26464,9 +30697,15 @@
   {
     "id": "7947",
     "name": "SIDE ZIPPER FABRIC SHOULDER BAG IN BLACK",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 나일론 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "BROWN", "GREY"],
+    "colors": [
+      "BLACK",
+      "BROWN",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7947&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/ba6046eababccbdd9c13ef404f4a1acd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/9a19cf0d0fb5672a471f2f170c558334.jpg",
@@ -26485,9 +30724,15 @@
   {
     "id": "7946",
     "name": "SIDE ZIPPER FABRIC SHOULDER BAG IN GREY",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 나일론 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["GREY", "BROWN", "BLACK"],
+    "colors": [
+      "GREY",
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7946&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/bdb964f08b14589e1908df0890dfd21f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/4f8730463a6154f41b63c4b55909436a.jpg",
@@ -26506,9 +30751,15 @@
   {
     "id": "7945",
     "name": "SIDE ZIPPER FABRIC SHOULDER BAG IN BROWN",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 나일론 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BROWN", "GREY", "BLACK"],
+    "colors": [
+      "BROWN",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7945&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/71669fd43be9be073ed218c922be4299.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/a63de357152a65dab39d460c9710ebce.jpg",
@@ -26520,16 +30771,25 @@
       "https://matinkim.com/web/product/extra/small/202508/d23a3291186f39254627b2262ab48182.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7944",
     "name": "SIDE ZIPPER FABRIC TWO WAY BAG IN BLACK",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["BLACK", "KHAKI", "BLUE", "WINE"],
+    "colors": [
+      "BLACK",
+      "KHAKI",
+      "BLUE",
+      "WINE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7944&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/4f15a772b3f804ebbcebefa309eae327.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/a1756001950c6f7ce65e4a900908294b.jpg",
@@ -26548,9 +30808,16 @@
   {
     "id": "7941",
     "name": "SIDE ZIPPER FABRIC TWO WAY BAG IN KHAKI",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["KHAKI", "BLUE", "WINE", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLUE",
+      "WINE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7941&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/6b341a2b580c6c15a7c144cd0c369571.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/30b7fe6e7a69f38bc673d7280db89065.jpg",
@@ -26569,9 +30836,16 @@
   {
     "id": "7943",
     "name": "SIDE ZIPPER FABRIC TWO WAY BAG IN WINE",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["WINE", "KHAKI", "BLUE", "BLACK"],
+    "colors": [
+      "WINE",
+      "KHAKI",
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7943&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/31886bfdb41ca7017343b093c59f5984.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/8e9125cb0ab65131a1d1f4acabf8a6f8.jpg",
@@ -26590,9 +30864,16 @@
   {
     "id": "7942",
     "name": "SIDE ZIPPER FABRIC TWO WAY BAG IN BLUE",
-    "bullet_points": ["사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"],
+    "bullet_points": [
+      "사이드지퍼 디테일이 포인트인 투웨이 나일론 숄더백"
+    ],
     "price": "128,000",
-    "colors": ["BLUE", "KHAKI", "WINE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "KHAKI",
+      "WINE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7942&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/636d5030d2e789ac77861f41c8a5d2c5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/6f90eca3f51821c8b367187c5548e10c.jpg",
@@ -26611,9 +30892,14 @@
   {
     "id": "7940",
     "name": "POCKET UTILITY NYLON BIG SHOULDER BAG IN BLACK",
-    "bullet_points": ["멀티포켓 유틸리티 나일론 숄더백"],
+    "bullet_points": [
+      "멀티포켓 유틸리티 나일론 숄더백"
+    ],
     "price": "138,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7940&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/5580bf7811b76750a8f3d9bd40e4aaa5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/af51aae0437991298ca65b24da58ffd7.jpg",
@@ -26632,9 +30918,14 @@
   {
     "id": "7939",
     "name": "POCKET UTILITY NYLON BIG SHOULDER BAG IN KHAKI",
-    "bullet_points": ["멀티포켓 유틸리티 나일론 숄더백"],
+    "bullet_points": [
+      "멀티포켓 유틸리티 나일론 숄더백"
+    ],
     "price": "138,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7939&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/7646aeb80b3870a45809652286deaacc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/2b54a719b8bb0eeef74a1fe165ef03af.jpg",
@@ -26653,9 +30944,14 @@
   {
     "id": "7938",
     "name": "EMBOSSED LOGO FABRIC SHOULDER BAG IN BLACK",
-    "bullet_points": ["전판 엠보로고 디테일이 포인트인 나일론 숄더백"],
+    "bullet_points": [
+      "전판 엠보로고 디테일이 포인트인 나일론 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7938&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/7346a03df21b868e7293825e99dfd831.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/826dcab442a2becab6eb3b566f7bf4a2.jpg",
@@ -26674,9 +30970,14 @@
   {
     "id": "7937",
     "name": "EMBOSSED LOGO FABRIC SHOULDER BAG IN CHARCOAL",
-    "bullet_points": ["전판 엠보로고 디테일이 포인트인 나일론 숄더백"],
+    "bullet_points": [
+      "전판 엠보로고 디테일이 포인트인 나일론 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7937&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/e11d6d809716cf398afebaba6b56ef68.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/02dbe58800dda91d71d057d15551e1da.jpg",
@@ -26695,9 +30996,15 @@
   {
     "id": "7932",
     "name": "MATIN CRISP BIG ECOBAG IN BLACK",
-    "bullet_points": ["베이직 로고 나일론 크로스백"],
+    "bullet_points": [
+      "베이직 로고 나일론 크로스백"
+    ],
     "price": "78,000",
-    "colors": ["BLACK", "KHAKI", "IVORY"],
+    "colors": [
+      "BLACK",
+      "KHAKI",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7932&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/fb3b38151635b294e1712ef4be85325d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/10ecb51c5b3912a002ac528a4c1509e4.jpg",
@@ -26716,9 +31023,15 @@
   {
     "id": "7931",
     "name": "MATIN CRISP BIG ECOBAG IN IVORY",
-    "bullet_points": ["베이직 로고 나일론 크로스백"],
+    "bullet_points": [
+      "베이직 로고 나일론 크로스백"
+    ],
     "price": "78,000",
-    "colors": ["IVORY", "KHAKI", "BLACK"],
+    "colors": [
+      "IVORY",
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7931&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/9dc7f6dc6f0d8120baeb338601f7f8d2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/a78677f6fa35ba38a9e5f490b9dd2d17.jpg",
@@ -26730,16 +31043,24 @@
       "https://matinkim.com/web/product/extra/small/202508/f968df1fc59321e4e23eb6a1d30c7acf.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7930",
     "name": "MATIN CRISP BIG ECOBAG IN KHAKI",
-    "bullet_points": ["베이직 로고 나일론 크로스백"],
+    "bullet_points": [
+      "베이직 로고 나일론 크로스백"
+    ],
     "price": "78,000",
-    "colors": ["KHAKI", "IVORY", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7930&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/73312db46b0e648a05189a6991d11ee9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/e7adea4b522d17a62423ed154cc661e8.jpg",
@@ -26758,9 +31079,15 @@
   {
     "id": "7976",
     "name": "MATIN CRISP MINI ECOBAG IN BLACK",
-    "bullet_points": ["베이직 로고가 돋보이는 나일론 미니 숄더백"],
+    "bullet_points": [
+      "베이직 로고가 돋보이는 나일론 미니 숄더백"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "BROWN", "RED"],
+    "colors": [
+      "BLACK",
+      "BROWN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7976&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/3307275ffa2bc5f6f9c12cdedac7a4fd.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202507/5a244ca151753a125cea9b7832facf21.jpg",
@@ -26779,9 +31106,15 @@
   {
     "id": "7975",
     "name": "MATIN CRISP MINI ECOBAG IN BROWN",
-    "bullet_points": ["베이직 로고가 돋보이는 나일론 미니 숄더백"],
+    "bullet_points": [
+      "베이직 로고가 돋보이는 나일론 미니 숄더백"
+    ],
     "price": "58,000",
-    "colors": ["BROWN", "BLACK", "RED"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7975&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/87b5de42cf6ba455678f2fac7a3eb706.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202507/04e5beab5ff76512cb08573781666f1a.jpg",
@@ -26800,9 +31133,15 @@
   {
     "id": "7974",
     "name": "MATIN CRISP MINI ECOBAG IN RED",
-    "bullet_points": ["베이직 로고가 돋보이는 나일론 미니 숄더백"],
+    "bullet_points": [
+      "베이직 로고가 돋보이는 나일론 미니 숄더백"
+    ],
     "price": "58,000",
-    "colors": ["RED", "BLACK", "BROWN"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7974&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/3e8cd9843c11a680e622048845552005.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202507/9ea0bc99f4085c90b6b6c6ca4b9423f9.jpg",
@@ -26821,9 +31160,14 @@
   {
     "id": "8018",
     "name": "MATIN LOGO CANVAS WIDE SHOULDER BAG IN IVORY",
-    "bullet_points": ["베이직 로고 캔버스 숄더백"],
+    "bullet_points": [
+      "베이직 로고 캔버스 숄더백"
+    ],
     "price": "58,000",
-    "colors": ["IVORY", "CHARCOAL"],
+    "colors": [
+      "IVORY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8018&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/c68f775b69ddb4fac21f23d3b3dee057.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/cc7ee1ca6ee126766028d3815670a083.jpg",
@@ -26835,16 +31179,23 @@
       "https://matinkim.com/web/product/extra/small/202508/622ad03639864d1b12a812fbea99ca82.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "8017",
     "name": "MATIN LOGO CANVAS WIDE SHOULDER BAG IN CHARCOAL",
-    "bullet_points": ["베이직 로고 캔버스 숄더백"],
+    "bullet_points": [
+      "베이직 로고 캔버스 숄더백"
+    ],
     "price": "58,000",
-    "colors": ["CHARCOAL", "IVORY"],
+    "colors": [
+      "CHARCOAL",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8017&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/50d6c7815991dccf1f334623a2d91684.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/5b715fad69734be347611da1052ea6ee.jpg",
@@ -26867,7 +31218,10 @@
       "상단 포켓을 뒤집어 간편하게 휴대 가능한 패커플 경량 백팩"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7929&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/ff00b98aa0d517acf3f0bf45f87ebd81.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/bfb4a2bdfeda47809a89c9c18721028d.jpg",
@@ -26890,7 +31244,10 @@
       "상단 포켓을 뒤집어 간편하게 휴대 가능한 패커플 경량 백팩"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7928&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/4dd026f3ee3d6ec18e7a29908289beb4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/27e002acbe72790845c425087f71bdb2.jpg",
@@ -26909,9 +31266,16 @@
   {
     "id": "7936",
     "name": "FABRIC ARC HOBO BAG IN BLACK",
-    "bullet_points": ["나일론 미니 호보백"],
+    "bullet_points": [
+      "나일론 미니 호보백"
+    ],
     "price": "128,000",
-    "colors": ["BLACK", "LIGHT GREY", "LIGHT PINK", "SMOKE BLUE"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY",
+      "LIGHT PINK",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7936&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/e4ab28ca2ea7906060113923b58f7def.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/fa6f751b2c69ff79a53d12a7e4e1cb79.jpg",
@@ -26931,9 +31295,16 @@
   {
     "id": "7935",
     "name": "FABRIC ARC HOBO BAG IN LIGHT GREY",
-    "bullet_points": ["나일론 미니 호보백"],
+    "bullet_points": [
+      "나일론 미니 호보백"
+    ],
     "price": "128,000",
-    "colors": ["LIGHT GREY", "BLACK", "LIGHT PINK", "SMOKE BLUE"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK",
+      "LIGHT PINK",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7935&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/a12d86ce718bc71cdf26b60e4e919b63.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/3e9a6b2dcf6b0eaafad0643ce5e2f10c.jpg",
@@ -26953,9 +31324,16 @@
   {
     "id": "7933",
     "name": "FABRIC ARC HOBO BAG IN SMOKE BLUE",
-    "bullet_points": ["나일론 미니 호보백"],
+    "bullet_points": [
+      "나일론 미니 호보백"
+    ],
     "price": "128,000",
-    "colors": ["SMOKE BLUE", "BLACK", "LIGHT GREY", "LIGHT PINK"],
+    "colors": [
+      "SMOKE BLUE",
+      "BLACK",
+      "LIGHT GREY",
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7933&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/cc9d9a3ff45d23f3124b90c3a6f2fad8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/63284e572628f94e9ce091c5ee90228a.jpg",
@@ -26975,9 +31353,16 @@
   {
     "id": "7934",
     "name": "FABRIC ARC HOBO BAG IN LIGHT PINK",
-    "bullet_points": ["나일론 미니 호보백"],
+    "bullet_points": [
+      "나일론 미니 호보백"
+    ],
     "price": "128,000",
-    "colors": ["LIGHT PINK", "BLACK", "LIGHT GREY", "SMOKE BLUE"],
+    "colors": [
+      "LIGHT PINK",
+      "BLACK",
+      "LIGHT GREY",
+      "SMOKE BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7934&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/16aa64037fae5428a4ecf371e4a2b5f9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/d3fceece0f67e585fd1ae70e64f5d359.jpg",
@@ -26997,9 +31382,15 @@
   {
     "id": "6844",
     "name": "MATIN LEOPARD ECOBAG IN MIX",
-    "bullet_points": ["레오파드 패턴이 돋보이는 이지한 에코백"],
+    "bullet_points": [
+      "레오파드 패턴이 돋보이는 이지한 에코백"
+    ],
     "price": "48,000",
-    "colors": ["MIX", "PINK", "BROWN"],
+    "colors": [
+      "MIX",
+      "PINK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6844&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202412/f553244e0bf29581b7bb4d9e92d91ce6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202412/63d86cc8fa564fb6a85f95a8d2288da5.jpg",
@@ -27009,16 +31400,24 @@
       "https://matinkim.com/web/product/extra/small/202412/48eafa311c930ef7e0cb82e25a4ba905.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7919",
     "name": "MATIN LEOPARD ECOBAG IN PINK",
-    "bullet_points": ["레오파드 패턴이 돋보이는 이지한 에코백"],
+    "bullet_points": [
+      "레오파드 패턴이 돋보이는 이지한 에코백"
+    ],
     "price": "48,000",
-    "colors": ["PINK", "BROWN", "MIX"],
+    "colors": [
+      "PINK",
+      "BROWN",
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7919&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/29402a12223640a767336e299873f490.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202507/fe41258d1729fdc0e82c023b33842804.jpg",
@@ -27036,9 +31435,15 @@
   {
     "id": "7918",
     "name": "MATIN LEOPARD ECOBAG IN BROWN",
-    "bullet_points": ["레오파드 패턴이 돋보이는 이지한 에코백"],
+    "bullet_points": [
+      "레오파드 패턴이 돋보이는 이지한 에코백"
+    ],
     "price": "48,000",
-    "colors": ["BROWN", "PINK", "MIX"],
+    "colors": [
+      "BROWN",
+      "PINK",
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7918&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/8bb671f97d527f7574f798f91f7bf7fe.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202507/f57b8d1a8aeaa9927e0cb2e3baa7e4f8.jpg",
@@ -27056,9 +31461,14 @@
   {
     "id": "7496",
     "name": "MATIN WASHED DENIM SQUARE BAG IN BLACK",
-    "bullet_points": ["빈티지한 워싱감이 돋보이는 데님 스퀘어 숄더백"],
+    "bullet_points": [
+      "빈티지한 워싱감이 돋보이는 데님 스퀘어 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7496&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/e1b0b9a81892f0e849e886a83b5c6a99.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/a2b00f235ccb25f7ea3a5de7f016e48b.jpg",
@@ -27070,16 +31480,23 @@
       "https://matinkim.com/web/product/extra/small/202504/185aec04255f5927a889502bdb7b8b8a.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7495",
     "name": "MATIN WASHED DENIM SQUARE BAG IN LIGHT BLUE",
-    "bullet_points": ["빈티지한 워싱감이 돋보이는 데님 스퀘어 숄더백"],
+    "bullet_points": [
+      "빈티지한 워싱감이 돋보이는 데님 스퀘어 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["LIGHT BLUE", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7495&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/ac16053a8ef0ce8c3d87d4e1058e0f08.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/5a8fde8727a01933bb0645e5dd3c9f70.jpg",
@@ -27091,16 +31508,23 @@
       "https://matinkim.com/web/product/extra/small/202504/efa9cff0e7baaf8fecfd0f33cdf4fb2a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7494",
     "name": "MATIN WASHED DENIM MINI HOBO BAG IN BLACK",
-    "bullet_points": ["빈티지한 워싱감이 돋보이는 데님 미니 호보백"],
+    "bullet_points": [
+      "빈티지한 워싱감이 돋보이는 데님 미니 호보백"
+    ],
     "price": "138,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7494&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/cee48ac89f6346ceecff795e8a996fb5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/ea77a82e27691300b25f56503633581e.jpg",
@@ -27119,9 +31543,14 @@
   {
     "id": "7493",
     "name": "MATIN WASHED DENIM MINI HOBO BAG IN BLUE",
-    "bullet_points": ["빈티지한 워싱감이 돋보이는 데님 미니 호보백"],
+    "bullet_points": [
+      "빈티지한 워싱감이 돋보이는 데님 미니 호보백"
+    ],
     "price": "138,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7493&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/f041a2231c40cef4a0c4a74339b4be95.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/2f29292495a2e46fe8cf310cd0520de3.jpg",
@@ -27133,16 +31562,24 @@
       "https://matinkim.com/web/product/extra/small/202504/79d86882c49aed89422b85e6adcb1a09.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7903",
     "name": "MATIN CANVAS MINI TOTE BAG IN BLACK",
-    "bullet_points": ["앞판의 로고 프린팅이 포인트인 캔버스 미니 토트백"],
+    "bullet_points": [
+      "앞판의 로고 프린팅이 포인트인 캔버스 미니 토트백"
+    ],
     "price": "38,000",
-    "colors": ["BLACK", "PINK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "PINK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7903&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202506/8c166a705e21f31a366ebaac3ab73db5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202506/cbb9bf48b47e54cbc38680c7d9bbaa5e.jpg",
@@ -27153,16 +31590,24 @@
       "https://matinkim.com/web/product/extra/small/202506/fd7624d0d8bd3350f9f60d0c92bbb09c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7902",
     "name": "MATIN CANVAS MINI TOTE BAG IN IVORY",
-    "bullet_points": ["앞판의 로고 프린팅이 포인트인 캔버스 미니 토트백"],
+    "bullet_points": [
+      "앞판의 로고 프린팅이 포인트인 캔버스 미니 토트백"
+    ],
     "price": "38,000",
-    "colors": ["IVORY", "BLACK", "PINK"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7902&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202506/18af3fc8e2dc33b378883e1129ec56f8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202506/e707639a26c9214a66cceb69f9479d36.jpg",
@@ -27173,16 +31618,24 @@
       "https://matinkim.com/web/product/extra/small/202506/cb2f9bcb81fbde9d6a755d04e32eed4a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7901",
     "name": "MATIN CANVAS MINI TOTE BAG IN PINK",
-    "bullet_points": ["앞판의 로고 프린팅이 포인트인 캔버스 미니 토트백"],
+    "bullet_points": [
+      "앞판의 로고 프린팅이 포인트인 캔버스 미니 토트백"
+    ],
     "price": "38,000",
-    "colors": ["PINK", "IVORY", "BLACK"],
+    "colors": [
+      "PINK",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7901&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202506/ce8fdf32d9ed8c800318fd1e51289b2a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202506/5ceb8e5d9b974354880d611e7e6ac208.jpg",
@@ -27193,7 +31646,9 @@
       "https://matinkim.com/web/product/extra/small/202506/d7e2fc4598f5c3c0149f1cb8341dc493.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -27204,7 +31659,10 @@
       "앞판의 로고 프린팅과 각인 스냅이 포인트인 캔버스 숄더 에코백"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "LIGHT BEIGE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7906&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/75379653d1b29487f82d3db97250187d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/ca7c579e62a83f3d64bc004958eb2135.jpg",
@@ -27226,7 +31684,10 @@
       "앞판의 로고 프린팅과 각인 스냅이 포인트인 캔버스 숄더 에코백"
     ],
     "price": "48,000",
-    "colors": ["LIGHT BEIGE", "BLACK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7905&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/ad0d2aebf416fd509296b3d26de75225.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/504e2b9829ef639015e39c035a3f543c.jpg",
@@ -27244,9 +31705,16 @@
   {
     "id": "7872",
     "name": "ORGANZA MINI CROSS BAG IN BLACK",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"
+    ],
     "price": "38,000",
-    "colors": ["BLACK", "LIGHT YELLOW", "MINT", "LIGHT PINK"],
+    "colors": [
+      "BLACK",
+      "LIGHT YELLOW",
+      "MINT",
+      "LIGHT PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7872&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/c2f83fcb14429429f011a936c13925a6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/de0e5a4d58862a353e53c75b7a824b4a.jpg",
@@ -27257,16 +31725,22 @@
       "https://matinkim.com/web/product/extra/small/202505/3fdb02f06835e17e4cac006cf727caa3.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7871",
     "name": "ORGANZA MINI CROSS BAG IN LIGHT YELLOW",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"
+    ],
     "price": "38,000",
-    "colors": ["LIGHT YELLOW"],
+    "colors": [
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7871&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/984c297f436d25e5c3952bcc0a34b8f7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/a65b4d0353cf1a1d488e6365e650690f.jpg",
@@ -27277,16 +31751,25 @@
       "https://matinkim.com/web/product/extra/small/202505/ccb56c99e23283f04bbeeab4bdc50aaf.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7870",
     "name": "ORGANZA MINI CROSS BAG IN LIGHT PINK",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"
+    ],
     "price": "38,000",
-    "colors": ["LIGHT PINK", "MINT", "BLACK", "LIGHT YELLOW"],
+    "colors": [
+      "LIGHT PINK",
+      "MINT",
+      "BLACK",
+      "LIGHT YELLOW"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7870&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/6eaa6499962c440314fe207acf925ae3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/b48de3dc184c1473312bbaede451b999.jpg",
@@ -27297,16 +31780,22 @@
       "https://matinkim.com/web/product/extra/small/202505/ee478f8108ad3b1f52250bcd771cbce4.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7869",
     "name": "ORGANZA MINI CROSS BAG IN MINT",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 미니 크로스백"
+    ],
     "price": "38,000",
-    "colors": ["MINT"],
+    "colors": [
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7869&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/f9c22a746b6a940ccca0e12c0eff802d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/9aea466672d46ced32f5bdb00074a0dd.jpg",
@@ -27324,9 +31813,14 @@
   {
     "id": "7868",
     "name": "ORGANZA ECOBAG IN BLACK",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 에코백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 에코백"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7868&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/3af1418c58c74d01dce899f62951c641.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/7a18a66ec6cc0574be95c416227af43f.jpg",
@@ -27344,9 +31838,15 @@
   {
     "id": "7867",
     "name": "ORGANZA ECOBAG IN GREY",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 에코백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 에코백"
+    ],
     "price": "68,000",
-    "colors": ["GREY", "BLACK", "BLUE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7867&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/24a0f5f0ebcd0bdef67e74c83064c08f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/c6d7a684d82c477552f7bd437ceef8a8.jpg",
@@ -27357,16 +31857,23 @@
       "https://matinkim.com/web/product/extra/small/202505/8c224f34f690bb1c2573a69a617a05be.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7866",
     "name": "ORGANZA ECOBAG IN BLUE",
-    "bullet_points": ["마뗑킴 타이포 자수 디자인이 포인트인 에코백"],
+    "bullet_points": [
+      "마뗑킴 타이포 자수 디자인이 포인트인 에코백"
+    ],
     "price": "68,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7866&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/785112dc96770465d8733843e7bfe00f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/0d2d431c5458a8c9404e4dc8cfd2b7ee.jpg",
@@ -27384,9 +31891,15 @@
   {
     "id": "7725",
     "name": "ONE POCKET MESH MINI BAG IN BLACK",
-    "bullet_points": ["메쉬 나일론 배색의 여름용 스트링백"],
+    "bullet_points": [
+      "메쉬 나일론 배색의 여름용 스트링백"
+    ],
     "price": "88,000",
-    "colors": ["BLACK", "GREY", "PINK"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7725&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/6403279eeca88e95d4ad7ff64cbc736b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/8c30e02aa29c1509afaf4e0b552c898d.jpg",
@@ -27401,16 +31914,24 @@
       "https://matinkim.com/web/product/extra/small/202505/7f1ea2999fb4bf6eb5e89e2c88d1962c.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7724",
     "name": "ONE POCKET MESH MINI BAG IN GREY",
-    "bullet_points": ["메쉬 나일론 배색의 여름용 스트링백"],
+    "bullet_points": [
+      "메쉬 나일론 배색의 여름용 스트링백"
+    ],
     "price": "88,000",
-    "colors": ["GREY", "PINK", "BLACK"],
+    "colors": [
+      "GREY",
+      "PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7724&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/418be45635fe9c264fb2523a635ec5b7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/fedc3022733f7fd434b8bed4cbd23002.jpg",
@@ -27430,9 +31951,15 @@
   {
     "id": "7723",
     "name": "ONE POCKET MESH MINI BAG IN PINK",
-    "bullet_points": ["메쉬 나일론 배색의 여름용 스트링백"],
+    "bullet_points": [
+      "메쉬 나일론 배색의 여름용 스트링백"
+    ],
     "price": "88,000",
-    "colors": ["PINK", "BLACK", "GREY"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7723&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/bf66b60dd98f81d8b5ca2b492354ed17.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/bb9acb69ea73059c812b1a3bc6c84930.jpg",
@@ -27452,9 +31979,14 @@
   {
     "id": "7722",
     "name": "ONE POCKET MESH BACK PACK IN BLACK",
-    "bullet_points": ["메쉬 나일론 배색의 여름용 백팩"],
+    "bullet_points": [
+      "메쉬 나일론 배색의 여름용 백팩"
+    ],
     "price": "138,000",
-    "colors": ["BLACK", "DARK BROWN"],
+    "colors": [
+      "BLACK",
+      "DARK BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7722&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/5d2e39e846a86a55e95ad46963a06da7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/736c9e7770548f9d4a096cc9c4b96800.jpg",
@@ -27475,9 +32007,13 @@
   {
     "id": "7721",
     "name": "ONE POCKET MESH BACK PACK IN DARK BEIGE",
-    "bullet_points": ["메쉬 나일론 배색의 여름용 백팩"],
+    "bullet_points": [
+      "메쉬 나일론 배색의 여름용 백팩"
+    ],
     "price": "138,000",
-    "colors": ["DARK BEIGE"],
+    "colors": [
+      "DARK BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7721&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/9165e6e7f38626edf76ccbb632a7d1b3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/9309efbf4d180238401bb70a8caba74f.jpg",
@@ -27501,7 +32037,10 @@
       "글로시한 나일론 소재와 앞주머니에 메쉬 원단을 사용한 스트링 백팩"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7720&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/83605cd9a4055006d4a8a3dabc20f606.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/af354747256e392118e5d1a96d6c0f83.jpg",
@@ -27523,7 +32062,10 @@
       "글로시한 나일론 소재와 앞주머니에 메쉬 원단을 사용한 스트링 백팩"
     ],
     "price": "158,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7719&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202505/7d561812251da86168b4df545f386cd7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202505/544b50316aff1659cb27d0b931261f8b.jpg",
@@ -27546,7 +32088,9 @@
       "바이커 장식 디자인이 특징인 직사각형 쉐입의 볼링백 스타일의 숄더백"
     ],
     "price": "148,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7028&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202501/ffd6b4cea60c882fa4c7fccbf2bb89d7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202501/5d58f1d8e4e64c6a4739041bdceda74c.jpg",
@@ -27565,9 +32109,14 @@
   {
     "id": "7503",
     "name": "BIKER DETAIL MEDIUM SHOULDER BAG IN BLACK",
-    "bullet_points": ["양 옆 스트랩과 금속부 로고 장식이 포인트인 숄더백"],
+    "bullet_points": [
+      "양 옆 스트랩과 금속부 로고 장식이 포인트인 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "CHARCOAL"],
+    "colors": [
+      "BLACK",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7503&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/ec09034cbc10512621173718dd9306c4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/ad2f17136dcfd06f519303f633b8c1b7.jpg",
@@ -27586,9 +32135,14 @@
   {
     "id": "7505",
     "name": "BIKER DETAIL MEDIUM SHOULDER BAG IN CHARCOAL",
-    "bullet_points": ["양 옆 스트랩과 금속부 로고 장식이 포인트인 숄더백"],
+    "bullet_points": [
+      "양 옆 스트랩과 금속부 로고 장식이 포인트인 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["CHARCOAL", "BLACK"],
+    "colors": [
+      "CHARCOAL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7505&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202506/e1a5eeed5309edb9810c600a07b20b8b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202506/3b082d5f1087e0299740d7e3e539a72a.jpg",
@@ -27600,16 +32154,25 @@
       "https://matinkim.com/web/product/extra/small/202506/d33426a6d349e3ad86879fa65a307dbe.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "7392",
     "name": "DOUBLE ZIPPER MINI CROSS BAG IN BLACK",
-    "bullet_points": ["더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"],
+    "bullet_points": [
+      "더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "WHITE", "SILVER", "RED"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "SILVER",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7392&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/7fc7419ecab0c8c1431f81752bd4b9b4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/c6e2a960c7888d5369b636657ffdce20.jpg",
@@ -27628,9 +32191,16 @@
   {
     "id": "7427",
     "name": "DOUBLE ZIPPER MINI CROSS BAG IN RED",
-    "bullet_points": ["더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"],
+    "bullet_points": [
+      "더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"
+    ],
     "price": "148,000",
-    "colors": ["RED", "BLACK", "WHITE", "SILVER"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "WHITE",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7427&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/c82d218fe9445bd039ecd47888b65831.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/a940c8b19b66353666a7c56acb195b54.jpg",
@@ -27649,9 +32219,16 @@
   {
     "id": "7428",
     "name": "DOUBLE ZIPPER MINI CROSS BAG IN SILVER",
-    "bullet_points": ["더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"],
+    "bullet_points": [
+      "더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"
+    ],
     "price": "148,000",
-    "colors": ["SILVER", "BLACK", "WHITE", "RED"],
+    "colors": [
+      "SILVER",
+      "BLACK",
+      "WHITE",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7428&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/9f9f0fae9e42a16985672e1662a90d93.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/4f317f3c552203a2e6caad6f38ee17ac.jpg",
@@ -27670,9 +32247,16 @@
   {
     "id": "7429",
     "name": "DOUBLE ZIPPER MINI CROSS BAG IN WHITE",
-    "bullet_points": ["더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"],
+    "bullet_points": [
+      "더블 지퍼와 단단한 핸들로 다양한 연출이 가능한 미니백"
+    ],
     "price": "148,000",
-    "colors": ["WHITE", "BLACK", "SILVER", "RED"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "SILVER",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7429&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/be651c2b6479cccb3effb6f6e781253d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/504052546106df2ac8af5cdc029d1a00.jpg",
@@ -27684,7 +32268,9 @@
       "https://matinkim.com/web/product/extra/small/202504/eeb0aec29f5218f989ab47d63583a297.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -27695,7 +32281,9 @@
       "MATIN KIM 금속 장식이 포인트인 코팅 나일론 소재의 다양하게 연출 가능한 빅백"
     ],
     "price": "138,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7315&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202503/2c6ce462b95a5800641bb3324c59bc3b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202503/64ba0bbdbe4aa9e5fd7d05539d639fb4.jpg",
@@ -27718,7 +32306,11 @@
       "MATIN KIM 금속 장식이 포인트인 코팅 나일론 소재의 다양하게 연출 가능한 빅백"
     ],
     "price": "138,000",
-    "colors": ["IVORY", "BLACK", "MINT"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7314&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202503/b5a5aab3140e985fea8158f399db7423.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202503/b9b9303931675cd699df8a8363be1f54.jpg",
@@ -27741,7 +32333,11 @@
       "MATIN KIM 금속 장식이 포인트인 코팅 나일론 소재의 다양하게 연출 가능한 빅백"
     ],
     "price": "138,000",
-    "colors": ["MINT", "BLACK", "IVORY"],
+    "colors": [
+      "MINT",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7313&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202503/edb2266bb97105f23d21f98649e57719.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202503/cc7f9f7da437765c3a58eec6e56bbd14.jpg",
@@ -27764,7 +32360,9 @@
       "사이드 지퍼라인과 MATIN KIM 금속 장식이 포인트인 숄더백"
     ],
     "price": "168,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7210&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202502/67c3cd95571a9f53693e3b0c15503906.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202502/2a95d3420ac1d8cc4560cc82a46294db.jpg",
@@ -27783,9 +32381,14 @@
   {
     "id": "7087",
     "name": "BELTED SHOULDER BAG IN BLACK",
-    "bullet_points": ["스트랩 조절로 다양한 연출이 가능한 버클 숄더백"],
+    "bullet_points": [
+      "스트랩 조절로 다양한 연출이 가능한 버클 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7087&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202502/6b4086b1661e8273089cd9fbd6b976ad.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202502/2a520d380b72a6fd4a6a7d290ceafab7.jpg",
@@ -27804,9 +32407,14 @@
   {
     "id": "7086",
     "name": "BELTED SHOULDER BAG IN BROWN",
-    "bullet_points": ["스트랩 조절로 다양한 연출이 가능한 버클 숄더백"],
+    "bullet_points": [
+      "스트랩 조절로 다양한 연출이 가능한 버클 숄더백"
+    ],
     "price": "158,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7086&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202502/ffc086f2dee095b34b475051905e8a42.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202502/442ed18399e6769cbca1fa3b14efc68a.jpg",
@@ -27825,9 +32433,14 @@
   {
     "id": "6902",
     "name": "DRAW STRING RIBBON BACK PACK IN BLACK",
-    "bullet_points": ["전면 마뗑킴 메탈 장식이 포인트인 셔링 리본 레더 백팩"],
+    "bullet_points": [
+      "전면 마뗑킴 메탈 장식이 포인트인 셔링 리본 레더 백팩"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6902&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202411/2401b88cf1a69f9a4064959ef5e0722c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202411/c0d0aaf0a14db45942ce165d6f5a931a.jpg",
@@ -27851,7 +32464,10 @@
       "미니멀한 쉐잎의 레더백으로 스트랩이 양쪽으로 늘어진 디자인이 돋보이는 미니 크로스백"
     ],
     "price": "118,000",
-    "colors": ["BLACK", "PINK"],
+    "colors": [
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6605&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202410/15e0c9c94535cdcba43cc24713d47427.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202410/fe253aeecbebfe6be683d2f2417d4fc6.jpg",
@@ -27893,9 +32509,17 @@
   {
     "id": "4980",
     "name": "HALF SHIRRING RIBBON ROUND BAG IN BLACK",
-    "bullet_points": ["양쪽 끈의 셔링과 리본이 포인트인 라운드백"],
+    "bullet_points": [
+      "양쪽 끈의 셔링과 리본이 포인트인 라운드백"
+    ],
     "price": "138,000",
-    "colors": ["BLACK", "IVORY", "DARK BROWN", "LIGHT PINK", "SKY"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "DARK BROWN",
+      "LIGHT PINK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4980&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/b76b763c23de7461ba825fe7d01ba877.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/0d7bd86d4942e4cb580791ca650f85c6.jpg",
@@ -27916,9 +32540,17 @@
   {
     "id": "4979",
     "name": "HALF SHIRRING RIBBON ROUND BAG IN IVORY",
-    "bullet_points": ["양쪽 끈의 셔링과 리본이 포인트인 라운드백"],
+    "bullet_points": [
+      "양쪽 끈의 셔링과 리본이 포인트인 라운드백"
+    ],
     "price": "138,000",
-    "colors": ["IVORY", "BLACK", "DARK BROWN", "LIGHT PINK", "SKY"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "DARK BROWN",
+      "LIGHT PINK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4979&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/167393bbeca704e2f6d1cacf5d300a4b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/ea06b4afa8e343c8f0fd1a1caec9b565.jpg",
@@ -27939,9 +32571,17 @@
   {
     "id": "7977",
     "name": "HALF SHIRRING RIBBON ROUND BAG IN DARK BROWN",
-    "bullet_points": ["양쪽 끈의 셔링과 리본이 포인트인 라운드백"],
+    "bullet_points": [
+      "양쪽 끈의 셔링과 리본이 포인트인 라운드백"
+    ],
     "price": "138,000",
-    "colors": ["DARK BROWN", "BLACK", "IVORY", "LIGHT PINK", "SKY"],
+    "colors": [
+      "DARK BROWN",
+      "BLACK",
+      "IVORY",
+      "LIGHT PINK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7977&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202507/3abdb3701fed83a52f56f6e3524f63d5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202507/674984b71fd8c9ebd245ccacb1dccde7.jpg",
@@ -27965,7 +32605,11 @@
       "MATIN KIM 시그니처 메탈 로고가 포인트인 마들렌 라운드백"
     ],
     "price": "158,000",
-    "colors": ["BLACK", "LIGHT BEIGE", "PINK"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4626&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202309/ac0630b7091858f0021c684b88515739.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202309/b1207f8d8c5c8612042cbbf109139a5c.jpg",
@@ -27990,7 +32634,10 @@
       "MATIN KIM 시그니처 메탈 로고가 포인트인 마들렌 라운드백"
     ],
     "price": "158,000",
-    "colors": ["LIGHT BEIGE", "PINK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4627&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202309/7b5c57364378e465f7b8e07e8528b086.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202309/c8d7d1fcbcb9369fcc0f11f14ed04c6a.jpg",
@@ -28012,7 +32659,10 @@
       "MATIN KIM 시그니처 메탈 로고가 포인트인 마들렌 라운드백"
     ],
     "price": "158,000",
-    "colors": ["PINK", "LIGHT BEIGE"],
+    "colors": [
+      "PINK",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4629&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202309/efb90da37fe1118e3d5578caeb753107.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202309/cfa310e123fcee805e3027c1fa63209a.jpg",
@@ -28037,7 +32687,14 @@
       "어깨 끈 탈부착이 가능한 가볍고 활용성이 뛰어난 나일론 소재의 미니 토트백"
     ],
     "price": "138,000",
-    "colors": ["BLACK", "CREAM", "PEACH", "LIGHT PINK", "LIGHT GREY", "IVORY"],
+    "colors": [
+      "BLACK",
+      "CREAM",
+      "PEACH",
+      "LIGHT PINK",
+      "LIGHT GREY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=2760&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202205/221d4b0d3207f2f16c211972b404271f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202303/ae2dc0273f5d0664bbfb4890f188ca23.jpg",
@@ -28052,7 +32709,9 @@
       "https://matinkim.com/web/product/extra/small/202205/12717e38db2a1ad5cb84199e7d3a809c.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
@@ -28063,7 +32722,14 @@
       "어깨 끈 탈부착이 가능한 가볍고 활용성이 뛰어난 나일론 소재의 미니 토트백"
     ],
     "price": "138,000",
-    "colors": ["IVORY", "CREAM", "PEACH", "LIGHT PINK", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "CREAM",
+      "PEACH",
+      "LIGHT PINK",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3035&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202208/7e1fe6bb575eafb0c1b1121172b2cd44.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202208/6da71b1828ccb59e39f0dbfe9852bc48.jpg",
@@ -28085,7 +32751,14 @@
       "어깨 끈 탈부착이 가능한 가볍고 활용성이 뛰어난 나일론 소재의 미니 토트백"
     ],
     "price": "138,000",
-    "colors": ["LIGHT GREY", "CREAM", "PEACH", "LIGHT PINK", "IVORY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "CREAM",
+      "PEACH",
+      "LIGHT PINK",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4060&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202404/46855ef910714083d8facb6ccb1b7de7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202306/5e34daccfda3129678018d887ea35dd8.jpg",
@@ -28107,7 +32780,14 @@
       "어깨 끈 탈부착이 가능한 가볍고 활용성이 뛰어난 나일론 소재의 미니 토트백"
     ],
     "price": "138,000",
-    "colors": ["CREAM", "PEACH", "LIGHT PINK", "LIGHT GREY", "IVORY", "BLACK"],
+    "colors": [
+      "CREAM",
+      "PEACH",
+      "LIGHT PINK",
+      "LIGHT GREY",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5658&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202406/518997c4d2dd5ede517b34d8c5f46a94.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202406/4541ac5b1f79b8f1c42493cf9a06a1b7.jpg",
@@ -28130,7 +32810,14 @@
       "어깨 끈 탈부착이 가능한 가볍고 활용성이 뛰어난 나일론 소재의 미니 토트백"
     ],
     "price": "138,000",
-    "colors": ["PEACH", "CREAM", "LIGHT PINK", "LIGHT GREY", "IVORY", "BLACK"],
+    "colors": [
+      "PEACH",
+      "CREAM",
+      "LIGHT PINK",
+      "LIGHT GREY",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5657&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202406/49a75d94f7a57e74765bab3211784faf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202406/b66d83f8eb4e902266d1fc36a15eac2f.jpg",
@@ -28153,7 +32840,14 @@
       "어깨 끈 탈부착이 가능한 가볍고 활용성이 뛰어난 나일론 소재의 미니 토트백"
     ],
     "price": "138,000",
-    "colors": ["LIGHT PINK", "CREAM", "PEACH", "LIGHT GREY", "IVORY", "BLACK"],
+    "colors": [
+      "LIGHT PINK",
+      "CREAM",
+      "PEACH",
+      "LIGHT GREY",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5656&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202406/fea491b59e480ee1107dcf840bf31d34.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202406/73e8b8ee5c5ad2f1a40c33e9d7c37bc4.jpg",
@@ -28172,9 +32866,17 @@
   {
     "id": "2373",
     "name": "SPORTY TOTE BAG IN BLACK",
-    "bullet_points": ["가볍고 활용성이 뛰어난 나일론 소재의 숄더백"],
+    "bullet_points": [
+      "가볍고 활용성이 뛰어난 나일론 소재의 숄더백"
+    ],
     "price": "145,000",
-    "colors": ["BLACK", "GREEN", "LIGHT GREY", "CREAM", "IVORY"],
+    "colors": [
+      "BLACK",
+      "GREEN",
+      "LIGHT GREY",
+      "CREAM",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=2373&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202209/93532851da220ce3bb2db45b2491245e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202209/4b95ffa913cdc88cbbe1f2c8e49db49f.jpg",
@@ -28192,9 +32894,17 @@
   {
     "id": "7907",
     "name": "SPORTY TOTE BAG IN IVORY",
-    "bullet_points": ["가볍고 활용성이 뛰어난 나일론 소재의 숄더백"],
+    "bullet_points": [
+      "가볍고 활용성이 뛰어난 나일론 소재의 숄더백"
+    ],
     "price": "145,000",
-    "colors": ["IVORY", "BLACK", "GREEN", "LIGHT GREY", "CREAM"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "GREEN",
+      "LIGHT GREY",
+      "CREAM"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7907&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202506/2ee11d14f1872211ccc5db76ffbbaffa.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202506/8085b4544da68bcd92c7f7af122264c7.jpg",
@@ -28213,9 +32923,17 @@
   {
     "id": "4068",
     "name": "SPORTY TOTE BAG IN LIGHT GREY",
-    "bullet_points": ["가볍고 활용성이 뛰어난 나일론 소재의 숄더백"],
+    "bullet_points": [
+      "가볍고 활용성이 뛰어난 나일론 소재의 숄더백"
+    ],
     "price": "145,000",
-    "colors": ["LIGHT GREY", "BLACK", "GREEN", "CREAM", "IVORY"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK",
+      "GREEN",
+      "CREAM",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4068&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202404/3b248da6a43ff5ddaf9f4adfc7f6d050.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202403/c024b348e54307be9fda46d9a9cdabfb.jpg",
@@ -28233,9 +32951,17 @@
   {
     "id": "2377",
     "name": "SPORTY TOTE BAG IN GREEN",
-    "bullet_points": ["가볍고 활용성이 뛰어난 나일론 소재의 숄더백"],
+    "bullet_points": [
+      "가볍고 활용성이 뛰어난 나일론 소재의 숄더백"
+    ],
     "price": "145,000",
-    "colors": ["GREEN", "BLACK", "LIGHT GREY", "CREAM", "IVORY"],
+    "colors": [
+      "GREEN",
+      "BLACK",
+      "LIGHT GREY",
+      "CREAM",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=2377&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202209/5cceb329441bc4af0ff1b91a6e484cd2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202209/2fd9c3ba2d32f56a215ffc62d7584e0e.jpg",
@@ -28246,16 +32972,26 @@
       "https://matinkim.com/web/product/extra/small/202209/ed5b85f09e4892e67769eab6a4ebcc9a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Bags"
   },
   {
     "id": "5654",
     "name": "SPORTY TOTE BAG IN CREAM",
-    "bullet_points": ["가볍고 활용성이 뛰어난 나일론 소재의 숄더백"],
+    "bullet_points": [
+      "가볍고 활용성이 뛰어난 나일론 소재의 숄더백"
+    ],
     "price": "145,000",
-    "colors": ["CREAM", "BLACK", "GREEN", "LIGHT GREY", "IVORY"],
+    "colors": [
+      "CREAM",
+      "BLACK",
+      "GREEN",
+      "LIGHT GREY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5654&cate_no=70&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202406/48f37729f5bc39a8d8e4b4a672c12f21.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202406/159f787cad76e9ac63eb6473fe2ac9d7.jpg",
@@ -28278,7 +33014,10 @@
       "스포티한 실루엣에 여성스러운 메리제인 디테일을 더한 스니커즈"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "RED"],
+    "colors": [
+      "BLACK",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8944&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/0c0933def73475d59c5b07d0b9c33b11.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/450bb407b7ff4821b8705d6e707ceac4.jpg",
@@ -28302,7 +33041,10 @@
       "스포티한 실루엣에 여성스러운 메리제인 디테일을 더한 스니커즈"
     ],
     "price": "168,000",
-    "colors": ["RED", "BLACK"],
+    "colors": [
+      "RED",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8943&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/1cdc7df401e0afa01cea3075e27ca5cc.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3e27ef943af90ad86ac0eacc24011ef2.jpg",
@@ -28315,16 +33057,23 @@
       "https://matinkim.com/web/product/extra/small/202602/87dc965ad0543cb70f79ac181a679ddf.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Shoes"
   },
   {
     "id": "8635",
     "name": "CHUNKY MUSTANG BLOAFER IN BLACK",
-    "bullet_points": ["무스탕 인조퍼가 사용된 윈터 퍼 뮬 슈즈"],
+    "bullet_points": [
+      "무스탕 인조퍼가 사용된 윈터 퍼 뮬 슈즈"
+    ],
     "price": "158,000",
-    "colors": ["BLACK", "CAMEL"],
+    "colors": [
+      "BLACK",
+      "CAMEL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8635&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/447defb448c8f0503b296af0757e708d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/b0c42aefe5cf60b43fd0533b83959d85.jpg",
@@ -28343,9 +33092,14 @@
   {
     "id": "8634",
     "name": "CHUNKY MUSTANG BLOAFER IN CAMEL",
-    "bullet_points": ["무스탕 인조퍼가 사용된 윈터 퍼 뮬 슈즈"],
+    "bullet_points": [
+      "무스탕 인조퍼가 사용된 윈터 퍼 뮬 슈즈"
+    ],
     "price": "158,000",
-    "colors": ["CAMEL", "BLACK"],
+    "colors": [
+      "CAMEL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8634&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/d687d9871fc0fd2321cfaf9caf060cae.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/7cf99975b90a7cc42eb3965225bbf025.jpg",
@@ -28357,16 +33111,23 @@
       "https://matinkim.com/web/product/extra/small/202602/8bb2e195148424270cb7bf59365c0c62.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Shoes"
   },
   {
     "id": "8344",
     "name": "LACE UP CHUNKY BALLET SNEAKERS IN BLACK",
-    "bullet_points": ["스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"],
+    "bullet_points": [
+      "스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "DARK SILVER"],
+    "colors": [
+      "BLACK",
+      "DARK SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8344&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/3232f1e46ffbc494cdfd1246ab76523a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/a19103f2090ce461eb262249aad03a34.jpg",
@@ -28385,9 +33146,14 @@
   {
     "id": "8343",
     "name": "LACE UP CHUNKY BALLET SNEAKERS IN DARK SILVER",
-    "bullet_points": ["스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"],
+    "bullet_points": [
+      "스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"
+    ],
     "price": "168,000",
-    "colors": ["DARK SILVER", "BLACK"],
+    "colors": [
+      "DARK SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8343&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/2a4468ac1ce9832050461ab0058d11a9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/52bd009e9bee932cbe27efffd705de5d.jpg",
@@ -28405,9 +33171,13 @@
   {
     "id": "8116",
     "name": "MATIN T-STRAP CHUNKY LOAFER IN BLACK",
-    "bullet_points": ["T스트랩 디테일 청키힐 로퍼"],
+    "bullet_points": [
+      "T스트랩 디테일 청키힐 로퍼"
+    ],
     "price": "258,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8116&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/9b83ff1e7c919409090cd610ee13d45c.png",
     "hoverImg": "https://matinkim.com/web/product/small/202508/ce3f646f14556d057b0b59b56f2573a3.jpg",
@@ -28426,9 +33196,15 @@
   {
     "id": "8045",
     "name": "CROSS STRAP SUEDE BLOCK SNEAKERS IN BLACK",
-    "bullet_points": ["레더 소재 믹스 플랫 아웃솔 스니커즈"],
+    "bullet_points": [
+      "레더 소재 믹스 플랫 아웃솔 스니커즈"
+    ],
     "price": "178,000",
-    "colors": ["BLACK", "BEIGE", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BEIGE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8045&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/3be22891e2ade5aef3d68bc24509444c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/79bec0cf0478179cd64c95d77b8d4619.jpg",
@@ -28448,9 +33224,15 @@
   {
     "id": "8044",
     "name": "CROSS STRAP SUEDE BLOCK SNEAKERS IN BEIGE",
-    "bullet_points": ["레더 소재 믹스 플랫 아웃솔 스니커즈"],
+    "bullet_points": [
+      "레더 소재 믹스 플랫 아웃솔 스니커즈"
+    ],
     "price": "178,000",
-    "colors": ["BEIGE", "BROWN", "BLACK"],
+    "colors": [
+      "BEIGE",
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8044&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/1a808358f6df928cd83e920d60df7575.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/a7f47f3940c173218e19edfb38580160.jpg",
@@ -28463,16 +33245,24 @@
       "https://matinkim.com/web/product/extra/small/202508/333b787156d0a127d4513374c7a6b64f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Shoes"
   },
   {
     "id": "8043",
     "name": "CROSS STRAP SUEDE BLOCK SNEAKERS IN BROWN",
-    "bullet_points": ["레더 소재 믹스 플랫 아웃솔 스니커즈"],
+    "bullet_points": [
+      "레더 소재 믹스 플랫 아웃솔 스니커즈"
+    ],
     "price": "178,000",
-    "colors": ["BROWN", "BEIGE", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BEIGE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8043&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/e509acc4b1fd0383bc92997656b7af6c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/ac50059add64f05b80fe16463238409a.jpg",
@@ -28485,16 +33275,23 @@
       "https://matinkim.com/web/product/extra/small/202508/53eae05d8ad4bc6629e28dd8709db501.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Shoes"
   },
   {
     "id": "8042",
     "name": "SHIRRING POINT ROUND MARYJANE IN BLACK",
-    "bullet_points": ["스포티 메리제인 플랫 스니커즈"],
+    "bullet_points": [
+      "스포티 메리제인 플랫 스니커즈"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8042&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/0e812119da165aa70112d38311747bb4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/6673034452d80292b83ccb3fefcd9461.jpg",
@@ -28513,9 +33310,14 @@
   {
     "id": "8041",
     "name": "SHIRRING POINT ROUND MARYJANE IN SILVER",
-    "bullet_points": ["스포티 메리제인 플랫 스니커즈"],
+    "bullet_points": [
+      "스포티 메리제인 플랫 스니커즈"
+    ],
     "price": "168,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8041&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/78c91ff91272260b8930e8e54e34763f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/4cb5e29e495980394f028e240cf35fd8.jpg",
@@ -28538,7 +33340,11 @@
       "얇은 버클 스트랩과 메쉬 배색이 포인트인 메리제인 스니커즈"
     ],
     "price": "168,000",
-    "colors": ["IVORY", "BLACK", "SILVER"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7491&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/f196b967d93be76d8f08cf0ff3a2cb61.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/28dd7693adf2fb80b91160413956209a.jpg",
@@ -28561,7 +33367,11 @@
       "얇은 버클 스트랩과 메쉬 배색이 포인트인 메리제인 스니커즈"
     ],
     "price": "168,000",
-    "colors": ["BLACK", "IVORY", "SILVER"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7492&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/ea721039465e91e301bc19cd26396494.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/9668e6d5f8dfa3d16fe7046279b0c894.jpg",
@@ -28580,9 +33390,14 @@
   {
     "id": "7817",
     "name": "BUCKLE EYELET SLIPPERS IN BLACK",
-    "bullet_points": ["아일렛 디테일의 스트랩이 특징인 가벼운 여름용 쪼리"],
+    "bullet_points": [
+      "아일렛 디테일의 스트랩이 특징인 가벼운 여름용 쪼리"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7817&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/f029c7618060dcfe25f4fc7e4fa29f7f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/7554381f1ca06343b3a63c98556ffda1.jpg",
@@ -28601,9 +33416,14 @@
   {
     "id": "7816",
     "name": "BUCKLE EYELET SLIPPERS IN SILVER",
-    "bullet_points": ["아일렛 디테일의 스트랩이 특징인 가벼운 여름용 쪼리"],
+    "bullet_points": [
+      "아일렛 디테일의 스트랩이 특징인 가벼운 여름용 쪼리"
+    ],
     "price": "48,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7816&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/833aad4b182bed659b4f0afebe18b0f8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/0b3a4f223024e13c484fdf0851489998.jpg",
@@ -28622,9 +33442,14 @@
   {
     "id": "7708",
     "name": "STRING FLIP FLOP SANDAL IN BLACK",
-    "bullet_points": ["스트링 디테일의 캐주얼한 플립플랍 슈즈"],
+    "bullet_points": [
+      "스트링 디테일의 캐주얼한 플립플랍 슈즈"
+    ],
     "price": "148,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7708&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/60fa53f53a2a7df788a700d88a5dfbaf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/d5bfb90c27c96f2de0b1ce8b8b3066bf.jpg",
@@ -28643,9 +33468,13 @@
   {
     "id": "7707",
     "name": "STRING FLIP FLOP SANDAL IN SILVER",
-    "bullet_points": ["스트링 디테일의 캐주얼한 플립플랍 슈즈"],
+    "bullet_points": [
+      "스트링 디테일의 캐주얼한 플립플랍 슈즈"
+    ],
     "price": "148,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7707&cate_no=64&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/67105339e932258691cbbd93273e4c92.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/1343453ea626512fa509bcdd2a4301f0.jpg",
@@ -28668,7 +33497,10 @@
       "마뗑킴 메탈 로고가 포인트인 빈티지한 무드의 레오파드 카드지갑"
     ],
     "price": "38,000",
-    "colors": ["CHARCOAL", "BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8976&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/cc79ccc4c78b7b665869e0c1a1d34050.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/51a3814c4b919022a16b0b9c53d160ae.jpg",
@@ -28691,7 +33523,10 @@
       "마뗑킴 메탈 로고가 포인트인 빈티지한 무드의 레오파드 카드지갑"
     ],
     "price": "38,000",
-    "colors": ["BROWN", "CHARCOAL"],
+    "colors": [
+      "BROWN",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8975&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/54b509512f61a3deb9b08c0fa555c826.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3543277d3e1b5e88d5ce408fd97c4dc3.jpg",
@@ -28715,7 +33550,12 @@
       "와이드한 로고 메탈 장식이 포인트"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "IVORY", "BLUE", "PINK"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8931&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/ba28c09f077efb651ef51ac4903379f2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/09ed9748697f68cf9ab9a42357e525a5.jpg",
@@ -28728,7 +33568,9 @@
       "https://matinkim.com/web/product/extra/small/202602/a3323d50b8dfdd6363fbd46a381b7c57.jpg"
     ],
     "soldout": true,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -28740,7 +33582,12 @@
       "와이드한 로고 메탈 장식이 포인트"
     ],
     "price": "88,000",
-    "colors": ["IVORY", "BLACK", "BLUE", "PINK"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8930&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4dd494e87ff5e29575a82f6062d72565.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/f22687f7e00a613c75f699f984dd6f12.jpg",
@@ -28765,7 +33612,12 @@
       "와이드한 로고 메탈 장식이 포인트"
     ],
     "price": "88,000",
-    "colors": ["BLUE", "BLACK", "IVORY", "PINK"],
+    "colors": [
+      "BLUE",
+      "BLACK",
+      "IVORY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8929&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/0d195e1d9f4fd9b457896be728be1ca5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/867a78e8cce28489965a2aec9629d7c8.jpg",
@@ -28790,7 +33642,12 @@
       "와이드한 로고 메탈 장식이 포인트"
     ],
     "price": "88,000",
-    "colors": ["PINK", "BLACK", "IVORY", "BLUE"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "IVORY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8928&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/9a867805ef3cde71fa575a2c2fc5eb79.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3e5422d870b6aa23e4fae96d7efe8356.jpg",
@@ -28810,9 +33667,16 @@
   {
     "id": "8935",
     "name": "PUFF QUILT CARD WALLET IN BLACK",
-    "bullet_points": ["모던한 퀼티드 디자인의 레더 카드 월렛"],
+    "bullet_points": [
+      "모던한 퀼티드 디자인의 레더 카드 월렛"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "IVORY", "BLUE", "PINK"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8935&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/fd75f7d3bce67cb20d0ce0cde69c4cc9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/968a3e036594e593939111c34aad7a03.jpg",
@@ -28831,9 +33695,16 @@
   {
     "id": "8934",
     "name": "PUFF QUILT CARD WALLET IN IVORY",
-    "bullet_points": ["모던한 퀼티드 디자인의 레더 카드 월렛"],
+    "bullet_points": [
+      "모던한 퀼티드 디자인의 레더 카드 월렛"
+    ],
     "price": "48,000",
-    "colors": ["IVORY", "BLACK", "BLUE", "PINK"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8934&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/aebffbeba97de1393dab275eaa60bfaf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/9e7488d23c79f5c2b9503579d1c29e15.jpg",
@@ -28852,9 +33723,16 @@
   {
     "id": "8933",
     "name": "PUFF QUILT CARD WALLET IN BLUE",
-    "bullet_points": ["모던한 퀼티드 디자인의 레더 카드 월렛"],
+    "bullet_points": [
+      "모던한 퀼티드 디자인의 레더 카드 월렛"
+    ],
     "price": "48,000",
-    "colors": ["BLUE", "BLACK", "IVORY", "PINK"],
+    "colors": [
+      "BLUE",
+      "BLACK",
+      "IVORY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8933&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/3cc7aa93402160e37ee3d75d92810742.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/e74abb474f9760d67f430cbd52e56afe.jpg",
@@ -28866,16 +33744,25 @@
       "https://matinkim.com/web/product/extra/small/202602/53070da80caaadbbe56e4a7d594ae02a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8932",
     "name": "PUFF QUILT CARD WALLET IN PINK",
-    "bullet_points": ["모던한 퀼티드 디자인의 레더 카드 월렛"],
+    "bullet_points": [
+      "모던한 퀼티드 디자인의 레더 카드 월렛"
+    ],
     "price": "48,000",
-    "colors": ["PINK", "BLACK", "IVORY", "BLUE"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "IVORY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8932&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/8728360174b74c39d14cd4287ba2d65e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/bc1a0f9f45349d271ea79ab569545efe.jpg",
@@ -28887,7 +33774,9 @@
       "https://matinkim.com/web/product/extra/small/202602/a2d35db000a44d48097a855163ed872e.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -28898,7 +33787,10 @@
       "내부 포켓으로 카드 수납이 가능하며, 리벳포인트와 로고 네임택이 특징인 미니 코인 파우치 월렛"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "DARK SILVER"],
+    "colors": [
+      "BLACK",
+      "DARK SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8813&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/662f90f4eab0d093a918035fa1944318.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/f0df39a043eb3dc826a5fc2b4106bcce.jpg",
@@ -28910,7 +33802,9 @@
       "https://matinkim.com/web/product/extra/small/202601/b19c23bd6829844b6507caecd87365aa.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -28921,7 +33815,10 @@
       "내부 포켓으로 카드 수납이 가능하며, 리벳포인트와 로고 네임택이 특징인 미니 코인 파우치 월렛"
     ],
     "price": "48,000",
-    "colors": ["DARK SILVER", "BLACK"],
+    "colors": [
+      "DARK SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8814&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/43de9813c6cc2cb16095b38803096957.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/ac35bb4de6e7a13191d63a65044e1d03.jpg",
@@ -28944,7 +33841,11 @@
       "마뗑킴의시그니처 메탈플레이트 장식이 들어간 비비드한 컬러감의 레더소재를 사용한 아코디언 월렛"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "WHITE", "GREEN"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8447&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/444b998dfb8642897ea5b42976859343.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/d6a880ade0c0d612e91e6529480bc9e3.jpg",
@@ -28967,7 +33868,12 @@
       "마뗑킴의시그니처 메탈플레이트 장식이 들어간 비비드한 컬러감의 레더소재를 사용한 아코디언 월렛"
     ],
     "price": "88,000",
-    "colors": ["WHITE", "BLACK", "GREEN", "RED"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "GREEN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8446&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/d180cfbc141ec0d9b165197644f0042d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/c705cd864b758cf937449109c9214be3.jpg",
@@ -28990,7 +33896,12 @@
       "마뗑킴의시그니처 메탈플레이트 장식이 들어간 비비드한 컬러감의 레더소재를 사용한 아코디언 월렛"
     ],
     "price": "88,000",
-    "colors": ["GREEN", "BLACK", "WHITE", "RED"],
+    "colors": [
+      "GREEN",
+      "BLACK",
+      "WHITE",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8445&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/73de923968df0afb471a9d24141dd96d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/242421bca50d527fb103bda83e81712e.jpg",
@@ -29013,7 +33924,12 @@
       "마뗑킴의시그니처 메탈플레이트 장식이 들어간 비비드한 컬러감의 레더소재를 사용한 아코디언 월렛"
     ],
     "price": "88,000",
-    "colors": ["RED", "BLACK", "WHITE", "GREEN"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "WHITE",
+      "GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8444&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/914a9c978b266fcab71b8e66b71784de.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/9fcf561b55205990c672e7de86228996.jpg",
@@ -29032,9 +33948,14 @@
   {
     "id": "8443",
     "name": "MATIN MAGNETIC CARD WALLET IN BLACK",
-    "bullet_points": ["소가죽 소재의 마뗑킴 마그네틱 월렛"],
+    "bullet_points": [
+      "소가죽 소재의 마뗑킴 마그네틱 월렛"
+    ],
     "price": "38,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8443&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/424ecb7dcdddc1d75bf9219457a6e2d2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/ea4435274d71068f20edaa0cb6954cd2.jpg",
@@ -29046,16 +33967,23 @@
       "https://matinkim.com/web/product/extra/small/202510/d3f65d4a0193aa19874c47a5c9e6a948.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8442",
     "name": "MATIN MAGNETIC CARD WALLET IN SILVER",
-    "bullet_points": ["소가죽 소재의 마뗑킴 마그네틱 월렛"],
+    "bullet_points": [
+      "소가죽 소재의 마뗑킴 마그네틱 월렛"
+    ],
     "price": "38,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8442&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/ae9fa3a17282307f741096f0c05c6abf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/4e1bb4590c2eb013c4620543810b5cea.jpg",
@@ -29078,7 +34006,12 @@
       "가죽 스트랩 디테일과 스터드 장식이 포인트로 들어간 카드지갑"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "WINE", "OLIVE", "SILVER"],
+    "colors": [
+      "BLACK",
+      "WINE",
+      "OLIVE",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8335&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/935a5683c9f71b5057dbcca5b870e652.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/5aa7b84555c486b7e8e7443fabc569d8.jpg",
@@ -29090,7 +34023,9 @@
       "https://matinkim.com/web/product/extra/small/202509/89de4a4cb9b2ebdc163387a597697f02.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -29101,7 +34036,12 @@
       "가죽 스트랩 디테일과 스터드 장식이 포인트로 들어간 카드지갑"
     ],
     "price": "68,000",
-    "colors": ["SILVER", "WINE", "OLIVE", "BLACK"],
+    "colors": [
+      "SILVER",
+      "WINE",
+      "OLIVE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8334&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/13de1aba23280231eff92d8037a49cc8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/cc2638081a97ccf24816ade73b5c2c5f.jpg",
@@ -29124,7 +34064,12 @@
       "가죽 스트랩 디테일과 스터드 장식이 포인트로 들어간 카드지갑"
     ],
     "price": "68,000",
-    "colors": ["OLIVE", "WINE", "SILVER", "BLACK"],
+    "colors": [
+      "OLIVE",
+      "WINE",
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8333&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/c5396923e82570b6efebf77dc6594da2.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/4dda30ba59730da92d69f4459d39a509.jpg",
@@ -29136,7 +34081,9 @@
       "https://matinkim.com/web/product/extra/small/202509/7c5c41face86bd9b57393c73507dc952.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -29147,7 +34094,12 @@
       "가죽 스트랩 디테일과 스터드 장식이 포인트로 들어간 카드지갑"
     ],
     "price": "68,000",
-    "colors": ["WINE", "OLIVE", "SILVER", "BLACK"],
+    "colors": [
+      "WINE",
+      "OLIVE",
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8332&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/1ed6f336bdee13aaa7840c81ad1890db.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/3ace6ab6a0b4e6a6e9e85af38ec5dedf.jpg",
@@ -29170,7 +34122,11 @@
       "가죽 스트랩 디테일과 스터드 장식 및 메탈 로고 장식이 포인트인 카드지갑"
     ],
     "price": "98,000",
-    "colors": ["BLACK", "CAMEL", "SILVER"],
+    "colors": [
+      "BLACK",
+      "CAMEL",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8320&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/5000590fa9ce5fe225f508e561d42ffa.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/d19359157ac520b0209689c98dc39bfc.jpg",
@@ -29182,7 +34138,9 @@
       "https://matinkim.com/web/product/extra/small/202509/5510d25e2a54d41f2a7db1fdfe3fb77b.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -29193,7 +34151,11 @@
       "가죽 스트랩 디테일과 스터드 장식 및 메탈 로고 장식이 포인트인 카드지갑"
     ],
     "price": "98,000",
-    "colors": ["SILVER", "CAMEL", "BLACK"],
+    "colors": [
+      "SILVER",
+      "CAMEL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8319&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/ad3406eebbc3b35ce52d844fdc2811ff.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/a3b4cea54ddf900953e191c877c42d99.jpg",
@@ -29205,7 +34167,9 @@
       "https://matinkim.com/web/product/extra/small/202509/e52b35ab4f873e19f805ed3223860a98.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -29216,7 +34180,11 @@
       "가죽 스트랩 디테일과 스터드 장식 및 메탈 로고 장식이 포인트인 카드지갑"
     ],
     "price": "98,000",
-    "colors": ["CAMEL", "SILVER", "BLACK"],
+    "colors": [
+      "CAMEL",
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8318&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/f77addc2c8ced8f2abf096802703ccb4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/b9ac07ca08682f33598d2a5ed07041d1.jpg",
@@ -29239,7 +34207,10 @@
       "메탈 로고 레터링 장식이 들어간 모던한 디자인의 카드지갑"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "BROWN"],
+    "colors": [
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8331&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/db254be3a4e68df59865c3e34cad7153.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/8093eaf631768e205c641b3f815d9dae.jpg",
@@ -29262,7 +34233,10 @@
       "메탈 로고 레터링 장식이 들어간 모던한 디자인의 카드지갑"
     ],
     "price": "48,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8330&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/403590dbdb53c5802a1e948ac1f23cf8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/721f49fa28840aa7eab61b95f6b877da.jpg",
@@ -29285,7 +34259,10 @@
       "메탈 로고 레터링 장식이 들어간 모던한 디자인의 카드지갑"
     ],
     "price": "88,000",
-    "colors": ["BLACK", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8329&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/ff740fde549930d3e8f82f446fc9688f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/e585b73ecee26381e5bd78984914ce0b.jpg",
@@ -29308,7 +34285,10 @@
       "메탈 로고 레터링 장식이 들어간 모던한 디자인의 카드지갑"
     ],
     "price": "88,000",
-    "colors": ["KHAKI", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8328&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/7c1c0c4ef7881ac94d8b11b6066eedeb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/64b6bb721d316dcb21e1939820669c87.jpg",
@@ -29320,16 +34300,25 @@
       "https://matinkim.com/web/product/extra/small/202509/eb0d6b35a766b3420f25c76395e28719.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8327",
     "name": "EMBOSSED LOGO CARD WALLET IN BLACK",
-    "bullet_points": ["오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"],
+    "bullet_points": [
+      "오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["BLACK", "DARK GREEN", "BURGUNDY", "NAVY"],
+    "colors": [
+      "BLACK",
+      "DARK GREEN",
+      "BURGUNDY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8327&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/c48d3e05d67ff5edafb71459c1ab43a3.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/0d294299e29d1b99dce0334c560be41f.jpg",
@@ -29341,16 +34330,25 @@
       "https://matinkim.com/web/product/extra/small/202509/eaf9e59d8383a1d434b24be32a6de9b6.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8326",
     "name": "EMBOSSED LOGO CARD WALLET IN NAVY",
-    "bullet_points": ["오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"],
+    "bullet_points": [
+      "오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["NAVY", "DARK GREEN", "BURGUNDY", "BLACK"],
+    "colors": [
+      "NAVY",
+      "DARK GREEN",
+      "BURGUNDY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8326&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/fe37f8ae5fb6e82e2ddb58403e540900.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/446232c29c00b8b6149fe2f5b778ac86.jpg",
@@ -29369,9 +34367,16 @@
   {
     "id": "8325",
     "name": "EMBOSSED LOGO CARD WALLET IN BURGUNDY",
-    "bullet_points": ["오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"],
+    "bullet_points": [
+      "오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["BURGUNDY", "DARK GREEN", "NAVY", "BLACK"],
+    "colors": [
+      "BURGUNDY",
+      "DARK GREEN",
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8325&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/a779947633fb439a0159a368a21e9643.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/86dee13b9a78fd4b92ad7b4899d9c1b1.jpg",
@@ -29390,9 +34395,16 @@
   {
     "id": "8324",
     "name": "EMBOSSED LOGO CARD WALLET IN DARK GREEN",
-    "bullet_points": ["오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"],
+    "bullet_points": [
+      "오일리한 광감의 가죽을 사용한 엠보로고 포인트 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["DARK GREEN", "BURGUNDY", "NAVY", "BLACK"],
+    "colors": [
+      "DARK GREEN",
+      "BURGUNDY",
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8324&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/19031b79b644371685ae8d23af2b6350.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/5a0e3c15d58b5d1b8f0932733ec7eb23.jpg",
@@ -29411,9 +34423,15 @@
   {
     "id": "8323",
     "name": "EMBOSSED LOGO BUSINESS WALLET IN BLACK",
-    "bullet_points": ["오일리한 광감의 고급스러운 가죽을 사용한 반지갑"],
+    "bullet_points": [
+      "오일리한 광감의 고급스러운 가죽을 사용한 반지갑"
+    ],
     "price": "78,000",
-    "colors": ["BLACK", "CAMEL", "NAVY"],
+    "colors": [
+      "BLACK",
+      "CAMEL",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8323&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/2c199a1ebf257bcfb39859a970f20121.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/37166ebb70f883d94c69a66be6642ea7.jpg",
@@ -29425,16 +34443,24 @@
       "https://matinkim.com/web/product/extra/small/202509/101fe2a361f46003237a58795cd812cb.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8322",
     "name": "EMBOSSED LOGO BUSINESS WALLET IN NAVY",
-    "bullet_points": ["오일리한 광감의 고급스러운 가죽을 사용한 반지갑"],
+    "bullet_points": [
+      "오일리한 광감의 고급스러운 가죽을 사용한 반지갑"
+    ],
     "price": "78,000",
-    "colors": ["NAVY", "CAMEL", "BLACK"],
+    "colors": [
+      "NAVY",
+      "CAMEL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8322&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/c0007b021096307dfb5a9afd8d73a695.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/cc0379e7d9ba9b55463b4877357111d7.jpg",
@@ -29453,9 +34479,15 @@
   {
     "id": "8321",
     "name": "EMBOSSED LOGO BUSINESS WALLET IN CAMEL",
-    "bullet_points": ["오일리한 광감의 고급스러운 가죽을 사용한 반지갑"],
+    "bullet_points": [
+      "오일리한 광감의 고급스러운 가죽을 사용한 반지갑"
+    ],
     "price": "78,000",
-    "colors": ["CAMEL", "NAVY", "BLACK"],
+    "colors": [
+      "CAMEL",
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8321&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/eebdb5b830461229bcb3a1b036163f64.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/eb6ff384dd5f642e4e35291bb1123ef3.jpg",
@@ -29467,16 +34499,25 @@
       "https://matinkim.com/web/product/extra/small/202509/0c16d25adc3b19603d80208b65501846.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8127",
     "name": "POCKETPACK ACCORDION WALLET IN BLACK",
-    "bullet_points": ["탑라인 메탈 플레이트 아코디언 월렛"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 아코디언 월렛"
+    ],
     "price": "98,000",
-    "colors": ["BLACK", "IVORY", "BURGUNDY", "MIX"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "BURGUNDY",
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8127&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/bc9562550f9dee21bd924585a6a8be2b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/43fa6bec172d828e609d106e17dd4656.jpg",
@@ -29495,9 +34536,16 @@
   {
     "id": "8126",
     "name": "POCKETPACK ACCORDION WALLET IN IVORY",
-    "bullet_points": ["탑라인 메탈 플레이트 아코디언 월렛"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 아코디언 월렛"
+    ],
     "price": "98,000",
-    "colors": ["IVORY", "BLACK", "BURGUNDY", "MIX"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "BURGUNDY",
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8126&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/801bbf0cd86b73d1caf3742a703bfdae.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/d9151bfc7aaf3c22ab8bf5001b09ef5e.jpg",
@@ -29516,9 +34564,16 @@
   {
     "id": "8125",
     "name": "POCKETPACK ACCORDION WALLET IN BURGUNDY",
-    "bullet_points": ["탑라인 메탈 플레이트 아코디언 월렛"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 아코디언 월렛"
+    ],
     "price": "98,000",
-    "colors": ["BURGUNDY", "BLACK", "IVORY", "MIX"],
+    "colors": [
+      "BURGUNDY",
+      "BLACK",
+      "IVORY",
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8125&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/7dbfd66bb7494e95d7ad7081fc12e9d0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/8114dfffab395cbadbf69d3a6c164f62.jpg",
@@ -29530,16 +34585,25 @@
       "https://matinkim.com/web/product/extra/small/202508/14e8c4b842d203ea45a130c70f89dba2.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "8124",
     "name": "POCKETPACK ACCORDION WALLET IN MIX",
-    "bullet_points": ["탑라인 메탈 플레이트 아코디언 월렛"],
+    "bullet_points": [
+      "탑라인 메탈 플레이트 아코디언 월렛"
+    ],
     "price": "98,000",
-    "colors": ["MIX", "BLACK", "IVORY", "BURGUNDY"],
+    "colors": [
+      "MIX",
+      "BLACK",
+      "IVORY",
+      "BURGUNDY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8124&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/f9913545a419dd51dc637e4d63c6ee0b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/f9f514fdd665b069bbf7af5a61047b48.jpg",
@@ -29551,16 +34615,24 @@
       "https://matinkim.com/web/product/extra/small/202508/9c4ee16382a7d2aeb696225f0225b4de.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
   {
     "id": "7924",
     "name": "LOGO STITCH SPORTY WALLET IN BLACK",
-    "bullet_points": ["카라비너 디테일의 나일론 지퍼돌이 반지갑"],
+    "bullet_points": [
+      "카라비너 디테일의 나일론 지퍼돌이 반지갑"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "SILVER", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7924&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/6d04a411ef5b481293e4018fb861d1b1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/36985e45b5b5f6b5529fd2aeaa1f1651.jpg",
@@ -29579,9 +34651,15 @@
   {
     "id": "7923",
     "name": "LOGO STITCH SPORTY WALLET IN SILVER",
-    "bullet_points": ["카라비너 디테일의 나일론 지퍼돌이 반지갑"],
+    "bullet_points": [
+      "카라비너 디테일의 나일론 지퍼돌이 반지갑"
+    ],
     "price": "58,000",
-    "colors": ["SILVER", "KHAKI", "BLACK"],
+    "colors": [
+      "SILVER",
+      "KHAKI",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7923&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/685fdcf4028e02d78d4fced1dc224ded.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/a91dae4315b3af4122349c4f5d44df3c.jpg",
@@ -29600,9 +34678,15 @@
   {
     "id": "7922",
     "name": "LOGO STITCH SPORTY WALLET IN KHAKI",
-    "bullet_points": ["카라비너 디테일의 나일론 지퍼돌이 반지갑"],
+    "bullet_points": [
+      "카라비너 디테일의 나일론 지퍼돌이 반지갑"
+    ],
     "price": "58,000",
-    "colors": ["KHAKI", "SILVER", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7922&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/dc5c0dcf759cf698a5c4639183dba349.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/d628682711e4d4189882112598aad3fe.jpg",
@@ -29621,9 +34705,13 @@
   {
     "id": "7921",
     "name": "PATTERN SPORTY WALLET IN MIX",
-    "bullet_points": ["레오파드 패턴 나일론 지퍼돌이 반지갑"],
+    "bullet_points": [
+      "레오파드 패턴 나일론 지퍼돌이 반지갑"
+    ],
     "price": "58,000",
-    "colors": ["MIX"],
+    "colors": [
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7921&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/f72ede61786a4eada6cd33da146c1ba5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/584bc6320ebe710e4d3101075a4b28c1.jpg",
@@ -29646,7 +34734,12 @@
       "테두리 부분 스터드 장식이 포인트인 웨스턴 무드의 카드 월렛"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "SILVER", "BROWN", "RED"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "BROWN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7982&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/242a886bbb95ef2c3062e5e437bad5ec.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/bafdecc7923d5e1339bba0e015a4ae39.jpg",
@@ -29669,7 +34762,12 @@
       "테두리 부분 스터드 장식이 포인트인 웨스턴 무드의 카드 월렛"
     ],
     "price": "68,000",
-    "colors": ["SILVER", "BLACK", "BROWN", "RED"],
+    "colors": [
+      "SILVER",
+      "BLACK",
+      "BROWN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7981&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/9469e2f464eb43b4b6d3db6b88f6db62.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/fba3556286ccbfd5ef933d1a172df328.jpg",
@@ -29692,7 +34790,12 @@
       "테두리 부분 스터드 장식이 포인트인 웨스턴 무드의 카드 월렛"
     ],
     "price": "68,000",
-    "colors": ["BROWN", "BLACK", "SILVER", "RED"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "SILVER",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7980&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/09335a38ad6d95b448602939902f377e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/e035fdb7b24b4f6f824c0df8562054a2.jpg",
@@ -29715,7 +34818,12 @@
       "테두리 부분 스터드 장식이 포인트인 웨스턴 무드의 카드 월렛"
     ],
     "price": "68,000",
-    "colors": ["RED", "BLACK", "SILVER", "BROWN"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "SILVER",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7979&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/e26a917d1da7613b188811ca829ed807.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/bdf3fdf6c3b6d3a446470cc0d4798ca1.jpg",
@@ -29727,7 +34835,9 @@
       "https://matinkim.com/web/product/extra/small/202507/d0ecd994c7c8cb6a93be0df7e936d126.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -29738,7 +34848,12 @@
       "2개의 아코디언 포켓으로 수납이 용이한 웨스턴 무드의 월렛"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "SILVER", "BROWN", "RED"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "BROWN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7986&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/67bed9c190cfe35f088df8e5d061bfcf.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/230c4b0ed9fa246e4b2663918563ca09.jpg",
@@ -29761,7 +34876,12 @@
       "2개의 아코디언 포켓으로 수납이 용이한 웨스턴 무드의 월렛"
     ],
     "price": "68,000",
-    "colors": ["SILVER", "BLACK", "BROWN", "RED"],
+    "colors": [
+      "SILVER",
+      "BLACK",
+      "BROWN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7985&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/77a11195705c96a9fa62b8fa0a71661e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/ea237ea8848c9232421a07537f2e193b.jpg",
@@ -29784,7 +34904,12 @@
       "2개의 아코디언 포켓으로 수납이 용이한 웨스턴 무드의 월렛"
     ],
     "price": "68,000",
-    "colors": ["BROWN", "BLACK", "SILVER", "RED"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "SILVER",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7984&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/b8b6236c3bf50c5c4bd1f5847615161b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/6b5fe538e7a1a01f1d9beca3882d5d98.jpg",
@@ -29807,7 +34932,12 @@
       "2개의 아코디언 포켓으로 수납이 용이한 웨스턴 무드의 월렛"
     ],
     "price": "68,000",
-    "colors": ["RED", "BLACK", "SILVER", "BROWN"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "SILVER",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7983&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/4528e3d42dcf9f2080fcad2714099808.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/b569a96ad47ee4f5dbb0a0a17d264c80.jpg",
@@ -29826,9 +34956,13 @@
   {
     "id": "7897",
     "name": "HEART WAVE ENAMEL CARD WALLET IN MINT",
-    "bullet_points": ["하트를 모티브로 디자인된 카드지갑"],
+    "bullet_points": [
+      "하트를 모티브로 디자인된 카드지갑"
+    ],
     "price": "48,000",
-    "colors": ["MINT"],
+    "colors": [
+      "MINT"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7897&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/88d4bad66117582618f944a15e72a12b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/cfda12d9db672afde443bda48c4c7bca.jpg",
@@ -29846,9 +34980,15 @@
   {
     "id": "7896",
     "name": "HEART CUT OUT CARD WALLET IN BLACK",
-    "bullet_points": ["하트 디자인과 소재배색이 돋보이는 카드지갑"],
+    "bullet_points": [
+      "하트 디자인과 소재배색이 돋보이는 카드지갑"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "SILVER", "PINK"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7896&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/1492701270fabf3d6f86c220465bade8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/c6967043f77633b0e49753efe70b5142.jpg",
@@ -29866,9 +35006,15 @@
   {
     "id": "7895",
     "name": "HEART CUT OUT CARD WALLET IN SILVER",
-    "bullet_points": ["하트 디자인과 소재배색이 돋보이는 카드지갑"],
+    "bullet_points": [
+      "하트 디자인과 소재배색이 돋보이는 카드지갑"
+    ],
     "price": "48,000",
-    "colors": ["SILVER", "BLACK", "PINK"],
+    "colors": [
+      "SILVER",
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7895&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/182e2862fcdf9911ddb0a02e1aa940ea.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/9148257813342288139f7a1fc80bc839.jpg",
@@ -29886,9 +35032,15 @@
   {
     "id": "7894",
     "name": "HEART CUT OUT CARD WALLET IN PINK",
-    "bullet_points": ["하트 디자인과 소재배색이 돋보이는 카드지갑"],
+    "bullet_points": [
+      "하트 디자인과 소재배색이 돋보이는 카드지갑"
+    ],
     "price": "48,000",
-    "colors": ["PINK", "BLACK", "SILVER"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7894&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/1f8116cbaf31f4f4ef28861592e19976.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/39df5d7b93195dcbaa70c09c4714471e.jpg",
@@ -29906,9 +35058,15 @@
   {
     "id": "5807",
     "name": "GLOSSY CARD WALLET IN SKY",
-    "bullet_points": ["MATIN KIM 메탈 로고가 포인트인 글로시 소가죽 카드지갑"],
+    "bullet_points": [
+      "MATIN KIM 메탈 로고가 포인트인 글로시 소가죽 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["SKY", "PINK", "IVORY"],
+    "colors": [
+      "SKY",
+      "PINK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5807&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/d14ae23009557983c9193d15b62df2e4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/1341d286d21e1ff2bb62f4cf0a652865.jpg",
@@ -29926,9 +35084,14 @@
   {
     "id": "5806",
     "name": "GLOSSY CARD WALLET IN PINK",
-    "bullet_points": ["MATIN KIM 메탈 로고가 포인트인 글로시 소가죽 카드지갑"],
+    "bullet_points": [
+      "MATIN KIM 메탈 로고가 포인트인 글로시 소가죽 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["PINK", "IVORY"],
+    "colors": [
+      "PINK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5806&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/5182edf06e4984edef479ffba848c15b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/5cd6a6b6eda81522751bd61db4617d00.jpg",
@@ -29946,9 +35109,14 @@
   {
     "id": "5805",
     "name": "GLOSSY CARD WALLET IN IVORY",
-    "bullet_points": ["MATIN KIM 메탈 로고가 포인트인 글로시 소가죽 카드지갑"],
+    "bullet_points": [
+      "MATIN KIM 메탈 로고가 포인트인 글로시 소가죽 카드지갑"
+    ],
     "price": "38,000",
-    "colors": ["IVORY", "PINK"],
+    "colors": [
+      "IVORY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5805&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/068677011777728cd96b93973f5b830f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/b8a971ec6bf4205e6f662915b0e4a266.jpg",
@@ -29959,7 +35127,9 @@
       "https://matinkim.com/web/product/extra/small/202407/7e2655c135ef495319f5bffc608cd426.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -29970,7 +35140,11 @@
       "슬림한 마뗑킴 메탈 로고가 포인트인 글로시 소가죽 카드 지갑"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "SKY", "IVORY"],
+    "colors": [
+      "BLACK",
+      "SKY",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5804&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/bb243b493ea9d9b6c574e615786aade1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/ab6e0095a1034be4855be9689239d201.jpg",
@@ -29992,7 +35166,11 @@
       "슬림한 마뗑킴 메탈 로고가 포인트인 글로시 소가죽 카드 지갑"
     ],
     "price": "48,000",
-    "colors": ["IVORY", "BLACK", "SKY"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "SKY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5802&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/615bd85e14e984ad48cd2a90a9145913.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/35007b57537e2c3c0d630797895bf622.jpg",
@@ -30014,7 +35192,11 @@
       "슬림한 마뗑킴 메탈 로고가 포인트인 글로시 소가죽 카드 지갑"
     ],
     "price": "48,000",
-    "colors": ["SKY", "BLACK", "IVORY"],
+    "colors": [
+      "SKY",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5803&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/79f5c946b47d37289ea70d7bd55abc16.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/becf3964b18b2a5fad976e7f9a2673e7.jpg",
@@ -30459,7 +35641,12 @@
       "MATIN KIM 메탈 로고가 포인트인 빈티지한 무드의 카드지갑"
     ],
     "price": "38,000",
-    "colors": ["BLACK", "SILVER", "BROWN", "RED"],
+    "colors": [
+      "BLACK",
+      "SILVER",
+      "BROWN",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4637&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/8a906f0d70109b1a24d72c53e9ba1cea.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/187008d5d12c5c32bfb19a2ae82b879d.jpg",
@@ -30481,7 +35668,12 @@
       "MATIN KIM 메탈 로고가 포인트인 빈티지한 무드의 카드지갑"
     ],
     "price": "38,000",
-    "colors": ["RED", "BLACK", "SILVER", "BROWN"],
+    "colors": [
+      "RED",
+      "BLACK",
+      "SILVER",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4640&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/7cac9088551ef69cc445962c99b54f9e.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/d1d0e138323c10397caa0839eafdbe24.jpg",
@@ -30503,7 +35695,12 @@
       "MATIN KIM 메탈 로고가 포인트인 빈티지한 무드의 카드지갑"
     ],
     "price": "38,000",
-    "colors": ["BROWN", "RED", "BLACK", "SILVER"],
+    "colors": [
+      "BROWN",
+      "RED",
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4639&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/5dfcf2d81b955ced10dbdbe3e947b736.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/3f296fe7b34aa87f9120621b0b4be2f6.jpg",
@@ -30514,7 +35711,9 @@
       "https://matinkim.com/web/product/extra/small/202310/87942a9028876b6056d13a17e2ed74fa.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -30525,7 +35724,12 @@
       "MATIN KIM 메탈 로고가 포인트인 빈티지한 무드의 카드지갑"
     ],
     "price": "38,000",
-    "colors": ["SILVER", "BROWN", "RED", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BROWN",
+      "RED",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4638&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/be63f4e488cc0762834818925ed622db.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/4710356ff3a45c45a1411f3876d7a8a8.jpg",
@@ -30536,7 +35740,9 @@
       "https://matinkim.com/web/product/extra/small/202310/5f68e188f275b92df2f97b543da3ab3e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Wallets"
   },
@@ -30547,7 +35753,10 @@
       "슬림한 마뗑킴 메탈 로고가 포인트인 미니멀한 무드의 소가죽 지갑"
     ],
     "price": "78,000",
-    "colors": ["BLACK", "NAVY"],
+    "colors": [
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5122&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/a52afb9817556b57de9093dc0e7870a1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/08f6ea5e936dae76aa3b85910c2eeb45.jpg",
@@ -30566,9 +35775,14 @@
   {
     "id": "5120",
     "name": "SLIM METAL CARD HOLDER IN BLACK",
-    "bullet_points": ["슬림한 마뗑킴 메탈 로고가 포인트인 소가죽 카드 지갑"],
+    "bullet_points": [
+      "슬림한 마뗑킴 메탈 로고가 포인트인 소가죽 카드 지갑"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5120&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/7bca0f6b68a810f97112e2ac7c5b0370.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/3f763c487c24a01f9a34ce992eb2cda1.jpg",
@@ -30586,9 +35800,14 @@
   {
     "id": "5119",
     "name": "SLIM METAL CARD HOLDER IN SILVER",
-    "bullet_points": ["슬림한 마뗑킴 메탈 로고가 포인트인 소가죽 카드 지갑"],
+    "bullet_points": [
+      "슬림한 마뗑킴 메탈 로고가 포인트인 소가죽 카드 지갑"
+    ],
     "price": "48,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5119&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/6973c17abe9a4dcde3f98005da3449b4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/a87c38b5602ecc09daf4daf7bad3c8e2.jpg",
@@ -30610,7 +35829,12 @@
       "MATIN KIM 메탈 로고가 포인트인 빈티지한 무드의 콤팩트 카드지갑"
     ],
     "price": "98,000",
-    "colors": ["SILVER", "BROWN", "BLACK", "IVORY"],
+    "colors": [
+      "SILVER",
+      "BROWN",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=4634&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202511/3086d15d74237a9bd59c334123144d90.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202511/049b46dd4ff79b2672de540b0577c8b0.jpg",
@@ -30632,7 +35856,10 @@
       "음각처리된 마뗑킴의 시그니처 메탈장식 디자인으로 카드나 명함을 휴대할 수 있는 매끄러운 그립감의 카드 케이스"
     ],
     "price": "25,000",
-    "colors": ["BLACK", "SILVER"],
+    "colors": [
+      "BLACK",
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6288&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/bfc40b2dc0489c806fdf60a19b2dc53b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/ed6b68cf854fb6ebaad3808a97478894.jpg",
@@ -30654,7 +35881,10 @@
       "음각처리된 마뗑킴의 시그니처 메탈장식 디자인으로 카드나 명함을 휴대할 수 있는 매끄러운 그립감의 카드 케이스"
     ],
     "price": "25,000",
-    "colors": ["SILVER", "BLACK"],
+    "colors": [
+      "SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6287&cate_no=167&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202603/fdbaa1a4937373daed1af033007ddb58.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202603/ce3c001b1b8e12fbf995d1f9265e5056.jpg",
@@ -30677,7 +35907,10 @@
       "조절 가능한 스트링과 MATIN 로고 프린트가 포인트"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9081&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/de8e4df27a4d897c4f265a7c5ac38a09.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/727ed914d6161c0317ab65f7f39d9111.jpg",
@@ -30689,7 +35922,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202603/f8c1be8dda6cdbc63f43ee5b1800836c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -30701,7 +35936,10 @@
       "조절 가능한 스트링과 MATIN 로고 프린트가 포인트"
     ],
     "price": "58,000",
-    "colors": ["GREY", "BLACK"],
+    "colors": [
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9080&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/b3570734b68d5a143f2e0a747df058ff.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/7155f13ad463a2e8f4c23da1fe5f8097.jpg",
@@ -30713,7 +35951,10 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202603/e8e759893544ded909f36e7fcac9c4a9.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN", "MUST HAVE"],
+    "tag": [
+      "NEW IN",
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -30724,7 +35965,12 @@
       "새롭게 디자인된 MATINKIM 자수 디테일이 포인트 코튼 로고 볼캡"
     ],
     "price": "48,000",
-    "colors": ["DARK NAVY", "SMOKE BLUE", "BEIGE", "VIOLET"],
+    "colors": [
+      "DARK NAVY",
+      "SMOKE BLUE",
+      "BEIGE",
+      "VIOLET"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9006&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/f696d1a3e6ee654f8ba78bee96a22baa.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/fdb75e82141188749b59a8bda1fc1d24.jpg",
@@ -30736,7 +35982,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202603/c894e35e53cd3350b57fe0a6a380ec3e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -30747,7 +35995,12 @@
       "새롭게 디자인된 MATINKIM 자수 디테일이 포인트 코튼 로고 볼캡"
     ],
     "price": "48,000",
-    "colors": ["BEIGE", "SMOKE BLUE", "DARK NAVY", "VIOLET"],
+    "colors": [
+      "BEIGE",
+      "SMOKE BLUE",
+      "DARK NAVY",
+      "VIOLET"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9005&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/bea7102d23d91911bdbe951c1dfd8ef0.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/3cf9011ea9a53334058d49894d5889ff.jpg",
@@ -30770,7 +36023,12 @@
       "새롭게 디자인된 MATINKIM 자수 디테일이 포인트 코튼 로고 볼캡"
     ],
     "price": "48,000",
-    "colors": ["VIOLET", "SMOKE BLUE", "BEIGE", "DARK NAVY"],
+    "colors": [
+      "VIOLET",
+      "SMOKE BLUE",
+      "BEIGE",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9004&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/0b73e2aec504c203215751f3b54f489e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/4d1401ffa5e5e0f169a49b3348ed09df.jpg",
@@ -30793,7 +36051,12 @@
       "새롭게 디자인된 MATINKIM 자수 디테일이 포인트 코튼 로고 볼캡"
     ],
     "price": "48,000",
-    "colors": ["SMOKE BLUE", "VIOLET", "BEIGE", "DARK NAVY"],
+    "colors": [
+      "SMOKE BLUE",
+      "VIOLET",
+      "BEIGE",
+      "DARK NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9003&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/0a6ab1c206e0da35ec2320d240ed9ab8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/ceaab18f90a4b003c215c3b4128d920e.jpg",
@@ -30816,7 +36079,10 @@
       "톤온톤의 MATIN KIM 로고 자수 디테일이 포인트 워싱 코튼 캠프캡"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "RED"],
+    "colors": [
+      "BLACK",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9002&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/c0e1e4827365599fc1413258333028d1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/466a70e5c880d930153ce137dae17a78.jpg",
@@ -30840,7 +36106,10 @@
       "톤온톤의 MATIN KIM 로고 자수 디테일이 포인트 워싱 코튼 캠프캡"
     ],
     "price": "68,000",
-    "colors": ["RED", "BLACK"],
+    "colors": [
+      "RED",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9001&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/b487f6b08764e25665ac1b4d522c444d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/d68f9787dfd749044cea44e0974c06db.jpg",
@@ -30912,7 +36181,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202603/02b2e5c86a8512e26fb9ba6ec31d12b1.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -30953,7 +36224,14 @@
       "베이직 면트윌 원단을 사용한 데일리한 색상의 1줄 미니로고 볼캡"
     ],
     "price": "48,000",
-    "colors": ["SMOKE BLUE", "BLACK", "CREAM", "LIGHT KHAKI", "ORANGE", "PINK"],
+    "colors": [
+      "SMOKE BLUE",
+      "BLACK",
+      "CREAM",
+      "LIGHT KHAKI",
+      "ORANGE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=9077&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/7d0815a2fb7100700cb77830e27b03a4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/d89d443a3b87f8e3d60c0dca7ab729f9.jpg",
@@ -30972,9 +36250,18 @@
   {
     "id": "8979",
     "name": "MATIN LOGO WASHED BALL CAP IN BROWN",
-    "bullet_points": ["톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"],
+    "bullet_points": [
+      "톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["BROWN", "BLUE", "BLACK", "LIGHT BEIGE", "BEIGE", "PINK"],
+    "colors": [
+      "BROWN",
+      "BLUE",
+      "BLACK",
+      "LIGHT BEIGE",
+      "BEIGE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8979&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/6d9684c0d381f9bfbd31e3a033a6d8a4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/8749a99fe7719ed1212b45a3488c1f36.jpg",
@@ -30986,16 +36273,27 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202602/ac6e304987aec392a15ff4ef60c43c78.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "8978",
     "name": "MATIN LOGO WASHED BALL CAP IN BLUE",
-    "bullet_points": ["톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"],
+    "bullet_points": [
+      "톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["BLUE", "BROWN", "BLACK", "LIGHT BEIGE", "BEIGE", "PINK"],
+    "colors": [
+      "BLUE",
+      "BROWN",
+      "BLACK",
+      "LIGHT BEIGE",
+      "BEIGE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8978&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/19514e3a3bce3f1422fd2eccfb89ec3e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202603/731fd59062f70f31663c332300048900.jpg",
@@ -31018,7 +36316,11 @@
       "마뗑킴 로고와 카모플라주 패턴이 포인트인 코튼 워시드 볼캡"
     ],
     "price": "68,000",
-    "colors": ["BEIGE", "CHARCOAL", "KHAKI"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8980&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/377cb8c737dfecc223743aada3501cf5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/5b2a4e77de95b25eeb5382a88b07ac11.jpg",
@@ -31037,9 +36339,14 @@
   {
     "id": "8824",
     "name": "MATIN LOGO STITCH BALL CAP IN NAVY",
-    "bullet_points": ["볼드한 로고가 포인트인 볼캡"],
+    "bullet_points": [
+      "볼드한 로고가 포인트인 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["NAVY", "WHITE"],
+    "colors": [
+      "NAVY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8824&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/c787e066322934ad712219c90cdc1a20.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/dad1a803ede7b70cc4382c425ade7fe4.jpg",
@@ -31057,9 +36364,14 @@
   {
     "id": "8825",
     "name": "MATIN LOGO STITCH BALL CAP IN WHITE",
-    "bullet_points": ["볼드한 로고가 포인트인 볼캡"],
+    "bullet_points": [
+      "볼드한 로고가 포인트인 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["WHITE", "NAVY"],
+    "colors": [
+      "WHITE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8825&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/6212c5b645d6c75a9d9cc8027456b76a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/d1bca1fc053e98119f11c32b0e2943f7.jpg",
@@ -31081,7 +36393,11 @@
       "전면 아플리케 로고와 가먼트 워싱으로 러프하고 빈티지한 무드의 볼캡"
     ],
     "price": "68,000",
-    "colors": ["GREY", "LIGHT BEIGE", "LIGHT KHAKI"],
+    "colors": [
+      "GREY",
+      "LIGHT BEIGE",
+      "LIGHT KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8805&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/9399ac33cfed0d0d563d46a51eaa63fe.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/2b4e0500930f787e652184da633a11be.jpg",
@@ -31103,7 +36419,11 @@
       "전면 아플리케 로고와 가먼트 워싱으로 러프하고 빈티지한 무드의 볼캡"
     ],
     "price": "68,000",
-    "colors": ["LIGHT BEIGE", "GREY", "LIGHT KHAKI"],
+    "colors": [
+      "LIGHT BEIGE",
+      "GREY",
+      "LIGHT KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8806&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/19c0001486f868308bde6596e35a8aa9.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/cb3454b735d64abf68979c950346a6ca.jpg",
@@ -31125,7 +36445,11 @@
       "전면 아플리케 로고와 가먼트 워싱으로 러프하고 빈티지한 무드의 볼캡"
     ],
     "price": "68,000",
-    "colors": ["LIGHT KHAKI", "GREY", "LIGHT BEIGE"],
+    "colors": [
+      "LIGHT KHAKI",
+      "GREY",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8807&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/1ff2fdb111c83dc9454e8a32547d97e8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/49001a3cb37cc9cd91a48094f04fb9ec.jpg",
@@ -31147,7 +36471,10 @@
       "마뗑킴 낙서 로고가 하트 모양 자수로 들어간 기본 면트윌 볼캡"
     ],
     "price": "48,000",
-    "colors": ["BLACK", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8808&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/4730456b7ba2ea402d17fb9d24727368.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/ee0b33edb3d0954dfbe902cb93497266.jpg",
@@ -31169,7 +36496,10 @@
       "마뗑킴 낙서 로고가 하트 모양 자수로 들어간 기본 면트윌 볼캡"
     ],
     "price": "48,000",
-    "colors": ["LIGHT BLUE", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8809&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202601/30678ecf55b29c431d1e936f424c90b3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202601/82f30d0bfd74557f45670ee85c71a1f6.jpg",
@@ -31191,7 +36521,10 @@
       "헤어리함이 느껴지는 부클원사를 사용한 귀여운 스타일의 비니"
     ],
     "price": "68,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8650&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/143034c4e5825fcbb2290cc304214953.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/b482979dafa025b60ec20f94afd16218.jpg",
@@ -31202,7 +36535,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/565fab965997701f8433fc02d9a2d21d.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -31213,7 +36548,10 @@
       "헤어리함이 느껴지는 부클원사를 사용한 귀여운 스타일의 비니"
     ],
     "price": "68,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8651&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/f65bd487b58a85c519537b492adc4a41.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/86be97663d568155ccad8a7a8b0378e5.jpg",
@@ -31224,16 +36562,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/c09e08f1eec106775c01e6b763581b5a.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "8457",
     "name": "CRACKED LOGO BUCKET BEANIE IN BLACK",
-    "bullet_points": ["빈티지한 로고 그래픽이 전면에 자카드로 들어간 비니"],
+    "bullet_points": [
+      "빈티지한 로고 그래픽이 전면에 자카드로 들어간 비니"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8457&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/629356e2f07084131fd5ddbd6a52edc5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/e42f5003117a4274aec2a24639759407.jpg",
@@ -31249,9 +36594,14 @@
   {
     "id": "8456",
     "name": "CRACKED LOGO BUCKET BEANIE IN IVORY",
-    "bullet_points": ["빈티지한 로고 그래픽이 전면에 자카드로 들어간 비니"],
+    "bullet_points": [
+      "빈티지한 로고 그래픽이 전면에 자카드로 들어간 비니"
+    ],
     "price": "68,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8456&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/7fafaf8d1016ab4207387dfe16b2047e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/382748affa04339c08e375caaf6d50f6.jpg",
@@ -31269,9 +36619,14 @@
   {
     "id": "8356",
     "name": "MATIN APPLIQUE STITCH BALL CAP IN BLACK",
-    "bullet_points": ["기모면 원단과 톤톤으로 아플리케 처리된 로고가 특징"],
+    "bullet_points": [
+      "기모면 원단과 톤톤으로 아플리케 처리된 로고가 특징"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "CAMEL"],
+    "colors": [
+      "BLACK",
+      "CAMEL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8356&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/ab021b12cf9f122e894e737733133e33.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/eda2553511a6fecb162f3d704858738d.jpg",
@@ -31290,9 +36645,14 @@
   {
     "id": "8355",
     "name": "MATIN APPLIQUE STITCH BALL CAP IN CAMEL",
-    "bullet_points": ["기모면 원단과 톤톤으로 아플리케 처리된 로고가 특징"],
+    "bullet_points": [
+      "기모면 원단과 톤톤으로 아플리케 처리된 로고가 특징"
+    ],
     "price": "68,000",
-    "colors": ["CAMEL", "BLACK"],
+    "colors": [
+      "CAMEL",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8355&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/bf3b8384b590fb175a175ae60ebcba96.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/94ecd44cf2bce2fd898d236c2a58bbd7.jpg",
@@ -31315,7 +36675,11 @@
       "스톤워싱 처리해 빈티지한 색감이 특징인 워시드 코튼 볼캡"
     ],
     "price": "58,000",
-    "colors": ["BLACK", "BROWN", "KHAKI"],
+    "colors": [
+      "BLACK",
+      "BROWN",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8354&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/16fb01551ef0b3d6782d8570c9be31e7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/9afa192ebafc4731af284045a7d73bed.jpg",
@@ -31338,7 +36702,11 @@
       "스톤워싱 처리해 빈티지한 색감이 특징인 워시드 코튼 볼캡"
     ],
     "price": "58,000",
-    "colors": ["KHAKI", "BROWN", "BLACK"],
+    "colors": [
+      "KHAKI",
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8353&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/44761532bf10192b7f5679f5fabcbe81.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/51f8e5751f392a3631bea569e6f28be9.jpg",
@@ -31361,7 +36729,11 @@
       "스톤워싱 처리해 빈티지한 색감이 특징인 워시드 코튼 볼캡"
     ],
     "price": "58,000",
-    "colors": ["BROWN", "BLACK", "KHAKI"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8352&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/e9beddbee454b96b21ca5accb92e2bc5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/c6fc31eecd3710dbc46b21413a2ac5ce.jpg",
@@ -31373,16 +36745,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/e2c16f5ccf1c0e754c85ac10db0c199f.jpg"
     ],
     "soldout": true,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "8347",
     "name": "VINTAGE LAYER KNIT BEANIE IN LIGHT BLUE",
-    "bullet_points": ["헤어리 모헤어 2중 레이어드 비니"],
+    "bullet_points": [
+      "헤어리 모헤어 2중 레이어드 비니"
+    ],
     "price": "78,000",
-    "colors": ["LIGHT BLUE", "IVORY", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8347&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202510/52cdc5a7fb5bdb540157137482fc5d61.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202510/d687ccd8f654eb794b5ee1b37b707d81.jpg",
@@ -31400,9 +36780,15 @@
   {
     "id": "8315",
     "name": "MATIN MINI LOGO BALL CAP IN CHARCOAL",
-    "bullet_points": ["워싱감과 빈티지함이 느껴지는 2줄 미니로고 볼캡"],
+    "bullet_points": [
+      "워싱감과 빈티지함이 느껴지는 2줄 미니로고 볼캡"
+    ],
     "price": "48,000",
-    "colors": ["CHARCOAL", "NAVY", "BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "NAVY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8315&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/eee33f5cd9f13776691bd80e6aaa1d2d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/bb99cb7da46cc0b523ce573519c1c133.jpg",
@@ -31421,9 +36807,15 @@
   {
     "id": "8314",
     "name": "MATIN MINI LOGO BALL CAP IN NAVY",
-    "bullet_points": ["워싱감과 빈티지함이 느껴지는 2줄 미니로고 볼캡"],
+    "bullet_points": [
+      "워싱감과 빈티지함이 느껴지는 2줄 미니로고 볼캡"
+    ],
     "price": "48,000",
-    "colors": ["NAVY", "CHARCOAL", "BROWN"],
+    "colors": [
+      "NAVY",
+      "CHARCOAL",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8314&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/cd0e711d5f54b1afd71359d4d62e0002.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/ea359d4d0a040cd9f09911dfecfa7384.jpg",
@@ -31435,16 +36827,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/988b8da50dee40578be90f30c75b3e5c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "8313",
     "name": "MATIN MINI LOGO BALL CAP IN BROWN",
-    "bullet_points": ["워싱감과 빈티지함이 느껴지는 2줄 미니로고 볼캡"],
+    "bullet_points": [
+      "워싱감과 빈티지함이 느껴지는 2줄 미니로고 볼캡"
+    ],
     "price": "48,000",
-    "colors": ["BROWN", "CHARCOAL", "NAVY"],
+    "colors": [
+      "BROWN",
+      "CHARCOAL",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8313&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/60307edb1fe7a8429cba4b995214dc36.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/504d0053811a344b112721ee2a1b97cf.jpg",
@@ -31456,7 +36856,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/0ca761eb35aa44a153037d1980001e06.jpg"
     ],
     "soldout": true,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -31516,7 +36918,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/e70df95628a3a2fe3dcfbdd2e063e654.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
@@ -31527,7 +36931,10 @@
       "로고 자수가 포인트의 빈티지한 무드의 코듀로이 배색 6각 볼캡"
     ],
     "price": "58,000",
-    "colors": ["NAVY", "BROWN"],
+    "colors": [
+      "NAVY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8307&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/4b3b63f86df14918995278ad83a6819c.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/c0a4cb55714907f4b08a3b5fb26eef6c.jpg",
@@ -31550,7 +36957,10 @@
       "로고 자수가 포인트의 빈티지한 무드의 코듀로이 배색 6각 볼캡"
     ],
     "price": "58,000",
-    "colors": ["BROWN", "NAVY"],
+    "colors": [
+      "BROWN",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8306&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/fd005de39ffb3ac86d84b2c05b8e73f6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/df200062388a47c0e68d6b16672c68cf.jpg",
@@ -31562,16 +36972,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/15fe1e230403073343dba30b2b1de825.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "8303",
     "name": "MATIN MINI LOGO DENIM BALL CAP IN BLACK",
-    "bullet_points": ["빈티지한 무드의 2줄 미니로고 데님 볼캡"],
+    "bullet_points": [
+      "빈티지한 무드의 2줄 미니로고 데님 볼캡"
+    ],
     "price": "48,000",
-    "colors": ["BLACK", "BLUE"],
+    "colors": [
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8303&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/5b7d40223b564c9c11de920117a2631d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/3c257c9e3f52feb0094c3886a2a7fcd7.jpg",
@@ -31590,9 +37007,14 @@
   {
     "id": "8302",
     "name": "MATIN MINI LOGO DENIM BALL CAP IN BLUE",
-    "bullet_points": ["빈티지한 무드의 2줄 미니로고 데님 볼캡"],
+    "bullet_points": [
+      "빈티지한 무드의 2줄 미니로고 데님 볼캡"
+    ],
     "price": "48,000",
-    "colors": ["BLUE", "BLACK"],
+    "colors": [
+      "BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8302&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/f15f48d3f454e56a14ab2ac4916039f3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/efb6af4200f2d7d6f7baf4dca04d0d21.jpg",
@@ -31611,9 +37033,16 @@
   {
     "id": "8093",
     "name": "MATIN LOGO SCRIPT BEANIE IN BLACK",
-    "bullet_points": ["마뗑킴 필기체 로고 자카드 비니"],
+    "bullet_points": [
+      "마뗑킴 필기체 로고 자카드 비니"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "IVORY", "GREY", "BROWN"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "GREY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8093&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/1922ca249d3a29f30f6a14572cf33e8f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/09ce25659b96c08cc4159e2915da4422.jpg",
@@ -31632,9 +37061,16 @@
   {
     "id": "8092",
     "name": "MATIN LOGO SCRIPT BEANIE IN IVORY",
-    "bullet_points": ["마뗑킴 필기체 로고 자카드 비니"],
+    "bullet_points": [
+      "마뗑킴 필기체 로고 자카드 비니"
+    ],
     "price": "68,000",
-    "colors": ["IVORY", "BLACK", "GREY", "BROWN"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "GREY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8092&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/c94f424aae281a43cedd7d49044a3cba.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/6b4fb164c02a61711f4823cc4f655ce9.jpg",
@@ -31653,9 +37089,16 @@
   {
     "id": "8091",
     "name": "MATIN LOGO SCRIPT BEANIE IN GREY",
-    "bullet_points": ["마뗑킴 필기체 로고 자카드 비니"],
+    "bullet_points": [
+      "마뗑킴 필기체 로고 자카드 비니"
+    ],
     "price": "68,000",
-    "colors": ["GREY", "BLACK", "IVORY", "BROWN"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "IVORY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8091&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/f8a75b96b98632a1be53e9cb3adfdc22.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202602/2b332051df91ea2b377a49873cfb5045.jpg",
@@ -31673,9 +37116,16 @@
   {
     "id": "8090",
     "name": "MATIN LOGO SCRIPT BEANIE IN BROWN",
-    "bullet_points": ["마뗑킴 필기체 로고 자카드 비니"],
+    "bullet_points": [
+      "마뗑킴 필기체 로고 자카드 비니"
+    ],
     "price": "68,000",
-    "colors": ["BROWN", "BLACK", "IVORY", "GREY"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "IVORY",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8090&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/bf0ff88cfd471d51943c5fd9422afaee.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/12580e9bae47814e14534b703e7904fa.jpg",
@@ -31694,9 +37144,15 @@
   {
     "id": "7927",
     "name": "WASHED CIRCLE LOGO BALL CAP IN BLACK",
-    "bullet_points": ["피치 워싱 원형 로고자수 볼캡"],
+    "bullet_points": [
+      "피치 워싱 원형 로고자수 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "NAVY", "PINK"],
+    "colors": [
+      "BLACK",
+      "NAVY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7927&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/fda59de98d19b3a220036cc435dc03c3.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/a48095e6a43d7129930dc3d54e58ebf5.jpg",
@@ -31715,9 +37171,15 @@
   {
     "id": "7926",
     "name": "WASHED CIRCLE LOGO BALL CAP IN NAVY",
-    "bullet_points": ["피치 워싱 원형 로고자수 볼캡"],
+    "bullet_points": [
+      "피치 워싱 원형 로고자수 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["NAVY", "PINK", "BLACK"],
+    "colors": [
+      "NAVY",
+      "PINK",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7926&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/33e7ad3daf162df56d2f2b0707b66bfe.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/20e93be67146e893648d032536a2b08d.jpg",
@@ -31736,9 +37198,15 @@
   {
     "id": "7925",
     "name": "WASHED CIRCLE LOGO BALL CAP IN PINK",
-    "bullet_points": ["피치 워싱 원형 로고자수 볼캡"],
+    "bullet_points": [
+      "피치 워싱 원형 로고자수 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["PINK", "NAVY", "BLACK"],
+    "colors": [
+      "PINK",
+      "NAVY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7925&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/08994d1432e13be492afe936279a5c86.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/7924db0996a5ac3035693a8a8e0ebb83.jpg",
@@ -31757,9 +37225,14 @@
   {
     "id": "8013",
     "name": "MATIN DUSTY CLASSIC LOGO BALL CAP IN BROWN",
-    "bullet_points": ["빈티지 워싱 느낌의 클래식 로고자수 6각 볼캡"],
+    "bullet_points": [
+      "빈티지 워싱 느낌의 클래식 로고자수 6각 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["BROWN", "GREEN"],
+    "colors": [
+      "BROWN",
+      "GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8013&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/23722d4367aa528c50c77022653fa971.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/8ba9f2df74f18448cd21883b19f0fdd7.jpg",
@@ -31778,9 +37251,14 @@
   {
     "id": "8011",
     "name": "MATIN DUSTY CLASSIC LOGO BALL CAP IN GREEN",
-    "bullet_points": ["빈티지 워싱 느낌의 클래식 로고자수 6각 볼캡"],
+    "bullet_points": [
+      "빈티지 워싱 느낌의 클래식 로고자수 6각 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["GREEN", "BROWN"],
+    "colors": [
+      "GREEN",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8011&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202509/9892c06ae8198e2f99be5406162c415a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/48bcff8ab3d7da60b68477ba3c332b52.jpg",
@@ -31792,16 +37270,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202509/f5e99ee56afd3f2cbef3d64b3135984c.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "8016",
     "name": "MATIN LEOPARD VOLUME LOGO BALL CAP IN DARK GREY",
-    "bullet_points": ["레오파드 패턴 로고자수 볼캡"],
+    "bullet_points": [
+      "레오파드 패턴 로고자수 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["DARK GREY", "BEIGE"],
+    "colors": [
+      "DARK GREY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8016&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/4480d2bf9fdcdbf1f6c3e9abc3a986a4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/94709fff3e1eac90947986b35dd4f78c.jpg",
@@ -31820,9 +37305,14 @@
   {
     "id": "8015",
     "name": "MATIN LEOPARD VOLUME LOGO BALL CAP IN DARK BEIGE",
-    "bullet_points": ["레오파드 패턴 로고자수 볼캡"],
+    "bullet_points": [
+      "레오파드 패턴 로고자수 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["DARK BEIGE", "CHARCOAL"],
+    "colors": [
+      "DARK BEIGE",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8015&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202508/6d5b0cf4b6e93470597f718aadad7119.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202508/589db5e2945e23abfdd24d6986bf35f9.jpg",
@@ -31841,7 +37331,9 @@
   {
     "id": "6959",
     "name": "MATIN VOLUME LOGO BALL CAP IN BLACK",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "BLACK",
@@ -31874,7 +37366,9 @@
   {
     "id": "7889",
     "name": "MATIN VOLUME LOGO BALL CAP IN GREY",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "GREY",
@@ -31907,7 +37401,9 @@
   {
     "id": "6958",
     "name": "MATIN VOLUME LOGO BALL CAP IN BEIGE",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "BEIGE",
@@ -31933,14 +37429,18 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202501/e0f2d3a0657771d60723254c12b9564d.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "6957",
     "name": "MATIN VOLUME LOGO BALL CAP IN NAVY",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "NAVY",
@@ -31973,7 +37473,9 @@
   {
     "id": "7892",
     "name": "MATIN VOLUME LOGO BALL CAP IN BROWN",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "BROWN",
@@ -32006,7 +37508,9 @@
   {
     "id": "7891",
     "name": "MATIN VOLUME LOGO BALL CAP IN GREEN",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "GREEN",
@@ -32039,7 +37543,9 @@
   {
     "id": "7890",
     "name": "MATIN VOLUME LOGO BALL CAP IN PINK",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "PINK",
@@ -32072,7 +37578,9 @@
   {
     "id": "7888",
     "name": "MATIN VOLUME LOGO BALL CAP IN BLUE",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "BLUE",
@@ -32105,7 +37613,9 @@
   {
     "id": "7893",
     "name": "MATIN VOLUME LOGO BALL CAP IN SMOKE BLUE",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "SMOKE BLUE",
@@ -32131,14 +37641,18 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202506/859f33eae4c2beec35d394ff7f278718.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "6956",
     "name": "MATIN VOLUME LOGO BALL CAP IN RED",
-    "bullet_points": ["마뗑킴 볼드로고자수가 특징인 6각 볼캡"],
+    "bullet_points": [
+      "마뗑킴 볼드로고자수가 특징인 6각 볼캡"
+    ],
     "price": "58,000",
     "colors": [
       "RED",
@@ -32164,16 +37678,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202501/b1e0c6e03f2cb34bad42f49bafb75127.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "7718",
     "name": "MATIN PAPER KNIT BUCKET HAT IN BLACK",
-    "bullet_points": ["지사 소재로 시원하게 착용 가능한 버킷햇"],
+    "bullet_points": [
+      "지사 소재로 시원하게 착용 가능한 버킷햇"
+    ],
     "price": "88,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7718&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/b3e14bd703af90419612faa69198c696.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/4f02a4d39671b152014bbd12e984febd.jpg",
@@ -32187,16 +37708,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202505/77f459f47fdd29505a900246153f299e.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "7717",
     "name": "MATIN PAPER KNIT BUCKET HAT IN WHITE",
-    "bullet_points": ["지사 소재로 시원하게 착용 가능한 버킷햇"],
+    "bullet_points": [
+      "지사 소재로 시원하게 착용 가능한 버킷햇"
+    ],
     "price": "88,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7717&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202505/44c3f4383fe0d07da44ccf85e418567e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202505/236541931d016d4bc21af526c9e3d230.jpg",
@@ -32214,9 +37742,15 @@
   {
     "id": "7703",
     "name": "MATIN MESH TRUCKER BALL CAP IN BLACK",
-    "bullet_points": ["스트록 처리된 Matin자수가 특징인 여름 메쉬 트러커캡"],
+    "bullet_points": [
+      "스트록 처리된 Matin자수가 특징인 여름 메쉬 트러커캡"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "BROWN", "GREY"],
+    "colors": [
+      "BLACK",
+      "BROWN",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7703&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/bcb9d9f0e02f72e7db0a052c79464e6d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/f3bfeb7e3a15670e8ee5554a13dbc9e2.jpg",
@@ -32235,9 +37769,13 @@
   {
     "id": "7702",
     "name": "MATIN MESH TRUCKER BALL CAP IN GREY",
-    "bullet_points": ["스트록 처리된 Matin자수가 특징인 여름 메쉬 트러커캡"],
+    "bullet_points": [
+      "스트록 처리된 Matin자수가 특징인 여름 메쉬 트러커캡"
+    ],
     "price": "68,000",
-    "colors": ["GREY"],
+    "colors": [
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7702&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/fe10d4c56f6edb93e25561f074347ed7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/96aa6f36c8e5b7db8cfe87ce0e4f5343.jpg",
@@ -32249,16 +37787,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/d3da5adcc190bb1820d61514e314cd22.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "7701",
     "name": "MATIN MESH TRUCKER BALL CAP IN BROWN",
-    "bullet_points": ["스트록 처리된 Matin자수가 특징인 여름 메쉬 트러커캡"],
+    "bullet_points": [
+      "스트록 처리된 Matin자수가 특징인 여름 메쉬 트러커캡"
+    ],
     "price": "68,000",
-    "colors": ["BROWN", "GREY", "BLACK"],
+    "colors": [
+      "BROWN",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7701&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/69d1c869b335ae7dc008a55758645efd.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/58180f29f9f7e2b3a5a39651c6aa09ca.jpg",
@@ -32277,9 +37823,15 @@
   {
     "id": "7399",
     "name": "MATIN GLOSSY BALL CAP IN BLACK",
-    "bullet_points": ["그라데이션 Matin 자수가 돋보이는 워시드 나일론 볼캡"],
+    "bullet_points": [
+      "그라데이션 Matin 자수가 돋보이는 워시드 나일론 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "GREY", "PINK"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7399&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/fee1983a0a94b0bb99f0e5c724c7bf77.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/06e3d5a5c469ba5abcdd22af82d44427.jpg",
@@ -32298,9 +37850,15 @@
   {
     "id": "7398",
     "name": "MATIN GLOSSY BALL CAP IN GREY",
-    "bullet_points": ["그라데이션 Matin 자수가 돋보이는 워시드 나일론 볼캡"],
+    "bullet_points": [
+      "그라데이션 Matin 자수가 돋보이는 워시드 나일론 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["GREY", "BLACK", "PINK"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7398&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/d1801447dfb0c44ef92097037460f03f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/d88339730d0049d9ab9784b4116a0c82.jpg",
@@ -32319,9 +37877,15 @@
   {
     "id": "7397",
     "name": "MATIN GLOSSY BALL CAP IN PINK",
-    "bullet_points": ["그라데이션 Matin 자수가 돋보이는 워시드 나일론 볼캡"],
+    "bullet_points": [
+      "그라데이션 Matin 자수가 돋보이는 워시드 나일론 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["PINK", "BLACK", "GREY"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7397&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/98765980d58c3f673ed5486e5c2cb188.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/c98017225deb690eea5354dc56130e32.jpg",
@@ -32340,9 +37904,17 @@
   {
     "id": "7396",
     "name": "MATIN LOGO WASHED BALL CAP IN BLACK",
-    "bullet_points": ["톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"],
+    "bullet_points": [
+      "톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "LIGHT BEIGE", "BEIGE", "BLUE", "PINK"],
+    "colors": [
+      "BLACK",
+      "LIGHT BEIGE",
+      "BEIGE",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7396&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a7a4c46c83d0400c4565d57192f90795.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/0ab8dfd6bd3fbf67ed863c9ad59eedaf.jpg",
@@ -32362,9 +37934,17 @@
   {
     "id": "7395",
     "name": "MATIN LOGO WASHED BALL CAP IN LIGHT BEIGE",
-    "bullet_points": ["톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"],
+    "bullet_points": [
+      "톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["LIGHT BEIGE", "BLACK", "BEIGE", "BLUE", "PINK"],
+    "colors": [
+      "LIGHT BEIGE",
+      "BLACK",
+      "BEIGE",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7395&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/14056db6a7fd6fa529cbe2cfe65f92a7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202509/09fcc50e9230341aceeb32cba1c2a14e.jpg",
@@ -32384,9 +37964,17 @@
   {
     "id": "7394",
     "name": "MATIN LOGO WASHED BALL CAP IN BEIGE",
-    "bullet_points": ["톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"],
+    "bullet_points": [
+      "톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["BEIGE", "BLACK", "LIGHT BEIGE", "BLUE", "PINK"],
+    "colors": [
+      "BEIGE",
+      "BLACK",
+      "LIGHT BEIGE",
+      "BLUE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7394&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/7ed4c9408c961d371667fe22b1266553.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/ca7e344a0997cbc431d764559d31609e.jpg",
@@ -32406,9 +37994,18 @@
   {
     "id": "7393",
     "name": "MATIN LOGO WASHED BALL CAP IN PINK",
-    "bullet_points": ["톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"],
+    "bullet_points": [
+      "톤온톤 Matin 자수가 포인트인 스톤워싱 볼캡"
+    ],
     "price": "68,000",
-    "colors": ["PINK", "BLACK", "LIGHT BEIGE", "BEIGE", "BROWN", "BLUE"],
+    "colors": [
+      "PINK",
+      "BLACK",
+      "LIGHT BEIGE",
+      "BEIGE",
+      "BROWN",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7393&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/9662416127798f63e6e97ef65f012926.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/5b22c01f36d6d0adbc87c98dca20011b.jpg",
@@ -32432,7 +38029,11 @@
       "마뗑킴 로고와 카모플라주 패턴이 포인트인 코튼 워시드 볼캡"
     ],
     "price": "68,000",
-    "colors": ["CHARCOAL", "KHAKI", "BEIGE"],
+    "colors": [
+      "CHARCOAL",
+      "KHAKI",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7308&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/ca11c8a2b648c7ecf2e1dada1e4439a5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/1004ba063fec8098437c89b6639f19e9.jpg",
@@ -32451,9 +38052,15 @@
   {
     "id": "6965",
     "name": "MATIN CLASSIC LOGO BALL CAP IN BLACK",
-    "bullet_points": ["마뗑킴 기본 볼드 로고 자수가 포인트인 볼캡"],
+    "bullet_points": [
+      "마뗑킴 기본 볼드 로고 자수가 포인트인 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "GREY", "NAVY"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6965&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202501/479c30d4b9a51d2508d7eb0f4e4a9d84.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202501/39cbe3d2b1c7f941b7a5a2fcbe090255.jpg",
@@ -32472,9 +38079,15 @@
   {
     "id": "6964",
     "name": "MATIN CLASSIC LOGO BALL CAP IN GREY",
-    "bullet_points": ["마뗑킴 기본 볼드 로고 자수가 포인트인 볼캡"],
+    "bullet_points": [
+      "마뗑킴 기본 볼드 로고 자수가 포인트인 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["GREY", "BLACK", "NAVY"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6964&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202501/dee5c3d3349995579773dd5c9952d612.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202501/707a40fb9450d47ff3a2901a07cedc81.jpg",
@@ -32493,9 +38106,15 @@
   {
     "id": "6963",
     "name": "MATIN CLASSIC LOGO BALL CAP IN NAVY",
-    "bullet_points": ["마뗑킴 기본 볼드 로고 자수가 포인트인 볼캡"],
+    "bullet_points": [
+      "마뗑킴 기본 볼드 로고 자수가 포인트인 볼캡"
+    ],
     "price": "58,000",
-    "colors": ["NAVY", "BLACK", "GREY"],
+    "colors": [
+      "NAVY",
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6963&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202501/d2d6d37c23f71668ba9f102cccf65bf7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202501/5b50cded464aee76e1cc17669874eb79.jpg",
@@ -32518,7 +38137,12 @@
       "MATIN KIM 시그니처 원형 자수 디테일이 포인트인 피그먼트 워싱 볼 캡"
     ],
     "price": "48,000",
-    "colors": ["SKY", "CHARCOAL", "BLACK", "KHAKI"],
+    "colors": [
+      "SKY",
+      "CHARCOAL",
+      "BLACK",
+      "KHAKI"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5603&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202405/450784b4c6f45c80727027d15e9e97da.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202405/a3edb3041834e1aa2e9a0291fd22fb97.jpg",
@@ -32530,16 +38154,23 @@
       "https://matinkim.com/web/product/extra/small/202405/8641e51c8a83e01e0ae68d7bcb8e6d5e.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "GOODS",
     "category2": "Hats & Caps"
   },
   {
     "id": "6426",
     "name": "MATIN BLACK DENIM BUCKET HAT IN BLACK",
-    "bullet_points": ["MATIN KIM 로고가 포인트인 데님 버킷햇"],
+    "bullet_points": [
+      "MATIN KIM 로고가 포인트인 데님 버킷햇"
+    ],
     "price": "78,000",
-    "colors": ["BLACK", "GREY"],
+    "colors": [
+      "BLACK",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6426&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202410/26cd16c9182bc0834e95f705d83548ea.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202410/549f0d204293cdbef1e3fa47e359c32e.jpg",
@@ -32558,9 +38189,15 @@
   {
     "id": "3181",
     "name": "LOGO JACQUARD SHORT BEANIE IN BLACK",
-    "bullet_points": ["MATIN KIM 로고를 이용한 홀가먼트 비니"],
+    "bullet_points": [
+      "MATIN KIM 로고를 이용한 홀가먼트 비니"
+    ],
     "price": "68,000",
-    "colors": ["BLACK", "WHITE", "GREY"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3181&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202208/9c396323f8b026ca1f0a7646f552588d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/ed7f908f4dd8d0926267444b23b5296c.jpg",
@@ -32583,9 +38220,15 @@
   {
     "id": "3182",
     "name": "LOGO JACQUARD SHORT BEANIE IN WHITE",
-    "bullet_points": ["MATIN KIM 로고를 이용한 홀가먼트 비니"],
+    "bullet_points": [
+      "MATIN KIM 로고를 이용한 홀가먼트 비니"
+    ],
     "price": "68,000",
-    "colors": ["WHITE", "GREY", "BLACK"],
+    "colors": [
+      "WHITE",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3182&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202208/10523434e9048cca2bddc1a40e694a96.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/551ae5941fae89059f99c4d2fb4eb5d3.jpg",
@@ -32608,9 +38251,15 @@
   {
     "id": "3183",
     "name": "LOGO JACQUARD SHORT BEANIE IN GREY",
-    "bullet_points": ["MATIN KIM 로고를 이용한 홀가먼트 비니"],
+    "bullet_points": [
+      "MATIN KIM 로고를 이용한 홀가먼트 비니"
+    ],
     "price": "68,000",
-    "colors": ["GREY", "BLACK", "WHITE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=3183&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202208/45b4ad2d0b9a805364831628d200a38b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/b88907e0f432f44dc4be21418f51bad6.jpg",
@@ -32633,9 +38282,14 @@
   {
     "id": "5514",
     "name": "LOGO LINEN SHORT BEANIE IN BLACK",
-    "bullet_points": ["MATIN KIM 로고가 포인트인 썸머 비니"],
+    "bullet_points": [
+      "MATIN KIM 로고가 포인트인 썸머 비니"
+    ],
     "price": "58,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5514&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202405/08ad47a8d313deaf69cf418a971a2e90.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202405/98590bbf60b2bfbfd5ffb4ef4426ae7a.jpg",
@@ -32653,9 +38307,14 @@
   {
     "id": "5513",
     "name": "LOGO LINEN SHORT BEANIE IN WHITE",
-    "bullet_points": ["MATIN KIM 로고가 포인트인 썸머 비니"],
+    "bullet_points": [
+      "MATIN KIM 로고가 포인트인 썸머 비니"
+    ],
     "price": "58,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5513&cate_no=168&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202405/fb8a75759c8ef162c24e23773fd35ef7.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202405/c05512512d848e8426a84f6d260b906e.jpg",
@@ -32678,7 +38337,10 @@
       "쉬어한 소재로, 자연스러운 주름을 만들어 착용 가능"
     ],
     "price": "18,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8937&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/5319f5404a030e15f60286d5d4d3ed3a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/8cac856d2d7a15aafd5f5685ada90318.jpg",
@@ -32701,7 +38363,10 @@
       "쉬어한 소재로, 자연스러운 주름을 만들어 착용 가능"
     ],
     "price": "18,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8936&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/da7d70902b3d05ed8d022d67f3031bc8.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/8e4e657e31d22f94688d13d6755d284d.jpg",
@@ -32724,7 +38389,10 @@
       "발목 뒤편의 로고 라벨이 포인트"
     ],
     "price": "18,000",
-    "colors": ["BLACK", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8939&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/0ca55ee1f921b0ae9ac533406671fb32.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/d0a77d67fc02314c89495fadb2bca8bf.jpg",
@@ -32747,7 +38415,10 @@
       "발목 뒤편의 로고 라벨이 포인트"
     ],
     "price": "18,000",
-    "colors": ["LIGHT GREY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8938&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/674feed08b70374682735f51f4fe09a4.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/7f15a0353b6826aa3d52e9a9aa8456f4.jpg",
@@ -32770,7 +38441,9 @@
       "기본 로고 실핀과 입체감있는 필기체 로고 실핀으로, 2개 1세트 구성"
     ],
     "price": "28,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8940&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/4355f42fce36972f18260aaee9f77808.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/7fc94faea49f79694546b1912fd1d093.jpg",
@@ -32794,7 +38467,9 @@
       "기본 로고 실핀과 뱀줄로 만든 리본 장식 실핀으로, 2개 1세트 구성"
     ],
     "price": "28,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8941&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/9af5de2b1a1ae2343194d2b0e22a83d7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/4c09e613ef839b293fa7792af4e04a74.jpg",
@@ -32817,7 +38492,10 @@
       "목, 헤어, 가방 등 다양한 연출이 가능한 코튼 소재의 반다나"
     ],
     "price": "58,000",
-    "colors": ["BEIGE", "NAVY"],
+    "colors": [
+      "BEIGE",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8810&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/593a2e823562ec86b8818ac455c0a144.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/8216357b1f4bcb187d812719b68027ea.jpg",
@@ -32840,7 +38518,10 @@
       "목, 헤어, 가방 등 다양한 연출이 가능한 코튼 소재의 반다나"
     ],
     "price": "58,000",
-    "colors": ["NAVY", "BEIGE"],
+    "colors": [
+      "NAVY",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8811&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/eeedc221e41b257ca25c4f84f45b5939.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/aa54cf243af612bc9472e2a044b854d2.jpg",
@@ -32859,9 +38540,13 @@
   {
     "id": "8812",
     "name": "MATIN HEART CHARM KEYRING IN BLACK",
-    "bullet_points": ["블랙볼, 하트 장식의 키링"],
+    "bullet_points": [
+      "블랙볼, 하트 장식의 키링"
+    ],
     "price": "25,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8812&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/af6fe8f901976060b96a9f6ae942ecc1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/3a76d7b2c83e025090dadf5fa6dcc93c.jpg",
@@ -32873,16 +38558,22 @@
       "https://matinkim.com/web/product/extra/small/202601/b401b27983bda638fd66eb61bb440b52.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
   {
     "id": "8816",
     "name": "DOUBLE STUD LEATHER BELT IN BLACK",
-    "bullet_points": ["D링에 키링이나 참을 달 수 있는 리벳 스터드 소가죽 벨트"],
+    "bullet_points": [
+      "D링에 키링이나 참을 달 수 있는 리벳 스터드 소가죽 벨트"
+    ],
     "price": "78,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8816&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/5039342c78d01c2325309c4bb96a8b3d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/eb4be1d79daa7ae1d5d774fca58254e3.jpg",
@@ -32904,7 +38595,9 @@
       "가방 양옆 핸들고리나 바지에 걸어 연출 가능한 유니콘 하트 장식 체인 스트랩"
     ],
     "price": "32,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8817&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202601/ed52a66370163c652bee6c2f99d27925.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202601/b38b7743aaf6649fcef42503139e977a.jpg",
@@ -32916,7 +38609,9 @@
       "https://matinkim.com/web/product/extra/small/202601/7a8cdd3e38218db19325969bc635d57f.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
@@ -32925,7 +38620,9 @@
     "name": "MATIN KIM X CASETIFY PHONE CHARM IN DARK SILVER",
     "bullet_points": [],
     "price": "89,000",
-    "colors": ["DARK SILVER"],
+    "colors": [
+      "DARK SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8697&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/598b508115b791c99a93dc78d1bff2a7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/fc0ebd2a2d30b35a846d4b6372187d6e.jpg",
@@ -32940,7 +38637,9 @@
       "https://matinkim.com/web/product/extra/small/202512/141b7731ce5bb316f9cba9bf7f1531be.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
@@ -32949,7 +38648,9 @@
     "name": "MATIN KIM X CASETIFY PAPER CARD HOLDER IN SILVER",
     "bullet_points": [],
     "price": "51,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8698&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/a558a71dea4d21d523b773e23d77909a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/7eca39dc4476a86cdf30d10383991ccb.jpg",
@@ -32964,7 +38665,9 @@
       "https://matinkim.com/web/product/extra/small/202512/3f849ec65151d9fb6454f74ba36aaf8d.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -32973,7 +38676,9 @@
     "name": "MATIN KIM X CASETIFY TAPE CARD HOLDER IN SILVER",
     "bullet_points": [],
     "price": "51,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8699&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/bf72256a57f319c59768ded3a75cf25d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/45be4e58016c464d59dbe54d94eb9e1a.jpg",
@@ -32987,8 +38692,9 @@
       "https://matinkim.com/web/product/extra/small/202512/bd8c2316df76c5fb89e12866424f8f63.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
-
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -32997,7 +38703,9 @@
     "name": "MATIN KIM X CASETIFY PAPER CASE IN SILVER",
     "bullet_points": [],
     "price": "77,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8701&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/f8a153f707bca3a2b6264e592613d1b7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/4a51b0cd7527e329350b8438f2b12ed4.jpg",
@@ -33019,7 +38727,9 @@
       "https://matinkim.com/web/product/extra/small/202512/188fe7509235ab6e79cf188c8872744d.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33028,7 +38738,9 @@
     "name": "MATIN KIM X CASETIFY TAPE CASE IN SILVER",
     "bullet_points": [],
     "price": "77,000",
-    "colors": ["SILVER"],
+    "colors": [
+      "SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8702&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/5e88bcb84f6f472d68748b078f04b296.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/f960710b060a85cd85d2f72e5c7c1b0a.jpg",
@@ -33047,7 +38759,9 @@
       "https://matinkim.com/web/product/extra/small/202512/f3bbf5a539a4433c281e869b2cfbeaaf.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33056,7 +38770,9 @@
     "name": "MATIN KIM X CASETIFY UNBOXING CASE IN BLACK",
     "bullet_points": [],
     "price": "77,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8703&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/395a58a6ea0ecf190b111f7935e5b59f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/432ce7b2d724c02974d8ca48edb9f6ee.jpg",
@@ -33077,7 +38793,9 @@
       "https://matinkim.com/web/product/extra/small/202512/59eda9c9c9379ee7eb294907f02b5960.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33086,7 +38804,9 @@
     "name": "MATIN KIM X CASETIFY POSTBOX CASE IN MIX",
     "bullet_points": [],
     "price": "77,000",
-    "colors": ["MIX"],
+    "colors": [
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8704&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/8d7cde7bdf3ed3cfa29d992d0e3c5ff6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/5f7cfdfb445b6ea47c8255bd960fa8b2.jpg",
@@ -33103,7 +38823,9 @@
       "https://matinkim.com/web/product/extra/small/202601/d17db24377076b8fde0ff28b263642b3.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33112,7 +38834,9 @@
     "name": "MATIN KIM X CASETIFY DENIM CASE IN BLUE",
     "bullet_points": [],
     "price": "77,000",
-    "colors": ["BLUE"],
+    "colors": [
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8705&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/be7349d4af43c7ccf0094d35b4de8807.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/e853c5e69fdb43182b427f6fc6b5525f.jpg",
@@ -33136,7 +38860,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202512/12505a549a9a5d53e313863cb08ddb5b.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33145,7 +38871,9 @@
     "name": "MATIN KIM X CASETIFY DENIM CIRCLE CASE IN BLUE",
     "bullet_points": [],
     "price": "77,000",
-    "colors": ["BLUE"],
+    "colors": [
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8706&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202512/3ec0c7b72710971f4da91f66a5894db6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202512/0324b85ec36c24abc4a9e77fde2755c8.jpg",
@@ -33169,7 +38897,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202512/d97165a362338f1eed82dfe0ad9e0f6d.jpg"
     ],
     "soldout": true,
-    "tag": ["COLLAB"],
+    "tag": [
+      "COLLAB"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33180,7 +38910,9 @@
       "시즌 호피 머플러로 부드러운 터치감의 밑단에 로고포인트가 들어간 머플러"
     ],
     "price": "88,000",
-    "colors": ["MIX"],
+    "colors": [
+      "MIX"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8667&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/fe03faf8e62c3e5d2b84e92066b8588c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/99a0078d4682de0b31ea258b69d71037.jpg",
@@ -33203,7 +38935,10 @@
       "부드러운 터치감의 레오파드 인조퍼를 사용한 키치한 디자인의 파우치 참"
     ],
     "price": "58,000",
-    "colors": ["IVORY", "PINK"],
+    "colors": [
+      "IVORY",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8658&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/eeeecd583b842cc81960c4e0e8be33ec.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/caddc398443f5fdc6563db7de4f2fd53.jpg",
@@ -33215,7 +38950,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/11dba36577c90898742456998b91ef52.jpg"
     ],
     "soldout": false,
-    "tag": ["MUST HAVE"],
+    "tag": [
+      "MUST HAVE"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33226,7 +38963,10 @@
       "부드러운 터치감의 레오파드 인조퍼를 사용한 키치한 디자인의 파우치 참"
     ],
     "price": "58,000",
-    "colors": ["PINK", "IVORY"],
+    "colors": [
+      "PINK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8657&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/85d7606b59142ae4dfc3980af3a97e9c.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/57e24353a012c75e1b64eaf77a94b589.jpg",
@@ -33245,9 +38985,14 @@
   {
     "id": "8660",
     "name": "LEOPARD MINI POUCH IN GREY",
-    "bullet_points": ["부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"],
+    "bullet_points": [
+      "부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"
+    ],
     "price": "58,000",
-    "colors": ["GREY", "BROWN"],
+    "colors": [
+      "GREY",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8660&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/3a6b59329c7c9ea17e7c88d51e1da506.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/72be227a64acb1f7315cd29565e5fbdc.jpg",
@@ -33266,9 +39011,14 @@
   {
     "id": "8659",
     "name": "LEOPARD MINI POUCH IN BROWN",
-    "bullet_points": ["부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"],
+    "bullet_points": [
+      "부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"
+    ],
     "price": "58,000",
-    "colors": ["BROWN", "GREY"],
+    "colors": [
+      "BROWN",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8659&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/a73b392a4925a90def724e89420e954f.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/b99dd28e550b2fe0f3bdb132e97f1324.jpg",
@@ -33280,7 +39030,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202510/29dc26a11aa6888f9ff558df48d56a7d.jpg"
     ],
     "soldout": true,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Pouches & Cases"
   },
@@ -33291,7 +39043,11 @@
       "리본 핑거홀 장갑으로 손목부분에 달린 리본이 여성스러움을 더해줌"
     ],
     "price": "48,000",
-    "colors": ["IVORY", "CHARCOAL", "LIGHT BLUE"],
+    "colors": [
+      "IVORY",
+      "CHARCOAL",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8625&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/a65a81e4b6aceb0f260c50806e0f22c0.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/c23f1152958a3614985986a202b427db.jpg",
@@ -33315,7 +39071,11 @@
       "리본 핑거홀 장갑으로 손목부분에 달린 리본이 여성스러움을 더해줌"
     ],
     "price": "48,000",
-    "colors": ["CHARCOAL", "LIGHT BLUE", "IVORY"],
+    "colors": [
+      "CHARCOAL",
+      "LIGHT BLUE",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8626&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/3a3f59b959de23cd55252c444cf4638b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/5a509e0c57b4221f5b0f33a908269166.jpg",
@@ -33339,7 +39099,11 @@
       "리본 핑거홀 장갑으로 손목부분에 달린 리본이 여성스러움을 더해줌"
     ],
     "price": "48,000",
-    "colors": ["LIGHT BLUE", "CHARCOAL", "IVORY"],
+    "colors": [
+      "LIGHT BLUE",
+      "CHARCOAL",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8627&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/3ee47c1499a926ab2f496fe294e89cbb.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/2549b51461fc0edba8a228d7d1e20a38.jpg",
@@ -33359,9 +39123,14 @@
   {
     "id": "8662",
     "name": "HAIRY FUR MINI CUBE POUCH IN BROWN",
-    "bullet_points": ["부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"],
+    "bullet_points": [
+      "부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"
+    ],
     "price": "58,000",
-    "colors": ["BROWN", "BEIGE"],
+    "colors": [
+      "BROWN",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8662&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/2a7b2ec956c6aa872579a807e6a6a7c9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/3f7ff8fff82843c7ec1ec414ffcce2fb.jpg",
@@ -33380,9 +39149,14 @@
   {
     "id": "8661",
     "name": "HAIRY FUR MINI CUBE POUCH IN BEIGE",
-    "bullet_points": ["부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"],
+    "bullet_points": [
+      "부드러운 터치감의 인조퍼를 사용한 큐브형태의 파우치 참"
+    ],
     "price": "58,000",
-    "colors": ["BEIGE", "BROWN"],
+    "colors": [
+      "BEIGE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8661&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/5c82e643c3385ede08069fa4c962afc5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/70aafa3548d9f7d49efb6f0dd858ef20.jpg",
@@ -33405,7 +39179,10 @@
       "시즌 크랙 로고 타이포디자인이 들어간 머플러 부드러운 터치감이 특징"
     ],
     "price": "78,000",
-    "colors": ["BLACK", "LIGHT BLUE"],
+    "colors": [
+      "BLACK",
+      "LIGHT BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8452&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/5e9fcac6cbf63b6c3785b473dbaa93b5.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/b82f792e7fdce744462fc3bd2be7691a.jpg",
@@ -33428,7 +39205,10 @@
       "시즌 크랙 로고 타이포디자인이 들어간 머플러 부드러운 터치감이 특징"
     ],
     "price": "78,000",
-    "colors": ["LIGHT BLUE", "BLACK"],
+    "colors": [
+      "LIGHT BLUE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8451&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/2b2c9b694dbc7d35013c1d2b99aef1be.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/b4cfed44cdfb0ac7a7f0872e18cce7c4.jpg",
@@ -33451,7 +39231,11 @@
       "부드러운 터치감의 원사를 사용한 배색 장갑으로 부클니트비니와 세트로 구성"
     ],
     "price": "48,000",
-    "colors": ["CHARCOAL", "BEIGE", "PINK"],
+    "colors": [
+      "CHARCOAL",
+      "BEIGE",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8450&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/4ad8a86fc39125496a8b8a1b03cd87d7.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/216e9c81c60621517c3d544b8ffcba77.jpg",
@@ -33475,7 +39259,11 @@
       "부드러운 터치감의 원사를 사용한 배색 장갑으로 부클니트비니와 세트로 구성"
     ],
     "price": "48,000",
-    "colors": ["BEIGE", "CHARCOAL", "PINK"],
+    "colors": [
+      "BEIGE",
+      "CHARCOAL",
+      "PINK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8449&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/3bd86e49836adb750509efd649d47668.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/4042d13f1a0acb0dbdb74a2ae2256dcf.jpg",
@@ -33499,7 +39287,11 @@
       "부드러운 터치감의 원사를 사용한 배색 장갑으로 부클니트비니와 세트로 구성"
     ],
     "price": "48,000",
-    "colors": ["PINK", "CHARCOAL", "BEIGE"],
+    "colors": [
+      "PINK",
+      "CHARCOAL",
+      "BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8448&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/9ad7a6805e0f9fe1cb2f2cd8aa98aa7a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/e68a919a93392c1b1c9b149b8cebbca5.jpg",
@@ -33523,7 +39315,9 @@
       "장갑 뿐만 아니라 스카프와 같은 조그만 잡화들을 집어서 가방에 걸 수 있는 홀더 키링"
     ],
     "price": "18,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8441&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/11227b7b5430c797de5d98d0dcfa9a19.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/aad51d297b752bc5b6b0b3436cea81bf.jpg",
@@ -33550,7 +39344,10 @@
       "2가지 컬러 레이어가 특징인 부드러운 코튼원사의 크루삭스"
     ],
     "price": "18,000",
-    "colors": ["CHARCOAL", "BROWN"],
+    "colors": [
+      "CHARCOAL",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8346&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/e5d7b5961036fc1ed578c23033cae552.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/51a08aea09ad218fb51727e475bf34b3.jpg",
@@ -33573,7 +39370,10 @@
       "2가지 컬러 레이어가 특징인 부드러운 코튼원사의 크루삭스"
     ],
     "price": "18,000",
-    "colors": ["BROWN", "CHARCOAL"],
+    "colors": [
+      "BROWN",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8345&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202509/44a03d26031d72a2c6793d307a7a4e4a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202509/8fa3508ba94cc6629ddec8c494d47ce5.jpg",
@@ -33592,9 +39392,14 @@
   {
     "id": "8344",
     "name": "LACE UP CHUNKY BALLET SNEAKERS IN BLACK",
-    "bullet_points": ["스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"],
+    "bullet_points": [
+      "스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"
+    ],
     "price": "168,000",
-    "colors": ["BLACK", "DARK SILVER"],
+    "colors": [
+      "BLACK",
+      "DARK SILVER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8344&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202602/3232f1e46ffbc494cdfd1246ab76523a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202602/a19103f2090ce461eb262249aad03a34.jpg",
@@ -33613,9 +39418,14 @@
   {
     "id": "8343",
     "name": "LACE UP CHUNKY BALLET SNEAKERS IN DARK SILVER",
-    "bullet_points": ["스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"],
+    "bullet_points": [
+      "스포티한 라인에 여성스러운 디테일의 메리제인 스니커즈"
+    ],
     "price": "168,000",
-    "colors": ["DARK SILVER", "BLACK"],
+    "colors": [
+      "DARK SILVER",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8343&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202510/2a4468ac1ce9832050461ab0058d11a9.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202510/52bd009e9bee932cbe27efffd705de5d.jpg",
@@ -33633,9 +39443,14 @@
   {
     "id": "8118",
     "name": "BOLERO KNIT MUFFLER IN LIGHT BEIGE",
-    "bullet_points": ["볼레로형 니트 머플러"],
+    "bullet_points": [
+      "볼레로형 니트 머플러"
+    ],
     "price": "88,000",
-    "colors": ["LIGHT BEIGE", "LIGHT GREEN"],
+    "colors": [
+      "LIGHT BEIGE",
+      "LIGHT GREEN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8118&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/b766dd63a89957b8d8a7372b316878b1.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/9cd2f85d5429b5e121b52e8974444245.jpg",
@@ -33659,9 +39474,14 @@
   {
     "id": "8117",
     "name": "BOLERO KNIT MUFFLER IN LIGHT GREEN",
-    "bullet_points": ["볼레로형 니트 머플러"],
+    "bullet_points": [
+      "볼레로형 니트 머플러"
+    ],
     "price": "88,000",
-    "colors": ["LIGHT GREEN", "LIGHT BEIGE"],
+    "colors": [
+      "LIGHT GREEN",
+      "LIGHT BEIGE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8117&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/b7956b5594404ab1f943cacc3278155d.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/63b2ced31002061fc1f35840ede72c5b.jpg",
@@ -33684,9 +39504,15 @@
   {
     "id": "8050",
     "name": "SMALL LOGO POINT RIBBED SOCKS IN BLACK",
-    "bullet_points": ["코튼 골지 루즈 삭스"],
+    "bullet_points": [
+      "코튼 골지 루즈 삭스"
+    ],
     "price": "18,000",
-    "colors": ["BLACK", "GREY", "WHITE"],
+    "colors": [
+      "BLACK",
+      "GREY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8050&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/269609eb00893a4150080ec7e5424d2a.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/88c9be67ce5ca78b158be5a458e2a6c9.jpg",
@@ -33705,9 +39531,15 @@
   {
     "id": "8049",
     "name": "SMALL LOGO POINT RIBBED SOCKS IN WHITE",
-    "bullet_points": ["코튼 골지 루즈 삭스"],
+    "bullet_points": [
+      "코튼 골지 루즈 삭스"
+    ],
     "price": "18,000",
-    "colors": ["WHITE", "GREY", "BLACK"],
+    "colors": [
+      "WHITE",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8049&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/f418f23ff951e923b57df541c7b94b44.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/f8dfaeaf5a6669c3008f735469e8cd70.jpg",
@@ -33726,9 +39558,15 @@
   {
     "id": "8048",
     "name": "SMALL LOGO POINT RIBBED SOCKS IN GREY",
-    "bullet_points": ["코튼 골지 루즈 삭스"],
+    "bullet_points": [
+      "코튼 골지 루즈 삭스"
+    ],
     "price": "18,000",
-    "colors": ["GREY", "BLACK", "WHITE"],
+    "colors": [
+      "GREY",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8048&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/8e9daf5bf40f85a076c6686a6936fd0b.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/c017b4853ecbdab78a9b0272c6edc0dc.jpg",
@@ -33747,9 +39585,14 @@
   {
     "id": "8047",
     "name": "METAL RIBBED STOCKING SOCKS IN CHARCOAL",
-    "bullet_points": ["실버 글리터 믹스 골지 스타킹 삭스"],
+    "bullet_points": [
+      "실버 글리터 믹스 골지 스타킹 삭스"
+    ],
     "price": "38,000",
-    "colors": ["CHARCOAL", "IVORY"],
+    "colors": [
+      "CHARCOAL",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8047&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/9e508b32f755c19dfb56ac7b9170a8f6.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/38913df1dcc2f38ca3427ac988530055.jpg",
@@ -33760,16 +39603,23 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202508/2c3b6b64662184092fbdcc46fc309f81.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
   {
     "id": "8046",
     "name": "METAL RIBBED STOCKING SOCKS IN IVORY",
-    "bullet_points": ["실버 글리터 믹스 골지 스타킹 삭스"],
+    "bullet_points": [
+      "실버 글리터 믹스 골지 스타킹 삭스"
+    ],
     "price": "38,000",
-    "colors": ["IVORY", "CHARCOAL"],
+    "colors": [
+      "IVORY",
+      "CHARCOAL"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=8046&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202508/7394141bf48c70cae32c027479578b55.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202508/c03f64fb849b3b896e28dc82311b8ac6.jpg",
@@ -33787,9 +39637,13 @@
   {
     "id": "7500",
     "name": "MATIN LOGO STUD LEATHER BELT IN BLACK",
-    "bullet_points": ["스터드 장식과 개발 끝팁이 포인트인 웨스턴 무드 벨트"],
+    "bullet_points": [
+      "스터드 장식과 개발 끝팁이 포인트인 웨스턴 무드 벨트"
+    ],
     "price": "78,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7500&cate_no=44&display_group=1",
     "mainImg": "https://matinkim.com/web/product/medium/202504/72c461982e6a9a44093395be80583979.jpg",
     "hoverImg": "https://matinkim.com/web/product/small/202504/f9f2d15855b8dbd1d93019269470b9de.jpg",
@@ -33801,16 +39655,22 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/631ed16b310f4347fed928aaea733367.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
   {
     "id": "7501",
     "name": "MATIN BUCKLE LEATHER BELT IN BLACK",
-    "bullet_points": ["스터드 장식과 개발 끝팁이 포인트인 웨스턴 무드 벨트"],
+    "bullet_points": [
+      "스터드 장식과 개발 끝팁이 포인트인 웨스턴 무드 벨트"
+    ],
     "price": "78,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7501&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/f36520da8406e09c51dbed31f24d2641.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/2e8f1e9371568a0ebf90a8add1892a8c.jpg",
@@ -33832,7 +39692,12 @@
       "옆면 리본을 묶어 다양한 스타일링이 가능한 리본 크루삭스"
     ],
     "price": "25,000",
-    "colors": ["BUTTER", "WHITE", "LIGHT GREY", "BLACK"],
+    "colors": [
+      "BUTTER",
+      "WHITE",
+      "LIGHT GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7486&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/079418961ac1c356c63fa9e7760ce6f6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/5475b7f46e7eb2391d516d589ec73e94.jpg",
@@ -33843,7 +39708,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/47626008fbe390367cf573563881f5a5.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
@@ -33854,7 +39721,12 @@
       "옆면 리본을 묶어 다양한 스타일링이 가능한 리본 크루삭스"
     ],
     "price": "25,000",
-    "colors": ["BLACK", "WHITE", "LIGHT GREY", "BUTTER"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "LIGHT GREY",
+      "BUTTER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7487&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/1d9588dcd8f868d5888b25cf567d83b2.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/7a9257e66aeabe16d5647cf21f1d21de.jpg",
@@ -33876,7 +39748,12 @@
       "옆면 리본을 묶어 다양한 스타일링이 가능한 리본 크루삭스"
     ],
     "price": "25,000",
-    "colors": ["LIGHT GREY", "WHITE", "BLACK", "BUTTER"],
+    "colors": [
+      "LIGHT GREY",
+      "WHITE",
+      "BLACK",
+      "BUTTER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7488&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/421ae6d2d943511ac6e4b29e54f1483e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/fd06b7c7e3025fbfaa83f860ef6763ba.jpg",
@@ -33887,7 +39764,9 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/daa113bd79c1215a035dc7a96a615eab.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
@@ -33898,7 +39777,12 @@
       "옆면 리본을 묶어 다양한 스타일링이 가능한 리본 크루삭스"
     ],
     "price": "25,000",
-    "colors": ["WHITE", "LIGHT GREY", "BLACK", "BUTTER"],
+    "colors": [
+      "WHITE",
+      "LIGHT GREY",
+      "BLACK",
+      "BUTTER"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7489&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/4e86d54ff13b419f89a0fecfed46481a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/adf3e11b61b69e2318a2fa5308314d7b.jpg",
@@ -33916,9 +39800,14 @@
   {
     "id": "7484",
     "name": "LOGO JACQUARD SHEER KNEE SOCKS IN WHITE",
-    "bullet_points": ["옆면의 볼드한 로고 자카드가 포인트인 스타킹 니삭스"],
+    "bullet_points": [
+      "옆면의 볼드한 로고 자카드가 포인트인 스타킹 니삭스"
+    ],
     "price": "28,000",
-    "colors": ["WHITE", "BLACK"],
+    "colors": [
+      "WHITE",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7484&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/de75a249ac68d8675c3db0b768872dd4.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/ce2371855b611a5cc70a919c72512f37.jpg",
@@ -33936,9 +39825,14 @@
   {
     "id": "7485",
     "name": "LOGO JACQUARD SHEER KNEE SOCKS IN BLACK",
-    "bullet_points": ["옆면의 볼드한 로고 자카드가 포인트인 스타킹 니삭스"],
+    "bullet_points": [
+      "옆면의 볼드한 로고 자카드가 포인트인 스타킹 니삭스"
+    ],
     "price": "28,000",
-    "colors": ["BLACK", "WHITE"],
+    "colors": [
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7485&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/e9f069ca9a8cc3c3ba5a2820ad2b7b2e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/fcb8e5cc6dce27301aef9c2f3311892b.jpg",
@@ -33956,9 +39850,15 @@
   {
     "id": "7402",
     "name": "MATIN BIG LOGO CREW SOCKS IN BLUE",
-    "bullet_points": ["발목 뒤쪽의 로고가 포인트인 단목 양말"],
+    "bullet_points": [
+      "발목 뒤쪽의 로고가 포인트인 단목 양말"
+    ],
     "price": "18,000",
-    "colors": ["BLUE", "BLACK", "IVORY"],
+    "colors": [
+      "BLUE",
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7402&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a8b68ea4c5919d69c1c36e685ce1d610.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/4e9451b562ec47dab0e97f87c8f31a2a.jpg",
@@ -33976,9 +39876,15 @@
   {
     "id": "7403",
     "name": "MATIN BIG LOGO CREW SOCKS IN IVORY",
-    "bullet_points": ["발목 뒤쪽의 로고가 포인트인 단목 양말"],
+    "bullet_points": [
+      "발목 뒤쪽의 로고가 포인트인 단목 양말"
+    ],
     "price": "18,000",
-    "colors": ["IVORY", "BLACK", "BLUE"],
+    "colors": [
+      "IVORY",
+      "BLACK",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7403&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/7b9c1b4f945c187342629954717e53a5.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/d38418161d93baf98fd27d275e315efa.jpg",
@@ -33996,9 +39902,15 @@
   {
     "id": "7404",
     "name": "MATIN BIG LOGO CREW SOCKS IN BLACK",
-    "bullet_points": ["발목 뒤쪽의 로고가 포인트인 단목 양말"],
+    "bullet_points": [
+      "발목 뒤쪽의 로고가 포인트인 단목 양말"
+    ],
     "price": "18,000",
-    "colors": ["BLACK", "IVORY", "BLUE"],
+    "colors": [
+      "BLACK",
+      "IVORY",
+      "BLUE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7404&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/6dbc2119ad5d1d177f48c31fb415c171.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/db38776d3a7cbedd30e40531e017f971.jpg",
@@ -34016,9 +39928,15 @@
   {
     "id": "7405",
     "name": "MATIN SMALL LOGO CREW SOCKS IN BROWN",
-    "bullet_points": ["립 부분에 마뗑킴 로고가 둘러진 심플한 단목 양말"],
+    "bullet_points": [
+      "립 부분에 마뗑킴 로고가 둘러진 심플한 단목 양말"
+    ],
     "price": "18,000",
-    "colors": ["BROWN", "BLACK", "WHITE"],
+    "colors": [
+      "BROWN",
+      "BLACK",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7405&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/60764abe4ddb0619ff7e4d716118ca8f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/455f50fc3d6a824734ea126f02305693.jpg",
@@ -34029,16 +39947,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/cf64500a4a4282a16421f800dd4634ac.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
   {
     "id": "7406",
     "name": "MATIN SMALL LOGO CREW SOCKS IN WHITE",
-    "bullet_points": ["립 부분에 마뗑킴 로고가 둘러진 심플한 단목 양말"],
+    "bullet_points": [
+      "립 부분에 마뗑킴 로고가 둘러진 심플한 단목 양말"
+    ],
     "price": "18,000",
-    "colors": ["WHITE", "BLACK", "BROWN"],
+    "colors": [
+      "WHITE",
+      "BLACK",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7406&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/a25e74e14644a19955a07544dc166cb8.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/c808b95a76b58de91ae9b5d28e15174d.jpg",
@@ -34056,9 +39982,15 @@
   {
     "id": "7407",
     "name": "MATIN SMALL LOGO CREW SOCKS IN BLACK",
-    "bullet_points": ["립 부분에 마뗑킴 로고가 둘러진 심플한 단목 양말"],
+    "bullet_points": [
+      "립 부분에 마뗑킴 로고가 둘러진 심플한 단목 양말"
+    ],
     "price": "18,000",
-    "colors": ["BLACK", "WHITE", "BROWN"],
+    "colors": [
+      "BLACK",
+      "WHITE",
+      "BROWN"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7407&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/cdf985ee395a32b6ebd16c77cf14caed.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/48a7f52507edd0e91b201bab3796edea.jpg",
@@ -34076,9 +40008,15 @@
   {
     "id": "7306",
     "name": "MATIN VINTAGE PRINTED BANDANA IN IVORY",
-    "bullet_points": ["빈티지한 프린트가 특징인 반다나"],
+    "bullet_points": [
+      "빈티지한 프린트가 특징인 반다나"
+    ],
     "price": "68,000",
-    "colors": ["IVORY", "RED", "NAVY"],
+    "colors": [
+      "IVORY",
+      "RED",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7306&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/15f3e2d3e115a101404c23e7a7adec6a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/43c8d87da0136e4b752d266262f840cd.jpg",
@@ -34097,9 +40035,14 @@
   {
     "id": "7305",
     "name": "MATIN VINTAGE PRINTED BANDANA IN RED",
-    "bullet_points": ["빈티지한 프린트가 특징인 반다나"],
+    "bullet_points": [
+      "빈티지한 프린트가 특징인 반다나"
+    ],
     "price": "68,000",
-    "colors": ["RED", "NAVY"],
+    "colors": [
+      "RED",
+      "NAVY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7305&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/3117f67c14ca4cb982f60eca85ce8b9a.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/ea5919b106ead5343ae68d4b877fc7c7.jpg",
@@ -34118,9 +40061,14 @@
   {
     "id": "7304",
     "name": "MATIN VINTAGE PRINTED BANDANA IN NAVY",
-    "bullet_points": ["빈티지한 프린트가 특징인 반다나"],
+    "bullet_points": [
+      "빈티지한 프린트가 특징인 반다나"
+    ],
     "price": "68,000",
-    "colors": ["NAVY", "RED"],
+    "colors": [
+      "NAVY",
+      "RED"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7304&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/f6f910ebf28533b3d9334d87c5949c61.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/1cc9f9c48b6408405dd8e1cc0ed91522.jpg",
@@ -34139,9 +40087,14 @@
   {
     "id": "7302",
     "name": "SOFT WARMER HALF KNEE SOCKS IN WHITE",
-    "bullet_points": ["MATIN KIM 로고가 포인트인 소프트한 소재의 워머 삭스"],
+    "bullet_points": [
+      "MATIN KIM 로고가 포인트인 소프트한 소재의 워머 삭스"
+    ],
     "price": "18,000",
-    "colors": ["WHITE", "GREY"],
+    "colors": [
+      "WHITE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7302&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/cbb35d8ee78f401842c1b0255662ee92.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/e5f3d617e22ef3468a5caa5a8dd9e6e8.jpg",
@@ -34159,9 +40112,14 @@
   {
     "id": "7303",
     "name": "SOFT WARMER HALF KNEE SOCKS IN GREY",
-    "bullet_points": ["MATIN KIM 로고가 포인트인 소프트한 소재의 워머 삭스"],
+    "bullet_points": [
+      "MATIN KIM 로고가 포인트인 소프트한 소재의 워머 삭스"
+    ],
     "price": "18,000",
-    "colors": ["GREY", "WHITE"],
+    "colors": [
+      "GREY",
+      "WHITE"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7303&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/ffab848a1a4ba77f7ba7d4ecf71537cc.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/e5d5c41841b3e56719eff7ac00d232d8.jpg",
@@ -34183,7 +40141,10 @@
       "마뗑킴의 미니멀한 레터링 로고가 포인트인 실켓 하프 삭스"
     ],
     "price": "18,000",
-    "colors": ["LIME", "BLACK"],
+    "colors": [
+      "LIME",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7299&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/799d4bb7d8222e5f0498bc5d3ca355c6.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/baa0051fd509dfad6912a480e6c47111.jpg",
@@ -34205,7 +40166,12 @@
       "뒷면에 MATIN KIM의 시그니처 로고가 포인트인 부드러운 촉감의 양말"
     ],
     "price": "18,000",
-    "colors": ["COCOA", "YELLOW", "WHITE", "GREY"],
+    "colors": [
+      "COCOA",
+      "YELLOW",
+      "WHITE",
+      "GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7301&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202503/20b74f801461b36e6763fbe406ee4f6d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202503/6a4eb639cf1d9861946695be98c9438c.jpg",
@@ -34223,9 +40189,13 @@
   {
     "id": "6939",
     "name": "MATIN PONI KEYRING IN BLACK",
-    "bullet_points": ["MATINKIM의 포니코니 키링"],
+    "bullet_points": [
+      "MATINKIM의 포니코니 키링"
+    ],
     "price": "38,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6939&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202412/cfa8dc3cef194d85cf96f67328d1fe6e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202412/5955ed79d2f9cb6fb62fb6e023c86078.jpg",
@@ -34248,7 +40218,10 @@
       "발목부분의 MATIN KIM 로고 자수가 포인트인 스포티한 무드의 로고 자카드 크루삭스"
     ],
     "price": "18,000",
-    "colors": ["IVORY", "BLACK"],
+    "colors": [
+      "IVORY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6490&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202410/d2cbc27ad6e47330fe9b7ebe04ba8a8b.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202410/d30b89b3c3f01dd84414f6bb62899313.jpg",
@@ -34270,7 +40243,10 @@
       "발목부분의 MATIN KIM 로고 자수가 포인트인 스포티한 무드의 로고 자카드 크루삭스"
     ],
     "price": "18,000",
-    "colors": ["BLACK", "IVORY"],
+    "colors": [
+      "BLACK",
+      "IVORY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=6491&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202410/9d2ef64881d525323cfb01e3794c2404.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202410/81afb71884a372086adfdd4972a6759c.jpg",
@@ -34292,7 +40268,10 @@
       "마뗑킴의 미니멀한 레터링 로고가 포인트인 실켓 하프 삭스"
     ],
     "price": "18,000",
-    "colors": ["BLACK", "LIME"],
+    "colors": [
+      "BLACK",
+      "LIME"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=5197&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202402/e1fffd28901ac2d60200f9f5f28956b1.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202402/961d2f5cd940af08711b20bdbee87a9d.jpg",
@@ -34310,9 +40289,13 @@
   {
     "id": "7700",
     "name": "WEAVING LEATHER BELT IN BLACK",
-    "bullet_points": ["러프하게 처리된 꼬임 위빙이 특징인 레더 벨트"],
+    "bullet_points": [
+      "러프하게 처리된 꼬임 위빙이 특징인 레더 벨트"
+    ],
     "price": "78,000",
-    "colors": ["BLACK"],
+    "colors": [
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7700&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/de2233753ac2c668cb960a3c43203d9d.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/45ffec8f20304f38f52c54227923cb5c.jpg",
@@ -34330,9 +40313,14 @@
   {
     "id": "7699",
     "name": "WEAVING LEATHER BELT IN BROWN",
-    "bullet_points": ["러프하게 처리된 꼬임 위빙이 특징인 레더 벨트"],
+    "bullet_points": [
+      "러프하게 처리된 꼬임 위빙이 특징인 레더 벨트"
+    ],
     "price": "78,000",
-    "colors": ["BROWN", "BLACK"],
+    "colors": [
+      "BROWN",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7699&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/cc111f1ff3ad762e553df8cda2eddb7f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/14a93e2a5d0f8911d94d2728dbf36cb1.jpg",
@@ -34343,16 +40331,24 @@
       "https://cafe24img.poxo.com/kimdaniyaya/web/product/extra/small/202504/8e226821be0418ae8e6ccb6c33fd9d26.jpg"
     ],
     "soldout": false,
-    "tag": ["NEW IN"],
+    "tag": [
+      "NEW IN"
+    ],
     "category1": "ACCESSORIES",
     "category2": "Others"
   },
   {
     "id": "7706",
     "name": "SHEER GLITTER CREW SOCKS IN BLACK",
-    "bullet_points": ["립 부분에 마뗑킴 로고가 둘러진 심플한 양말"],
+    "bullet_points": [
+      "립 부분에 마뗑킴 로고가 둘러진 심플한 양말"
+    ],
     "price": "18,000",
-    "colors": ["BLACK", "SKY", "LIGHT GREY"],
+    "colors": [
+      "BLACK",
+      "SKY",
+      "LIGHT GREY"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7706&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/06285acc8739a56eec81ed247dd34b8e.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/7f86e5d7af094518b859402885673d15.jpg",
@@ -34370,9 +40366,15 @@
   {
     "id": "7705",
     "name": "SHEER GLITTER CREW SOCKS IN LIGHT GREY",
-    "bullet_points": ["립 부분에 마뗑킴 로고가 둘러진 심플한 양말"],
+    "bullet_points": [
+      "립 부분에 마뗑킴 로고가 둘러진 심플한 양말"
+    ],
     "price": "18,000",
-    "colors": ["LIGHT GREY", "SKY", "BLACK"],
+    "colors": [
+      "LIGHT GREY",
+      "SKY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7705&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/14b867f28104cb88ecedb5fc3f0d1763.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/79e95d25047397e541334d05d1e478fd.jpg",
@@ -34390,9 +40392,15 @@
   {
     "id": "7704",
     "name": "SHEER GLITTER CREW SOCKS IN SKY",
-    "bullet_points": ["립 부분에 마뗑킴 로고가 둘러진 심플한 양말"],
+    "bullet_points": [
+      "립 부분에 마뗑킴 로고가 둘러진 심플한 양말"
+    ],
     "price": "18,000",
-    "colors": ["SKY", "GREY", "BLACK"],
+    "colors": [
+      "SKY",
+      "GREY",
+      "BLACK"
+    ],
     "link": "https://matinkim.com/product/detail.html?product_no=7704&cate_no=44&display_group=1",
     "mainImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202504/ac1d5f396e84529947dc87793cf2498f.jpg",
     "hoverImg": "https://cafe24img.poxo.com/kimdaniyaya/web/product/small/202504/730aea5feae1e9f84272175e31973b74.jpg",

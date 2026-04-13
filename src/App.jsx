@@ -8,10 +8,19 @@ import Footer from './components/Footer'
 import Project from './pages/Project'
 import Collections from './pages/Collections'
 import About from './pages/About'
+import { useProductStore } from './store/useProductStore'
+import { useEffect } from 'react'
 
 function App() {
 
+  const { items, onFetchItem, onMenus } = useProductStore();
 
+  useEffect(() => {
+    onFetchItem();
+    onMenus();
+  }, [onFetchItem, onMenus])
+
+  if (!items.length) return <div>로딩중...</div>
   return (
     <>
       <Header />
