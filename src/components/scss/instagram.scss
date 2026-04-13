@@ -1,0 +1,207 @@
+section {
+    background: #fafafa;
+    padding: 210px 0 140px;
+    overflow: hidden;
+}
+
+.inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.insta-h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+
+    span {
+        color: #000;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+    }
+
+    img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        display: block;
+    }
+}
+
+.insta-list-wrap {
+    width: 100%;
+
+    ul {
+        display: flex;
+        gap: 24px;
+    }
+
+    li {
+        width: calc((100% - 72px) / 4);
+        flex-shrink: 0;
+        list-style: none;
+    }
+
+    li>a {
+        display: block;
+        width: 100%;
+        background: #efefef;
+        border-radius: 26px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #111;
+    }
+}
+
+.img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.text-box {
+    padding: 18px 20px 22px;
+    background: #efefef;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 16px;
+
+    button {
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+    }
+
+    img {
+        width: 28px;
+        height: 28px;
+        display: block;
+        object-fit: contain;
+    }
+}
+
+.hash-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    span {
+        font-size: 15px;
+        line-height: 1.4;
+        color: #111;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+    }
+}
+
+/* hover */
+.insta-list-wrap li>a {
+    transition: transform 0.25s ease;
+}
+
+.insta-list-wrap li>a:hover {
+    transform: translateY(-6px);
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+    section {
+        padding: 160px 0 110px;
+    }
+
+    .inner {
+        padding: 0 20px;
+    }
+
+    .insta-list-wrap ul {
+        gap: 18px;
+    }
+
+    .insta-list-wrap li {
+        width: calc((100% - 54px) / 4);
+    }
+
+    h2 span {
+        font-size: 24px;
+    }
+
+    .icons img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hash-wrap span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .insta-list-wrap ul {
+        flex-wrap: wrap;
+    }
+
+    .insta-list-wrap li {
+        width: calc((100% - 18px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 120px 0 90px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+
+        span {
+            font-size: 20px;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .insta-list-wrap li {
+        width: 100%;
+    }
+
+    .text-box {
+        padding: 16px 16px 18px;
+    }
+
+    .icons {
+        gap: 18px;
+        margin-bottom: 12px;
+    }
+
+    .icons img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .hash-wrap span {
+        font-size: 13px;
+    }
+}
