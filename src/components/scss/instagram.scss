@@ -1,10 +1,10 @@
-section {
+.insta {
     background: #fafafa;
     padding: 210px 0 140px;
     overflow: hidden;
 }
 
-.inner {
+.insta .inner {
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
@@ -56,7 +56,7 @@ section {
     }
 }
 
-.img-box {
+.insta .img-box {
     width: 100%;
     aspect-ratio: 1 / 1.25;
     overflow: hidden;
@@ -69,12 +69,12 @@ section {
     }
 }
 
-.text-box {
+.insta .text-box {
     padding: 18px 20px 22px;
     background: #efefef;
 }
 
-.icons {
+.insta .icons {
     display: flex;
     align-items: center;
     gap: 22px;
@@ -99,7 +99,7 @@ section {
     }
 }
 
-.hash-wrap {
+.insta .hash-wrap {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
@@ -125,11 +125,11 @@ section {
 
 /* 반응형 */
 @media (max-width: 1200px) {
-    section {
+    .insta {
         padding: 160px 0 110px;
     }
 
-    .inner {
+    .insta .inner {
         padding: 0 20px;
     }
 
@@ -141,16 +141,16 @@ section {
         width: calc((100% - 54px) / 4);
     }
 
-    h2 span {
+    .insta h2 span {
         font-size: 24px;
     }
 
-    .icons img {
+    .insta .icons img {
         width: 24px;
         height: 24px;
     }
 
-    .hash-wrap span {
+    .insta .hash-wrap span {
         font-size: 14px;
     }
 }
@@ -166,11 +166,11 @@ section {
 }
 
 @media (max-width: 600px) {
-    section {
+    .insta {
         padding: 120px 0 90px;
     }
 
-    h2 {
+    .insta h2 {
         margin-bottom: 20px;
 
         span {
@@ -187,21 +187,21 @@ section {
         width: 100%;
     }
 
-    .text-box {
+    .insta .text-box {
         padding: 16px 16px 18px;
     }
 
-    .icons {
+    .insta .icons {
         gap: 18px;
         margin-bottom: 12px;
     }
 
-    .icons img {
+    .insta .icons img {
         width: 22px;
         height: 22px;
     }
 
-    .hash-wrap span {
+    .insta .hash-wrap span {
         font-size: 13px;
     }
 }
