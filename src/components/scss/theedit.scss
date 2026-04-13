@@ -1,0 +1,25 @@
+.edit-wrap {
+    display: flex;
+    gap: 24px;
+
+
+    .top {
+        position: relative;
+
+        .text-box {
+            position: absolute;
+            top: 50%;
+            color: white;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    .bottom-edit-list {
+        a {
+            display: flex;
+            gap: 24px;
+        }
+    }
+}
