@@ -42,7 +42,7 @@ export const useProductStore = create((set, get) => ({
         items.forEach(({ category1, category2 }) => {
 
             const cat1 = category1
-            const cat2 = category2?.toLowerCase();
+            const cat2 = category2?.toUpperCase();
 
             const catOut = cat2 === "OUTERWEARS" ? "OUTER" : cat2;
             const koCat2 = subMenuMap[category2] || category2;
@@ -67,5 +67,34 @@ export const useProductStore = create((set, get) => ({
 
         set({ menus: menuList });
         console.log(menuList);
+    },
+    //베스트 아이템(MUST HAVE)만 뽑는 메서드
+    //베스트아이템 저장할 배열
+    BestItems: [],
+    onBestMenus: () => {
+        const { items } = get();
+        const bestItems = items.filter(item =>
+            Array.isArray(item.tag) && item.tag.includes("MUST HAVE")
+        );
+
+
+        //색상안나오는 것도 있어서 매치하는 거 해야할듯
+        set({ BestItems: bestItems });
+        console.log("베수트", bestItems);
+    },
+
+
+    //신상품(NEW IN)만 뽑는 메서드
+    //신상품아이템 저장할 배열
+    NewItems: [],
+    onNewMenus: () => {
+        const { items } = get();
+        const newItems = items.filter(item =>
+            Array.isArray(item.tag) && item.tag.includes("NEW IN")
+        );
+
+        set({ NewItems: newItems });
+        console.log("신상", newItems);
     }
+
 }))

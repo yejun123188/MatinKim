@@ -35,7 +35,7 @@ export default function TheEdit() {
                 <SectionTitle title="THE EDIT" subtitle="Chosen by jeno, liz, ningning" />
                 <div className='edit-wrap'>
                     {edits.map((e, id) => (
-                        <div className="edit-list">
+                        <div className="edit-list" key={id}>
                             <div className="top">
                                 <Link>
                                     {/* 포스트사진 누르면 링크해서 컬랙션 - 컬렉션 상세페이지로 이동 */}
@@ -50,7 +50,7 @@ export default function TheEdit() {
                             </div>
                             <div className="bottom">
                                 {e.sub.map((s, id) => (
-                                    <div className='bottom-edit-list'>
+                                    <div className='bottom-edit-list' key={id}>
                                         {/* 제품 누르면 제품 상세페이지로 이동 */}
                                         <Link>
                                             <div className="img-box">
@@ -60,7 +60,7 @@ export default function TheEdit() {
                                                 <li>{s.name}</li>
                                                 <li>{s.price}</li>
                                                 <li>{s.colors.map((c, id) => (
-                                                    <span style={{ backgroundColor: c }}>.</span>
+                                                    <span key={id} style={{ backgroundColor: c }}>색상선택</span>
                                                 ))}</li>
                                             </ul>
                                         </Link>

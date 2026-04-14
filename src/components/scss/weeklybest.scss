@@ -1,0 +1,25 @@
+.weeklybest {
+    .best-item-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+
+        .text-box {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 14px;
+
+            #price {
+                font-weight: 600;
+            }
+        }
+    }
+
+
+    .see-more {
+        text-align: center;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

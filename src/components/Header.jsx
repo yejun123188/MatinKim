@@ -17,9 +17,9 @@ const defautMenus = [
   { name: "ALL", link: "/all" }
 ]
 const photoMenu = [
-  { src: "", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
-  { src: "", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
-  { src: "", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" }
+  { src: "/", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
+  { src: "/", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
+  { src: "/", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" }
 ]
 
 export default function Header() {
