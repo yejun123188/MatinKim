@@ -17,7 +17,7 @@ const slides = [
 
 export default function Flagship() {
     return (
-        <section>
+        <section className='flagship'>
             <div className='inner'>
                 <SectionTitle title="NEW FLAGSHIP STORE" subtitle="Special promotion" />
                 <div className="flag-wrap">
@@ -53,7 +53,7 @@ export default function Flagship() {
                                 </div>
                             </div>
                             <div className="puchase">
-                                <p className="coffee"><img src="" alt="커피" /></p>
+                                <p className="coffee"><img src="/" alt="커피" /></p>
                                 <div className="sale-content">
                                     <p className='title'>
                                         구매 고객 전체<br />
