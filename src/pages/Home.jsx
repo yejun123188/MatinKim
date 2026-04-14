@@ -6,11 +6,14 @@ import Flagship from "../components/Flagship";
 import TheEdit from "../components/TheEdit";
 import Weeklybest from '../components/Weeklybest';
 import NewArrivals from '../components/NewArrivals';
-import ProjectsMain from '../components/ProjectsMain';
+import MainTop from '../components/MainTop';
+import Collection from '../components/Collection';
 
 export default function Home() {
     return (
         <main>
+            {/* 메인 상단 */}
+            <MainTop />
             {/* 퀵메뉴 */}
             {/* 신상품 */}
             <NewArrivals />
@@ -21,7 +24,7 @@ export default function Home() {
             {/* 플래그쉽 */}
             <Flagship />
             {/* 프로젝트 */}
-            <ProjectsMain />
+            <Collection />
             {/* 인스타 */}
             <Instagram />
         </main>
