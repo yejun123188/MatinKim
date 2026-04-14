@@ -6,7 +6,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import "swiper/css";
-import "./scss/falgship.scss";
+import "./scss/flagship.scss";
 
 const slides = [
     { src: "./images/main-flagship/flagslider1.png", alt: "flagslider1" },
@@ -17,7 +17,7 @@ const slides = [
 
 export default function Flagship() {
     return (
-        <section>
+        <section className='flagship'>
             <div className='inner'>
                 <SectionTitle title="NEW FLAGSHIP STORE" subtitle="Special promotion" />
                 <div className="flag-wrap">
@@ -52,8 +52,8 @@ export default function Flagship() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="puchase">
-                                <p className="coffee"><img src="" alt="커피" /></p>
+                            <div className="purchase">
+                                <p className="coffee"><img src="./images/main-flagship/coffee-icon.png" alt="커피" /></p>
                                 <div className="sale-content">
                                     <p className='title'>
                                         구매 고객 전체<br />
