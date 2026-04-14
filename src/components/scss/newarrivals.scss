@@ -1,0 +1,23 @@
+.new-arrivals {
+
+    background-color: #F5F5F5;
+
+    .new-new {
+        display: flex;
+        gap: 40px;
+
+        .text-box {
+            flex-shrink: 0;
+            width: 300px;
+
+            .newarrivals-title {
+                font-size: 30px;
+            }
+        }
+
+        .newitem-list-box {
+            flex: 1;
+            min-width: 0;
+        }
+    }
+}
