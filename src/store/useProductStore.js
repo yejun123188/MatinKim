@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { products } from "../data/products"
+import products from "../data/products"
 
 const subMenuMap = {
     Outerwears: "아우터",
