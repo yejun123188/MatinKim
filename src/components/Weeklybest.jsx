@@ -4,7 +4,7 @@ import { useProductStore } from '../store/useProductStore'
 import "./scss/weeklybest.scss"
 
 export default function Weeklybest() {
-    const { BestItems, onBestMenus, items, onFetchItem } = useProductStore();
+    const { BestItems, onBestMenus, items, onFetchItem, onColorCode } = useProductStore();
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
@@ -28,15 +28,17 @@ export default function Weeklybest() {
                         //하트 이미지도 넣어야함
                         <li key={id}>
                             <div className="img-box">
-                                <img src={item.mainImg} alt={item.name} />
-                                <span className='heart'><img src="/" alt="하트 들어갈자리" /></span>
+                                <img onMouseEnter={(e) => e.currentTarget.src = item.hoverImg}
+                                    onMouseLeave={(e) => e.currentTarget.src = item.mainImg}
+                                    src={item.mainImg} alt={item.name} />
+                                <span className='heart'><img src="/images/heart-default.svg" alt="하트" /></span>
                             </div>
                             <ul className="text-box">
                                 <li id='name'>{item.name}</li>
                                 <li id='price'>₩ {item.price}</li>
                                 <li id='colors'>
                                     {item.colors.map((c, id) => (
-                                        <span key={id} style={{ backgroundColor: c }}>색상</span>
+                                        <span key={id} style={{ backgroundColor: onColorCode(c) }}></span>
                                     ))}
                                 </li>
                             </ul>

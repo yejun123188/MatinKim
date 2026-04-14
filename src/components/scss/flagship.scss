@@ -1,6 +1,5 @@
 .flagship {
     padding: 60px 0 80px;
-    background: #fafafa;
 }
 
 
@@ -140,37 +139,16 @@
                 width: 194px;
                 height: 52px;
                 background-color: #000;
-                border-radius: 7px;
-                padding: 20px 5px;
+                // border-radius: 7px;
+                // padding: 20px 5px;
 
                 a {
                     font-size: 15px;
                     line-height: 1;
                     font-weight: 400;
                     color: #E1E1E1;
-                    text-decoration: none;
-                    display: inline-block;
-                }
 
-                i {
-                    font-style: normal;
-                    font-size: 0;
-                    width: 10px;
-                    height: 10px;
-                    position: relative;
-                    display: inline-block;
 
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        width: 7px;
-                        height: 7px;
-                        border-top: 1.5px solid #fff;
-                        border-right: 1.5px solid #fff;
-                        transform: translateY(-50%) rotate(45deg);
-                    }
                 }
             }
         }
