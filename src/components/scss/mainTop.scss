@@ -1,0 +1,94 @@
+.main-top {
+    position: relative;
+
+    .video-wrap {
+        max-width: 1980px;
+        height: 980px;
+        margin: 0 auto;
+        overflow: hidden;
+
+        video {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: inherit;
+            margin: 0 auto;
+        }
+    }
+
+    .toggle-wrap {
+        position: absolute;
+        bottom: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .toggle-wrap-radi {
+        position: relative;
+        width: 302px;
+        height: 52px;
+        border-radius: 30px;
+    }
+
+    .toggle-wrap-radi::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 5px;
+        border-radius: 30px;
+        background: linear-gradient(8deg,
+                rgba(255, 255, 255, 0.5) 30%,
+                rgba(64, 64, 64, 0.5) 50%,
+                rgba(255, 255, 255, 0.5) 70%);
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .toggle-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 50px;
+        border-radius: 30px;
+        background: rgba(240, 240, 240, 0.18);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+
+        span {
+            // background: #000;
+            width: 145px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            font-size: 16px;
+        }
+    }
+
+    .toggle-btn {
+        position: absolute;
+        width: 145px;
+        height: 42px;
+        border: none;
+        border-radius: 30px;
+        background: #fff;
+        font-family: inherit;
+
+        span {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .active {
+            display: none;
+        }
+    }
+}
