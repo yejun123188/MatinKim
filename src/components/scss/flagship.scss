@@ -1,17 +1,46 @@
+.flagship {
+  padding: 60px 0 80px;
+}
+
 .flag-wrap {
-    display: flex;
-    gap: 24px;
-    align-items: stretch;
-    justify-content: space-between;
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: space-between;
 
+  .banner-wrap {
+    width: 70%;
 
-    .banner-wrap {
-        width: 70%;
+    .mySwiper {
+      width: 100%;
+      height: 100%;
+      min-height: 332px;
 
-        .mySwiper {
-            width: 100%;
-            height: 100%;
-            min-height: 332px;
+      .swiper-slide {
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        // height: 100%;
+        // min-height: 332px;
+        // object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
+  .notice-wrap {
+    position: relative;
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      min-height: 332px;
+      object-fit: cover;
+      display: block;
+    }
 
     .text-box {
       position: absolute;
@@ -90,13 +119,32 @@
           color: #000;
         }
 
-            img {
-                width: 100%;
-                // height: 100%;
-                // min-height: 332px;
-                // object-fit: cover;
-                display: block;
-            }
+        .text {
+          margin: 0;
+          font-size: 14px;
+          line-height: 1.4;
+          font-weight: 400;
+          color: #000;
+          word-break: keep-all;
+        }
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 194px;
+        height: 52px;
+        background-color: #000;
+        // border-radius: 7px;
+        // padding: 20px 5px;
+
+        a {
+          font-size: 15px;
+          line-height: 1;
+          font-weight: 400;
+          color: #e1e1e1;
         }
       }
     }
@@ -109,16 +157,7 @@
 @media (max-width: 1200px) {
   .flag-wrap {
     .notice-wrap {
-        position: relative;
-        overflow: hidden;
-
-        >img {
-            width: 100%;
-            height: 100%;
-            min-height: 332px;
-            object-fit: cover;
-            display: block;
-        }
+      width: 230px;
 
       > img {
         min-height: 320px;
