@@ -150,5 +150,7 @@ export default function Header() {
       </div>
       {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
     </header>
-  );
+
+
+  )
 }
