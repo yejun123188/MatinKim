@@ -26,7 +26,7 @@ export default function Flagship() {
                         <Swiper className='mySwiper'
                             modules={[Autoplay]}
                             autoplay={{
-                                delay: 2500,
+                                delay: 3000,
                             }}
                             loop={true}>
                             {slides.map((img, id) => (
@@ -53,7 +53,7 @@ export default function Flagship() {
                                 </div>
                             </div>
                             <div className="purchase">
-                                <p className="coffee"><img src="./images/main-flagship/coffee-icon.png" alt="커피" /></p>
+                                <p className="coffee"><img src="./images/main-flagship/coffee-icon.svg" alt="커피" /></p>
                                 <div className="sale-content">
                                     <p className='title'>
                                         구매 고객 전체<br />
@@ -66,8 +66,10 @@ export default function Flagship() {
                                 </div>
                             </div>
                             <div className="button">
+
                                 <a href="https://map.naver.com/p/entry/place/2041401276?placePath=/home?entry=plt&fromPanelNum=1&additionalHeight=76&timestamp=202604141505&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202604141505&locale=ko&svcName=map_pcv5&from=map&searchType=place&lng=127.0513442&lat=37.5445874&c=15.00,0,0,0,dh"> SEE ON MAP</a>
-                                <img src="/images/main-flagship/flag-arrow.svg" alt="" />
+                                <img src="/images/main-flagship/arrow.svg" alt="" />
+
                             </div>
                         </div>
 

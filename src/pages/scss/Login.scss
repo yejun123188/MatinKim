@@ -1,0 +1,172 @@
+.login-page {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    width: 30%;
+    max-width: 680px;
+    min-width: 320px;
+    min-height: 100vh;
+    z-index: 10000;
+    box-shadow: 0 -3px;
+
+}
+
+
+/* 오른쪽 로그인 영역 */
+.login-page .login-right {
+    min-height: 100vh;
+    background: #fff;
+    padding-top: 115px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.login-page .login-box {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page .login-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.login-page .login-top h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #111;
+}
+
+.login-page .close-btn {
+    line-height: 1;
+    border: none;
+    background: none;
+}
+
+.login-page .input-wrap {
+    margin-bottom: 16px;
+}
+
+.login-page .input-wrap input {
+    width: 100%;
+    height: 52px;
+    padding: 0 18px;
+    background: #f5f5f5;
+    border: 1px solid transparent;
+    font-size: 15px;
+    color: #111;
+}
+
+.login-page .input-wrap input::placeholder {
+    color: #9a9a9a;
+}
+
+// .login-page .input-wrap.error input {
+//     border-color: #ff4d4f;
+//     background: #fff;
+// }
+
+// .login-page .error-text {
+//     margin-top: 7px;
+//     font-size: 12px;
+//     color: #ff4d4f;
+// }
+
+.login-page .save-id {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+.login-page .save-id input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: #111;
+}
+
+.login-page .login-btn {
+    width: 100%;
+    height: 56px;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+
+
+.login-page .login-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 34px;
+    font-size: 13px;
+    color: #777;
+}
+
+.login-page .sns-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.login-page .sns-login button {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page .kakao {
+    background: #fee500;
+    color: #111;
+    gap: 8px;
+    border: none;
+}
+
+.login-page .naver {
+    border: 1px solid #03c75a;
+    color: #111;
+    background: #fff;
+}
+
+.login-page .google {
+    border: 1px solid #222;
+    background: #fff;
+    color: #111;
+}
+
+.login-page .join-btn {
+    width: 100%;
+    height: 50px;
+    background: #f3f3f3;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.login-page .guest-order {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}
