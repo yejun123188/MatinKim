@@ -6,7 +6,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import "swiper/css";
-import "./scss/falgship.scss";
+import "./scss/flagship.scss";
 
 const slides = [
     { src: "./images/main-flagship/flagslider1.png", alt: "flagslider1" },
@@ -17,7 +17,7 @@ const slides = [
 
 export default function Flagship() {
     return (
-        <section>
+        <section className='flagship'>
             <div className='inner'>
                 <SectionTitle title="NEW FLAGSHIP STORE" subtitle="Special promotion" />
                 <div className="flag-wrap">
@@ -52,8 +52,8 @@ export default function Flagship() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="puchase">
-                                <p className="coffee"><img src="" alt="커피" /></p>
+                            <div className="purchase">
+                                <p className="coffee"><img src="./images/main-flagship/coffee-icon.png" alt="커피" /></p>
                                 <div className="sale-content">
                                     <p className='title'>
                                         구매 고객 전체<br />
@@ -66,8 +66,8 @@ export default function Flagship() {
                                 </div>
                             </div>
                             <div className="button">
-                                <a href="#"> SEE ON MAP</a>
-                                <i>화살표</i>
+                                <a href="https://map.naver.com/p/entry/place/2041401276?placePath=/home?entry=plt&fromPanelNum=1&additionalHeight=76&timestamp=202604141505&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202604141505&locale=ko&svcName=map_pcv5&from=map&searchType=place&lng=127.0513442&lat=37.5445874&c=15.00,0,0,0,dh"> SEE ON MAP</a>
+                                <img src="/images/main-flagship/flag-arrow.svg" alt="" />
                             </div>
                         </div>
 

@@ -1,0 +1,105 @@
+.new-arrivals {
+
+    background-color: #F5F5F5;
+
+    .new-new {
+        display: flex;
+        gap: 100px;
+        padding: 130px 0;
+
+        .text-box {
+            width: 280px;
+
+            .matin-colabo {
+                font-size: 15px;
+                color: #A5A5A5;
+                padding-bottom: 5px;
+            }
+
+            // flex-shrink: 0;
+
+
+            .newarrivals-title {
+                font-size: 50px;
+                padding-bottom: 50px;
+            }
+
+            .collection-name {
+                font-size: 15px;
+                color: #A5A5A5;
+                padding-bottom: 40px;
+            }
+
+            .collection-title {
+                font-size: 18px;
+                font-weight: 400;
+
+            }
+
+            .collection-text {
+                color: #A5A5A5;
+                padding: 40px 0;
+                line-height: 1.5;
+            }
+
+            .button-box {
+                border: 1px solid #A5A5A5;
+                padding: 10px 20px;
+                text-align: center;
+            }
+        }
+
+        .newitem-list-box {
+            flex: 1;
+            min-width: 0;
+
+            .img-box {
+                position: relative;
+
+                .heart {
+                    position: absolute;
+                    top: 3%;
+                    right: 5%;
+
+                }
+            }
+
+            .text-box {
+                padding-top: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                font-size: 14px;
+                width: 100%;
+
+                #name {
+                    font-weight: 400;
+                    color: #484747;
+                    min-height: 2.8em;
+                    line-height: 1.4;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+
+                #price {
+                    font-weight: 600;
+                }
+
+
+
+                span {
+                    display: inline-block;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    margin-right: 5px;
+                    border: 1px solid #000000;
+                }
+
+            }
+        }
+    }
+}

@@ -31,7 +31,7 @@ export default function Header() {
       <div className="header-show">
         <div className="inner">
           <div className="header-left">
-            <h1><Link to={"/"}><img src="/images/logo/logo-MatinKim-black.png" alt="/" /></Link></h1>
+            <h1><Link to={"/"}><img src="/images/header/logo-MatinKim-black.svg" alt="로고" /></Link></h1>
             <nav>
               <ul className="main-menu">
                 {topmenus.map((menu, id) => (

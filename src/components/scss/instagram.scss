@@ -1,5 +1,4 @@
 .insta {
-    background: #fafafa;
     padding: 210px 0 140px;
     overflow: hidden;
 }
@@ -13,13 +12,14 @@
 .insta-h2 {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: 16px;
+    margin-top: 23px;
+    margin-bottom: 23px;
 
     span {
         color: #000;
-        font-size: 28px;
-        font-weight: 500;
+        font-size: 30px;
+        font-weight: 400;
         letter-spacing: -0.02em;
     }
 
@@ -77,8 +77,8 @@
 .insta .icons {
     display: flex;
     align-items: center;
-    gap: 22px;
-    margin-bottom: 16px;
+    gap: 25px;
+    margin-bottom: 10px;
 
     button {
         border: none;
@@ -105,9 +105,9 @@
     gap: 4px;
 
     span {
-        font-size: 15px;
+        font-size: 17px;
         line-height: 1.4;
-        color: #111;
+        color: #000;
         font-weight: 400;
         letter-spacing: -0.02em;
         white-space: nowrap;
