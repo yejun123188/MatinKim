@@ -90,9 +90,11 @@ export default function Header() {
                 </button>
               </li>
               <li className="member">
-                <button onClick={() => setLoginOpen(true)}>
+                <Link to="/userInfo">
+                  {/* <button onClick={() => setLoginOpen(true)}> */}
                   <img src="/images/header-icon/user.svg" alt="" />
-                </button>
+                  {/* </button> */}
+                </Link>
               </li>
             </ul>
           </div>
@@ -150,7 +152,5 @@ export default function Header() {
       </div>
       {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
     </header>
-
-
-  )
+  );
 }
