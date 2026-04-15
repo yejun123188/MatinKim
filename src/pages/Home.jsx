@@ -8,6 +8,7 @@ import Weeklybest from '../components/Weeklybest';
 import NewArrivals from '../components/NewArrivals';
 import MainTop from '../components/MainTop';
 import Collection from '../components/Collection';
+import ShortCut from '../components/ShortCut';
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             {/* 메인 상단 */}
             <MainTop />
             {/* 퀵메뉴 */}
+            <ShortCut />
             {/* 신상품 */}
             <NewArrivals />
             {/* 베스트 아이템 */}
