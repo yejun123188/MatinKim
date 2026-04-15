@@ -38,10 +38,10 @@ export default function Instagram() {
                                     <div className="text-box">
                                         <div className="icons">
                                             <button onClick={() => handleHeart(item.id)}>
-                                                <img src={item.heartCheck ? "./images/insta-icon/heart-icon-active.png" : "./images/insta-icon/heart-icon.png"} alt="" />
+                                                <img src={item.heartCheck ? "./images/insta-icon/heart-icon-active.png" : "./images/insta-icon/heart-icon.svg"} alt="" />
                                             </button>
-                                            <button><img src="/images/insta-icon/search-icon.png" alt="" /></button>
-                                            <button><img src="/images/insta-icon/dm-icon.png" alt="" /></button>
+                                            <button><img src="/images/insta-icon/search-icon.svg" alt="인스타검색아이콘" /></button>
+                                            <button><img src="/images/insta-icon/dm-icon.svg" alt="인스타디엠아이콘" /></button>
                                         </div>
                                         <div className='hash-wrap'>
                                             {item.hash.map((h, id) => <span key={id}>#{h}</span>)}

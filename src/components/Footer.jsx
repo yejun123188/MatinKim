@@ -8,7 +8,7 @@ export default function Footer() {
         {/* <!-- 상단 중앙 브랜드 영역 --> */}
         <div className="footer-top">
           <h2 className="footer-logo">
-            <img src="./images/footer-icon/logo-name.png" alt="logo" />
+            <img src="./images/footer-icon/logo-name.svg" alt="logo" />
           </h2>
           <p className="footer-slogan">
             Matin Kim Strives To Harmonize A Distinctive Sense Of Freedom And A Rough Style<br />
@@ -41,22 +41,23 @@ export default function Footer() {
           <div className="footer-right">
             <ul className="sns-list">
               <li>
-                <a href="#" aria-label="인스타그램">
-                  <img src="./images/footer-icon/Instagram-logo.png" alt="인스타그램" />
+                <a href="https://www.instagram.com/matinkim_magazine/?hl=ko" aria-label="인스타그램">
+                  <img src="./images/footer-icon/imstagram-icon.svg" alt="인스타그램" />
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="유튜브">
-                  <img src="./images/footer-icon/youtube-logo.png" alt="유튜브" />
+                <a href="https://www.youtube.com/@%EA%B9%80%EB%8B%A4%EC%9D%B8%EC%9D%98%EC%A0%84%EB%B6%80%EB%8B%A4%EC%9D%B8/videos" aria-label="유튜브">
+                  <img src="./images/footer-icon/youtube-logo.svg" alt="유튜브" />
                 </a>
               </li>
             </ul>
 
             <div className="customer-center">
-              <div className="custom-link"><Link to="#">
-                <strong>고객센터</strong>
-                <img src="/images/footer-icon/Vector.png" alt="화살표" />
-              </Link>
+              <div className="custom-link">
+                <Link to="#">
+                  <strong>고객센터</strong>
+                  <img src="/images/footer-icon/Vector.svg" alt="화살표" />
+                </Link>
               </div>
               <p>문의시간 : 09:30 ~ 18:00 / 주말·공휴일 휴무</p>
               <span>1877-8170</span>

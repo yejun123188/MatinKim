@@ -6,8 +6,8 @@
 
 .flag-wrap {
     display: flex;
-    gap: 31px;
-    align-items: stretch;
+    gap: 24px;
+
 
     .banner-wrap {
         width: 70%;
@@ -23,9 +23,9 @@
 
             img {
                 width: 100%;
-                height: 100%;
-                min-height: 332px;
-                object-fit: cover;
+                // height: 100%;
+                // min-height: 332px;
+                // object-fit: cover;
                 display: block;
             }
         }
