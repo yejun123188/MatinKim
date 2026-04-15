@@ -30,8 +30,8 @@ function App() {
         <Route path='/project' element={<Project />} />
         <Route path='/collections' element={<Collections />} />
         <Route path='/about' element={<About />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/member' element={<Member />} />
+
+
 
 
       </Routes>
