@@ -6,8 +6,10 @@
 
 .flag-wrap {
     display: flex;
-    gap: 31px;
+    gap: 24px;
     align-items: stretch;
+    justify-content: space-between;
+
 
     .banner-wrap {
         width: 70%;
@@ -32,7 +34,6 @@
     }
 
     .notice-wrap {
-        flex-shrink: 0;
         position: relative;
         overflow: hidden;
 
