@@ -4,20 +4,46 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
 
+        .img-box {
+            position: relative;
+
+            .heart {
+                position: absolute;
+                top: 3%;
+                right: 5%;
+
+            }
+        }
+
         .text-box {
             display: flex;
             flex-direction: column;
             gap: 4px;
             font-size: 14px;
 
+            #name {
+                color: #484747;
+            }
+
             #price {
                 font-weight: 600;
             }
+
+            span {
+                display: inline-block;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                margin-right: 5px;
+                border: 1px solid #000000;
+            }
+
         }
     }
 
 
     .see-more {
+        padding-top: 100px;
         text-align: center;
         text-decoration: underline;
         cursor: pointer;

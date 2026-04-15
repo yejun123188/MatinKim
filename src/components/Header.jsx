@@ -32,7 +32,7 @@ export default function Header() {
       <div className="inner">
         <div className="header-show">
           <div className="header-left">
-            <h1><Link to={"/"}><img src="/" alt="/" />마뗑킴</Link></h1>
+            <h1><Link to={"/"}><img src="/images/header/logo-MatinKim-black.svg" alt="로고" /></Link></h1>
             <nav>
               <ul className="main-menu">
                 {topmenus.map((menu, id) => (
@@ -52,11 +52,11 @@ export default function Header() {
               <li><input type="text" placeholder='SEARCH' /></li>
               <li className='cart'>
                 <Link to={"/cart"}>
-                  <img src="/" alt="/" />장바구니 이미지
-                  <span className="cart-num">숫자</span>
+                  <img src="/images/header/cart-black.svg" alt="카트" />
+                  <span className="cart-num">0</span>
                 </Link>
               </li>
-              <li><Link to={"/member"}><img src="/" alt="/" />유저 이미지</Link></li>
+              <li><Link to={"/member"}><img src="/images/header/user-black.svg" alt="유저" /></Link></li>
             </ul>
           </div>
         </div>

@@ -1,5 +1,10 @@
-.inner {
-    max-width: 1440px;
+ .inner {
+     max-width: 1440px;
+     margin: 0 auto;
+ }
+
+.inner2 {
+    max-width: 1800px;
     margin: 0 auto;
 }
 
