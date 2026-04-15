@@ -17,7 +17,7 @@ export default function Login({ onClose }) {
               className="close-btn"
               aria-label="닫기"
               onClick={onClose} >
-              <img src="/images/sub-login/x-icon.png" alt="닫기" />
+              <img src="/images/sub-login/x-icon.svg" alt="닫기" />
             </button>
           </div>
 
@@ -61,7 +61,7 @@ export default function Login({ onClose }) {
               </button>
             </div>
 
-            <Link to="/member" className="join-btn">
+            <Link to="/member" className="join-btn" onClick={onClose}>
               회원가입 후 혜택받기
             </Link>
 
