@@ -51,15 +51,15 @@ export default function Login() {
 
             <div className="sns-login">
               <button type="button" className="kakao">
-                <img src="./images/sub-login/kakao-icon.png" alt="Kakao" />
+                <img src="./images/sub-login/kakao-icon.svg" alt="Kakao" />
                 <span>카카오로 시작하기</span>
               </button>
               <button type="button" className="naver">
-                <img src="./images/sub-login/naver-icon.png" alt="Naver" />
+                <img src="./images/sub-login/naver-icon.svg" alt="Naver" />
                 <span>네이버로 시작하기</span>
               </button>
               <button type="button" className="google">
-                <img src="./images/sub-login/google-icon.png" alt="Google" />
+                <img src="./images/sub-login/google-icon.svg" alt="Google" />
                 <span>Google로 로그인</span>
               </button>
             </div>
