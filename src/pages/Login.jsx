@@ -17,7 +17,7 @@ export default function Login({ onClose }) {
               className="close-btn"
               aria-label="닫기"
               onClick={onClose} >
-              <img src="/images/sub-login/x-icon.png" alt="닫기" />
+              <img src="/images/sub-login/x-icon.svg" alt="닫기" />
             </button>
           </div>
 
@@ -48,20 +48,20 @@ export default function Login({ onClose }) {
 
             <div className="sns-login">
               <button type="button" className="kakao">
-                <img src="./images/sub-login/kakao-icon.png" alt="Kakao" />
+                <img src="./images/sub-login/kakao-icon.svg" alt="Kakao" />
                 <span>카카오로 시작하기</span>
               </button>
               <button type="button" className="naver">
-                <img src="./images/sub-login/naver-icon.png" alt="Naver" />
+                <img src="./images/sub-login/naver-icon.svg" alt="Naver" />
                 <span>네이버로 시작하기</span>
               </button>
               <button type="button" className="google">
-                <img src="./images/sub-login/google-icon.png" alt="Google" />
+                <img src="./images/sub-login/google-icon.svg" alt="Google" />
                 <span>Google로 로그인</span>
               </button>
             </div>
 
-            <Link to="/member" className="join-btn">
+            <Link to="/member" className="join-btn" onClick={onClose}>
               회원가입 후 혜택받기
             </Link>
 

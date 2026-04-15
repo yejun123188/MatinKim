@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
+import Login from "../pages/Login";
 
 const topmenus = [
   { key: "shop", label: "SHOP" },
@@ -38,7 +39,7 @@ export default function Header() {
   const { menus } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [isLoginOpen, setLoginOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -81,16 +82,18 @@ export default function Header() {
                 <input type="text" placeholder="SEARCH" />
               </li>
               <li className="cart">
-                <Link to={"/cart"}>
+                <button>
                   <img src="/images/header-icon/cart.svg" alt="" />
                   <span className="cart-num">
                     <span>1</span>
                   </span>
-                </Link>
+                </button>
               </li>
               <li className="member">
-                <Link to={"/member"}>
+                <Link to="/userInfo">
+                  {/* <button onClick={() => setLoginOpen(true)}> */}
                   <img src="/images/header-icon/user.svg" alt="" />
+                  {/* </button> */}
                 </Link>
               </li>
             </ul>
@@ -147,6 +150,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+      {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
     </header>
   );
 }
