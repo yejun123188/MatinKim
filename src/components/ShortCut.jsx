@@ -24,7 +24,7 @@ export default function ShortCut() {
                 item.id === 1 ? { ...item, active: true } : { ...item, active: false }))
     }
 
-    console.log("마우스", shortCut)
+    // console.log("마우스", shortCut)
 
     return (
         <section>
