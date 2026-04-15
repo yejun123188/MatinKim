@@ -2,15 +2,13 @@ import React from "react";
 import "./scss/Login.scss";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Login() {
-  const navigate = useNavigate();
+export default function Login({ onClose }) {
 
-  const handleClose = () => {
-    navigate(-1);
-  };
+
+
 
   return (
-    <div className="login-page">
+    <div className="login-page" >
       <div className="login-right">
         <div className="login-box">
           <div className="login-top">
@@ -18,8 +16,7 @@ export default function Login() {
             <button
               className="close-btn"
               aria-label="닫기"
-              onClick={handleClose}
-            >
+              onClick={onClose} >
               <img src="/images/sub-login/x-icon.png" alt="닫기" />
             </button>
           </div>

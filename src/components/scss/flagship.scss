@@ -1,543 +1,535 @@
 .flagship {
-    padding: 60px 0 80px;
+  padding: 60px 0 80px;
 }
 
-
-
 .flag-wrap {
-    display: flex;
-    gap: 24px;
-    align-items: stretch;
-    justify-content: space-between;
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: space-between;
 
+  .banner-wrap {
+    width: 70%;
 
-    .banner-wrap {
-        width: 70%;
+    .mySwiper {
+      width: 100%;
+      height: 100%;
+      min-height: 332px;
 
-        .mySwiper {
-            width: 100%;
-            height: 100%;
-            min-height: 332px;
+      .swiper-slide {
+        height: 100%;
+      }
 
-            .swiper-slide {
-                height: 100%;
-            }
+      img {
+        width: 100%;
+        // height: 100%;
+        // min-height: 332px;
+        // object-fit: cover;
+        display: block;
+      }
+    }
+  }
 
-            img {
-                width: 100%;
-                height: 100%;
-                min-height: 332px;
-                object-fit: cover;
-                display: block;
-            }
-        }
+  .notice-wrap {
+    position: relative;
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      min-height: 332px;
+      object-fit: cover;
+      display: block;
     }
 
-    .notice-wrap {
-        position: relative;
-        overflow: hidden;
+    .text-box {
+      position: absolute;
+      top: 28px;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      color: #111;
+      align-items: center;
+      justify-content: space-around;
 
-        >img {
-            width: 100%;
-            height: 100%;
-            min-height: 332px;
-            object-fit: cover;
+      .title {
+        text-align: center;
+
+        h4 {
+          margin: 0;
+          font-size: 30px;
+          line-height: 1.15;
+          font-weight: 600;
+          letter-spacing: -0.4px;
+          color: #000;
+        }
+      }
+
+      .sale,
+      .purchase {
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+      }
+
+      .sale {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+        padding-bottom: 30px;
+
+        .per {
+          width: 72px;
+          flex-shrink: 0;
+          margin: 2px 0 0;
+          font-size: 40px;
+          line-height: 1;
+          font-weight: 600;
+          letter-spacing: -0.5px;
+          color: #000;
+        }
+      }
+
+      .purchase {
+        .coffee {
+          width: 72px;
+          flex-shrink: 0;
+          margin: 0;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          img {
+            width: 60px;
+            height: 60px;
             display: block;
+            object-fit: contain;
+          }
+        }
+      }
+
+      .sale-content {
+        .title {
+          margin: 0 0 8px;
+          text-align: left;
+          font-size: 20px;
+          line-height: 1.45;
+          font-weight: 500;
+          letter-spacing: -0.3px;
+          color: #000;
         }
 
-        .text-box {
-            position: absolute;
-            top: 28px;
-            left: 20px;
-            right: 20px;
-            bottom: 18px;
-            display: flex;
-            flex-direction: column;
-            color: #111;
-            align-items: center;
-            justify-content: space-around;
-
-            .title {
-                text-align: center;
-
-                h4 {
-                    margin: 0;
-                    font-size: 30px;
-                    line-height: 1.15;
-                    font-weight: 600;
-                    letter-spacing: -0.4px;
-                    color: #000;
-                }
-            }
-
-            .sale,
-            .purchase {
-                display: flex;
-                gap: 25px;
-                align-items: flex-start;
-            }
-
-            .sale {
-                border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-                padding-bottom: 30px;
-
-                .per {
-                    width: 72px;
-                    flex-shrink: 0;
-                    margin: 2px 0 0;
-                    font-size: 40px;
-                    line-height: 1;
-                    font-weight: 600;
-                    letter-spacing: -0.5px;
-                    color: #000;
-                }
-            }
-
-            .purchase {
-                .coffee {
-                    width: 72px;
-                    flex-shrink: 0;
-                    margin: 0;
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: flex-start;
-
-                    img {
-                        width: 60px;
-                        height: 60px;
-                        display: block;
-                        object-fit: contain;
-                    }
-                }
-            }
-
-            .sale-content {
-                .title {
-                    margin: 0 0 8px;
-                    text-align: left;
-                    font-size: 20px;
-                    line-height: 1.45;
-                    font-weight: 500;
-                    letter-spacing: -0.3px;
-                    color: #000;
-                }
-
-                .text {
-                    margin: 0;
-                    font-size: 14px;
-                    line-height: 1.4;
-                    font-weight: 400;
-                    color: #000;
-                    word-break: keep-all;
-                }
-            }
-
-            .button {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                width: 194px;
-                height: 52px;
-                background-color: #000;
-                // border-radius: 7px;
-                // padding: 20px 5px;
-
-                a {
-                    font-size: 15px;
-                    line-height: 1;
-                    font-weight: 400;
-                    color: #E1E1E1;
-
-
-                }
-            }
+        .text {
+          margin: 0;
+          font-size: 14px;
+          line-height: 1.4;
+          font-weight: 400;
+          color: #000;
+          word-break: keep-all;
         }
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 194px;
+        height: 52px;
+        background-color: #000;
+        // border-radius: 7px;
+        // padding: 20px 5px;
+
+        a {
+          font-size: 15px;
+          line-height: 1;
+          font-weight: 400;
+          color: #e1e1e1;
+        }
+      }
     }
+  }
 }
 
 /* =========================
 1200px 이하
 ========================= */
 @media (max-width: 1200px) {
-    .flag-wrap {
-        .notice-wrap {
-            width: 230px;
+  .flag-wrap {
+    .notice-wrap {
+      width: 230px;
 
-            >img {
-                min-height: 320px;
-            }
+      > img {
+        min-height: 320px;
+      }
 
-            .text-box {
-                top: 24px;
-                left: 18px;
-                right: 18px;
-                bottom: 18px;
+      .text-box {
+        top: 24px;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
 
-                .title {
-                    margin-bottom: 28px;
+        .title {
+          margin-bottom: 28px;
 
-                    h4 {
-                        font-size: 18px;
-                    }
-                }
-
-                .sale {
-                    padding-bottom: 20px;
-                    margin-bottom: 20px;
-
-                    .per {
-                        width: 64px;
-                        font-size: 20px;
-                    }
-                }
-
-                .purchase {
-                    .coffee {
-                        width: 64px;
-
-                        img {
-                            width: 30px;
-                        }
-                    }
-                }
-
-                .sale-content {
-                    .title {
-                        font-size: 13px;
-                    }
-
-                    .text {
-                        font-size: 10px;
-                    }
-                }
-            }
+          h4 {
+            font-size: 18px;
+          }
         }
+
+        .sale {
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+
+          .per {
+            width: 64px;
+            font-size: 20px;
+          }
+        }
+
+        .purchase {
+          .coffee {
+            width: 64px;
+
+            img {
+              width: 30px;
+            }
+          }
+        }
+
+        .sale-content {
+          .title {
+            font-size: 13px;
+          }
+
+          .text {
+            font-size: 10px;
+          }
+        }
+      }
     }
+  }
 }
 
 /* =========================
 1024px 이하
 ========================= */
 @media (max-width: 1024px) {
+  .flag-wrap {
+    gap: 16px;
 
-    .flag-wrap {
-        gap: 16px;
+    .banner-wrap {
+      .mySwiper {
+        min-height: 300px;
 
-        .banner-wrap {
-            .mySwiper {
-                min-height: 300px;
-
-                img {
-                    min-height: 300px;
-                }
-            }
+        img {
+          min-height: 300px;
         }
-
-        .notice-wrap {
-            width: 220px;
-
-            >img {
-                min-height: 300px;
-            }
-
-            .text-box {
-                top: 22px;
-                left: 16px;
-                right: 16px;
-                bottom: 16px;
-
-                .title {
-                    margin-bottom: 24px;
-
-                    h4 {
-                        font-size: 17px;
-                    }
-                }
-
-                .sale {
-                    .per {
-                        width: 58px;
-                        font-size: 18px;
-                    }
-                }
-
-                .purchase {
-                    .coffee {
-                        width: 58px;
-
-                        img {
-                            width: 28px;
-                        }
-                    }
-                }
-
-                .sale-content {
-                    .title {
-                        font-size: 12px;
-                    }
-
-                    .text {
-                        font-size: 10px;
-                        line-height: 1.35;
-                    }
-                }
-
-                .button {
-                    width: 110px;
-                    height: 30px;
-                }
-            }
-        }
+      }
     }
+
+    .notice-wrap {
+      width: 220px;
+
+      > img {
+        min-height: 300px;
+      }
+
+      .text-box {
+        top: 22px;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+
+        .title {
+          margin-bottom: 24px;
+
+          h4 {
+            font-size: 17px;
+          }
+        }
+
+        .sale {
+          .per {
+            width: 58px;
+            font-size: 18px;
+          }
+        }
+
+        .purchase {
+          .coffee {
+            width: 58px;
+
+            img {
+              width: 28px;
+            }
+          }
+        }
+
+        .sale-content {
+          .title {
+            font-size: 12px;
+          }
+
+          .text {
+            font-size: 10px;
+            line-height: 1.35;
+          }
+        }
+
+        .button {
+          width: 110px;
+          height: 30px;
+        }
+      }
+    }
+  }
 }
 
 /* =========================
 900px 이하
 ========================= */
 @media (max-width: 900px) {
-    .flag-wrap {
-        flex-direction: column;
+  .flag-wrap {
+    flex-direction: column;
 
-        .banner-wrap {
-            width: 100%;
+    .banner-wrap {
+      width: 100%;
 
-            .mySwiper {
-                min-height: 360px;
+      .mySwiper {
+        min-height: 360px;
 
-                img {
-                    min-height: 360px;
-                }
-            }
+        img {
+          min-height: 360px;
         }
-
-        .notice-wrap {
-            width: 100%;
-
-            >img {
-                min-height: 320px;
-            }
-
-            .text-box {
-                top: 28px;
-                left: 28px;
-                right: 28px;
-                bottom: 24px;
-
-                .title {
-                    margin-bottom: 28px;
-
-                    h4 {
-                        font-size: 22px;
-                    }
-                }
-
-                .sale {
-                    .per {
-                        width: 80px;
-                        font-size: 24px;
-                    }
-                }
-
-                .purchase {
-                    .coffee {
-                        width: 80px;
-
-                        img {
-                            width: 36px;
-                        }
-                    }
-                }
-
-                .sale-content {
-                    .title {
-                        font-size: 15px;
-                    }
-
-                    .text {
-                        font-size: 12px;
-                    }
-                }
-
-                .button {
-                    width: 130px;
-                    height: 36px;
-
-                    a {
-                        font-size: 11px;
-                    }
-                }
-            }
-        }
+      }
     }
+
+    .notice-wrap {
+      width: 100%;
+
+      > img {
+        min-height: 320px;
+      }
+
+      .text-box {
+        top: 28px;
+        left: 28px;
+        right: 28px;
+        bottom: 24px;
+
+        .title {
+          margin-bottom: 28px;
+
+          h4 {
+            font-size: 22px;
+          }
+        }
+
+        .sale {
+          .per {
+            width: 80px;
+            font-size: 24px;
+          }
+        }
+
+        .purchase {
+          .coffee {
+            width: 80px;
+
+            img {
+              width: 36px;
+            }
+          }
+        }
+
+        .sale-content {
+          .title {
+            font-size: 15px;
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+
+        .button {
+          width: 130px;
+          height: 36px;
+
+          a {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* =========================
 768px 이하
 ========================= */
 @media (max-width: 768px) {
+  .flag-wrap {
+    gap: 14px;
 
-    .flag-wrap {
-        gap: 14px;
+    .banner-wrap {
+      .mySwiper {
+        min-height: 280px;
 
-        .banner-wrap {
-            .mySwiper {
-                min-height: 280px;
-
-                img {
-                    min-height: 280px;
-                }
-            }
+        img {
+          min-height: 280px;
         }
-
-        .notice-wrap {
-            >img {
-                min-height: 280px;
-            }
-
-            .text-box {
-                top: 22px;
-                left: 20px;
-                right: 20px;
-                bottom: 20px;
-
-                .title {
-                    margin-bottom: 24px;
-
-                    h4 {
-                        font-size: 20px;
-                    }
-                }
-
-                .sale {
-                    padding-bottom: 18px;
-                    margin-bottom: 18px;
-
-                    .per {
-                        width: 68px;
-                        font-size: 21px;
-                    }
-                }
-
-                .purchase {
-                    .coffee {
-                        width: 68px;
-
-                        img {
-                            width: 32px;
-                        }
-                    }
-                }
-
-                .sale-content {
-                    .title {
-                        font-size: 14px;
-                    }
-
-                    .text {
-                        font-size: 11px;
-                    }
-                }
-
-                .button {
-                    width: 124px;
-                    height: 34px;
-                }
-            }
-        }
+      }
     }
+
+    .notice-wrap {
+      > img {
+        min-height: 280px;
+      }
+
+      .text-box {
+        top: 22px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+
+        .title {
+          margin-bottom: 24px;
+
+          h4 {
+            font-size: 20px;
+          }
+        }
+
+        .sale {
+          padding-bottom: 18px;
+          margin-bottom: 18px;
+
+          .per {
+            width: 68px;
+            font-size: 21px;
+          }
+        }
+
+        .purchase {
+          .coffee {
+            width: 68px;
+
+            img {
+              width: 32px;
+            }
+          }
+        }
+
+        .sale-content {
+          .title {
+            font-size: 14px;
+          }
+
+          .text {
+            font-size: 11px;
+          }
+        }
+
+        .button {
+          width: 124px;
+          height: 34px;
+        }
+      }
+    }
+  }
 }
 
 /* =========================
 480px 이하
 ========================= */
 @media (max-width: 480px) {
+  .flag-wrap {
+    gap: 12px;
 
-    .flag-wrap {
-        gap: 12px;
+    .banner-wrap {
+      .mySwiper {
+        min-height: 220px;
 
-        .banner-wrap {
-            .mySwiper {
-                min-height: 220px;
-
-                img {
-                    min-height: 220px;
-                }
-            }
+        img {
+          min-height: 220px;
         }
-
-        .notice-wrap {
-            >img {
-                min-height: 250px;
-            }
-
-            .text-box {
-                top: 18px;
-                left: 16px;
-                right: 16px;
-                bottom: 16px;
-
-                .title {
-                    margin-bottom: 18px;
-
-                    h4 {
-                        font-size: 17px;
-                        line-height: 1.2;
-                    }
-                }
-
-                .sale {
-                    padding-bottom: 14px;
-                    margin-bottom: 14px;
-
-                    .per {
-                        width: 56px;
-                        font-size: 18px;
-                    }
-                }
-
-                .purchase {
-                    .coffee {
-                        width: 56px;
-
-                        img {
-                            width: 26px;
-                        }
-                    }
-                }
-
-                .sale-content {
-                    .title {
-                        font-size: 12px;
-                        line-height: 1.35;
-                    }
-
-                    .text {
-                        font-size: 10px;
-                        line-height: 1.35;
-                    }
-                }
-
-                .button {
-                    width: 112px;
-                    height: 32px;
-                    gap: 6px;
-
-                    a {
-                        font-size: 10px;
-                    }
-
-                    i {
-                        width: 9px;
-                        height: 9px;
-
-                        &::before {
-                            width: 6px;
-                            height: 6px;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+
+    .notice-wrap {
+      > img {
+        min-height: 250px;
+      }
+
+      .text-box {
+        top: 18px;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+
+        .title {
+          margin-bottom: 18px;
+
+          h4 {
+            font-size: 17px;
+            line-height: 1.2;
+          }
+        }
+
+        .sale {
+          padding-bottom: 14px;
+          margin-bottom: 14px;
+
+          .per {
+            width: 56px;
+            font-size: 18px;
+          }
+        }
+
+        .purchase {
+          .coffee {
+            width: 56px;
+
+            img {
+              width: 26px;
+            }
+          }
+        }
+
+        .sale-content {
+          .title {
+            font-size: 12px;
+            line-height: 1.35;
+          }
+
+          .text {
+            font-size: 10px;
+            line-height: 1.35;
+          }
+        }
+
+        .button {
+          width: 112px;
+          height: 32px;
+          gap: 6px;
+
+          a {
+            font-size: 10px;
+          }
+
+          i {
+            width: 9px;
+            height: 9px;
+
+            &::before {
+              width: 6px;
+              height: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
