@@ -3,138 +3,56 @@
     background: #fff;
     top: 0;
     right: 0;
-    display: flex;
-    width: 100%;
+    width: 30%;
+    max-width: 680px;
+    min-width: 320px;
     min-height: 100vh;
     z-index: 10000;
+    box-shadow: 0 -3px;
 
 }
 
-
-/* 왼쪽 영역 */
-.login-page .login-left {
-    position: relative;
-    width: 64%;
-    min-height: 100vh;
-    background: rgba(0, 0, 0, 0.45);
-    overflow: hidden;
-}
-
-.login-page .login-header {
-    position: absolute;
-    top: 24px;
-    left: 48px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    color: #cfcfcf;
-}
-
-.login-page .logo {
-    font-family: serif;
-    font-size: 28px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-.login-page .gnb {
-    display: flex;
-    gap: 34px;
-}
-
-.login-page .gnb li a {
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.65);
-}
-
-.login-page .left-visual {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
-
-.login-page .left-visual::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(35, 30, 25, 0.45);
-}
-
-.login-page .left-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.8);
-}
-
-.login-page .brand-toggle {
-    position: absolute;
-    left: 50%;
-    bottom: 46px;
-    transform: translateX(-50%);
-    display: flex;
-    width: 258px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    z-index: 10;
-}
-
-.brand-toggle button {
-    flex: 1;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.65);
-}
-
-.brand-toggle button.active {
-    background: rgba(255, 255, 255, 0.25);
-    color: #fff;
-    border-radius: 999px;
-}
 
 /* 오른쪽 로그인 영역 */
-.login-right {
-    width: 36%;
-    min-width: 420px;
+.login-page .login-right {
     min-height: 100vh;
     background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     padding-top: 115px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
-.login-box {
-    width: 333px;
+.login-page .login-box {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.login-top {
+.login-page .login-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 26px;
 }
 
-.login-top h2 {
+.login-page .login-top h2 {
     font-size: 20px;
     font-weight: 500;
     color: #111;
 }
 
-.close-btn {
+.login-page .close-btn {
     line-height: 1;
+    border: none;
+    background: none;
 }
 
-.input-wrap {
+.login-page .input-wrap {
     margin-bottom: 16px;
 }
 
-.input-wrap input {
+.login-page .input-wrap input {
     width: 100%;
     height: 52px;
     padding: 0 18px;
@@ -144,22 +62,22 @@
     color: #111;
 }
 
-.input-wrap input::placeholder {
+.login-page .input-wrap input::placeholder {
     color: #9a9a9a;
 }
 
-.input-wrap.error input {
-    border-color: #ff4d4f;
-    background: #fff;
-}
+// .login-page .input-wrap.error input {
+//     border-color: #ff4d4f;
+//     background: #fff;
+// }
 
-.error-text {
-    margin-top: 7px;
-    font-size: 12px;
-    color: #ff4d4f;
-}
+// .login-page .error-text {
+//     margin-top: 7px;
+//     font-size: 12px;
+//     color: #ff4d4f;
+// }
 
-.save-id {
+.login-page .save-id {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -168,13 +86,13 @@
     color: #888;
 }
 
-.save-id input[type="checkbox"] {
+.login-page .save-id input[type="checkbox"] {
     width: 14px;
     height: 14px;
     accent-color: #111;
 }
 
-.login-btn {
+.login-page .login-btn {
     width: 100%;
     height: 56px;
     background: #000;
@@ -183,7 +101,9 @@
     margin-bottom: 16px;
 }
 
-.login-links {
+
+
+.login-page .login-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,119 +113,60 @@
     color: #777;
 }
 
-.sns-login {
+.login-page .sns-login {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 14px;
 }
 
-.sns-login button {
+.login-page .sns-login button {
     width: 100%;
     height: 50px;
     font-size: 15px;
     font-weight: 500;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
-.kakao {
+.login-page .kakao {
     background: #fee500;
     color: #111;
     gap: 8px;
+    border: none;
 }
 
-.naver {
+.login-page .naver {
     border: 1px solid #03c75a;
     color: #111;
     background: #fff;
 }
 
-.google {
+.login-page .google {
     border: 1px solid #222;
     background: #fff;
     color: #111;
 }
 
-.join-btn {
+.login-page .join-btn {
     width: 100%;
     height: 50px;
     background: #f3f3f3;
     color: #333;
     font-size: 14px;
     margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.guest-order {
+.login-page .guest-order {
     display: block;
     text-align: center;
     font-size: 13px;
     color: #999;
-}
-
-/* 반응형 */
-@media (max-width: 1200px) {
-    .login-left {
-        width: 58%;
-    }
-
-    .login-right {
-        width: 42%;
-    }
-}
-
-@media (max-width: 900px) {
-    .login-page {
-        flex-direction: column;
-    }
-
-    .login-left {
-        width: 100%;
-        height: 340px;
-        min-height: auto;
-    }
-
-    .left-visual,
-    .left-visual img {
-        height: 340px;
-    }
-
-    .login-header {
-        left: 24px;
-        top: 18px;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
-
-    .gnb {
-        gap: 18px;
-    }
-
-    .brand-toggle {
-        bottom: 20px;
-    }
-
-    .login-right {
-        width: 100%;
-        min-width: auto;
-        min-height: auto;
-        padding: 50px 20px 60px;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .login-box {
-        width: 100%;
-    }
-
-    .login-top h2 {
-        font-size: 18px;
-    }
-
-    .gnb li a {
-        font-size: 12px;
-    }
-
-    .logo {
-        font-size: 24px;
-    }
 }

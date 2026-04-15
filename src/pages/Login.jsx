@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Login.scss";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -11,29 +11,6 @@ export default function Login() {
 
   return (
     <div className="login-page">
-      <div className="login-left">
-        <header className="login-header">
-          <h1 className="logo">Matin Kim</h1>
-          <nav>
-            <ul className="gnb">
-              <li><a href="#!">SHOP</a></li>
-              <li><a href="#!">PROJECT</a></li>
-              <li><a href="#!">COLLECTIONS</a></li>
-              <li><a href="#!">ABOUT</a></li>
-            </ul>
-          </nav>
-        </header>
-
-        <div className="left-visual">
-          <img src="/images/login-bg.png" alt="마뗑킴 배경 이미지" />
-        </div>
-
-        <div className="brand-toggle">
-          <button className="active">Matin Kim</button>
-          <button>KIMMATIN</button>
-        </div>
-      </div>
-
       <div className="login-right">
         <div className="login-box">
           <div className="login-top">
@@ -50,7 +27,7 @@ export default function Login() {
           <form>
             <div className="input-wrap error">
               <input type="text" placeholder="아이디*" />
-              <p className="error-text">아이디 항목은 필수 입력값입니다.</p>
+              {/* <p className="error-text">아이디 항목은 필수 입력값입니다.</p> */}
             </div>
 
             <div className="input-wrap">
@@ -87,13 +64,13 @@ export default function Login() {
               </button>
             </div>
 
-            <button type="button" className="join-btn">
+            <Link to="/member" className="join-btn">
               회원가입 후 혜택받기
-            </button>
+            </Link>
 
-            <a href="#!" className="guest-order">
+            <Link to="/" className="guest-order">
               비회원 주문 조회하기
-            </a>
+            </Link>
           </form>
         </div>
       </div>
