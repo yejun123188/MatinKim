@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import "./scss/Header.scss"
 import { useProductStore } from '../store/useProductStore'
@@ -19,8 +19,8 @@ const defaultMenus = [
 ]
 const photoMenu = [
   { src: "/images/collection/liz/img_liz_00007.jpg", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
-  { src: "/images/collection/liz/img_liz_00006.jpg", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
-  { src: "/images/collection/liz/img_liz_00020.jpg", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" }
+  { src: "/images/collection/liz/img_liz_00006.jpg", subtitle: "26 Summer", title: "HOUSE, HAUS!" },
+  { src: "/images/collection/liz/img_liz_00020.jpg", subtitle: "Matin Kim MAGAZINE", title: "BUCKET LIST" }
 ]
 
 export default function Header() {
@@ -33,6 +33,60 @@ export default function Header() {
     <>
       <header>
         <div className="header-show">
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header>
+      <div className={`header-show ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="inner">
+          <div className="header-left">
+            <h1><Link to={"/"}><img src="/images/header/logo-MatinKim-black.svg" alt="로고" /></Link></h1>
+            <nav>
+              <ul className="main-menu">
+                {topmenus.map((menu, id) => (
+                  <li
+                    key={id}
+                    onMouseEnter={() => menu.key === "shop" && setIsShopHovered(true)}
+                    onMouseLeave={() => menu.key === "shop" && setIsShopHovered(false)}
+                  >
+                    <Link to={`/${menu.key}`}>{menu.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="header-right">
+            <ul className="gnb-list">
+              <li><input type="text" placeholder='SEARCH' /></li>
+              <li className='cart'>
+                <Link to={"/cart"}>
+                  <img src="/images/header-icon/cart.svg" alt="" />
+                  <span className="cart-num">
+                    <span>1</span>
+                  </span>
+                </Link>
+              </li>
+              <li className='member'>
+                <Link to={"/member"}><img src="/images/header-icon/user.svg" alt="" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          className={`header-active ${isShopHovered ? "active" : ""}`}
+          onMouseEnter={() => setIsShopHovered(true)}
+          onMouseLeave={() => setIsShopHovered(false)}
+        >
           <div className="inner">
             <div className="header-left">
               <h1><Link to={"/"}><img src="/images/header/logo-MatinKim-black.svg" alt="로고" /></Link></h1>
