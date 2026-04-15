@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import "./scss/Header.scss"
 import { useProductStore } from '../store/useProductStore'
@@ -18,17 +18,26 @@ const defaultMenus = [
 ]
 const photoMenu = [
   { src: "/images/collection/liz/img_liz_00007.jpg", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
-  { src: "/images/collection/liz/img_liz_00006.jpg", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" },
-  { src: "/images/collection/liz/img_liz_00020.jpg", subtitle: "MATIN KIM X LIZ", title: "26 S/S COLLECTION" }
+  { src: "/images/collection/liz/img_liz_00006.jpg", subtitle: "26 Summer", title: "HOUSE, HAUS!" },
+  { src: "/images/collection/liz/img_liz_00020.jpg", subtitle: "Matin Kim MAGAZINE", title: "BUCKET LIST" }
 ]
 
 export default function Header() {
   const { menus } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header>
-      <div className="header-show">
+      <div className={`header-show ${isScrolled ? 'scrolled' : ''}`}>
         <div className="inner">
           <div className="header-left">
             <h1><Link to={"/"}><img src="/images/header/logo-MatinKim-black.svg" alt="로고" /></Link></h1>
