@@ -43,7 +43,7 @@
     list-style: none;
   }
 
-  li > a {
+  li>a {
     display: block;
     width: 100%;
     background: #efefef;
@@ -70,6 +70,8 @@
 .insta .text-box {
   padding: 18px 20px 22px;
   background: #efefef;
+  position: absolute;
+
 }
 
 .insta .icons {
@@ -113,11 +115,11 @@
 }
 
 /* hover */
-.insta-list-wrap li > a {
+.insta-list-wrap li>a {
   transition: transform 0.25s ease;
 }
 
-.insta-list-wrap li > a:hover {
+.insta-list-wrap li>a:hover {
   transform: translateY(-6px);
 }
 
