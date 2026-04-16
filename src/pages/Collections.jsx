@@ -1,7 +1,12 @@
 import React from 'react'
-
+import ACsubPage from '../components/ACsubPage'
+import "./scss/Collections.scss"
 export default function Collections() {
     return (
-        <div>Collections</div>
+        <section className='sub-section'>
+
+            <ACsubPage title="COLLECTIONS" />
+            
+        </section>
     )
 }

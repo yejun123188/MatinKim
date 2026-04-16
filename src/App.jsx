@@ -11,6 +11,7 @@ import About from './pages/About'
 import { useProductStore } from './store/useProductStore'
 import { useEffect } from 'react'
 
+
 function App() {
 
   const { items, onFetchItem, onMenus } = useProductStore();
@@ -29,6 +30,7 @@ function App() {
 
         <Route path='/project' element={<Project />} />
         <Route path='/collections' element={<Collections />} />
+
         <Route path='/about' element={<About />} />
 
 

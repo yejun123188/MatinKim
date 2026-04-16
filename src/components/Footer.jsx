@@ -8,7 +8,7 @@ export default function Footer() {
         {/* <!-- 상단 중앙 브랜드 영역 --> */}
         <div className="footer-top">
           <h2 className="footer-logo">
-            <img src="./images/footer-icon/logo-name.svg" alt="logo" />
+            <img src="/images/footer-icon/logo-name.svg" alt="logo" />
           </h2>
           <p className="footer-slogan">
             Matin Kim Strives To Harmonize A Distinctive Sense Of Freedom And A Rough Style<br />
@@ -42,12 +42,12 @@ export default function Footer() {
             <ul className="sns-list">
               <li>
                 <a href="https://www.instagram.com/matinkim_magazine/?hl=ko" aria-label="인스타그램">
-                  <img src="./images/footer-icon/imstagram-icon.svg" alt="인스타그램" />
+                  <img src="/images/footer-icon/imstagram-icon.svg" alt="인스타그램" />
                 </a>
               </li>
               <li>
                 <a href="https://www.youtube.com/@%EA%B9%80%EB%8B%A4%EC%9D%B8%EC%9D%98%EC%A0%84%EB%B6%80%EB%8B%A4%EC%9D%B8/videos" aria-label="유튜브">
-                  <img src="./images/footer-icon/youtube-logo.svg" alt="유튜브" />
+                  <img src="/images/footer-icon/youtube-logo.svg" alt="유튜브" />
                 </a>
               </li>
             </ul>
