@@ -155,9 +155,6 @@
   }
 
   .my-order {
-    width: calc(100% + 120px);
-    margin-right: -120px;
-
     .order-list {
       display: flex;
       gap: 24px;
@@ -219,13 +216,10 @@
   }
 
   .my-wish {
-    width: calc(100% + 120px);
-    margin-right: -120px;
-
     .wish-list {
       display: flex;
       gap: 24px;
-      li {
+      .wish-product {
         display: flex;
         gap: 20px;
         width: 420px;
@@ -249,6 +243,18 @@
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
+            }
+
+            .wish-price {
+              display: flex;
+              gap: 5px;
+              align-items: flex-end;
+
+              span {
+                color: g.$text-sub-color2;
+                font-size: g.$size-14-main;
+                text-decoration: line-through;
+              }
             }
 
             .wish-count {
