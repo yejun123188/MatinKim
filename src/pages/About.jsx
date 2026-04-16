@@ -11,7 +11,7 @@ const instagram = [
 
 export default function About() {
     return (
-        <main className='about'>
+        <section className='sub-section about'>
             <div className='inner'>
                 <div className="about-top">
                     <div className="img-box">
@@ -110,6 +110,6 @@ export default function About() {
                     ))}
                 </ul>
             </div>
-        </main>
+        </section>
     )
 }
