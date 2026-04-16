@@ -1,5 +1,10 @@
 import React from "react";
 import UserInfoMainBox from "./UserInfoMainBox";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+
+import { FreeMode } from "swiper/modules";
 
 const statusCode = {
   주문확인: "ORDER",
@@ -84,41 +89,56 @@ const wishs = [
 
 export default function UserInfoMain() {
   return (
-    <>
+    <div className="main">
       <div className="frist-line">
         <UserInfoMainBox title="Account informations" className="my-info">
-          <p>
-            반가워요! <strong>{user.name}</strong> 님!
-          </p>
-          <ul className="myinfo-list">
-            <li>
-              {user.name}님은 <br />
-              <strong>{user.grade}등급</strong> 입니다!
-            </li>
-            <li>
-              총 구매 금액 <span>{user.orderPrice.toLocaleString()}원</span>
-              <span>{user.orderCount}회</span>
-            </li>
-          </ul>
+          <div className="my-info-wrap">
+            <p>
+              반가워요! <strong>{user.name}</strong> 님!
+            </p>
+            <ul className="myinfo-list">
+              <li>
+                <p>
+                  {user.name}님은 <br />
+                  <strong>{user.grade}등급</strong> 입니다!
+                </p>
+                <div className="question">
+                  <img src="./images/userinfo/question.svg" alt="question" />
+                </div>
+              </li>
+              <li>
+                <p className="my-total-price">총 구매 금액</p>
+                <span>
+                  {user.orderPrice.toLocaleString()}원 / ({user.orderCount}회)
+                </span>
+              </li>
+            </ul>
+          </div>
         </UserInfoMainBox>
         <UserInfoMainBox title="My wallet" className="my-wallet">
           <ul className="my-wallet-list">
             <li>
-              <span>쿠폰</span>
-              <strong>{user.couponCount}장</strong>
+              <span>총 적립금</span>
+              <strong>{user.pointCount.toLocaleString()} 원</strong>
             </li>
             <li>
-              <span>적립금</span>
-              <strong>{user.pointCount.toLocaleString()}원</strong>
+              <span>내 쿠폰</span>
+              <strong>{user.couponCount} 개</strong>
             </li>
           </ul>
         </UserInfoMainBox>
       </div>
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
-          <ul className="order-list">
+          <Swiper
+            slidesPerView={2.7}
+            spaceBetween={24}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="order-list"
+          >
             {orders.map((order) => (
-              <li key={order.id}>
+              <SwiperSlide className="order-product" key={order.id}>
                 <div className="img-box">
                   <img src={order.img} alt={order.name} />
                 </div>
@@ -127,34 +147,42 @@ export default function UserInfoMain() {
                     {order.status === "배송중" && <span className="dot"></span>}
                     {order.status}
                   </div>
-                  <p>{order.name}</p>
-                  <p>
-                    {order.size} / {order.count}개
-                  </p>
+                  <div className="product-text">
+                    <p className="order-name">{order.name}</p>
+                    <p className="order-count">
+                      {order.size} / {order.count}개
+                    </p>
+                  </div>
                 </div>
-              </li>
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         </UserInfoMainBox>
       </div>
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
-          <ul className="wish-list">
+          <Swiper
+            slidesPerView={2.7}
+            spaceBetween={24}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="wish-list"
+          >
             {wishs.map((wish) => (
-              <li key={wish.id}>
+              <SwiperSlide className="wish-product" key={wish.id}>
                 <div className="img-box">
                   <img src={wish.img} alt={wish.name} />
                 </div>
                 <div className="text-box">
                   <div className="text-wrap">
-                    <p>{wish.name}</p>
-                    <p>
+                    <p className="wish-name">{wish.name}</p>
+                    <p className="wish-price">
                       ￦{wish.price.toLocaleString()}
                       {wish.discountRate > 0 && (
                         <span>￦{wish.discountPrice.toLocaleString()}</span>
                       )}
                     </p>
-                    <p>
+                    <p className="wish-count">
                       {wish.size} / {wish.count}개
                     </p>
                   </div>
@@ -164,11 +192,11 @@ export default function UserInfoMain() {
                     <button className="Wbtn">Remove</button>
                   </div>
                 </div>
-              </li>
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         </UserInfoMainBox>
       </div>
-    </>
+    </div>
   );
 }
