@@ -1,4 +1,6 @@
 import React from "react";
+import UserInfo from "../pages/UserInfo";
+import UserInfoMain from "./UserInfoMain";
 
 const userMenu = [
   "주문내역",
@@ -15,7 +17,7 @@ const userMenu = [
 export default function UserMenus({ sendSelect }) {
   return (
     <div className="info-list">
-      <h2>마이페이지</h2>
+      <h2 onClick={() => sendSelect("마이페이지")}>마이페이지</h2>
       <ul>
         {userMenu.map((menu, id) => (
           <li key={id}>

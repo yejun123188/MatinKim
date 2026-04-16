@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
@@ -36,6 +36,8 @@ const photoMenu = [
 ];
 
 export default function Header() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const { menus } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +52,10 @@ export default function Header() {
 
   return (
     <header>
-      <div className={`header-show ${isScrolled ? "scrolled" : ""}`}>
+      <div
+        className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
+          }`}
+      >
         <div className="inner">
           <div className="header-left">
             <h1>
@@ -82,12 +87,12 @@ export default function Header() {
                 <input type="text" placeholder="SEARCH" />
               </li>
               <li className="cart">
-                <button>
+                <Link>
                   <img src="/images/header-icon/cart.svg" alt="" />
                   <span className="cart-num">
                     <span>1</span>
                   </span>
-                </button>
+                </Link>
               </li>
               <li className="member">
                 <Link to="/userInfo">
