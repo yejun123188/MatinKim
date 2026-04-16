@@ -1,3 +1,5 @@
+@use "../../App.scss" as g;
+
 .header-show {
     // border-bottom: 1px solid #eee;
     height: 80px;
@@ -40,7 +42,7 @@
                     text-align: center;
 
                     a {
-                        font-weight: 500;
+                        font-weight: g.$Regular;
                         position: relative;
                         transition: font-weight 0.3s ease;
 
@@ -83,6 +85,7 @@
                     padding: 0 12px;
                     background: rgba(0, 0, 0, 0.05);
                     display: none;
+                    font-size: g.$size-12-sub;
                 }
 
                 .cart {
@@ -90,11 +93,6 @@
                     align-items: center;
                     justify-content: center;
                     position: relative;
-
-                    button {
-                        background: none;
-                        border: none;
-                    }
 
                     img {
                         padding: 4.5px 0;
@@ -114,7 +112,7 @@
 
                         span {
                             color: #fff;
-                            font-size: 10px;
+                            font-size: 0.625rem;
                             top: 50%;
                             left: 50%;
                             transform: translate(-50%, -50%);
@@ -127,11 +125,6 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-
-                    button {
-                        background: none;
-                        border: none;
-                    }
 
                     img {
                         padding: 4.5px 0;
@@ -189,8 +182,8 @@
             gap: 24px;
 
             a {
-                font-size: 16px;
-                font-weight: 900;
+                font-size: g.$size-14-main;
+                font-weight: g.$Bold;
             }
 
             li {}
@@ -208,31 +201,37 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 gap: 24px;
-                font-weight: 900;
-                font-size: 16px;
+                font-weight: g.$Bold;
+                font-size: g.$size-14-main;
 
                 .sub-menu {
-                    font-size: 14px;
+                    font-size: g.$size-14-main;
                     padding-top: 0;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
                     gap: 24px;
+                    align-items: start;
 
                     li {
+
+
                         a {
                             display: flex;
-                            align-items: flex-start;
+                            align-items: center;
+                            justify-content: center;
                             gap: 6px;
                             line-height: 1.35;
-                            font-weight: 500;
-                            font-size: 14px;
+                            font-weight: g.$Regular;
+                            font-size: g.$size-14-main;
                         }
 
                         .e-sub-menu {
-                            font-size: 12px;
+                            font-size: 0.625rem;
                             opacity: 0.3;
+                            font-weight: g.$Regular;
+
                         }
                     }
                 }
@@ -259,15 +258,15 @@
                 padding-top: 12px;
 
                 p {
-                    font-size: 12px;
+                    font-size: g.$size-12-sub;
                     opacity: 0.5;
                     margin: 0;
                 }
 
                 h3 {
-                    font-size: 14px;
-                    font-weight: 900;
-                    margin: 4px 0 0;
+                    font-size: g.$size-14-main;
+                    font-weight: g.$Bold;
+                    margin: 3px 0 0;
                 }
             }
         }

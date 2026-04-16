@@ -1,0 +1,39 @@
+.sub-section {
+  background: #f5f5f5;
+}
+
+.user-info-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  .user-info-left {
+    width: 115px;
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        li {
+          button {
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #999999;
+          }
+        }
+      }
+    }
+  }
+
+  .user-info-right {
+    h2 {
+      width: 1250px;
+    }
+  }
+}

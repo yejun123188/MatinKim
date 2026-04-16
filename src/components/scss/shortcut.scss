@@ -1,3 +1,5 @@
+@use "../../App.scss" as g;
+
 .inner {
     max-width: 1440px;
     margin: 0 auto;
@@ -5,7 +7,7 @@
 
 .shortcut-list {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     justify-content: space-between;
 
     li {
@@ -35,7 +37,7 @@
                 }
 
                 .text-top h3 {
-                    font-size: 40px;
+                    font-size: g.$size-30;
                     text-align: left;
                     transition: 0.6s;
                     opacity: 1;
@@ -82,17 +84,17 @@
             .text-top {
 
                 span {
-                    font-size: 13px;
-                    font-weight: 500;
+                    font-size: g.$size-12-sub;
+                    font-weight: g.$Regular;
                     letter-spacing: 3px;
                     color: rgba(255, 255, 255, 0.7);
                     display: none;
                 }
 
                 h3 {
-                    font-size: 18px;
+                    font-size: g.$size-16;
                     letter-spacing: 2px;
-                    font-weight: 900;
+                    font-weight: g.$Bold;
                     color: #fff;
                     text-align: center;
                     transition: 0.6s;
@@ -106,7 +108,7 @@
 
                 .text-des {
                     width: 300px;
-                    font-size: 13px;
+                    font-size: g.$size-12-sub;
                     color: #fff;
                     margin-bottom: 10px;
                     opacity: 0.7;
@@ -125,7 +127,7 @@
                     }
 
                     span {
-                        font-size: 10px;
+                        font-size: 0.625rem;
                     }
                 }
             }
