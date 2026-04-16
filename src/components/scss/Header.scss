@@ -155,6 +155,15 @@
     }
 }
 
+.header-show.subpage {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+
+    .header-right .gnb-list input {
+        display: block;
+    }
+}
+
 .header-active {
     display: flex;
     justify-content: space-between;

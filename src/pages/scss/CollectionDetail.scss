@@ -1,0 +1,27 @@
+.collection-detail {
+    text-align: center;
+    padding-bottom: 200px;
+
+    h3 {
+        padding-top: 200px;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        padding-bottom: 20px;
+
+    }
+
+    p {
+        line-height: 1.5;
+        padding-bottom: 80px;
+    }
+
+    .collection-list {
+        height: 100%;
+
+        li {
+            padding-bottom: 10px;
+        }
+    }
+}
