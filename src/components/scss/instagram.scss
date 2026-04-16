@@ -38,9 +38,10 @@
   }
 
   li {
-    width: calc((100% - 72px) / 4);
+    width: calc((100% - 72px) / 5);
     flex-shrink: 0;
     list-style: none;
+
   }
 
   li>a {
@@ -50,13 +51,13 @@
     border-radius: 26px;
     overflow: hidden;
     text-decoration: none;
-    color: #111;
+    position: relative;
   }
 }
 
 .insta .img-box {
   width: 100%;
-  aspect-ratio: 1 / 1.25;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
 
   img {
@@ -69,35 +70,26 @@
 
 .insta .text-box {
   padding: 18px 20px 22px;
-  background: #efefef;
   position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
 
 }
 
-.insta .icons {
+.insta button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 25px;
-  margin-bottom: 10px;
-
-  button {
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 0;
-  }
-
-  img {
-    width: 28px;
-    height: 28px;
-    display: block;
-    object-fit: contain;
-  }
+  justify-content: center;
+  line-height: 0;
 }
+
+
 
 .insta .hash-wrap {
   display: flex;
@@ -107,7 +99,7 @@
   span {
     font-size: 17px;
     line-height: 1.4;
-    color: #000;
+    color: #fff;
     font-weight: 400;
     letter-spacing: -0.02em;
     white-space: nowrap;
