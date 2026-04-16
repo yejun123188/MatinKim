@@ -129,7 +129,7 @@ export default function Header() {
                       {menu.subMenu.map((m, id) => (
                         <li key={id}>
                           <Link to={m.link}>
-                            <p>{m.name}</p>
+                            <p className="sub-menu-name">{m.name}</p>
                             <p className="e-sub-menu">{m.subName}</p>
                           </Link>
                         </li>

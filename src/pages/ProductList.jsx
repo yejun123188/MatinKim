@@ -53,7 +53,7 @@ export default function ProductList() {
 
 
     return (
-        <main className='product-list-wrap sub-section'>
+        <main className='product-list-wrap'>
             <div className="inner">
                 <Filter colorCount={colorCount} />
                 <div className="product-list-wrap">
