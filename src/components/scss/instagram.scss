@@ -1,10 +1,9 @@
 .insta {
   overflow: hidden;
+  background-color: #F5F5F5;
 }
 
 .insta .inner {
-  max-width: 1440px;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -38,7 +37,7 @@
   }
 
   li {
-    width: calc((100% - 72px) / 5);
+    width: calc((100% - 96px) / 5);
     flex-shrink: 0;
     list-style: none;
 
