@@ -47,6 +47,13 @@ export default function ProjectDetail() {
                                         <img key={i} src={item.url} alt="" style={{ width: "100%" }} />
                                     );
                                 }
+                                if (item.type === "video") {
+                                    return (
+                                        <video muted autoPlay loop>
+                                            <source src={item.url} />
+                                        </video>
+                                    )
+                                }
                             })}
                         </div>
                     </li>

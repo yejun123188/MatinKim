@@ -1,8 +1,20 @@
 .collections {
+    .collections-title {
+        padding: 40px 0;
+    }
+
     .collection-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
         height: 100%;
+
+        li {
+            padding-bottom: 30px;
+
+            .img-box {
+                padding-bottom: 10px;
+            }
+        }
     }
 }
