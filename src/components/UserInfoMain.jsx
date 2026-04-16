@@ -1,5 +1,10 @@
 import React from "react";
 import UserInfoMainBox from "./UserInfoMainBox";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+
+import { FreeMode } from "swiper/modules";
 
 const statusCode = {
   주문확인: "ORDER",
@@ -125,9 +130,15 @@ export default function UserInfoMain() {
       </div>
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
-          <ul className="order-list">
+          <Swiper
+            slidesPerView={2.7}
+            spaceBetween={24}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="order-list"
+          >
             {orders.map((order) => (
-              <li className="order-product" key={order.id}>
+              <SwiperSlide className="order-product" key={order.id}>
                 <div className="img-box">
                   <img src={order.img} alt={order.name} />
                 </div>
@@ -143,16 +154,22 @@ export default function UserInfoMain() {
                     </p>
                   </div>
                 </div>
-              </li>
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         </UserInfoMainBox>
       </div>
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
-          <ul className="wish-list">
+          <Swiper
+            slidesPerView={2.7}
+            spaceBetween={24}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="wish-list"
+          >
             {wishs.map((wish) => (
-              <li key={wish.id}>
+              <SwiperSlide className="wish-product" key={wish.id}>
                 <div className="img-box">
                   <img src={wish.img} alt={wish.name} />
                 </div>
@@ -175,9 +192,9 @@ export default function UserInfoMain() {
                     <button className="Wbtn">Remove</button>
                   </div>
                 </div>
-              </li>
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         </UserInfoMainBox>
       </div>
     </div>
