@@ -225,7 +225,6 @@
 
                     li {
 
-
                         a {
                             display: flex;
                             align-items: center;
@@ -234,6 +233,15 @@
                             line-height: 1.35;
                             font-weight: g.$Regular;
                             font-size: g.$size-14-main;
+                        }
+
+                        .sub-menu-name {
+                            color: g.$text-sub-color;
+
+                            &:hover {
+                                color: g.$text-main-color;
+                            }
+
                         }
 
                         .e-sub-menu {
