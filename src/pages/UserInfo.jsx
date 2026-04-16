@@ -45,7 +45,7 @@ export default function UserInfo() {
   };
 
   return (
-    <section className="sub-section">
+    <section className="sub-section info-sec">
       <div className="inner user-info-wrap">
         <div className="user-info-left">
           <UserMenus sendSelect={handleMenuClick} />
