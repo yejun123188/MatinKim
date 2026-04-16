@@ -3,6 +3,9 @@ import UserInfoMain from "../components/UserInfoMain";
 import UserMenus from "../components/UserMenus";
 import { useLocation } from "react-router-dom";
 import "./scss/userInfo.scss";
+import WishList from "../components/WishList";
+import OrderList from "../components/OrderList";
+import CouponList from "../components/CouponList";
 
 export default function UserInfo() {
   const location = useLocation();
@@ -18,13 +21,13 @@ export default function UserInfo() {
   const handleContent = () => {
     switch (selectMenu) {
       case "주문내역":
-        return <p></p>;
+        return <OrderList />;
       case "위시리스트":
-        return <p></p>;
+        return <WishList />;
       case "적립금":
         return <p></p>;
       case "쿠폰":
-        return <p></p>;
+        return <CouponList />;
       case "배송지 관리":
         return <p></p>;
       case "1:1 문의":
