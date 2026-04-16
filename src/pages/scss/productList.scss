@@ -3,16 +3,106 @@
 .product-list-wrap {
 
     .inner {
-        display: flex;
-        align-items: flex-start;
-        gap: 24px;
+        @include g.myFlex(flex-start, 24px, flex-start);
 
         .filter-wrap {
-            min-width: 200px;
+            width: 280px;
+            min-width: 280px;
+            padding: 120px 24px;
+            border-right: 1px solid rgba(g.$main-color, 0.08);
+            // background: g.$sub-color;
+
+            .filter-title {
+                margin-bottom: 18px;
+                font-size: g.$size-14-main;
+                font-weight: g.$Bold;
+                color: g.$text-main-color;
+                letter-spacing: 0.08em;
+            }
+
+            .filter-section {
+                &+.filter-section {
+                    margin-top: 32px;
+                    padding-top: 32px;
+                    border-top: 1px solid rgba(g.$main-color, 0.08);
+                }
+            }
+
+            .filter-subtitle {
+                margin-bottom: 16px;
+                font-size: g.$size-12-sub;
+                font-weight: g.$Bold;
+                color: g.$text-sub-color;
+            }
+
+            .filter-main-menu {
+                @include g.myFlex(flex-start, 20px, stretch);
+                flex-direction: column;
+
+                .filter-main-item {
+                    @include g.myFlex(flex-start, 10px, stretch);
+                    flex-direction: column;
+                }
+
+                .filter-main-label {
+                    font-size: g.$size-12-sub;
+                    font-weight: g.$Bold;
+                    color: g.$text-sub-color;
+                }
+
+                .sub-menu {
+                    @include g.myFlex(flex-start, 4px, stretch);
+                    flex-direction: column;
+                }
+
+                .sub-menu-item {
+                    a {
+                        display: inline-block;
+                        font-size: g.$size-12-sub;
+                        color: g.$text-sub-color2;
+                        transition: color 0.2s ease;
+                        font-weight: g.$Regular;
+
+                        &:hover {
+                            color: g.$text-main-color;
+                        }
+                    }
+                }
+            }
+
+            .shop-by {
+                margin-top: 36px;
+            }
+
+            .color-list-wrap {
+                width: 100%;
+
+                .color-list-box {}
+
+                .color {
+                    display: grid;
+                    grid-template-columns: repeat(10, minmax(0, 1fr));
+                    gap: 4px;
+
+                    .color-item {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .color-chip {
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid rgba(g.$main-color, 0.12);
+                    }
+                }
+            }
         }
 
         .product-list-wrap {
             min-width: 0;
+            flex: 1;
+            padding: 120px 0 80px;
 
             .section-top {}
 
