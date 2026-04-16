@@ -26,7 +26,7 @@ export default function Instagram() {
         <section className='insta'>
             <div className="inner">
 
-                <h2 className='insta-h2'><img src="./images/insta-icon/Ellipse.png" alt="log" /><span>MATINKIM_MAGAZINE</span></h2>
+                <h2 className='insta-h2'><img src="./images/insta-icon/logo-icon.svg" alt="log" /><span>MATINKIM_MAGAZINE</span></h2>
                 <div className="insta-list-wrap">
                     <ul>
                         {insta.map((item, id) =>
@@ -36,16 +36,13 @@ export default function Instagram() {
                                         <img src={item.imgUrl} alt="" />
                                     </div>
                                     <div className="text-box">
-                                        <div className="icons">
-                                            <button onClick={() => handleHeart(item.id)}>
-                                                <img src={item.heartCheck ? "./images/insta-icon/heart-icon-active.png" : "./images/insta-icon/heart-icon.svg"} alt="" />
-                                            </button>
-                                            <button><img src="/images/insta-icon/search-icon.svg" alt="인스타검색아이콘" /></button>
-                                            <button><img src="/images/insta-icon/dm-icon.svg" alt="인스타디엠아이콘" /></button>
-                                        </div>
                                         <div className='hash-wrap'>
                                             {item.hash.map((h, id) => <span key={id}>#{h}</span>)}
+
                                         </div>
+                                        <button onClick={() => handleHeart(item.id)}>
+                                            <img src={"./images/insta-icon/heart-icon-active.svg"} alt="" />
+                                        </button>
                                     </div>
                                 </Link>
                             </li>)}

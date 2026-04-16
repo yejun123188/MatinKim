@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import UserInfo from "./pages/UserInfo";
 import ProductList from "./pages/ProductList";
 
+
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";

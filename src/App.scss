@@ -1,12 +1,12 @@
 // 컬러 ==================
 // 브랜드
-$main-color: #1E1E1E;
-$sub-color: #FAFAFA;
+$main-color: #1e1e1e;
+$sub-color: #fafafa;
 
 // 텍스트
-$text-main-color: #1E1E1E;
+$text-main-color: #1e1e1e;
 $text-sub-color: #777777;
-$text-sub-color2: #A5A5A5;
+$text-sub-color2: #a5a5a5;
 
 // 사이즈 ==================
 // 보조 12px
@@ -34,27 +34,58 @@ $Bold: 700;
 // 믹스인 ==================
 // flex
 @mixin myFlex($jc: space-between, $gap: 1.5rem, $al: null) {
-    display: flex;
-    justify-content: $jc;
-    gap: $gap;
+  display: flex;
+  justify-content: $jc;
+  gap: $gap;
+  align-items: $al;
+}
+
+@mixin myBtn1(
+  $c: #ffffff,
+  $bg: $main-color,
+  $bd: 1px solid #000000,
+  $pd: 5px 5px
+) {
+  color: $c;
+  background: $bg;
+  border: $bd;
+  padding: $pd;
+}
+
+@mixin myBtn2(
+  $c: #000000,
+  $bg: #ffffff,
+  $bd: 1px solid $main-color,
+  $pd: 5px 5px
+) {
+  color: $c;
+  background: $bg;
+  border: $bd;
+  padding: $pd;
 }
 
 // position
-@mixin myPos($p: absolute, $top: null, $bottom: null, $left: null, $right: null) {
-    position: $p;
+@mixin myPos(
+  $p: absolute,
+  $top: null,
+  $bottom: null,
+  $left: null,
+  $right: null
+) {
+  position: $p;
 }
 
 // 반응형 ==================
 $breakpoints: (
-    tablet: 1280px,
-    mobile: 768px,
-    small: 480px
+  tablet: 1280px,
+  mobile: 768px,
+  small: 480px,
 );
 
 @mixin respond($key) {
-    @media (max-width: map-get($breakpoints, $key)) {
-        @content;
-    }
+  @media (max-width: map-get($breakpoints, $key)) {
+    @content;
+  }
 }
 
 // 사용 예시
