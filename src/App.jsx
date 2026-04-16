@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -11,8 +11,11 @@ import About from "./pages/About";
 import { useProductStore } from "./store/useProductStore";
 import { useEffect } from "react";
 import UserInfo from "./pages/UserInfo";
+import ProductList from "./pages/ProductList";
 
 function App() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
 
   useEffect(() => {
@@ -26,6 +29,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/:category1/:category2" element={<ProductList />} />
 
         <Route path="/project" element={<Project />} />
         <Route path="/collections" element={<Collections />} />
