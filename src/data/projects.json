@@ -27,19 +27,11 @@
       },
       {
         "id": 2,
-        "columns": 3,
+        "columns": 1,
         "groups": [
           {
-            "type": "img",
-            "url": "https://matinkim.com/images/project/20260112/4.jpg"
-          },
-          {
-            "type": "img",
-            "url": "https://matinkim.com/images/project/20260112/5.jpg"
-          },
-          {
-            "type": "img",
-            "url": "https://matinkim.com/images/project/20260112/6.jpg"
+            "type": "video",
+            "url": "/videos/sub-project/castify.mp4"
           }
         ]
       },
@@ -60,6 +52,24 @@
             "url": "https://matinkim.com/images/project/20260112/9.jpg"
           }
         ]
+      },
+      {
+        "id": 4,
+        "columns": 3,
+        "groups": [
+          {
+            "type": "img",
+            "url": "https://matinkim.com/images/project/20260112/4.jpg"
+          },
+          {
+            "type": "img",
+            "url": "https://matinkim.com/images/project/20260112/5.jpg"
+          },
+          {
+            "type": "img",
+            "url": "https://matinkim.com/images/project/20260112/6.jpg"
+          }
+        ]
       }
     ]
   },
@@ -77,7 +87,7 @@
         "groups": [
           {
             "type": "video",
-            "url": "https://player.vimeo.com/video/1127821036?h=0885f8b73a&background=1&autoplay=1&loop=1&byline=0&title=0&sidedock=0&controls=0&quality=720p"
+            "url": "/videos/sub-project/apec.mp4"
           },
           {
             "type": "img",
@@ -124,7 +134,7 @@
         "groups": [
           {
             "type": "video",
-            "url": ""
+            "url": "/videos/sub-project/part2.mp4"
           }
         ]
       },
@@ -315,7 +325,7 @@
     "title": "Matin Kim X Peaches",
     "subtitle": "‘LOVE, CAR, ETC.’",
     "date": "10.08.2024",
-    "text": "\nMatin Kim\nKIMMATIN\n\nplay",
+    "text": "프로젝트 ‘LOVE, CAR, ETC.’는 도로 위 초보 운전자를 위한 표지판에서 영감을 받아 탄생했다.\n초보이기에 사랑에도, 인생에도 서투르지만 그 당시에 불안정함이 가져다줄 수 있는 청춘들의 자유로움을 마뗑킴과 피치스가 함께 표현한다.",
     "sections": [
       {
         "id": 1,
