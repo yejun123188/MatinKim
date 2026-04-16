@@ -3,19 +3,27 @@ import { useProductStore } from '../store/useProductStore'
 import { Link } from 'react-router-dom';
 
 export default function Filter({ colorCount }) {
-    const { menus } = useProductStore();
+    const { menus, onColorCode } = useProductStore();
     console.log("mene", menus)
+
+    const getColorStyle = (colorName) => {
+        const colorValue = onColorCode(colorName);
+        return colorValue.includes("gradient")
+            ? { background: colorValue }
+            : { backgroundColor: colorValue };
+    };
+
     return (
         <div className='filter-wrap'>
-            <div className='shop'>
-                <h2>shop</h2>
+            <div className='filter-section shop'>
+                <h2 className='filter-title'>SHOP</h2>
                 <ul className="filter-main-menu">
                     {menus.map((menu, id) => (
-                        <li key={id}>
-                            <strong>{menu.name}</strong>
+                        <li key={id} className='filter-main-item'>
+                            <strong className='filter-main-label'>{menu.name}</strong>
                             <ul className="sub-menu">
                                 {menu.subMenu.map((m, id) => (
-                                    <li key={id}>
+                                    <li key={id} className='sub-menu-item'>
                                         <Link to={m.link}>
                                             <p>{m.name}</p>
                                         </Link>
@@ -27,37 +35,32 @@ export default function Filter({ colorCount }) {
                 </ul>
             </div>
             <div className='shop-by'>
-                <div className='category'>
-                    <h2>category</h2>
+                <h2 className='filter-title'>SHOP-BY</h2>
+                <div className='filter-section category'>
+                    <h3 className='filter-subtitle'>CATEGORY</h3>
                 </div>
-                <div className='price'>
-                    <h2>price</h2>
+                <div className='filter-section price'>
+                    <h3 className='filter-subtitle'>PRICE</h3>
                 </div>
-                <div className='color-list-wrap'>
-                    <h2>color</h2>
-                    <div>
-                        <h3>컬러영역</h3>
+                <div className='filter-section color-list-wrap'>
+                    <h3 className='filter-subtitle'>COLOR OPTIONS</h3>
+                    <div className='color-list-box'>
                         <div className='color'>
                             {colorCount.map((color, id) => (
-                                <p key={id}>
+                                <p key={id} className='color-item'>
                                     <strong
+                                        className='color-chip'
                                         style={{
-                                            backgroundColor: color.color,
-                                            display: "block",
-                                            width: "20px",
-                                            height: "20px",
-                                            borderRadius: "50%"
+                                            ...getColorStyle(color.color)
                                         }}>
-                                        {/* {color.color} */}
                                     </strong>
-                                    {/* <span>({color.count})</span> */}
                                 </p>
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className='size'>
-                    <h2>size</h2>
+                <div className='filter-section size'>
+                    <h3 className='filter-subtitle'>SIZE OPTIONS</h3>
                 </div>
             </div>
         </div>

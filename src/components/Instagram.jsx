@@ -41,7 +41,7 @@ export default function Instagram() {
 
                                         </div>
                                         <button onClick={() => handleHeart(item.id)}>
-                                            <img src={"./images/insta-icon/heart-icon-active.svg"} alt="" />
+                                            <img src={"./images/insta-icon/heart-icon.svg"} alt="" />
                                         </button>
                                     </div>
                                 </Link>

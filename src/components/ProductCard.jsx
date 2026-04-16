@@ -13,9 +13,15 @@ export default function ProductCard({ cate }) {
             <div className="text-box">
                 <h3>{cate.name}</h3>
                 <div>
-                    <strong>{cate.price}</strong>
-                    <span>할일전가격</span>
-                    <span>20%</span>
+                    {cate.discountRate > 0 ? (
+                        <>
+                            <strong>{cate.discountPrice.toLocaleString()}원</strong>
+                            <span>{cate.discountRate}%</span>
+                            <span>{cate.price.toLocaleString()}원</span>
+                        </>
+                    ) : (
+                        <strong>{cate.price.toLocaleString()}원</strong>
+                    )}
                 </div>
                 <div className="color-wrap">
                     <div>{cate.colors}</div>
