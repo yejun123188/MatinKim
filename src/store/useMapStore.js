@@ -98,31 +98,106 @@ export const useMapStore = create((set, get) => ({
 
     //처음에는 오프라인 스토어들 보여주고 선택하면 셀렉트샵
     onShows: (m) => {
-        console.log(m)
+        const allStores = store["offline_store"];
+
+        if (m === "ALL") {
+            return set({ stores: allStores });
+        }
+
+        const filtered = allStores.filter(
+            (item) => item.country === m.toLowerCase()
+        );
+
+        set({ stores: filtered })
     },
+    // onMenus: (menu) => {
+    //     if (menu === "select_shop") {
+    //         const select_shop = store[menu];
+    //         const select_shop_country = store[menu].map((item) => item.country);
+    //         const upperCountry = select_shop_country.map((m) => m.toUpperCase())
+    //         return set({
+    //             stores: select_shop,
+    //             country: upperCountry
+    //         })
+    //     }
+    //     if (menu === "offline_store") {
+    //         const select_shop = store[menu]
+
+    //         const selectCountry = ["ALL", ...store["offline_store"].map((item) => item.country)];
+    //         const upperCountry = selectCountry.map((m) => m.toUpperCase())
+    //         return set({
+    //             stores: select_shop,
+    //             country: upperCountry
+    //         })
+    //     }
+
+
+
+
+    // },
+    //검색필터
+    // searchWord: [],
+    // onSearchWord: (word) => {
+    //     const storebox = get().stores;
+
+    //     if (!word) return store["offline_store"]
+
+    //     const result = storebox.map((item) => {
+    //         const filteredStores = item.stores.filter((s) =>
+    //             s.name.toLowerCase().includes(word.toLowerCase())
+    //         );
+
+    //         return {
+    //             ...item,
+    //             stores: filteredStores
+    //         };
+    //     });
+
+    //     set({
+    //         stores: result,
+    //         searchWord: word
+    //     });
+    // }
+    // 현재 활성 메뉴 상태 추가
+    activeMenu: "offline_store",
+
     onMenus: (menu) => {
         if (menu === "select_shop") {
             const select_shop = store[menu];
-            const select_shop_country = store[menu].map((item) => item.country);
-            const upperCountry = select_shop_country.map((m) => m.toUpperCase())
+            const upperCountry = select_shop.map((item) => item.country.toUpperCase());
             return set({
                 stores: select_shop,
-                country: upperCountry
-            })
+                country: upperCountry,
+                activeMenu: menu
+            });
         }
         if (menu === "offline_store") {
-            const select_shop = store[menu]
-
-            const selectCountry = ["ALL", ...store["offline_store"].map((item) => item.country)];
-            const upperCountry = selectCountry.map((m) => m.toUpperCase())
+            const select_shop = store[menu];
+            const selectCountry = ["ALL", ...store[menu].map((item) => item.country)];
+            const upperCountry = selectCountry.map((m) => m.toUpperCase());
             return set({
                 stores: select_shop,
-                country: upperCountry
-            })
+                country: upperCountry,
+                activeMenu: menu
+            });
+        }
+    },
+
+    onSearchWord: (word) => {
+        const { activeMenu } = get();
+        const allStores = store[activeMenu];
+
+        if (!word) {
+            return set({ stores: allStores, searchWord: "" });
         }
 
+        const result = allStores.map((item) => {
+            const filteredStores = item.stores.filter((s) =>
+                s.name.toLowerCase().includes(word.toLowerCase()) || s.address.toLowerCase().includes(word.toLowerCase())
+            );
+            return { ...item, stores: filteredStores };
+        });
 
-
-
-    }
+        set({ stores: result, searchWord: word });
+    },
 }));

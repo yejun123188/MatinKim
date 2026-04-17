@@ -19,13 +19,14 @@ const stockists = [
 ];
 
 export default function Stockist() {
-    const { initMap, onMenus, onFetchStore, country, stores, setMarkers, onShows } = useMapStore();
+    const { initMap, onMenus, onFetchStore, country, stores, setMarkers, onShows, searchWord, onSearchWord } = useMapStore();
 
-    const [menu, setMenu] = useState(true);
+    const [showMap, setShowMap] = useState();
 
     useEffect(() => {
         initMap(37.5435, 127.0543);
         onFetchStore();
+        setShowMap(stores)
     }, [country, stores])
     return (
         <div className='stock'>
@@ -43,14 +44,15 @@ export default function Stockist() {
                         </div>
                         <div className="menu-box">
                             <div className="top">
-                                <select name="">
+                                <select name="" onChange={(e) => onShows(e.target.value)}>
                                     {country.map((c, i) => (
-                                        <option key={i} value={c} onChange={(e) => onShows()}>{c}</option>
+                                        <option key={i} value={c}>{c}</option>
                                     ))}
                                 </select>
                                 <form action="">
                                     <label>
-                                        <input type="text" />
+                                        <input type="text" placeholder='매장명 또는 주소를 입력해주세요' value={searchWord}
+                                            onChange={(e) => onSearchWord(e.target.value)} />
                                     </label>
 
                                 </form>
