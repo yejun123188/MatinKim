@@ -110,7 +110,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="member">
-                  <Link to="/userInfo">
+                  <Link to="/login">
                     {/* <button onClick={() => setLoginOpen(true)}> */}
                     <img src="/images/header-icon/user.svg" alt="" />
                     {/* </button> */}

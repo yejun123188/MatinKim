@@ -65,7 +65,7 @@ export default function Login({ onClose }) {
               회원가입 후 혜택받기
             </Link>
 
-            <Link to="/" className="guest-order">
+            <Link to="/guest-order " className="guest-order">
               비회원 주문 조회하기
             </Link>
           </form>
