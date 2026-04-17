@@ -13,6 +13,8 @@ import UserInfo from "./pages/UserInfo";
 import CollectionDetail from "./pages/CollectionDetail";
 import ProjectDetail from "./pages/ProjectDetail";
 import ProductList from "./pages/ProductList";
+import Brand from "./pages/Brand";
+import Stockist from "./pages/Stockist";
 import GuestOrder from "./pages/GuestOrder";
 import Qna from "./pages/Qna";
 
@@ -39,7 +41,11 @@ function App() {
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/collections" element={<Collections />} />
         <Route path="/collections/:id" element={<CollectionDetail />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} >
+          <Route index element={<Brand />} />
+          <Route path="brand" element={<Brand />} />
+          <Route path="stockist" element={<Stockist />} />
+        </Route>
         <Route path="/userInfo" element={<UserInfo />} />
         <Route path="/qna" element={<Qna />} />
       </Routes>
