@@ -50,6 +50,8 @@ $Bold: 700;
   background: $bg;
   border: $bd;
   padding: $pd;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 @mixin myBtn2(
@@ -62,6 +64,8 @@ $Bold: 700;
   background: $bg;
   border: $bd;
   padding: $pd;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 // position

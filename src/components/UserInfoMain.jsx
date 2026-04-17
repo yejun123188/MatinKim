@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import UserInfoMainBox from "./UserInfoMainBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 
 import { FreeMode } from "swiper/modules";
+import OptionPopup from "./OptionPopup";
 
 const statusCode = {
   주문확인: "ORDER",
@@ -88,10 +89,13 @@ const wishs = [
 ];
 
 export default function UserInfoMain() {
+  const [optionOpen, setOptionOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
   return (
     <div className="main">
       <div className="frist-line">
-        <UserInfoMainBox title="Account informations" className="my-info">
+        <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
             <p>
               반가워요! <strong>{user.name}</strong> 님!
@@ -104,6 +108,7 @@ export default function UserInfoMain() {
                 </p>
                 <div className="question">
                   <img src="./images/userinfo/question.svg" alt="question" />
+                  <p>적립 3%,구매 할인 7%, 생일쿠폰 20%</p>
                 </div>
               </li>
               <li>
@@ -115,7 +120,7 @@ export default function UserInfoMain() {
             </ul>
           </div>
         </UserInfoMainBox>
-        <UserInfoMainBox title="My wallet" className="my-wallet">
+        <UserInfoMainBox title="My Wallet" className="my-wallet">
           <ul className="my-wallet-list">
             <li>
               <span>총 적립금</span>
@@ -187,14 +192,27 @@ export default function UserInfoMain() {
                     </p>
                   </div>
                   <div className="button-wrap">
-                    <button className="Bbtn">Buy It Now</button>
-                    <button className="Wbtn">Add to cart</button>
+                    <button
+                      className="Bbtn"
+                      onClick={() => {
+                        setSelectedItem(wish);
+                        setOptionOpen(true);
+                      }}
+                    >
+                      Edit Options
+                    </button>
+                    <button className="Wbtn">Add To Cart</button>
                     <button className="Wbtn">Remove</button>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+          <OptionPopup
+            open={optionOpen}
+            data={selectedItem}
+            onClose={() => setOptionOpen(false)}
+          />
         </UserInfoMainBox>
       </div>
     </div>
