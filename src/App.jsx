@@ -14,6 +14,7 @@ import UserInfo from "./pages/UserInfo";
 import CollectionDetail from "./pages/CollectionDetail";
 import ProjectDetail from "./pages/ProjectDetail";
 import ProductList from "./pages/ProductList";
+import GuestOrder from "./pages/GuestOrder";
 
 
 function App() {
@@ -32,9 +33,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
+        <Route path="/login" element={<Login />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
-
+        <Route path="/guest-order" element={<GuestOrder />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/collections" element={<Collections />} />
