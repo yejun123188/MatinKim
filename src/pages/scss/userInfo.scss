@@ -33,6 +33,11 @@
             font-size: 1rem;
             color: g.$text-sub-color;
             cursor: pointer;
+
+            &.active {
+              color: #000000;
+              font-weight: g.$Bold;
+            }
           }
         }
       }
@@ -108,7 +113,30 @@
               font-size: 1.5rem;
             }
             .question {
-              padding: 5px 0;
+              position: relative;
+              display: flex;
+              width: 70%;
+
+              img {
+                padding: 5px 0;
+              }
+
+              p {
+                position: absolute;
+                left: 25px;
+                top: 15px;
+                font-size: g.$size-14-main;
+                background: #d9d9d9;
+                padding: 7px 10px;
+                border-radius: 0 8px 8px 8px;
+                opacity: 0;
+                transition: opacity 0.5s ease 2s;
+              }
+            }
+
+            .question:hover p {
+              opacity: 1;
+              transition: opacity 0.5s ease;
             }
 
             .my-total-price {
@@ -162,14 +190,15 @@
       .order-product {
         display: flex;
         gap: 20px;
-        width: 420px;
-        height: 190px;
+        min-width: 420px;
+        height: 150px;
         padding: 20px;
         background-color: #ffffff;
         align-items: center;
 
         .img-box {
           img {
+            min-width: 100px;
             height: 150px;
           }
         }
@@ -184,7 +213,7 @@
             font-size: g.$size-14-main;
             font-weight: g.$Bold;
             color: #000;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
 
             .dot {
               width: 8px;
@@ -222,13 +251,14 @@
       .wish-product {
         display: flex;
         gap: 20px;
-        width: 420px;
+        min-width: 420px;
         height: 190px;
         padding: 20px;
         background-color: #ffffff;
         align-items: center;
         .img-box {
           img {
+            min-width: 100px;
             height: 150px;
           }
         }
@@ -264,7 +294,7 @@
           }
           .button-wrap {
             display: flex;
-            gap: 10px;
+            gap: 8px;
 
             .Bbtn {
               @include g.myBtn1;
