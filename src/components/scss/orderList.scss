@@ -1,0 +1,101 @@
+@use "../../App.scss" as g;
+
+.orderlist-wrap {
+  background: #ffffff;
+  .order-tap-menu {
+  }
+  .order-tab-content {
+    .tab-order-wrap {
+      .date-filter-wrap {
+        .date-btn-wrap {
+          button {
+            @include g.myBtn2;
+          }
+
+          .active {
+            @include g.myBtn1;
+          }
+        }
+        .custom-date-wrap {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .date-input-wrap {
+            display: flex;
+            gap: 5px;
+
+            position: relative;
+            width: 110px;
+            @include g.myTextBox;
+
+            .date-input {
+              display: flex;
+
+              width: 80px;
+              height: inherit;
+              font-size: g.$size-14-main;
+              border: none;
+              font-family: inherit;
+
+              &::-webkit-calendar-picker-indicator {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+              }
+            }
+            img {
+              width: 8px;
+            }
+          }
+          button {
+            @include g.myBtn1;
+          }
+        }
+
+        .custom-year-wrap {
+          position: relative;
+          width: 70px;
+          display: flex;
+          cursor: pointer;
+          @include g.myTextBox;
+
+          input {
+            width: 100%;
+            height: inherit;
+            font-size: g.$size-14-main;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+          img {
+            width: 8px;
+          }
+          .year-list {
+            font-size: g.$size-14-main;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            @include g.myTextBox;
+            padding: 0;
+            div {
+              color: g.$text-sub-color;
+              padding: 5px 7px;
+              cursor: pointer;
+              width: 100%;
+
+              &:hover {
+                color: g.$text-main-color;
+                background: g.$text-sub-color2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
