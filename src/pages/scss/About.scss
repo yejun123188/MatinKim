@@ -1,47 +1,7 @@
 .about {
-    .about-title {
-        font-size: 36px;
-
-    }
-
-    .about-top {
+    .button-list {
         display: flex;
-        gap: 230px;
-        align-items: center;
-
-        .text {
-            padding-top: 10px;
-            padding-bottom: 155px;
-            font-size: 20px;
-            font-weight: 300;
-
-            li {
-                padding-bottom: 24px;
-            }
-        }
-    }
-
-    .about-bottom {
-        display: flex;
-        gap: 230px;
-    }
-
-    .insta-title {
-        text-align: center;
-        font-size: 30px;
-        font-weight: 600;
-        padding-bottom: 10px;
-    }
-
-    .insta {
-        background-color: black;
-        padding: 40px 20px;
-
-
-
-        .insta-list {
-            display: flex;
-            gap: 24px;
-        }
+        gap: 24px;
+        padding-bottom: 50px;
     }
 }
