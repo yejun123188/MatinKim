@@ -9,7 +9,10 @@ export default function Login({ onClose }) {
 
   return (
     <div className="login-page" >
+
+      <div className="login-dim" onClick={onClose}></div>
       <div className="login-right">
+
         <div className="login-box">
           <div className="login-top">
             <h2>Log In</h2>
@@ -65,7 +68,7 @@ export default function Login({ onClose }) {
               회원가입 후 혜택받기
             </Link>
 
-            <Link to="/" className="guest-order">
+            <Link to="/guest-order" className="guest-order" onClick={onClose}>
               비회원 주문 조회하기
             </Link>
           </form>

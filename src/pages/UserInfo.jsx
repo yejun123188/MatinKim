@@ -48,10 +48,10 @@ export default function UserInfo() {
     <section className="sub-section info-sec">
       <div className="inner user-info-wrap">
         <div className="user-info-left">
-          <UserMenus sendSelect={handleMenuClick} />
+          <UserMenus sendSelect={handleMenuClick} selectMenu={selectMenu} />
         </div>
         <div className="user-info-right">
-          <h2>{selectMenu}</h2>
+          {selectMenu !== "마이페이지" && <h2>{selectMenu}</h2>}
           <div>{handleContent()}</div>
         </div>
       </div>

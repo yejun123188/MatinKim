@@ -1,0 +1,139 @@
+@use "../../App.scss" as g;
+
+.option-bg.open {
+  opacity: 1;
+  pointer-events: auto;
+
+  .option-pop-wrap {
+    opacity: 1;
+  }
+}
+
+.option-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+
+  .option-pop-wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 600px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    z-index: 10000;
+    opacity: 0;
+    transition: 0.3s;
+
+    .op-check {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #000;
+      align-items: center;
+      line-height: 40px;
+
+      p {
+        font-weight: g.$Bold;
+      }
+
+      img {
+        width: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .op-name {
+      font-size: g.$size-14-main;
+      height: 40px;
+      padding: 10px 5px;
+      background: linear-gradient(to right, #000 50%, transparent 0);
+      background-size: 8px 1px;
+      background-repeat: repeat-x;
+      background-position: bottom;
+    }
+
+    .op-box {
+      display: flex;
+      gap: 30px;
+      padding: 10px 5px;
+    }
+
+    .op-size {
+      border-bottom: 1px solid #000;
+      .size-text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .btn-wrap {
+          display: flex;
+          gap: 5px;
+
+          button {
+            width: 30px;
+          }
+          .active {
+            @include g.myBtn1;
+          }
+        }
+        p {
+          font-size: g.$size-12-sub;
+          color: g.$text-sub-color2;
+        }
+      }
+    }
+
+    .op-count {
+      border-bottom: 1px solid #000;
+
+      .btn-wrap {
+        display: flex;
+        gap: 8px;
+
+        button {
+          width: 25px;
+        }
+      }
+    }
+
+    .op-total {
+      padding: 10px 5px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .op-buy-button {
+      padding: 10px 5px;
+      display: flex;
+      gap: 10px;
+      justify-content: end;
+
+      .btn:hover {
+        @include g.myBtn2;
+      }
+    }
+  }
+
+  .op-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn:hover {
+    @include g.myBtn1;
+  }
+
+  .Bbtn {
+    @include g.myBtn1;
+  }
+
+  .btn {
+    @include g.myBtn2;
+  }
+}

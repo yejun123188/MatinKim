@@ -2,7 +2,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Member from "./pages/Member";
 import Footer from "./components/Footer";
 import Project from "./pages/Project";
@@ -16,6 +15,8 @@ import ProjectDetail from "./pages/ProjectDetail";
 import ProductList from "./pages/ProductList";
 import Brand from "./pages/Brand";
 import Stockist from "./pages/Stockist";
+import GuestOrder from "./pages/GuestOrder";
+import Qna from "./pages/Qna";
 
 
 function App() {
@@ -34,9 +35,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/:category1/:category2" element={<ProductList />} />
-
+        <Route path="/guest-order" element={<GuestOrder />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/collections" element={<Collections />} />
@@ -47,6 +47,7 @@ function App() {
           <Route path="stockist" element={<Stockist />} />
         </Route>
         <Route path="/userInfo" element={<UserInfo />} />
+        <Route path="/qna" element={<Qna />} />
       </Routes>
       <Footer />
     </>

@@ -50,6 +50,8 @@ $Bold: 700;
   background: $bg;
   border: $bd;
   padding: $pd;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 @mixin myBtn2(
@@ -62,6 +64,22 @@ $Bold: 700;
   background: $bg;
   border: $bd;
   padding: $pd;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+// width값 설정 필요
+@mixin myTextBox(
+  $c: rgba(10, 10, 10, 0.5),
+  $bg: #ffffff,
+  $bd: 1px solid $text-sub-color2,
+  $pd: 5px 7px
+) {
+  color: $c;
+  background: $bg;
+  border: $bd;
+  padding: $pd;
+  white-space: nowrap;
 }
 
 // position
