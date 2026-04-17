@@ -2,7 +2,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Member from "./pages/Member";
 import Footer from "./components/Footer";
 import Project from "./pages/Project";
@@ -33,7 +32,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/guest-order" element={<GuestOrder />} />
         <Route path="/project" element={<Project />} />
