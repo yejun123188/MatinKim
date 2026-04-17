@@ -1,12 +1,12 @@
 import React from 'react'
 import "./scss/About.scss"
 const instagram = [
-    { src: "/images/sub-about/Rectangle1.png", link: "" },
-    { src: "/images/sub-about/Rectangle2.png", link: "" },
-    { src: "/images/sub-about/Rectangle3.png", link: "" },
-    { src: "/images/sub-about/Rectangle4.png", link: "" },
-    { src: "/images/sub-about/Rectangle5.png", link: "" },
-    { src: "/images/sub-about/Rectangle6.png", link: "" },
+    { src: "/images/sub-about/Rectangle1.png", link: "https://www.instagram.com/p/DUksFOTEt6R/?hl=ko&img_index=1" },
+    { src: "/images/sub-about/Rectangle2.png", link: "https://www.instagram.com/p/DUsToslkpEc/?hl=ko&img_index=1" },
+    { src: "/images/sub-about/Rectangle3.png", link: "https://www.instagram.com/p/DVGDmOYEgHL/?hl=ko&img_index=1" },
+    { src: "/images/sub-about/Rectangle4.png", link: "https://www.instagram.com/p/DTH_dL1kgRY/?hl=ko&img_index=1" },
+    { src: "/images/sub-about/Rectangle5.png", link: "https://www.instagram.com/p/DTwVT4HkhYs/?hl=ko" },
+    { src: "/images/sub-about/Rectangle6.png", link: "https://www.instagram.com/p/DTzqK6xEmKB/?hl=ko" },
 ]
 
 export default function About() {
@@ -106,7 +106,7 @@ export default function About() {
             <div className="insta">
                 <ul className="insta-list">
                     {instagram.map((e, id) => (
-                        <li><a href=""><img src={e.src} alt="" /></a></li>
+                        <li><a href={e.link}><img src={e.src} alt="" /></a></li>
                     ))}
                 </ul>
             </div>
