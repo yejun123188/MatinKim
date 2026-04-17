@@ -97,7 +97,7 @@ export default function Cart({ onClose }) {
                     </button>
                 </div>
 
-                {items.length === 0 ? (<p class="cart-empty">쇼핑백이 비어있습니다</p>) : (
+                {items.length === 0 ? (<p className="cart-empty">쇼핑백이 비어있습니다</p>) : (
                     <div>
                         <div className="cart-select-row">
                             <label className="check-wrap">

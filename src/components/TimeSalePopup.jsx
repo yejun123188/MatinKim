@@ -16,6 +16,21 @@ export default function TimeSalePopup() {
         setIsOpen(false);
     };
 
+    const handleHideToday = () => {
+        const now = new Date();
+        const tomorrow = new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate() + 1
+        ).getTime();
+
+        localStorage.setItem("hideTimeSaleUntil", String(tomorrow));
+        setIsOpen(false);
+    };
+
+    if (!isOpen) return null;
+
+
 
 
 
@@ -52,7 +67,7 @@ export default function TimeSalePopup() {
                 </div>
 
                 <div className="sale-popup-btns">
-                    <button type="button">
+                    <button type="button" onClick={handleHideToday}>
                         오늘 하루 열지 않기
                     </button>
                     <button type="button" onClick={handleClose}>
