@@ -110,10 +110,9 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="member">
-                  <Link to="/login">
-                    {/* <button onClick={() => setLoginOpen(true)}> */}
+                  <Link onClick={() => setLoginOpen(true)}>
                     <img src="/images/header-icon/user.svg" alt="" />
-                    {/* </button> */}
+
                   </Link>
                 </li>
               </ul>
@@ -170,9 +169,11 @@ export default function Header() {
             </div>
           </div>
         </div>
-        {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
-      </header>
-      {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />}
+
+      </header >
+      {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
+      {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />
+      }
     </>
   );
 }
