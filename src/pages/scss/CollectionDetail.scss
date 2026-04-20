@@ -1,20 +1,31 @@
+@use "../../App.scss" as g;
+
 .collection-detail {
     text-align: center;
     padding-bottom: 200px;
 
+
     h3 {
         padding-top: 200px;
         padding-bottom: 20px;
+        font-size: g.$size-16;
+        font-weight: g.$Regular;
+        color: g.$text-sub-color;
     }
 
     h1 {
         padding-bottom: 20px;
-
+        font-size: g.$size-30;
+        font-weight: g.$Bold;
+        color: g.$text-main-color;
     }
 
     p {
-        line-height: 1.5;
+        line-height: 1.6;
         padding-bottom: 80px;
+        font-size: g.$size-14-main;
+        color: g.$text-main-color;
+        white-space: pre-line;
     }
 
     .collection-list {
@@ -23,5 +34,10 @@
         li {
             padding-bottom: 10px;
         }
+    }
+
+    button {
+        @include g.myBtn1($pd: 10px 14px);
+        margin-top: 80px;
     }
 }

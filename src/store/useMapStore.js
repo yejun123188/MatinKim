@@ -31,6 +31,12 @@ export const useMapStore = create((set, get) => ({
         const mapContainer = document.getElementById("map");
         if (!mapContainer) return;
 
+
+        if (!window.kakao || !window.kakao.maps) {
+            console.error("카카오 맵 SDK 아직 안 불러와짐");
+            return;
+        }
+
         const { kakao } = window;
 
         kakao.maps.load(() => {
