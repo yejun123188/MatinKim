@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import collection from "../data/collections.json"
 
 import "./scss/CollectionDetail.scss"
 
 export default function CollectionDetail() {
     const { id } = useParams();
+
+    const navigate = useNavigate();
 
     //id갑과 일치하는 컬렉션을 찾아서 뿌려야 함 - id값은 어떤 컬렉션을 선택하느냐에 따라서 계속 변하기 때문에 상태변수를 사용해야겠다
     //id값과 일치하는 컬렉션 찾아서 저장할 변수
@@ -42,7 +44,7 @@ export default function CollectionDetail() {
                 ))}
             </ul>
             <div className="button">
-                <button>뒤로백하기 버튼</button>
+                <button onClick={() => navigate(-1)}>Back to List</button>
             </div>
         </div >
     )

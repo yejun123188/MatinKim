@@ -48,7 +48,7 @@ export default function Brand() {
                 <div className="brand-bottom">
                     <div className="img-box">
                         <img src="/images/sub-about/aboutmap.png" alt="" />
-
+         
                     </div>
                     <div className="text-box">
                         <div className="location">

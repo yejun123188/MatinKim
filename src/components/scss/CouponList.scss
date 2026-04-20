@@ -1,0 +1,81 @@
+@use "../../App.scss" as g;
+
+.couponlist-wrap {
+
+    .coupon-top {
+        background-color: g.$sub-color;
+        padding: 30px;
+        margin-bottom: 24px;
+
+        input {
+            width: 500px;
+            height: 45px;
+            padding: 0 10px;
+            background-color: #ddd;
+            border: none;
+            margin-right: 10px;
+            font-size: g.$size-14-main;
+        }
+
+        button {
+            height: 45px;
+            padding: 0 20px;
+            @include g.myBtn1(); 
+        }
+
+        p {
+            margin-top: 10px;
+            color: g.$text-sub-color;
+            font-size: g.$size-14-main;
+        }
+
+        .explain-list {
+            padding-top: 24px;
+            font-weight: g.$ExtraLight;
+            font-size: g.$size-16;
+            color: g.$text-main-color;
+
+            li {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .coupon-bottom {
+        background-color: g.$sub-color;
+        padding: 30px;
+
+        .mycoupon-top {
+            @include g.myFlex(space-between, 0, center);
+            padding-bottom: 15px;
+
+            .mycoupon-title {
+                font-size: g.$size-16;
+                font-weight: g.$Bold;
+                color: g.$text-main-color;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th {
+                background-color: #f0f0f0;
+                padding: 12px;
+                font-size: g.$size-14-main;
+                text-align: center;
+                border-top: 1px solid g.$main-color;
+                color: g.$text-main-color;
+            }
+
+            td {
+                padding: 14px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+                font-size: g.$size-14-main;
+                color: g.$text-main-color;
+            }
+        }
+    }
+}

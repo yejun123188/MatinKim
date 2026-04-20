@@ -229,7 +229,7 @@
         "groups": [
           {
             "type": "video",
-            "url": ""
+            "url": "/videos/sub-project/20250605.mp4"
           }
         ]
       },
@@ -263,7 +263,7 @@
         "groups": [
           {
             "type": "video",
-            "url": ""
+            "url": "/videos/sub-project/COACH.mp4"
           }
         ]
       },
@@ -596,7 +596,7 @@
     "text": "에어로케이항공이 인천~도쿄 정기편 노선 운항을 시작하며, 마뗑킴과 협업해 한정판 승무원 유니폼을 선보입니다.\n5월 말부터 운항하는 인천발 에어로케이의 기내에서 마뗑킴을 경험할 수 있는 공간을 만나보실 수 있습니다",
     "sections": [
       {
-        "id": 13,
+        "id": 1,
         "columns": 3,
         "groups": [
           {
@@ -614,7 +614,17 @@
         ]
       },
       {
-        "id": 14,
+        "id": 2,
+        "columns": 1,
+        "groups": [
+          {
+            "type": "video",
+            "url": "/videos/sub-project/Aerok.mp4"
+          }
+        ]
+      },
+      {
+        "id": 3,
         "columns": 3,
         "groups": [
           {
@@ -632,7 +642,7 @@
         ]
       },
       {
-        "id": 15,
+        "id": 4,
         "columns": 1,
         "groups": [
           {

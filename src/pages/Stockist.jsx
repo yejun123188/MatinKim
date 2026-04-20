@@ -24,10 +24,17 @@ export default function Stockist() {
     const [showMap, setShowMap] = useState();
 
     useEffect(() => {
-        initMap(37.5435, 127.0543);
+        const interval = setInterval(() => {
+            if (window.kakao && window.kakao.maps) {
+                initMap(37.5435, 127.0543);
+                clearInterval(interval);
+            }
+        }, 100);
+
         onFetchStore();
-        setShowMap(stores)
-    }, [country, stores])
+
+        return () => clearInterval(interval);
+    }, [])
     return (
         <div className='stock'>
             <div className="inner">
@@ -85,12 +92,12 @@ export default function Stockist() {
                 <img src="/images/sub-about/stock.png" alt="" />
             </div>
             <div className="inner">
-                <h4 className="stock-title">ONCLINE STORE</h4>
+                <h4 className="stock-title">ONLINE STORE</h4>
                 <div className="online-store">
 
                     {stockists.map((s, id) => (
                         <ul className="store">
-                            <li>{s.name}
+                            <li className='store-name'>{s.name}
                                 <span><img src="/images/sub-about/arrow-up.svg" alt="" /></span>
                             </li>
                             <li><a href={s.url}>{s.url}</a></li>
