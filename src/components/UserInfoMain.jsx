@@ -10,8 +10,8 @@ import OptionPopup from "./OptionPopup";
 import UserInfoNone from "./UserInfoNone";
 
 const statusCode = {
-  주문확인: "ORDER",
-  상품준비중: "READY",
+  주문확인중: "ORDER",
+  배송준비중: "READY",
   배송시작: "START",
   배송중: "ING",
   배송완료: "DONE",
@@ -33,9 +33,9 @@ const orders = [
     name: "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
     img: "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
     price: 68000,
-    status: "상품준비중",
+    status: "배송준비중",
     size: "L",
-    count: "1",
+    count: 1,
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const orders = [
     price: 198000,
     status: "배송중",
     size: "L",
-    count: "1",
+    count: 1,
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const orders = [
     price: 58000,
     status: "배송완료",
     size: "FREE",
-    count: "1",
+    count: 1,
   },
 ];
 
@@ -66,7 +66,7 @@ const wishs = [
     discountRate: 0,
     discountPrice: 68000,
     size: "FREE",
-    count: "1",
+    count: 1,
   },
   {
     id: 2,
@@ -76,7 +76,7 @@ const wishs = [
     discountRate: 30,
     discountPrice: 178000,
     size: "M",
-    count: "1",
+    count: 1,
   },
   {
     id: 3,
@@ -86,7 +86,7 @@ const wishs = [
     discountRate: 10,
     discountPrice: 78000,
     size: "L",
-    count: "2",
+    count: 2,
   },
 ];
 
