@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "./scss/orderList.scss";
 import OrderDateFilter from "./OrderDateFilter";
 import OrderProduct from "./OrderProduct";
+import OptionPopup from "./OptionPopup";
 
 export default function OrderList() {
   const [tab, setTab] = useState("tab1");
+  const [optionOpen, setOptionOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const orders = [
     {
@@ -136,7 +139,14 @@ export default function OrderList() {
           {tab === "tab2" && (
             <div className="tab-order-wrap">
               <OrderDateFilter showFilter1 />
-              <OrderProduct orderDate="취소요청" orders={filteredOrders} />
+              <OrderProduct
+                orderDate="취소요청"
+                orders={filteredOrders}
+                onOrderClick={(order) => {
+                  setSelectedItem(order);
+                  setOptionOpen(true);
+                }}
+              />
             </div>
           )}
 
@@ -176,6 +186,11 @@ export default function OrderList() {
           </ul>
         )}
       </div>
+      <OptionPopup
+        open={optionOpen}
+        data={selectedItem}
+        onClose={() => setOptionOpen(false)}
+      />
     </>
   );
 }
