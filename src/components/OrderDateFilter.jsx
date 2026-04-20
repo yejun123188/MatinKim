@@ -156,29 +156,35 @@ export default function OrderDateFilter({
       )}
       {showFilter2 && (
         <div className="date-filter-wrap">
-          <div
-            className="custom-year-wrap"
-            ref={wrapRef}
-            onClick={() => setOpen(!open)}
-          >
-            <input type="text" value={year} readOnly />
-            <img src="./images/userinfo/input-under-btn.svg" alt="under btn" />
+          <div className="custom-year-wrap">
+            <div
+              className="custom-year-input"
+              ref={wrapRef}
+              onClick={() => setOpen(!open)}
+            >
+              <input type="text" value={year} readOnly />
+              <img
+                src="./images/userinfo/input-under-btn.svg"
+                alt="under btn"
+              />
 
-            {open && (
-              <div className="year-list">
-                {years.map((y) => (
-                  <div
-                    key={y}
-                    onClick={() => {
-                      setYear(y);
-                      setOpen(false);
-                    }}
-                  >
-                    {y}
-                  </div>
-                ))}
-              </div>
-            )}
+              {open && (
+                <div className="year-list">
+                  {years.map((y) => (
+                    <div
+                      key={y}
+                      onClick={() => {
+                        setYear(y);
+                        setOpen(false);
+                      }}
+                    >
+                      {y}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button>조회</button>
           </div>
         </div>
       )}
