@@ -14,7 +14,7 @@ const statusCode = {
   조회불가: "NONE",
 };
 
-const renderButtons = (status) => {
+const renderButtons = (status, order, onOrderClick) => {
   if (status === "주문확인중" || status === "배송준비중") {
     return <button className="btn">주문취소</button>;
   }
@@ -32,10 +32,14 @@ const renderButtons = (status) => {
     );
   }
 
-  return <button className="btn">상품주문</button>;
+  return (
+    <button className="btn" onClick={() => onOrderClick(order)}>
+      상품주문
+    </button>
+  );
 };
 
-export default function OrderProduct({ orderDate, orders }) {
+export default function OrderProduct({ orderDate, orders, onOrderClick }) {
   const dates = [...new Set(orders.map((o) => o.date))];
 
   return (
@@ -92,7 +96,7 @@ export default function OrderProduct({ orderDate, orders }) {
                           </span>
                         </div>
                         <div className="order-btn-wrap">
-                          {renderButtons(order.status)}
+                          {renderButtons(order.status, order, onOrderClick)}
                         </div>
                       </>
                     )}
