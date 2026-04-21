@@ -15,6 +15,8 @@ import ProjectDetail from "./pages/ProjectDetail";
 import ProductList from "./pages/ProductList";
 import GuestOrder from "./pages/GuestOrder";
 import Qna from "./pages/Qna";
+import ProductAuthentication from "./pages/ProductAuthentication";
+import Signup from "./pages/Signup";
 
 
 function App() {
@@ -41,7 +43,9 @@ function App() {
         <Route path="/collections/:id" element={<CollectionDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/userInfo" element={<UserInfo />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/qna" element={<Qna />} />
+        <Route path="/product-authentication" element={<ProductAuthentication />} />
       </Routes>
       <Footer />
     </>
