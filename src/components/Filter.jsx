@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { useProductStore } from '../store/useProductStore'
 import { Link, useLocation } from 'react-router-dom';
+import PriceRange from './PriceRange';
 
-export default function Filter({ colorCount }) {
+export default function Filter({ colorCount, onPriceChange }) {
+    const INITIAL_VISIBLE_COLORS = 18;
     const { menus, onColorCode } = useProductStore();
     const location = useLocation();
     const currentMainCategory = decodeURIComponent(location.pathname.split('/')[1] || '').toUpperCase();
+    const currentSubCategory = decodeURIComponent(location.pathname.split('/')[2] || '').toUpperCase();
     const [openShopMenus, setOpenShopMenus] = useState({});
+    const [showAllColors, setShowAllColors] = useState(false);
     const [openSections, setOpenSections] = useState({
-        CATEGORY: false,
-        PRICE: false,
-        'COLOR OPTIONS': false,
-        'SIZE OPTIONS': false
+        CATEGORY: true,
+        PRICE: true,
+        'COLOR OPTIONS': true,
+        'SIZE OPTIONS': true
     });
 
     useEffect(() => {
         setOpenShopMenus((prev) => {
             const nextState = Object.fromEntries(
                 menus.map((menu) => {
-                    const isCurrentCategory = menu.name.toUpperCase() === currentMainCategory;
                     const hasPrevState = Object.prototype.hasOwnProperty.call(prev, menu.name);
 
-                    return [menu.name, isCurrentCategory ? true : (hasPrevState ? prev[menu.name] : false)];
+                    return [menu.name, hasPrevState ? prev[menu.name] : true];
                 })
             );
 
@@ -29,11 +32,12 @@ export default function Filter({ colorCount }) {
         });
 
         setOpenSections({
-            CATEGORY: false,
-            PRICE: false,
-            'COLOR OPTIONS': false,
-            'SIZE OPTIONS': false
+            CATEGORY: true,
+            PRICE: true,
+            'COLOR OPTIONS': true,
+            'SIZE OPTIONS': true
         });
+        setShowAllColors(false);
     }, [menus, currentMainCategory]);
 
     const toggleShopMenu = (menuName) => {
@@ -56,6 +60,16 @@ export default function Filter({ colorCount }) {
             ? { background: colorValue }
             : { backgroundColor: colorValue };
     };
+    const handlePrice = ({ minPrice, maxPrice }) => {
+        if (!onPriceChange) return;
+        onPriceChange({
+            min: minPrice,
+            max: maxPrice
+        })
+    };
+
+    const visibleColors = showAllColors ? colorCount : colorCount.slice(0, INITIAL_VISIBLE_COLORS);
+    const hasMoreColors = colorCount.length > INITIAL_VISIBLE_COLORS;
 
     return (
         <div className='filter-wrap'>
@@ -70,14 +84,19 @@ export default function Filter({ colorCount }) {
                                 onClick={() => toggleShopMenu(menu.name)}
                                 aria-expanded={openShopMenus[menu.name] ?? true}
                             >
-                                <strong className='filter-main-label'>{menu.name}</strong>
+                                <strong className={`filter-main-label ${currentMainCategory === menu.name.toUpperCase() ? 'is-active' : ''}`}>
+                                    {menu.name}
+                                </strong>
                                 <span className='filter-toggle-icon'>{(openShopMenus[menu.name] ?? true) ? '−' : '+'}</span>
                             </button>
                             <div className={`filter-panel ${(openShopMenus[menu.name] ?? true) ? 'is-open' : ''}`}>
                                 <ul className="sub-menu">
                                     {menu.subMenu.map((m, id) => (
                                         <li key={id} className='sub-menu-item'>
-                                            <Link to={m.link}>
+                                            <Link
+                                                to={m.link}
+                                                className={currentSubCategory === decodeURIComponent(m.link.split('/')[2] || '').toUpperCase() ? 'is-active' : ''}
+                                            >
                                                 <p>{m.name}</p>
                                             </Link>
                                         </li>
@@ -111,6 +130,11 @@ export default function Filter({ colorCount }) {
                         <h3 className='filter-subtitle'>PRICE</h3>
                         <span className='filter-toggle-icon'>{openSections.PRICE ? '−' : '+'}</span>
                     </button>
+                    <div className={`filter-panel ${openSections.PRICE ? 'is-open' : ''}`}>
+                        <div className='price-range-box'>
+                            <PriceRange onSearch={handlePrice} />
+                        </div>
+                    </div>
                 </div>
                 <div className='filter-section color-list-wrap'>
                     <button
@@ -125,7 +149,7 @@ export default function Filter({ colorCount }) {
                     <div className={`filter-panel ${openSections['COLOR OPTIONS'] ? 'is-open' : ''}`}>
                         <div className='color-list-box'>
                             <div className='color'>
-                                {colorCount.map((color, id) => (
+                                {visibleColors.map((color, id) => (
                                     <p key={id} className='color-item'>
                                         <strong
                                             className='color-chip'
@@ -136,6 +160,15 @@ export default function Filter({ colorCount }) {
                                     </p>
                                 ))}
                             </div>
+                            {hasMoreColors && (
+                                <button
+                                    type="button"
+                                    className='color-more-btn'
+                                    onClick={() => setShowAllColors((prev) => !prev)}
+                                >
+                                    {showAllColors ? '접기' : '+ 더보기'}
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>

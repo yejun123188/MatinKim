@@ -120,10 +120,13 @@ export default function ProductDetail() {
     const canThumbNext = thumbStartIndex + THUMBNAILS_PER_VIEW < detailImages.length;
 
     const sizeRows = product?.tabContents?.sizeTable || [];
-    const sizeColumnCount = sizeRows[0]?.length || 0;
+    const transposedSizeRows = sizeRows.length > 0
+        ? sizeRows[0].map((_, columnIndex) => sizeRows.map((row) => row[columnIndex] || ''))
+        : [];
+    const sizeColumnCount = transposedSizeRows[0]?.length || 0;
     const sizeValueColumnWidth = sizeColumnCount > 1
-        ? `${82 / (sizeColumnCount - 1)}%`
-        : '82%';
+        ? `${80 / (sizeColumnCount - 1)}%`
+        : '80%';
     const deliveryText = product?.tabContents?.DELIVERY || '';
     const detailText = product?.tabContents?.DETAILS || '';
 
@@ -192,7 +195,7 @@ export default function ProductDetail() {
                                     ))}
                                 </colgroup>
                                 <tbody>
-                                    {sizeRows.map((row, rowIndex) => (
+                                    {transposedSizeRows.map((row, rowIndex) => (
                                         <tr key={`${product.id}-size-row-${rowIndex}`}>
                                             {row.map((cell, cellIndex) => (
                                                 rowIndex === 0 || cellIndex === 0
