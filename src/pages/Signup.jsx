@@ -287,9 +287,7 @@ export default function Signup() {
                                         maxLength={4}
                                     />
 
-                                    <button type="button" className="line-btn">
-                                        인증번호 받기
-                                    </button>
+
                                 </div>
                             </div>
 
