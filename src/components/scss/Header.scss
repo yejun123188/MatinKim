@@ -145,7 +145,7 @@
     }
 
     &:hover {
-        background-color: #fff;
+        background: g.$sub-color;
         border-bottom: 1px solid #eee;
 
         .header-right .gnb-list input {
@@ -156,7 +156,7 @@
 }
 
 .header-show.scrolled {
-    background-color: #fff;
+    background: g.$sub-color;
     border-bottom: 1px solid #eee;
 
     .header-right .gnb-list input {
@@ -166,7 +166,7 @@
 }
 
 .header-show.subpage {
-    background-color: #fff;
+    background: g.$sub-color;
     border-bottom: 1px solid #eee;
 
     .header-right .gnb-list input {
@@ -179,7 +179,7 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 24px 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(g.$sub-color, 0.95);
     z-index: 1000;
     position: relative;
     border-bottom: 1px solid #eee;

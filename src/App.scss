@@ -8,6 +8,12 @@ $text-main-color: #1e1e1e;
 $text-sub-color: #777777;
 $text-sub-color2: #a5a5a5;
 
+// 화이트
+$white-color: #fff;
+
+// 강조
+$red-color: #C8352A;
+
 // 사이즈 ==================
 // 보조 12px
 $size-12-sub: 0.75rem;
@@ -40,12 +46,10 @@ $Bold: 700;
   align-items: $al;
 }
 
-@mixin myBtn1(
-  $c: #ffffff,
+@mixin myBtn1($c: #ffffff,
   $bg: $main-color,
   $bd: 1px solid #000000,
-  $pd: 5px 7px
-) {
+  $pd: 5px 7px) {
   color: $c;
   background: $bg;
   border: $bd;
@@ -54,12 +58,10 @@ $Bold: 700;
   cursor: pointer;
 }
 
-@mixin myBtn2(
-  $c: #000000,
+@mixin myBtn2($c: #000000,
   $bg: #ffffff,
   $bd: 1px solid $main-color,
-  $pd: 5px 7px
-) {
+  $pd: 5px 7px) {
   color: $c;
   background: $bg;
   border: $bd;
@@ -83,13 +85,11 @@ $Bold: 700;
 }
 
 // position
-@mixin myPos(
-  $p: absolute,
+@mixin myPos($p: absolute,
   $top: null,
   $bottom: null,
   $left: null,
-  $right: null
-) {
+  $right: null) {
   position: $p;
 }
 
