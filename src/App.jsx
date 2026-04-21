@@ -13,6 +13,7 @@ import UserInfo from "./pages/UserInfo";
 import CollectionDetail from "./pages/CollectionDetail";
 import ProjectDetail from "./pages/ProjectDetail";
 import ProductList from "./pages/ProductList";
+import ProductDetail from "./pages/ProductDetail";
 import Brand from "./pages/Brand";
 import Stockist from "./pages/Stockist";
 import GuestOrder from "./pages/GuestOrder";
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/guest-order" element={<GuestOrder />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
