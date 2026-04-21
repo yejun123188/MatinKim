@@ -1,0 +1,144 @@
+@use "../../App.scss" as g;
+
+.order-detail-top {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    @include g.myBtn2;
+  }
+}
+
+.order-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  .order-detail-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    .order-detail-back {
+      @include g.myBtn2($pd: 10px 14px);
+    }
+
+    .order-detail-title {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+      text-align: right;
+
+      p {
+        color: g.$text-sub-color;
+      }
+
+      span {
+        color: g.$text-sub-color;
+      }
+    }
+  }
+
+  .order-detail-section {
+    border: 1px solid #e8e8e8;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 60px;
+    width: 100%;
+
+    &.simple {
+      height: 100%;
+    }
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #eeeeee;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      color: g.$text-sub-color;
+    }
+  }
+
+  .order-detail-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    .order-product {
+      display: flex;
+      gap: 10px;
+      border-bottom: 2px solid #eeeeee;
+      padding: 12px 0;
+
+      .img-box {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        width: 450px;
+
+        img {
+          min-width: 100px;
+          height: 150px;
+        }
+
+        .product-text {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  .order-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .detail-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+
+    div {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 16px;
+
+      &.is-total {
+        margin-top: 4px;
+        padding-top: 16px;
+        border-top: 1px solid #e8e8e8;
+
+        p,
+        span {
+          font-weight: g.$Bold;
+        }
+      }
+    }
+
+    p {
+      color: g.$text-sub-color;
+    }
+
+    span {
+      word-break: keep-all;
+    }
+  }
+}

@@ -1,76 +1,28 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ordersData from "../data/ordersData.json";
 import "./scss/orderList.scss";
 import OrderDateFilter from "./OrderDateFilter";
 import OrderProduct from "./OrderProduct";
 import OptionPopup from "./OptionPopup";
 
+const orderMenu = "주문내역";
+
 export default function OrderList() {
+  const navigate = useNavigate();
   const [tab, setTab] = useState("tab1");
   const [optionOpen, setOptionOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const orders = [
-    {
-      id: 1,
-      name: "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
-      img: "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
-      price: 68000,
-      status: "배송준비중",
-      size: "L",
-      count: 1,
-      date: "20260420",
-    },
-    {
-      id: 2,
-      name: "PATCHWORK CARGO BERMUDA PANTS FOR MEN IN BEIGE",
-      img: "https://matinkim.com/web/product/medium/202604/af24497fdacbac8b575687c878af7669.jpg",
-      price: 198000,
-      status: "배송중",
-      size: "L",
-      count: 1,
-      date: "20260419",
-    },
-    {
-      id: 3,
-      name: "MATIN LIGHT MESH CAP IN BLACK",
-      img: "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/de8e4df27a4d897c4f265a7c5ac38a09.jpg",
-      price: 58000,
-      status: "배송완료",
-      size: "FREE",
-      count: 1,
-      date: "20260419",
-    },
-    {
-      id: 4,
-      name: "CAMOUFLAGE LOGO BALL CAP IN BEIGE",
-      img: "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/377cb8c737dfecc223743aada3501cf5.jpg",
-      price: 68000,
-      status: "취소요청처리중",
-      size: "FREE",
-      count: 1,
-      date: "20260418",
-    },
-    {
-      id: 5,
-      name: "WAIST BUCKLE STITCH POINT TWILL DENIM PANTS IN BROWN",
-      img: "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
-      price: 124600,
-      status: "반품완료",
-      size: "M",
-      count: 1,
-      date: "20260417",
-    },
-    {
-      id: 6,
-      name: "WAIST BUCKLE STITCH POINT TWILL DENIM PANTS IN BROWN",
-      img: "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
-      price: 124600,
-      status: "조회불가",
-      size: "M",
-      count: 1,
-      date: "20220420",
-    },
-  ];
+  const orders = ordersData.flatMap((orderDetail) =>
+    orderDetail.orders.map((order) => ({
+      ...order,
+      orderNumber: orderDetail.orderNumber,
+      date: orderDetail.date,
+      state: orderDetail.state,
+      orderDetailId: orderDetail.id,
+    })),
+  );
 
   const tab1Status = [
     "주문확인중",
@@ -102,6 +54,14 @@ export default function OrderList() {
           ? orders.filter((o) => tab3Status.includes(o.status))
           : [];
 
+  const handleDetailSelect = (orderDetailId) => {
+    if (!orderDetailId) return;
+
+    navigate(`/userInfo/orders/${orderDetailId}`, {
+      state: { menu: orderMenu },
+    });
+  };
+
   return (
     <>
       <div className="order-list-section">
@@ -132,7 +92,11 @@ export default function OrderList() {
           {tab === "tab1" && (
             <div className="tab-order-wrap">
               <OrderDateFilter showFilter1 />
-              <OrderProduct orderDate="주문완료" orders={filteredOrders} />
+              <OrderProduct
+                orderDate="주문완료"
+                orders={filteredOrders}
+                onDetailClick={handleDetailSelect}
+              />
             </div>
           )}
 
@@ -140,8 +104,9 @@ export default function OrderList() {
             <div className="tab-order-wrap">
               <OrderDateFilter showFilter1 />
               <OrderProduct
-                orderDate="취소요청"
+                orderDate="취소/반품"
                 orders={filteredOrders}
+                onDetailClick={handleDetailSelect}
                 onOrderClick={(order) => {
                   setSelectedItem(order);
                   setOptionOpen(true);
