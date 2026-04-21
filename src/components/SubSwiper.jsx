@@ -4,6 +4,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import "swiper/css";
+import { Link } from 'react-router-dom';
 
 export default function SubSwiper({ slides }) {
     return (
@@ -21,7 +22,7 @@ export default function SubSwiper({ slides }) {
                             <div className="main-text">
                                 <h3> {img.title}</h3>
                                 <h4>{img.subtitle}</h4>
-                                <p>{img.text}</p>
+                                <p><Link to={img.link}>{img.text}</Link></p>
                             </div>
                         </div>
                     </SwiperSlide>

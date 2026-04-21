@@ -1,0 +1,103 @@
+@use "../../App.scss" as g;
+
+.stock {
+
+    .map {
+        @include g.myFlex(flex-start, 20px, flex-start);
+        width: 100%;
+
+        .map-left {
+            #map {
+                width: 720px;
+                height: 720px;
+            }
+        }
+
+        .map-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .top-menu {
+                @include g.myFlex(flex-start, 24px, center);
+                cursor: pointer;
+
+                p {
+                    color: g.$text-sub-color2;
+                }
+            }
+
+            .menu-box {
+                border: 2px solid #e0e0e0;
+                flex: 1;
+
+                .top {
+                    @include g.myFlex(flex-start, 5px, center);
+                    padding: 10px;
+                    font-size: g.$size-14-main;
+                    color: g.$text-main-color;
+                }
+
+                .show {
+                    padding: 10px 10px 0 10px;
+                    height: 650px;
+                    overflow-y: auto;
+
+                    li {
+                        padding-bottom: 12px;
+                        font-size: g.$size-14-main;
+
+
+
+                        .name {
+                            font-size: g.$size-16;
+                            color: g.$text-main-color;
+                        }
+
+                        .address,
+                        .tel {
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .img {
+        padding: 100px 0;
+    }
+
+    .stock-title {
+        font-size: g.$size-30;
+        font-weight: g.$Bold;
+        padding-bottom: 30px;
+        color: g.$text-main-color;
+    }
+
+    .online-store {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+
+        .store {
+            background-color: g.$sub-color;
+            padding: 10px;
+            font-size: g.$size-14-main;
+            color: g.$text-sub-color;
+
+            .store-name {
+                font-size: g.$size-16;
+                color: g.$text-main-color;
+
+            }
+        }
+    }
+
+    .story-text {
+        text-align: center;
+        padding: 150px 0 80px 0;
+        color: g.$text-sub-color2;
+        font-size: g.$size-14-main;
+    }
+}
