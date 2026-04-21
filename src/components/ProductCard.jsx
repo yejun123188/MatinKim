@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useProductStore } from '../store/useProductStore'
 
 export default function ProductCard({ cate }) {
     const { onColorCode } = useProductStore();
+    const navigate = useNavigate();
     const badgeItems = [
         ...(cate.tag || []).map((tag) => ({
             key: tag,
@@ -25,8 +27,26 @@ export default function ProductCard({ cate }) {
             : { backgroundColor: colorValue };
     };
 
+    const handleMoveDetail = () => {
+        navigate(`/products/${cate.id}`);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleMoveDetail();
+        }
+    };
+
     return (
-        <li className="product-card">
+        <li
+            className="product-card"
+            onClick={handleMoveDetail}
+            onKeyDown={handleKeyDown}
+            role="link"
+            tabIndex={0}
+            aria-label={`${cate.name} 상세페이지 이동`}
+        >
             <div className="img-box">
                 <img className="main-img" src={cate.mainImg} alt={cate.name} />
                 <img className="hover-img" src={cate.hoverImg} alt={cate.name} />
