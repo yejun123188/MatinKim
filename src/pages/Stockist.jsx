@@ -18,10 +18,15 @@ const stockists = [
     { name: "Matin Kim TAIWAN", url: "https://www.matinkim.com.tw/" }
 ];
 
+
+
 export default function Stockist() {
     const { initMap, onMenus, onFetchStore, country, stores, setMarkers, onShows, searchWord, onSearchWord } = useMapStore();
 
-    const [showMap, setShowMap] = useState();
+
+
+    const [topMenu, setTopMenu] = useState(true);
+    const [clickAd, setClickAd] = useState(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -46,8 +51,8 @@ export default function Stockist() {
                     </div>
                     <div className="map-right">
                         <div className="top-menu">
-                            <div className="off" onClick={() => onMenus("offline_store")}>OFFLINE STORE</div>
-                            <div className="select" onClick={() => onMenus("select_shop")}>SELECT SHOP</div>
+                            <div className={topMenu ? "active" : ""} onClick={() => { onMenus("offline_store"); setTopMenu(true); }} >OFFLINE STORE</div>
+                            <div className={topMenu ? "" : "active"} onClick={() => { onMenus("select_shop"); setTopMenu(false) }}>SELECT SHOP</div>
                         </div>
                         <div className="menu-box">
                             <div className="top">
@@ -56,22 +61,23 @@ export default function Stockist() {
                                         <option key={i} value={c}>{c}</option>
                                     ))}
                                 </select>
-                                <form action="">
-                                    <label>
-                                        <input type="text" placeholder='매장명 또는 주소를 입력해주세요' value={searchWord}
-                                            onChange={(e) => onSearchWord(e.target.value)} />
-                                    </label>
 
-                                </form>
+                                <label>
+                                    <input type="text" placeholder='매장명 또는 주소를 입력해주세요' value={searchWord}
+                                        onChange={(e) => onSearchWord(e.target.value)} />
+                                </label>
+
+
                                 <button>찾기</button>
                             </div>
                             <div className="show">
                                 <ul className="store-list">
 
                                     {stores.map((s, id) => (
-                                        <>
+                                        <div key={id}>
                                             {s.stores.map((ss, i) => (
-                                                <li onClick={() => setMarkers(ss.lat, ss.lng)} >
+                                                <li onClick={() => { setMarkers(ss.lat, ss.lng); setClickAd(i) }}
+                                                    className={clickAd === i ? "active" : ""} key={i}>
                                                     <p className="name">{ss.name}</p>
                                                     <p className="address">{ss.address}</p>
                                                     <p className='tel'>{ss.tel}</p>
@@ -79,7 +85,7 @@ export default function Stockist() {
                                                 </li>
                                             ))
                                             }
-                                        </>
+                                        </div>
                                     ))}
 
                                 </ul>
@@ -96,8 +102,8 @@ export default function Stockist() {
                 <div className="online-store">
 
                     {stockists.map((s, id) => (
-                        <ul className="store">
-                            <li className='store-name'>{s.name}
+                        <ul className="store" key={id}>
+                            <li className='store-name' >{s.name}
                                 <span><img src="/images/sub-about/arrow-up.svg" alt="" /></span>
                             </li>
                             <li><a href={s.url}>{s.url}</a></li>
@@ -110,6 +116,6 @@ export default function Stockist() {
                     </p>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

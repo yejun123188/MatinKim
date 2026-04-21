@@ -19,35 +19,66 @@
             flex-direction: column;
 
             .top-menu {
-                @include g.myFlex(flex-start, 24px, center);
+                @include g.myFlex(flex-start, 5px, center);
                 cursor: pointer;
 
-                p {
-                    color: g.$text-sub-color2;
+                font-size: 20px;
+
+                div {
+                    padding: 6px 12px;
                 }
+
+                & .active {
+                    background-color: rgba(0, 0, 0, 0.06);
+
+                }
+
+
             }
 
             .menu-box {
-                border: 2px solid #e0e0e0;
+                border: 2px solid rgba(0, 0, 0, 0.06);
                 flex: 1;
 
                 .top {
-                    @include g.myFlex(flex-start, 5px, center);
+                    @include g.myFlex(flex-start, 10px, center);
                     padding: 10px;
                     font-size: g.$size-14-main;
                     color: g.$text-main-color;
+
+                    select {
+                        border: 1px solid g.$main-color;
+                        padding: 0 10px;
+                        height: 35px;
+                        width: 120px;
+                    }
+
+                    input {
+                        width: 450px;
+                        height: 35px;
+                        padding: 0 10px;
+
+                        border: 1px solid g.$main-color;
+
+                        font-size: g.$size-14-main;
+                    }
+
+                    button {
+                        height: 35px;
+                        @include g.myBtn1($pd: 5px 30px);
+                    }
                 }
 
                 .show {
                     padding: 10px 10px 0 10px;
-                    height: 650px;
+                    height: 626px;
                     overflow-y: auto;
 
                     li {
-                        padding-bottom: 12px;
+
                         font-size: g.$size-14-main;
-
-
+                        padding: 5px;
+                        cursor: pointer;
 
                         .name {
                             font-size: g.$size-16;
@@ -58,7 +89,19 @@
                         .tel {
                             font-weight: 300;
                         }
+
+
                     }
+
+                    .active {
+                        background-color: #e6e6e6;
+                    }
+
+                    li:hover {
+                        background-color: rgba(0, 0, 0, 0.06);
+
+                    }
+
                 }
             }
         }
