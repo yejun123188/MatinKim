@@ -75,8 +75,18 @@
         .header-right {
             .gnb-list {
                 display: flex;
+                justify-content: flex-end;
                 gap: 32px;
                 align-items: center;
+
+                li {
+
+                    &.member,
+                    &.header-cart {
+                        flex-shrink: 0;
+
+                    }
+                }
 
                 input {
                     width: 300px;

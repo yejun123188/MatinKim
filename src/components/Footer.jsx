@@ -20,18 +20,18 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-left">
             <ul className="footer-menu">
-              <li><a href="#">(주)마뗑킴</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">이용약관</a></li>
-              <li><a href="#">개인정보처리방침</a></li>
-              <li><a href="#">이용안내</a></li>
-              <li><a href="#">고객센터</a></li>
-              <li><a href="#">채용인증</a></li>
+              <li><Link to="/">(주)마뗑킴</Link></li>
+              <li><Link to="/">About</Link></li>
+              <li><Link to="/">이용약관</Link></li>
+              <li><Link to="/">개인정보처리방침</Link></li>
+              <li><Link to="/">이용안내</Link></li>
+              <li><Link to="/qna">고객센터</Link></li>
+              <li><Link to="/">채용인증</Link></li>
             </ul>
 
             <address className="footer-address">
               <p>(주)마뗑킴 | 대표이사 : 홍길동 / 경기 성남시 분당구 판교로 242 더샵 702호 / 통신판매업신고번호 : 2025-성남분당A-0780</p>
-              <p>사업자등록번호 : 743-88-00954 <a href="#">[사업자정보확인]</a> / 개인정보보호책임자 : 이지은</p>
+              <p>사업자등록번호 : 743-88-00954 <Link to="/">[사업자정보확인]</Link> / 개인정보보호책임자 : 이지은</p>
               <p>비즈니스 관련문의 : matinkimcrew@matinkim.com</p>
             </address>
 
@@ -41,14 +41,14 @@ export default function Footer() {
           <div className="footer-right">
             <ul className="sns-list">
               <li>
-                <a href="https://www.instagram.com/matinkim_magazine/?hl=ko" aria-label="인스타그램">
+                <Link to="https://www.instagram.com/matinkim_magazine/?hl=ko" aria-label="인스타그램">
                   <img src="/images/footer-icon/imstagram-icon.svg" alt="인스타그램" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://www.youtube.com/@%EA%B9%80%EB%8B%A4%EC%9D%B8%EC%9D%98%EC%A0%84%EB%B6%80%EB%8B%A4%EC%9D%B8/videos" aria-label="유튜브">
+                <Link to="https://www.youtube.com/@MATINKIM-is2dm" aria-label="유튜브">
                   <img src="/images/footer-icon/youtube-logo.svg" alt="유튜브" />
-                </a>
+                </Link>
               </li>
             </ul>
 

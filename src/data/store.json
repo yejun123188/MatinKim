@@ -1,0 +1,561 @@
+{
+    "offline_store": [
+        {
+            "country": "korea",
+            "stores": [
+                {
+                    "id": "kr_01",
+                    "name": "Matin Kim Seongsu Flagship Store",
+                    "address": "서울특별시 성동구 연무장3길 9",
+                    "tel": "070-4128-0703",
+                    "lat": 37.5435,
+                    "lng": 127.0543
+                },
+                {
+                    "id": "kr_02",
+                    "name": "Matin Kim Seongsu Store",
+                    "address": "서울특별시 성동구 아차산로5길 24-33 1층",
+                    "tel": "02-461-2277",
+                    "lat": 37.5458,
+                    "lng": 127.0542
+                },
+                {
+                    "id": "kr_03",
+                    "name": "Matin Kim Special Store",
+                    "address": "서울시 성동구 연무장길 13, 1층",
+                    "tel": null,
+                    "lat": 37.5441,
+                    "lng": 127.0549
+                },
+                {
+                    "id": "kr_04",
+                    "name": "Matin Kim Myeongdong Store",
+                    "address": "서울 중구 명동8길 15",
+                    "tel": "070-4110-9192",
+                    "lat": 37.5634,
+                    "lng": 126.9849
+                },
+                {
+                    "id": "kr_05",
+                    "name": "Matin Kim Dosan Store",
+                    "address": "서울 강남구 언주로164길 14",
+                    "tel": "02-540-0912",
+                    "lat": 37.5252,
+                    "lng": 127.0366
+                },
+                {
+                    "id": "kr_06",
+                    "name": "Matin Kim Gwangjang Market",
+                    "address": "서울 종로구 창경궁로 88 서문 1F 270호",
+                    "tel": "010-7523-2700",
+                    "lat": 37.5701,
+                    "lng": 126.9994
+                },
+                {
+                    "id": "kr_07",
+                    "name": "THE HYUNDAI Seoul",
+                    "address": "서울특별시 영등포구 여의대로 108 더현대 서울 지하 2층",
+                    "tel": "02-3277-0879",
+                    "lat": 37.5258,
+                    "lng": 126.9284
+                },
+                {
+                    "id": "kr_08",
+                    "name": "THE HYUNDAI Trade Center",
+                    "address": "서울특별시 강남구 테헤란로 517 현대백화점 무역센터점 6층",
+                    "tel": "02-3467-8665",
+                    "lat": 37.5085,
+                    "lng": 127.0594
+                },
+                {
+                    "id": "kr_09",
+                    "name": "THE HYUNDAI Mokdong",
+                    "address": "서울특별시 양천구 목동동로 257 현대백화점 목동점 지하 2층",
+                    "tel": "02-2163-2247",
+                    "lat": 37.5273,
+                    "lng": 126.8749
+                },
+                {
+                    "id": "kr_10",
+                    "name": "THE HYUNDAI Sinchon",
+                    "address": "서울특별시 서대문구 신촌로 83 B2F",
+                    "tel": "02-3145-1797",
+                    "lat": 37.5559,
+                    "lng": 126.9358
+                },
+                {
+                    "id": "kr_11",
+                    "name": "THE HYUNDAI Cheonho",
+                    "address": "서울특별시 강동구 천호대로 1005 B1F",
+                    "tel": "02-2225-8928",
+                    "lat": 37.5388,
+                    "lng": 127.1235
+                },
+                {
+                    "id": "kr_12",
+                    "name": "THE HYUNDAI Daegu",
+                    "address": "대구광역시 중구 달구벌대로 2077 지하2층",
+                    "tel": "053-245-3464",
+                    "lat": 35.8661,
+                    "lng": 128.5916
+                },
+                {
+                    "id": "kr_13",
+                    "name": "THE HYUNDAI Pangyo",
+                    "address": "경기도 성남시 분당구 판교역로146번길 20 현대백화점 판교점 4층",
+                    "tel": "031-5170-1415",
+                    "lat": 37.3927,
+                    "lng": 127.1121
+                },
+                {
+                    "id": "kr_14",
+                    "name": "THE HYUNDAI Ulsan",
+                    "address": "울산광역시 남구 삼산로 261 현대백화점 울산점 5F",
+                    "tel": "052-228-0595",
+                    "lat": 35.5401,
+                    "lng": 129.3364
+                },
+                {
+                    "id": "kr_15",
+                    "name": "THE HYUNDAI Jungdong",
+                    "address": "경기도 부천시 원미구 길주로 180 현대백화점 중동점 유플렉스관 지하 1층",
+                    "tel": "032-623-1043",
+                    "lat": 37.5039,
+                    "lng": 126.7618
+                },
+                {
+                    "id": "kr_16",
+                    "name": "THE HYUNDAI Chungju",
+                    "address": "충청북도 청주시 흥덕구 직지대로 308 현대백화점 유플렉스관 지하 1층",
+                    "tel": "043-909-4856",
+                    "lat": 36.6433,
+                    "lng": 127.4300
+                },
+                {
+                    "id": "kr_17",
+                    "name": "LOTTE Dept. Main",
+                    "address": "서울특별시 중구 남대문로 81 롯데백화점 본점 4층",
+                    "tel": "02-772-3480",
+                    "lat": 37.5648,
+                    "lng": 126.9818
+                },
+                {
+                    "id": "kr_18",
+                    "name": "LOTTE Dept. Nowon",
+                    "address": "서울 노원구 동일로 1414 롯데백화점노원점 2층",
+                    "tel": "02-950-2224",
+                    "lat": 37.6550,
+                    "lng": 127.0612
+                },
+                {
+                    "id": "kr_19",
+                    "name": "LOTTE Dept. Jamsil",
+                    "address": "서울 송파구 올림픽로 240 롯데백화점 잠실점 2F",
+                    "tel": "0507-1304-7224",
+                    "lat": 37.5113,
+                    "lng": 127.0980
+                },
+                {
+                    "id": "kr_20",
+                    "name": "LOTTE Dept. Pyeongchon",
+                    "address": "경기도 안양시 동안구 시민대로 180 롯데백화점 평촌점 2층",
+                    "tel": "031-8086-9255",
+                    "lat": 37.3912,
+                    "lng": 126.9531
+                },
+                {
+                    "id": "kr_21",
+                    "name": "LOTTE Dept. Jeonju",
+                    "address": "전라북도 전주시 완산구 온고을로 2 롯데백화점 전주점 2층",
+                    "tel": "063-289-3240",
+                    "lat": 35.8322,
+                    "lng": 127.1215
+                },
+                {
+                    "id": "kr_22",
+                    "name": "SHINSEGAE Art & Science",
+                    "address": "대전광역시 유성구 엑스포로 1 신세계 아트앤사이언스 3층",
+                    "tel": "042-607-8508",
+                    "lat": 36.3752,
+                    "lng": 127.3813
+                },
+                {
+                    "id": "kr_23",
+                    "name": "SHINSEGAE Gwangju",
+                    "address": "광주광역시 서구 무진대로 932 신세계 백화점 광주점 5층",
+                    "tel": "062-360-1420",
+                    "lat": 35.1601,
+                    "lng": 126.8812
+                }
+            ]
+        },
+        {
+            "country": "hongkong",
+            "stores": [
+                {
+                    "id": "hk_01",
+                    "name": "Matin Kim CAUSEWAY BAY",
+                    "address": "G/F, 10 Kai Chiu Road, Causeway Bay",
+                    "tel": "852-23653468",
+                    "lat": 22.2801,
+                    "lng": 114.1841
+                },
+                {
+                    "id": "hk_02",
+                    "name": "Matin Kim HARBOUR CITY",
+                    "address": "OT307A & 308, Ocean Terminal, Tsim Sha Tsui",
+                    "tel": "852-26917238",
+                    "lat": 22.2968,
+                    "lng": 114.1664
+                },
+                {
+                    "id": "hk_03",
+                    "name": "Matin Kim LANGHAM PLACE",
+                    "address": "Nos. 09 & 10 on Level 6, Langham place, Mong kok",
+                    "tel": null,
+                    "lat": 22.3191,
+                    "lng": 114.1685
+                },
+                {
+                    "id": "hk_04",
+                    "name": "Matin Kim CITYGATE",
+                    "address": "Units 105-106, Level 1, Citygate Outlets, Tung Chung Town Lot No.2",
+                    "tel": "852-2481-4268",
+                    "lat": 22.2895,
+                    "lng": 113.9416
+                },
+                {
+                    "id": "hk_05",
+                    "name": "Matin Kim APM",
+                    "address": "Shop No. UC-13 on Upper Concourse Level, apm, Millennium City 5, Kwun Tong, Kowloon",
+                    "tel": "36283310",
+                    "lat": 22.3121,
+                    "lng": 114.2251
+                }
+            ]
+        },
+        {
+            "country": "macau",
+            "stores": [
+                {
+                    "id": "mo_01",
+                    "name": "Matin Kim VENETIAN",
+                    "address": "Shop 2407 Shoppes in Venetian",
+                    "tel": "853-28830051",
+                    "lat": 22.1469,
+                    "lng": 113.5593
+                },
+                {
+                    "id": "mo_02",
+                    "name": "Matin Kim LONDONER",
+                    "address": "Shop 2213 Shoppes in Londoner",
+                    "tel": "853-28883302",
+                    "lat": 22.1425,
+                    "lng": 113.5623
+                }
+            ]
+        },
+        {
+            "country": "taiwan",
+            "stores": [
+                {
+                    "id": "tw_01",
+                    "name": "Matin Kim TAIPEI ESLITE NANXI",
+                    "address": "2F., No. 14, Nanjing W. Rd., Zhongshan Dist., Taipei City",
+                    "tel": "886-25230686",
+                    "lat": 25.0523,
+                    "lng": 121.5205
+                },
+                {
+                    "id": "tw_02",
+                    "name": "Matin Kim TAIPEI FLAGSHIP STORE, XINYI VIESHOW",
+                    "address": "1F, No. 18, Songshou Rd., Xinyi Dist., Taipei City 110062, Taiwan",
+                    "tel": "886-27203588",
+                    "lat": 25.0355,
+                    "lng": 121.5670
+                },
+                {
+                    "id": "tw_03",
+                    "name": "Matin Kim GLORIA OUTLETS",
+                    "address": "No.189, Chunde Road, Zhongli District, Taoyuan City",
+                    "tel": "03-287-2669",
+                    "lat": 25.0135,
+                    "lng": 121.2150
+                },
+                {
+                    "id": "tw_04",
+                    "name": "Matin Kim MEGACITY",
+                    "address": "2F., No. 28, Xinzhan Rd., Banqiao Dist., New Taipei City 220, Taiwan",
+                    "tel": "02-29643051",
+                    "lat": 25.0125,
+                    "lng": 121.4646
+                },
+                {
+                    "id": "tw_05",
+                    "name": "Matin Kim KAOHSIUNG HANSHIN",
+                    "address": "3F., No. 777, Bo'ai 2nd Rd., Zuoying Dist., Kaohsiung City 813, Taiwan",
+                    "tel": null,
+                    "lat": 22.6695,
+                    "lng": 120.3022
+                },
+                {
+                    "id": "tw_06",
+                    "name": "Matin Kim NANGANG LALAPORT",
+                    "address": "1F., No. 131, Jingmao 2nd Rd., Nangang Dist., Taipei City 115, Taiwan",
+                    "tel": null,
+                    "lat": 25.0577,
+                    "lng": 121.6162
+                }
+            ]
+        },
+        {
+            "country": "japan",
+            "stores": [
+                {
+                    "id": "jp_01",
+                    "name": "Matin Kim SHIBUYA",
+                    "address": "〒150-0001, 2F, 20-10, 6 Chome, Jingumae, Shibuya, Tokyo",
+                    "tel": "03-6450-5101",
+                    "lat": 35.6631,
+                    "lng": 139.7023
+                },
+                {
+                    "id": "jp_02",
+                    "name": "Matin Kim NAGOYA",
+                    "address": "west building, 1F, 3 Chome-29-1 Sakae, Naka Ward, Nagoya",
+                    "tel": "152-265-7615",
+                    "lat": 35.1610,
+                    "lng": 136.9061
+                }
+            ]
+        },
+        {
+            "country": "thailand",
+            "stores": [
+                {
+                    "id": "th_01",
+                    "name": "Matin Kim CENTRAL",
+                    "address": "1027, Ploenchit Road, Lumpini, Pathumwan, Bangkok 10330",
+                    "tel": "662-793-7777",
+                    "lat": 13.7441,
+                    "lng": 100.5448
+                },
+                {
+                    "id": "th_02",
+                    "name": "Matin Kim CENTRAL WORLD",
+                    "address": "CentralWorld, 1st floor 4, 4/5 Rajdamri Road, Pathumwan, Bangkok 10330",
+                    "tel": null,
+                    "lat": 13.7466,
+                    "lng": 100.5393
+                }
+            ]
+        }
+    ],
+    "select_shop": [
+        {
+            "country": "korea",
+            "stores": [
+                {
+                    "id": "ss_01",
+                    "name": "MOSAIC HANNAM",
+                    "address": "서울특별시 용산구 이태원로54길 13",
+                    "tel": "02-749-8414",
+                    "lat": 37.5371,
+                    "lng": 127.0006
+                },
+                {
+                    "id": "ss_02",
+                    "name": "HAGO HAUS Lotte World Mall",
+                    "address": "서울특별시 송파구 올림픽로 300 롯데월드몰 지하 1층",
+                    "tel": "02-3213-4721",
+                    "lat": 37.5137,
+                    "lng": 127.1044
+                },
+                {
+                    "id": "ss_03",
+                    "name": "HAGO HAUS I'PARK Mall",
+                    "address": "서울 용산구 한강대로23길 55 아이파크몰 6F",
+                    "tel": "02-2012-4648",
+                    "lat": 37.5298,
+                    "lng": 126.9647
+                },
+                {
+                    "id": "ss_04",
+                    "name": "HAGO HAUS Gimpo Airport",
+                    "address": "서울 강서구 하늘길 77 B1",
+                    "tel": "02-6116-3022",
+                    "lat": 37.5663,
+                    "lng": 126.8025
+                },
+                {
+                    "id": "ss_05",
+                    "name": "HAGO HAUS Cheongnyangni",
+                    "address": "서울 동대문구 왕산로 214 2F",
+                    "tel": "02-7499-3438",
+                    "lat": 37.5807,
+                    "lng": 127.0479
+                },
+                {
+                    "id": "ss_06",
+                    "name": "HAGO HAUS Lotte Incheon",
+                    "address": "인천광역시 미추홀구 연남로 35 롯데백화점 2층",
+                    "tel": "032-242-2251",
+                    "lat": 37.4423,
+                    "lng": 126.6991
+                },
+                {
+                    "id": "ss_07",
+                    "name": "HAGO HAUS Hyundai Songdo",
+                    "address": "인천 연수구 송도국제대로 123 B1F",
+                    "tel": "032-727-2422",
+                    "lat": 37.3813,
+                    "lng": 126.6579
+                },
+                {
+                    "id": "ss_08",
+                    "name": "HAGO HAUS Lotte Suwon",
+                    "address": "경기 수원시 권선구 세화로 134 롯데몰 3F",
+                    "tel": "031-8066-1852",
+                    "lat": 37.2638,
+                    "lng": 126.9968
+                },
+                {
+                    "id": "ss_09",
+                    "name": "HAGO HAUS Lotte Dongtan",
+                    "address": "경기도 화성시 동탄역로 160 롯데백화점 3층",
+                    "tel": "031-8036-3755",
+                    "lat": 37.1995,
+                    "lng": 127.0963
+                },
+                {
+                    "id": "ss_10",
+                    "name": "HAGO HAUS Lotte Changwon",
+                    "address": "경남 창원시 성산구 중앙대로 124 영플라자 지하 1층",
+                    "tel": "055-279-2055",
+                    "lat": 35.2227,
+                    "lng": 128.6831
+                },
+                {
+                    "id": "ss_11",
+                    "name": "HAGO HAUS Shinsegae Paju",
+                    "address": "경기도 파주시 탄현면 필승로 200, L1 215A호,B호",
+                    "tel": "031-8071-7420",
+                    "lat": 37.7684,
+                    "lng": 126.6961
+                },
+                {
+                    "id": "ss_12",
+                    "name": "HAGO HAUS Starfield Hanam",
+                    "address": "경기 하남시 미사대로 750 1F",
+                    "tel": "031-8072-8545",
+                    "lat": 37.5455,
+                    "lng": 127.2238
+                },
+                {
+                    "id": "ss_13",
+                    "name": "HAGO HAUS Lotte Ansan",
+                    "address": "경기 안산시 단원구 고잔1길 12 2F",
+                    "tel": "031-412-7763",
+                    "lat": 37.3175,
+                    "lng": 126.8378
+                },
+                {
+                    "id": "ss_14",
+                    "name": "HAGO HAUS Yeoju Premium Village",
+                    "address": "경기 여주시 명품로 316-8, 1-7",
+                    "tel": "031-885-8865",
+                    "lat": 37.2422,
+                    "lng": 127.6322
+                },
+                {
+                    "id": "ss_15",
+                    "name": "HAGO HAUS Time Villas Uiwang",
+                    "address": "경기 의왕시 바라산로 1 1F",
+                    "tel": "031-329-1706",
+                    "lat": 37.3776,
+                    "lng": 127.0252
+                },
+                {
+                    "id": "ss_16",
+                    "name": "HAGO HAUS Lotte Daejeon",
+                    "address": "대전 서구 계룡로 598 1F",
+                    "tel": "042-601-2121",
+                    "lat": 36.3401,
+                    "lng": 127.3949
+                },
+                {
+                    "id": "ss_17",
+                    "name": "HAGO HAUS Shinsegae Cheonan",
+                    "address": "충남 천안시 서북구 공원로 227 3F",
+                    "tel": "041-412-9317",
+                    "lat": 36.8011,
+                    "lng": 127.1065
+                },
+                {
+                    "id": "ss_18",
+                    "name": "HAGO HAUS Lotte Gwangbok",
+                    "address": "부산 중구 중앙대로 2 아쿠아몰 1F",
+                    "tel": "051-678-3104",
+                    "lat": 35.0975,
+                    "lng": 129.0351
+                },
+                {
+                    "id": "ss_19",
+                    "name": "HAGO HAUS Lotte Busan Main",
+                    "address": "부산광역시 부산진구 가야대로 772 롯데백화점 2층",
+                    "tel": "051-810-3213",
+                    "lat": 35.1565,
+                    "lng": 129.0562
+                },
+                {
+                    "id": "ss_20",
+                    "name": "HAGO HAUS Lotte East Busan",
+                    "address": "부산 기장군 기장읍 기장해안로 147 1층",
+                    "tel": "051-901-2275",
+                    "lat": 35.1915,
+                    "lng": 129.2132
+                },
+                {
+                    "id": "ss_21",
+                    "name": "HAGO HAUS Lotte Pohang",
+                    "address": "경북 포항시 북구 학산로 62 4F",
+                    "tel": "054-230-1479",
+                    "lat": 36.0487,
+                    "lng": 129.3732
+                },
+                {
+                    "id": "ss_22",
+                    "name": "HAGO HAUS Hyundai Busan",
+                    "address": "부산 동구 범일로 125 B1F",
+                    "tel": "051-667-1068",
+                    "lat": 35.1378,
+                    "lng": 129.0602
+                },
+                {
+                    "id": "ss_23",
+                    "name": "HAGO HAUS Lotte Gwangju",
+                    "address": "광주 광산구 장신로 98 2F",
+                    "tel": "062-616-2535",
+                    "lat": 35.1916,
+                    "lng": 126.8214
+                },
+                {
+                    "id": "ss_24",
+                    "name": "HAGO HAUS Lotte Daegu",
+                    "address": "대구 동구 팔공로49길 16 1F",
+                    "tel": "053-945-2588",
+                    "lat": 35.9189,
+                    "lng": 128.6341
+                },
+                {
+                    "id": "ss_25",
+                    "name": "HAGO HAUS Hyundai Chungju",
+                    "address": "충북 청주시 흥덕구 2순환로 1005 1F",
+                    "tel": "043-717-2928",
+                    "lat": 36.6261,
+                    "lng": 127.4294
+                }
+            ]
+        }
+    ]
+}

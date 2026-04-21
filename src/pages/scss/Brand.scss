@@ -1,0 +1,77 @@
+@use "../../App.scss" as g;
+
+.brand {
+
+    .brand-title {
+        font-size: g.$size-30;
+        font-weight: g.$Bold;
+        color: g.$text-main-color;
+    }
+
+    img {
+        width: 600px;
+    }
+
+    .brand-top {
+        @include g.myFlex(flex-start, 230px, center);
+
+        .text {
+            padding-top: 10px;
+            padding-bottom: 155px;
+            font-size: g.$size-16;
+            font-weight: g.$ExtraLight;
+            color: g.$text-main-color;
+
+            li {
+                padding-bottom: 24px;
+                font-size: g.$size-16;
+                font-weight: g.$ExtraLight;
+            }
+        }
+    }
+
+    .line {
+        margin: 50px 0;
+        height: 2px;
+        background-color: #f2f2f2;
+    }
+
+    .brand-bottom {
+        @include g.myFlex(flex-start, 230px);
+        padding: 150px 0 0 0;
+
+        .text2 {
+            padding-top: 10px;
+            padding-bottom: 155px;
+            font-size: g.$size-16;
+            font-weight: g.$ExtraLight;
+
+            li {
+                padding-bottom: 50px;
+                font-size: g.$size-16;
+                font-weight: g.$ExtraLight;
+            }
+        }
+    }
+
+    .insta-title {
+        text-align: center;
+        font-size: g.$size-30;
+        font-weight: g.$Bold;
+        padding-bottom: 10px;
+        color: g.$text-main-color;
+    }
+
+    .insta {
+        background-color: g.$main-color;
+        padding: 40px 20px;
+
+        .insta-list {
+            @include g.myFlex(flex-start, 24px, center);
+        }
+    }
+}
+
+.about {
+    padding: 120px 0 0 0;
+}

@@ -1,0 +1,100 @@
+@use "../../App.scss" as g;
+
+.savedmoney-wrap {
+
+    .saved-top {
+        background-color: g.$sub-color;
+        padding: 30px;
+        margin-bottom: 24px;
+
+        .my-saved {
+            border-bottom: 1px solid g.$text-sub-color2;
+            padding-bottom: 10px;
+            font-size: g.$size-16;
+            font-weight: g.$Bold;
+            color: g.$text-main-color;
+        }
+
+        .my-saved-middle {
+            font-weight: g.$ExtraLight;
+
+            .list-wrap {
+                @include g.myFlex(center, 100px, center);
+                padding: 60px 40px;
+
+                li {
+                    @include g.myFlex(space-between, 100px, center);
+                    padding-bottom: 20px;
+
+                    .text {
+                        width: 200px;
+                        color: g.$text-sub-color;
+                        font-size: g.$size-14-main;
+                    }
+
+                    .price {
+                        font-size: g.$size-16;
+                        font-weight: g.$Regular;
+                        color: g.$text-main-color;
+                    }
+                }
+            }
+
+            .explain-list {
+                font-size: g.$size-14-main;
+                font-weight: g.$ExtraLight;
+                color: g.$text-sub-color;
+
+                li {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .saved-bottom {
+        background-color: g.$sub-color;
+        padding: 30px;
+        margin-bottom: 24px;
+
+        .top-menu {
+            @include g.myFlex(flex-start, 20px, center);
+            padding-bottom: 10px;
+
+            p {
+                cursor: pointer;
+                color: g.$text-sub-color2;
+                font-size: g.$size-14-main;
+
+                &.active {
+                    color: g.$text-main-color;
+                    font-weight: g.$Bold;
+
+                }
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th {
+                background-color: #f0f0f0;
+                padding: 12px;
+                font-size: g.$size-14-main;
+                text-align: center;
+                border-top: 1px solid g.$main-color;
+                color: g.$text-main-color;
+            }
+
+            td {
+                width: 100px;
+                padding: 14px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+                font-size: g.$size-14-main;
+                color: g.$text-main-color;
+            }
+        }
+    }
+}

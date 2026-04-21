@@ -6,6 +6,7 @@ import "./scss/userInfo.scss";
 import WishList from "../components/WishList";
 import OrderList from "../components/OrderList";
 import CouponList from "../components/CouponList";
+import SavedMoney from "../components/SavedMoney";
 
 export default function UserInfo() {
   const location = useLocation();
@@ -25,7 +26,7 @@ export default function UserInfo() {
       case "위시리스트":
         return <WishList />;
       case "적립금":
-        return <p></p>;
+        return <SavedMoney />;
       case "쿠폰":
         return <CouponList />;
       case "배송지 관리":
@@ -48,10 +49,10 @@ export default function UserInfo() {
     <section className="sub-section info-sec">
       <div className="inner user-info-wrap">
         <div className="user-info-left">
-          <UserMenus sendSelect={handleMenuClick} />
+          <UserMenus sendSelect={handleMenuClick} selectMenu={selectMenu} />
         </div>
         <div className="user-info-right">
-          <h2>{selectMenu}</h2>
+          {selectMenu !== "마이페이지" && <h2>{selectMenu}</h2>}
           <div>{handleContent()}</div>
         </div>
       </div>
