@@ -17,17 +17,21 @@ import Brand from "./pages/Brand";
 import Stockist from "./pages/Stockist";
 import GuestOrder from "./pages/GuestOrder";
 import Qna from "./pages/Qna";
+import { useMapStore } from "./store/useMapStore";
+import AddressRegister from "./components/AddressRegister";
 
 
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
+  const { onFetchStore, stores, } = useMapStore();
 
   useEffect(() => {
     onFetchItem();
     onMenus();
-  }, [onFetchItem, onMenus]);
+    onFetchStore();
+  }, [onFetchItem, onMenus, stores]);
 
   if (!items.length) return <div>로딩중...</div>;
   return (
@@ -47,6 +51,7 @@ function App() {
           <Route path="stockist" element={<Stockist />} />
         </Route>
         <Route path="/userInfo" element={<UserInfo />} />
+        <Route path="address/new" element={<AddressRegister />} />
         <Route path="/qna" element={<Qna />} />
       </Routes>
       <Footer />
