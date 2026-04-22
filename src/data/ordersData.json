@@ -3,7 +3,6 @@
     "id": 1,
     "state": "주문완료",
     "date": "20260420",
-    "orderNumber": "MK-20260420-17861",
     "name": "마뗑킴",
     "phone": "010-1234-5678",
     "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
@@ -24,8 +23,28 @@
   {
     "id": 2,
     "state": "주문완료",
+    "date": "20260420",
+    "name": "마뗑킴",
+    "phone": "010-1234-5678",
+    "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
+    "payment": "신용카드",
+    "deliveryCost": 0,
+    "orders": [
+      {
+        "id": 101,
+        "name": "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
+        "img": "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
+        "price": 68000,
+        "status": "배송중",
+        "size": "L",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "state": "주문완료",
     "date": "20260419",
-    "orderNumber": "MK-20260419-17832",
     "name": "마뗑킴",
     "phone": "010-1234-5678",
     "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
@@ -37,7 +56,7 @@
         "name": "PATCHWORK CARGO BERMUDA PANTS FOR MEN IN BEIGE",
         "img": "https://matinkim.com/web/product/medium/202604/af24497fdacbac8b575687c878af7669.jpg",
         "price": 198000,
-        "status": "배송중",
+        "status": "배송완료",
         "size": "L",
         "count": 1
       },
@@ -53,10 +72,9 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "state": "취소",
     "date": "20260418",
-    "orderNumber": "MK-20260418-17795",
     "name": "마뗑킴",
     "phone": "010-1234-5678",
     "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
@@ -75,10 +93,9 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "state": "반품",
     "date": "20260417",
-    "orderNumber": "MK-20260417-17754",
     "name": "마뗑킴",
     "phone": "010-1234-5678",
     "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
@@ -97,10 +114,9 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "state": "과거주문",
     "date": "20220420",
-    "orderNumber": "MK-20220420-10211",
     "name": "마뗑킴",
     "phone": "010-1234-5678",
     "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ordersData from "../data/ordersData.json";
+import ordersData from "../data/ordersData";
 import "./scss/orderList.scss";
 import OrderDateFilter from "./OrderDateFilter";
 import OrderProduct from "./OrderProduct";
@@ -62,6 +62,14 @@ export default function OrderList() {
     });
   };
 
+  const handleRequestNavigate = (action, order) => {
+    if (!order?.orderDetailId || !order?.id) return;
+
+    navigate(`/userInfo/orders/${order.orderDetailId}/${action}/${order.id}`, {
+      state: { menu: orderMenu },
+    });
+  };
+
   return (
     <>
       <div className="order-list-section">
@@ -96,6 +104,11 @@ export default function OrderList() {
                 orderDate="주문완료"
                 orders={filteredOrders}
                 onDetailClick={handleDetailSelect}
+                onCancelClick={(order) => handleRequestNavigate("cancel", order)}
+                onExchangeClick={(order) =>
+                  handleRequestNavigate("exchange", order)
+                }
+                onReturnClick={(order) => handleRequestNavigate("return", order)}
               />
             </div>
           )}
@@ -107,6 +120,11 @@ export default function OrderList() {
                 orderDate="취소/반품"
                 orders={filteredOrders}
                 onDetailClick={handleDetailSelect}
+                onCancelClick={(order) => handleRequestNavigate("cancel", order)}
+                onExchangeClick={(order) =>
+                  handleRequestNavigate("exchange", order)
+                }
+                onReturnClick={(order) => handleRequestNavigate("return", order)}
                 onOrderClick={(order) => {
                   setSelectedItem(order);
                   setOptionOpen(true);
