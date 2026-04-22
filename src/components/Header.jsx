@@ -4,6 +4,8 @@ import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
 import Cart from "../pages/Cart"
+import { useAuthStore } from "../store/useAuthStore";
+import { useNavigate } from "react-router-dom";
 
 const topmenus = [
   { key: "shop", label: "SHOP" },
@@ -44,6 +46,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const { user } = useAuthStore();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -62,6 +66,8 @@ export default function Header() {
       document.body.style.overflow = "unset";
     };
   }, [isCartOpen]);
+
+
 
   return (
     <>
@@ -110,10 +116,15 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="member">
-                  <Link onClick={() => setLoginOpen(true)}>
-                    <img src="/images/header-icon/user.svg" alt="" />
-
-                  </Link>
+                  {user ? (
+                    <Link to="/userInfo">
+                      <img src="/images/header-icon/user.svg" alt="" />
+                    </Link>
+                  ) : (
+                    <button type="button" onClick={() => setLoginOpen(true)}>
+                      <img src="/images/header-icon/user.svg" alt="" />
+                    </button>
+                  )}
                 </li>
               </ul>
             </div>

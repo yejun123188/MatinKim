@@ -20,7 +20,8 @@ import GuestOrder from "./pages/GuestOrder";
 import Qna from "./pages/Qna";
 import { useMapStore } from "./store/useMapStore";
 import AddressRegister from "./components/AddressRegister";
-
+import ProductAuthentication from "./pages/ProductAuthentication";
+import Signup from "./pages/Signup";
 
 function App() {
   const location = useLocation();
@@ -44,6 +45,7 @@ function App() {
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/guest-order" element={<GuestOrder />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/collections" element={<Collections />} />
@@ -54,8 +56,9 @@ function App() {
           <Route path="stockist" element={<Stockist />} />
         </Route>
         <Route path="/userInfo" element={<UserInfo />} />
-        <Route path="address/new" element={<AddressRegister />} />
+        <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/qna" element={<Qna />} />
+        <Route path="/product-authentication" element={<ProductAuthentication />} />
       </Routes>
       <Footer />
     </>

@@ -9,8 +9,18 @@
   justify-content: space-between;
   gap: 70px;
 
+  &.detail-mode {
+    gap: 0;
+
+    .user-info-right {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
   .user-info-left {
     width: 115px;
+    flex-shrink: 0;
 
     .info-list {
       width: 120px;
@@ -50,10 +60,15 @@
     flex-direction: column;
     gap: 24px;
     overflow: hidden;
+    width: 100%;
 
     h2 {
       width: 100%;
     }
+  }
+
+  .user-info-content {
+    width: 100%;
   }
 }
 

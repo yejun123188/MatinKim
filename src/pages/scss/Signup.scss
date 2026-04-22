@@ -1,0 +1,459 @@
+.signup-page {
+    min-height: 100vh;
+    background: #fff;
+    color: #000;
+    padding: 100px 20px 140px;
+    font-family: "Noto Sans KR", sans-serif;
+
+
+}
+
+
+.signup-page .signup-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.signup-page .signup-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid #000;
+    padding-bottom: 32px;
+}
+
+.signup-page .signup-form {
+    width: 100%;
+}
+
+.signup-page .form-group {
+    margin-bottom: 22px;
+
+    label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+        font-weight: 500;
+
+        span {
+            color: #ff3b30;
+            margin-left: 2px;
+
+        }
+    }
+
+    input,
+    select {
+        width: 100%;
+        // height: 38px;
+        background: transparent;
+        border: 1px solid #939393;
+        color: #000;
+        // padding: 0 12px;
+        font-size: 16px;
+        outline: none;
+        box-sizing: border-box;
+        line-height: 38px;
+        height: 38px;
+        text-indent: 10px;
+    }
+
+    input::placeholder {
+        color: #9b9b9b;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #000;
+    }
+
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        padding-right: 40px;
+    }
+
+    input:disabled {
+        opacity: 0.7;
+    }
+}
+
+.signup-page .phone-row,
+.email-row,
+.birth-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.signup-page .phone-row {
+    justify-content: space-between;
+
+    >* {
+        flex: 1;
+        line-height: 38px;
+        height: 38px;
+    }
+
+
+    .select-box {
+        position: relative;
+
+
+        select {
+            // width: 100%;
+            padding: 0 36px 0 2px;
+            height: inherit;
+
+
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: #fff;
+        }
+
+        .select-arrow {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+        }
+    }
+
+    input {
+        // width: 208px;
+    }
+
+    .dash {
+        font-size: 24px;
+        color: #999;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    .line-btn {
+        width: 170px;
+        // height: 46px;
+        border: 0;
+        background: #000;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 500;
+    }
+}
+
+.signup-page .email-row {
+    input {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .select-box {
+        width: 210px;
+        // flex-shrink: 0;
+        display: flex;
+        position: relative;
+    }
+
+    .select-box select {
+        // width: 100%;
+    }
+
+    .email-at {
+        font-size: 16px;
+        color: #000;
+        flex-shrink: 0;
+    }
+}
+
+.signup-page .select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.signup-page .radio-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 8px;
+
+    .gender {
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.signup-page .radio-item {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px !important;
+    margin-bottom: 0 !important;
+
+    span {
+        color: #000;
+    }
+
+
+    input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #d9d9d9;
+        cursor: pointer;
+    }
+
+    span {
+        color: #000;
+        margin-left: 0 !important;
+    }
+}
+
+.signup-page .birth-row {
+    input {
+        width: 150px;
+    }
+
+    span {
+        font-size: 16px;
+        color: #000;
+        white-space: nowrap;
+    }
+}
+
+.signup-page .agree-box {
+    margin-top: 30px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+}
+
+.signup-page .check-item {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    color: #fff !important;
+    margin-bottom: 14px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        accent-color: #fff;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    span {
+        color: #000;
+        margin-left: 0 !important;
+    }
+}
+
+
+.signup-page .terms-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 18px;
+    padding-bottom: 14px;
+}
+
+.signup-page .agree-list {
+    border-top: 1px solid transparent;
+}
+
+.signup-page .agree-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.signup-page .agree-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 76px;
+    gap: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.signup-page .agree-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    cursor: pointer;
+    flex: 1;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .custom-check {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #d9d9d9;
+        background: #efefef;
+        flex-shrink: 0;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    input:checked+.custom-check {
+        background: #111;
+        border-color: #111;
+    }
+
+    input:checked+.custom-check::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 1px;
+        width: 4px;
+        height: 8px;
+        border: solid #fff;
+        border-width: 0 1.5px 1.5px 0;
+        transform: rotate(45deg);
+    }
+}
+
+.signup-page .agree-all {
+    padding: 28px 0 26px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #000;
+
+    .agree-text {
+        font-size: 16px;
+        line-height: 1.7;
+        font-weight: 700;
+        color: #000;
+        word-break: keep-all;
+    }
+}
+
+.signup-page .agree-label {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #000;
+    word-break: keep-all;
+}
+
+.signup-page .toggle-btn {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    padding: 0;
+
+    span {
+        display: block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    span::before,
+    span::after {
+        content: "";
+        position: absolute;
+        background: #9c9c9c;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    span::before {
+        width: 14px;
+        height: 1.5px;
+    }
+
+    span::after {
+        width: 1.5px;
+        height: 14px;
+    }
+
+    &.open span::after {
+        display: none;
+    }
+}
+
+.signup-page .terms-content {
+    padding: 10px 0 24px;
+}
+
+.signup-page .scroll-box {
+    width: 100%;
+    height: 270px;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    scrollbar-width: auto;
+    scrollbar-color: #9b9b9b #f1f1f1;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #9d9d9d;
+        border-radius: 20px;
+        border: 3px solid #f1f1f1;
+    }
+}
+
+.signup-page .terms-inner {
+    white-space: pre-line;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #444;
+    padding-right: 6px;
+}
+
+.signup-page .submit-btn {
+    width: 100%;
+    height: 56px;
+    margin-top: 40px;
+    background: #000;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background 0.2s ease;
+
+    &:disabled {
+        opacity: 0.45;
+        cursor: default;
+    }
+
+    &.active {
+        opacity: 1;
+    }
+}
