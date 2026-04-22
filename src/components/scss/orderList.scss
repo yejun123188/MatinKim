@@ -3,6 +3,7 @@
 .order-list-section {
   background: #ffffff;
   padding: 30px;
+  width: 100%;
 
   .order-tap-menu {
     display: flex;
@@ -10,10 +11,11 @@
 
     button {
       height: 40px;
-      padding: 0 10px;
+      margin-right: 20px;
       background: none;
       border: none;
       color: g.$text-sub-color;
+      cursor: pointer;
     }
 
     .active {
@@ -135,6 +137,7 @@
         .order-list-title {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           color: g.$text-sub-color;
           background: #eeeeee;
           padding: 5px 10px;
@@ -145,18 +148,29 @@
             display: flex;
             gap: 10px;
           }
+
+          .order-detail {
+            .order-detail-btn {
+              border: none;
+              background: none;
+              color: g.$text-sub-color;
+              font-family: inherit;
+              cursor: pointer;
+            }
+          }
         }
         .order-list {
           .order-product {
             display: flex;
             gap: 10px;
             border-bottom: 2px solid #eeeeee;
+            padding: 12px 0;
 
             .img-box {
               gap: 20px;
               display: flex;
               align-items: center;
-              width: 390px;
+              width: 450px;
 
               img {
                 min-width: 100px;
@@ -177,13 +191,13 @@
               .status {
                 display: flex;
                 justify-content: center;
-                width: 250px;
+                width: 260px;
               }
 
               .order-no {
                 display: flex;
                 flex-direction: column;
-                width: 250px;
+                width: 260px;
 
                 p,
                 span {
@@ -195,7 +209,7 @@
               .order-btn-wrap {
                 display: flex;
                 justify-content: end;
-                width: 255px;
+                width: 175px;
 
                 .btn {
                   @include g.myBtn1;

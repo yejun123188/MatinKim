@@ -56,7 +56,7 @@ function App() {
           <Route path="stockist" element={<Stockist />} />
         </Route>
         <Route path="/userInfo" element={<UserInfo />} />
-        <Route path="address/new" element={<AddressRegister />} />
+        <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/qna" element={<Qna />} />
         <Route path="/product-authentication" element={<ProductAuthentication />} />
       </Routes>
