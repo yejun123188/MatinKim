@@ -1,5 +1,7 @@
 import React, { useMemo, useRef, useState } from "react";
 import "./scss/Signup.scss";
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore";
 
 export default function Signup() {
     const [form, setForm] = useState({
@@ -22,6 +24,8 @@ export default function Signup() {
         agreePrivacy: false,
         agreeMarketing: false,
     });
+    const navigate = useNavigate();
+    const { onMember } = useAuthStore();
 
     const termsRefs = useRef({});
 
@@ -173,7 +177,7 @@ export default function Signup() {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!canSubmit) {
@@ -181,13 +185,45 @@ export default function Signup() {
             return;
         }
 
-        const signupData = {
-            ...form,
-            agreements,
-        };
+        if (!form.userId || !form.password || !form.passwordConfirm || !form.name) {
+            alert("필수 입력값을 모두 입력해주세요.");
+            return;
+        }
 
-        console.log("회원가입 데이터", signupData);
-        alert("회원가입 버튼 클릭");
+        if (form.password !== form.passwordConfirm) {
+            alert("비밀번호가 일치하지 않습니다.");
+            return;
+        }
+
+        if (!form.emailId || !form.emailDomain) {
+            alert("이메일을 입력해주세요.");
+            return;
+        }
+
+        const email = `${form.emailId}@${form.emailDomain}`;
+        const phone = `${form.phone1}-${form.phone2}-${form.phone3}`;
+        const birth = `${form.birthYear}-${form.birthMonth}-${form.birthDay}`;
+
+        try {
+            await onMember({
+                userId: form.userId,
+                uName: form.name,
+                email,
+                password: form.password,
+                phone,
+                gender: form.gender,
+                birth,
+                agreements,
+                nickname: "",
+                profile: "",
+            });
+
+            alert("회원가입이 완료되었습니다. 이메일 인증 후 로그인해주세요.");
+            navigate("/");
+        } catch (err) {
+            console.error("회원가입 실패:", err);
+            alert(err.message || "회원가입 실패");
+        }
     };
 
     return (
