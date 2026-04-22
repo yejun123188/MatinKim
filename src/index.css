@@ -28,3 +28,8 @@ i {
 body {
   font-family: "Pretendrad", sans-serif;
 }
+
+button {
+  background: none;
+  border: none;
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const statusCode = {
   주문확인중: "ORDER",
@@ -16,64 +15,99 @@ const statusCode = {
 
 const renderButtons = (status, order, onOrderClick) => {
   if (status === "주문확인중" || status === "배송준비중") {
-    return <button className="btn">주문취소</button>;
+    return (
+      <button type="button" className="btn">
+        주문취소
+      </button>
+    );
   }
 
   if (status === "배송시작" || status === "배송중") {
-    return <button className="btn">배송조회</button>;
+    return (
+      <button type="button" className="btn">
+        배송조회
+      </button>
+    );
   }
 
   if (status === "배송완료") {
     return (
       <div className="order-btn">
-        <button className="btn">교환신청</button>
-        <button className="btn">반품신청</button>
+        <button type="button" className="btn">
+          교환신청
+        </button>
+        <button type="button" className="btn">
+          반품신청
+        </button>
       </div>
     );
   }
 
   return (
-    <button className="btn" onClick={() => onOrderClick(order)}>
+    <button type="button" className="btn" onClick={() => onOrderClick?.(order)}>
       상품주문
     </button>
   );
 };
 
-export default function OrderProduct({ orderDate, orders, onOrderClick }) {
-  const dates = [...new Set(orders.map((o) => o.date))];
+export default function OrderProduct({
+  orderDate,
+  orders = [],
+  onOrderClick,
+  onDetailClick,
+  showHeader = true,
+  showOrderNumber = true,
+  showActionButtons = true,
+}) {
+  const orderNumbers = [...new Set(orders.map((order) => order.orderNumber))];
 
   return (
     <>
-      {dates.map((date) => {
-        const dateOrders = orders.filter((order) => order.date === date);
-        const showTitle = dateOrders.some(
+      {orderNumbers.map((orderNumber) => {
+        const groupedOrders = orders.filter(
+          (order) => order.orderNumber === orderNumber,
+        );
+        const representativeOrder = groupedOrders[0];
+        const showTitle = groupedOrders.some(
           (order) => order.status !== "조회불가",
         );
 
         return (
-          <div className="order-list-wrap" key={date}>
-            {showTitle && (
+          <div className="order-list-wrap" key={orderNumber}>
+            {showHeader && showTitle && (
               <div className="order-list-title">
                 <div className="order-date">
                   <p>{orderDate}</p>
                   <p>
-                    {date.slice(0, 4)}. {date.slice(4, 6)}. {date.slice(6, 8)}
+                    {representativeOrder.date.slice(0, 4)}.
+                    {representativeOrder.date.slice(4, 6)}.
+                    {representativeOrder.date.slice(6, 8)}
                   </p>
                 </div>
-                <p className="order-detail">
-                  <Link to="/">주문 상세보기 {">"}</Link>
-                </p>
+                {onDetailClick && (
+                  <div className="order-detail">
+                    <button
+                      type="button"
+                      className="order-detail-btn"
+                    onClick={() => onDetailClick(representativeOrder.orderDetailId)}
+                  >
+                    주문 상세보기 {">"}
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
             <ul className="order-list">
-              {dateOrders.map((order) => (
+              {groupedOrders.map((order) => (
                 <li className="order-product" key={order.id}>
                   <div className="img-box">
                     <img src={order.img} alt={order.name} />
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
-                      <p className="order-price">{order.price}</p>
+                      <p className="order-price">
+                        {order.price.toLocaleString()}원
+                      </p>
                       <p className="order-count">
                         {order.size} / {order.count}개
                       </p>
@@ -89,15 +123,17 @@ export default function OrderProduct({ orderDate, orders, onOrderClick }) {
                           {order.status}
                         </div>
 
-                        <div className="order-no">
-                          <p>주문번호</p>
-                          <span>
-                            {order.date}-{order.id}
-                          </span>
-                        </div>
-                        <div className="order-btn-wrap">
-                          {renderButtons(order.status, order, onOrderClick)}
-                        </div>
+                        {showOrderNumber && (
+                          <div className="order-no">
+                            <p>주문번호</p>
+                            <span>{order.orderNumber}</span>
+                          </div>
+                        )}
+                        {showActionButtons && (
+                          <div className="order-btn-wrap">
+                            {renderButtons(order.status, order, onOrderClick)}
+                          </div>
+                        )}
                       </>
                     )}
                   </div>
