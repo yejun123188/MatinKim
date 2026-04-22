@@ -26,7 +26,7 @@ export default function Footer() {
               <li><Link to="/">개인정보처리방침</Link></li>
               <li><Link to="/">이용안내</Link></li>
               <li><Link to="/qna">고객센터</Link></li>
-              <li><Link to="/">채용인증</Link></li>
+              <li><Link to="/product-authentication">정품인증</Link></li>
             </ul>
 
             <address className="footer-address">

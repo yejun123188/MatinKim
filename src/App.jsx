@@ -56,6 +56,7 @@ function App() {
         <Route path="/userInfo" element={<UserInfo />} />
         <Route path="address/new" element={<AddressRegister />} />
         <Route path="/qna" element={<Qna />} />
+        <Route path="/product-authentication" element={<ProductAuthentication />} />
       </Routes>
       <Footer />
     </>
