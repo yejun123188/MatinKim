@@ -22,25 +22,6 @@ export default function OrderDetail() {
     });
   };
 
-  if (!detail) {
-    return (
-      <div className="order-detail-page">
-        <div>
-          <h2>주문 상세보기</h2>
-          <button className="order-detail-back" onClick={handleBack}>
-            목록으로
-          </button>
-        </div>
-        <section className="order-detail-section">
-          <div className="section-head">
-            <h3>주문 정보를 찾을 수 없습니다.</h3>
-          </div>
-          <p>잘못된 주문 경로이거나 더 이상 조회할 수 없는 주문입니다.</p>
-        </section>
-      </div>
-    );
-  }
-
   const {
     state,
     date,
@@ -73,7 +54,7 @@ export default function OrderDetail() {
         <div className="order-detail-header">
           <div className="order-detail-section">
             <h2>{formatDate(date)} 주문</h2>
-            <span>{state}</span>
+            <span>{orderNumber}</span>
           </div>
         </div>
         <section className="order-detail-section">

@@ -21,10 +21,6 @@
     justify-content: space-between;
     gap: 16px;
 
-    .order-detail-back {
-      @include g.myBtn2($pd: 10px 14px);
-    }
-
     .order-detail-title {
       display: flex;
       flex: 1;
