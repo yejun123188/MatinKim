@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import UserInfoMain from "../components/UserInfoMain";
 import UserMenus from "../components/UserMenus";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./scss/userInfo.scss";
 import WishList from "../components/WishList";
 import OrderList from "../components/OrderList";
 import CouponList from "../components/CouponList";
 import SavedMoney from "../components/SavedMoney";
+import Adress from "../components/Adress";
+import { useAuthStore } from "../store/useAuthStore";
 import OrderDetail from "../components/OrderDetail";
 import OrderRequest from "../components/OrderRequest";
 import Adress from "../components/Adress";
@@ -19,6 +21,18 @@ export default function UserInfo() {
   const { id: orderId, action } = useParams();
 
   const [selectMenu, setSelectMenu] = useState(location.state?.menu || myMenu);
+export default function UserInfo() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { id: orderId } = useParams();
+  const { onLogout } = useAuthStore();
+
+  const DEFAULT_MENU = "마이페이지";
+  const ORDER_MENU = "주문내역";
+
+  const [selectMenu, setSelectMenu] = useState(
+    location.state?.menu || DEFAULT_MENU
+  );
 
   useEffect(() => {
     if (orderId) {
@@ -31,7 +45,18 @@ export default function UserInfo() {
     }
   }, [location.state?.menu, orderId]);
 
-  const handleMenuClick = (menu) => {
+  const handleMenuClick = async (menu) => {
+    if (menu === "로그아웃") {
+      try {
+        await onLogout();
+        navigate("/");
+      } catch (err) {
+        console.error("로그아웃 실패:", err);
+        alert("로그아웃에 실패했습니다.");
+      }
+      return;
+    }
+
     setSelectMenu(menu);
   };
 
@@ -56,9 +81,6 @@ export default function UserInfo() {
         return <p></p>;
       case "내 계정":
         return <p></p>;
-      case "로그아웃":
-        return <p></p>;
-
       default:
         return <UserInfoMain />;
     }
@@ -68,14 +90,13 @@ export default function UserInfo() {
 
   return (
     <section className="sub-section info-sec">
-      <div
-        className={`inner user-info-wrap ${isDetailMode ? "detail-mode" : ""}`}
-      >
+      <div className={`inner user-info-wrap ${isDetailMode ? "detail-mode" : ""}`}>
         {!isDetailMode && (
           <div className="user-info-left">
             <UserMenus sendSelect={handleMenuClick} selectMenu={selectMenu} />
           </div>
         )}
+
         <div className="user-info-right">
           {!isDetailMode && selectMenu !== myMenu && <h2>{selectMenu}</h2>}
           <div className="user-info-content">{handleContent()}</div>

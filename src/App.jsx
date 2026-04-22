@@ -22,14 +22,17 @@ import { useMapStore } from "./store/useMapStore";
 import AddressRegister from "./components/AddressRegister";
 import ProductAuthentication from "./pages/ProductAuthentication";
 import Signup from "./pages/Signup";
+import { useAuthStore } from "./store/useAuthStore";
 
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
   const { onFetchStore, stores, } = useMapStore();
+  const { initAuth } = useAuthStore();
 
   useEffect(() => {
+    initAuth();
     onFetchItem();
     onMenus();
     onFetchStore();
