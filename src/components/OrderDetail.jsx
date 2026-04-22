@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ordersData from "../data/ordersData.json";
+import ordersData from "../data/ordersData";
 import "./scss/orderDetail.scss";
-import OrderProduct from "./OrderProduct";
 
-const ORDER_MENU = "주문내역";
+const orderMenu = "주문내역";
 
 const formatDate = (date) =>
   `${date.slice(0, 4)}. ${date.slice(4, 6)}. ${date.slice(6, 8)}`;
@@ -18,15 +17,14 @@ export default function OrderDetail() {
 
   const handleBack = () => {
     navigate("/userInfo", {
-      state: { menu: ORDER_MENU },
+      state: { menu: orderMenu },
     });
   };
 
   const {
-    state,
     date,
-    orders,
     orderNumber,
+    orders,
     name,
     phone,
     address,
@@ -38,7 +36,6 @@ export default function OrderDetail() {
     (sum, order) => sum + order.price * order.count,
     0,
   );
-  const totalCount = orders.reduce((sum, order) => sum + order.count, 0);
   const totalPrice = totalProductPrice + deliveryCost;
 
   return (
@@ -52,10 +49,13 @@ export default function OrderDetail() {
 
       <div className="order-detail-page">
         <div className="order-detail-header">
-          <div className="order-detail-section">
+          <section className="order-detail-section">
             <h2>{formatDate(date)} 주문</h2>
-            <span>{orderNumber}</span>
-          </div>
+            <p>
+              주문번호
+              <span>{orderNumber}</span>
+            </p>
+          </section>
         </div>
         <section className="order-detail-section">
           <div className="section-head">
@@ -67,7 +67,7 @@ export default function OrderDetail() {
               <li className="order-product" key={order.id}>
                 <div className="img-box">
                   <img src={order.img} alt={order.name} />
-                  <div className="product-text">
+                  <div className="text-box">
                     <p className="order-status">{order.status}</p>
                     <p className="order-name">{order.name}</p>
                     <p className="order-price">

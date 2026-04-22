@@ -1,0 +1,164 @@
+@use "../../App.scss" as g;
+
+.order-request-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 1rem;
+
+  h2 {
+    margin: 0;
+  }
+
+  button {
+    @include g.myBtn2;
+  }
+}
+
+.order-request-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &.is-empty {
+    align-items: center;
+    text-align: center;
+  }
+
+  .request-section {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    gap: 20px;
+
+    .request-order-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      h2 {
+        margin: 0;
+        font-size: g.$size-30;
+      }
+
+      div {
+        display: flex;
+        gap: 10px;
+        font-size: g.$size-14-main;
+        flex-wrap: wrap;
+      }
+
+      p {
+        margin: 0;
+        color: g.$text-sub-color;
+      }
+
+      span {
+        color: g.$text-main-color;
+        line-height: 1.5;
+      }
+    }
+
+    .request-form-top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h3 {
+        margin: 0;
+      }
+    }
+
+    .request-field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .request-field-title {
+        margin: 0;
+        font-weight: g.$Bold;
+      }
+
+      .request-option-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .request-option-btn {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #d7d7d7;
+        background: #ffffff;
+        text-align: left;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background: #fafafa;
+        }
+
+        &.is-active {
+          border-color: g.$main-color;
+          background: #f5f5f5;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 140px;
+        padding: 14px 16px;
+        border: 1px solid #d7d7d7;
+        font: inherit;
+        background: #ffffff;
+        resize: vertical;
+        line-height: 1.6;
+
+        &:focus {
+          outline: none;
+          border-color: g.$main-color;
+        }
+      }
+
+      .field-error {
+        margin: 0;
+        font-size: g.$size-14-main;
+        color: g.$red-color;
+      }
+    }
+  }
+
+  .request-notice-box {
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+
+    h4 {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      color: g.$text-sub-color;
+      line-height: 1.6;
+    }
+  }
+
+  .request-submit-btn {
+    @include g.myBtn1;
+    align-self: flex-end;
+    min-width: 160px;
+    min-height: 48px;
+    font-family: inherit;
+  }
+}

@@ -10,7 +10,17 @@ import SavedMoney from "../components/SavedMoney";
 import Adress from "../components/Adress";
 import { useAuthStore } from "../store/useAuthStore";
 import OrderDetail from "../components/OrderDetail";
+import OrderRequest from "../components/OrderRequest";
+import Adress from "../components/Adress";
 
+const myMenu = "마이페이지";
+const orderMenu = "주문내역";
+
+export default function UserInfo() {
+  const location = useLocation();
+  const { id: orderId, action } = useParams();
+
+  const [selectMenu, setSelectMenu] = useState(location.state?.menu || myMenu);
 export default function UserInfo() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,7 +36,7 @@ export default function UserInfo() {
 
   useEffect(() => {
     if (orderId) {
-      setSelectMenu(ORDER_MENU);
+      setSelectMenu(orderMenu);
       return;
     }
 
@@ -51,10 +61,11 @@ export default function UserInfo() {
   };
 
   const handleContent = () => {
+    if (action) return <OrderRequest />;
     if (orderId) return <OrderDetail />;
 
     switch (selectMenu) {
-      case ORDER_MENU:
+      case orderMenu:
         return <OrderList />;
       case "위시리스트":
         return <WishList />;
@@ -87,7 +98,7 @@ export default function UserInfo() {
         )}
 
         <div className="user-info-right">
-          {!isDetailMode && selectMenu !== DEFAULT_MENU && <h2>{selectMenu}</h2>}
+          {!isDetailMode && selectMenu !== myMenu && <h2>{selectMenu}</h2>}
           <div className="user-info-content">{handleContent()}</div>
         </div>
       </div>
