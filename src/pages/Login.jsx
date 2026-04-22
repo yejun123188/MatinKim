@@ -16,27 +16,43 @@ export default function Login({ onClose }) {
   const { onLoginByUserId, onGoogleLogin } = useAuthStore();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const newErrors = {
-      userId: !userId.trim(),
-      password: !password.trim(),
-    };
-
-    setErrors(newErrors);
-
-    if (newErrors.userId || newErrors.password) return;
-
-    try {
-      await onLoginByUserId(userId, password);
-      navigate("/");
-      onClose?.();
-    } catch (error) {
-      console.error("아이디 로그인 실패:", error);
-      alert(error.code || error.message || "로그인에 실패했습니다.");
-    }
+  //아이디
+  const handleBlurUserId = () => {
+    setErrors((prev) => ({
+      ...prev,
+      userId: !userId.trim()
+    }));
   };
+
+  // 비밀번호
+  const handleBlurPassword = () => {
+    setErrors((prev) => ({
+      ...prev,
+      password: !password.trim()
+    }));
+  };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const newErrors = {
+  //     userId: !userId.trim(),
+  //     password: !password.trim(),
+  //   };
+
+  //   setErrors(newErrors);
+
+  //   if (newErrors.userId || newErrors.password) return;
+
+  //   try {
+  //     await onLoginByUserId(userId, password);
+  //     navigate("/");
+  //     onClose?.();
+  //   } catch (error) {
+  //     console.error("아이디 로그인 실패:", error);
+  //     alert(error.code || error.message || "로그인에 실패했습니다.");
+  //   }
+  // };
 
   const handleGoogleLogin = async () => {
     if (googleLoading) return;
@@ -73,16 +89,19 @@ export default function Login({ onClose }) {
             </button>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form
+          // onSubmit={handleSubmit}
+          >
             <div className={`input-wrap ${errors.userId ? "error" : ""}`}>
               <input
                 type="text"
-                placeholder="아이디*"
+                placeholder="아이디"
                 value={userId}
                 onChange={(e) => {
                   setUserId(e.target.value);
                   setErrors((prev) => ({ ...prev, userId: false }));
                 }}
+                onBlur={handleBlurUserId}
               />
               {errors.userId && (
                 <p className="error-text">아이디 항목은 필수 입력값입니다.</p>
@@ -92,12 +111,13 @@ export default function Login({ onClose }) {
             <div className={`input-wrap ${errors.password ? "error" : ""}`}>
               <input
                 type="password"
-                placeholder="비밀번호*"
+                placeholder="비밀번호"
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
                   setErrors((prev) => ({ ...prev, password: false }));
                 }}
+                onBlur={handleBlurPassword}
               />
               {errors.password && (
                 <p className="error-text">패스워드 항목은 필수 입력값입니다.</p>
