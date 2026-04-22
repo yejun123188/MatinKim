@@ -18,17 +18,22 @@ import Brand from "./pages/Brand";
 import Stockist from "./pages/Stockist";
 import GuestOrder from "./pages/GuestOrder";
 import Qna from "./pages/Qna";
-
+import { useMapStore } from "./store/useMapStore";
+import AddressRegister from "./components/AddressRegister";
+import ProductAuthentication from "./pages/ProductAuthentication";
+import Signup from "./pages/Signup";
 
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
+  const { onFetchStore, stores, } = useMapStore();
 
   useEffect(() => {
     onFetchItem();
     onMenus();
-  }, [onFetchItem, onMenus]);
+    onFetchStore();
+  }, [onFetchItem, onMenus, stores]);
 
   if (!items.length) return <div>로딩중...</div>;
   return (
@@ -36,9 +41,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:category1" element={<ProductList />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/guest-order" element={<GuestOrder />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/collections" element={<Collections />} />
@@ -51,6 +58,7 @@ function App() {
         <Route path="/userInfo" element={<UserInfo />} />
         <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/qna" element={<Qna />} />
+        <Route path="/product-authentication" element={<ProductAuthentication />} />
       </Routes>
       <Footer />
     </>

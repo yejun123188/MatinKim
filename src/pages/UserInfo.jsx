@@ -48,7 +48,7 @@ export default function UserInfo() {
       case "쿠폰":
         return <CouponList />;
       case "배송지 관리":
-        return <p></p>;
+        return <Adress />;
       case "1:1 문의":
         return <p></p>;
       case "최근 본 상품":

@@ -27,32 +27,57 @@ export const useMapStore = create((set, get) => ({
     map: null,
     markers: [],
 
+    // initMap: (lat, lng) => {
+    //     const mapContainer = document.getElementById("map");
+    //     if (!mapContainer) return;
+
+
+    //     if (!window.kakao || !window.kakao.maps) {
+    //         console.error("카카오 맵 SDK 아직 안 불러와짐");
+    //         return;
+    //     }
+
+    //     const { kakao } = window;
+
+    //     kakao.maps.load(() => {
+    //         const options = {
+    //             center: new kakao.maps.LatLng(lat, lng),
+    //             level: 4,
+    //         };
+
+    //         if (!get().map) {
+    //             const map = new kakao.maps.Map(mapContainer, options);
+    //             set({ map });
+    //         } else {
+    //             const moveLatLon = new kakao.maps.LatLng(lat, lng);
+    //             get().map.setCenter(moveLatLon);
+    //         }
+    //     });
+    // },
     initMap: (lat, lng) => {
         const mapContainer = document.getElementById("map");
         if (!mapContainer) return;
 
+        const waitForKakao = () => {
+            if (window.kakao && window.kakao.maps) {
+                window.kakao.maps.load(() => {
+                    const { kakao } = window;
 
-        if (!window.kakao || !window.kakao.maps) {
-            console.error("카카오 맵 SDK 아직 안 불러와짐");
-            return;
-        }
+                    const options = {
+                        center: new kakao.maps.LatLng(lat, lng),
+                        level: 4,
+                    };
 
-        const { kakao } = window;
-
-        kakao.maps.load(() => {
-            const options = {
-                center: new kakao.maps.LatLng(lat, lng),
-                level: 4,
-            };
-
-            if (!get().map) {
-                const map = new kakao.maps.Map(mapContainer, options);
-                set({ map });
+                    // ❗ 무조건 새로 생성
+                    const map = new kakao.maps.Map(mapContainer, options);
+                    set({ map });
+                });
             } else {
-                const moveLatLon = new kakao.maps.LatLng(lat, lng);
-                get().map.setCenter(moveLatLon);
+                setTimeout(waitForKakao, 100);
             }
-        });
+        };
+
+        waitForKakao();
     },
 
     setMarkers: (lat, lng) => {

@@ -7,17 +7,37 @@ $filter-line-width: 90%;
 
     .inner {
         @include g.myFlex(flex-start, 24px, stretch);
+        transition: gap 0.35s ease;
 
         &.filter-hidden {
-            display: block;
+            gap: 0;
+        }
+
+        .filter-sidebar {
+            width: 15%;
+            min-width: 190px;
+            flex: 0 0 15%;
+            overflow: hidden;
+            opacity: 1;
+            transform: translateX(0);
+            transition: width 0.35s ease, min-width 0.35s ease, flex-basis 0.35s ease, opacity 0.25s ease, transform 0.35s ease;
+
+            &.is-hidden {
+                width: 0;
+                min-width: 0;
+                flex-basis: 0;
+                opacity: 0;
+                transform: translateX(-16px);
+            }
         }
 
         .filter-wrap {
-            width: 15%;
+            width: 100%;
             min-width: 190px;
             padding: 120px 0 0 0;
             border-right: 1px solid $filter-line-color;
             // background: g.$sub-color;
+            transition: opacity 0.25s ease;
 
             .filter-title {
                 position: relative;
@@ -114,8 +134,13 @@ $filter-line-width: 90%;
 
                 .filter-main-label {
                     font-size: g.$size-14-main;
-                    font-weight: g.$Bold;
+                    font-weight: g.$Regular;
                     color: g.$text-sub-color;
+
+                    &.is-active {
+                        font-weight: g.$Bold;
+                        color: g.$text-main-color;
+                    }
                 }
 
                 .sub-menu {
@@ -145,6 +170,11 @@ $filter-line-width: 90%;
                         &:hover {
                             color: g.$text-main-color;
                         }
+
+                        &.is-active {
+                            color: g.$text-main-color;
+                            font-weight: g.$Bold;
+                        }
                     }
                 }
             }
@@ -153,6 +183,15 @@ $filter-line-width: 90%;
                 margin-top: 48px;
                 padding-top: 32px;
                 border-top: 1px solid $filter-line-color;
+            }
+
+            .price {
+                width: 100%;
+
+                .price-range-box {
+                    margin-top: 16px;
+                    width: 90%;
+                }
             }
 
             .color-list-wrap {
@@ -181,6 +220,16 @@ $filter-line-width: 90%;
                         // border-radius: 50%;
                     }
                 }
+
+                .color-more-btn {
+                    margin-top: 12px;
+                    padding: 0;
+                    border: 0;
+                    background: transparent;
+                    color: g.$text-sub-color;
+                    font-size: g.$size-14-main;
+                    cursor: pointer;
+                }
             }
         }
 
@@ -188,6 +237,7 @@ $filter-line-width: 90%;
             min-width: 0;
             flex: 1;
             padding: 120px 0 80px;
+            transition: width 0.35s ease, margin-left 0.35s ease;
 
             &.filter-hidden {
                 width: 100%;
@@ -374,7 +424,7 @@ $filter-line-width: 90%;
                                     display: inline-flex;
                                     align-items: center;
                                     justify-content: center;
-                                    padding: 6px 8px 4px;
+                                    padding: 6px 8px 3px;
                                     line-height: 1;
                                     border: 1px solid g.$main-color;
                                     background: g.$main-color;
@@ -461,7 +511,7 @@ $filter-line-width: 90%;
                             .color-chip {
                                 display: block;
                                 width: 12px;
-                                height: 5px;
+                                height: 12px;
                                 border: 1px solid rgba(g.$main-color, 0.3);
                                 flex-shrink: 0;
                                 // border-radius: 50%;

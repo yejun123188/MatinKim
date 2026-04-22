@@ -93,7 +93,7 @@ export default function Cart({ onClose }) {
                 <div className="cart-header">
                     <h2>Shopping Bag</h2>
                     <button className="close-btn" type="button" onClick={onClose}>
-                        <img src="./images/sub-cart/x-icon.svg" alt="x버튼" />
+                        <img src="/images/sub-cart/x-icon.svg" alt="x버튼" />
                     </button>
                 </div>
 

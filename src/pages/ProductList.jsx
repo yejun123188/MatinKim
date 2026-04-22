@@ -5,6 +5,28 @@ import Filter from '../components/Filter';
 import ProductCard from '../components/ProductCard';
 import "./scss/productList.scss"
 
+const TAG_ROUTE_MAP = {
+    sale: "SALE",
+    newin: "NEW IN",
+    musthave: "MUST HAVE",
+    collab: "COLLAB",
+    all: "ALL"
+};
+
+const TAG_DESCRIPTION_MAP = {
+    "SALE": "세일",
+    "NEW IN": "신상품",
+    "MUST HAVE": "인기상품",
+    "COLLAB": "콜라보",
+    "ALL": "전체상품"
+};
+
+const CATEGORY1_DESCRIPTION_MAP = {
+    "CLOTHING": "의류",
+    "GOODS": "굿즈",
+    "ACCESSORIES": "액세서리"
+};
+
 export default function ProductList() {
     const ITEMS_PER_ROW = 4;
     const MAX_VISIBLE_ROWS = 5;
@@ -15,6 +37,7 @@ export default function ProductList() {
     const params = useParams();
     const mainCate = params.category1;
     const subCategory = params.category2;
+    const tagCategory = TAG_ROUTE_MAP[(mainCate || '').toLowerCase()] || null;
     const [currentPage, setCurrentPage] = useState(1);
     const [sortBy, setSortBy] = useState('newest');
     const [showFilter, setShowFilter] = useState(true);
@@ -22,6 +45,12 @@ export default function ProductList() {
     console.log("카테고리", mainCate, subCategory);
     // 상태 가져오기
     const { items, onFetchItem } = useProductStore();
+
+    // 🐱‍🐉@@@@@@@@@@@@@@@@가격 상태 추가
+    const [priceRange, setPriceRange] = useState({
+        min: 5000,
+        max: 1000000
+    })
 
     // 데이터 불러오기
     useEffect(() => {
@@ -40,6 +69,23 @@ export default function ProductList() {
     //카테고리별 필터링
     // let cateItems = onItemsCategory(category);
     let cateItems = items.filter((item) => {
+        if (tagCategory) {
+            if (tagCategory === 'ALL') {
+                return !(item.price < priceRange.min || item.price > priceRange.max);
+            }
+
+            if (tagCategory === 'SALE') {
+                if (item.discountRate <= 0) return false;
+                return !(item.price < priceRange.min || item.price > priceRange.max);
+            }
+
+            if (!Array.isArray(item.tag) || !item.tag.includes(tagCategory)) {
+                return false;
+            }
+
+            return !(item.price < priceRange.min || item.price > priceRange.max);
+        }
+
         //1.메인 메뉴 카테고리 필터
         if (mainCate && item.category1.toUpperCase() !== mainCate) {
             return false;
@@ -48,6 +94,8 @@ export default function ProductList() {
         if (subCategory && item.category2.toUpperCase() !== subCategory) {
             return false;
         }
+        // // 🐱‍🐉@@@@@@@@@@@@@@@@가격
+        if (item.price < priceRange.min || item.price > priceRange.max) return false
         return true
     })
 
@@ -113,8 +161,14 @@ export default function ProductList() {
         "Pouches & Cases": "파우치",
         Others: "기타"
     };
-    const bannerTitle = filteredItems[0]?.category2 || decodeURIComponent(subCategory || '');
-    const bannerDescription = subMenuMap[bannerTitle] || bannerTitle;
+    const bannerTitle = tagCategory
+        || (subCategory ? (filteredItems[0]?.category2 || decodeURIComponent(subCategory)) : '')
+        || (mainCate ? mainCate.toUpperCase() : '');
+    const bannerDescription = tagCategory
+        ? (TAG_DESCRIPTION_MAP[tagCategory] || tagCategory)
+        : subCategory
+            ? (subMenuMap[bannerTitle] || bannerTitle)
+            : (CATEGORY1_DESCRIPTION_MAP[bannerTitle] || bannerTitle);
     const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
     const currentPageGroup = Math.ceil(currentPage / PAGE_BUTTON_LIMIT);
     const startPage = (currentPageGroup - 1) * PAGE_BUTTON_LIMIT + 1;
@@ -132,7 +186,9 @@ export default function ProductList() {
     return (
         <main className='product-list-wrap'>
             <div className={`inner ${!showFilter ? 'filter-hidden' : ''}`}>
-                {showFilter && <Filter colorCount={colorCount} />}
+                <div className={`filter-sidebar ${!showFilter ? 'is-hidden' : ''}`}>
+                    <Filter colorCount={colorCount} onPriceChange={setPriceRange} />
+                </div>
                 <div className={`product-list-wrap ${!showFilter ? 'filter-hidden' : ''}`}>
                     <div className='section-banner'>
                         <img className='banner-img' src="/images/collection/liz/img_liz_00024.jpg" alt={bannerTitle} />
