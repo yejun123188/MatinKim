@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // 컬러 ==================
 // 브랜드
 $main-color: #1e1e1e;
@@ -101,7 +103,7 @@ $breakpoints: (
 );
 
 @mixin respond($key) {
-  @media (max-width: map-get($breakpoints, $key)) {
+  @media (max-width: map.get($breakpoints, $key)) {
     @content;
   }
 }

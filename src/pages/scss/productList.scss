@@ -309,29 +309,53 @@ $filter-line-width: 90%;
                     gap: 24px;
                     flex-wrap: wrap;
 
-                    .filter-toggle-btn {
-                        display: inline-flex;
+                    .filter-actions {
+                        display: flex;
                         align-items: center;
-                        gap: 8px;
-                        padding: 10px 20px;
-                        background: g.$white-color;
-                        border: 1px solid rgba(g.$main-color, 0.2);
-                        color: g.$main-color;
-                        font-size: g.$size-14-main;
-                        font-weight: g.$Regular;
-                        cursor: pointer;
-                        transition: all 0.2s ease;
+                        gap: 16px;
+                        flex-wrap: wrap;
 
-                        &:hover {
-                            border-color: g.$main-color;
+                        .filter-toggle-btn {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            padding: 10px 20px;
+                            background: g.$white-color;
+                            border: 1px solid rgba(g.$main-color, 0.2);
                             color: g.$main-color;
+                            font-size: g.$size-14-main;
+                            font-weight: g.$Regular;
+                            cursor: pointer;
+                            transition: all 0.2s ease;
+
+                            &:hover {
+                                border-color: g.$main-color;
+                                color: g.$main-color;
+                            }
+
+                            img {
+                                width: 14px;
+                                height: 14px;
+                                object-fit: contain;
+                                flex-shrink: 0;
+                            }
                         }
 
-                        img {
-                            width: 14px;
-                            height: 14px;
-                            object-fit: contain;
-                            flex-shrink: 0;
+                        .soldout-checkbox {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            color: g.$text-sub-color;
+                            font-size: g.$size-14-main;
+                            cursor: pointer;
+
+                            input {
+                                width: 16px;
+                                height: 16px;
+                                margin: 0;
+                                accent-color: g.$main-color;
+                                cursor: pointer;
+                            }
                         }
                     }
 
@@ -438,6 +462,12 @@ $filter-line-width: 90%;
                                 .discount-badge {
                                     background: g.$red-color;
                                     border-color: g.$red-color;
+                                    color: g.$white-color;
+                                }
+
+                                .soldout-badge {
+                                    background: #8c8c8c;
+                                    border-color: #8c8c8c;
                                     color: g.$white-color;
                                 }
                             }
