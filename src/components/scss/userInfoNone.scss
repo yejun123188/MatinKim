@@ -1,0 +1,19 @@
+@use "../../App.scss" as g;
+
+.none-info-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  p {
+    font-size: g.$size-14-main;
+    color: g.$text-sub-color;
+  }
+}

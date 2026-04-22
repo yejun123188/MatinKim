@@ -3,13 +3,15 @@ import UserInfoMainBox from "./UserInfoMainBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
+import "./scss/userInfoMain.scss";
 
 import { FreeMode } from "swiper/modules";
 import OptionPopup from "./OptionPopup";
+import UserInfoNone from "./UserInfoNone";
 
 const statusCode = {
-  주문확인: "ORDER",
-  상품준비중: "READY",
+  주문확인중: "ORDER",
+  배송준비중: "READY",
   배송시작: "START",
   배송중: "ING",
   배송완료: "DONE",
@@ -31,9 +33,9 @@ const orders = [
     name: "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
     img: "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
     price: 68000,
-    status: "상품준비중",
+    status: "배송준비중",
     size: "L",
-    count: "1",
+    count: 1,
   },
   {
     id: 2,
@@ -42,7 +44,7 @@ const orders = [
     price: 198000,
     status: "배송중",
     size: "L",
-    count: "1",
+    count: 1,
   },
   {
     id: 3,
@@ -51,7 +53,7 @@ const orders = [
     price: 58000,
     status: "배송완료",
     size: "FREE",
-    count: "1",
+    count: 1,
   },
 ];
 
@@ -64,7 +66,7 @@ const wishs = [
     discountRate: 0,
     discountPrice: 68000,
     size: "FREE",
-    count: "1",
+    count: 1,
   },
   {
     id: 2,
@@ -74,7 +76,7 @@ const wishs = [
     discountRate: 30,
     discountPrice: 178000,
     size: "M",
-    count: "1",
+    count: 1,
   },
   {
     id: 3,
@@ -84,7 +86,7 @@ const wishs = [
     discountRate: 10,
     discountPrice: 78000,
     size: "L",
-    count: "2",
+    count: 2,
   },
 ];
 
@@ -135,79 +137,92 @@ export default function UserInfoMain() {
       </div>
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
-          <Swiper
-            slidesPerView={2.7}
-            spaceBetween={24}
-            freeMode={true}
-            modules={[FreeMode]}
-            className="order-list"
-          >
-            {orders.map((order) => (
-              <SwiperSlide className="order-product" key={order.id}>
-                <div className="img-box">
-                  <img src={order.img} alt={order.name} />
-                </div>
-                <div className="text-box">
-                  <div className={`status status-${statusCode[order.status]}`}>
-                    {order.status === "배송중" && <span className="dot"></span>}
-                    {order.status}
+          {orders.length > 0 ? (
+            <Swiper
+              slidesPerView={2.7}
+              spaceBetween={24}
+              freeMode={true}
+              modules={[FreeMode]}
+              className="order-list"
+            >
+              {orders.map((order) => (
+                <SwiperSlide className="order-product" key={order.id}>
+                  <div className="img-box">
+                    <img src={order.img} alt={order.name} />
                   </div>
-                  <div className="product-text">
-                    <p className="order-name">{order.name}</p>
-                    <p className="order-count">
-                      {order.size} / {order.count}개
-                    </p>
+                  <div className="text-box">
+                    <div
+                      className={`status status-${statusCode[order.status]}`}
+                    >
+                      {order.status === "배송중" && (
+                        <span className="dot"></span>
+                      )}
+                      {order.status}
+                    </div>
+                    <div className="product-text">
+                      <p className="order-name">{order.name}</p>
+                      <p className="order-count">
+                        {order.size} / {order.count}개
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <UserInfoNone title="주문" />
+          )}
         </UserInfoMainBox>
       </div>
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
-          <Swiper
-            slidesPerView={2.7}
-            spaceBetween={24}
-            freeMode={true}
-            modules={[FreeMode]}
-            className="wish-list"
-          >
-            {wishs.map((wish) => (
-              <SwiperSlide className="wish-product" key={wish.id}>
-                <div className="img-box">
-                  <img src={wish.img} alt={wish.name} />
-                </div>
-                <div className="text-box">
-                  <div className="text-wrap">
-                    <p className="wish-name">{wish.name}</p>
-                    <p className="wish-price">
-                      ￦{wish.price.toLocaleString()}
-                      {wish.discountRate > 0 && (
-                        <span>￦{wish.discountPrice.toLocaleString()}</span>
-                      )}
-                    </p>
-                    <p className="wish-count">
-                      {wish.size} / {wish.count}개
-                    </p>
+          {wishs.length > 0 ? (
+            <Swiper
+              slidesPerView={2.7}
+              spaceBetween={24}
+              freeMode={true}
+              modules={[FreeMode]}
+              className="wish-list"
+            >
+              {wishs.map((wish) => (
+                <SwiperSlide className="wish-product" key={wish.id}>
+                  <div className="img-box">
+                    <img src={wish.img} alt={wish.name} />
                   </div>
-                  <div className="button-wrap">
-                    <button
-                      className="Bbtn"
-                      onClick={() => {
-                        setSelectedItem(wish);
-                        setOptionOpen(true);
-                      }}
-                    >
-                      Edit Options
-                    </button>
-                    <button className="Wbtn">Add To Cart</button>
-                    <button className="Wbtn">Remove</button>
+                  <div className="text-box">
+                    <div className="text-wrap">
+                      <p className="wish-name">{wish.name}</p>
+                      <p className="wish-price">
+                        ￦{wish.price.toLocaleString()}
+                        {wish.discountRate > 0 && (
+                          <span>￦{wish.discountPrice.toLocaleString()}</span>
+                        )}
+                      </p>
+                      <p className="wish-count">
+                        {wish.size} / {wish.count}개
+                      </p>
+                    </div>
+                    <div className="button-wrap">
+                      <button
+                        className="Bbtn"
+                        onClick={() => {
+                          setSelectedItem(wish);
+                          setOptionOpen(true);
+                        }}
+                      >
+                        Edit Options
+                      </button>
+                      <button className="Wbtn">Add To Cart</button>
+                      <button className="Wbtn">Remove</button>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <UserInfoNone title="관심상품" />
+          )}
+
           <OptionPopup
             open={optionOpen}
             data={selectedItem}

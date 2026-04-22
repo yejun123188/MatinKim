@@ -6,6 +6,8 @@ import "./scss/userInfo.scss";
 import WishList from "../components/WishList";
 import OrderList from "../components/OrderList";
 import CouponList from "../components/CouponList";
+import SavedMoney from "../components/SavedMoney";
+import Adress from "../components/Adress";
 
 export default function UserInfo() {
   const location = useLocation();
@@ -25,11 +27,11 @@ export default function UserInfo() {
       case "위시리스트":
         return <WishList />;
       case "적립금":
-        return <p></p>;
+        return <SavedMoney />;
       case "쿠폰":
         return <CouponList />;
       case "배송지 관리":
-        return <p></p>;
+        return <Adress />;
       case "1:1 문의":
         return <p></p>;
       case "최근 본 상품":

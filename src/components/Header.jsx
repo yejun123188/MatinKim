@@ -95,7 +95,7 @@ export default function Header() {
                         menu.key === "shop" && setIsShopHovered(false)
                       }
                     >
-                      <Link to={`/${menu.key}`}>{menu.label}</Link>
+                      <Link to={menu.key === "shop" ? "/all" : `/${menu.key}`}>{menu.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -149,7 +149,7 @@ export default function Header() {
                 <ul className="main-menu">
                   {menus.map((menu, id) => (
                     <li key={id}>
-                      {menu.name}
+                      <Link to={menu.link}>{menu.name}</Link>
                       <ul className="sub-menu">
                         {menu.subMenu.map((m, id) => (
                           <li key={id}>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import projects from "../data/projects.json"
 import "./scss/ProjectDetail.scss"
 
@@ -7,6 +7,8 @@ export default function ProjectDetail() {
     const { id } = useParams();
 
     const [post, setPost] = useState();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!id || id.length === 0) return;
@@ -60,7 +62,7 @@ export default function ProjectDetail() {
                 ))}
             </ul>
             <div className="button">
-                <button>뒤로백하기 버튼</button>
+                <button onClick={() => navigate(-1)}>Back to List</button>
             </div>
         </div>
     )

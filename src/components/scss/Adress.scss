@@ -1,0 +1,121 @@
+@use "../../App.scss" as g;
+
+.address-wrap {
+    background-color: g.$sub-color;
+    padding: 30px;
+
+    .address-top {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .address-middle {
+        padding: 30px 0;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .address-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #ddd;
+
+        .item-left {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+
+            input {
+                width: 18px;
+                height: 18px;
+                margin-top: 6px;
+            }
+
+            .content {
+                .show {
+                    display: inline-block;
+                    background: #111;
+                    color: #fff;
+                    padding: 4px 10px;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+
+                .address-list {
+                    li {
+                        margin-bottom: 6px;
+                        font-size: g.$size-14-main;
+                    }
+
+                    span {
+                        display: inline-block;
+                        width: 90px;
+                        color: #999;
+                    }
+                }
+            }
+        }
+
+        .item-right {
+            display: flex;
+            gap: 10px;
+
+            button {
+                padding: 8px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                cursor: pointer;
+                background: #111;
+                color: #fff;
+            }
+        }
+    }
+
+    .address-bottom {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .explain-list {
+            li {
+                font-size: 13px;
+                color: #555;
+                margin-bottom: 6px;
+            }
+        }
+
+        .button {
+            display: flex;
+            gap: 10px;
+
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            button:first-child {
+                background: #111;
+                color: #fff;
+            }
+
+            button:last-child {
+                border: 1px solid #ccc;
+                background: #fff;
+            }
+        }
+    }
+}
