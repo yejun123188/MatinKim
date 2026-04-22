@@ -1,6 +1,4 @@
 import React from "react";
-import UserInfo from "../pages/UserInfo";
-import UserInfoMain from "./UserInfoMain";
 
 const userMenu = [
   "주문내역",

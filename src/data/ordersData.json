@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "state": "주문완료",
+    "date": "20260420",
+    "orderNumber": "MK-20260420-17861",
+    "name": "마뗑킴",
+    "phone": "010-1234-5678",
+    "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
+    "payment": "신용카드",
+    "deliveryCost": 0,
+    "orders": [
+      {
+        "id": 101,
+        "name": "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
+        "img": "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
+        "price": 68000,
+        "status": "배송준비중",
+        "size": "L",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "state": "주문완료",
+    "date": "20260419",
+    "orderNumber": "MK-20260419-17832",
+    "name": "마뗑킴",
+    "phone": "010-1234-5678",
+    "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
+    "payment": "신용카드",
+    "deliveryCost": 0,
+    "orders": [
+      {
+        "id": 201,
+        "name": "PATCHWORK CARGO BERMUDA PANTS FOR MEN IN BEIGE",
+        "img": "https://matinkim.com/web/product/medium/202604/af24497fdacbac8b575687c878af7669.jpg",
+        "price": 198000,
+        "status": "배송중",
+        "size": "L",
+        "count": 1
+      },
+      {
+        "id": 202,
+        "name": "MATIN LIGHT MESH CAP IN BLACK",
+        "img": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/de8e4df27a4d897c4f265a7c5ac38a09.jpg",
+        "price": 58000,
+        "status": "배송완료",
+        "size": "FREE",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "state": "취소",
+    "date": "20260418",
+    "orderNumber": "MK-20260418-17795",
+    "name": "마뗑킴",
+    "phone": "010-1234-5678",
+    "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
+    "payment": "신용카드",
+    "deliveryCost": 0,
+    "orders": [
+      {
+        "id": 301,
+        "name": "CAMOUFLAGE LOGO BALL CAP IN BEIGE",
+        "img": "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/377cb8c737dfecc223743aada3501cf5.jpg",
+        "price": 68000,
+        "status": "취소요청처리중",
+        "size": "FREE",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "state": "반품",
+    "date": "20260417",
+    "orderNumber": "MK-20260417-17754",
+    "name": "마뗑킴",
+    "phone": "010-1234-5678",
+    "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
+    "payment": "신용카드",
+    "deliveryCost": 0,
+    "orders": [
+      {
+        "id": 401,
+        "name": "WAIST BUCKLE STITCH POINT TWILL DENIM PANTS IN BROWN",
+        "img": "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
+        "price": 124600,
+        "status": "반품완료",
+        "size": "M",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "state": "과거주문",
+    "date": "20220420",
+    "orderNumber": "MK-20220420-10211",
+    "name": "마뗑킴",
+    "phone": "010-1234-5678",
+    "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
+    "payment": "신용카드",
+    "deliveryCost": 0,
+    "orders": [
+      {
+        "id": 501,
+        "name": "WAIST BUCKLE STITCH POINT TWILL DENIM PANTS IN BROWN",
+        "img": "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
+        "price": 124600,
+        "status": "조회불가",
+        "size": "M",
+        "count": 1
+      }
+    ]
+  }
+]
