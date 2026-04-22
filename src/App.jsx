@@ -29,8 +29,10 @@ function App() {
   const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
   const { onFetchStore, stores, } = useMapStore();
+  const { initAuth } = useAuthStore();
 
   useEffect(() => {
+    initAuth();
     onFetchItem();
     onMenus();
     onFetchStore();
@@ -58,6 +60,7 @@ function App() {
           <Route path="stockist" element={<Stockist />} />
         </Route>
         <Route path="/userInfo" element={<UserInfo />} />
+        <Route path="/userInfo/orders/:id/:action/:itemId" element={<UserInfo />} />
         <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/qna" element={<Qna />} />
         <Route path="/product-authentication" element={<ProductAuthentication />} />
