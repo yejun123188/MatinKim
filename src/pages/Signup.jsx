@@ -218,7 +218,7 @@ export default function Signup() {
                 profile: "",
             });
 
-            alert("회원가입이 완료되었습니다. 이메일 인증 후 로그인해주세요.");
+
             navigate("/");
         } catch (err) {
             console.error("회원가입 실패:", err);

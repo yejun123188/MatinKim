@@ -8,21 +8,25 @@ export default function Login({ onClose }) {
   const [password, setPassword] = useState("");
   const [googleLoading, setGoogleLoading] = useState(false);
 
+  const [errors, setErrors] = useState({
+    userId: false,
+    password: false,
+  });
+
   const { onLoginByUserId, onGoogleLogin } = useAuthStore();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!userId.trim()) {
-      alert("아이디를 입력해주세요.");
-      return;
-    }
+    const newErrors = {
+      userId: !userId.trim(),
+      password: !password.trim(),
+    };
 
-    if (!password.trim()) {
-      alert("비밀번호를 입력해주세요.");
-      return;
-    }
+    setErrors(newErrors);
+
+    if (newErrors.userId || newErrors.password) return;
 
     try {
       await onLoginByUserId(userId, password);
@@ -70,22 +74,34 @@ export default function Login({ onClose }) {
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="input-wrap">
+            <div className={`input-wrap ${errors.userId ? "error" : ""}`}>
               <input
                 type="text"
                 placeholder="아이디*"
                 value={userId}
-                onChange={(e) => setUserId(e.target.value)}
+                onChange={(e) => {
+                  setUserId(e.target.value);
+                  setErrors((prev) => ({ ...prev, userId: false }));
+                }}
               />
+              {errors.userId && (
+                <p className="error-text">아이디 항목은 필수 입력값입니다.</p>
+              )}
             </div>
 
-            <div className="input-wrap">
+            <div className={`input-wrap ${errors.password ? "error" : ""}`}>
               <input
                 type="password"
                 placeholder="비밀번호*"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setErrors((prev) => ({ ...prev, password: false }));
+                }}
               />
+              {errors.password && (
+                <p className="error-text">패스워드 항목은 필수 입력값입니다.</p>
+              )}
             </div>
 
             <label className="save-id">

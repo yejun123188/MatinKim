@@ -1,15 +1,20 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    sendEmailVerification,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+} from "firebase/auth";
+
 import { create } from "zustand";
 import { auth, db, googleProvider } from "../firebase/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
-
-
-
 export const useAuthStore = create((set, get) => ({
     user: null,
 
-
+    // 🔹 로그인 상태 유지
     initAuth: () => {
         onAuthStateChanged(auth, async (firebaseUser) => {
             if (!firebaseUser) {
@@ -20,6 +25,7 @@ export const useAuthStore = create((set, get) => ({
             const providerId = firebaseUser.providerData?.[0]?.providerId;
             const isEmailPasswordUser = providerId === "password";
 
+            // 이메일 인증 안 했으면 로그인 막기
             if (isEmailPasswordUser && !firebaseUser.emailVerified) {
                 alert("이메일 인증을 먼저 해주세요!!!");
                 await signOut(auth);
@@ -48,37 +54,8 @@ export const useAuthStore = create((set, get) => ({
         });
     },
 
-    onMember: async ({ uName, nickname, email, password, phone, profile }) => {
-        try {
-
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(userCredential);
-            const user = userCredential.user;
-
-
-            await sendEmailVerification(user);
-
-
-            const userRef = doc(db, "users", user.uid)
-
-
-            const userInfo = {
-                uid: user.uid,
-                name: uName,
-                nickname,
-                email,
-                phone,
-                profile
-            }
-
-            await setDoc(userRef, userInfo);
-
-            alert("회원가입 성공! 이메일 인증을 완료해주세요")
-        }
-        catch (err) {
-            alert(err.message)
-        }
-    }, onMember: async ({
+    // 🔥 회원가입 (아이디 + 이메일 저장)
+    onMember: async ({
         userId,
         uName,
         nickname,
@@ -88,7 +65,7 @@ export const useAuthStore = create((set, get) => ({
         profile,
         gender,
         birth,
-        agreements
+        agreements,
     }) => {
         try {
             // 아이디 중복 체크
@@ -99,11 +76,18 @@ export const useAuthStore = create((set, get) => ({
                 throw new Error("이미 사용 중인 아이디입니다.");
             }
 
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            // Firebase 회원 생성
+            const userCredential = await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
             const user = userCredential.user;
 
+            // 이메일 인증 발송
             await sendEmailVerification(user);
 
+            // 사용자 정보 저장
             const userRef = doc(db, "users", user.uid);
 
             const userInfo = {
@@ -121,22 +105,27 @@ export const useAuthStore = create((set, get) => ({
 
             await setDoc(userRef, userInfo);
 
-            // 아이디로 이메일 찾기 위한 매핑 저장
+            // 🔥 아이디 → 이메일 매핑 저장 (로그인 핵심)
             await setDoc(userIdRef, {
                 uid: user.uid,
                 email,
             });
 
-            alert("회원가입 성공! 이메일 인증을 완료해주세요.");
+            alert("회원가입 성공!");
         } catch (err) {
             console.error("회원가입 에러:", err);
             throw err;
         }
     },
 
+    // 🔹 이메일 로그인 (기본)
     onLogin: async (email, password) => {
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
             set({ user: userCredential.user });
             return userCredential.user;
         } catch (err) {
@@ -144,6 +133,8 @@ export const useAuthStore = create((set, get) => ({
             throw err;
         }
     },
+
+    // 🔥 아이디 로그인 (핵심)
     onLoginByUserId: async (userId, password) => {
         try {
             const userIdRef = doc(db, "userIds", userId);
@@ -155,7 +146,12 @@ export const useAuthStore = create((set, get) => ({
 
             const { email } = userIdSnap.data();
 
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
             const firebaseUser = userCredential.user;
 
             const userRef = doc(db, "users", firebaseUser.uid);
@@ -174,10 +170,12 @@ export const useAuthStore = create((set, get) => ({
         }
     },
 
+    // 🔹 구글 로그인
     onGoogleLogin: async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             const user = result.user;
+
             const userRef = doc(db, "users", user.uid);
             const userDoc = await getDoc(userRef);
 
@@ -205,5 +203,12 @@ export const useAuthStore = create((set, get) => ({
             throw err;
         }
     },
-
-}))
+    onLogout: async () => {
+        try {
+            await signOut(auth);
+            set({ user: null });
+        } catch (err) {
+            console.error("로그아웃 에러:", err);
+        }
+    },
+}));
