@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerificati
 import { create } from "zustand";
 import { auth, db, googleProvider } from "../firebase/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-
+import { collection, addDoc } from "firebase/firestore";
 
 
 
@@ -122,5 +122,23 @@ export const useAuthStore = create((set, get) => ({
             throw err;
         }
     },
+    addAddress: async (addressData) => {
+        const { user } = get();
+
+        if (!user) {
+            alert("로그인이 필요합니다");
+            return;
+        }
+
+        try {
+            const addressRef = collection(db, "users", user.uid, "addresses");
+
+            await addDoc(addressRef, addressData);
+
+            alert("배송지 등록 완료!");
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
 }))

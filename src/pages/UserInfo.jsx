@@ -8,6 +8,7 @@ import OrderList from "../components/OrderList";
 import CouponList from "../components/CouponList";
 import SavedMoney from "../components/SavedMoney";
 import OrderDetail from "../components/OrderDetail";
+import Adress from "../components/Adress";
 
 const DEFAULT_MENU = "마이페이지";
 const ORDER_MENU = "주문내역";
