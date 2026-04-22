@@ -22,7 +22,7 @@ import { useMapStore } from "./store/useMapStore";
 import AddressRegister from "./components/AddressRegister";
 import ProductAuthentication from "./pages/ProductAuthentication";
 import Signup from "./pages/Signup";
-import { useAuthStore } from "./store/useAuthStore";
+import Payment from "./pages/Payment";
 
 function App() {
   const location = useLocation();
@@ -48,6 +48,7 @@ function App() {
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/guest-order" element={<GuestOrder />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
