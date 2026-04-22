@@ -1,32 +1,40 @@
 import React, { useState } from "react";
 import "./scss/Login.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from "../store/useAuthStore";
 
 export default function Login({ onClose }) {
-
-
-  const [email, setEmail] = useState("");
-  const [password, setPassWord] = useState("");
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
   const [googleLoading, setGoogleLoading] = useState(false);
 
+  const [errors, setErrors] = useState({
+    userId: false,
+    password: false,
+  });
 
-  const { onLogin, onGoogleLogin } = useAuthStore();
-
-
+  const { onLoginByUserId, onGoogleLogin } = useAuthStore();
   const navigate = useNavigate();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const newErrors = {
+      userId: !userId.trim(),
+      password: !password.trim(),
+    };
+
+    setErrors(newErrors);
+
+    if (newErrors.userId || newErrors.password) return;
+
     try {
-      await onLogin(email, password);
+      await onLoginByUserId(userId, password);
       navigate("/");
       onClose?.();
     } catch (error) {
-      console.error("이메일 로그인 실패:", error);
-      alert(error.code || error.message);
+      console.error("아이디 로그인 실패:", error);
+      alert(error.code || error.message || "로그인에 실패했습니다.");
     }
   };
 
@@ -35,56 +43,65 @@ export default function Login({ onClose }) {
 
     try {
       setGoogleLoading(true);
-      console.log("구글 로그인 시작");
 
-      const user = await onGoogleLogin();
-      console.log("구글 로그인 성공:", user);
-
+      await onGoogleLogin();
       navigate("/");
       onClose?.();
     } catch (error) {
       console.error("구글 로그인 실패:", error);
-      alert(error.code || error.message);
+      alert(error.code || error.message || "구글 로그인에 실패했습니다.");
     } finally {
       setGoogleLoading(false);
     }
   };
 
   return (
-    <div className="login-page" >
-
+    <div className="login-page">
       <div className="login-dim" onClick={onClose}></div>
-      <div className="login-right">
 
+      <div className="login-right">
         <div className="login-box">
           <div className="login-top">
             <h2>Log In</h2>
             <button
+              type="button"
               className="close-btn"
               aria-label="닫기"
-              onClick={onClose} >
+              onClick={onClose}
+            >
               <img src="/images/sub-login/x-icon.svg" alt="닫기" />
             </button>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="input-wrap error">
+            <div className={`input-wrap ${errors.userId ? "error" : ""}`}>
               <input
                 type="text"
                 placeholder="아이디*"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={userId}
+                onChange={(e) => {
+                  setUserId(e.target.value);
+                  setErrors((prev) => ({ ...prev, userId: false }));
+                }}
               />
-              {/* <p className="error-text">아이디 항목은 필수 입력값입니다.</p> */}
+              {errors.userId && (
+                <p className="error-text">아이디 항목은 필수 입력값입니다.</p>
+              )}
             </div>
 
-            <div className="input-wrap">
+            <div className={`input-wrap ${errors.password ? "error" : ""}`}>
               <input
                 type="password"
                 placeholder="비밀번호*"
                 value={password}
-                onChange={(e) => setPassWord(e.target.value)}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setErrors((prev) => ({ ...prev, password: false }));
+                }}
               />
+              {errors.password && (
+                <p className="error-text">패스워드 항목은 필수 입력값입니다.</p>
+              )}
             </div>
 
             <label className="save-id">
@@ -107,14 +124,20 @@ export default function Login({ onClose }) {
                 <img src="/images/sub-login/kakao-icon.svg" alt="Kakao" />
                 <span>카카오로 시작하기</span>
               </button>
+
               <button type="button" className="naver">
                 <img src="/images/sub-login/naver-icon.svg" alt="Naver" />
                 <span>네이버로 시작하기</span>
               </button>
-              <button type="button" onClick={handleGoogleLogin} className="google"
-                disabled={googleLoading}>
+
+              <button
+                type="button"
+                onClick={handleGoogleLogin}
+                className="google"
+                disabled={googleLoading}
+              >
                 <img src="/images/sub-login/google-icon.svg" alt="Google" />
-                <span>Google로 로그인</span>
+                <span>{googleLoading ? "로그인 중..." : "Google로 로그인"}</span>
               </button>
             </div>
 
