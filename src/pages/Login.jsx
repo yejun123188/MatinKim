@@ -32,27 +32,27 @@ export default function Login({ onClose }) {
     }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   const newErrors = {
-  //     userId: !userId.trim(),
-  //     password: !password.trim(),
-  //   };
+    const newErrors = {
+      userId: !userId.trim(),
+      password: !password.trim(),
+    };
 
-  //   setErrors(newErrors);
+    setErrors(newErrors);
 
-  //   if (newErrors.userId || newErrors.password) return;
+    if (newErrors.userId || newErrors.password) return;
 
-  //   try {
-  //     await onLoginByUserId(userId, password);
-  //     navigate("/");
-  //     onClose?.();
-  //   } catch (error) {
-  //     console.error("아이디 로그인 실패:", error);
-  //     alert(error.code || error.message || "로그인에 실패했습니다.");
-  //   }
-  // };
+    try {
+      await onLoginByUserId(userId, password);
+      navigate("/");
+      onClose?.();
+    } catch (error) {
+      console.error("아이디 로그인 실패:", error);
+      alert(error.code || error.message || "로그인에 실패했습니다.");
+    }
+  };
 
   const handleGoogleLogin = async () => {
     if (googleLoading) return;
@@ -90,7 +90,7 @@ export default function Login({ onClose }) {
           </div>
 
           <form
-          // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
           >
             <div className={`input-wrap ${errors.userId ? "error" : ""}`}>
               <input
