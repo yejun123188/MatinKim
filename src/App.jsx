@@ -66,6 +66,7 @@ function App() {
           element={<UserInfo />}
         />
         <Route path="/userInfo/orders/:id" element={<UserInfo />} />
+        <Route path="/userInfo/address" element={<AddressRegister />} />
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"

@@ -3,7 +3,7 @@
 .couponlist-wrap {
 
     .coupon-top {
-        background-color: g.$sub-color;
+        background-color: #FFFFFF;
         padding: 30px;
         margin-bottom: 24px;
 
@@ -20,7 +20,7 @@
         button {
             height: 45px;
             padding: 0 20px;
-            @include g.myBtn1(); 
+            @include g.myBtn1();
         }
 
         p {
@@ -42,7 +42,7 @@
     }
 
     .coupon-bottom {
-        background-color: g.$sub-color;
+        background-color: #FFFFFF;
         padding: 30px;
 
         .mycoupon-top {

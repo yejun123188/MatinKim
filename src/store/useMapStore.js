@@ -58,53 +58,40 @@ export const useMapStore = create((set, get) => ({
         const mapContainer = document.getElementById("map");
         if (!mapContainer) return;
 
-        const waitForKakao = () => {
-            if (window.kakao && window.kakao.maps) {
-                window.kakao.maps.load(() => {
-                    const { kakao } = window;
+        if (!window.google || !window.google.maps) {
+            console.error("구글 맵 아직 안 불러와짐");
+            return;
+        }
 
-                    const options = {
-                        center: new kakao.maps.LatLng(lat, lng),
-                        level: 4,
-                    };
+        const map = new window.google.maps.Map(mapContainer, {
+            center: { lat, lng },
+            zoom: 15,
+        });
 
-                    // ❗ 무조건 새로 생성
-                    const map = new kakao.maps.Map(mapContainer, options);
-                    set({ map });
-                });
-            } else {
-                setTimeout(waitForKakao, 100);
-            }
-        };
-
-        waitForKakao();
+        set({ map });
     },
 
     setMarkers: (lat, lng) => {
         const { map, markers } = get();
         if (!map) return;
 
-
+        // 기존 마커 제거
         markers.forEach(m => m.setMap(null));
 
-        const { kakao } = window;
-        const imgsrc = "/images/sub-about/maker.svg";
-        const imgsize = new kakao.maps.Size(64, 69);
-        const imgoption = { offset: new kakao.maps.Point(27, 69) };
-        const markerImg = new kakao.maps.MarkerImage(imgsrc, imgsize, imgoption);
-        const markerPosition = new kakao.maps.LatLng(lat, lng);
-
-        const marker = new kakao.maps.Marker({
-            position: markerPosition,
-            image: markerImg
+        const marker = new window.google.maps.Marker({
+            position: { lat, lng },
+            map: map,
+            icon: {
+                url: "/images/sub-about/maker.svg",
+                scaledSize: new window.google.maps.Size(64, 69),
+            }
         });
 
-        marker.setMap(map);
+        map.setCenter({ lat, lng });
 
-        map.setCenter(markerPosition);
-
-        set({ markers: [marker] }); // ✅ 배열로 저장
+        set({ markers: [marker] });
     },
+
     stores: [],
     country: [],
 
