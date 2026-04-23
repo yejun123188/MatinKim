@@ -49,18 +49,25 @@ export default function SavedMoney() {
                 </div>
 
                 <table>
-                    <tr>
-                        <th>주문날짜</th><th>적립금</th><th>관련주문</th><th>내용</th>
-
-                    </tr>
-                    {data[tab].map((item, i) => (
-                        <tr key={i}>
-                            <td>{item.date}</td>
-                            <td>{item.point}</td>
-                            <td>{item.order}</td>
-                            <td>{item.desc}</td>
+                    <thead>
+                        <tr>
+                            <th>주문날짜</th>
+                            <th>적립금</th>
+                            <th>관련주문</th>
+                            <th>내용</th>
                         </tr>
-                    ))}
+                    </thead>
+
+                    <tbody>
+                        {data[tab].map((item, i) => (
+                            <tr key={i}>
+                                <td>{item.date}</td>
+                                <td>{item.point}</td>
+                                <td>{item.order}</td>
+                                <td>{item.desc}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
 
             </div>

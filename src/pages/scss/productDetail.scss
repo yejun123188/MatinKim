@@ -237,6 +237,32 @@
     }
 }
 
+.detail-total-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.detail-total-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 3px;
+
+    .original-price {
+        font-size: g.$size-16;
+        color: g.$text-sub-color2;
+        opacity: 0.7;
+        text-decoration: line-through;
+    }
+
+    .discount-rate {
+        font-size: g.$size-16;
+        color: g.$red-color;
+        font-weight: g.$Bold;
+    }
+}
+
 .option-block {
     display: flex;
     flex-direction: column;
@@ -288,9 +314,10 @@
     }
 
     strong {
-        font-size: 0.9375rem;
+        font-size: g.$size-14-main;
         font-weight: g.$Bold;
         line-height: 1.3;
+        text-transform: uppercase;
     }
 }
 
@@ -371,6 +398,17 @@
         width: 14px;
         height: 14px;
         filter: invert(1);
+    }
+
+    &.is-soldout {
+        background: #8c8c8c;
+        border-color: #8c8c8c;
+        color: g.$white-color;
+        cursor: not-allowed;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
     }
 }
 
@@ -564,6 +602,12 @@
                     border-color: g.$red-color;
                     color: g.$white-color;
                 }
+
+                .soldout-badge {
+                    background: #8c8c8c;
+                    border-color: #8c8c8c;
+                    color: g.$white-color;
+                }
             }
 
             &::after {
@@ -632,7 +676,7 @@
             .color-chip {
                 display: block;
                 width: 12px;
-                height: 5px;
+                height: 12px;
                 border: 1px solid rgba(g.$main-color, 0.3);
                 flex-shrink: 0;
             }

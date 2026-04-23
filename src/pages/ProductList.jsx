@@ -41,6 +41,7 @@ export default function ProductList() {
     const [currentPage, setCurrentPage] = useState(1);
     const [sortBy, setSortBy] = useState('newest');
     const [showFilter, setShowFilter] = useState(true);
+    const [excludeSoldOut, setExcludeSoldOut] = useState(false);
 
     console.log("카테고리", mainCate, subCategory);
     // 상태 가져오기
@@ -59,7 +60,7 @@ export default function ProductList() {
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [mainCate, subCategory, sortBy]);
+    }, [mainCate, subCategory, sortBy, excludeSoldOut]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -69,6 +70,12 @@ export default function ProductList() {
     //카테고리별 필터링
     // let cateItems = onItemsCategory(category);
     let cateItems = items.filter((item) => {
+        const isSoldOutItem = Array.isArray(item.soldout) && item.soldout.length > 0 && item.soldout.every(Boolean);
+
+        if (excludeSoldOut && isSoldOutItem) {
+            return false;
+        }
+
         if (tagCategory) {
             if (tagCategory === 'ALL') {
                 return !(item.price < priceRange.min || item.price > priceRange.max);
@@ -199,14 +206,24 @@ export default function ProductList() {
                     </div>
                     <div className='section-bottom'>
                         <div className='filter-controls'>
-                            <button
-                                type="button"
-                                className='filter-toggle-btn'
-                                onClick={() => setShowFilter(!showFilter)}
-                            >
-                                <img src="/images/pages-icon/filter-icon.svg" alt="" aria-hidden="true" />
-                                {showFilter ? '필터 숨기기' : '필터 보이기'}
-                            </button>
+                            <div className='filter-actions'>
+                                <button
+                                    type="button"
+                                    className='filter-toggle-btn'
+                                    onClick={() => setShowFilter(!showFilter)}
+                                >
+                                    <img src="/images/pages-icon/filter-icon.svg" alt="" aria-hidden="true" />
+                                    {showFilter ? '필터 숨기기' : '필터 보이기'}
+                                </button>
+                                <label className='soldout-checkbox'>
+                                    <input
+                                        type="checkbox"
+                                        checked={excludeSoldOut}
+                                        onChange={(event) => setExcludeSoldOut(event.target.checked)}
+                                    />
+                                    <span>품절 상품 제외</span>
+                                </label>
+                            </div>
                             <div className='sort-buttons'>
                                 <button
                                     type="button"
