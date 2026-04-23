@@ -30,7 +30,7 @@ export default function Stockist() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (window.kakao && window.kakao.maps) {
+            if (window.google && window.google.maps) {
                 initMap(37.5435, 127.0543);
                 clearInterval(interval);
             }
@@ -39,7 +39,7 @@ export default function Stockist() {
         onFetchStore();
 
         return () => clearInterval(interval);
-    }, [])
+    }, []);
     return (
         <div className='stock'>
             <div className="inner">
