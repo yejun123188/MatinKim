@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./scss/AddressRegister.scss";
 import { useAuthStore } from "../store/useAuthStore";
+import { db } from "../firebase/firebase";
+import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
+
 export default function AddressRegister() {
     const navigate = useNavigate();
-
-
+    const location = useLocation();
+    const editData = location.state;
 
     const { addAddress } = useAuthStore();
+
     const [form, setForm] = useState({
         name: "",
         receiver: "",
@@ -23,9 +27,28 @@ export default function AddressRegister() {
         isDefault: false
     });
 
-
     const [errors, setErrors] = useState({});
 
+    useEffect(() => {
+        if (editData) {
+            const phoneSplit = editData.phone?.split("-") || ["010", "", ""];
+
+            setForm({
+                name: editData.name || "",
+                receiver: editData.receiver || "",
+                zipcode: "",
+                address: editData.address || "",
+                detail: "",
+                phone1: "02",
+                phone2: "",
+                phone3: "",
+                mobile1: phoneSplit[0],
+                mobile2: phoneSplit[1],
+                mobile3: phoneSplit[2],
+                isDefault: editData.isDefault || false
+            });
+        }
+    }, [editData]);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -35,7 +58,6 @@ export default function AddressRegister() {
             [name]: type === "checkbox" ? checked : value
         }));
 
-        //입력하면 에러 제거 
         setErrors((prev) => ({
             ...prev,
             [name]: ""
@@ -63,24 +85,12 @@ export default function AddressRegister() {
     const validate = () => {
         let newErrors = {};
 
-        if (!form.name.trim()) {
-            newErrors.name = "배송지명을 입력해주세요";
-        }
-
-        if (!form.receiver.trim()) {
-            newErrors.receiver = "받는 사람을 입력해주세요";
-        }
-
-        if (!form.zipcode) {
-            newErrors.zipcode = "주소를 입력해주세요";
-        }
-
-        if (!form.mobile2 || !form.mobile3) {
-            newErrors.mobile = "휴대전화를 입력해주세요";
-        }
+        if (!form.name.trim()) newErrors.name = "배송지명을 입력해주세요";
+        if (!form.receiver.trim()) newErrors.receiver = "받는 사람을 입력해주세요";
+        if (!form.zipcode) newErrors.zipcode = "주소를 입력해주세요";
+        if (!form.mobile2 || !form.mobile3) newErrors.mobile = "휴대전화를 입력해주세요";
 
         setErrors(newErrors);
-
 
         setTimeout(() => {
             document.querySelector(".error")?.focus();
@@ -92,79 +102,77 @@ export default function AddressRegister() {
     const handleSubmit = async () => {
         if (!validate()) return;
 
-        await addAddress({
+        const data = {
             name: form.name,
             receiver: form.receiver,
             address: form.address + " " + form.detail,
             phone: `${form.mobile1}-${form.mobile2}-${form.mobile3}`,
             isDefault: form.isDefault
-        });
+        };
 
-        navigate("/userInfo", { state: { menu: "배송지 관리" } });
+        try {
+            const { user } = useAuthStore.getState();
+            if (!user) return;
+
+            const ref = collection(db, "users", user.uid, "addresses");
+            const snap = await getDocs(ref);
+
+            if (!editData && snap.size >= 10) {
+                alert("배송지는 최대 10개까지 등록할 수 있습니다.");
+                return;
+            }
+            if (editData) {
+                await updateDoc(
+                    doc(db, "users", user.uid, "addresses", editData.id),
+                    data
+                );
+            } else {
+                await addAddress(data);
+            }
+
+            navigate("/userInfo", { state: { menu: "배송지 관리" } });
+
+        } catch (err) {
+            console.error(err);
+        }
     };
-    const handleSubmitCancel = () => {
-        const result = window.confirm("등록을 취소하시겠습니까?");
 
+    const handleSubmitCancel = () => {
+        const result = window.confirm(`${editData ? "수정" : "등록"}을 취소하시겠습니까?`);
         if (result) {
             navigate("/userInfo", { state: { menu: "배송지 관리" } });
         }
     };
+
     return (
-        <section className='sub-section info-sec'>
+        <section className='sub-section add-r'>
             <div className="inner">
-                <h2>배송지 등록</h2>
+                <h2>{editData ? "배송지 수정" : "배송지 등록"}</h2>
 
                 <div className='address-register-wrap'>
                     <div className="form-row">
-                        <p>배송지명</p>
-                        <input
-                            type="text"
-                            name="name"
-                            value={form.name}
-                            onChange={handleChange}
-                            className={errors.name ? "error" : ""}
-                        />
+                        <p>배송지명<em>*</em></p>
+                        <input name="name" value={form.name} onChange={handleChange} className={errors.name ? "error" : ""} />
                         {errors.name && <p className="error-text">{errors.name}</p>}
                     </div>
 
                     <div className="form-row">
-                        <p>받는 사람</p>
-                        <input
-                            type="text"
-                            name="receiver"
-                            value={form.receiver}
-                            onChange={handleChange}
-                            className={errors.receiver ? "error" : ""}
-                        />
+                        <p>받는 사람<em>*</em></p>
+                        <input name="receiver" value={form.receiver} onChange={handleChange} className={errors.receiver ? "error" : ""} />
                         {errors.receiver && <p className="error-text">{errors.receiver}</p>}
                     </div>
 
                     <div className="form-row address">
-                        <p>주소</p>
+                        <p>주소<em>*</em></p>
                         <div className="address-box">
                             <div className="zip">
-                                <input
-                                    type="text"
-                                    placeholder="우편번호"
-                                    value={form.zipcode}
-                                    readOnly
-                                    className={errors.zipcode ? "error" : ""}
-                                />
-                                <button type="button" onClick={openPostcode}>
-                                    주소검색
-                                </button>
+                                <input value={form.zipcode} readOnly className={errors.zipcode ? "error" : ""} />
+                                <button type="button" onClick={openPostcode}>주소검색</button>
                             </div>
 
-                            <input
-                                type="text"
-                                placeholder="기본주소"
-                                value={form.address}
-                                readOnly
-                            />
+                            <input value={form.address} readOnly />
 
                             <input
-                                type="text"
-                                placeholder="나머지 주소 (선택 입력 가능)"
                                 name="detail"
                                 value={form.detail}
                                 onChange={handleChange}
@@ -175,68 +183,32 @@ export default function AddressRegister() {
                     </div>
 
                     <div className="form-row phone">
-                        <p>일반전화</p>
-                        <div className="phone-box">
-                            <select name="phone1" value={form.phone1} onChange={handleChange}>
-                                <option value="02">02</option>
-                                <option value="070">070</option>
-                            </select>
-                            <span>-</span>
-                            <input name="phone2" value={form.phone2} onChange={handleChange} />
-                            <span>-</span>
-                            <input name="phone3" value={form.phone3} onChange={handleChange} />
-                        </div>
-                    </div>
-
-                    <div className="form-row phone">
-                        <p>휴대전화</p>
+                        <p>휴대폰 번호<em>*</em></p>
                         <div className="phone-box">
                             <select name="mobile1" value={form.mobile1} onChange={handleChange}>
                                 <option value="010">010</option>
                                 <option value="011">011</option>
+                                <option value="016">016</option>
                             </select>
-                            <span>-</span>
-                            <input
-                                name="mobile2"
-                                value={form.mobile2}
-                                onChange={handleChange}
-                                className={errors.mobile ? "error" : ""}
-                            />
-                            <span>-</span>
-                            <input
-                                name="mobile3"
-                                value={form.mobile3}
-                                onChange={handleChange}
-                                className={errors.mobile ? "error" : ""}
-                            />
+                            <input name="mobile2" value={form.mobile2} onChange={handleChange} className={errors.mobile ? "error" : ""} />
+                            <input name="mobile3" value={form.mobile3} onChange={handleChange} className={errors.mobile ? "error" : ""} />
                         </div>
                         {errors.mobile && <p className="error-text">{errors.mobile}</p>}
                     </div>
 
-
                     <div className="check">
                         <label>
-                            <input
-                                type="checkbox"
-                                name="isDefault"
-                                checked={form.isDefault}
-                                onChange={handleChange}
-                            />
+                            <input type="checkbox" name="isDefault" checked={form.isDefault} onChange={handleChange} />
                             기본 배송지로 저장
                         </label>
                     </div>
-
                 </div>
 
                 <div className="button-wrap">
                     <button className="submit" onClick={handleSubmit}>
-                        등록
+                        {editData ? "수정완료" : "등록"}
                     </button>
-
-                    <button
-                        className="cancel"
-                        onClick={() => { handleSubmitCancel() }}
-                    >
+                    <button className="cancel" onClick={handleSubmitCancel}>
                         취소
                     </button>
                 </div>
