@@ -223,6 +223,14 @@ export const useAuthStore = create((set, get) => ({
         } catch (err) {
             console.error(err);
         }
-    }
+    },
+    onLogout: async () => {
+        try {
+            await signOut(auth);
+            set({ user: null });
+        } catch (err) {
+            console.error("로그아웃 에러:", err);
+        }
+    },
 
 }))
