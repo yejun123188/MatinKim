@@ -51,6 +51,11 @@
                         padding: 0 10px;
                         height: 35px;
                         width: 120px;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        background: url("/images/sub-about/downarrow.svg") no-repeat right 10px center;
+                        background-size: 16px;
                     }
 
                     input {
@@ -71,7 +76,7 @@
 
                 .show {
                     padding: 10px 10px 0 10px;
-                    height: 626px;
+                    height: 625px;
                     overflow-y: auto;
 
                     li {
