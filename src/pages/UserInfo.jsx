@@ -11,28 +11,17 @@ import Adress from "../components/Adress";
 import { useAuthStore } from "../store/useAuthStore";
 import OrderDetail from "../components/OrderDetail";
 import OrderRequest from "../components/OrderRequest";
-import Adress from "../components/Adress";
 
 const myMenu = "마이페이지";
 const orderMenu = "주문내역";
 
 export default function UserInfo() {
   const location = useLocation();
-  const { id: orderId, action } = useParams();
-
-  const [selectMenu, setSelectMenu] = useState(location.state?.menu || myMenu);
-export default function UserInfo() {
-  const location = useLocation();
   const navigate = useNavigate();
-  const { id: orderId } = useParams();
+  const { id: orderId, action } = useParams();
   const { onLogout } = useAuthStore();
 
-  const DEFAULT_MENU = "마이페이지";
-  const ORDER_MENU = "주문내역";
-
-  const [selectMenu, setSelectMenu] = useState(
-    location.state?.menu || DEFAULT_MENU
-  );
+  const [selectMenu, setSelectMenu] = useState(location.state?.menu || myMenu);
 
   useEffect(() => {
     if (orderId) {
@@ -90,7 +79,9 @@ export default function UserInfo() {
 
   return (
     <section className="sub-section info-sec">
-      <div className={`inner user-info-wrap ${isDetailMode ? "detail-mode" : ""}`}>
+      <div
+        className={`inner user-info-wrap ${isDetailMode ? "detail-mode" : ""}`}
+      >
         {!isDetailMode && (
           <div className="user-info-left">
             <UserMenus sendSelect={handleMenuClick} selectMenu={selectMenu} />
