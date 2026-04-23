@@ -13,10 +13,18 @@ const statusCode = {
   조회불가: "NONE",
 };
 
-const renderButtons = (status, order, onOrderClick) => {
+const renderButtons = (
+  status,
+  order,
+  { onOrderClick, onCancelClick, onExchangeClick, onReturnClick },
+) => {
   if (status === "주문확인중" || status === "배송준비중") {
     return (
-      <button type="button" className="btn">
+      <button
+        type="button"
+        className="btn"
+        onClick={() => onCancelClick?.(order)}
+      >
         주문취소
       </button>
     );
@@ -33,10 +41,18 @@ const renderButtons = (status, order, onOrderClick) => {
   if (status === "배송완료") {
     return (
       <div className="order-btn">
-        <button type="button" className="btn">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => onExchangeClick?.(order)}
+        >
           교환신청
         </button>
-        <button type="button" className="btn">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => onReturnClick?.(order)}
+        >
           반품신청
         </button>
       </div>
@@ -55,6 +71,9 @@ export default function OrderProduct({
   orders = [],
   onOrderClick,
   onDetailClick,
+  onCancelClick,
+  onExchangeClick,
+  onReturnClick,
   showHeader = true,
   showOrderNumber = true,
   showActionButtons = true,
@@ -89,9 +108,11 @@ export default function OrderProduct({
                     <button
                       type="button"
                       className="order-detail-btn"
-                    onClick={() => onDetailClick(representativeOrder.orderDetailId)}
-                  >
-                    주문 상세보기 {">"}
+                      onClick={() =>
+                        onDetailClick(representativeOrder.orderDetailId)
+                      }
+                    >
+                      주문 상세보기 {">"}
                     </button>
                   </div>
                 )}
@@ -131,7 +152,12 @@ export default function OrderProduct({
                         )}
                         {showActionButtons && (
                           <div className="order-btn-wrap">
-                            {renderButtons(order.status, order, onOrderClick)}
+                            {renderButtons(order.status, order, {
+                              onOrderClick,
+                              onCancelClick,
+                              onExchangeClick,
+                              onReturnClick,
+                            })}
                           </div>
                         )}
                       </>
