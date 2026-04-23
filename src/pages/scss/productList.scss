@@ -134,8 +134,9 @@ $filter-line-width: 90%;
 
                 .filter-main-label {
                     font-size: g.$size-14-main;
-                    font-weight: g.$Regular;
+                    font-weight: g.$Bold;
                     color: g.$text-sub-color;
+                    text-transform: uppercase;
 
                     &.is-active {
                         font-weight: g.$Bold;
@@ -247,7 +248,8 @@ $filter-line-width: 90%;
             .section-banner {
                 position: relative;
                 width: 100%;
-                height: 150px;
+                // height: 150px;
+                height: 300px;
                 overflow: hidden;
                 margin-bottom: 32px;
 
@@ -256,7 +258,7 @@ $filter-line-width: 90%;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: center 30%;
+                    object-position: center 10%;
                 }
 
                 .banner-text {
@@ -272,9 +274,9 @@ $filter-line-width: 90%;
                         margin: 0;
                         padding: 0;
                         color: g.$white-color;
-                        font-size: g.$size-30;
+                        font-size: 50px;
                         font-weight: g.$Bold;
-                        letter-spacing: 0.08em;
+                        // letter-spacing: 0.08em;
                         text-align: left;
                         text-transform: uppercase;
                     }
@@ -283,7 +285,7 @@ $filter-line-width: 90%;
                         margin: 0;
                         padding: 0;
                         color: g.$white-color;
-                        font-size: g.$size-16;
+                        font-size: 20px;
                         font-weight: g.$Regular;
                         letter-spacing: 0.08em;
                         text-align: left;
@@ -291,11 +293,14 @@ $filter-line-width: 90%;
                     }
                 }
 
+                // 검은색 불투명 배경
                 &::after {
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: rgba(0, 0, 0, 0.2);
+                    background: linear-gradient(to right,
+                            rgba(0, 0, 0, 0.3),
+                            rgba(0, 0, 0, 0));
                 }
             }
 

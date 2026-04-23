@@ -15,6 +15,21 @@ const subMenuMap = {
     "Pouches & Cases": "파우치",
     Others: "기타"
 }
+
+const urlMap = {
+    Outerwears: "outerwears",
+    Tops: "tops",
+    Bottoms: "bottoms",
+    Dresses: "dresses",
+    Bags: "bags",
+    Shoes: "shoes",
+    Wallets: "wallets",
+    "Hats & Caps": "hats",
+    Hair: "hair",
+    Neckwear: "neckwear",
+    "Pouches & Cases": "pouches",
+    Others: "others"
+}
 //색상이름이랑 색상코드 매칭
 const COLOR_PALETTE = {
     "LIGHT BEIGE": "#F5F5DC", "CREAM": "#FFFDD0", "DARK BROWN": "#654321",
@@ -76,7 +91,7 @@ export const useProductStore = create((set, get) => ({
 
         items.forEach(({ category1, category2 }) => {
 
-            const cat1 = category1
+            const cat1 = category1.toLowerCase()
             const cat2 = category2?.toUpperCase();
 
             const catOut = cat2 === "OUTERWEARS" ? "OUTER" : cat2;
@@ -95,7 +110,7 @@ export const useProductStore = create((set, get) => ({
             if (!subMenu && cat2) {
 
                 mainMenu.subMenu.push({
-                    name: koCat2, subName: catOut, link: `/${cat1}/${encodeURIComponent(cat2)}`
+                    name: koCat2, subName: catOut, link: `/${cat1}/${urlMap[category2] || category2.toLowerCase()}`
                 });
             }
         });

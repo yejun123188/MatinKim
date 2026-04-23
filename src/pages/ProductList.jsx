@@ -5,6 +5,21 @@ import Filter from '../components/Filter';
 import ProductCard from '../components/ProductCard';
 import "./scss/productList.scss"
 
+const urlMap = {
+    Outerwears: "outerwears",
+    Tops: "tops",
+    Bottoms: "bottoms",
+    Dresses: "dresses",
+    Bags: "bags",
+    Shoes: "shoes",
+    Wallets: "wallets",
+    "Hats & Caps": "hats",
+    Hair: "hair",
+    Neckwear: "neckwear",
+    "Pouches & Cases": "pouches",
+    Others: "others"
+};
+
 const TAG_ROUTE_MAP = {
     sale: "SALE",
     newin: "NEW IN",
@@ -27,6 +42,35 @@ const CATEGORY1_DESCRIPTION_MAP = {
     "ACCESSORIES": "액세서리"
 };
 
+const TAG_BANNER_IMAGE_MAP = {
+    "SALE": "/images/banner-img/banner-img-sale.png",
+    "NEW IN": "/images/banner-img/banner-img-newIn.png",
+    "MUST HAVE": "/images/banner-img/banner-img-mustHave.png",
+    "COLLAB": "/images/banner-img/banner-img-collab.png",
+    "ALL": "/images/banner-img/banner-img-all.png"
+};
+
+const CATEGORY1_BANNER_IMAGE_MAP = {
+    "CLOTHING": "/images/banner-img/banner-img-clothing.png",
+    "GOODS": "/images/banner-img/banner-img-goods.png",
+    "ACCESSORIES": "/images/banner-img/banner-img-accessories.png"
+};
+
+const CATEGORY2_BANNER_IMAGE_MAP = {
+    Outerwears: "/images/banner-img/banner-img-outerwears.png",
+    Tops: "/images/banner-img/banner-img-top.png",
+    Bottoms: "/images/banner-img/banner-img-bottoms.png",
+    Dresses: "/images/banner-img/banner-img-dresses.png",
+    Bags: "/images/banner-img/banner-img-bags.png",
+    Shoes: "/images/banner-img/banner-img-shoes.png",
+    Wallets: "/images/banner-img/banner-img-wallets.png",
+    "Hats & Caps": "/images/banner-img/banner-img-hatsCaps.png",
+    Hair: "/images/banner-img/banner-img-halr.png",
+    Neckwear: "/images/banner-img/banner-img-neckwear.png",
+    "Pouches & Cases": "/images/banner-img/banner-img-pouches.png",
+    Others: "/images/banner-img/banner-img-others.png"
+};
+
 export default function ProductList() {
     const ITEMS_PER_ROW = 4;
     const MAX_VISIBLE_ROWS = 5;
@@ -35,8 +79,8 @@ export default function ProductList() {
 
     //주소줄에 있는 파라메터 값 받아서 사용하기
     const params = useParams();
-    const mainCate = params.category1;
-    const subCategory = params.category2;
+    const mainCate = params.category1?.toLowerCase();
+    const subCategory = params.category2?.toLowerCase();
     const tagCategory = TAG_ROUTE_MAP[(mainCate || '').toLowerCase()] || null;
     const [currentPage, setCurrentPage] = useState(1);
     const [sortBy, setSortBy] = useState('newest');
@@ -94,11 +138,12 @@ export default function ProductList() {
         }
 
         //1.메인 메뉴 카테고리 필터
-        if (mainCate && item.category1.toUpperCase() !== mainCate) {
+        if (mainCate && item.category1.toLowerCase() !== mainCate) {
             return false;
         }
         //2. subcategory가 있을 경우 필터
-        if (subCategory && item.category2.toUpperCase() !== subCategory) {
+        const normalizedSub = urlMap[item.category2] || item.category2.toLowerCase();
+        if (subCategory && normalizedSub !== subCategory) {
             return false;
         }
         // // 🐱‍🐉@@@@@@@@@@@@@@@@가격
@@ -176,6 +221,11 @@ export default function ProductList() {
         : subCategory
             ? (subMenuMap[bannerTitle] || bannerTitle)
             : (CATEGORY1_DESCRIPTION_MAP[bannerTitle] || bannerTitle);
+    const bannerImage = tagCategory
+        ? (TAG_BANNER_IMAGE_MAP[tagCategory] || CATEGORY1_BANNER_IMAGE_MAP.CLOTHING)
+        : subCategory
+            ? (CATEGORY2_BANNER_IMAGE_MAP[bannerTitle] || CATEGORY1_BANNER_IMAGE_MAP[bannerTitle] || CATEGORY1_BANNER_IMAGE_MAP.CLOTHING)
+            : (CATEGORY1_BANNER_IMAGE_MAP[bannerTitle] || CATEGORY1_BANNER_IMAGE_MAP.CLOTHING);
     const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
     const currentPageGroup = Math.ceil(currentPage / PAGE_BUTTON_LIMIT);
     const startPage = (currentPageGroup - 1) * PAGE_BUTTON_LIMIT + 1;
@@ -198,7 +248,7 @@ export default function ProductList() {
                 </div>
                 <div className={`product-list-wrap ${!showFilter ? 'filter-hidden' : ''}`}>
                     <div className='section-banner'>
-                        <img className='banner-img' src="/images/collection/liz/img_liz_00024.jpg" alt={bannerTitle} />
+                        <img className='banner-img' src={bannerImage} alt={bannerTitle} />
                         <div className="banner-text">
                             <h2 className='banner-name'>{bannerTitle}</h2>
                             <p className='banner-description'>{bannerDescription}</p>
