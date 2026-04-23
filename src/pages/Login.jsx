@@ -104,7 +104,7 @@ export default function Login({ onClose }) {
                 onBlur={handleBlurUserId}
               />
               {errors.userId && (
-                <p className="error-text">아이디 항목은 필수 입력값입니다.</p>
+                <p className="error-text"><img src="/images/sub-login/error-icon.svg" alt="에러" />아이디 항목은 필수 입력값입니다.</p>
               )}
             </div>
 
@@ -120,7 +120,7 @@ export default function Login({ onClose }) {
                 onBlur={handleBlurPassword}
               />
               {errors.password && (
-                <p className="error-text">패스워드 항목은 필수 입력값입니다.</p>
+                <p className="error-text"><img src="/images/sub-login/error-icon.svg" alt="에러" />패스워드 항목은 필수 입력값입니다.</p>
               )}
             </div>
 
