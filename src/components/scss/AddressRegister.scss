@@ -1,100 +1,121 @@
-.address-register-wrap {
-    background: #f5f5f5;
-    padding: 40px;
-    margin-top: 20px;
-}
-
-.form-row {
-    margin-bottom: 30px;
-
-    p {
-        font-size: 13px;
-        margin-bottom: 10px;
-        color: #666;
+.info-sec {
+    .address-register-wrap {
+        background: #FFFFFF;
+        padding: 40px;
+        margin-top: 20px;
     }
 
-    input,
-    select {
-        width: 100%;
-        height: 40px;
-        border: none;
-        background: #e9e9e9;
-        padding: 0 10px;
+    .form-row {
+        margin-bottom: 30px;
+
+        p {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: #e9e9e9;
+            padding: 0 10px;
+        }
+
+        .error-text {
+            color: #C8352A;
+            padding-top: 5px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .error-text::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 14px;
+            margin-right: 6px;
+            background-image: url("/images/danger.svg");
+            background-repeat: no-repeat;
+
+        }
     }
-}
 
-.address-box {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .zip {
+    .address-box {
         display: flex;
+        flex-direction: column;
         gap: 10px;
 
-        input {
-            width: 150px;
+        .zip {
+            display: flex;
+            gap: 10px;
+
+            input {
+                width: 150px;
+            }
+
+            button {
+                width: 100px;
+                background: #111;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
         }
+    }
+
+    .phone-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        select {
+            width: 80px;
+        }
+
+        input {
+            width: 120px;
+        }
+    }
+
+
+    .check {
+        margin-top: 20px;
+
+        label {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+
+            input {
+                border: none;
+            }
+        }
+    }
+
+    .button-wrap {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
 
         button {
             width: 100px;
-            background: #111;
-            color: #fff;
-            border: none;
+            height: 40px;
+
             cursor: pointer;
         }
-    }
-}
 
-.phone-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    select {
-        width: 80px;
-    }
-
-    input {
-        width: 120px;
-    }
-}
-
-
-.check {
-    margin-top: 20px;
-
-    label {
-        display: flex;
-        gap: 10px;
-        font-size: 13px;
-
-        input {
-            border: none;
+        .submit {
+            background: #111;
+            color: #fff;
         }
-    }
-}
 
-.button-wrap {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-
-    button {
-        width: 100px;
-        height: 40px;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-
-    .submit {
-        background: #111;
-        color: #fff;
-    }
-
-    .cancel {
-        background: #fff;
-        border: 1px solid #ccc;
+        .cancel {
+            background: #fff;
+            border: 1px solid #ccc;
+        }
     }
 }

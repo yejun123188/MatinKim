@@ -10,7 +10,6 @@ import SavedMoney from "../components/SavedMoney";
 import { useAuthStore } from "../store/useAuthStore";
 import OrderDetail from "../components/OrderDetail";
 import OrderRequest from "../components/OrderRequest";
-import Adress from "../components/Adress";
 
 const myMenu = "마이페이지";
 const orderMenu = "주문내역";
