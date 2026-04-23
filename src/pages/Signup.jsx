@@ -368,7 +368,7 @@ export default function Signup() {
 
                             <div className="form-group">
                                 <label>
-                                    성별 <span>*</span>
+                                    성별 <span></span>
                                 </label>
 
                                 <div className="radio-row">
@@ -398,7 +398,7 @@ export default function Signup() {
 
                             <div className="form-group">
                                 <label>
-                                    생년월일 <span>*</span>
+                                    생년월일 <span></span>
                                 </label>
 
                                 <div className="birth-row">
