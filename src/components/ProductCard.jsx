@@ -5,20 +5,27 @@ import { useProductStore } from '../store/useProductStore'
 export default function ProductCard({ cate }) {
     const { onColorCode } = useProductStore();
     const navigate = useNavigate();
-    const badgeItems = [
-        ...(cate.tag || []).map((tag) => ({
-            key: tag,
-            label: tag,
-            type: 'default'
-        })),
-        ...(cate.discountRate > 0
-            ? [{
-                key: `discount-${cate.discountRate}`,
-                label: 'SALE',
-                type: 'discount'
-            }]
-            : [])
-    ];
+    const isSoldOut = Array.isArray(cate.soldout) && cate.soldout.length > 0 && cate.soldout.every(Boolean);
+    const badgeItems = isSoldOut
+        ? [{
+            key: 'sold-out',
+            label: 'SOLD OUT',
+            type: 'soldout'
+        }]
+        : [
+            ...(cate.tag || []).map((tag) => ({
+                key: tag,
+                label: tag,
+                type: 'default'
+            })),
+            ...(cate.discountRate > 0
+                ? [{
+                    key: `discount-${cate.discountRate}`,
+                    label: 'SALE',
+                    type: 'discount'
+                }]
+                : [])
+        ];
 
     const getColorStyle = (colorName) => {
         const colorValue = onColorCode(colorName);
@@ -55,7 +62,7 @@ export default function ProductCard({ cate }) {
                         {badgeItems.map((badge) => (
                             <span
                                 key={badge.key}
-                                className={`badge ${badge.type === 'discount' ? 'discount-badge' : ''}`}
+                                className={`badge ${badge.type === 'discount' ? 'discount-badge' : ''} ${badge.type === 'soldout' ? 'soldout-badge' : ''}`}
                             >
                                 {badge.label}
                             </span>
