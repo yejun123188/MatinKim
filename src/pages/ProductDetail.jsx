@@ -99,6 +99,12 @@ export default function ProductDetail() {
         () => items.find((item) => item.id === id),
         [items, id]
     );
+    const isProductSoldOut = Boolean(
+        product &&
+        Array.isArray(product.soldout) &&
+        product.soldout.length > 0 &&
+        product.soldout.every(Boolean)
+    );
 
     useEffect(() => {
         if (!product) return;
@@ -112,7 +118,18 @@ export default function ProductDetail() {
         window.scrollTo(0, 0);
     }, [product]);
 
-    const detailImages = product?.detailImages?.length ? product.detailImages : (product ? [product.mainImg] : []);
+    const detailImages = useMemo(() => {
+        if (!product) return [];
+
+        const filteredImages = (product.detailImages || []).filter((image) => image && image !== product.hoverImg);
+        const galleryImages = filteredImages.length > 0 ? filteredImages : [product.mainImg].filter(Boolean);
+
+        if (product.mainImg && !galleryImages.includes(product.mainImg)) {
+            return [product.mainImg, ...galleryImages];
+        }
+
+        return galleryImages;
+    }, [product]);
     const selectedImage = detailImages[selectedImageIndex] || product?.mainImg || '';
 
     const visibleThumbs = detailImages.slice(thumbStartIndex, thumbStartIndex + THUMBNAILS_PER_VIEW);
@@ -153,6 +170,7 @@ export default function ProductDetail() {
     );
 
     const totalPrice = (product?.discountRate > 0 ? product.discountPrice : product?.price || 0) * quantity;
+    const originalTotalPrice = (product?.price || 0) * quantity;
 
     const handleThumbPrev = () => {
         if (!canThumbPrev) return;
@@ -178,6 +196,28 @@ export default function ProductDetail() {
 
     const handleQuantityChange = (nextValue) => {
         setQuantity(Math.max(1, nextValue));
+    };
+
+    const handleBuyNow = () => {
+        if (!product || isProductSoldOut) return;
+
+        const purchasePrice = product.discountRate > 0 ? product.discountPrice : product.price;
+
+        navigate('/payment', {
+            state: {
+                orderItems: [
+                    {
+                        id: product.id,
+                        brand: 'MATIN KIM',
+                        name: product.name,
+                        option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
+                        quantity,
+                        price: purchasePrice,
+                        image: product.mainImg || product.hoverImg || ''
+                    }
+                ]
+            }
+        });
     };
 
     const renderTabContent = () => {
@@ -344,7 +384,15 @@ export default function ProductDetail() {
 
                         <div className='detail-total'>
                             <span>Total</span>
-                            <strong>{totalPrice.toLocaleString()}원</strong>
+                            <div className='detail-total-price'>
+                                <strong>{totalPrice.toLocaleString()}원</strong>
+                                {product.discountRate > 0 && (
+                                    <div className='detail-total-meta'>
+                                        <span className='original-price'>{originalTotalPrice.toLocaleString()}원</span>
+                                        <span className='discount-rate'>{product.discountRate}%</span>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         <div className='option-block'>
@@ -391,7 +439,7 @@ export default function ProductDetail() {
                                             >
                                                 <strong>{formatOptionLabel(size)}</strong>
                                                 <span className='option-card-sub'>
-                                                    {isSoldOut ? 'SOLD OUT' : size}
+                                                    {isSoldOut ? 'SOLD OUT' : ''}
                                                 </span>
                                             </button>
                                         );
@@ -407,8 +455,13 @@ export default function ProductDetail() {
                                 <button type="button" onClick={() => handleQuantityChange(quantity + 1)} aria-label='수량 증가'>+</button>
                             </div>
                             <button type="button" className='cart-btn'>장바구니 담기</button>
-                            <button type="button" className='buy-btn'>
-                                바로 구매하기
+                            <button
+                                type="button"
+                                className={`buy-btn ${isProductSoldOut ? 'is-soldout' : ''}`}
+                                disabled={isProductSoldOut}
+                                onClick={handleBuyNow}
+                            >
+                                {isProductSoldOut ? 'SOLD OUT' : '바로 구매하기'}
                                 {/* <img src="/images/pages-icon/next-icon.svg" alt="" aria-hidden="true" /> */}
                             </button>
                         </div>

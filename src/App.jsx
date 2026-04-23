@@ -22,13 +22,14 @@ import { useMapStore } from "./store/useMapStore";
 import AddressRegister from "./components/AddressRegister";
 import ProductAuthentication from "./pages/ProductAuthentication";
 import Signup from "./pages/Signup";
+import Payment from "./pages/Payment";
 import { useAuthStore } from "./store/useAuthStore";
 
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
-  const { onFetchStore, stores, } = useMapStore();
+  const { onFetchStore, stores } = useMapStore();
   const { initAuth } = useAuthStore();
 
   useEffect(() => {
@@ -48,20 +49,28 @@ function App() {
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/guest-order" element={<GuestOrder />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/project" element={<Project />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/collections" element={<Collections />} />
         <Route path="/collections/:id" element={<CollectionDetail />} />
-        <Route path="/about" element={<About />} >
+        <Route path="/about" element={<About />}>
           <Route index element={<Brand />} />
           <Route path="brand" element={<Brand />} />
           <Route path="stockist" element={<Stockist />} />
         </Route>
         <Route path="/userInfo" element={<UserInfo />} />
+        <Route
+          path="/userInfo/orders/:id/:action/:itemId"
+          element={<UserInfo />}
+        />
         <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/qna" element={<Qna />} />
-        <Route path="/product-authentication" element={<ProductAuthentication />} />
+        <Route
+          path="/product-authentication"
+          element={<ProductAuthentication />}
+        />
       </Routes>
       <Footer />
     </>
