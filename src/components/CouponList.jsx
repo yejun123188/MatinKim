@@ -19,16 +19,32 @@ export default function CouponList() {
           <p className="mycoupon-title">내 쿠폰</p>
           <p className="count-coupon">1 개</p>
         </div>
+
         <table>
-          <tr>
-            <th>번호</th><th>쿠폰명</th><th>쿠폰혜택</th>
-            <th>사용 가능 기간</th><th>쿠폰적용 상품</th>
-            <th>구매금액</th><th>결제 수단</th>
-          </tr>
-          <tr>
-            <td>1</td>  <td>1</td>  <td>1</td>  <td>1</td>  <td>1</td>  <td>1</td>  <td>1</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>쿠폰명</th>
+              <th>쿠폰혜택</th>
+              <th>사용 가능 기간</th>
+              <th>쿠폰적용 상품</th>
+              <th>구매금액</th>
+              <th>결제 수단</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
         </table>
+
       </div>
 
     </div>

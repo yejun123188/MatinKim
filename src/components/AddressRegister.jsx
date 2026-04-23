@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./scss/AddressRegister.scss";
-
+import { useAuthStore } from "../store/useAuthStore";
 export default function AddressRegister() {
     const navigate = useNavigate();
 
 
+
+    const { addAddress } = useAuthStore();
     const [form, setForm] = useState({
         name: "",
         receiver: "",
@@ -87,13 +89,16 @@ export default function AddressRegister() {
         return Object.keys(newErrors).length === 0;
     };
 
-
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!validate()) return;
 
-        console.log("등록 데이터:", form);
-
-        alert("배송지가 등록되었습니다!");
+        await addAddress({
+            name: form.name,
+            receiver: form.receiver,
+            address: form.address + " " + form.detail,
+            phone: `${form.mobile1}-${form.mobile2}-${form.mobile3}`,
+            isDefault: form.isDefault
+        });
 
         navigate("/userInfo", { state: { menu: "배송지 관리" } });
     };
@@ -105,7 +110,7 @@ export default function AddressRegister() {
         }
     };
     return (
-        <section className='sub-section'>
+        <section className='sub-section info-sec'>
             <div className="inner">
                 <h2>배송지 등록</h2>
 

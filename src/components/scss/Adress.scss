@@ -1,7 +1,7 @@
 @use "../../App.scss" as g;
 
 .address-wrap {
-    background-color: g.$sub-color;
+    background-color: #FFFFFF;
     padding: 30px;
 
     .address-top {
@@ -16,41 +16,37 @@
     }
 
     .address-middle {
-        padding: 30px 0;
+        // padding: 30px 0;
     }
 
-    .left {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+
 
     .address-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 30px;
+        // padding-bottom: 30px;
         border-bottom: 1px solid #ddd;
+
+        height: 150px;
 
         .item-left {
             display: flex;
             gap: 16px;
-            align-items: center;
 
-            input {
-                width: 18px;
-                height: 18px;
-                margin-top: 6px;
-            }
+
+
 
             .content {
                 .show {
                     display: inline-block;
-                    background: #111;
+                    background: #000000;
                     color: #fff;
-                    padding: 4px 10px;
-                    font-size: 12px;
+                    padding: 2px 6px;
+                    font-size: 10px;
                     margin-bottom: 10px;
+                    border-radius: 20px;
+
                 }
 
                 .address-list {
@@ -71,11 +67,11 @@
         .item-right {
             display: flex;
             gap: 10px;
+            align-items: flex-end;
 
             button {
-                padding: 8px 14px;
-                border-radius: 20px;
-                font-size: 12px;
+                padding: 5px 7px;
+
                 cursor: pointer;
                 background: #111;
                 color: #fff;
