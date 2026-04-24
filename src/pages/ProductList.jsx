@@ -3,6 +3,18 @@ import { useProductStore } from '../store/useProductStore'
 import { useParams } from 'react-router-dom';
 import Filter from '../components/Filter';
 import ProductCard from '../components/ProductCard';
+import { buildOuterSubCategoryOptions, filterProductsByOuterSubCategory } from '../utils/outerCategory';
+import { buildTopsSubCategoryOptions, filterProductsByTopsSubCategory } from '../utils/topsCategory';
+import { buildBottomsSubCategoryOptions, filterProductsByBottomsSubCategory } from '../utils/bottomsCategory';
+import { buildBagsSubCategoryOptions, filterProductsByBagsSubCategory } from '../utils/bagsCategory';
+import { buildShoesSubCategoryOptions, filterProductsByShoeSubCategory } from '../utils/shoesCategory';
+import { buildWalletsSubCategoryOptions, filterProductsByWalletsSubCategory } from '../utils/walletsCategory';
+import { buildHatsSubCategoryOptions, filterProductsByHatsSubCategory } from '../utils/hatsCategory';
+import { buildHairSubCategoryOptions, filterProductsByHairSubCategory } from '../utils/hairCategory';
+import { buildNeckwearSubCategoryOptions, filterProductsByNeckwearSubCategory } from '../utils/neckwearCategory';
+import { buildPouchesSubCategoryOptions, filterProductsByPouchesSubCategory } from '../utils/pouchesCategory';
+import { buildOthersSubCategoryOptions, filterProductsByOthersSubCategory } from '../utils/othersCategory';
+import { buildDressesSubCategoryOptions, filterProductsByDressesSubCategory } from '../utils/dressesCategory';
 import "./scss/productList.scss"
 
 const PRICE_STEP = 1000;
@@ -95,6 +107,26 @@ export default function ProductList() {
     const [excludeSoldOut, setExcludeSoldOut] = useState(false);
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedSize, setSelectedSize] = useState('');
+    const [selectedSubCategory, setSelectedSubCategory] = useState('');
+    const [isPageVisible, setIsPageVisible] = useState(false);
+
+    // 카테고리별 필터링 및 옵션 생성 함수를 동적으로 선택
+    const categoryFilterMap = {
+        'outerwears': { build: buildOuterSubCategoryOptions, filter: filterProductsByOuterSubCategory },
+        'tops': { build: buildTopsSubCategoryOptions, filter: filterProductsByTopsSubCategory },
+        'bottoms': { build: buildBottomsSubCategoryOptions, filter: filterProductsByBottomsSubCategory },
+        'bags': { build: buildBagsSubCategoryOptions, filter: filterProductsByBagsSubCategory },
+        'shoes': { build: buildShoesSubCategoryOptions, filter: filterProductsByShoeSubCategory },
+        'wallets': { build: buildWalletsSubCategoryOptions, filter: filterProductsByWalletsSubCategory },
+        'hats': { build: buildHatsSubCategoryOptions, filter: filterProductsByHatsSubCategory },
+        'hair': { build: buildHairSubCategoryOptions, filter: filterProductsByHairSubCategory },
+        'neckwear': { build: buildNeckwearSubCategoryOptions, filter: filterProductsByNeckwearSubCategory },
+        'pouches': { build: buildPouchesSubCategoryOptions, filter: filterProductsByPouchesSubCategory },
+        'others': { build: buildOthersSubCategoryOptions, filter: filterProductsByOthersSubCategory },
+        'dresses': { build: buildDressesSubCategoryOptions, filter: filterProductsByDressesSubCategory }
+    };
+
+    const hasSubCategoryFilter = !tagCategory && subCategory && categoryFilterMap[subCategory];
 
     console.log("카테고리", mainCate, subCategory);
     // 상태 가져오기
@@ -113,11 +145,22 @@ export default function ProductList() {
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [mainCate, subCategory, sortBy, excludeSoldOut, selectedColor, selectedSize]);
+    }, [mainCate, subCategory, sortBy, excludeSoldOut, selectedColor, selectedSize, selectedSubCategory]);
 
     useEffect(() => {
         setSelectedColor('');
         setSelectedSize('');
+        setSelectedSubCategory('');
+    }, [mainCate, subCategory, tagCategory]);
+
+    useEffect(() => {
+        setIsPageVisible(false);
+
+        const timer = window.setTimeout(() => {
+            setIsPageVisible(true);
+        }, 60);
+
+        return () => window.clearTimeout(timer);
     }, [mainCate, subCategory, tagCategory]);
 
     useEffect(() => {
@@ -159,11 +202,15 @@ export default function ProductList() {
         return true
     });
 
-    const categoryMinPrice = categoryItems.length > 0
-        ? Math.min(...categoryItems.map((item) => item.price))
+    const priceBaseItems = hasSubCategoryFilter && categoryFilterMap[subCategory]
+        ? categoryFilterMap[subCategory].filter(categoryItems, selectedSubCategory)
+        : categoryItems;
+
+    const categoryMinPrice = priceBaseItems.length > 0
+        ? Math.min(...priceBaseItems.map((item) => item.price))
         : 0;
-    const categoryMaxPrice = categoryItems.length > 0
-        ? Math.max(...categoryItems.map((item) => item.price))
+    const categoryMaxPrice = priceBaseItems.length > 0
+        ? Math.max(...priceBaseItems.map((item) => item.price))
         : PRICE_STEP;
     const safeMaxPrice = categoryMaxPrice > categoryMinPrice
         ? categoryMaxPrice
@@ -176,7 +223,11 @@ export default function ProductList() {
         });
     }, [categoryMinPrice, categoryMaxPrice]);
 
-    const baseFilteredItems = categoryItems.filter((item) => (
+    const categoryOptions = hasSubCategoryFilter && categoryFilterMap[subCategory]
+        ? categoryFilterMap[subCategory].build(categoryItems)
+        : [];
+
+    const baseFilteredItems = priceBaseItems.filter((item) => (
         !(item.price < priceRange.min || item.price > priceRange.max)
     ));
 
@@ -303,20 +354,24 @@ export default function ProductList() {
     return (
         <main className='product-list-wrap'>
             <div className={`inner ${!showFilter ? 'filter-hidden' : ''}`}>
-                <div className={`filter-sidebar ${!showFilter ? 'is-hidden' : ''}`}>
-                        <Filter
-                            colorCount={colorCount}
-                            onPriceChange={setPriceRange}
-                            minPrice={categoryMinPrice}
-                            maxPrice={safeMaxPrice}
-                            selectedColor={selectedColor}
-                            onColorChange={setSelectedColor}
-                            sizeOptions={sizeOptions}
-                            selectedSize={selectedSize}
-                            onSizeChange={setSelectedSize}
+                <div className={`filter-sidebar ${!showFilter ? 'is-hidden' : ''} ${isPageVisible ? 'is-visible' : ''}`}>
+                    <Filter
+                        showCategoryFilter={hasSubCategoryFilter}
+                        colorCount={colorCount}
+                        onPriceChange={setPriceRange}
+                        minPrice={categoryMinPrice}
+                        maxPrice={safeMaxPrice}
+                        categoryOptions={categoryOptions}
+                        selectedCategory={selectedSubCategory}
+                        onCategoryChange={setSelectedSubCategory}
+                        selectedColor={selectedColor}
+                        onColorChange={setSelectedColor}
+                        sizeOptions={sizeOptions}
+                        selectedSize={selectedSize}
+                        onSizeChange={setSelectedSize}
                     />
                 </div>
-                <div className={`product-list-wrap ${!showFilter ? 'filter-hidden' : ''}`}>
+                <div className={`product-list-wrap ${!showFilter ? 'filter-hidden' : ''} ${isPageVisible ? 'is-visible' : ''}`}>
                     <div className='section-banner'>
                         <img className='banner-img' src={bannerImage} alt={bannerTitle} />
                         <div className="banner-text">
@@ -343,6 +398,48 @@ export default function ProductList() {
                                     />
                                     <span>품절 상품 제외</span>
                                 </label>
+                                <div className='filter-tags'>
+                                    {selectedColor && (
+                                        <button
+                                            type="button"
+                                            className='filter-tag'
+                                            onClick={() => setSelectedColor('')}
+                                        >
+                                            색상: {selectedColor}
+                                            <span className='tag-remove'>×</span>
+                                        </button>
+                                    )}
+                                    {selectedSize && (
+                                        <button
+                                            type="button"
+                                            className='filter-tag'
+                                            onClick={() => setSelectedSize('')}
+                                        >
+                                            사이즈: {selectedSize}
+                                            <span className='tag-remove'>×</span>
+                                        </button>
+                                    )}
+                                    {selectedSubCategory && (
+                                        <button
+                                            type="button"
+                                            className='filter-tag'
+                                            onClick={() => setSelectedSubCategory('')}
+                                        >
+                                            {selectedSubCategory}
+                                            <span className='tag-remove'>×</span>
+                                        </button>
+                                    )}
+                                    {(priceRange.min !== categoryMinPrice || priceRange.max !== categoryMaxPrice) && (
+                                        <button
+                                            type="button"
+                                            className='filter-tag'
+                                            onClick={() => setPriceRange({ min: categoryMinPrice, max: categoryMaxPrice })}
+                                        >
+                                            가격: {priceRange.min.toLocaleString()} - {priceRange.max.toLocaleString()}
+                                            <span className='tag-remove'>×</span>
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                             <div className='sort-buttons'>
                                 <button
