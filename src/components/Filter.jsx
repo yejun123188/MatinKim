@@ -3,7 +3,17 @@ import { useProductStore } from '../store/useProductStore'
 import { Link, useLocation } from 'react-router-dom';
 import PriceRange from './PriceRange';
 
-export default function Filter({ colorCount, onPriceChange }) {
+export default function Filter({
+    colorCount,
+    onPriceChange,
+    minPrice = 0,
+    maxPrice = 1000,
+    selectedColor = '',
+    onColorChange,
+    sizeOptions = [],
+    selectedSize = '',
+    onSizeChange
+}) {
     const INITIAL_VISIBLE_COLORS = 18;
     const { menus, onColorCode } = useProductStore();
     const location = useLocation();
@@ -66,6 +76,16 @@ export default function Filter({ colorCount, onPriceChange }) {
             min: minPrice,
             max: maxPrice
         })
+    };
+
+    const handleSizeToggle = (size) => {
+        if (!onSizeChange) return;
+        onSizeChange(selectedSize === size ? '' : size);
+    };
+
+    const handleColorToggle = (color) => {
+        if (!onColorChange) return;
+        onColorChange(selectedColor === color ? '' : color);
     };
 
     const visibleColors = showAllColors ? colorCount : colorCount.slice(0, INITIAL_VISIBLE_COLORS);
@@ -132,7 +152,12 @@ export default function Filter({ colorCount, onPriceChange }) {
                     </button>
                     <div className={`filter-panel ${openSections.PRICE ? 'is-open' : ''}`}>
                         <div className='price-range-box'>
-                            <PriceRange onSearch={handlePrice} />
+                            <PriceRange
+                                min={minPrice}
+                                max={maxPrice}
+                                step={1000}
+                                onSearch={handlePrice}
+                            />
                         </div>
                     </div>
                 </div>
@@ -150,14 +175,20 @@ export default function Filter({ colorCount, onPriceChange }) {
                         <div className='color-list-box'>
                             <div className='color'>
                                 {visibleColors.map((color, id) => (
-                                    <p key={id} className='color-item'>
+                                    <button
+                                        key={id}
+                                        type="button"
+                                        className={`color-item ${selectedColor === color.color ? 'is-active' : ''}`}
+                                        onClick={() => handleColorToggle(color.color)}
+                                        aria-label={`${color.color} 필터`}
+                                    >
                                         <strong
                                             className='color-chip'
                                             style={{
                                                 ...getColorStyle(color.color)
                                             }}>
                                         </strong>
-                                    </p>
+                                    </button>
                                 ))}
                             </div>
                             {hasMoreColors && (
@@ -182,6 +213,27 @@ export default function Filter({ colorCount, onPriceChange }) {
                         <h3 className='filter-subtitle'>SIZE OPTIONS</h3>
                         <span className='filter-toggle-icon'>{openSections['SIZE OPTIONS'] ? '−' : '+'}</span>
                     </button>
+                    <div className={`filter-panel ${openSections['SIZE OPTIONS'] ? 'is-open' : ''}`}>
+                        <div className='size-list-box'>
+                            {sizeOptions.length > 0 ? (
+                                <div className='size-option-list'>
+                                    {sizeOptions.map(({ size, count }) => (
+                                        <button
+                                            key={size}
+                                            type="button"
+                                            className={`size-option-item ${selectedSize === size ? 'is-active' : ''}`}
+                                            onClick={() => handleSizeToggle(size)}
+                                        >
+                                            <span className='size-option-label'>{size}</span>
+                                            <span className='size-option-count'>({count})</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p className='size-empty-text'>현재 상품에 표시할 사이즈가 없습니다.</p>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

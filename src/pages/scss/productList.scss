@@ -183,6 +183,7 @@ $filter-line-width: 90%;
             .shop-by {
                 margin-top: 48px;
                 padding-top: 32px;
+                padding-bottom: 32px;
                 border-top: 1px solid $filter-line-color;
             }
 
@@ -211,6 +212,17 @@ $filter-line-width: 90%;
                     .color-item {
                         display: flex;
                         justify-content: center;
+                        padding: 0;
+                        border: 0;
+                        background: transparent;
+                        cursor: pointer;
+
+                        &.is-active {
+                            .color-chip {
+                                border-color: g.$text-main-color;
+                                box-shadow: inset 0 0 0 1px g.$text-main-color;
+                            }
+                        }
                     }
 
                     .color-chip {
@@ -230,6 +242,71 @@ $filter-line-width: 90%;
                     color: g.$text-sub-color;
                     font-size: g.$size-14-main;
                     cursor: pointer;
+                }
+            }
+
+            .size {
+                width: 100%;
+
+                .size-list-box {
+                    margin-top: 16px;
+                    width: 90%;
+                }
+
+                .size-option-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .size-option-item {
+                    @include g.myFlex(space-between, 12px, center);
+                    width: 100%;
+                    padding: 7px 0 0 0;
+                    border: 0;
+                    background: transparent;
+                    align-items: center;
+                    color: g.$text-sub-color2;
+                    font-size: g.$size-12-sub;
+                    font-weight: g.$Regular;
+                    text-align: left;
+                    cursor: pointer;
+                    transition: color 0.2s ease, font-weight 0.2s ease;
+
+                    &:hover {
+                        color: g.$text-main-color;
+                    }
+
+                    &.is-active {
+                        font-size: g.$size-12-sub;
+                        font-weight: g.$Bold;
+                        color: g.$text-main-color;
+
+                        .size-option-label,
+                        .size-option-count {
+                            color: g.$text-main-color;
+                        }
+                    }
+                }
+
+                .size-option-label {
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                    color: inherit;
+                }
+
+                .size-option-count {
+                    flex-shrink: 0;
+                    line-height: 1.2;
+                    font-size: g.$size-12-sub;
+                    color: inherit;
+                }
+
+                .size-empty-text {
+                    margin: 0;
+                    color: g.$text-sub-color2;
+                    font-size: g.$size-12-sub;
+                    line-height: 1.5;
                 }
             }
         }
