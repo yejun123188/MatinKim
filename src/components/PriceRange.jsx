@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./scss/priceRange.scss";
 
-export default function PriceRange({ onSearch }) {
-    const MIN = 50000;
-    const MAX = 450000;
+export default function PriceRange({
+    onSearch,
+    min = 0,
+    max = 1000,
+    step = 1000
+}) {
+    const safeMax = Math.max(max, min + step);
 
-    const [minPrice, setMinPrice] = useState(MIN);
-    const [maxPrice, setMaxPrice] = useState(MAX);
+    const [minPrice, setMinPrice] = useState(min);
+    const [maxPrice, setMaxPrice] = useState(max);
+
+    useEffect(() => {
+        setMinPrice(min);
+        setMaxPrice(max);
+    }, [min, max]);
 
     // 슬라이더 변경
     const handleMinChange = (e) => {
-        const value = Math.min(Number(e.target.value), maxPrice - 1000);
+        const value = Math.min(Number(e.target.value), maxPrice - step);
         setMinPrice(value);
     };
 
     const handleMaxChange = (e) => {
-        const value = Math.max(Number(e.target.value), minPrice + 1000);
+        const value = Math.max(Number(e.target.value), minPrice + step);
         setMaxPrice(value);
     };
 
@@ -26,8 +35,9 @@ export default function PriceRange({ onSearch }) {
         }
     };
 
-    const perStart = ((minPrice - MIN) / (MAX - MIN)) * 100;
-    const perEnd = ((maxPrice - MIN) / (MAX - MIN)) * 100;
+    const denominator = safeMax - min || 1;
+    const perStart = ((minPrice - min) / denominator) * 100;
+    const perEnd = ((maxPrice - min) / denominator) * 100;
 
     return (
         <div className="price-container">
@@ -36,8 +46,9 @@ export default function PriceRange({ onSearch }) {
             <div className="slider-wrap">
                 <input
                     type="range"
-                    min={MIN}
-                    max={MAX}
+                    min={min}
+                    max={safeMax}
+                    step={step}
                     value={minPrice}
                     onChange={handleMinChange}
                     className="thumb thumb-left"
@@ -45,8 +56,9 @@ export default function PriceRange({ onSearch }) {
                 />
                 <input
                     type="range"
-                    min={MIN}
-                    max={MAX}
+                    min={min}
+                    max={safeMax}
+                    step={step}
                     value={maxPrice}
                     onChange={handleMaxChange}
                     className="thumb thumb-right"
@@ -58,8 +70,8 @@ export default function PriceRange({ onSearch }) {
                     <div
                         className="range"
                         style={{
-                            left: `${((minPrice - MIN) / (MAX - MIN)) * 100}%`,
-                            right: `${100 - ((maxPrice - MIN) / (MAX - MIN)) * 100}%`
+                            left: `${((minPrice - min) / denominator) * 100}%`,
+                            right: `${100 - ((maxPrice - min) / denominator) * 100}%`
                         }}
 
                     />
