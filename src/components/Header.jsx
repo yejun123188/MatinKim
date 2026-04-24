@@ -72,6 +72,9 @@ export default function Header() {
   return (
     <>
       <header>
+        <div className="top-banner">
+          <Link to="/">1ST SPRING 2026</Link>
+        </div>
         <div
           className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
             }`}
