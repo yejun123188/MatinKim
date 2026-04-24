@@ -70,6 +70,13 @@ export default function Login({ onClose }) {
       setGoogleLoading(false);
     }
   };
+  const { onKakaoLogin } = useAuthStore();
+  // 카카오 로그인
+  const handleKakaoLogin = () => {
+    console.log("카카오 로그인 시도")
+    onKakaoLogin();
+
+  }
 
   return (
     <div className="login-page">
@@ -140,7 +147,7 @@ export default function Login({ onClose }) {
             </div>
 
             <div className="sns-login">
-              <button type="button" className="kakao">
+              <button type="button" className="kakao" onClick={onKakaoLogin}>
                 <img src="/images/sub-login/kakao-icon.svg" alt="Kakao" />
                 <span>카카오로 시작하기</span>
               </button>

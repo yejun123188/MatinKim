@@ -73,7 +73,7 @@ export const useProductStore = create((set, get) => ({
             items: products,
             colors: allColors
         });
-        console.log(products, allColors)
+        // console.log(products, allColors)
     },
 
     //글자로 되어있는 색상 -> 색상코드로 변환하는 메서드 
@@ -116,7 +116,7 @@ export const useProductStore = create((set, get) => ({
         });
 
         set({ menus: menuList });
-        console.log(menuList);
+        // console.log(menuList);
     },
     //베스트 아이템(MUST HAVE)만 뽑는 메서드
     //베스트아이템 저장할 배열
@@ -128,7 +128,7 @@ export const useProductStore = create((set, get) => ({
         );
 
         set({ BestItems: bestItems });
-        console.log("베수트", bestItems);
+        // console.log("베수트", bestItems);
     },
 
 
@@ -142,7 +142,82 @@ export const useProductStore = create((set, get) => ({
         );
 
         set({ NewItems: newItems });
-        console.log("신상", newItems);
-    }
+        // console.log("신상", newItems);
+    },
+    //~~~~~~~장바구니~~~~~~~~~~~~~~~~~~~~
+    //장바구니에 담을 아이템저장
+    cartItem: [],
+    //카트에 담긴 상품의 개수 
+    cartCount: 0,
+    //카트에 담긴 상품의 전체 가격
+    totalPrice: 0,
 
+
+    //ProductDetail에서 색상변수 selectedColor 사이즈변수 selectedSize 개수 quantity 총가격 totalprice
+    //상품을 장바구니에 담는 메서드
+    onAddCart: (product) => {
+        //장바구니 정보를 가져옴
+        const cart = get().cartItem;
+
+        //장바구니에 같은제품이 있는지 없는지 체크
+        //제품의 아이디와 사이즈, 색상 같으면 같은제품 아이디와 사이즈가 색상 다르면 다른제품
+        //3개다 비교하는게 코드가 길어져거  3가지로 key를 만들어서 비교
+        const existing = cart.find((item) => item.key === product.key)
+
+        //새롭게 담을 카트 변수
+        let updateCart;
+        //같은제품이 있으면 카트에서 수량값만 하나 올라가게 
+        if (existing) {
+            updateCart = cart.map((item) =>
+                item.key === product.key ?
+                    { ...item, count: item.count + product.count } : item
+            )
+        } else {
+            updateCart = [...cart, { ...product }]
+        }
+        set({
+            cartItem: updateCart,
+            cartCount: updateCart.length,
+            totalPrice: get().onTotal(updateCart)
+        })
+
+    },
+    //카트에 담긴 아이템들의 가격의 합을 누적해서 구해주는 메서드
+    onTotal: (cart) => {
+        //배열의 데이터를 누적해서 구하기 .reduce((누적값,현재값),초기값)
+        return cart.reduce((acc, cur) => acc + cur.price * cur.count, 0);
+    },
+    onUpdateQuantity: (key, type) => {
+        const cart = get().cartItem;
+
+        const updateCart = cart.map((item) => {
+            if (item.key === key) {
+                if (type === "minus" && item.count > 1) {
+                    return { ...item, count: item.count - 1 };
+                }
+                if (type === "plus") {
+                    return { ...item, count: item.count + 1 };
+                }
+            }
+            return item;
+        });
+
+        set({
+            cartItem: updateCart,
+            totalPrice: get().onTotal(updateCart),
+        });
+    },
+    onRemoveItem: (id, size) => {
+        const cart = get().cartItem;
+
+        const updateCart = cart.filter(
+            (item) => !(item.id === id && item.size === size)
+        );
+
+        set({
+            cartItem: updateCart,
+            cartCount: updateCart.length,
+            totalPrice: get().onTotal(updateCart),
+        });
+    },
 }))

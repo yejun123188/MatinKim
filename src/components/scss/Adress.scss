@@ -4,6 +4,10 @@
     background-color: #FFFFFF;
     padding: 30px;
 
+    input[type="checkbox"] {
+        accent-color: g.$main-color;
+    }
+
     .address-top {
         border-bottom: 1px solid #ccc;
         padding-bottom: 20px;

@@ -108,7 +108,7 @@ const getProductBaseName = (item) => {
 export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { items, onFetchItem, onColorCode } = useProductStore();
+    const { items, onFetchItem, onColorCode, onAddCart } = useProductStore();
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [thumbStartIndex, setThumbStartIndex] = useState(0);
@@ -616,7 +616,26 @@ export default function ProductDetail() {
                                 <span>{quantity}</span>
                                 <button type="button" onClick={() => handleQuantityChange(quantity + 1)} aria-label='수량 증가'>+</button>
                             </div>
-                            <button type="button" className='cart-btn'>장바구니 담기</button>
+                            <button type="button" className='cart-btn'
+                                onClick={() => {
+                                    if (!product) return;
+
+                                    const price = product.discountRate > 0
+                                        ? product.discountPrice
+                                        : product.price;
+
+                                    onAddCart({
+                                        id: product.id,
+                                        name: product.name,
+                                        price: price,
+                                        size: selectedSize,
+                                        color: selectedColor,
+                                        count: quantity,
+                                        image: product.mainImg || product.hoverImg,
+                                        key: `${product.id}-${selectedSize}-${selectedColor}`
+                                    });
+                                }}
+                            >장바구니 담기</button>
                             <button
                                 type="button"
                                 className={`buy-btn ${isProductSoldOut ? 'is-soldout' : ''}`}
