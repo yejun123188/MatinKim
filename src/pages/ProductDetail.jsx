@@ -120,6 +120,7 @@ export default function ProductDetail() {
     const [isLiked, setIsLiked] = useState(false);
     const [isZoomOpen, setIsZoomOpen] = useState(false);
     const [zoomImageIndex, setZoomImageIndex] = useState(0);
+    const [isPageVisible, setIsPageVisible] = useState(false);
 
     // 상세 진입 시 전역 상품 목록이 비어 있으면 한 번만 불러오기
     useEffect(() => {
@@ -177,6 +178,18 @@ export default function ProductDetail() {
         setIsZoomOpen(false);
         setZoomImageIndex(0);
         window.scrollTo(0, 0);
+    }, [product]);
+
+    useEffect(() => {
+        setIsPageVisible(false);
+
+        if (!product) return undefined;
+
+        const timer = window.setTimeout(() => {
+            setIsPageVisible(true);
+        }, 60);
+
+        return () => window.clearTimeout(timer);
     }, [product]);
 
     // 확대 모달이 열려 있을 때만 스크롤 잠금과 ESC 닫기를 활성화
@@ -413,7 +426,7 @@ export default function ProductDetail() {
 
     return (
         <main className='product-detail-page'>
-            <div className='inner product-detail-page-inner'>
+            <div className={`inner product-detail-page-inner ${isPageVisible ? 'is-visible' : ''}`}>
                 <section className='product-detail-hero'>
                     <div className='gallery-column'>
                         <div className='gallery-thumbs'>

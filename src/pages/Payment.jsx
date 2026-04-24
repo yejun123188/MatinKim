@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./scss/Payment.scss";
 
@@ -58,6 +58,18 @@ export default function Payment() {
     const location = useLocation();
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
+    const [isPostcodeReady, setIsPostcodeReady] = useState(Boolean(window.daum?.Postcode));
+    const [shippingForm, setShippingForm] = useState({
+        receiver: "",
+        mobile1: "010",
+        mobile2: "",
+        mobile3: "",
+        zipcode: "",
+        address: "",
+        detail: "",
+        message: "",
+        saveAsDefault: false
+    });
 
     const orderItems = location.state?.orderItems?.length ? location.state.orderItems : [];
     const productTotal = orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -77,6 +89,32 @@ export default function Payment() {
         [selectedMethod]
     );
 
+    useEffect(() => {
+        if (window.daum?.Postcode) {
+            setIsPostcodeReady(true);
+            return undefined;
+        }
+
+        const script = document.createElement("script");
+        script.src = "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
+        script.async = true;
+        script.onload = () => setIsPostcodeReady(true);
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
+    const handleShippingChange = (event) => {
+        const { name, value, type, checked } = event.target;
+
+        setShippingForm((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value
+        }));
+    };
+
     if (!orderItems.length) {
         return (
             <main className="payment-page">
@@ -87,6 +125,30 @@ export default function Payment() {
             </main>
         );
     }
+
+    const openPostcode = () => {
+        if (!window.daum?.Postcode) {
+            window.alert("주소 검색 서비스를 불러오는 중입니다. 잠시 후 다시 시도해주세요.");
+            return;
+        }
+
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                const address = data.roadAddress || data.jibunAddress;
+
+                setShippingForm((prev) => ({
+                    ...prev,
+                    zipcode: data.zonecode,
+                    address,
+                    detail: prev.address === address ? prev.detail : ""
+                }));
+
+                setTimeout(() => {
+                    document.querySelector(".payment-detail-input")?.focus();
+                }, 100);
+            }
+        }).open();
+    };
 
     return (
         <main className="payment-page">
@@ -163,50 +225,106 @@ export default function Payment() {
                         <div className="payment-form-grid">
                             <label className="field full">
                                 <span>받는사람 <em>*</em></span>
-                                <input type="text" placeholder="받는사람 이름" />
+                                <input
+                                    type="text"
+                                    name="receiver"
+                                    placeholder="받는사람 이름"
+                                    value={shippingForm.receiver}
+                                    onChange={handleShippingChange}
+                                />
                             </label>
 
                             <div className="field full">
                                 <span>휴대폰 번호 <em>*</em></span>
                                 <div className="inline-fields phone-fields">
-                                    <select defaultValue="010">
+                                    <select
+                                        name="mobile1"
+                                        value={shippingForm.mobile1}
+                                        onChange={handleShippingChange}
+                                    >
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
                                     </select>
                                     <i>-</i>
-                                    <input type="text" />
+                                    <input
+                                        type="text"
+                                        name="mobile2"
+                                        value={shippingForm.mobile2}
+                                        onChange={handleShippingChange}
+                                    />
                                     <i>-</i>
-                                    <input type="text" />
+                                    <input
+                                        type="text"
+                                        name="mobile3"
+                                        value={shippingForm.mobile3}
+                                        onChange={handleShippingChange}
+                                    />
                                 </div>
                             </div>
 
                             <div className="field postal-field">
                                 <span>우편번호 <em>*</em></span>
                                 <div className="inline-fields">
-                                    <input type="text" placeholder="우편번호" />
-                                    <button type="button" className="outline-btn small">주소검색</button>
+                                    <input
+                                        type="text"
+                                        name="zipcode"
+                                        placeholder="우편번호"
+                                        value={shippingForm.zipcode}
+                                        readOnly
+                                    />
+                                    <button
+                                        type="button"
+                                        className="outline-btn small"
+                                        onClick={openPostcode}
+                                        disabled={!isPostcodeReady}
+                                    >
+                                        주소검색
+                                    </button>
                                 </div>
                             </div>
 
                             <div className="field half">
                                 <span>기본주소 <em>*</em></span>
-                                <input type="text" placeholder="기본주소" />
+                                <input
+                                    type="text"
+                                    name="address"
+                                    placeholder="기본주소"
+                                    value={shippingForm.address}
+                                    readOnly
+                                />
                             </div>
 
                             <label className="field half">
                                 <span>상세주소 <em>*</em></span>
-                                <input type="text" placeholder="상세주소" />
+                                <input
+                                    type="text"
+                                    name="detail"
+                                    placeholder="상세주소"
+                                    value={shippingForm.detail}
+                                    onChange={handleShippingChange}
+                                    className="payment-detail-input"
+                                />
                             </label>
 
                             <label className="field full">
                                 <span>배송 메세지</span>
-                                <textarea placeholder="배송 시 요청사항을 입력해주세요 (예: 문 앞에 놓아주세요)" />
+                                <textarea
+                                    name="message"
+                                    placeholder="배송 시 요청사항을 입력해주세요 (예: 문 앞에 놓아주세요)"
+                                    value={shippingForm.message}
+                                    onChange={handleShippingChange}
+                                />
                             </label>
                         </div>
 
                         <label className="check-field bottom-check">
-                            <input type="checkbox" />
+                            <input
+                                type="checkbox"
+                                name="saveAsDefault"
+                                checked={shippingForm.saveAsDefault}
+                                onChange={handleShippingChange}
+                            />
                             <span>기본 배송지로 저장</span>
                         </label>
                     </div>

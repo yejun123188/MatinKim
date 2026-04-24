@@ -4,6 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 import PriceRange from './PriceRange';
 
 export default function Filter({
+    showCategoryFilter = false,
+    categoryOptions = [],
+    selectedCategory = '',
+    onCategoryChange,
     colorCount,
     onPriceChange,
     minPrice = 0,
@@ -88,8 +92,14 @@ export default function Filter({
         onColorChange(selectedColor === color ? '' : color);
     };
 
+    const handleCategoryToggle = (category) => {
+        if (!onCategoryChange) return;
+        onCategoryChange(selectedCategory === category ? '' : category);
+    };
+
     const visibleColors = showAllColors ? colorCount : colorCount.slice(0, INITIAL_VISIBLE_COLORS);
     const hasMoreColors = colorCount.length > INITIAL_VISIBLE_COLORS;
+    const hasCategoryOptions = categoryOptions.length > 0;
 
     return (
         <div className='filter-wrap'>
@@ -129,17 +139,40 @@ export default function Filter({
             </div>
             <div className='shop-by'>
                 <h2 className='filter-title'>SHOP-BY</h2>
-                <div className='filter-section category'>
-                    <button
-                        type="button"
-                        className='filter-toggle'
-                        onClick={() => toggleSection('CATEGORY')}
-                        aria-expanded={openSections.CATEGORY}
-                    >
-                        <h3 className='filter-subtitle'>CATEGORY</h3>
-                        <span className='filter-toggle-icon'>{openSections.CATEGORY ? '−' : '+'}</span>
-                    </button>
-                </div>
+                {showCategoryFilter && (
+                    <div className='filter-section category'>
+                        <button
+                            type="button"
+                            className='filter-toggle'
+                            onClick={() => toggleSection('CATEGORY')}
+                            aria-expanded={openSections.CATEGORY}
+                        >
+                            <h3 className='filter-subtitle'>CATEGORY</h3>
+                            <span className='filter-toggle-icon'>{openSections.CATEGORY ? '−' : '+'}</span>
+                        </button>
+                        <div className={`filter-panel ${openSections.CATEGORY ? 'is-open' : ''}`}>
+                            <div className='size-list-box'>
+                                {hasCategoryOptions ? (
+                                    <div className='size-option-list'>
+                                        {categoryOptions.map(({ category, count }) => (
+                                            <button
+                                                key={category}
+                                                type="button"
+                                                className={`size-option-item ${selectedCategory === category ? 'is-active' : ''}`}
+                                                onClick={() => handleCategoryToggle(category)}
+                                            >
+                                                <span className='size-option-label'>{category}</span>
+                                                <span className='size-option-count'>({count})</span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className='size-empty-text'>현재 카테고리에 표시할 세부 분류가 없습니다.</p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                )}
                 <div className='filter-section price'>
                     <button
                         type="button"
