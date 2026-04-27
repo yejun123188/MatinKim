@@ -179,32 +179,35 @@ export const useAuthStore = create((set, get) => ({
     onGoogleLogin: async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            const user = result.user;
+            const firebaseUser = result.user;
 
-            const userRef = doc(db, "users", user.uid);
+            const googleUser = {
+                uid: firebaseUser.uid,
+                email: firebaseUser.email || "",
+                name: firebaseUser.displayName || "구글사용자",
+                nickname: firebaseUser.displayName || "구글사용자",
+                photoURL: firebaseUser.photoURL || "",
+                provider: "google",
+            };
+
+            const userRef = doc(db, "people", googleUser.uid);
             const userDoc = await getDoc(userRef);
 
-            let userInfo;
-
             if (!userDoc.exists()) {
-                userInfo = {
-                    uid: user.uid,
-                    email: user.email || "",
-                    name: user.displayName || "",
-                    nickname: "",
-                    phone: user.phoneNumber || "",
-                    profile: "",
-                };
-
-                await setDoc(userRef, userInfo);
+                await setDoc(userRef, googleUser);
+                console.log("신규 구글 회원 Firestore 등록 완료");
             } else {
-                userInfo = userDoc.data();
+                console.log("기존 구글 회원 Firestore 데이터 있음");
             }
 
-            set({ user: userInfo });
-            return userInfo;
+            set({ user: googleUser });
+
+            alert(`${googleUser.nickname}님, 구글 로그인되었습니다.`);
+            return googleUser;
+
         } catch (err) {
-            console.error("구글 로그인 에러:", err);
+            console.error("구글 로그인 오류:", err);
+            alert("구글 로그인 실패: " + err.message);
             throw err;
         }
     },
@@ -279,8 +282,8 @@ export const useAuthStore = create((set, get) => ({
             // 6 Zustand 상태 업데이트
             set({ user: kakaoUser });
 
-            alert(`${kakaoUser.nickname}님, 카카오 로그인 성공! `);
-            // if (navigate) navigate('/dashboard');
+            alert(`${kakaoUser.nickname}님, 카카오 로그인되었습니다.`);
+            return kakaoUser;
         } catch (err) {
             console.error(' 카카오 로그인 중 오류:', err);
             alert('카카오 로그인 실패: ' + err.message);

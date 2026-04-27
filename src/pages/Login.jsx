@@ -72,15 +72,30 @@ export default function Login({ onClose }) {
   };
   const { onKakaoLogin, onNaverLogin } = useAuthStore();
   // 카카오 로그인
-  const handleKakaoLogin = () => {
-    console.log("카카오 로그인 시도")
-    onKakaoLogin();
+  const handleKakaoLogin = async () => {
+    try {
+      const user = await onKakaoLogin();
 
+      if (user) {
+        navigate("/");
+        onClose?.();   // ✅ 이걸로 닫기
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
-  const handleNaverLogin = () => {
-    console.log("네이버 로그인 시도");
-    onNaverLogin();
+  const handleNaverLogin = async () => {
+    try {
+      const user = await onNaverLogin();
+
+      if (user) {
+        navigate("/");
+        onClose?.();   // ✅ 이걸로 닫기
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <div className="login-page">
