@@ -185,7 +185,8 @@ export default function Header() {
         </div>
 
       </header >
-      {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
+      {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
+
       {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />
       }
     </>
