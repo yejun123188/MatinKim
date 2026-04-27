@@ -3,7 +3,21 @@ import { useProductStore } from '../store/useProductStore'
 import { Link, useLocation } from 'react-router-dom';
 import PriceRange from './PriceRange';
 
-export default function Filter({ colorCount, onPriceChange }) {
+export default function Filter({
+    showCategoryFilter = false,
+    categoryOptions = [],
+    selectedCategory = '',
+    onCategoryChange,
+    colorCount,
+    onPriceChange,
+    minPrice = 0,
+    maxPrice = 1000,
+    selectedColor = '',
+    onColorChange,
+    sizeOptions = [],
+    selectedSize = '',
+    onSizeChange
+}) {
     const INITIAL_VISIBLE_COLORS = 18;
     const { menus, onColorCode } = useProductStore();
     const location = useLocation();
@@ -68,8 +82,24 @@ export default function Filter({ colorCount, onPriceChange }) {
         })
     };
 
+    const handleSizeToggle = (size) => {
+        if (!onSizeChange) return;
+        onSizeChange(selectedSize === size ? '' : size);
+    };
+
+    const handleColorToggle = (color) => {
+        if (!onColorChange) return;
+        onColorChange(selectedColor === color ? '' : color);
+    };
+
+    const handleCategoryToggle = (category) => {
+        if (!onCategoryChange) return;
+        onCategoryChange(selectedCategory === category ? '' : category);
+    };
+
     const visibleColors = showAllColors ? colorCount : colorCount.slice(0, INITIAL_VISIBLE_COLORS);
     const hasMoreColors = colorCount.length > INITIAL_VISIBLE_COLORS;
+    const hasCategoryOptions = categoryOptions.length > 0;
 
     return (
         <div className='filter-wrap'>
@@ -109,17 +139,40 @@ export default function Filter({ colorCount, onPriceChange }) {
             </div>
             <div className='shop-by'>
                 <h2 className='filter-title'>SHOP-BY</h2>
-                <div className='filter-section category'>
-                    <button
-                        type="button"
-                        className='filter-toggle'
-                        onClick={() => toggleSection('CATEGORY')}
-                        aria-expanded={openSections.CATEGORY}
-                    >
-                        <h3 className='filter-subtitle'>CATEGORY</h3>
-                        <span className='filter-toggle-icon'>{openSections.CATEGORY ? '−' : '+'}</span>
-                    </button>
-                </div>
+                {showCategoryFilter && (
+                    <div className='filter-section category'>
+                        <button
+                            type="button"
+                            className='filter-toggle'
+                            onClick={() => toggleSection('CATEGORY')}
+                            aria-expanded={openSections.CATEGORY}
+                        >
+                            <h3 className='filter-subtitle'>CATEGORY</h3>
+                            <span className='filter-toggle-icon'>{openSections.CATEGORY ? '−' : '+'}</span>
+                        </button>
+                        <div className={`filter-panel ${openSections.CATEGORY ? 'is-open' : ''}`}>
+                            <div className='size-list-box'>
+                                {hasCategoryOptions ? (
+                                    <div className='size-option-list'>
+                                        {categoryOptions.map(({ category, count }) => (
+                                            <button
+                                                key={category}
+                                                type="button"
+                                                className={`size-option-item ${selectedCategory === category ? 'is-active' : ''}`}
+                                                onClick={() => handleCategoryToggle(category)}
+                                            >
+                                                <span className='size-option-label'>{category}</span>
+                                                <span className='size-option-count'>({count})</span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className='size-empty-text'>현재 카테고리에 표시할 세부 분류가 없습니다.</p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                )}
                 <div className='filter-section price'>
                     <button
                         type="button"
@@ -132,7 +185,12 @@ export default function Filter({ colorCount, onPriceChange }) {
                     </button>
                     <div className={`filter-panel ${openSections.PRICE ? 'is-open' : ''}`}>
                         <div className='price-range-box'>
-                            <PriceRange onSearch={handlePrice} />
+                            <PriceRange
+                                min={minPrice}
+                                max={maxPrice}
+                                step={1000}
+                                onSearch={handlePrice}
+                            />
                         </div>
                     </div>
                 </div>
@@ -150,14 +208,20 @@ export default function Filter({ colorCount, onPriceChange }) {
                         <div className='color-list-box'>
                             <div className='color'>
                                 {visibleColors.map((color, id) => (
-                                    <p key={id} className='color-item'>
+                                    <button
+                                        key={id}
+                                        type="button"
+                                        className={`color-item ${selectedColor === color.color ? 'is-active' : ''}`}
+                                        onClick={() => handleColorToggle(color.color)}
+                                        aria-label={`${color.color} 필터`}
+                                    >
                                         <strong
                                             className='color-chip'
                                             style={{
                                                 ...getColorStyle(color.color)
                                             }}>
                                         </strong>
-                                    </p>
+                                    </button>
                                 ))}
                             </div>
                             {hasMoreColors && (
@@ -182,6 +246,27 @@ export default function Filter({ colorCount, onPriceChange }) {
                         <h3 className='filter-subtitle'>SIZE OPTIONS</h3>
                         <span className='filter-toggle-icon'>{openSections['SIZE OPTIONS'] ? '−' : '+'}</span>
                     </button>
+                    <div className={`filter-panel ${openSections['SIZE OPTIONS'] ? 'is-open' : ''}`}>
+                        <div className='size-list-box'>
+                            {sizeOptions.length > 0 ? (
+                                <div className='size-option-list'>
+                                    {sizeOptions.map(({ size, count }) => (
+                                        <button
+                                            key={size}
+                                            type="button"
+                                            className={`size-option-item ${selectedSize === size ? 'is-active' : ''}`}
+                                            onClick={() => handleSizeToggle(size)}
+                                        >
+                                            <span className='size-option-label'>{size}</span>
+                                            <span className='size-option-count'>({count})</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p className='size-empty-text'>현재 상품에 표시할 사이즈가 없습니다.</p>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,13 +1,29 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { useProductStore } from '../store/useProductStore';
 import "./scss/productDetail.scss";
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
 const RELATED_PER_PAGE = 10;
-const PAGE_BUTTON_LIMIT = 10;
+
+// 페이지네이션 갯수
+const PAGE_BUTTON_LIMIT = 5;
 const THUMBNAILS_PER_VIEW = 5;
+const CATEGORY2_URL_MAP = {
+    Outerwears: 'outerwears',
+    Tops: 'tops',
+    Bottoms: 'bottoms',
+    Dresses: 'dresses',
+    Bags: 'bags',
+    Shoes: 'shoes',
+    Wallets: 'wallets',
+    'Hats & Caps': 'hats',
+    Hair: 'hair',
+    Neckwear: 'neckwear',
+    'Pouches & Cases': 'pouches',
+    Others: 'others'
+};
 
 const formatCategory = (value = '') => value.replace(/_/g, ' ').toUpperCase();
 const COLOR_NAME_KO = {
@@ -92,7 +108,7 @@ const getProductBaseName = (item) => {
 export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { items, onFetchItem, onColorCode } = useProductStore();
+    const { items, onFetchItem, onColorCode, onAddCart } = useProductStore();
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [thumbStartIndex, setThumbStartIndex] = useState(0);
@@ -104,6 +120,7 @@ export default function ProductDetail() {
     const [isLiked, setIsLiked] = useState(false);
     const [isZoomOpen, setIsZoomOpen] = useState(false);
     const [zoomImageIndex, setZoomImageIndex] = useState(0);
+    const [isPageVisible, setIsPageVisible] = useState(false);
 
     // 상세 진입 시 전역 상품 목록이 비어 있으면 한 번만 불러오기
     useEffect(() => {
@@ -163,6 +180,18 @@ export default function ProductDetail() {
         window.scrollTo(0, 0);
     }, [product]);
 
+    useEffect(() => {
+        setIsPageVisible(false);
+
+        if (!product) return undefined;
+
+        const timer = window.setTimeout(() => {
+            setIsPageVisible(true);
+        }, 60);
+
+        return () => window.clearTimeout(timer);
+    }, [product]);
+
     // 확대 모달이 열려 있을 때만 스크롤 잠금과 ESC 닫기를 활성화
     useEffect(() => {
         if (!isZoomOpen) return undefined;
@@ -215,6 +244,10 @@ export default function ProductDetail() {
         : '80%';
     const deliveryText = product?.tabContents?.DELIVERY || '';
     const detailText = product?.tabContents?.DETAILS || '';
+    const category1Path = product ? `/${product.category1.toLowerCase()}` : '/all';
+    const category2Path = product
+        ? `${category1Path}/${CATEGORY2_URL_MAP[product.category2] || product.category2.toLowerCase()}`
+        : '/all';
 
     const relatedProducts = useMemo(() => {
         if (!product) return [];
@@ -393,7 +426,7 @@ export default function ProductDetail() {
 
     return (
         <main className='product-detail-page'>
-            <div className='inner product-detail-page-inner'>
+            <div className={`inner product-detail-page-inner ${isPageVisible ? 'is-visible' : ''}`}>
                 <section className='product-detail-hero'>
                     <div className='gallery-column'>
                         <div className='gallery-thumbs'>
@@ -492,7 +525,11 @@ export default function ProductDetail() {
                         </div>
 
                         <p className='detail-path'>
-                            SHOP <span>|</span> {formatCategory(product.category2)}
+                            {/* <Link to={category1Path}>SHOP</Link>
+                            <span>|</span> */}
+                            <Link to={category1Path}>{formatCategory(product.category1)}</Link>
+                            <span>|</span>
+                            <Link to={category2Path}>{formatCategory(product.category2)}</Link>
                         </p>
                         <h1 className='detail-title'>{product.name}</h1>
 
@@ -579,7 +616,26 @@ export default function ProductDetail() {
                                 <span>{quantity}</span>
                                 <button type="button" onClick={() => handleQuantityChange(quantity + 1)} aria-label='수량 증가'>+</button>
                             </div>
-                            <button type="button" className='cart-btn'>장바구니 담기</button>
+                            <button type="button" className='cart-btn'
+                                onClick={() => {
+                                    if (!product) return;
+
+                                    const price = product.discountRate > 0
+                                        ? product.discountPrice
+                                        : product.price;
+
+                                    onAddCart({
+                                        id: product.id,
+                                        name: product.name,
+                                        price: price,
+                                        size: selectedSize,
+                                        color: selectedColor,
+                                        count: quantity,
+                                        image: product.mainImg || product.hoverImg,
+                                        key: `${product.id}-${selectedSize}-${selectedColor}`
+                                    });
+                                }}
+                            >장바구니 담기</button>
                             <button
                                 type="button"
                                 className={`buy-btn ${isProductSoldOut ? 'is-soldout' : ''}`}

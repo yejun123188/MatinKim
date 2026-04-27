@@ -8,7 +8,14 @@
 .product-detail-page-inner {
     display: flex;
     flex-direction: column;
-    // gap: 60px;
+    opacity: 0;
+    // transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.75s ease;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .product-detail-hero {
@@ -270,6 +277,16 @@
     font-size: g.$size-14-main;
     letter-spacing: 0.08em;
     color: g.$text-sub-color;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: g.$text-main-color;
+        }
+    }
 
     span {
         margin: 0 6px;
