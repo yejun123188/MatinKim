@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Naver Callback</title>
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"></script>
+</head>
+
+<body>
+    <script>
+        const naverLogin = new naver.LoginWithNaverId({
+            clientId: "1zVTRAlvq0aAbZZRTPY_",
+            callbackUrl: window.location.origin + "/naverCallback.html",
+            isPopup: true,
+            callbackHandle: true,
+        });
+
+        naverLogin.init();
+
+        naverLogin.getLoginStatus(function (status) {
+            if (status) {
+                const user = naverLogin.user;
+
+                window.opener.postMessage({
+                    type: "NAVER_LOGIN_SUCCESS",
+                    profile: {
+                        id: user.id,
+                        email: user.email,
+                        name: user.name,
+                        nickname: user.nickname,
+                        profile_image: user.profile_image,
+                    },
+                }, window.location.origin);
+
+                window.close();
+            } else {
+                window.opener.postMessage({
+                    type: "NAVER_LOGIN_FAIL",
+                    message: "네이버 로그인 상태를 확인할 수 없습니다.",
+                }, window.location.origin);
+
+                window.close();
+            }
+        });
+    </script>
+</body>
+
+</html>

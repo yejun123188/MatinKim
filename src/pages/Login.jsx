@@ -70,14 +70,18 @@ export default function Login({ onClose }) {
       setGoogleLoading(false);
     }
   };
-  const { onKakaoLogin } = useAuthStore();
+  const { onKakaoLogin, onNaverLogin } = useAuthStore();
   // 카카오 로그인
   const handleKakaoLogin = () => {
     console.log("카카오 로그인 시도")
     onKakaoLogin();
 
-  }
+  };
 
+  const handleNaverLogin = () => {
+    console.log("네이버 로그인 시도");
+    onNaverLogin();
+  };
   return (
     <div className="login-page">
       <div className="login-dim" onClick={onClose}></div>
@@ -147,12 +151,12 @@ export default function Login({ onClose }) {
             </div>
 
             <div className="sns-login">
-              <button type="button" className="kakao" onClick={onKakaoLogin}>
+              <button type="button" className="kakao" onClick={handleKakaoLogin}>
                 <img src="/images/sub-login/kakao-icon.svg" alt="Kakao" />
                 <span>카카오로 시작하기</span>
               </button>
 
-              <button type="button" className="naver">
+              <button type="button" className="naver" onClick={handleNaverLogin}>
                 <img src="/images/sub-login/naver-icon.svg" alt="Naver" />
                 <span>네이버로 시작하기</span>
               </button>
