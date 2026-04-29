@@ -1,0 +1,104 @@
+@use "../../App.scss" as g;
+
+.recent-products-wrap {
+  width: 100%;
+  padding: 30px;
+  background: #ffffff;
+
+  .recent-products-top {
+    display: flex;
+    justify-content: flex-end;
+    height: 28px;
+    border-bottom: 1px solid #999999;
+
+    button {
+      border: none;
+      background: none;
+      color: g.$text-sub-color;
+      font-family: inherit;
+      font-size: g.$size-14-main;
+      cursor: pointer;
+    }
+  }
+
+  .recent-product-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recent-product-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 170px;
+    padding: 12px;
+    border-bottom: 1px solid #999999;
+  }
+
+  .recent-product-img {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      width: 100px;
+      height: 150px;
+      object-fit: contain;
+    }
+  }
+
+  .recent-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .recent-product-name {
+    border: none;
+    background: none;
+    padding: 0;
+    color: g.$text-main-color;
+    font-size: g.$size-16;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .recent-product-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: g.$text-main-color;
+    font-size: g.$size-16;
+
+    del {
+      color: g.$text-sub-color;
+      font-size: g.$size-14-main;
+    }
+  }
+
+  .button-wrap {
+    display: flex;
+    gap: 8px;
+
+    .Bbtn {
+      @include g.myBtn1;
+    }
+
+    .Wbtn {
+      @include g.myBtn2;
+    }
+  }
+
+  .recent-products-empty {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+    border-bottom: 1px solid #999999;
+    color: g.$text-sub-color;
+  }
+}

@@ -12,6 +12,8 @@ import OrderDetail from "../components/OrderDetail";
 import OrderRequest from "../components/OrderRequest";
 import Adress from "../components/Adress";
 import OrderTracking from "../components/OrderTracking";
+import InquiryList from "../components/InquiryList";
+import RecentViewedProducts from "../components/RecentViewedProducts";
 
 const myMenu = "마이페이지";
 const orderMenu = "주문내역";
@@ -46,6 +48,8 @@ export default function UserInfo() {
     if (action === "tracking") return <OrderTracking />;
     if (requestActions.has(action)) return <OrderRequest />;
     if (orderId) return <OrderDetail />;
+    if (selectMenu.includes("1:1")) return <InquiryList />;
+    if (selectMenu.includes("최근")) return <RecentViewedProducts />;
 
     switch (selectMenu) {
       case orderMenu:
