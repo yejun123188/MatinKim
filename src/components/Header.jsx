@@ -41,11 +41,10 @@ const photoMenu = [
 export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const { menus, cartCount } = useProductStore();
+  const { menus, cartCount, isCartOpen, openCart, closeCart } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const { user } = useAuthStore();
   const navigate = useNavigate();
   useEffect(() => {
@@ -111,7 +110,7 @@ export default function Header() {
                 </li>
                 <li className="header-cart">
                   <Link
-                    onClick={() => setIsCartOpen(true)}>
+                    onClick={openCart}>
                     <img src="/images/header-icon/cart.svg" alt="" />
                     <span className="cart-num">
                       <span>{cartCount}</span>
@@ -187,7 +186,7 @@ export default function Header() {
       </header >
       {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
 
-      {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />
+      {isCartOpen && <Cart onClose={closeCart} />
       }
     </>
   );
