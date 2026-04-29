@@ -99,8 +99,11 @@
       width: 120px;
     }
 
-    input {
-      width: 120px;
+            input {
+                border: none;
+                accent-color: g.$main-color;
+            }
+        }
     }
   }
 

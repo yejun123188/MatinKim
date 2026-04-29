@@ -70,7 +70,33 @@ export default function Login({ onClose }) {
       setGoogleLoading(false);
     }
   };
+  const { onKakaoLogin, onNaverLogin } = useAuthStore();
+  // 카카오 로그인
+  const handleKakaoLogin = async () => {
+    try {
+      const user = await onKakaoLogin();
 
+      if (user) {
+        navigate("/");
+        onClose?.();   // ✅ 이걸로 닫기
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleNaverLogin = async () => {
+    try {
+      const user = await onNaverLogin();
+
+      if (user) {
+        navigate("/");
+        onClose?.();   // ✅ 이걸로 닫기
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <div className="login-page">
       <div className="login-dim" onClick={onClose}></div>
@@ -140,12 +166,12 @@ export default function Login({ onClose }) {
             </div>
 
             <div className="sns-login">
-              <button type="button" className="kakao">
+              <button type="button" className="kakao" onClick={handleKakaoLogin}>
                 <img src="/images/sub-login/kakao-icon.svg" alt="Kakao" />
                 <span>카카오로 시작하기</span>
               </button>
 
-              <button type="button" className="naver">
+              <button type="button" className="naver" onClick={handleNaverLogin}>
                 <img src="/images/sub-login/naver-icon.svg" alt="Naver" />
                 <span>네이버로 시작하기</span>
               </button>

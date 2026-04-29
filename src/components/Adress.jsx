@@ -139,22 +139,23 @@ export default function Adress() {
                 </button>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      <div className="address-bottom">
-        <ul className="explain-list">
-          <li>•배송 주소록은 최대 10개까지 등록할 수 있습니다.</li>
-          <li>•최근 배송지 기준으로 자동 업데이트 됩니다.</li>
-          <li>•기본 배송지는 1개만 저장됩니다.</li>
-        </ul>
+            <div className="address-bottom">
+                <ul className="explain-list">
+                    <li>•배송 주소록은 최대 10개까지 등록할 수 있습니다.</li>
+                    <li>•최근 배송지 기준으로 자동 업데이트 됩니다.</li>
+                    <li>•기본 배송지는 1개만 저장됩니다.</li>
+                </ul>
 
-        <div className="button">
-          <button onClick={() => navigate("/userinfo/address")}>
-            배송지 등록
-          </button>
-          <button onClick={handleDeleteSelected}>선택삭제</button>
+                <div className="button">
+                    <button onClick={() => navigate("/userinfo/address")}>
+                        배송지 등록
+                    </button>
+                    <button onClick={handleDeleteSelected}>
+                        선택삭제
+                    </button>
+                </div>
+            </div>
         </div>
       </div>
     </div>

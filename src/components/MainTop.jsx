@@ -6,7 +6,7 @@ export default function MainTop() {
     <div className="main-top">
       <div className="video-wrap">
         <video
-          src="./videos/main-top/top-video.mp4"
+          src="./videos/main-top/top-video-2160p.mp4"
           autoPlay
           muted
           loop

@@ -14,20 +14,22 @@ $filter-line-width: 90%;
         }
 
         .filter-sidebar {
+            max-width: 190px;
             width: 15%;
-            min-width: 190px;
-            flex: 0 0 15%;
+            flex: 0 0 auto;
             overflow: hidden;
             opacity: 1;
             transform: translateX(0);
-            transition: width 0.35s ease, min-width 0.35s ease, flex-basis 0.35s ease, opacity 0.25s ease, transform 0.35s ease;
+            transition:
+                max-width 0.35s ease,
+                opacity 0.25s ease,
+                transform 0.35s ease;
 
             &.is-hidden {
-                width: 0;
-                min-width: 0;
-                flex-basis: 0;
+                max-width: 0;
                 opacity: 0;
                 transform: translateX(-16px);
+                pointer-events: none;
             }
         }
 
@@ -134,8 +136,9 @@ $filter-line-width: 90%;
 
                 .filter-main-label {
                     font-size: g.$size-14-main;
-                    font-weight: g.$Regular;
+                    font-weight: g.$Bold;
                     color: g.$text-sub-color;
+                    text-transform: uppercase;
 
                     &.is-active {
                         font-weight: g.$Bold;
@@ -182,6 +185,7 @@ $filter-line-width: 90%;
             .shop-by {
                 margin-top: 48px;
                 padding-top: 32px;
+                padding-bottom: 32px;
                 border-top: 1px solid $filter-line-color;
             }
 
@@ -210,6 +214,17 @@ $filter-line-width: 90%;
                     .color-item {
                         display: flex;
                         justify-content: center;
+                        padding: 0;
+                        border: 0;
+                        background: transparent;
+                        cursor: pointer;
+
+                        &.is-active {
+                            .color-chip {
+                                border-color: g.$text-main-color;
+                                box-shadow: inset 0 0 0 1px g.$text-main-color;
+                            }
+                        }
                     }
 
                     .color-chip {
@@ -231,6 +246,72 @@ $filter-line-width: 90%;
                     cursor: pointer;
                 }
             }
+
+            .category,
+            .size {
+                width: 100%;
+
+                .size-list-box {
+                    margin-top: 16px;
+                    width: 90%;
+                }
+
+                .size-option-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .size-option-item {
+                    @include g.myFlex(space-between, 12px, center);
+                    width: 100%;
+                    padding: 7px 0 0 0;
+                    border: 0;
+                    background: transparent;
+                    align-items: center;
+                    color: g.$text-sub-color2;
+                    font-size: g.$size-12-sub;
+                    font-weight: g.$Regular;
+                    text-align: left;
+                    cursor: pointer;
+                    transition: color 0.2s ease, font-weight 0.2s ease;
+
+                    &:hover {
+                        color: g.$text-main-color;
+                    }
+
+                    &.is-active {
+                        font-size: g.$size-12-sub;
+                        font-weight: g.$Bold;
+                        color: g.$text-main-color;
+
+                        .size-option-label,
+                        .size-option-count {
+                            color: g.$text-main-color;
+                        }
+                    }
+                }
+
+                .size-option-label {
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                    color: inherit;
+                }
+
+                .size-option-count {
+                    flex-shrink: 0;
+                    line-height: 1.2;
+                    font-size: g.$size-12-sub;
+                    color: inherit;
+                }
+
+                .size-empty-text {
+                    margin: 0;
+                    color: g.$text-sub-color2;
+                    font-size: g.$size-12-sub;
+                    line-height: 1.5;
+                }
+            }
         }
 
         .product-list-wrap {
@@ -238,6 +319,14 @@ $filter-line-width: 90%;
             flex: 1;
             padding: 120px 0 80px;
             transition: width 0.35s ease, margin-left 0.35s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+
+            &.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+                transition: width 0.35s ease, margin-left 0.35s ease, opacity 0.7s ease 0.12s, transform 0.75s ease 0.12s;
+            }
 
             &.filter-hidden {
                 width: 100%;
@@ -247,7 +336,8 @@ $filter-line-width: 90%;
             .section-banner {
                 position: relative;
                 width: 100%;
-                height: 150px;
+                // height: 150px;
+                height: 300px;
                 overflow: hidden;
                 margin-bottom: 32px;
 
@@ -256,7 +346,7 @@ $filter-line-width: 90%;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: center 30%;
+                    object-position: center 10%;
                 }
 
                 .banner-text {
@@ -272,9 +362,9 @@ $filter-line-width: 90%;
                         margin: 0;
                         padding: 0;
                         color: g.$white-color;
-                        font-size: g.$size-30;
+                        font-size: 50px;
                         font-weight: g.$Bold;
-                        letter-spacing: 0.08em;
+                        // letter-spacing: 0.08em;
                         text-align: left;
                         text-transform: uppercase;
                     }
@@ -283,7 +373,7 @@ $filter-line-width: 90%;
                         margin: 0;
                         padding: 0;
                         color: g.$white-color;
-                        font-size: g.$size-16;
+                        font-size: 20px;
                         font-weight: g.$Regular;
                         letter-spacing: 0.08em;
                         text-align: left;
@@ -291,11 +381,14 @@ $filter-line-width: 90%;
                     }
                 }
 
+                // 검은색 불투명 배경
                 &::after {
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: rgba(0, 0, 0, 0.2);
+                    background: linear-gradient(to right,
+                            rgba(0, 0, 0, 0.3),
+                            rgba(0, 0, 0, 0));
                 }
             }
 
@@ -355,6 +448,41 @@ $filter-line-width: 90%;
                                 margin: 0;
                                 accent-color: g.$main-color;
                                 cursor: pointer;
+                            }
+                        }
+
+                        .filter-tags {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            align-items: center;
+
+                            .filter-tag {
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 6px;
+                                padding: 6px 12px;
+                                border: 1px solid rgba(g.$main-color, 0.2);
+                                color: g.$main-color;
+                                font-size: g.$size-12-sub;
+                                font-weight: g.$Regular;
+                                cursor: pointer;
+                                transition: all 0.2s ease;
+                                white-space: nowrap;
+
+                                &:hover {
+                                    border-color: g.$main-color;
+                                }
+
+                                .tag-remove {
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 16px;
+                                    font-weight: g.$Bold;
+                                    line-height: 1;
+                                    flex-shrink: 0;
+                                }
                             }
                         }
                     }

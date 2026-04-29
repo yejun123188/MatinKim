@@ -1,87 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "./scss/Cart.scss";
+import { useProductStore } from "../store/useProductStore";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart({ onClose }) {
-    const [items, setItems] = useState([
-        {
-            id: 1,
-            name: "BACK LOGO HOODY WINDBREAKER FOR WOMEN IN DARK BROWN",
-            color: "블랙",
-            size: "M",
-            price: 142200,
-            quantity: 1,
-            checked: true,
-            image: "/images/sub-cart/clothes-mini.jpg",
-        },
-        {
-            id: 2,
-            name: "MATIN STITCH DENIM ECOBAG IN SKY",
-            color: "SKY",
-            size: "FREE",
-            price: 52200,
-            quantity: 1,
-            checked: true,
-            image: "/images/sub-cart/clothes-mini2.jpg",
-        },
+    const { cartItem, onUpdateQuantity, onRemoveItem } = useProductStore();
+    const navigate = useNavigate();
 
-    ]);
+    const [checkedItems, setCheckedItems] = useState([]);
 
-    const [allChecked, setAllChecked] = useState(true);
+    const items = cartItem;
 
     const formatPrice = (price) => `₩${price.toLocaleString()}`;
 
+    // 전체 선택 여부
+    const allChecked = items.length > 0 && checkedItems.length === items.length;
+
+    // 전체 선택
     const handleAllCheck = () => {
-        const next = !allChecked;
-        setAllChecked(next);
-        setItems((prev) => prev.map((item) => ({ ...item, checked: next })));
+        if (allChecked) {
+            setCheckedItems([]);
+        } else {
+            setCheckedItems(items.map((item) => `${item.id}-${item.size}`));
+        }
     };
 
-    const handleItemCheck = (id) => {
-        const updated = items.map((item) =>
-            item.id === id ? { ...item, checked: !item.checked } : item
-        );
-        setItems(updated);
-        setAllChecked(updated.length > 0 && updated.every((item) => item.checked));
-    };
+    // 개별 선택
+    const handleItemCheck = (item) => {
+        const key = `${item.id}-${item.size}`;
 
-    const handleQuantity = (id, type) => {
-        setItems((prev) =>
-            prev.map((item) => {
-                if (item.id !== id) return item;
-
-                if (type === "minus" && item.quantity > 1) {
-                    return { ...item, quantity: item.quantity - 1 };
-                }
-
-                if (type === "plus") {
-                    return { ...item, quantity: item.quantity + 1 };
-                }
-
-                return item;
-            })
+        setCheckedItems((prev) =>
+            prev.includes(key)
+                ? prev.filter((v) => v !== key)
+                : [...prev, key]
         );
     };
 
-    const handleRemove = (id) => {
-        const updated = items.filter((item) => item.id !== id);
-        setItems(updated);
-        setAllChecked(updated.length > 0 && updated.every((item) => item.checked));
-    };
+    // 선택된 아이템
+    const selectedItems = items.filter((item) =>
+        checkedItems.includes(`${item.id}-${item.size}`)
+    );
 
-    const handleSelectedRemove = () => {
-        const updated = items.filter((item) => !item.checked);
-        setItems(updated);
-        setAllChecked(false);
-
-    };
-
-    const selectedItems = items.filter((item) => item.checked);
-
+    // 총 금액
     const productTotal = selectedItems.reduce(
-        (sum, item) => sum + item.price * item.quantity,
+        (sum, item) => sum + item.price * item.count,
         0
     );
 
+    const handleSubmit = () => {
+        if (selectedItems.length === 0) {
+            alert("상품을 선택해주세요");
+            return;
+        }
+
+        navigate("/payment", {
+            state: {
+                orderItems: selectedItems.map((item) => ({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.count,
+                    option: `${item.color} / ${item.size}`,
+                    image: item.image
+                }))
+            }
+        });
+
+        onClose(); // 카트 닫기
+    }
     const shippingFee = 0;
     const totalPayment = productTotal + shippingFee;
 
@@ -97,7 +83,9 @@ export default function Cart({ onClose }) {
                     </button>
                 </div>
 
-                {items.length === 0 ? (<p className="cart-empty">쇼핑백이 비어있습니다</p>) : (
+                {items.length === 0 ? (
+                    <p className="cart-empty">쇼핑백이 비어있습니다</p>
+                ) : (
                     <div>
                         <div className="cart-select-row">
                             <label className="check-wrap">
@@ -106,74 +94,87 @@ export default function Cart({ onClose }) {
                                     checked={allChecked}
                                     onChange={handleAllCheck}
                                 />
-                                <img src={allChecked ? "/images/sub-cart/check-icon-active.svg" : "/images/sub-cart/check-icon.svg"} alt="" />
                                 <span>전체선택 ({selectedItems.length})</span>
                             </label>
 
                             <button
                                 className="delete-selected-btn"
                                 type="button"
-                                onClick={handleSelectedRemove}
+                                onClick={() => {
+                                    selectedItems.forEach((item) =>
+                                        onRemoveItem(item.id, item.size)
+                                    );
+                                    setCheckedItems([]);
+                                }}
                             >
                                 선택삭제
                             </button>
                         </div>
 
                         <div className="cart-list">
-                            {items.map((item) => (
-                                <div className="cart-item" key={item.id}>
-                                    <div className="item-left">
-                                        <label className="check-wrap item-check">
-                                            <input
-                                                type="checkbox"
-                                                checked={item.checked}
-                                                onChange={() => handleItemCheck(item.id)}
-                                            />
-                                            <img src={item.checked ? "/images/sub-cart/check-icon-active.svg" : "/images/sub-cart/check-icon.svg"} alt="" />
+                            {items.map((item) => {
+                                const key = `${item.id}-${item.size}`;
+                                const isChecked = checkedItems.includes(key);
 
-                                        </label>
+                                return (
+                                    <div className="cart-item" key={key}>
+                                        <div className="item-left">
+                                            <label className="check-wrap item-check">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isChecked}
+                                                    onChange={() => handleItemCheck(item)}
+                                                />
+                                            </label>
 
-                                        <div className="item-thumb">
-                                            <img src={item.image} alt={item.name} />
-                                        </div>
-
-                                        <div className="item-info">
-                                            <h3>{item.name}</h3>
-                                            <p className="item-option">
-                                                색상: {item.color} · 사이즈: {item.size}
-                                            </p>
-
-                                            <div className="item-qty">
-                                                <button
-                                                    type="button"
-                                                    onClick={() => handleQuantity(item.id, "minus")}
-                                                >
-                                                    −
-                                                </button>
-                                                <span>{item.quantity}</span>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => handleQuantity(item.id, "plus")}
-                                                >
-                                                    +
-                                                </button>
+                                            <div className="item-thumb">
+                                                <img src={item.image} alt={item.name} />
                                             </div>
 
-                                            <button
-                                                className="remove-btn"
-                                                type="button"
-                                                onClick={() => handleRemove(item.id)}
-                                            >
-                                                REMOVE
-                                            </button>
+                                            <div className="item-info">
+                                                <h3>{item.name}</h3>
+                                                <p className="item-option">
+                                                    색상: {item.color} · 사이즈: {item.size}
+                                                </p>
+
+                                                <div className="item-qty">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() =>
+                                                            onUpdateQuantity(item.key, "minus")
+                                                        }
+                                                    >
+                                                        −
+                                                    </button>
+                                                    <span>{item.count}</span>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() =>
+                                                            onUpdateQuantity(item.key, "plus")
+                                                        }
+                                                    >
+                                                        +
+                                                    </button>
+                                                </div>
+
+                                                <button
+                                                    className="remove-btn"
+                                                    type="button"
+                                                    onClick={() =>
+                                                        onRemoveItem(item.id, item.size)
+                                                    }
+                                                >
+                                                    REMOVE
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div className="item-price">
+                                            {formatPrice(item.price * item.count)}
                                         </div>
                                     </div>
-
-                                    <div className="item-price">
-                                        {formatPrice(item.price * item.quantity)}
-                                    </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
 
                         <div className="cart-summary">
@@ -191,7 +192,7 @@ export default function Cart({ onClose }) {
                             </div>
                         </div>
 
-                        <button className="order-btn" type="button">
+                        <button className="order-btn" type="button" onClick={handleSubmit}>
                             선택상품 주문
                         </button>
                     </div>

@@ -30,7 +30,7 @@ export default function Stockist() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (window.kakao && window.kakao.maps) {
+            if (window.google && window.google.maps) {
                 initMap(37.5435, 127.0543);
                 clearInterval(interval);
             }
@@ -39,7 +39,7 @@ export default function Stockist() {
         onFetchStore();
 
         return () => clearInterval(interval);
-    }, [])
+    }, []);
     return (
         <div className='stock'>
             <div className="inner">
@@ -74,7 +74,7 @@ export default function Stockist() {
                                 <ul className="store-list">
 
                                     {stores.map((s, id) => (
-                                        <div key={id}>
+                                        <div key={id} className='store-position'>
                                             {s.stores.map((ss, i) => (
                                                 <li onClick={() => { setMarkers(ss.lat, ss.lng); setClickAd(i) }}
                                                     className={clickAd === i ? "active" : ""} key={i}>
@@ -106,12 +106,12 @@ export default function Stockist() {
                             <li className='store-name' >{s.name}
                                 <span><img src="/images/sub-about/arrow-up.svg" alt="" /></span>
                             </li>
-                            <li><a href={s.url}>{s.url}</a></li>
+                            <li className='store-url'><a href={s.url}>{s.url}</a></li>
                         </ul>
                     ))}
                 </div>
                 <div className="story-text">
-                    <p>Matin Kim strives to harmonize a distinctive sense of freedom and a rough style <br />
+                    <p className='te'>Matin Kim strives to harmonize a distinctive sense of freedom and a rough style <br />
                         within the diverse tapestry of daily fashion cultures.
                     </p>
                 </div>

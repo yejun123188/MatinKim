@@ -51,6 +51,11 @@
                         padding: 0 10px;
                         height: 35px;
                         width: 120px;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        background: url("/images/sub-about/downarrow.svg") no-repeat right 10px center;
+                        background-size: 16px;
                     }
 
                     input {
@@ -71,7 +76,7 @@
 
                 .show {
                     padding: 10px 10px 0 10px;
-                    height: 626px;
+                    height: 625px;
                     overflow-y: auto;
 
                     li {
@@ -81,7 +86,8 @@
                         cursor: pointer;
 
                         .name {
-                            font-size: g.$size-16;
+                            font-size: 18px;
+                            padding-bottom: 4px;
                             color: g.$text-main-color;
                         }
 
@@ -99,6 +105,13 @@
 
                     li:hover {
                         background-color: rgba(0, 0, 0, 0.06);
+
+                    }
+
+                    .store-position li {
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+                        padding: 10px;
 
                     }
 
@@ -127,20 +140,32 @@
             background-color: g.$sub-color;
             padding: 10px;
             font-size: g.$size-14-main;
-            color: g.$text-sub-color;
+
+
+
 
             .store-name {
                 font-size: g.$size-16;
                 color: g.$text-main-color;
 
+                img {
+                    width: 24px;
+                }
+
+            }
+
+            .store-url {
+                color: g.$text-sub-color;
             }
         }
     }
 
     .story-text {
-        text-align: center;
-        padding: 150px 0 80px 0;
-        color: g.$text-sub-color2;
-        font-size: g.$size-14-main;
+        .te {
+            text-align: center;
+            padding: 150px 0 80px 0;
+            color: g.$text-sub-color2;
+            font-size: g.$size-14-main;
+        }
     }
 }
