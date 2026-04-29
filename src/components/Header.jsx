@@ -41,7 +41,7 @@ const photoMenu = [
 export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const { menus } = useProductStore();
+  const { menus, cartCount } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
@@ -111,7 +111,7 @@ export default function Header() {
                     onClick={() => setIsCartOpen(true)}>
                     <img src="/images/header-icon/cart.svg" alt="" />
                     <span className="cart-num">
-                      <span>1</span>
+                      <span>{cartCount}</span>
                     </span>
                   </Link>
                 </li>

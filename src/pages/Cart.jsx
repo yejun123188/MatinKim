@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from "react";
 import "./scss/Cart.scss";
 import { useProductStore } from "../store/useProductStore";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart({ onClose }) {
     const { cartItem, onUpdateQuantity, onRemoveItem } = useProductStore();
-
+    const navigate = useNavigate();
 
     const [checkedItems, setCheckedItems] = useState([]);
 
@@ -46,6 +47,27 @@ export default function Cart({ onClose }) {
         0
     );
 
+    const handleSubmit = () => {
+        if (selectedItems.length === 0) {
+            alert("상품을 선택해주세요");
+            return;
+        }
+
+        navigate("/payment", {
+            state: {
+                orderItems: selectedItems.map((item) => ({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.count,
+                    option: `${item.color} / ${item.size}`,
+                    image: item.image
+                }))
+            }
+        });
+
+        onClose(); // 카트 닫기
+    }
     const shippingFee = 0;
     const totalPayment = productTotal + shippingFee;
 
@@ -170,7 +192,7 @@ export default function Cart({ onClose }) {
                             </div>
                         </div>
 
-                        <button className="order-btn" type="button">
+                        <button className="order-btn" type="button" onClick={handleSubmit}>
                             선택상품 주문
                         </button>
                     </div>

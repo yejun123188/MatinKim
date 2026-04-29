@@ -538,3 +538,22 @@
 .selected-method-copy {
     margin-top: 10px;
 }
+
+.error-text {
+    color: g.$red-color;
+    padding-top: 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.error-text::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    margin-right: 6px;
+    background-image: url("/images/danger.svg");
+    background-repeat: no-repeat;
+}

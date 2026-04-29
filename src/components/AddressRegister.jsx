@@ -10,7 +10,7 @@ export default function AddressRegister() {
     const location = useLocation();
     const editData = location.state;
 
-    const { addAddress } = useAuthStore();
+    const { addAddress, openPostcode, onAddAddress, onEditAddress } = useAuthStore();
 
     const [form, setForm] = useState({
         name: "",
@@ -18,9 +18,6 @@ export default function AddressRegister() {
         zipcode: "",
         address: "",
         detail: "",
-        phone1: "02",
-        phone2: "",
-        phone3: "",
         mobile1: "010",
         mobile2: "",
         mobile3: "",
@@ -36,12 +33,9 @@ export default function AddressRegister() {
             setForm({
                 name: editData.name || "",
                 receiver: editData.receiver || "",
-                zipcode: "",
+                zipcode: editData.zipcode || "",
                 address: editData.address || "",
-                detail: "",
-                phone1: "02",
-                phone2: "",
-                phone3: "",
+                detail: editData.detail || "",
                 mobile1: phoneSplit[0],
                 mobile2: phoneSplit[1],
                 mobile3: phoneSplit[2],
@@ -64,22 +58,35 @@ export default function AddressRegister() {
         }));
     };
 
-    const openPostcode = () => {
-        new window.daum.Postcode({
-            oncomplete: function (data) {
-                const address = data.roadAddress || data.jibunAddress;
+    // const openPostcode = () => {
+    //     new window.daum.Postcode({
+    //         oncomplete: function (data) {
+    //             const address = data.roadAddress || data.jibunAddress;
 
-                setForm((prev) => ({
-                    ...prev,
-                    zipcode: data.zonecode,
-                    address: address
-                }));
+    //             setForm((prev) => ({
+    //                 ...prev,
+    //                 zipcode: data.zonecode,
+    //                 address: address
+    //             }));
 
-                setTimeout(() => {
-                    document.querySelector(".detail-input")?.focus();
-                }, 100);
-            }
-        }).open();
+    //             setTimeout(() => {
+    //                 document.querySelector(".detail-input")?.focus();
+    //             }, 100);
+    //         }
+    //     }).open();
+    // };
+    const handlePostcode = () => {
+        openPostcode(({ zipcode, address }) => {
+            setForm((prev) => ({
+                ...prev,
+                zipcode,
+                address,
+            }));
+
+            setTimeout(() => {
+                document.querySelector(".detail-input")?.focus();
+            }, 100);
+        });
     };
 
     const validate = () => {
@@ -105,36 +112,22 @@ export default function AddressRegister() {
         const data = {
             name: form.name,
             receiver: form.receiver,
-            address: form.address + " " + form.detail,
+            zipcode: form.zipcode,
+            address: form.address,
+            detail: form.detail,
             phone: `${form.mobile1}-${form.mobile2}-${form.mobile3}`,
             isDefault: form.isDefault
         };
 
-        try {
-            const { user } = useAuthStore.getState();
-            if (!user) return;
+        if (editData?.id) {
+            // 수정 모드 - id가 있으면 updateDoc
+            await onEditAddress(editData.id, data);
+        } else {
 
-            const ref = collection(db, "users", user.uid, "addresses");
-            const snap = await getDocs(ref);
-
-            if (!editData && snap.size >= 10) {
-                alert("배송지는 최대 10개까지 등록할 수 있습니다.");
-                return;
-            }
-            if (editData) {
-                await updateDoc(
-                    doc(db, "users", user.uid, "addresses", editData.id),
-                    data
-                );
-            } else {
-                await addAddress(data);
-            }
-
-            navigate("/userInfo", { state: { menu: "배송지 관리" } });
-
-        } catch (err) {
-            console.error(err);
+            await onAddAddress(data);
         }
+
+        navigate("/userInfo", { state: { menu: "배송지 관리" } });
     };
 
     const handleSubmitCancel = () => {
@@ -167,17 +160,21 @@ export default function AddressRegister() {
                         <div className="address-box">
                             <div className="zip">
                                 <input value={form.zipcode} readOnly className={errors.zipcode ? "error" : ""} />
-                                <button type="button" onClick={openPostcode}>주소검색</button>
+                                <button type="button" onClick={handlePostcode}>주소검색</button>
                             </div>
-
-                            <input value={form.address} readOnly />
-
-                            <input
-                                name="detail"
-                                value={form.detail}
-                                onChange={handleChange}
-                                className="detail-input"
-                            />
+                            <div>
+                                {/* <p>기본주소<em>*</em></p> */}
+                                <input value={form.address} readOnly />
+                            </div>
+                            <div>
+                                {/* <p>상세주소<em>*</em></p> */}
+                                <input
+                                    name="detail"
+                                    value={form.detail}
+                                    onChange={handleChange}
+                                    className="detail-input"
+                                />
+                            </div>
                         </div>
                         {errors.zipcode && <p className="error-text">{errors.zipcode}</p>}
                     </div>

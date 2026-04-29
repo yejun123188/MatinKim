@@ -205,4 +205,16 @@ export const useProductStore = create((set, get) => ({
             totalPrice: get().onTotal(updateCart),
         });
     },
+    //~~~~상품검색~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    onSearchitem: (word) => {
+
+        const items = get();
+        const result = items.map((item) => {
+            const filter = item.filter((i) =>
+                i.name.includes(word.toLowerCase()) || i.bullet_point.includes(word)
+            )
+
+        })
+        set({})
+    }
 }))
