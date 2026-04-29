@@ -1,25 +1,5 @@
 @use "../../App.scss" as g;
 
-
-.top-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 24px;
-    background: #000;
-    color: #fff;
-    z-index: 1001;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1;
-}
-
 .header-show {
   // border-bottom: 1px solid #eee;
   height: 80px;
@@ -32,18 +12,9 @@
 
   .inner {
     height: 80px;
-    position: fixed;
-    top: 24px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-
-    .inner {
-        height: 80px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .header-left {
       display: flex;
@@ -231,6 +202,9 @@
         font-size: g.$size-14-main;
         font-weight: g.$Bold;
       }
+
+      li {
+      }
     }
 
     .main-menu {
@@ -272,62 +246,9 @@
             .sub-menu-name {
               color: g.$text-sub-color;
 
-        .main-menu {
-            display: flex;
-            width: 600px;
-            justify-content: space-between;
-            align-items: flex-start;
-            height: auto;
-
-            li {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                gap: 24px;
-                font-weight: g.$Bold;
-                font-size: g.$size-14-main;
-                text-transform: uppercase;
-
-
-                .sub-menu {
-                    font-size: g.$size-14-main;
-                    padding-top: 0;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    gap: 24px;
-                    align-items: start;
-
-                    li {
-
-                        a {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 6px;
-                            line-height: 1.35;
-                            font-weight: g.$Regular;
-                            font-size: g.$size-14-main;
-                        }
-
-                        .sub-menu-name {
-                            color: g.$text-sub-color;
-
-                            &:hover {
-                                color: g.$text-main-color;
-                            }
-
-                        }
-
-                        .e-sub-menu {
-                            font-size: 0.625rem;
-                            opacity: 0.3;
-                            font-weight: g.$Regular;
-
-                        }
-                    }
-                }
+              &:hover {
+                color: g.$text-main-color;
+              }
             }
 
             .e-sub-menu {
