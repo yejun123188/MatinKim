@@ -5,24 +5,24 @@ import "./scss/orderList.scss";
 import OrderDateFilter from "./OrderDateFilter";
 import OrderProduct from "./OrderProduct";
 import OptionPopup from "./OptionPopup";
+import { getQuickRangeValues } from "../utils/orderDateUtils";
 
 const orderMenu = "주문내역";
 
+const isWithinDateRange = (orderDate, range) => {
+  const normalizedOrderDate = `${orderDate.slice(0, 4)}-${orderDate.slice(
+    4,
+    6,
+  )}-${orderDate.slice(6, 8)}`;
+
+  return (
+    (!range?.startDate || normalizedOrderDate >= range.startDate) &&
+    (!range?.endDate || normalizedOrderDate <= range.endDate)
+  );
+};
+
 export default function OrderList() {
   const navigate = useNavigate();
-  const [tab, setTab] = useState("tab1");
-  const [optionOpen, setOptionOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const orders = ordersData.flatMap((orderDetail) =>
-    orderDetail.orders.map((order) => ({
-      ...order,
-      orderNumber: orderDetail.orderNumber,
-      date: orderDetail.date,
-      state: orderDetail.state,
-      orderDetailId: orderDetail.id,
-    })),
-  );
 
   const tab1Status = [
     "주문확인중",
@@ -41,18 +41,64 @@ export default function OrderList() {
 
   const tab3Status = ["조회불가"];
 
-  const tab1Count = orders.filter((o) => tab1Status.includes(o.status)).length;
-  const tab2Count = orders.filter((o) => tab2Status.includes(o.status)).length;
-  const tab3Count = orders.filter((o) => tab3Status.includes(o.status)).length;
+  const orders = ordersData.flatMap((orderDetail) =>
+    orderDetail.orders.map((order) => ({
+      ...order,
+      orderNumber: orderDetail.orderNumber,
+      date: orderDetail.date,
+      state: orderDetail.state,
+      orderDetailId: orderDetail.id,
+    })),
+  );
+
+  const tab1Orders = orders.filter((order) =>
+    tab1Status.includes(order.status),
+  );
+  const tab2Orders = orders.filter((order) =>
+    tab2Status.includes(order.status),
+  );
+  const tab3Orders = orders.filter((order) =>
+    tab3Status.includes(order.status),
+  );
+
+  const defaultRange = getQuickRangeValues("threeMonths");
+
+  const availableHistoryYears = [
+    ...new Set(tab3Orders.map((order) => Number(order.date.slice(0, 4)))),
+  ].sort((a, b) => b - a);
+
+  const defaultHistoryYear =
+    availableHistoryYears[0] || new Date().getFullYear();
+
+  const [tab, setTab] = useState("tab1");
+  const [optionOpen, setOptionOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [tab1Range, setTab1Range] = useState(defaultRange);
+  const [tab2Range, setTab2Range] = useState(defaultRange);
+  const [tab3Year, setTab3Year] = useState(defaultHistoryYear);
+
+  const tab1Count = tab1Orders.length;
+  const tab2Count = tab2Orders.length;
+  const tab3Count = tab3Orders.length;
+
+  const filteredTab1Orders = tab1Orders.filter((order) =>
+    isWithinDateRange(order.date, tab1Range),
+  );
+
+  const filteredTab2Orders = tab2Orders.filter((order) =>
+    isWithinDateRange(order.date, tab2Range),
+  );
+
+  const filteredTab3Orders = tab3Orders.filter(
+    (order) => Number(order.date.slice(0, 4)) === Number(tab3Year),
+  );
 
   const filteredOrders =
     tab === "tab1"
-      ? orders.filter((o) => tab1Status.includes(o.status))
+      ? filteredTab1Orders
       : tab === "tab2"
-        ? orders.filter((o) => tab2Status.includes(o.status))
-        : tab === "tab3"
-          ? orders.filter((o) => tab3Status.includes(o.status))
-          : [];
+        ? filteredTab2Orders
+        : filteredTab3Orders;
 
   const handleDetailSelect = (orderDetailId) => {
     if (!orderDetailId) return;
@@ -66,6 +112,14 @@ export default function OrderList() {
     if (!order?.orderDetailId || !order?.id) return;
 
     navigate(`/userInfo/orders/${order.orderDetailId}/${action}/${order.id}`, {
+      state: { menu: orderMenu },
+    });
+  };
+
+  const handleTrackingNavigate = (order) => {
+    if (!order?.orderDetailId || !order?.id) return;
+
+    navigate(`/userInfo/orders/${order.orderDetailId}/tracking/${order.id}`, {
       state: { menu: orderMenu },
     });
   };
@@ -99,44 +153,92 @@ export default function OrderList() {
         <div className="order-tab-content">
           {tab === "tab1" && (
             <div className="tab-order-wrap">
-              <OrderDateFilter showFilter1 />
-              <OrderProduct
-                orderDate="주문완료"
-                orders={filteredOrders}
-                onDetailClick={handleDetailSelect}
-                onCancelClick={(order) => handleRequestNavigate("cancel", order)}
-                onExchangeClick={(order) =>
-                  handleRequestNavigate("exchange", order)
-                }
-                onReturnClick={(order) => handleRequestNavigate("return", order)}
+              <OrderDateFilter
+                showFilter1
+                initialRangeType={tab1Range.type}
+                initialStartDate={tab1Range.startDate}
+                initialEndDate={tab1Range.endDate}
+                onRangeChange={setTab1Range}
               />
+
+              {filteredOrders.length > 0 ? (
+                <OrderProduct
+                  orderDate="주문완료"
+                  orders={filteredOrders}
+                  onDetailClick={handleDetailSelect}
+                  onCancelClick={(order) =>
+                    handleRequestNavigate("cancel", order)
+                  }
+                  onExchangeClick={(order) =>
+                    handleRequestNavigate("exchange", order)
+                  }
+                  onReturnClick={(order) =>
+                    handleRequestNavigate("return", order)
+                  }
+                  onTrackingClick={handleTrackingNavigate}
+                />
+              ) : (
+                <p className="order-empty">
+                  선택한 날짜에 해당하는 주문이 없습니다.
+                </p>
+              )}
             </div>
           )}
 
           {tab === "tab2" && (
             <div className="tab-order-wrap">
-              <OrderDateFilter showFilter1 />
-              <OrderProduct
-                orderDate="취소/반품"
-                orders={filteredOrders}
-                onDetailClick={handleDetailSelect}
-                onCancelClick={(order) => handleRequestNavigate("cancel", order)}
-                onExchangeClick={(order) =>
-                  handleRequestNavigate("exchange", order)
-                }
-                onReturnClick={(order) => handleRequestNavigate("return", order)}
-                onOrderClick={(order) => {
-                  setSelectedItem(order);
-                  setOptionOpen(true);
-                }}
+              <OrderDateFilter
+                showFilter1
+                initialRangeType={tab2Range.type}
+                initialStartDate={tab2Range.startDate}
+                initialEndDate={tab2Range.endDate}
+                onRangeChange={setTab2Range}
               />
+
+              {filteredOrders.length > 0 ? (
+                <OrderProduct
+                  orderDate="취소/반품"
+                  orders={filteredOrders}
+                  onDetailClick={handleDetailSelect}
+                  onCancelClick={(order) =>
+                    handleRequestNavigate("cancel", order)
+                  }
+                  onExchangeClick={(order) =>
+                    handleRequestNavigate("exchange", order)
+                  }
+                  onReturnClick={(order) =>
+                    handleRequestNavigate("return", order)
+                  }
+                  onTrackingClick={handleTrackingNavigate}
+                  onOrderClick={(order) => {
+                    setSelectedItem(order);
+                    setOptionOpen(true);
+                  }}
+                />
+              ) : (
+                <p className="order-empty">
+                  선택한 날짜에 해당하는 주문이 없습니다.
+                </p>
+              )}
             </div>
           )}
 
           {tab === "tab3" && (
             <div className="tab-order-wrap">
-              <OrderDateFilter showFilter2 />
-              <OrderProduct orders={filteredOrders} />
+              <OrderDateFilter
+                showFilter2
+                initialYear={tab3Year}
+                yearOptions={availableHistoryYears}
+                onYearChange={setTab3Year}
+              />
+
+              {filteredOrders.length > 0 ? (
+                <OrderProduct orders={filteredOrders} />
+              ) : (
+                <p className="order-empty">
+                  선택한 연도에 해당하는 주문이 없습니다.
+                </p>
+              )}
             </div>
           )}
         </div>
@@ -169,6 +271,7 @@ export default function OrderList() {
           </ul>
         )}
       </div>
+
       <OptionPopup
         open={optionOpen}
         data={selectedItem}

@@ -24,6 +24,12 @@
   }
   .order-tab-content {
     .tab-order-wrap {
+      .order-empty {
+        padding: 40px 0;
+        color: g.$text-sub-color;
+        text-align: center;
+      }
+
       .date-filter-wrap {
         display: flex;
         flex-direction: column;
@@ -226,5 +232,10 @@
         }
       }
     }
+  }
+}
+.order-tab-text {
+  ul {
+    padding: 10px 60px;
   }
 }

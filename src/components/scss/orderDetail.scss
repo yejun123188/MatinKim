@@ -4,9 +4,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
-  font-size: 1.5rem;
+  h2 {
+    font-size: 1.5rem;
+  }
 
-  button {
+  .order-detail-back {
     @include g.myBtn2;
   }
 }

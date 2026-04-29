@@ -1,120 +1,103 @@
 @use "../../App.scss" as g;
 
 .add-r {
+  .address-register-wrap {
+    background: #ffffff;
+    padding: 40px;
+    margin-top: 20px;
+  }
 
-    .address-register-wrap {
-        background: #FFFFFF;
-        padding: 40px;
-        margin-top: 20px;
+  .form-row {
+    margin-bottom: 30px;
+
+    p {
+      font-size: 0.78rem;
+      font-weight: g.$Bold;
+      color: g.$text-main-color;
+      margin-bottom: 10px;
+
+      em {
+        padding-left: 3.5px;
+        color: g.$red-color;
+      }
     }
 
-    .form-row {
-        margin-bottom: 30px;
-
-        p {
-
-            font-size: 0.78rem;
-            font-weight: g.$Bold;
-            color: g.$text-main-color;
-            margin-bottom: 10px;
-
-
-            em {
-                padding-left: 3.5px;
-                color: g.$red-color;
-            }
-        }
-
-        input,
-        select {
-
-
-            @include g.myTextBox($c: g.$text-main-color, $bd: 1px solid rgba(30, 30, 30, 0.15));
-            width: 100%;
-            height: 44px;
-            border: 1px solid rgba(g.$main-color, 0.15);
-            background: g.$white-color;
-            padding: 0 14px;
-            font-size: g.$size-14-main;
-            color: g.$text-main-color;
-            outline: none;
-
-        }
-
-
-        select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%23666666' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 10px center;
-            background-size: 12px;
-
-            padding-right: 30px;
-        }
-
-        .error-text {
-            color: g.$red-color;
-            padding-top: 5px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            font-weight: 400;
-        }
-
-        .error-text::before {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 14px;
-            margin-right: 6px;
-            background-image: url("/images/danger.svg");
-            background-repeat: no-repeat;
-        }
+    input,
+    select {
+      @include g.myTextBox(
+        $c: g.$text-main-color,
+        $bd: 1px solid rgba(30, 30, 30, 0.15)
+      );
+      width: 100%;
+      height: 44px;
+      border: 1px solid rgba(g.$main-color, 0.15);
+      background: g.$white-color;
+      padding: 0 14px;
+      font-size: g.$size-14-main;
+      color: g.$text-main-color;
+      outline: none;
     }
 
-    .address-box {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
 
-        .zip {
-            display: flex;
-            gap: 10px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%23666666' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+        no-repeat right 10px center;
+      background-size: 12px;
 
-            input {
-                width: 150px;
-            }
-
-            button {
-                width: 100px;
-                @include g.myBtn1($bg: #111, $c: #fff);
-            }
-        }
+      padding-right: 30px;
     }
 
-    .phone-box {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        select {
-            width: 120px;
-
-        }
-
-        input {
-            width: 120px;
-        }
+    .error-text {
+      color: g.$red-color;
+      padding-top: 5px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
     }
 
-    .check {
-        margin-top: 20px;
+    .error-text::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 14px;
+      margin-right: 6px;
+      background-image: url("/images/danger.svg");
+      background-repeat: no-repeat;
+    }
+  }
 
-        label {
-            display: flex;
-            gap: 10px;
-            font-size: 13px;
+  .address-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .zip {
+      display: flex;
+      gap: 10px;
+
+      input {
+        width: 150px;
+      }
+
+      button {
+        width: 100px;
+        @include g.myBtn1($bg: #111, $c: #fff);
+      }
+    }
+  }
+
+  .phone-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    select {
+      width: 120px;
+    }
 
             input {
                 border: none;
@@ -122,25 +105,41 @@
             }
         }
     }
+  }
 
-    .button-wrap {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        margin-top: 20px;
+  .check {
+    margin-top: 20px;
 
-        button {
-            width: 100px;
-            height: 40px;
-            cursor: pointer;
-        }
+    label {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
 
-        .submit {
-            @include g.myBtn1($bg: #111, $c: #fff, $pd: 0);
-        }
-
-        .cancel {
-            @include g.myBtn2($pd: 0);
-        }
+      input {
+        border: none;
+        accent-color: g.$main-color;
+      }
     }
+  }
+
+  .button-wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+      width: 100px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .submit {
+      @include g.myBtn1($bg: #111, $c: #fff, $pd: 0);
+    }
+
+    .cancel {
+      @include g.myBtn2($pd: 0);
+    }
+  }
 }
