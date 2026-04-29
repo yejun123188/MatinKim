@@ -1,83 +1,106 @@
 import React, { useEffect, useState } from "react";
 import "./scss/Adress.scss";
 import { useNavigate } from "react-router-dom";
-import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { useAuthStore } from "../store/useAuthStore";
 import { db } from "../firebase/firebase";
 
 export default function Adress() {
   const navigate = useNavigate();
-  const [list, setList] = useState([]);
 
+  const [checkedItems, setCheckedItems] = useState([]);
+
+  const { addressList, onFetchAddress, onSetDefaultAddress } = useAuthStore();
+
+  // 주소 불러오기
   useEffect(() => {
-    const fetchData = async () => {
-      const { user } = useAuthStore.getState();
-      if (!user) return;
+    onFetchAddress();
+  }, [onFetchAddress]);
 
-      const ref = collection(db, "users", user.uid, "addresses");
-      const snap = await getDocs(ref);
+  // 개별 체크
+  const handleChecked = (address) => {
+    const key = address.id;
 
-      let result = snap.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
+    setCheckedItems((prev) => {
+      if (prev.includes(key)) {
+        return prev.filter((i) => i !== key);
+      }
+      return [...prev, key];
+    });
+  };
 
-      result.sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
+  // 전체 체크
+  const handleAllChecked = (e) => {
+    if (e.target.checked) {
+      const allIds = addressList.map((item) => item.id);
+      setCheckedItems(allIds);
+    } else {
+      setCheckedItems([]);
+    }
+  };
 
-      setList(result);
-    };
+  // 선택 삭제
+  const handleDeleteSelected = async () => {
+    if (checkedItems.length === 0) return;
 
-    fetchData();
-  }, []);
-
-  const handleSetDefault = async (selectedId) => {
-    const resultConfirm = window.confirm("기본 배송지로 설정하시겠습니까?");
+    const resultConfirm = window.confirm("선택한 배송지를 삭제하시겠습니까?");
     if (!resultConfirm) return;
 
     const { user } = useAuthStore.getState();
     if (!user) return;
 
-    const ref = collection(db, "users", user.uid, "addresses");
-    const snap = await getDocs(ref);
-
-    const currentDefault = snap.docs.find((d) => d.data().isDefault);
-
-    if (currentDefault) {
-      await updateDoc(
-        doc(db, "users", user.uid, "addresses", currentDefault.id),
-        { isDefault: false },
+    try {
+      const promises = checkedItems.map((id) =>
+        deleteDoc(doc(db, "users", user.uid, "addresses", id)),
       );
+
+      await Promise.all(promises);
+
+      await onFetchAddress();
+      setCheckedItems([]);
+    } catch (err) {
+      console.error(err);
     }
+  };
 
-    await updateDoc(doc(db, "users", user.uid, "addresses", selectedId), {
-      isDefault: true,
-    });
+  // 기본 배송지 변경
+  const handleSetDefault = async (selectedId) => {
+    const resultConfirm = window.confirm("기본 배송지로 설정하시겠습니까?");
+    if (!resultConfirm) return;
 
-    const newSnap = await getDocs(ref);
-    let result = newSnap.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-
-    result.sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
-
-    setList(result);
+    try {
+      await onSetDefaultAddress(selectedId);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
     <div className="address-wrap">
       <div className="address-top">
         <label>
-          <input type="checkbox" /> 전체선택
+          <input
+            type="checkbox"
+            onChange={handleAllChecked}
+            checked={
+              checkedItems.length === addressList.length &&
+              addressList.length > 0
+            }
+          />
+          전체선택
         </label>
       </div>
 
       <div className="address-middle">
         <div className="left">
-          {list.map((item) => (
+          {addressList.map((item) => (
             <div className="address-item" key={item.id}>
               <div className="item-left">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => handleChecked(item)}
+                  checked={checkedItems.includes(item.id)}
+                />
 
                 <div className="content">
                   {item.isDefault && <div className="show">기본배송지</div>}
@@ -109,7 +132,11 @@ export default function Adress() {
                     기본배송지 설정
                   </button>
                 )}
-                <button>수정</button>
+                <button
+                  onClick={() => navigate("/userinfo/address", { state: item })}
+                >
+                  수정
+                </button>
               </div>
             </div>
           ))}
@@ -127,7 +154,7 @@ export default function Adress() {
           <button onClick={() => navigate("/userinfo/address")}>
             배송지 등록
           </button>
-          <button>선택삭제</button>
+          <button onClick={handleDeleteSelected}>선택삭제</button>
         </div>
       </div>
     </div>
