@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import "../pages/scss/Collections.scss"
+import "./scss/Collections.scss"
 
 export default function ACSubpage({ title, data }) {
     return (

@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./scss/Payment.scss";
+import { useAuthStore } from "../store/useAuthStore";
+import AddressPopup from "./AddressPopup";
 
 const PAYMENT_METHODS = [
     {
@@ -51,11 +53,42 @@ const FAQ_ITEMS = [
 
 const formatPrice = (value) => `₩${value.toLocaleString()}`;
 const formatDeliveryDate = (date) => `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
-
 const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg || "/images/sub-cart/clothes-mini.jpg";
 
 export default function Payment() {
-    const location = useLocation();
+    const { user, userAddress, onFetchAddress, onAddAddress } = useAuthStore();
+
+    // 주문자 정보저장
+    const [orderForm, setOrderForm] = useState({
+        name: "",
+        mobile1: "010",
+        mobile2: "",
+        mobile3: "",
+        email: "",
+        emailDomain: "custom",
+        emailInput: ""
+    });
+
+    // 배송지 정보저장
+    const [form, setForm] = useState({
+        receiver: "",
+        mobile1: "010",
+        mobile2: "",
+        mobile3: "",
+        zipcode: "",
+        address: "",
+        detail: "",
+        isDefault: false
+    });
+
+    const [errors, setErrors] = useState({});
+    //같은 사람인지 체크
+    const [useSame, setUseSame] = useState(true);
+    //새로운 주소인지 체크
+    const [useNew, setUseNew] = useState(false);
+    //배송주소목록 컴포넌트 보여줄지말지 체크
+    const [showAddressModal, setShowAddressModal] = useState(false);
+
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
     const [isPostcodeReady, setIsPostcodeReady] = useState(Boolean(window.daum?.Postcode));
@@ -71,12 +104,18 @@ export default function Payment() {
         saveAsDefault: false
     });
 
+    useEffect(() => {
+        if (user) onFetchAddress();
+    }, [user]);
+
+    const location = useLocation();
     const orderItems = location.state?.orderItems?.length ? location.state.orderItems : [];
     const productTotal = orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const itemCount = orderItems.reduce((sum, item) => sum + item.quantity, 0);
     const shippingFee = 0;
     const localShippingFee = 0;
     const finalTotal = productTotal + shippingFee + localShippingFee;
+
     const expectedDeliveryDate = useMemo(() => {
         const orderDate = new Date();
         const deliveryDate = new Date(orderDate);
@@ -89,32 +128,89 @@ export default function Payment() {
         [selectedMethod]
     );
 
-    useEffect(() => {
-        if (window.daum?.Postcode) {
-            setIsPostcodeReady(true);
-            return undefined;
-        }
+    const [phone1, phone2, phone3] = (
+        useSame ? userAddress?.phone : `${form.mobile1}-${form.mobile2}-${form.mobile3}`
+    )?.split("-") || ["010", "", ""];
 
-        const script = document.createElement("script");
-        script.src = "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
-        script.async = true;
-        script.onload = () => setIsPostcodeReady(true);
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
-
-    const handleShippingChange = (event) => {
-        const { name, value, type, checked } = event.target;
-
-        setShippingForm((prev) => ({
-            ...prev,
-            [name]: type === "checkbox" ? checked : value
-        }));
+    // 주문자 
+    const handleOrderChange = (e) => {
+        const { name, value } = e.target;
+        setOrderForm(prev => ({ ...prev, [name]: value }));
+        setErrors(prev => ({ ...prev, [name]: "" }));
     };
 
+    // 배송지 
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setForm(prev => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+        setErrors(prev => ({ ...prev, [name]: "" }));
+    };
+
+    const openPostcode = () => {
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                const address = data.roadAddress || data.jibunAddress;
+                const newAddr = { zipcode: data.zonecode, address, detail: "" };
+
+                if (useSame) {
+                    onAddAddress(newAddr);
+                } else {
+                    setForm(prev => ({ ...prev, ...newAddr }));
+                }
+
+                setTimeout(() => {
+                    document.querySelector(".detail-input")?.focus();
+                }, 100);
+            }
+        }).open();
+    };
+
+    const validate = () => {
+        let newErrors = {};
+
+        // 주문자 검증
+        if (!orderForm.name.trim()) newErrors.orderName = "주문자 이름을 입력해주세요";
+        if (!orderForm.mobile2 || !orderForm.mobile3) newErrors.orderMobile = "주문자 휴대폰 번호를 입력해주세요";
+        if (!orderForm.email.trim()) newErrors.orderEmail = "이메일을 입력해주세요";
+
+        // 배송지 검증 (새로운 배송지일 때만)
+        if (useNew) {
+            if (!form.receiver.trim()) newErrors.receiver = "받는 사람을 입력해주세요";
+            if (!form.mobile2 || !form.mobile3) newErrors.mobile = "휴대폰 번호를 입력해주세요";
+            if (!form.zipcode) newErrors.zipcode = "우편번호를 입력해주세요";
+            if (!form.address) newErrors.address = "기본주소를 입력해주세요";
+            if (!form.detail.trim()) newErrors.detail = "상세주소를 입력해주세요";
+        }
+
+        setErrors(newErrors);
+
+        setTimeout(() => {
+            document.querySelector(".error")?.focus();
+        }, 0);
+
+        return Object.keys(newErrors).length === 0;
+    };
+    //주문하기 제출버튼
+    const handleSubmit = () => {
+        if (!validate()) return;
+        alert("주문이 완료되었습니다!");
+    };
+    // 주소 선택 핸들러
+    const handleAddressSelect = (addr) => {
+        const [m1, m2, m3] = (addr.phone || "010--").split("-");
+        setForm({
+            receiver: addr.receiver || "",
+            mobile1: m1,
+            mobile2: m2,
+            mobile3: m3,
+            zipcode: addr.zipcode || "",
+            address: addr.address || "",
+            detail: addr.detail || "",
+            isDefault: addr.isDefault || false
+        });
+        setUseSame(false); // 주소록에서 선택했으니 새로운 배송지로 전환을햐애지
+        setUseNew(true);
+    };
     if (!orderItems.length) {
         return (
             <main className="payment-page">
@@ -154,6 +250,8 @@ export default function Payment() {
         <main className="payment-page">
             <div className="inner payment-layout">
                 <div className="payment-form-column">
+
+                    {/* STEP 1 주문자 정보 */}
                     <div className="payment-step-section">
                         <div className="payment-step-header">
                             <div className="step-title-row">
@@ -166,41 +264,87 @@ export default function Payment() {
                         <div className="payment-form-grid">
                             <label className="field full">
                                 <span>이름 <em>*</em></span>
-                                <input type="text" placeholder="주문자 이름" />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="주문자 이름"
+                                    value={orderForm.name}
+                                    onChange={handleOrderChange}
+                                    className={errors.orderName ? "error" : ""}
+                                />
+                                {errors.orderName && <p className="error-text">{errors.orderName}</p>}
                             </label>
 
                             <div className="field full">
                                 <span>휴대폰 번호 <em>*</em></span>
                                 <div className="inline-fields phone-fields">
-                                    <select defaultValue="010">
+                                    <select name="mobile1" value={orderForm.mobile1} onChange={handleOrderChange}>
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
                                     </select>
                                     <i>-</i>
-                                    <input type="text" />
+                                    <input
+                                        type="text"
+                                        name="mobile2"
+                                        value={orderForm.mobile2}
+                                        onChange={handleOrderChange}
+                                        className={errors.orderMobile ? "error" : ""}
+                                    />
                                     <i>-</i>
-                                    <input type="text" />
+                                    <input
+                                        type="text"
+                                        name="mobile3"
+                                        value={orderForm.mobile3}
+                                        onChange={handleOrderChange}
+                                        className={errors.orderMobile ? "error" : ""}
+                                    />
                                 </div>
+                                {errors.orderMobile && <p className="error-text">{errors.orderMobile}</p>}
                             </div>
 
                             <div className="field full">
                                 <span>이메일 <em>*</em></span>
                                 <div className="inline-fields email-fields">
-                                    <input type="text" placeholder="사용자 이메일" />
+                                    <input
+                                        type="text"
+                                        name="email"
+                                        placeholder="사용자 이메일"
+                                        value={orderForm.email}
+                                        onChange={handleOrderChange}
+                                        className={errors.orderEmail ? "error" : ""}
+                                    />
                                     <i>@</i>
-                                    <input type="text" />
-                                    <select defaultValue="custom">
-                                        <option value="custom">이메일 선택</option>
+                                    <input
+                                        type="text"
+                                        name="emailInput"
+                                        value={orderForm.emailDomain === "custom" ? orderForm.emailInput : orderForm.emailDomain}
+                                        onChange={handleOrderChange}
+                                        readOnly={orderForm.emailDomain !== "custom"}
+                                    />
+                                    <select
+                                        name="emailDomain"
+                                        value={orderForm.emailDomain}
+                                        onChange={(e) => {
+                                            setOrderForm(prev => ({
+                                                ...prev,
+                                                emailDomain: e.target.value,
+                                                emailInput: ""
+                                            }));
+                                        }}
+                                    >
+                                        <option value="custom">직접입력</option>
                                         <option value="gmail.com">gmail.com</option>
                                         <option value="naver.com">naver.com</option>
                                         <option value="daum.net">daum.net</option>
                                     </select>
                                 </div>
+                                {errors.orderEmail && <p className="error-text">{errors.orderEmail}</p>}
                             </div>
                         </div>
                     </div>
 
+                    {/* STEP 2 배송 정보 */}
                     <div className="payment-step-section">
                         <div className="payment-step-header">
                             <div className="step-title-row">
@@ -212,14 +356,24 @@ export default function Payment() {
 
                         <div className="shipping-actions">
                             <label className="check-field">
-                                <input type="checkbox" />
+                                <input
+                                    type="radio"
+                                    name="orderUser"
+                                    checked={useSame}
+                                    onChange={() => { setUseNew(false); setUseSame(true); }}
+                                />
                                 <span>주문자 정보와 동일</span>
                             </label>
                             <label className="check-field">
-                                <input type="checkbox" />
+                                <input
+                                    type="radio"
+                                    name="orderUser"
+                                    checked={useNew}
+                                    onChange={() => { setUseNew(true); setUseSame(false); }}
+                                />
                                 <span>새로운 배송지</span>
                             </label>
-                            <button type="button" className="outline-btn">배송주소록</button>
+                            <button type="button" className="outline-btn" onClick={() => setShowAddressModal(true)}>배송주소록</button>
                         </div>
 
                         <div className="payment-form-grid">
@@ -229,9 +383,12 @@ export default function Payment() {
                                     type="text"
                                     name="receiver"
                                     placeholder="받는사람 이름"
-                                    value={shippingForm.receiver}
-                                    onChange={handleShippingChange}
+                                    value={useSame ? userAddress?.receiver || "" : form.receiver}
+                                    onChange={handleChange}
+                                    readOnly={useSame}
+                                    className={errors.receiver ? "error" : ""}
                                 />
+                                {errors.receiver && <p className="error-text">{errors.receiver}</p>}
                             </label>
 
                             <div className="field full">
@@ -239,8 +396,9 @@ export default function Payment() {
                                 <div className="inline-fields phone-fields">
                                     <select
                                         name="mobile1"
-                                        value={shippingForm.mobile1}
-                                        onChange={handleShippingChange}
+                                        value={useSame ? phone1 : form.mobile1}
+                                        onChange={handleChange}
+                                        disabled={useSame}
                                     >
                                         <option value="010">010</option>
                                         <option value="011">011</option>
@@ -250,17 +408,22 @@ export default function Payment() {
                                     <input
                                         type="text"
                                         name="mobile2"
-                                        value={shippingForm.mobile2}
-                                        onChange={handleShippingChange}
+                                        value={useSame ? phone2 || "" : form.mobile2}
+                                        onChange={handleChange}
+                                        readOnly={useSame}
+                                        className={errors.mobile ? "error" : ""}
                                     />
                                     <i>-</i>
                                     <input
                                         type="text"
                                         name="mobile3"
-                                        value={shippingForm.mobile3}
-                                        onChange={handleShippingChange}
+                                        value={useSame ? phone3 || "" : form.mobile3}
+                                        onChange={handleChange}
+                                        readOnly={useSame}
+                                        className={errors.mobile ? "error" : ""}
                                     />
                                 </div>
+                                {errors.mobile && <p className="error-text">{errors.mobile}</p>}
                             </div>
 
                             <div className="field postal-field">
@@ -268,31 +431,27 @@ export default function Payment() {
                                 <div className="inline-fields">
                                     <input
                                         type="text"
-                                        name="zipcode"
                                         placeholder="우편번호"
-                                        value={shippingForm.zipcode}
+                                        value={useSame ? userAddress?.zipcode || "" : form.zipcode}
                                         readOnly
+                                        className={errors.zipcode ? "error" : ""}
                                     />
-                                    <button
-                                        type="button"
-                                        className="outline-btn small"
-                                        onClick={openPostcode}
-                                        disabled={!isPostcodeReady}
-                                    >
+                                    <button type="button" className="outline-btn small" onClick={openPostcode}>
                                         주소검색
                                     </button>
                                 </div>
+                                {errors.zipcode && <p className="error-text">{errors.zipcode}</p>}
                             </div>
 
                             <div className="field half">
                                 <span>기본주소 <em>*</em></span>
                                 <input
                                     type="text"
-                                    name="address"
                                     placeholder="기본주소"
-                                    value={shippingForm.address}
+                                    value={useSame ? userAddress?.address || "" : form.address}
                                     readOnly
                                 />
+                                {errors.address && <p className="error-text">{errors.address}</p>}
                             </div>
 
                             <label className="field half">
@@ -301,10 +460,12 @@ export default function Payment() {
                                     type="text"
                                     name="detail"
                                     placeholder="상세주소"
-                                    value={shippingForm.detail}
-                                    onChange={handleShippingChange}
-                                    className="payment-detail-input"
+                                    className={`detail-input ${errors.detail ? "error" : ""}`}
+                                    value={useSame ? userAddress?.detail || "" : form.detail}
+                                    onChange={handleChange}
+                                    readOnly={useSame}
                                 />
+                                {errors.detail && <p className="error-text">{errors.detail}</p>}
                             </label>
 
                             <label className="field full">
@@ -321,14 +482,15 @@ export default function Payment() {
                         <label className="check-field bottom-check">
                             <input
                                 type="checkbox"
-                                name="saveAsDefault"
-                                checked={shippingForm.saveAsDefault}
-                                onChange={handleShippingChange}
+                                name="isDefault"
+                                checked={form.isDefault}
+                                onChange={handleChange}
                             />
                             <span>기본 배송지로 저장</span>
                         </label>
                     </div>
 
+                    {/* STEP 3 할인 정보 */}
                     <div className="payment-step-section">
                         <div className="payment-step-header">
                             <div className="step-title-row">
@@ -373,6 +535,7 @@ export default function Payment() {
                         </div>
                     </div>
 
+                    {/* STEP 4 결제 수단 */}
                     <div className="payment-step-section">
                         <div className="payment-step-header">
                             <div className="step-title-row">
@@ -394,7 +557,6 @@ export default function Payment() {
                                         <strong>{method.title}</strong>
                                         <p>{method.description}</p>
                                     </div>
-
                                     {method.badges && (
                                         <div className="method-badges">
                                             {method.badges.map((badge) => (
@@ -407,10 +569,10 @@ export default function Payment() {
                         </div>
                     </div>
 
+                    {/* FAQ */}
                     <div className="payment-faq-section">
                         {FAQ_ITEMS.map((item) => {
                             const isOpen = openFaq === item.id;
-
                             return (
                                 <div className={`faq-item ${isOpen ? "is-open" : ""}`} key={item.id}>
                                     <button
@@ -428,6 +590,7 @@ export default function Payment() {
                     </div>
                 </div>
 
+                {/* STEP 5 주문 요약 */}
                 <aside className="payment-summary-column">
                     <div className="summary-panel">
                         <div className="payment-step-header summary-header">
@@ -488,7 +651,7 @@ export default function Payment() {
                             <p>배송 완료 후 7일 이내 교환/반품 가능</p>
                         </div>
 
-                        <button type="button" className="order-submit-btn">
+                        <button type="button" className="order-submit-btn" onClick={handleSubmit}>
                             주문하기
                         </button>
 
@@ -500,6 +663,10 @@ export default function Payment() {
                     </div>
                 </aside>
             </div>
+            {showAddressModal && <AddressPopup onClose={() => setShowAddressModal(false)}
+                onSelect={handleAddressSelect} />}
         </main>
+
     );
+
 }

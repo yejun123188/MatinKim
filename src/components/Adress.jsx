@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import "./scss/Adress.scss"
 import { useNavigate } from 'react-router-dom'
-import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { useAuthStore } from "../store/useAuthStore";
 import { db } from '../firebase/firebase';
 
 export default function Adress() {
     const navigate = useNavigate();
-    const [list, setList] = useState([]);
+
     const [checkedItems, setCheckedItems] = useState([]);
 
+    const {
+        addressList,
+        onFetchAddress,
+        onSetDefaultAddress
+    } = useAuthStore();
+
+    // 주소 불러오기
+    useEffect(() => {
+        onFetchAddress();
+    }, [onFetchAddress]);
+
+    // 개별 체크
     const handleChecked = (address) => {
         const key = address.id;
 
@@ -21,14 +33,17 @@ export default function Adress() {
         });
     };
 
+    // 전체 체크
     const handleAllChecked = (e) => {
         if (e.target.checked) {
-            const allIds = list.map(item => item.id);
+            const allIds = addressList.map(item => item.id);
             setCheckedItems(allIds);
         } else {
             setCheckedItems([]);
         }
     };
+
+    // 선택 삭제
     const handleDeleteSelected = async () => {
         if (checkedItems.length === 0) return;
 
@@ -45,76 +60,23 @@ export default function Adress() {
 
             await Promise.all(promises);
 
-            const ref = collection(db, "users", user.uid, "addresses");
-            const snap = await getDocs(ref);
-
-            let result = snap.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-
-            result.sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
-
-            setList(result);
+            await onFetchAddress();
             setCheckedItems([]);
         } catch (err) {
             console.error(err);
         }
     };
-    useEffect(() => {
-        const fetchData = async () => {
-            const { user } = useAuthStore.getState();
-            if (!user) return;
 
-            const ref = collection(db, "users", user.uid, "addresses");
-            const snap = await getDocs(ref);
-
-            let result = snap.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-
-            result.sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
-
-            setList(result);
-        };
-
-        fetchData();
-    }, []);
-
+    // 기본 배송지 변경
     const handleSetDefault = async (selectedId) => {
         const resultConfirm = window.confirm("기본 배송지로 설정하시겠습니까?");
         if (!resultConfirm) return;
 
-        const { user } = useAuthStore.getState();
-        if (!user) return;
-
-        const ref = collection(db, "users", user.uid, "addresses");
-        const snap = await getDocs(ref);
-
-        const currentDefault = snap.docs.find(d => d.data().isDefault);
-
-        if (currentDefault) {
-            await updateDoc(
-                doc(db, "users", user.uid, "addresses", currentDefault.id),
-                { isDefault: false }
-            );
+        try {
+            await onSetDefaultAddress(selectedId);
+        } catch (err) {
+            console.error(err);
         }
-
-        await updateDoc(
-            doc(db, "users", user.uid, "addresses", selectedId),
-            { isDefault: true }
-        );
-
-        const newSnap = await getDocs(ref);
-        let result = newSnap.docs.map(doc => ({
-            id: doc.id,
-            ...doc.data()
-        }));
-
-        result.sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
-
-        setList(result);
     };
 
     return (
@@ -124,7 +86,10 @@ export default function Adress() {
                     <input
                         type="checkbox"
                         onChange={handleAllChecked}
-                        checked={checkedItems.length === list.length && list.length > 0}
+                        checked={
+                            checkedItems.length === addressList.length &&
+                            addressList.length > 0
+                        }
                     />
                     전체선택
                 </label>
@@ -132,7 +97,7 @@ export default function Adress() {
 
             <div className="address-middle">
                 <div className="left">
-                    {list.map((item) => (
+                    {addressList.map((item) => (
                         <div className="address-item" key={item.id}>
                             <div className="item-left">
                                 <input
@@ -181,7 +146,9 @@ export default function Adress() {
                     <button onClick={() => navigate("/userinfo/address")}>
                         배송지 등록
                     </button>
-                    <button onClick={handleDeleteSelected}>선택삭제</button>
+                    <button onClick={handleDeleteSelected}>
+                        선택삭제
+                    </button>
                 </div>
             </div>
         </div>

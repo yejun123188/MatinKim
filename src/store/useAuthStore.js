@@ -10,7 +10,7 @@ import {
 
 import { create } from "zustand";
 import { auth, db, googleProvider } from "../firebase/firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 
 
@@ -211,7 +211,7 @@ export const useAuthStore = create((set, get) => ({
             throw err;
         }
     },
-    addAddress: async (addressData) => {
+    onAddAddress: async (addressData) => {
         const { user } = get();
 
         if (!user) {
@@ -397,6 +397,81 @@ export const useAuthStore = create((set, get) => ({
             set({ user: null });
         } catch (err) {
             console.error("로그아웃 에러:", err);
+        }
+    },
+    userAddress: null, // 기본 배송지
+    addressList: [],
+    openPostcode: (callback) => {
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                const address = data.roadAddress || data.jibunAddress;
+
+                callback({
+                    zipcode: data.zonecode,
+                    address,
+                });
+            }
+        }).open({
+            popupName: "postcodePopup",
+        });
+    },
+    //  주소 불러오기
+    onFetchAddress: async () => {
+        const { user } = get();
+        if (!user) return;
+
+        const ref = collection(db, "users", user.uid, "addresses");
+        const snap = await getDocs(ref);
+
+        let result = snap.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+
+        // 기본배송지 위로
+        result.sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
+
+        set({
+            addressList: result,
+            userAddress: result.find(v => v.isDefault) || result[0] || null
+        });
+    },
+
+    //  기본배송지 변경
+    onSetDefaultAddress: async (selectedId) => {
+        const { user } = get();
+        if (!user) return;
+
+        const ref = collection(db, "users", user.uid, "addresses");
+        const snap = await getDocs(ref);
+
+        const currentDefault = snap.docs.find(d => d.data().isDefault);
+
+        if (currentDefault) {
+            await updateDoc(
+                doc(db, "users", user.uid, "addresses", currentDefault.id),
+                { isDefault: false }
+            );
+        }
+
+        await updateDoc(
+            doc(db, "users", user.uid, "addresses", selectedId),
+            { isDefault: true }
+        );
+
+        get().onFetchAddress();
+    },
+    //배송지 수정
+    onEditAddress: async (id, addressData) => {
+        const { user } = get();
+        if (!user) return;
+
+        try {
+            const ref = doc(db, "users", user.uid, "addresses", id);
+            await updateDoc(ref, addressData);
+            alert("배송지 수정 완료!");
+        } catch (err) {
+            console.error(err);
         }
     },
 
