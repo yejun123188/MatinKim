@@ -1,11 +1,28 @@
 @use "../../App.scss" as g;
 
+$breakpoints: (
+    tablet: 1280px,
+    mobile: 768px,
+    small: 480px,
+);
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
 .collections {
     .collections-title {
         padding: 40px 0;
         font-size: g.$size-30;
         font-weight: g.$Bold;
         color: g.$text-main-color;
+
+        @include respond-to(mobile) {
+            padding: 24px 0;
+            font-size: g.$size-16;
+        }
     }
 
     .collection-list {
@@ -14,12 +31,43 @@
         gap: 24px;
         height: 100%;
 
+        @include respond-to(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @include respond-to(mobile) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @include respond-to(small) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 16px;
+        }
+
         li {
             padding-bottom: 30px;
+
+            @include respond-to(mobile) {
+                padding-bottom: 16px;
+            }
 
             .img-box {
                 overflow: hidden;
                 height: 670px;
+
+                @include respond-to(tablet) {
+                    height: 480px;
+                }
+
+                @include respond-to(mobile) {
+                    height: 320px;
+                }
+
+                @include respond-to(small) {
+                    height: 260px;
+                }
             }
 
             img {
@@ -35,15 +83,27 @@
             .text-box {
                 padding-top: 15px;
 
+                @include respond-to(mobile) {
+                    padding-top: 10px;
+                }
+
                 h5 {
                     font-size: g.$size-16;
                     font-weight: g.$Bold;
                     color: g.$text-main-color;
+
+                    @include respond-to(mobile) {
+                        font-size: g.$size-14-main;
+                    }
                 }
 
                 .sub-title {
                     font-size: g.$size-14-main;
                     color: g.$text-sub-color;
+
+                    @include respond-to(small) {
+                        font-size: 12px;
+                    }
                 }
             }
         }

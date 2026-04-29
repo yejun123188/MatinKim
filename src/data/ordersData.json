@@ -2,7 +2,7 @@
   {
     "id": 1,
     "state": "주문완료",
-    "date": "20260420",
+    "date": "20260421",
     "name": "마뗑킴",
     "phone": "010-1234-5678",
     "address": "마뗑시 마뗑구 마뗑킴로 123-12 마뗑빌라",
@@ -15,7 +15,7 @@
         "img": "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
         "price": 68000,
         "status": "배송준비중",
-        "size": "L",
+        "size": "M",
         "count": 1
       }
     ]

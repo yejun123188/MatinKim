@@ -25,8 +25,23 @@
     overflow-y: auto;
 }
 
-.cart-panel input {
-    display: none;
+.cart-panel .check-wrap input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:checked {
+        background-color: #111;
+        border-color: #111;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 10px;
+    }
 }
 
 .cart-panel .cart-header {
@@ -94,7 +109,6 @@
     flex: 1;
     align-items: center;
 }
-
 
 .cart-panel .item-thumb {
     width: 80px;
