@@ -351,6 +351,21 @@ export default function ProductList() {
         currentPage * ITEMS_PER_PAGE
     );
 
+    const hasActiveFilters = excludeSoldOut
+        || selectedColor
+        || selectedSize
+        || selectedSubCategory
+        || priceRange.min !== categoryMinPrice
+        || priceRange.max !== categoryMaxPrice;
+
+    const resetFilters = () => {
+        setExcludeSoldOut(false);
+        setSelectedColor('');
+        setSelectedSize('');
+        setSelectedSubCategory('');
+        setPriceRange({ min: categoryMinPrice, max: categoryMaxPrice });
+    };
+
     return (
         <main className='product-list-wrap'>
             <div className={`inner ${!showFilter ? 'filter-hidden' : ''}`}>
@@ -439,51 +454,33 @@ export default function ProductList() {
                                             <span className='tag-remove'>×</span>
                                         </button>
                                     )}
+                                    {hasActiveFilters && (
+                                        <button
+                                            type="button"
+                                            className='filter-reset-btn'
+                                            onClick={resetFilters}
+                                        >
+                                            <img src="/images/pages-icon/reset-icon.svg" alt="" aria-hidden="true" />
+                                            필터초기화
+                                        </button>
+                                    )}
                                 </div>
                             </div>
-                            <div className='sort-buttons'>
-                                <button
-                                    type="button"
-                                    className={`sort-btn ${sortBy === 'newest' ? 'active' : ''}`}
-                                    onClick={() => setSortBy('newest')}
+                            <div className='sort-select-wrap'>
+                                <label htmlFor="product-sort" className='sort-select-label'></label>
+                                <select
+                                    id="product-sort"
+                                    className='sort-select'
+                                    value={sortBy}
+                                    onChange={(event) => setSortBy(event.target.value)}
                                 >
-                                    신상품순
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`sort-btn ${sortBy === 'name' ? 'active' : ''}`}
-                                    onClick={() => setSortBy('name')}
-                                >
-                                    상품명순
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`sort-btn ${sortBy === 'price-high' ? 'active' : ''}`}
-                                    onClick={() => setSortBy('price-high')}
-                                >
-                                    높은가격순
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`sort-btn ${sortBy === 'price-low' ? 'active' : ''}`}
-                                    onClick={() => setSortBy('price-low')}
-                                >
-                                    낮은가격순
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`sort-btn ${sortBy === 'popular' ? 'active' : ''}`}
-                                    onClick={() => setSortBy('popular')}
-                                >
-                                    인기상품순
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`sort-btn ${sortBy === 'discount' ? 'active' : ''}`}
-                                    onClick={() => setSortBy('discount')}
-                                >
-                                    할인율높은순
-                                </button>
+                                    <option value="newest">신상품순</option>
+                                    <option value="name">상품명순</option>
+                                    <option value="price-high">높은가격순</option>
+                                    <option value="price-low">낮은가격순</option>
+                                    <option value="popular">인기상품순</option>
+                                    <option value="discount">할인율높은순</option>
+                                </select>
                             </div>
                         </div>
                     </div>
