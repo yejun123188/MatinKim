@@ -91,6 +91,18 @@ export default function Payment() {
 
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
+    const [isPostcodeReady, setIsPostcodeReady] = useState(Boolean(window.daum?.Postcode));
+    const [shippingForm, setShippingForm] = useState({
+        receiver: "",
+        mobile1: "010",
+        mobile2: "",
+        mobile3: "",
+        zipcode: "",
+        address: "",
+        detail: "",
+        message: "",
+        saveAsDefault: false
+    });
 
     useEffect(() => {
         if (user) onFetchAddress();
@@ -209,6 +221,30 @@ export default function Payment() {
             </main>
         );
     }
+
+    const openPostcode = () => {
+        if (!window.daum?.Postcode) {
+            window.alert("주소 검색 서비스를 불러오는 중입니다. 잠시 후 다시 시도해주세요.");
+            return;
+        }
+
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                const address = data.roadAddress || data.jibunAddress;
+
+                setShippingForm((prev) => ({
+                    ...prev,
+                    zipcode: data.zonecode,
+                    address,
+                    detail: prev.address === address ? prev.detail : ""
+                }));
+
+                setTimeout(() => {
+                    document.querySelector(".payment-detail-input")?.focus();
+                }, 100);
+            }
+        }).open();
+    };
 
     return (
         <main className="payment-page">
@@ -434,7 +470,12 @@ export default function Payment() {
 
                             <label className="field full">
                                 <span>배송 메세지</span>
-                                <textarea placeholder="배송 시 요청사항을 입력해주세요 (예: 문 앞에 놓아주세요)" />
+                                <textarea
+                                    name="message"
+                                    placeholder="배송 시 요청사항을 입력해주세요 (예: 문 앞에 놓아주세요)"
+                                    value={shippingForm.message}
+                                    onChange={handleShippingChange}
+                                />
                             </label>
                         </div>
 

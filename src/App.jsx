@@ -38,8 +38,15 @@ function App() {
     onMenus();
     onFetchStore();
   }, [onFetchItem, onMenus, stores]);
+  useEffect(() => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY)
+    }
+  }, [])
 
   if (!items.length) return <div>로딩중...</div>;
+
+
   return (
     <>
       <Header />
@@ -70,8 +77,8 @@ function App() {
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"
-          element={<ProductAuthentication />}
-        />
+          element={<ProductAuthentication />} />
+
       </Routes>
       <Footer />
     </>

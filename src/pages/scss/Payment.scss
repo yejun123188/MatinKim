@@ -110,7 +110,7 @@
     textarea {
         width: 100%;
         height: 44px;
-        border: 1px solid rgba(g.$main-color, 0.15);
+        border: 1px solid rgba(g.$main-color, 0.3);
         background: g.$white-color;
         padding: 0 14px;
         font-size: g.$size-14-main;
@@ -206,7 +206,7 @@
 }
 
 .outline-btn {
-    border: 1px solid rgba(g.$main-color, 0.18);
+    border: 1px solid rgba(g.$main-color, 0.3);
     background: g.$white-color;
     color: g.$text-main-color;
 }
@@ -243,7 +243,7 @@
     input {
         flex: 1;
         height: 40px;
-        border: 1px solid rgba(g.$main-color, 0.15);
+        border: 1px solid rgba(g.$main-color, 0.3);
         padding: 0 14px;
         font-size: g.$size-14-main;
     }
@@ -330,7 +330,7 @@
 }
 
 .payment-faq-section {
-    margin-top: 40px;
+    margin-top: 80px;
     border-top: 1px solid rgba(g.$main-color, 0.12);
 }
 
