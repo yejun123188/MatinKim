@@ -1,0 +1,83 @@
+.agreement-page {
+    width: 100%;
+    padding: 10px 40px 120px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #111;
+
+    .agreement-inner {
+        display: flex;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .agreement-side {
+        width: 180px;
+        flex-shrink: 0;
+
+        h2 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        li {
+            font-size: 13px;
+            color: #999;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            &.active {
+                color: #111;
+                font-weight: 500;
+            }
+
+            &:hover {
+                color: #111;
+            }
+        }
+    }
+
+    .agreement-content {
+        flex: 1;
+        max-width: 850px;
+
+        >h2 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 34px;
+        }
+    }
+
+    .terms-box {
+        font-size: 12px;
+        line-height: 1.85;
+        color: #333;
+        word-break: keep-all;
+    }
+
+    .term-item {
+        margin-bottom: 18px;
+
+        h3 {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #111;
+        }
+
+        p {
+            margin: 0 0 4px;
+            font-weight: 400;
+        }
+    }
+}
