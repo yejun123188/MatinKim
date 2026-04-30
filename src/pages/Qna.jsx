@@ -51,24 +51,25 @@ export default function Qna() {
                                     </li>
 
                                     <li
-                                        className={activeMenu === "이용안내" ? "active" : ""}
-                                        onClick={() => handleMenuClick("이용안내")}
-                                    >
-                                        이용안내
+                                        className={activeMenu === "이용안내" ? "active" : ""}>
+
+                                        <Link to="/guide" onClick={() => handleMenuClick("이용안내")}>
+                                            이용안내</Link>
                                     </li>
 
                                     <li
-                                        className={activeMenu === "개인정보처리방침" ? "active" : ""}
-                                        onClick={() => handleMenuClick("개인정보처리방침")}
-                                    >
-                                        개인정보처리방침
+                                        className={activeMenu === "개인정보처리방침" ? "active" : ""}>
+                                        <Link to="/privacy" onClick={() => handleMenuClick("개인정보처리방침")} >
+
+                                            개인정보처리방침</Link>
                                     </li>
 
                                     <li
-                                        className={activeMenu === "이용약관" ? "active" : ""}
-                                        onClick={() => handleMenuClick("이용약관")}
-                                    >
-                                        이용약관
+                                        className={activeMenu === "이용약관" ? "active" : ""}>
+                                        <Link to="/agreement" onClick={() => handleMenuClick("이용약관")}>
+
+                                            이용약관</Link>
+
                                     </li>
                                 </ul>
                             </aside>
