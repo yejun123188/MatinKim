@@ -19,6 +19,16 @@
   line-height: 1;
 }
 
+.top-banner.hide {
+  transform: translateY(-100%);
+
+}
+
+.header-show.no-banner {
+  top: 0;
+
+}
+
 .header-show {
   // border-bottom: 1px solid #eee;
   height: 80px;

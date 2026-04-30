@@ -202,7 +202,7 @@ export const useAuthStore = create((set, get) => ({
 
             set({ user: googleUser });
 
-            alert(`${googleUser.nickname}님, 구글 로그인되었습니다.`);
+            alert(`${googleUser.nickname}님, 구글 로그인되었습니다!`);
             return googleUser;
 
         } catch (err) {
@@ -240,8 +240,8 @@ export const useAuthStore = create((set, get) => ({
 
             // 2 로그인 요청(Promise 변환)
             const authObj = await new Promise((resolve, reject) => {
-                window.Kakao.Auth.login({
-                    scope: 'profile_nickname, profile_image',
+                window.Kakao.Auth.loginForm({
+                    scope: 'profile_nickname,profile_image',
                     success: resolve,
                     fail: reject,
                 });
@@ -282,7 +282,7 @@ export const useAuthStore = create((set, get) => ({
             // 6 Zustand 상태 업데이트
             set({ user: kakaoUser });
 
-            alert(`${kakaoUser.nickname}님, 카카오 로그인되었습니다.`);
+            alert(`${kakaoUser.nickname}님, 카카오 로그인되었습니다!`);
             return kakaoUser;
         } catch (err) {
             console.error(' 카카오 로그인 중 오류:', err);
@@ -382,7 +382,7 @@ export const useAuthStore = create((set, get) => ({
 
             set({ user: naverUser });
 
-            alert(`${naverUser.nickname}님, 네이버 로그인 성공!`);
+            alert(`${naverUser.nickname}님, 네이버 로그인되었습니다.`);
             return naverUser;
 
         } catch (err) {

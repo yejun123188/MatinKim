@@ -192,3 +192,8 @@
     color: #696969;
     text-decoration: underline;
 }
+
+.login-page .error-text::before {
+    content: none !important;
+    display: none !important;
+}

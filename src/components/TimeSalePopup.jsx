@@ -3,6 +3,12 @@ import "./scss/TimeSalePopup.scss";
 
 export default function TimeSalePopup() {
     const [isOpen, setIsOpen] = useState(true);
+    const [timeLeft, setTimeLeft] = useState({
+        days: 40,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
 
     useEffect(() => {
         const hideUntil = localStorage.getItem("hideTimeSaleUntil");
@@ -10,6 +16,30 @@ export default function TimeSalePopup() {
         if (hideUntil && new Date().getTime() < Number(hideUntil)) {
             setIsOpen(false);
         }
+    }, []);
+
+    useEffect(() => {
+        const endDate = new Date().getTime() + 1000 * 60 * 60 * 24 * 40;
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            if (distance <= 0) {
+                clearInterval(timer);
+                setIsOpen(false);
+                return;
+            }
+
+            setTimeLeft({
+                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+                minutes: Math.floor((distance / (1000 * 60)) % 60),
+                seconds: Math.floor((distance / 1000) % 60),
+            });
+        }, 1000);
+
+        return () => clearInterval(timer);
     }, []);
 
     const handleClose = () => {
@@ -47,13 +77,13 @@ export default function TimeSalePopup() {
                     </div>
 
                     <div className="sale-time">
-                        <span>03</span>
+                        <span>{timeLeft.days}</span>
                         <em>:</em>
-                        <span>17</span>
+                        <span>{timeLeft.hours}</span>
                         <em>:</em>
-                        <span>05</span>
+                        <span>{timeLeft.minutes}</span>
                         <em>:</em>
-                        <span>15</span>
+                        <span>{timeLeft.seconds}</span>
                     </div>
 
                     <div className="sale-labels">

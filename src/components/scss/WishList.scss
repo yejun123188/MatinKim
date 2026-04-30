@@ -1,0 +1,210 @@
+.wishlist-wrap {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 30px;
+
+    .top {
+        padding: 16px 0;
+        border-bottom: 1px solid #eee;
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+                width: 13px;
+                height: 13px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .middle {
+
+
+        .wish-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .items {
+                display: flex;
+
+            }
+
+            .empty {
+                padding: 40px 0;
+                text-align: center;
+                color: #aaa;
+                font-size: 14px;
+            }
+
+            li {
+                // display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 24px 0;
+                border-bottom: 1px solid #eee;
+
+                input[type="checkbox"] {
+                    width: 13px;
+                    height: 13px;
+                    cursor: pointer;
+                }
+
+                .img-box {
+                    width: 80px;
+                    height: 100px;
+                    flex-shrink: 0;
+                    overflow: hidden;
+                    background: #f5f5f5;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
+                }
+
+                .text-box {
+                    flex: 1;
+
+                    flex-direction: column;
+
+                    .title {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #111;
+
+                        white-space: nowrap;
+
+                        text-overflow: ellipsis;
+
+                    }
+
+                    .discount-price {
+                        font-size: 15px;
+                        font-weight: 700;
+                        color: #111;
+                    }
+
+                    .price {
+                        font-size: 13px;
+                        color: #aaa;
+                        text-decoration: line-through;
+                    }
+
+                    .discount-rate {
+                        font-size: 13px;
+                        color: #e74c3c;
+                        font-weight: 600;
+                    }
+                }
+
+                .option-box {
+                    .option {
+                        font-size: 13px;
+                        color: #666;
+
+
+                        // 옵션변경 링크 스타일
+                        a,
+                        button {
+                            margin-left: 6px;
+                            font-size: 12px;
+                            color: #888;
+                            text-decoration: underline;
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .button-box {
+                    display: flex;
+
+                    gap: 8px;
+                    flex-shrink: 0;
+
+                    button {
+                        width: 110px;
+                        height: 36px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        cursor: pointer;
+                        transition: background 0.2s, color 0.2s;
+
+                        // BUY IT NOW - 검정 배경
+                        &:nth-child(1) {
+                            background: #111;
+                            color: #fff;
+                            border: 1px solid #111;
+
+
+                        }
+
+                        // ADD TO CART - 흰 배경
+                        &:nth-child(2) {
+                            background: #fff;
+                            color: #111;
+                            border: 1px solid #ccc;
+
+                        }
+
+                        // REMOVE - 흰 배경
+                        &:nth-child(3) {
+                            background: #fff;
+                            color: #111;
+                            border: 1px solid #ccc;
+
+                            &:hover {
+                                background: #f5f5f5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 하단 버튼
+    >.button-box {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        padding-top: 24px;
+
+        button {
+            width: 140px;
+            height: 48px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+
+            // 선택상품주문 - 검정
+            &:nth-child(1) {
+                background: #111;
+                color: #fff;
+                border: 1px solid #111;
+
+            }
+
+            // 선택삭제 - 흰색
+            &:nth-child(2) {
+                background: #fff;
+                color: #111;
+                border: 1px solid #ccc;
+
+
+            }
+        }
+    }
+}
