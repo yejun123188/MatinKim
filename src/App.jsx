@@ -24,6 +24,7 @@ import ProductAuthentication from "./pages/ProductAuthentication";
 import Signup from "./pages/Signup";
 import Payment from "./pages/Payment";
 import { useAuthStore } from "./store/useAuthStore";
+import Guide from "./pages/Guide";
 import Cart from "./pages/Cart";
 
 function App() {
@@ -75,9 +76,12 @@ function App() {
         />
         <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/userInfo/address" element={<AddressRegister />} />
+        <Route path="/guide" element={<Guide />} />
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"
+          element={<ProductAuthentication />} /
+        >
           element={<ProductAuthentication />} />
         <Route path="/cart" element={<Cart />} />
 

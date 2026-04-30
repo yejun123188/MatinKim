@@ -1,0 +1,78 @@
+.guide-page {
+    padding: 10px 0 120px;
+    color: #111;
+
+    .guide-inner {
+        width: 92%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        gap: 120px;
+    }
+
+    .guide-side {
+        width: 180px;
+        flex-shrink: 0;
+
+        h2 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        li {
+            font-size: 14px;
+            color: #777;
+            cursor: pointer;
+
+            &.active {
+                color: #111;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .guide-content {
+        flex: 1;
+        max-width: 850px;
+    }
+
+    .guide-section {
+        margin-bottom: 70px;
+
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 500;
+            margin: 28px 0 12px;
+        }
+
+        p,
+        li {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #333;
+            word-break: keep-all;
+        }
+
+        ul {
+            margin-top: 12px;
+            padding-left: 14px;
+        }
+
+        li {
+            list-style: disc;
+        }
+    }
+}

@@ -8,6 +8,7 @@ import Cart from './Cart';
 import { useAuthStore } from '../store/useAuthStore';
 import Login from './Login';
 import { addRecentViewedProduct } from '../utils/recentViewedProducts';
+import { qnadata } from '../data/Qna';
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
 const RELATED_PER_PAGE = 10;
@@ -313,6 +314,7 @@ export default function ProductDetail() {
         ? `${80 / (sizeColumnCount - 1)}%`
         : '80%';
     const deliveryText = product?.tabContents?.DELIVERY || '';
+    const deliveryFaqs = qnadata.delivery || [];
     const detailText = product?.tabContents?.DETAILS || '';
     const category1Path = product ? `/${product.category1.toLowerCase()}` : '/all';
     const category2Path = product
@@ -471,14 +473,26 @@ export default function ProductDetail() {
         if (activeTab === 'DETAILS') {
             return (
                 <div className='tab-pane'>
+                    <strong>소재 정보</strong>
                     <p>{detailText}</p>
                 </div>
             );
         }
 
         return (
-            <div className='tab-pane'>
-                <p>{deliveryText}</p>
+            <div className='tab-pane delivery-pane'>
+                <strong>예상 배송 기간</strong>
+                {deliveryText && <p>{deliveryText}</p>}
+                <div className='delivery-faq-list'>
+                    {deliveryFaqs.map((item) => (
+                        <div className='delivery-faq-item' key={item.id}>
+                            <strong>{item.q}</strong>
+                            {item.a.split('\n').map((line, index) => (
+                                <p key={`${item.id}-delivery-line-${index}`}>- {line}</p>
+                            ))}
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     };
