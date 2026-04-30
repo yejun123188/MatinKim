@@ -7,6 +7,7 @@ import CartPopup from './CartPopup';
 import Cart from './Cart';
 import { useAuthStore } from '../store/useAuthStore';
 import Login from './Login';
+import { addRecentViewedProduct } from '../utils/recentViewedProducts';
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
 const RELATED_PER_PAGE = 10;
@@ -172,6 +173,7 @@ export default function ProductDetail() {
     // 상품이 바뀌면 상세 페이지의 모든 로컬 UI 상태를 초기화
     useEffect(() => {
         if (!product) return;
+        addRecentViewedProduct(product);
         setSelectedImageIndex(0);
         setThumbStartIndex(0);
         setSelectedColor(product.colors?.[0] || '');

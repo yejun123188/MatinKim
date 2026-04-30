@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import UserInfoMain from "../components/UserInfoMain";
 import UserMenus from "../components/UserMenus";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -7,37 +7,30 @@ import WishList from "../components/WishList";
 import OrderList from "../components/OrderList";
 import CouponList from "../components/CouponList";
 import SavedMoney from "../components/SavedMoney";
-import Adress from "../components/Adress";
 import { useAuthStore } from "../store/useAuthStore";
 import OrderDetail from "../components/OrderDetail";
 import OrderRequest from "../components/OrderRequest";
+import Adress from "../components/Adress";
+import OrderTracking from "../components/OrderTracking";
+import InquiryList from "../components/InquiryList";
+import RecentViewedProducts from "../components/RecentViewedProducts";
 
 const myMenu = "마이페이지";
 const orderMenu = "주문내역";
+const requestActions = new Set(["cancel", "exchange", "return"]);
 
 export default function UserInfo() {
   const location = useLocation();
   const navigate = useNavigate();
   const { id: orderId, action } = useParams();
   const { onLogout } = useAuthStore();
-
-  const [selectMenu, setSelectMenu] = useState(location.state?.menu || myMenu);
-
-  useEffect(() => {
-    if (orderId) {
-      setSelectMenu(orderMenu);
-      return;
-    }
-
-    if (location.state?.menu) {
-      setSelectMenu(location.state.menu);
-    }
-  }, [location.state?.menu, orderId]);
+  const selectMenu = orderId ? orderMenu : location.state?.menu || myMenu;
 
   const handleMenuClick = async (menu) => {
     if (menu === "로그아웃") {
       try {
         await onLogout();
+        alert("로그아웃 되었습니다!");
         navigate("/");
       } catch (err) {
         console.error("로그아웃 실패:", err);
@@ -46,12 +39,18 @@ export default function UserInfo() {
       return;
     }
 
-    setSelectMenu(menu);
+    navigate("/userInfo", {
+      replace: true,
+      state: menu === myMenu ? null : { menu },
+    });
   };
 
   const handleContent = () => {
-    if (action) return <OrderRequest />;
+    if (action === "tracking") return <OrderTracking />;
+    if (requestActions.has(action)) return <OrderRequest />;
     if (orderId) return <OrderDetail />;
+    if (selectMenu.includes("1:1")) return <InquiryList />;
+    if (selectMenu.includes("최근")) return <RecentViewedProducts />;
 
     switch (selectMenu) {
       case orderMenu:

@@ -47,27 +47,24 @@
     input,
     select {
         width: 100%;
-        // height: 38px;
-        background: transparent;
-        border: 1px solid #939393;
-        color: #000;
-        // padding: 0 12px;
-        font-size: 16px;
+        height: 44px;
+
+        border: 1px solid rgba(30, 30, 30, 0.3);
+        background: #fff;
+        padding: 0 14px;
         outline: none;
-        box-sizing: border-box;
-        line-height: 38px;
-        height: 38px;
-        text-indent: 10px;
+        color: #1e1e1e;
+        font-size: 0.875rem;
+
+
+
     }
 
     input::placeholder {
         color: #9b9b9b;
     }
 
-    input:focus,
-    select:focus {
-        border-color: #000;
-    }
+
 
     select {
         appearance: none;
@@ -96,7 +93,7 @@
     >* {
         flex: 1;
         line-height: 38px;
-        height: 38px;
+
     }
 
 
@@ -105,15 +102,14 @@
 
 
         select {
-            // width: 100%;
-            padding: 0 36px 0 2px;
-            height: inherit;
-
-
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
+            width: 100%;
+            height: 44px;
+            border: 1px solid rgba(30, 30, 30, 0.3);
             background: #fff;
+            padding: 0 14px;
+            outline: none;
+            color: #1e1e1e;
+            font-size: 0.875rem;
         }
 
         .select-arrow {
@@ -271,6 +267,7 @@
     line-height: 1.2;
     margin: 0 0 18px;
     padding-bottom: 14px;
+    padding-top: 30px;
 }
 
 .signup-page .agree-list {
@@ -456,4 +453,19 @@
     &.active {
         opacity: 1;
     }
+}
+
+.signup-page .error-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #c8352a;
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.signup-page .error-text::before {
+    content: none !important;
+    display: none !important;
 }
