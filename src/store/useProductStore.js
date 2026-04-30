@@ -1,5 +1,8 @@
 import { create } from "zustand";
 import products from "../data/products"
+import WishList from "../components/WishList";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 const subMenuMap = {
     Outerwears: "아우터",
@@ -234,5 +237,82 @@ export const useProductStore = create((set, get) => ({
 
         })
         set({})
-    }
+    },
+    //~~~위시리스트~~~~~~~~~~~~~~~~~~~~~
+    // wishList: [],
+    // onAddWishList: (product) => {
+    //     const wish = get().wishList;
+
+    //     const existing = wish.find((w) => w.key === product.key);
+    //     if (existing) {
+    //         alert("이미 존재하는 상품입니다")
+    //         return;
+    //     }
+    //     set({ wishList: [...wish, product] })
+    // },
+    // onRemoveWish: (key) => {
+    //     const updateWish = get().wishList.filter((w) => !(w.key === key))
+    //     set({ wishList: updateWish })
+    // },
+    // wishList 관련 메서드 전체 교체
+    wishList: [],
+
+    onLoadWishList: async (uid) => {
+        try {
+            const ref = doc(db, "wishlists", uid);
+            const snap = await getDoc(ref);
+            if (snap.exists()) {
+                set({ wishList: snap.data().list || [] });
+            } else {
+                set({ wishList: [] });
+            }
+        } catch (e) {
+            console.error("위시리스트 불러오기 실패", e);
+        }
+    },
+
+    _saveWishList: async (uid, list) => {
+        if (!uid || typeof uid !== "string" || uid.trim() === "") return;
+        try {
+            // Firestore는 중첩 배열 불가 → 필요한 필드만 추려서 저장
+            const safeList = list.map((p) => ({
+                id: p.id,
+                name: p.name,
+                price: p.price ?? 0,
+                discountPrice: p.discountPrice ?? 0,
+                discountRate: p.discountRate ?? 0,
+                mainImg: p.mainImg || "",
+                selectedSize: p.selectedSize || "",
+                selectedColor: p.selectedColor || "",
+                quantity: p.quantity ?? 1,
+                key: p.key || "",
+                category1: p.category1 || "",
+                category2: p.category2 || "",
+            }));
+
+            const ref = doc(db, "wishlists", uid);
+            await setDoc(ref, { list: safeList });
+        } catch (e) {
+            console.error("위시리스트 저장 실패", e.code, e.message);
+        }
+    },
+
+    onAddWishList: async (product, uid) => {
+        const wish = get().wishList;
+        const existing = wish.find((w) => w.key === product.key);
+        if (existing) {
+            alert("이미 찜한 상품입니다");
+            return;
+        }
+        const updated = [...wish, product];
+        set({ wishList: updated });
+        if (uid) await get()._saveWishList(uid, updated);
+    },
+
+    onRemoveWish: async (key, uid) => {
+        const updated = get().wishList.filter((w) => w.key !== key);
+        set({ wishList: updated });
+        if (uid) await get()._saveWishList(uid, updated);
+    },
+
 }))
