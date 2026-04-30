@@ -5,50 +5,17 @@ import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
 
 const PAYMENT_METHODS = [
-    {
-        id: "card",
-        title: "신용카드 / 체크카드",
-        description: "안전한 결제를 위해 Stripe로 처리됩니다",
-        badges: ["VISA", "MC", "AMEX"]
-    },
-    {
-        id: "tosspay",
-        title: "토스페이",
-        description: "토스페이로 빠르고 간편하게 결제"
-    },
-    {
-        id: "kakaopay",
-        title: "카카오페이(간편결제)",
-        description: "카카오페이 인증으로 간편하게 결제"
-    },
-    {
-        id: "mobile",
-        title: "휴대폰 결제",
-        description: "통신사 인증 후 휴대폰 요금으로 결제"
-    },
-    {
-        id: "transfer",
-        title: "실시간 계좌이체",
-        description: "은행 계좌 인증 후 바로 이체하여 결제"
-    },
-    {
-        id: "bank",
-        title: "가상계좌",
-        description: "주문 후 발급된 계좌로 입금하면 결제가 완료됩니다"
-    }
+    { id: "card", title: "신용카드 / 체크카드", description: "안전한 결제를 위해 Stripe로 처리됩니다", badges: ["VISA", "MC", "AMEX"] },
+    { id: "tosspay", title: "토스페이", description: "토스페이로 빠르고 간편하게 결제" },
+    { id: "kakaopay", title: "카카오페이(간편결제)", description: "카카오페이 인증으로 간편하게 결제" },
+    { id: "mobile", title: "휴대폰 결제", description: "통신사 인증 후 휴대폰 요금으로 결제" },
+    { id: "transfer", title: "실시간 계좌이체", description: "은행 계좌 인증 후 바로 이체하여 결제" },
+    { id: "bank", title: "가상계좌", description: "주문 후 발급된 계좌로 입금하면 결제가 완료됩니다" }
 ];
 
 const FAQ_ITEMS = [
-    {
-        id: "size",
-        question: "사이즈를 잘 못 골랐어요",
-        answer: "주문 완료 직후에는 변경이 어려울 수 있어 고객센터를 통해 빠르게 문의해 주세요. 재고 상황에 따라 교환 가능 여부가 달라질 수 있습니다."
-    },
-    {
-        id: "return",
-        question: "교환/반품은 어떻게 하나요?",
-        answer: "상품 수령 후 7일 이내 접수 가능하며, 사용 흔적이 없는 경우에 한해 처리됩니다. 상세 기준은 브랜드 정책을 따라 적용됩니다."
-    }
+    { id: "size", question: "사이즈를 잘 못 골랐어요", answer: "주문 완료 직후에는 변경이 어려울 수 있어 고객센터를 통해 빠르게 문의해 주세요. 재고 상황에 따라 교환 가능 여부가 달라질 수 있습니다." },
+    { id: "return", question: "교환/반품은 어떻게 하나요?", answer: "상품 수령 후 7일 이내 접수 가능하며, 사용 흔적이 없는 경우에 한해 처리됩니다. 상세 기준은 브랜드 정책을 따라 적용됩니다." }
 ];
 
 const formatPrice = (value) => `₩${value.toLocaleString()}`;
@@ -58,7 +25,6 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 export default function Payment() {
     const { user, userAddress, onFetchAddress, onAddAddress } = useAuthStore();
 
-    // 주문자 정보저장
     const [orderForm, setOrderForm] = useState({
         name: "",
         mobile1: "010",
@@ -69,7 +35,6 @@ export default function Payment() {
         emailInput: ""
     });
 
-    // 배송지 정보저장
     const [form, setForm] = useState({
         receiver: "",
         mobile1: "010",
@@ -82,27 +47,11 @@ export default function Payment() {
     });
 
     const [errors, setErrors] = useState({});
-    //같은 사람인지 체크
     const [useSame, setUseSame] = useState(true);
-    //새로운 주소인지 체크
     const [useNew, setUseNew] = useState(false);
-    //배송주소목록 컴포넌트 보여줄지말지 체크
     const [showAddressModal, setShowAddressModal] = useState(false);
-
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
-    const [isPostcodeReady, setIsPostcodeReady] = useState(Boolean(window.daum?.Postcode));
-    const [shippingForm, setShippingForm] = useState({
-        receiver: "",
-        mobile1: "010",
-        mobile2: "",
-        mobile3: "",
-        zipcode: "",
-        address: "",
-        detail: "",
-        message: "",
-        saveAsDefault: false
-    });
 
     useEffect(() => {
         if (user) onFetchAddress();
@@ -124,7 +73,7 @@ export default function Payment() {
     }, []);
 
     const activeMethod = useMemo(
-        () => PAYMENT_METHODS.find((method) => method.id === selectedMethod) || PAYMENT_METHODS[0],
+        () => PAYMENT_METHODS.find((m) => m.id === selectedMethod) || PAYMENT_METHODS[0],
         [selectedMethod]
     );
 
@@ -132,18 +81,32 @@ export default function Payment() {
         useSame ? userAddress?.phone : `${form.mobile1}-${form.mobile2}-${form.mobile3}`
     )?.split("-") || ["010", "", ""];
 
-    // 주문자 
+    // 주문자 입력 핸들러
     const handleOrderChange = (e) => {
         const { name, value } = e.target;
         setOrderForm(prev => ({ ...prev, [name]: value }));
-        setErrors(prev => ({ ...prev, [name]: "" }));
+
+        if (name === "mobile2" || name === "mobile3") {
+            setErrors(prev => ({ ...prev, orderMobile: "" }));
+        } else if (name === "name") {
+            setErrors(prev => ({ ...prev, orderName: "" }));
+        } else if (name === "email" || name === "emailInput") {
+            setErrors(prev => ({ ...prev, orderEmail: "" }));
+        }
     };
 
-    // 배송지 
+    // 배송지 입력 핸들러
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setForm(prev => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
-        setErrors(prev => ({ ...prev, [name]: "" }));
+
+        if (name === "mobile2" || name === "mobile3") {
+            setErrors(prev => ({ ...prev, mobile: "" }));
+        } else if (name === "receiver") {
+            setErrors(prev => ({ ...prev, receiver: "" }));
+        } else if (name === "detail") {
+            setErrors(prev => ({ ...prev, detail: "" }));
+        }
     };
 
     const openPostcode = () => {
@@ -158,6 +121,9 @@ export default function Payment() {
                     setForm(prev => ({ ...prev, ...newAddr }));
                 }
 
+                // 우편번호/주소 에러 제거
+                setErrors(prev => ({ ...prev, zipcode: "", address: "" }));
+
                 setTimeout(() => {
                     document.querySelector(".detail-input")?.focus();
                 }, 100);
@@ -168,12 +134,10 @@ export default function Payment() {
     const validate = () => {
         let newErrors = {};
 
-        // 주문자 검증
         if (!orderForm.name.trim()) newErrors.orderName = "주문자 이름을 입력해주세요";
         if (!orderForm.mobile2 || !orderForm.mobile3) newErrors.orderMobile = "주문자 휴대폰 번호를 입력해주세요";
         if (!orderForm.email.trim()) newErrors.orderEmail = "이메일을 입력해주세요";
 
-        // 배송지 검증 (새로운 배송지일 때만)
         if (useNew) {
             if (!form.receiver.trim()) newErrors.receiver = "받는 사람을 입력해주세요";
             if (!form.mobile2 || !form.mobile3) newErrors.mobile = "휴대폰 번호를 입력해주세요";
@@ -190,12 +154,12 @@ export default function Payment() {
 
         return Object.keys(newErrors).length === 0;
     };
-    //주문하기 제출버튼
+
     const handleSubmit = () => {
         if (!validate()) return;
         alert("주문이 완료되었습니다!");
     };
-    // 주소 선택 핸들러
+
     const handleAddressSelect = (addr) => {
         const [m1, m2, m3] = (addr.phone || "010--").split("-");
         setForm({
@@ -208,9 +172,10 @@ export default function Payment() {
             detail: addr.detail || "",
             isDefault: addr.isDefault || false
         });
-        setUseSame(false); // 주소록에서 선택했으니 새로운 배송지로 전환을햐애지
+        setUseSame(false);
         setUseNew(true);
     };
+
     if (!orderItems.length) {
         return (
             <main className="payment-page">
@@ -221,30 +186,6 @@ export default function Payment() {
             </main>
         );
     }
-
-    // const openPostcode = () => {
-    //     if (!window.daum?.Postcode) {
-    //         window.alert("주소 검색 서비스를 불러오는 중입니다. 잠시 후 다시 시도해주세요.");
-    //         return;
-    //     }
-
-    //     new window.daum.Postcode({
-    //         oncomplete: function (data) {
-    //             const address = data.roadAddress || data.jibunAddress;
-
-    //             setShippingForm((prev) => ({
-    //                 ...prev,
-    //                 zipcode: data.zonecode,
-    //                 address,
-    //                 detail: prev.address === address ? prev.detail : ""
-    //             }));
-
-    //             setTimeout(() => {
-    //                 document.querySelector(".payment-detail-input")?.focus();
-    //             }, 100);
-    //         }
-    //     }).open();
-    // };
 
     return (
         <main className="payment-page">
@@ -278,7 +219,14 @@ export default function Payment() {
                             <div className="field full">
                                 <span>휴대폰 번호 <em>*</em></span>
                                 <div className="inline-fields phone-fields">
-                                    <select name="mobile1" value={orderForm.mobile1} onChange={handleOrderChange}>
+                                    <select
+                                        name="mobile1"
+                                        value={orderForm.mobile1}
+                                        onChange={(e) => {
+                                            handleOrderChange(e);
+                                            setErrors(prev => ({ ...prev, orderMobile: "" }));
+                                        }}
+                                    >
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
@@ -331,6 +279,7 @@ export default function Payment() {
                                                 emailDomain: e.target.value,
                                                 emailInput: ""
                                             }));
+                                            setErrors(prev => ({ ...prev, orderEmail: "" }));
                                         }}
                                     >
                                         <option value="custom">직접입력</option>
@@ -397,7 +346,10 @@ export default function Payment() {
                                     <select
                                         name="mobile1"
                                         value={useSame ? phone1 : form.mobile1}
-                                        onChange={handleChange}
+                                        onChange={(e) => {
+                                            handleChange(e);
+                                            setErrors(prev => ({ ...prev, mobile: "" }));
+                                        }}
                                         disabled={useSame}
                                     >
                                         <option value="010">010</option>
@@ -473,8 +425,6 @@ export default function Payment() {
                                 <textarea
                                     name="message"
                                     placeholder="배송 시 요청사항을 입력해주세요 (예: 문 앞에 놓아주세요)"
-                                // value={shippingForm.message}
-                                // onChange={handleShippingChange}
                                 />
                             </label>
                         </div>
@@ -663,10 +613,13 @@ export default function Payment() {
                     </div>
                 </aside>
             </div>
-            {showAddressModal && <AddressPopup onClose={() => setShowAddressModal(false)}
-                onSelect={handleAddressSelect} />}
+
+            {showAddressModal && (
+                <AddressPopup
+                    onClose={() => setShowAddressModal(false)}
+                    onSelect={handleAddressSelect}
+                />
+            )}
         </main>
-
     );
-
 }

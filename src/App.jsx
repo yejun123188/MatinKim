@@ -27,6 +27,7 @@ import { useAuthStore } from "./store/useAuthStore";
 import Guide from "./pages/Guide";
 import Privacy from "./pages/Privacy";
 import Agreement from "./pages/Agreement";
+import Cart from "./pages/Cart";
 
 function App() {
   const location = useLocation();
@@ -81,12 +82,14 @@ function App() {
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"
-          element={<ProductAuthentication />} /
-        >
+          element={<ProductAuthentication />} />
+
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/agreement" element={<Agreement />} />
 
 
+        <Route path="productauthentication" element={<ProductAuthentication />} />
+        <Route path="/cart" element={<Cart />} />
 
       </Routes>
       <Footer />
