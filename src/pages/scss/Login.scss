@@ -87,9 +87,14 @@
 }
 
 .login-page .error-text {
+
     margin-top: 7px;
     font-size: 12px;
     color: #C8352A;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
 }
 
 .login-page .save-id {
@@ -186,4 +191,9 @@
     font-size: 13px;
     color: #696969;
     text-decoration: underline;
+}
+
+.login-page .error-text::before {
+    content: none !important;
+    display: none !important;
 }

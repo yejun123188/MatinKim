@@ -4,17 +4,24 @@ import "./scss/GuestOrder.scss";
 export default function GuestOrder() {
     const [orderName, setOrderName] = useState("");
     const [orderNumber, setOrderNumber] = useState("");
-    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const [errors, setErrors] = useState({
+        orderName: false,
+        orderNumber: false,
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setIsSubmitted(true);
 
-        if (!orderName.trim() || !orderNumber.trim()) {
-            return;
-        }
+        const newErrors = {
+            orderName: !orderName.trim(),
+            orderNumber: !orderNumber.trim(),
+        };
 
-        // 여기서 주문조회 로직 연결
+        setErrors(newErrors);
+
+        if (newErrors.orderName || newErrors.orderNumber) return;
+
         console.log("비회원 주문조회", {
             orderName,
             orderNumber,
@@ -37,10 +44,14 @@ export default function GuestOrder() {
                                 type="text"
                                 placeholder="주문자명"
                                 value={orderName}
-                                onChange={(e) => setOrderName(e.target.value)}
-                                className={isSubmitted && !orderName.trim() ? "error" : ""}
+                                onChange={(e) => {
+                                    setOrderName(e.target.value);
+                                    setErrors((prev) => ({ ...prev, orderName: false }));
+                                }}
+                                className={errors.orderName ? "error" : ""}
                             />
-                            {isSubmitted && !orderName.trim() && (
+
+                            {errors.orderName && (
                                 <p className="error-text">
                                     <span className="error-icon">!</span>
                                     주문자명 항목은 필수 입력값입니다.
@@ -53,10 +64,14 @@ export default function GuestOrder() {
                                 type="text"
                                 placeholder="주문번호"
                                 value={orderNumber}
-                                onChange={(e) => setOrderNumber(e.target.value)}
-                                className={isSubmitted && !orderName.trim() ? "error" : ""}
+                                onChange={(e) => {
+                                    setOrderNumber(e.target.value);
+                                    setErrors((prev) => ({ ...prev, orderNumber: false }));
+                                }}
+                                className={errors.orderNumber ? "error" : ""}
                             />
-                            {isSubmitted && !orderName.trim() && (
+
+                            {errors.orderNumber && (
                                 <p className="error-text">
                                     <span className="error-icon">!</span>
                                     주문번호 항목은 필수 입력값입니다.
