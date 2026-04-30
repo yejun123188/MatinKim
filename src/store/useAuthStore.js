@@ -264,6 +264,10 @@ export const useAuthStore = create((set, get) => ({
   // 카카오 로그인
   onKakaoLogin: async () => {
     try {
+      if (!window.Kakao) {
+        throw new Error("카카오 SDK가 로드되지 않았습니다.");
+      }
+
       if (!window.Kakao.isInitialized()) {
         window.Kakao.init("415096494840a6ca548a1d48257b2766");
       }

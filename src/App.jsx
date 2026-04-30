@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -28,8 +28,6 @@ import Guide from "./pages/Guide";
 import Cart from "./pages/Cart";
 
 function App() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
   const { onFetchStore, stores } = useMapStore();
   const { initAuth } = useAuthStore();
@@ -41,7 +39,7 @@ function App() {
     onFetchStore();
   }, [onFetchItem, onMenus, stores]);
   useEffect(() => {
-    if (!window.Kakao.isInitialized()) {
+    if (window.Kakao && !window.Kakao.isInitialized()) {
       window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY)
     }
   }, [])
@@ -80,9 +78,8 @@ function App() {
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"
-          element={<ProductAuthentication />} /
-        >
-          element={<ProductAuthentication />} />
+          element={<ProductAuthentication />}
+        />
         <Route path="/cart" element={<Cart />} />
 
       </Routes>
