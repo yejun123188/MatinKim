@@ -97,7 +97,7 @@ export default function Header() {
                         menu.key === "shop" && setIsShopHovered(false)
                       }
                     >
-                      <Link to={menu.key === "shop" ? "/all" : `/${menu.key}`}>{menu.label}</Link>
+                      <Link to={menu.key === "shop" ? "/sale" : `/${menu.key}`}>{menu.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -171,10 +171,10 @@ export default function Header() {
                   <Link key={id}>
                     <div className="img-box">
                       <img src={m.src} alt="" />
-                    </div>
-                    <div className="text-box">
-                      <p>{m.subtitle}</p>
-                      <h3>{m.title}</h3>
+                      <div className="text-box">
+                        <p>{m.subtitle}</p>
+                        <h3>{m.title}</h3>
+                      </div>
                     </div>
                   </Link>
                 ))}
