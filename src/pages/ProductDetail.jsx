@@ -3,6 +3,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { useProductStore } from '../store/useProductStore';
 import "./scss/productDetail.scss";
+import CartPopup from './CartPopup';
+import Cart from './Cart';
+import { useAuthStore } from '../store/useAuthStore';
+import Login from './Login';
 import { addRecentViewedProduct } from '../utils/recentViewedProducts';
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
@@ -109,7 +113,7 @@ const getProductBaseName = (item) => {
 export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { items, onFetchItem, onColorCode, onAddCart } = useProductStore();
+    const { items, onFetchItem, onColorCode, onAddCart, onAddWishList, onRemoveWish, wishList, onLoadWishList } = useProductStore();
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [thumbStartIndex, setThumbStartIndex] = useState(0);
@@ -213,7 +217,71 @@ export default function ProductDetail() {
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [isZoomOpen]);
+    // 현재 선택된 사이즈의 sold-out 여부
+    const isSoldOutSelectedSize = useMemo(() => {
+        if (!product || !selectedSize) return false;
+        const sizeIndex = product.sizes.findIndex(s => s === selectedSize);
+        return Boolean(product.soldout?.[sizeIndex]);
+    }, [product, selectedSize]);
+    //장바구니 팝업  열고 닫기 상태변수
+    const [showCartPopup, setShowCartPopup] = useState(false);
+    const [showCart, setShowCart] = useState(false);
+    //위시리스트에 상품담기
 
+    const { user } = useAuthStore();
+    useEffect(() => {
+        if (user?.uid) {
+            onLoadWishList(user.uid);
+        }
+    }, [user]);
+    useEffect(() => {
+        if (!product || !user) {
+            setIsLiked(false);
+            return;
+        }
+        const key = `${product.id}-${selectedSize}-${selectedColor}`;
+        setIsLiked(wishList.some((w) => w.key === key));
+    }, [product, selectedSize, selectedColor, wishList, user]);
+    //로그인 페이지
+    const [showLogin, setShowLogin] = useState(false);
+    const handleAddToWish = () => {
+        if (!product) return;
+
+        //  비로그인 체크
+        if (!user) {
+            const ok = window.confirm("로그인이 필요한 서비스입니다.\n로그인하시겠습니까?");
+            if (ok); setShowLogin(true)
+            return;
+        }
+
+        if (!selectedSize) {
+            alert("사이즈를 선택해주세요");
+            return;
+        }
+        if (!selectedColor) {
+            alert("색상을 선택해주세요");
+        }
+
+        const key = `${product.id}-${selectedSize}-${selectedColor}`;
+        const alreadyLiked = wishList.some((w) => w.key === key);
+
+        // 이미 찜한 상품이면 취소 confirm
+        if (alreadyLiked) {
+            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+            if (!ok) return;
+            onRemoveWish(key, user.uid);
+            return;
+        }
+
+        onAddWishList({
+            ...product,
+            selectedSize,
+            selectedColor,
+            quantity,
+            key
+        }, user.uid);
+        alert("위시리스트에 상품이 담겼습니다");
+    }
     // 상세 이미지 목록은 hover 이미지를 제외하고 main 이미지를 앞에 고정해 구성
     const detailImages = useMemo(() => {
         if (!product) return [];
@@ -516,7 +584,7 @@ export default function ProductDetail() {
                                 type="button"
                                 aria-label='찜하기'
                                 className={isLiked ? 'is-active' : ''}
-                                onClick={() => setIsLiked((prev) => !prev)}
+                                onClick={handleAddToWish}
                             >
                                 <img
                                     src={isLiked ? "/images/pages-icon/like-hover-icon.svg" : "/images/pages-icon/like-icon.svg"}
@@ -618,7 +686,7 @@ export default function ProductDetail() {
                                 <span>{quantity}</span>
                                 <button type="button" onClick={() => handleQuantityChange(quantity + 1)} aria-label='수량 증가'>+</button>
                             </div>
-                            <button type="button" className='cart-btn'
+                            <button type="button" className='cart-btn' disabled={isSoldOutSelectedSize || isProductSoldOut}
                                 onClick={() => {
                                     if (!product) return;
 
@@ -636,6 +704,8 @@ export default function ProductDetail() {
                                         image: product.mainImg || product.hoverImg,
                                         key: `${product.id}-${selectedSize}-${selectedColor}`
                                     });
+
+                                    setShowCartPopup(true);
                                 }}
                             >장바구니 담기</button>
                             <button
@@ -729,7 +799,7 @@ export default function ProductDetail() {
                         </div>
                     )}
                 </section>
-            </div>
+            </div >
 
             {isZoomOpen && (
                 <div
@@ -772,7 +842,22 @@ export default function ProductDetail() {
                         </button>
                     </div>
                 </div>
-            )}
-        </main>
+            )
+            }
+            {
+                showCartPopup && <CartPopup onClose={() => setShowCartPopup(false)}
+                    product={product}
+                    selectedColor={selectedColor}
+                    selectedSize={selectedSize}
+                    quantity={quantity}
+                    onClose={() => setShowCartPopup(false)}
+                    onGoCart={() => {
+                        setShowCartPopup(false);
+                        setShowCart(true);
+                    }} />
+            }
+            {showCart && <Cart onClose={() => setShowCart(false)} />}
+            {showLogin && <Login onClose={() => setShowLogin(false)} />}
+        </main >
     )
 }
