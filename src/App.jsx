@@ -25,6 +25,8 @@ import Signup from "./pages/Signup";
 import Payment from "./pages/Payment";
 import { useAuthStore } from "./store/useAuthStore";
 import Guide from "./pages/Guide";
+import Privacy from "./pages/Privacy";
+import Agreement from "./pages/Agreement";
 
 function App() {
   const location = useLocation();
@@ -81,6 +83,10 @@ function App() {
           path="/product-authentication"
           element={<ProductAuthentication />} /
         >
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/agreement" element={<Agreement />} />
+
+
 
       </Routes>
       <Footer />
