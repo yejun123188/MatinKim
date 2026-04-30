@@ -1,7 +1,21 @@
+@use "../../App.scss" as g;
+
 .about {
     .button-list {
         display: flex;
         gap: 24px;
         padding-bottom: 50px;
+
+        li {
+            color: g.$text-sub-color2;
+        }
+
+        .active {
+            color: g.$text-main-color;
+        }
+
+        li:hover {
+            color: g.$text-sub-color;
+        }
     }
 }
