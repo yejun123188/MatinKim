@@ -180,25 +180,31 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!canSubmit) {
-            alert("필수 약관에 동의해주세요.");
-            return;
-        }
+        const newErrors = {
+            userId: !form.userId.trim(),
+            password: !form.password.trim(),
+            passwordConfirm: !form.passwordConfirm.trim(),
+            name: !form.name.trim(),
+            email: !form.emailId.trim() || !form.emailDomain.trim(),
+            phone2: !form.phone2.trim()
 
-        if (!form.userId || !form.password || !form.passwordConfirm || !form.name) {
-            alert("필수 입력값을 모두 입력해주세요.");
-            return;
-        }
+        };
+
+        setErrors(newErrors);
+
+
+        if (Object.values(newErrors).some((v) => v)) return;
 
         if (form.password !== form.passwordConfirm) {
             alert("비밀번호가 일치하지 않습니다.");
             return;
         }
 
-        if (!form.emailId || !form.emailDomain) {
-            alert("이메일을 입력해주세요.");
+        if (!canSubmit) {
+            alert("필수 약관에 동의해주세요.");
             return;
         }
+
 
         const email = `${form.emailId}@${form.emailDomain}`;
         const phone = `${form.phone1}-${form.phone2}-${form.phone3}`;
@@ -218,13 +224,19 @@ export default function Signup() {
                 profile: "",
             });
 
-
             navigate("/");
         } catch (err) {
-            console.error("회원가입 실패:", err);
-            alert(err.message || "회원가입 실패");
+            alert("회원가입 실패");
         }
     };
+    const [errors, setErrors] = useState({
+        userId: false,
+        password: false,
+        passwordConfirm: false,
+        name: false,
+        email: false,
+        phone2: false,
+    });
 
     return (
         <section className="sub-section">
@@ -243,8 +255,14 @@ export default function Signup() {
                                     name="userId"
                                     placeholder="영문소문자/숫자, 4~16자"
                                     value={form.userId}
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        handleChange(e);
+                                        setErrors((prev) => ({ ...prev, userId: false }));
+                                    }}
                                 />
+                                {errors.userId && (
+                                    <p className="error-text"><img src="/images/sub-signup/error-icon.svg" alt="error" />아이디를 입력해주세요.</p>
+                                )}
                             </div>
 
                             <div className="form-group">
@@ -256,8 +274,14 @@ export default function Signup() {
                                     name="password"
                                     placeholder="영문대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자"
                                     value={form.password}
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        handleChange(e);
+                                        setErrors((prev) => ({ ...prev, password: false }));
+                                    }}
                                 />
+                                {errors.password && (
+                                    <p className="error-text"><img src="/images/sub-signup/error-icon.svg" alt="error" />비밀번호를 입력해주세요.</p>
+                                )}
                             </div>
 
                             <div className="form-group">
@@ -268,8 +292,14 @@ export default function Signup() {
                                     type="password"
                                     name="passwordConfirm"
                                     value={form.passwordConfirm}
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        handleChange(e);
+                                        setErrors((prev) => ({ ...prev, passwordConfirm: false }));
+                                    }}
                                 />
+                                {errors.passwordConfirm && (
+                                    <p className="error-text"><img src="/images/sub-signup/error-icon.svg" alt="error" />비밀번호 확인을 입력해주세요.</p>
+                                )}
                             </div>
 
                             <div className="form-group">
@@ -280,50 +310,67 @@ export default function Signup() {
                                     type="text"
                                     name="name"
                                     value={form.name}
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        handleChange(e);
+                                        setErrors((prev) => ({ ...prev, name: false }));
+                                    }}
                                 />
+                                {errors.name && (
+                                    <p className="error-text"><img src="/images/sub-signup/error-icon.svg" alt="error" />이름을 입력해주세요.</p>
+                                )}
                             </div>
+
 
                             <div className="form-group">
                                 <label>
                                     휴대전화 <span>*</span>
                                 </label>
+                                <div>
+                                    <div className="phone-row">
+                                        <div className="select-box">
+                                            <select name="phone1" value={form.phone1} onChange={handleChange}
+                                            >
+                                                <option value="010">010</option>
+                                                <option value="011">011</option>
+                                                <option value="016">016</option>
+                                                <option value="017">017</option>
+                                                <option value="018">018</option>
+                                                <option value="019">019</option>
+                                            </select>
+                                            <img src="/images/sub-signup/arrow-icon.svg" alt="화살표" className="select-arrow" />
 
-                                <div className="phone-row">
-                                    <div className="select-box">
-                                        <select name="phone1" value={form.phone1} onChange={handleChange}>
-                                            <option value="010">010</option>
-                                            <option value="011">011</option>
-                                            <option value="016">016</option>
-                                            <option value="017">017</option>
-                                            <option value="018">018</option>
-                                            <option value="019">019</option>
-                                        </select>
-                                        <img src="/images/sub-signup/arrow-icon.svg" alt="화살표" className="select-arrow" />
+
+                                        </div>
+
+                                        -
+                                        <div>
+                                            <input
+                                                type="text"
+                                                name="phone2"
+                                                value={form.phone2}
+                                                onChange={(e) => {
+                                                    handleChange(e);
+                                                    setErrors((prev) => ({ ...prev, phone2: false }));
+                                                }}
+                                                maxLength={4}
+                                            />
+                                        </div>
+                                        -
+                                        <div>
+                                            <input
+                                                type="text"
+                                                name="phone3"
+                                                value={form.phone3}
+                                                onChange={handleChange}
+                                                maxLength={4}
+                                            />
+                                        </div>
+
 
                                     </div>
-
-                                    -
-
-                                    <input
-                                        type="text"
-                                        name="phone2"
-                                        value={form.phone2}
-                                        onChange={handleChange}
-                                        maxLength={4}
-                                    />
-
-                                    -
-
-                                    <input
-                                        type="text"
-                                        name="phone3"
-                                        value={form.phone3}
-                                        onChange={handleChange}
-                                        maxLength={4}
-                                    />
-
-
+                                    {errors.phone2 && (
+                                        <p className="error-text"><img src="/images/sub-signup/error-icon.svg" alt="error" />휴대전화를 입력해주세요.</p>
+                                    )}
                                 </div>
                             </div>
 
@@ -332,37 +379,45 @@ export default function Signup() {
                                     이메일 <span>*</span>
                                 </label>
 
-                                <div className="email-row">
-                                    <input
-                                        type="text"
-                                        name="emailId"
-                                        value={form.emailId}
-                                        onChange={handleChange}
-                                    />
-                                    <span className="email-at">@</span>
-                                    <input
-                                        type="text"
-                                        name="emailDomain"
-                                        value={form.emailDomain}
-                                        onChange={handleChange}
-                                        disabled={form.emailSelect !== "direct" && form.emailSelect !== ""}
-                                    />
-                                    <div className="select-box">
-                                        <select
-                                            name="emailSelect"
-                                            value={form.emailSelect}
-                                            onChange={handleEmailSelect}
-                                        >
-                                            <option value="">이메일 선택</option>
-                                            <option value="naver.com">naver.com</option>
-                                            <option value="gmail.com">gmail.com</option>
-                                            <option value="daum.net">daum.net</option>
-                                            <option value="hanmail.net">hanmail.net</option>
-                                            <option value="nate.com">nate.com</option>
-                                            <option value="direct">직접 입력</option>
-                                        </select>
-                                        <img src="/images/sub-signup/arrow-icon.svg" alt="화살표" className="select-arrow" />
+                                <div className="email">
+                                    <div className="email-row">
+                                        <input
+                                            type="text"
+                                            name="emailId"
+                                            value={form.emailId}
+                                            onChange={(e) => {
+                                                handleChange(e);
+                                                setErrors((prev) => ({ ...prev, email: false }));
+                                            }}
+                                        />
+                                        <span className="email-at">@</span>
+                                        <input
+                                            type="text"
+                                            name="emailDomain"
+                                            value={form.emailDomain}
+                                            onChange={handleChange}
+                                            disabled={form.emailSelect !== "direct" && form.emailSelect !== ""}
+                                        />
+                                        <div className="select-box">
+                                            <select
+                                                name="emailSelect"
+                                                value={form.emailSelect}
+                                                onChange={handleEmailSelect}
+                                            >
+                                                <option value="">이메일 선택</option>
+                                                <option value="naver.com">naver.com</option>
+                                                <option value="gmail.com">gmail.com</option>
+                                                <option value="daum.net">daum.net</option>
+                                                <option value="hanmail.net">hanmail.net</option>
+                                                <option value="nate.com">nate.com</option>
+                                                <option value="direct">직접 입력</option>
+                                            </select>
+                                            <img src="/images/sub-signup/arrow-icon.svg" alt="화살표" className="select-arrow" />
+                                        </div>
                                     </div>
+                                    {errors.email && (
+                                        <p className="error-text"><img src="/images/sub-signup/error-icon.svg" alt="error" /> 이메일을 입력해주세요.</p>
+                                    )}
                                 </div>
                             </div>
 
@@ -549,7 +604,7 @@ export default function Signup() {
                         </form>
                     </div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }

@@ -60,9 +60,7 @@
                     background: #efefef;
                 }
 
-                &.error {
-                    border: 1px solid #FF0000;
-                }
+
             }
 
             .error-text {
@@ -72,7 +70,7 @@
                 gap: 6px;
                 font-size: 12px;
                 font-weight: 400;
-                color: #ff4d4f;
+                color: #C8352A;
                 line-height: 1.4;
 
                 .error-icon {
@@ -82,7 +80,7 @@
                     width: 14px;
                     height: 14px;
                     border-radius: 50%;
-                    background: #ff4d4f;
+                    background: #C8352A;
                     color: #fff;
                     font-size: 10px;
                     font-weight: 700;
