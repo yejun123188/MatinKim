@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { faqTabs, qnadata } from "../data/Qna";
 import "./scss/Qna.scss";
+import { Link } from "react-router-dom";
 
 export default function Qna() {
     const [activeTab, setActiveTab] = useState("top5");
@@ -35,10 +36,11 @@ export default function Qna() {
                             <aside className="qna-sidebar">
                                 <ul>
                                     <li
-                                        className={activeMenu === "FAQ" ? "active" : ""}
-                                        onClick={() => handleMenuClick("FAQ")}
-                                    >
-                                        FAQ
+                                        className={activeMenu === "FAQ" ? "active" : ""}>
+                                        <Link to="/qna" onClick={() => handleMenuClick("FAQ")}> FAQ
+                                        </Link>
+
+
                                     </li>
 
                                     <li

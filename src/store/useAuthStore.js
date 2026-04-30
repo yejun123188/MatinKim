@@ -21,16 +21,23 @@ export const useAuthStore = create((set, get) => ({
 
     // 🔹 로그인 상태 유지
     initAuth: () => {
+        const savedSocialUser = localStorage.getItem("socialUser");
+
+        if (savedSocialUser) {
+            set({ user: JSON.parse(savedSocialUser) });
+        }
+
         onAuthStateChanged(auth, async (firebaseUser) => {
             if (!firebaseUser) {
-                set({ user: null });
+                if (!savedSocialUser) {
+                    set({ user: null });
+                }
                 return;
             }
 
             const providerId = firebaseUser.providerData?.[0]?.providerId;
             const isEmailPasswordUser = providerId === "password";
 
-            // 이메일 인증 안 했으면 로그인 막기
             if (isEmailPasswordUser && !firebaseUser.emailVerified) {
                 alert("이메일 인증을 먼저 해주세요!!!");
                 await signOut(auth);
@@ -281,9 +288,10 @@ export const useAuthStore = create((set, get) => ({
 
             // 6 Zustand 상태 업데이트
             set({ user: kakaoUser });
-
+            localStorage.setItem("socialUser", JSON.stringify(kakaoUser));
             alert(`${kakaoUser.nickname}님, 카카오 로그인되었습니다!`);
             return kakaoUser;
+
         } catch (err) {
             console.error(' 카카오 로그인 중 오류:', err);
             alert('카카오 로그인 실패: ' + err.message);
@@ -381,7 +389,7 @@ export const useAuthStore = create((set, get) => ({
             }
 
             set({ user: naverUser });
-
+            localStorage.setItem("socialUser", JSON.stringify(naverUser));
             alert(`${naverUser.nickname}님, 네이버 로그인되었습니다.`);
             return naverUser;
 
@@ -394,6 +402,7 @@ export const useAuthStore = create((set, get) => ({
     onLogout: async () => {
         try {
             await signOut(auth);
+            localStorage.removeItem("socialUser");
             set({ user: null });
         } catch (err) {
             console.error("로그아웃 에러:", err);
