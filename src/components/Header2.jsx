@@ -39,11 +39,10 @@ const photoMenu = [
 export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const { menus } = useProductStore();
+  const { menus, isCartOpen, openCart, closeCart } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -102,7 +101,7 @@ export default function Header() {
                 </li>
                 <li className="header-cart">
                   <Link
-                    onClick={() => setIsCartOpen(true)}>
+                    onClick={openCart}>
                     <img src="/images/header-icon/cart.svg" alt="" />
                     <span className="cart-num">
                       <span>1</span>
@@ -172,7 +171,7 @@ export default function Header() {
         </div>
         {isLoginOpen && <Login onClose={() => setLoginOpen()} />}
       </header>
-      {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />}
+      {isCartOpen && <Cart onClose={closeCart} />}
     </>
   );
 }

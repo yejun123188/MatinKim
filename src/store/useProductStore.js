@@ -151,6 +151,9 @@ export const useProductStore = create((set, get) => ({
     cartCount: 0,
     //카트에 담긴 상품의 전체 가격
     totalPrice: 0,
+    isCartOpen: false,
+    openCart: () => set({ isCartOpen: true }),
+    closeCart: () => set({ isCartOpen: false }),
 
 
     //ProductDetail에서 색상변수 selectedColor 사이즈변수 selectedSize 개수 quantity 총가격 totalprice
@@ -220,4 +223,16 @@ export const useProductStore = create((set, get) => ({
             totalPrice: get().onTotal(updateCart),
         });
     },
+    //~~~~상품검색~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    onSearchitem: (word) => {
+
+        const items = get();
+        const result = items.map((item) => {
+            const filter = item.filter((i) =>
+                i.name.includes(word.toLowerCase()) || i.bullet_point.includes(word)
+            )
+
+        })
+        set({})
+    }
 }))

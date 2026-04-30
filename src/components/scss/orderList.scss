@@ -24,6 +24,12 @@
   }
   .order-tab-content {
     .tab-order-wrap {
+      .order-empty {
+        padding: 40px 0;
+        color: g.$text-sub-color;
+        text-align: center;
+      }
+
       .date-filter-wrap {
         display: flex;
         flex-direction: column;
@@ -165,7 +171,7 @@
             display: flex;
             gap: 10px;
             border-bottom: 2px solid #eeeeee;
-            padding: 12px 0;
+            padding: 12px 12px;
 
             .img-box {
               gap: 20px;
@@ -210,7 +216,7 @@
               .order-btn-wrap {
                 display: flex;
                 justify-content: end;
-                width: 175px;
+                width: 160px;
 
                 .btn {
                   @include g.myBtn1;
@@ -226,5 +232,10 @@
         }
       }
     }
+  }
+}
+.order-tab-text {
+  ul {
+    padding: 10px 0;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ordersData from "../data/ordersData";
 import "./scss/orderRequest.scss";
@@ -18,9 +18,8 @@ const cancelList = [
 const actionMent = {
   cancel: {
     select: "취소 사유를 선택하세요",
-    selectTitle: "취소 사유",
     selectList: cancelList,
-    detailState: "취소 신청",
+    detailState: "주문 취소",
     notices: [
       "상품 준비 또는 배송이 시작된 경우 취소가 불가할 수 있습니다.",
       "취소 완료 후 환불까지 일정 기간이 소요될 수 있습니다.",
@@ -29,7 +28,6 @@ const actionMent = {
   },
   exchange: {
     select: "교환 상품을 선택하세요",
-    selectTitle: "교환 상품",
     detailState: "교환 신청",
     notices: [
       "교환 신청은 상품 수령 후 7일 이내에 접수해 주세요.",
@@ -38,7 +36,6 @@ const actionMent = {
   },
   return: {
     select: "반품 상품을 선택하세요",
-    selectTitle: "반품 상품",
     detailState: "반품 신청",
     notices: [
       "반품 신청은 상품 수령 후 7일 이내에 접수해 주세요.",
@@ -59,18 +56,7 @@ export default function OrderRequest() {
 
   const orderDetail = ordersData.find((item) => String(item.id) === id);
   const actionState = actionMent[action];
-
-  const [selectedValue, setSelectedValue] = useState("");
-  const [selectedList, setSelectedList] = useState([]);
-  const [note, setNote] = useState("");
-  const [showError, setShowError] = useState(false);
-
-  useEffect(() => {
-    setSelectedValue(action === "cancel" ? "" : itemId || "");
-    setSelectedList([]);
-    setNote("");
-    setShowError(false);
-  }, [action, itemId]);
+  const isCancelAction = action === "cancel";
 
   if (!orderDetail || !actionState) {
     return (
@@ -92,24 +78,73 @@ export default function OrderRequest() {
     label: formatProductOption(order),
   }));
 
-  const optionList =
-    action === "cancel"
-      ? actionState.selectList.map((item) => ({
-          value: item,
-          label: item,
-        }))
-      : productOptions;
+  const optionList = isCancelAction
+    ? actionState.selectList.map((item) => ({
+        value: item,
+        label: item,
+      }))
+    : productOptions;
+
+  return (
+    <OrderRequestForm
+      key={`${action}-${itemId || ""}`}
+      actionState={actionState}
+      isCancelAction={isCancelAction}
+      itemId={itemId}
+      navigate={navigate}
+      optionList={optionList}
+      orderDetail={orderDetail}
+    />
+  );
+}
+
+function OrderRequestForm({
+  actionState,
+  isCancelAction,
+  itemId,
+  navigate,
+  optionList,
+  orderDetail,
+}) {
+  const [selectedValue, setSelectedValue] = useState(
+    isCancelAction ? "" : itemId || "",
+  );
+  const [selectedList, setSelectedList] = useState(
+    !isCancelAction && itemId ? [itemId] : [],
+  );
+  const [note, setNote] = useState("");
+  const [showError, setShowError] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const dropdownRef = useRef(null);
+
+  const selectedLabel =
+    optionList.find((option) => option.value === selectedValue)?.label ||
+    "취소 사유를 선택해 주세요.";
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!dropdownRef.current?.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleSubmit = () => {
     if (
-      (action === "cancel" && !selectedValue) ||
-      (action !== "cancel" && selectedList.length === 0)
+      (isCancelAction && !selectedValue) ||
+      (!isCancelAction && selectedList.length === 0)
     ) {
       setShowError(true);
       return;
     }
 
-    window.alert(`${actionState.detailState}이 접수되었습니다.`);
+    window.alert(`${actionState.detailState} 접수되었습니다.`);
     navigate("/userInfo", { state: { menu: orderMenu } });
   };
 
@@ -148,41 +183,72 @@ export default function OrderRequest() {
             <h3>{actionState.select}</h3>
 
             <div className="request-field">
-              <p className="request-field-title">{actionState.selectTitle}</p>
-
-              <div className="request-option-list">
-                {optionList.map((option) => {
-                  const isActive =
-                    action === "cancel"
-                      ? selectedValue === option.value
-                      : selectedList.includes(option.value);
-
-                  return (
+              {isCancelAction ? (
+                <div className="request-select-wrap">
+                  <div className="request-dropdown" ref={dropdownRef}>
                     <button
-                      type="button"
-                      key={option.value}
-                      className={`request-option-btn${
-                        isActive ? " is-active" : ""
-                      }`}
-                      onClick={() => {
-                        if (action === "cancel") {
-                          setSelectedValue(option.value);
-                        } else {
+                      className={`request-dropdown-btn${
+                        !selectedValue ? " is-placeholder" : ""
+                      }${isOpen ? " is-open" : ""}`}
+                      onClick={() => setIsOpen((prev) => !prev)}
+                    >
+                      <span>{selectedLabel}</span>
+                      <img
+                        className="request-dropdown-arrow"
+                        src="/images/userinfo/input-under-btn.svg"
+                        alt="input-under-btn"
+                      />
+                    </button>
+
+                    <div
+                      className={`request-dropdown-menu${isOpen ? " is-open" : ""}`}
+                    >
+                      {optionList.map((option) => (
+                        <button
+                          type="button"
+                          key={option.value}
+                          className={`request-dropdown-item${
+                            selectedValue === option.value ? " is-active" : ""
+                          }`}
+                          onClick={() => {
+                            setSelectedValue(option.value);
+                            setIsOpen(false);
+                            setShowError(false);
+                          }}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="request-option-list">
+                  {optionList.map((option) => {
+                    const isActive = selectedList.includes(option.value);
+
+                    return (
+                      <button
+                        type="button"
+                        key={option.value}
+                        className={`request-option-btn${
+                          isActive ? " is-active" : ""
+                        }`}
+                        onClick={() => {
                           setSelectedList((prev) =>
                             prev.includes(option.value)
                               ? prev.filter((v) => v !== option.value)
                               : [...prev, option.value],
                           );
-                        }
-
-                        setShowError(false);
-                      }}
-                    >
-                      {option.label}
-                    </button>
-                  );
-                })}
-              </div>
+                          setShowError(false);
+                        }}
+                      >
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
 
               {showError && (
                 <p className="field-error">항목을 먼저 선택해 주세요.</p>
@@ -200,21 +266,20 @@ export default function OrderRequest() {
           </div>
 
           <div className="request-notice-box">
-            <h4>유의사항</h4>
             <ul>
               {actionState.notices.map((notice) => (
                 <li key={notice}>{notice}</li>
               ))}
             </ul>
-          </div>
 
-          <button
-            type="button"
-            className="request-submit-btn"
-            onClick={handleSubmit}
-          >
-            {actionState.detailState}
-          </button>
+            <button
+              type="button"
+              className="request-submit-btn"
+              onClick={handleSubmit}
+            >
+              {actionState.detailState}
+            </button>
+          </div>
         </div>
       </div>
     </>

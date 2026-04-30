@@ -7,10 +7,6 @@
   margin-bottom: 24px;
   font-size: 1rem;
 
-  h2 {
-    margin: 0;
-  }
-
   button {
     @include g.myBtn2;
   }
@@ -29,16 +25,16 @@
   .request-section {
     display: flex;
     flex-direction: column;
-    background: #ffffff;
-    gap: 20px;
 
     .request-order-info {
+      background: #ffffff;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      padding: 30px 60px;
 
       h2 {
-        margin: 0;
+        margin-bottom: 23px;
         font-size: g.$size-30;
       }
 
@@ -50,7 +46,6 @@
       }
 
       p {
-        margin: 0;
         color: g.$text-sub-color;
       }
 
@@ -61,12 +56,14 @@
     }
 
     .request-form-top {
+      background: #ffffff;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      padding: 30px 60px;
 
       h3 {
-        margin: 0;
+        font-size: g.$size-16;
       }
     }
 
@@ -76,7 +73,6 @@
       gap: 10px;
 
       .request-field-title {
-        margin: 0;
         font-weight: g.$Bold;
       }
 
@@ -85,7 +81,78 @@
         flex-direction: column;
         gap: 10px;
       }
+      .request-select-wrap {
+        position: relative;
 
+        .request-dropdown {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .request-dropdown-btn {
+          @include g.myTextBox;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          padding: 20px;
+
+          span {
+            font-size: g.$size-14-main;
+          }
+          &.is-placeholder {
+            color: g.$text-sub-color;
+          }
+
+          &.is-open {
+            border-color: g.$main-color;
+            border-radius: 4px 4px 0 0;
+          }
+        }
+
+        .request-dropdown-arrow {
+          width: 15px;
+        }
+
+        .request-dropdown-menu {
+          display: flex;
+          flex-direction: column;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          border-top: 0;
+          transition: 0.25s ease;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          &.is-open {
+            max-height: 100%;
+            overflow-y: auto;
+            opacity: 1;
+          }
+        }
+
+        .request-dropdown-item {
+          @include g.myTextBox;
+          font-size: g.$size-14-main;
+          display: flex;
+          align-items: start;
+          cursor: pointer;
+          padding: 20px;
+
+          &:hover {
+            background: #f5f5f5;
+          }
+
+          &.is-active {
+            background: #f3f3f3;
+            color: g.$main-color;
+          }
+        }
+      }
       .request-option-btn {
         width: 100%;
         padding: 14px 16px;
@@ -110,12 +177,11 @@
       textarea {
         width: 100%;
         min-height: 140px;
-        padding: 14px 16px;
-        border: 1px solid #d7d7d7;
-        font: inherit;
-        background: #ffffff;
-        resize: vertical;
-        line-height: 1.6;
+        @include g.myTextBox;
+        font-family: inherit;
+        line-height: 1.2;
+        padding: 20px;
+        color: g.$text-main-color;
 
         &:focus {
           outline: none;
@@ -124,7 +190,6 @@
       }
 
       .field-error {
-        margin: 0;
         font-size: g.$size-14-main;
         color: g.$red-color;
       }
@@ -132,33 +197,20 @@
   }
 
   .request-notice-box {
-    padding: 20px;
-    border: 1px solid #e6e6e6;
-    background: #fafafa;
-
-    h4 {
-      margin: 0 0 12px;
-    }
+    padding: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
     ul {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin: 0;
-      padding-left: 18px;
     }
 
-    li {
-      color: g.$text-sub-color;
-      line-height: 1.6;
+    .request-submit-btn {
+      @include g.myBtn1;
+      width: 100px;
+      height: 40px;
     }
-  }
-
-  .request-submit-btn {
-    @include g.myBtn1;
-    align-self: flex-end;
-    min-width: 160px;
-    min-height: 48px;
-    font-family: inherit;
   }
 }

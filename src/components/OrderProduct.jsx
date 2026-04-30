@@ -16,7 +16,13 @@ const statusCode = {
 const renderButtons = (
   status,
   order,
-  { onOrderClick, onCancelClick, onExchangeClick, onReturnClick },
+  {
+    onOrderClick,
+    onCancelClick,
+    onExchangeClick,
+    onReturnClick,
+    onTrackingClick,
+  },
 ) => {
   if (status === "주문확인중" || status === "배송준비중") {
     return (
@@ -32,7 +38,11 @@ const renderButtons = (
 
   if (status === "배송시작" || status === "배송중") {
     return (
-      <button type="button" className="btn">
+      <button
+        type="button"
+        className="btn"
+        onClick={() => onTrackingClick?.(order)}
+      >
         배송조회
       </button>
     );
@@ -74,6 +84,7 @@ export default function OrderProduct({
   onCancelClick,
   onExchangeClick,
   onReturnClick,
+  onTrackingClick,
   showHeader = true,
   showOrderNumber = true,
   showActionButtons = true,
@@ -157,6 +168,7 @@ export default function OrderProduct({
                               onCancelClick,
                               onExchangeClick,
                               onReturnClick,
+                              onTrackingClick,
                             })}
                           </div>
                         )}
