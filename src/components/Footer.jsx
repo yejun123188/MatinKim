@@ -21,11 +21,10 @@ export default function Footer() {
           <div className="footer-left">
             <ul className="footer-menu">
               <li><Link to="/">(주)마뗑킴</Link></li>
-              <li><Link to="/">About</Link></li>
+              <li><Link to="/about">About</Link></li>
               <li><Link to="/">이용약관</Link></li>
               <li><Link to="/">개인정보처리방침</Link></li>
-              <li><Link to="/">이용안내</Link></li>
-              <li><Link to="/qna">고객센터</Link></li>
+              <li><Link to="/guide">이용안내</Link></li>
               <li><Link to="/product-authentication">정품인증</Link></li>
             </ul>
 
@@ -54,7 +53,7 @@ export default function Footer() {
 
             <div className="customer-center">
               <div className="custom-link">
-                <Link to="#">
+                <Link to="/qna">
                   <strong>고객센터</strong>
                   <img src="/images/footer-icon/Vector.svg" alt="화살표" />
                 </Link>
