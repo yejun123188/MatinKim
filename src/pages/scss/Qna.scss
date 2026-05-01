@@ -1,14 +1,16 @@
 .qna-page {
 
     .qna-inner {
-        width: 96%;
-        max-width: 1820px;
+        // width: 96%;
+        // max-width: 1820px;
         margin: 0 auto;
+        display: flex;
+        gap: 70px;
     }
 
     .qna-title-wrap {
         padding-bottom: 30px;
-        border-bottom: 1px solid #ddd;
+        flex: 0 0 1;
 
         h2 {
             font-size: 40px;
@@ -18,9 +20,13 @@
     }
 
     .qna-content {
-        display: flex;
-        gap: 80px;
-        padding-top: 40px;
+
+        // display: flex;
+        // gap: 80px;
+        // padding-top: 40px;
+        h3 {
+            margin: 10px 0 8px;
+        }
     }
 
     .qna-sidebar {
@@ -161,4 +167,19 @@
         font-weight: 600;
         text-decoration: none;
     }
+}
+
+.qna-page .qna-sidebar li a,
+.qna-page .qna-sidebar li button {
+    color: inherit;
+    text-decoration: none;
+}
+
+.qna-page .qna-sidebar li button {
+    all: unset;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
 }

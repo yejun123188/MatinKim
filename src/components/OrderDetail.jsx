@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ordersData from "../data/ordersData";
+import { getOrderById } from "../utils/orderStorage";
 import "./scss/orderDetail.scss";
 
 const orderMenu = "주문내역";
@@ -13,13 +13,30 @@ const formatPrice = (price) => `${price.toLocaleString()}`;
 export default function OrderDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const detail = ordersData.find((item) => String(item.id) === id);
+  const [now, setNow] = useState(Date.now());
+  const detail = getOrderById(id, now);
+
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleBack = () => {
     navigate("/userInfo", {
       state: { menu: orderMenu },
     });
   };
+
+  if (!detail) {
+    return (
+      <div className="order-detail-page">
+        <p>주문 정보를 찾을 수 없습니다.</p>
+        <button className="order-detail-back" onClick={handleBack}>
+          목록으로
+        </button>
+      </div>
+    );
+  }
 
   const {
     date,

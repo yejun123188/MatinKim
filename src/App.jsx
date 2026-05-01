@@ -24,6 +24,9 @@ import ProductAuthentication from "./pages/ProductAuthentication";
 import Signup from "./pages/Signup";
 import Payment from "./pages/Payment";
 import { useAuthStore } from "./store/useAuthStore";
+import Guide from "./pages/Guide";
+import Privacy from "./pages/Privacy";
+import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
 
 function ScrollToTop() {
@@ -34,8 +37,6 @@ function ScrollToTop() {
   return null;
 }
 function App() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
   const { items, onFetchItem, onMenus } = useProductStore();
   const { onFetchStore, stores } = useMapStore();
   const { initAuth } = useAuthStore();
@@ -47,13 +48,12 @@ function App() {
     onFetchStore();
   }, [onFetchItem, onMenus, stores]);
   useEffect(() => {
-    if (!window.Kakao.isInitialized()) {
-      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY)
+    if (window.Kakao && !window.Kakao.isInitialized()) {
+      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY);
     }
-  }, [])
+  }, []);
 
   if (!items.length) return <div>로딩중...</div>;
-
 
   return (
     <>
@@ -83,12 +83,21 @@ function App() {
         />
         <Route path="/userInfo/orders/:id" element={<UserInfo />} />
         <Route path="/userInfo/address" element={<AddressRegister />} />
+        <Route path="/guide" element={<Guide />} />
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"
-          element={<ProductAuthentication />} />
-        <Route path="/cart" element={<Cart />} />
+          element={<ProductAuthentication />}
+        />
 
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/agreement" element={<Agreement />} />
+
+        <Route
+          path="productauthentication"
+          element={<ProductAuthentication />}
+        />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </>
