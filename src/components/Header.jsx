@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
-import { useNavigate } from "react-router-dom";
 import { useLoginStore } from "../store/useLoginStore";
 
 const topmenus = [
@@ -46,29 +45,49 @@ const photoMenu = [
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const isHome = location.pathname === "/";
 
   const { menus, cartCount, isCartOpen, openCart, closeCart } =
     useProductStore();
 
   const { user, onLogout } = useAuthStore();
+  const { isLoginOpen, openLogin, closeLogin } = useLoginStore();
 
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { user } = useAuthStore();
-  const navigate = useNavigate();
-  const { isLoginOpen, openLogin, closeLogin } = useLoginStore();
+
+  const handleAuthButtonClick = async () => {
+    if (user) {
+      await onLogout();
+      navigate("/");
+    } else {
+      openLogin();
+    }
+  };
+
+  const handleTopMenuEnter = (key) => {
+    if (key === "shop") {
+      setIsShopHovered(true);
+    } else {
+      setIsShopHovered(false);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isCartOpen) {
+    if (isCartOpen || isLoginOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -77,7 +96,7 @@ export default function Header() {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isCartOpen]);
+  }, [isCartOpen, isLoginOpen]);
 
   return (
     <>
@@ -108,25 +127,50 @@ export default function Header() {
                       alt="로고"
                     />
                   </Link>
-                </li>
-                <li className="member">
-                  {user ? (
-                    <Link to="/userInfo">
-                      <img src="/images/header-icon/user.svg" alt="" />
-                    </Link>
-                  ) : (
-                    <button type="button" onClick={openLogin}>
-                      <img src="/images/header-icon/user.svg" alt="" />
+                </h1>
+
+                <nav>
+                  <ul>
+                    {topmenus.map((menu) => (
+                      <li
+                        key={menu.key}
+                        onMouseEnter={() => handleTopMenuEnter(menu.key)}
+                      >
+                        <Link
+                          to={menu.key === "shop" ? "/all" : `/${menu.key}`}
+                          onClick={() => setIsShopHovered(false)}
+                        >
+                          {menu.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+
+              <div className="header-right">
+                <ul className="gnb-list">
+                  <li className="header-cart">
+                    <button type="button" onClick={openCart}>
+                      <img src="/images/header-icon/cart.svg" alt="장바구니" />
+                      {cartCount > 0 && (
+                        <span className="cart-num">
+                          <span>{cartCount}</span>
+                        </span>
+                      )}
                     </button>
                   </li>
 
                   <li className="member">
                     {user ? (
                       <Link to="/userInfo">
-                        <img src="/images/header-icon/user.svg" alt="회원정보" />
+                        <img
+                          src="/images/header-icon/user.svg"
+                          alt="회원정보"
+                        />
                       </Link>
                     ) : (
-                      <button type="button" onClick={() => setLoginOpen(true)}>
+                      <button type="button" onClick={openLogin}>
                         <img src="/images/header-icon/user.svg" alt="로그인" />
                       </button>
                     )}
@@ -161,10 +205,7 @@ export default function Header() {
                     <li key={id}>
                       <Link to={m.link}>
                         {m.name}
-                        <img
-                          src="/images/header/move-arrow-icon.svg"
-                          alt=""
-                        />
+                        <img src="/images/header/move-arrow-icon.svg" alt="" />
                       </Link>
                     </li>
                   ))}
@@ -177,10 +218,7 @@ export default function Header() {
                     <li key={id}>
                       <Link to={menu.link}>
                         {menu.name}
-                        <img
-                          src="/images/header/move-arrow-icon.svg"
-                          alt=""
-                        />
+                        <img src="/images/header/move-arrow-icon.svg" alt="" />
                       </Link>
 
                       <ul className="sub-menu">
@@ -214,11 +252,10 @@ export default function Header() {
             </div>
           </div>
         </div>
+      </header>
 
-      </header >
       {isLoginOpen && <Login onClose={closeLogin} />}
-      {isCartOpen && <Cart onClose={closeCart} />
-      }
+      {isCartOpen && <Cart onClose={closeCart} />}
     </>
   );
 }
