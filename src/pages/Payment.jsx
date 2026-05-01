@@ -23,7 +23,7 @@ const formatDeliveryDate = (date) => `${date.getFullYear()}년 ${date.getMonth()
 const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg || "/images/sub-cart/clothes-mini.jpg";
 
 export default function Payment() {
-    const { user, userAddress, onFetchAddress, onAddAddress } = useAuthStore();
+    const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase } = useAuthStore();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -52,10 +52,11 @@ export default function Payment() {
     const [showAddressModal, setShowAddressModal] = useState(false);
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         if (user) onFetchAddress();
-    }, [user]);
+    }, [user, onFetchAddress]);
 
     const location = useLocation();
     const orderItems = location.state?.orderItems?.length ? location.state.orderItems : [];
@@ -155,9 +156,17 @@ export default function Payment() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!validate()) return;
-        alert("주문이 완료되었습니다!");
+        if (isSubmitting) return;
+
+        setIsSubmitting(true);
+        const isSaved = await onRecordPurchase(finalTotal, 1);
+        setIsSubmitting(false);
+
+        if (isSaved) {
+            alert("주문이 완료되었습니다!");
+        }
     };
 
     const handleAddressSelect = (addr) => {
@@ -601,8 +610,8 @@ export default function Payment() {
                             <p>배송 완료 후 7일 이내 교환/반품 가능</p>
                         </div>
 
-                        <button type="button" className="order-submit-btn" onClick={handleSubmit}>
-                            주문하기
+                        <button type="button" className="order-submit-btn" onClick={handleSubmit} disabled={isSubmitting}>
+                            {isSubmitting ? "주문 처리중" : "주문하기"}
                         </button>
 
                         <p className="summary-terms">

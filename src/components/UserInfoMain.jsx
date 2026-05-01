@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserInfoMainBox from "./UserInfoMainBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,6 +8,7 @@ import "./scss/userInfoMain.scss";
 import { FreeMode } from "swiper/modules";
 import OptionPopup from "./OptionPopup";
 import UserInfoNone from "./UserInfoNone";
+import { getMemberGrade, useAuthStore } from "../store/useAuthStore";
 
 const statusCode = {
   주문확인중: "ORDER",
@@ -17,14 +18,17 @@ const statusCode = {
   배송완료: "DONE",
 };
 
-const user = {
+const userInfo = {
   name: "마뗑킴",
-  grade: "VIP",
-  benefits: "적립 3%,구매 할인 7%, 생일쿠폰 20%",
-  orderCount: 34,
-  orderPrice: 946000,
-  pointCount: 5000,
-  couponCount: 3,
+  benefits: "적립 3%, 구매 할인 7%, 생일쿠폰 20%",
+  purchaseAmount: 0,
+  purchaseCount: 0,
+};
+
+const gradeColor = {
+  FRIENDS: "#4A3AFF",
+  GOLD: "#F3B94C",
+  VIP: "#FF3D3D",
 };
 
 const orders = [
@@ -93,6 +97,29 @@ const wishs = [
 export default function UserInfoMain() {
   const [optionOpen, setOptionOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const {
+    user,
+    couponList,
+    savedMoneySummary,
+    onFetchCoupons,
+    onFetchSavedMoney,
+  } = useAuthStore();
+
+  useEffect(() => {
+    onFetchCoupons();
+    onFetchSavedMoney();
+  }, [user, onFetchCoupons, onFetchSavedMoney]);
+
+  const displayName = user?.name || user?.nickname || userInfo.name;
+  const purchaseAmount = Number(
+    user?.purchaseAmount ?? user?.orderPrice ?? userInfo.purchaseAmount,
+  );
+  const purchaseCount = Number(
+    user?.purchaseCount ?? user?.orderCount ?? userInfo.purchaseCount,
+  );
+  const grade = getMemberGrade(purchaseAmount);
+  const totalPoint = savedMoneySummary.totalPoint || 0;
+  const couponCount = user ? couponList.length : 0;
 
   return (
     <div className="main">
@@ -100,23 +127,28 @@ export default function UserInfoMain() {
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
             <p>
-              반가워요! <strong>{user.name}</strong> 님!
+              반가워요! <strong>{displayName}</strong> 님
             </p>
             <ul className="myinfo-list">
               <li>
-                <p>
-                  {user.name}님은 <br />
-                  <strong>{user.grade}등급</strong> 입니다!
-                </p>
+                <div>
+                  <p>{displayName}님은</p>
+                  <p>
+                    <strong style={{ color: gradeColor[grade] }}>
+                      {grade} 등급
+                    </strong>
+                    입니다
+                  </p>
+                </div>
                 <div className="question">
                   <img src="./images/userinfo/question.svg" alt="question" />
-                  <p>적립 3%,구매 할인 7%, 생일쿠폰 20%</p>
+                  <p>{userInfo.benefits}</p>
                 </div>
               </li>
               <li>
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
-                  {user.orderPrice.toLocaleString()}원 / ({user.orderCount}회)
+                  {purchaseAmount.toLocaleString()}원 / ({purchaseCount}회)
                 </span>
               </li>
             </ul>
@@ -126,11 +158,11 @@ export default function UserInfoMain() {
           <ul className="my-wallet-list">
             <li>
               <span>총 적립금</span>
-              <strong>{user.pointCount.toLocaleString()} 원</strong>
+              <strong>{totalPoint.toLocaleString()} 원</strong>
             </li>
             <li>
               <span>내 쿠폰</span>
-              <strong>{user.couponCount} 개</strong>
+              <strong>{couponCount} 개</strong>
             </li>
           </ul>
         </UserInfoMainBox>
