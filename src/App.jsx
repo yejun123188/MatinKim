@@ -26,6 +26,13 @@ import Payment from "./pages/Payment";
 import { useAuthStore } from "./store/useAuthStore";
 import Cart from "./pages/Cart";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -51,6 +58,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:category1" element={<ProductList />} />
