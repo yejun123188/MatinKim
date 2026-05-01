@@ -149,10 +149,8 @@ export const useProductStore = create((set, get) => ({
     },
     //~~~~~~~장바구니~~~~~~~~~~~~~~~~~~~~
     //장바구니에 담을 아이템저장
-    cartItem: [],
-    //카트에 담긴 상품의 개수 
-    cartCount: 0,
-    //카트에 담긴 상품의 전체 가격
+    cartItem: JSON.parse(localStorage.getItem('cartItem')) || [],
+    cartCount: JSON.parse(localStorage.getItem('cartItem'))?.length || 0,
     totalPrice: 0,
     isCartOpen: false,
     openCart: () => set({ isCartOpen: true }),
@@ -181,6 +179,7 @@ export const useProductStore = create((set, get) => ({
         } else {
             updateCart = [...cart, { ...product }]
         }
+        localStorage.setItem('cartItem', JSON.stringify(updateCart));
         set({
             cartItem: updateCart,
             cartCount: updateCart.length,
@@ -207,7 +206,7 @@ export const useProductStore = create((set, get) => ({
             }
             return item;
         });
-
+        localStorage.setItem('cartItem', JSON.stringify(updateCart));
         set({
             cartItem: updateCart,
             totalPrice: get().onTotal(updateCart),
@@ -219,7 +218,7 @@ export const useProductStore = create((set, get) => ({
         const updateCart = cart.filter(
             (item) => !(item.id === id && item.size === size)
         );
-
+        localStorage.setItem('cartItem', JSON.stringify(updateCart));
         set({
             cartItem: updateCart,
             cartCount: updateCart.length,
@@ -288,6 +287,7 @@ export const useProductStore = create((set, get) => ({
                 key: p.key || "",
                 category1: p.category1 || "",
                 category2: p.category2 || "",
+                isSoldOut: p.isSoldOut ?? false,
             }));
 
             const ref = doc(db, "wishlists", uid);
