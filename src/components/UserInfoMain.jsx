@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import UserInfoMainBox from "./UserInfoMainBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,93 +7,189 @@ import "swiper/css/free-mode";
 import "./scss/userInfoMain.scss";
 
 import { FreeMode } from "swiper/modules";
-import OptionPopup from "./OptionPopup";
 import UserInfoNone from "./UserInfoNone";
+import {
+  getLocalPurchaseInfo,
+  getMemberGrade,
+  useAuthStore,
+} from "../store/useAuthStore";
+import { getAllOrders } from "../utils/orderStorage";
+import { useProductStore } from "../store/useProductStore";
+import CartPopup from "../pages/CartPopup";
+import Cart from "../pages/Cart";
 
 const statusCode = {
-  주문확인중: "ORDER",
+  결제완료: "ORDER",
   배송준비중: "READY",
-  배송시작: "START",
   배송중: "ING",
   배송완료: "DONE",
 };
 
-const user = {
+const userInfo = {
   name: "마뗑킴",
-  grade: "VIP",
-  benefits: "적립 3%,구매 할인 7%, 생일쿠폰 20%",
-  orderCount: 34,
-  orderPrice: 946000,
-  pointCount: 5000,
-  couponCount: 3,
+  benefits: "적립 3%, 구매 할인 7%, 생일쿠폰 20%",
+  purchaseAmount: 0,
+  purchaseCount: 0,
 };
 
-const orders = [
-  {
-    id: 1,
-    name: "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
-    img: "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
-    price: 68000,
-    status: "배송준비중",
-    size: "L",
-    count: 1,
-  },
-  {
-    id: 2,
-    name: "PATCHWORK CARGO BERMUDA PANTS FOR MEN IN BEIGE",
-    img: "https://matinkim.com/web/product/medium/202604/af24497fdacbac8b575687c878af7669.jpg",
-    price: 198000,
-    status: "배송중",
-    size: "L",
-    count: 1,
-  },
-  {
-    id: 3,
-    name: "MATIN LIGHT MESH CAP IN BLACK",
-    img: "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/de8e4df27a4d897c4f265a7c5ac38a09.jpg",
-    price: 58000,
-    status: "배송완료",
-    size: "FREE",
-    count: 1,
-  },
-];
+const gradeColor = {
+  FRIENDS: "#4A3AFF",
+  GOLD: "#F3B94C",
+  VIP: "#FF3D3D",
+};
 
-const wishs = [
-  {
-    id: 1,
-    name: "CAMOUFLAGE LOGO BALL CAP IN BEIGE",
-    img: "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/377cb8c737dfecc223743aada3501cf5.jpg",
-    price: 68000,
-    discountRate: 0,
-    discountPrice: 68000,
-    size: "FREE",
-    count: 1,
-  },
-  {
-    id: 2,
-    name: "WAIST BUCKLE STITCH POINT TWILL DENIM PANTS IN BROWN",
-    img: "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
-    price: 124600,
-    discountRate: 30,
-    discountPrice: 178000,
-    size: "M",
-    count: 1,
-  },
-  {
-    id: 3,
-    name: "MATIN KIM LOGO WAFFLE TOP FOR MEN IN LIGHT BEIGE",
-    img: "https://matinkim.com/web/product/medium/202603/61b2d05e56a5c7a435b49d89e32d4bde.jpg",
-    price: 70200,
-    discountRate: 10,
-    discountPrice: 78000,
-    size: "L",
-    count: 2,
-  },
-];
+const orderStatusList = ["결제완료", "배송준비중", "배송중", "배송완료"];
+const DELIVERY_COMPLETE_MS = 30 * 24 * 60 * 60 * 1000;
+const DELIVERY_COMPLETE_OFFSET_MS = 30 * 1000;
+
+const parseOrderDate = (date) => {
+  if (!date || date.length !== 8) return null;
+
+  return new Date(
+    Number(date.slice(0, 4)),
+    Number(date.slice(4, 6)) - 1,
+    Number(date.slice(6, 8)),
+  ).getTime();
+};
 
 export default function UserInfoMain() {
-  const [optionOpen, setOptionOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
+  const [now, setNow] = useState(Date.now());
+  const [cartItem, setCartItem] = useState(null);
+  const [showCartPopup, setShowCartPopup] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const {
+    user,
+    couponList,
+    savedMoneySummary,
+    onFetchCoupons,
+    onFetchSavedMoney,
+  } = useAuthStore();
+  const { wishList, onLoadWishList, onRemoveWish, onAddCart } =
+    useProductStore();
+
+  useEffect(() => {
+    onFetchCoupons();
+    onFetchSavedMoney();
+  }, [user, onFetchCoupons, onFetchSavedMoney]);
+
+  useEffect(() => {
+    if (user?.uid) {
+      onLoadWishList(user.uid);
+    }
+  }, [user, onLoadWishList]);
+
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const mainOrders = useMemo(
+    () =>
+      getAllOrders(now)
+        .flatMap((orderDetail) =>
+          orderDetail.orders.map((order) => ({
+            ...order,
+            createdAt: orderDetail.createdAt,
+            date: orderDetail.date,
+            orderDetailId: orderDetail.id,
+          })),
+        )
+        .filter((order) => {
+          if (!orderStatusList.includes(order.status)) return false;
+          if (order.status !== "배송완료") return true;
+
+          const createdAt = new Date(order.createdAt).getTime();
+          if (Number.isNaN(createdAt)) {
+            const orderDate = parseOrderDate(order.date);
+            if (!orderDate) return false;
+
+            return now - orderDate < DELIVERY_COMPLETE_MS;
+          }
+
+          return (
+            now - (createdAt + DELIVERY_COMPLETE_OFFSET_MS) <
+            DELIVERY_COMPLETE_MS
+          );
+        }),
+    [now],
+  );
+
+  const displayName = user?.name || user?.nickname || userInfo.name;
+  const localPurchaseInfo = getLocalPurchaseInfo(user);
+  const purchaseAmount = Number(
+    localPurchaseInfo.purchaseAmount ??
+      user?.purchaseAmount ??
+      user?.orderPrice ??
+      userInfo.purchaseAmount,
+  );
+  const purchaseCount = Number(
+    localPurchaseInfo.purchaseCount ??
+      user?.purchaseCount ??
+      user?.orderCount ??
+      userInfo.purchaseCount,
+  );
+  const grade = getMemberGrade(purchaseAmount);
+  const totalPoint = savedMoneySummary.totalPoint || 0;
+  const couponCount = user ? couponList.length : 0;
+  const sortedWishList = [...wishList].sort(
+    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
+  );
+
+  const getWishPrice = (wish) =>
+    wish.discountRate > 0 ? wish.discountPrice : wish.price;
+
+  const handleBuyNow = (wish) => {
+    if (wish.isSoldOut) return;
+
+    navigate("/payment", {
+      state: {
+        orderItems: [
+          {
+            id: wish.id,
+            brand: "MATIN KIM",
+            name: wish.name,
+            option: `${wish.selectedColor || "-"} / ${
+              wish.selectedSize || "-"
+            }`,
+            quantity: wish.quantity || 1,
+            price: getWishPrice(wish),
+            image: wish.mainImg || wish.hoverImg || "",
+          },
+        ],
+      },
+    });
+  };
+
+  const handleAddCart = (wish) => {
+    if (wish.isSoldOut) return;
+
+    const item = {
+      id: wish.id,
+      name: wish.name,
+      price: getWishPrice(wish),
+      discountPrice: wish.discountPrice,
+      discountRate: wish.discountRate,
+      mainImg: wish.mainImg,
+      hoverImg: wish.hoverImg,
+      image: wish.mainImg || wish.hoverImg,
+      key:
+        wish.key ||
+        `${wish.id}-${wish.selectedSize || ""}-${wish.selectedColor || ""}`,
+      size: wish.selectedSize,
+      color: wish.selectedColor,
+      count: wish.quantity || 1,
+    };
+
+    onAddCart(item);
+    setCartItem(wish);
+    setShowCartPopup(true);
+  };
+
+  const handleRemoveWish = async (wish) => {
+    await onRemoveWish(wish.key, user?.uid);
+    alert("상품이 삭제되었습니다");
+  };
 
   return (
     <div className="main">
@@ -100,23 +197,28 @@ export default function UserInfoMain() {
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
             <p>
-              반가워요! <strong>{user.name}</strong> 님!
+              반가워요! <strong>{displayName}</strong> 님
             </p>
             <ul className="myinfo-list">
               <li>
-                <p>
-                  {user.name}님은 <br />
-                  <strong>{user.grade}등급</strong> 입니다!
-                </p>
+                <div>
+                  <p>{displayName}님은</p>
+                  <p>
+                    <strong style={{ color: gradeColor[grade] }}>
+                      {grade} 등급
+                    </strong>
+                    입니다
+                  </p>
+                </div>
                 <div className="question">
                   <img src="./images/userinfo/question.svg" alt="question" />
-                  <p>적립 3%,구매 할인 7%, 생일쿠폰 20%</p>
+                  <p>{userInfo.benefits}</p>
                 </div>
               </li>
               <li>
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
-                  {user.orderPrice.toLocaleString()}원 / ({user.orderCount}회)
+                  {purchaseAmount.toLocaleString()}원 / ({purchaseCount}회)
                 </span>
               </li>
             </ul>
@@ -126,18 +228,18 @@ export default function UserInfoMain() {
           <ul className="my-wallet-list">
             <li>
               <span>총 적립금</span>
-              <strong>{user.pointCount.toLocaleString()} 원</strong>
+              <strong>{totalPoint.toLocaleString()} 원</strong>
             </li>
             <li>
               <span>내 쿠폰</span>
-              <strong>{user.couponCount} 개</strong>
+              <strong>{couponCount} 개</strong>
             </li>
           </ul>
         </UserInfoMainBox>
       </div>
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
-          {orders.length > 0 ? (
+          {mainOrders.length > 0 ? (
             <Swiper
               slidesPerView={2.7}
               spaceBetween={24}
@@ -145,7 +247,7 @@ export default function UserInfoMain() {
               modules={[FreeMode]}
               className="order-list"
             >
-              {orders.map((order) => (
+              {mainOrders.map((order) => (
                 <SwiperSlide className="order-product" key={order.id}>
                   <div className="img-box">
                     <img src={order.img} alt={order.name} />
@@ -176,7 +278,7 @@ export default function UserInfoMain() {
       </div>
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
-          {wishs.length > 0 ? (
+          {sortedWishList.length > 0 ? (
             <Swiper
               slidesPerView={2.7}
               spaceBetween={24}
@@ -184,36 +286,47 @@ export default function UserInfoMain() {
               modules={[FreeMode]}
               className="wish-list"
             >
-              {wishs.map((wish) => (
-                <SwiperSlide className="wish-product" key={wish.id}>
+              {sortedWishList.map((wish) => (
+                <SwiperSlide className="wish-product" key={wish.key || wish.id}>
                   <div className="img-box">
-                    <img src={wish.img} alt={wish.name} />
+                    <img src={wish.mainImg || wish.hoverImg} alt={wish.name} />
                   </div>
                   <div className="text-box">
                     <div className="text-wrap">
                       <p className="wish-name">{wish.name}</p>
                       <p className="wish-price">
-                        ￦{wish.price.toLocaleString()}
+                        ￦{getWishPrice(wish)?.toLocaleString()}
                         {wish.discountRate > 0 && (
-                          <span>￦{wish.discountPrice.toLocaleString()}</span>
+                          <span>￦{wish.price?.toLocaleString()}</span>
                         )}
                       </p>
                       <p className="wish-count">
-                        {wish.size} / {wish.count}개
+                        {wish.selectedSize || "-"} / {wish.quantity || 1}개
                       </p>
                     </div>
                     <div className="button-wrap">
+                      {!wish.isSoldOut && (
+                        <>
+                          <button
+                            className="Bbtn"
+                            onClick={() => handleBuyNow(wish)}
+                          >
+                            Buy It Now
+                          </button>
+                          <button
+                            className="Wbtn"
+                            onClick={() => handleAddCart(wish)}
+                          >
+                            Add To Cart
+                          </button>
+                        </>
+                      )}
                       <button
-                        className="Bbtn"
-                        onClick={() => {
-                          setSelectedItem(wish);
-                          setOptionOpen(true);
-                        }}
+                        className="Wbtn"
+                        onClick={() => handleRemoveWish(wish)}
                       >
-                        Edit Options
+                        Remove
                       </button>
-                      <button className="Wbtn">Add To Cart</button>
-                      <button className="Wbtn">Remove</button>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -222,14 +335,23 @@ export default function UserInfoMain() {
           ) : (
             <UserInfoNone title="관심상품" />
           )}
-
-          <OptionPopup
-            open={optionOpen}
-            data={selectedItem}
-            onClose={() => setOptionOpen(false)}
-          />
         </UserInfoMainBox>
       </div>
+      {showCartPopup && (
+        <CartPopup
+          mode="best"
+          product={cartItem}
+          selectedColor={cartItem?.selectedColor}
+          selectedSize={cartItem?.selectedSize}
+          quantity={cartItem?.quantity}
+          onClose={() => setShowCartPopup(false)}
+          onGoCart={() => {
+            setShowCartPopup(false);
+            setShowCart(true);
+          }}
+        />
+      )}
+      {showCart && <Cart onClose={() => setShowCart(false)} />}
     </div>
   );
 }
