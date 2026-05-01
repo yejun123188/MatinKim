@@ -150,6 +150,10 @@ export default function Header() {
 
               <div className="header-right">
                 <ul className="gnb-list">
+                  <li>
+                    <input type="text" placeholder="SEARCH" />
+                  </li>
+
                   <li className="header-cart">
                     <button type="button" onClick={openCart}>
                       <img src="/images/header-icon/cart.svg" alt="장바구니" />
