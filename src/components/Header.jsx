@@ -5,7 +5,6 @@ import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
 import Cart from "../pages/Cart"
 import { useAuthStore } from "../store/useAuthStore";
-import { useNavigate } from "react-router-dom";
 
 const topmenus = [
   { key: "shop", label: "SHOP" },
@@ -45,8 +44,17 @@ export default function Header() {
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
-  const { user } = useAuthStore();
-  const navigate = useNavigate();
+  const { user, onLogout } = useAuthStore();
+
+  const handleAuthButtonClick = async () => {
+    if (user) {
+      await onLogout();
+      return;
+    }
+
+    setLoginOpen(true);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -125,13 +133,21 @@ export default function Header() {
                 <li className="member">
                   {user ? (
                     <Link to="/userInfo">
-                      <img src="/images/header-icon/user.svg" alt="" />
+                      <img src="/images/header/user-black.svg" alt="회원정보" />
                     </Link>
                   ) : (
                     <button type="button" onClick={() => setLoginOpen(true)}>
-                      <img src="/images/header-icon/user.svg" alt="" />
+                      <img src="/images/header/user-black.svg" alt="회원정보" />
                     </button>
                   )}
+                </li>
+                <li className="auth-action">
+                  <button type="button" onClick={handleAuthButtonClick}>
+                    <img
+                      src={user ? "/images/header/logout.svg" : "/images/header/login.svg"}
+                      alt={user ? "로그아웃" : "로그인"}
+                    />
+                  </button>
                 </li>
               </ul>
             </div>

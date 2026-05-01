@@ -31,7 +31,6 @@ export default function UserInfo() {
     if (menu === "로그아웃") {
       try {
         await onLogout();
-        alert("로그아웃 되었습니다!");
         navigate("/");
       } catch (err) {
         console.error("로그아웃 실패:", err);
