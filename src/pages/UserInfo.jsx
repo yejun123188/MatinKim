@@ -28,6 +28,8 @@ export default function UserInfo() {
   const selectMenu = orderId ? orderMenu : location.state?.menu || myMenu;
 
   const handleMenuClick = async (menu) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     if (menu === "로그아웃") {
       try {
         await onLogout();

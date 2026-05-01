@@ -125,6 +125,17 @@ export const getMemberGrade = (purchaseAmount = 0) => {
   return "FRIENDS";
 };
 
+const getLocalPurchaseKey = (user) =>
+  `matinKimPurchase:${user?.uid || user?.email || "guest"}`;
+
+export const getLocalPurchaseInfo = (user) => {
+  try {
+    return JSON.parse(localStorage.getItem(getLocalPurchaseKey(user)) || "{}");
+  } catch {
+    return {};
+  }
+};
+
 export const useAuthStore = create((set, get) => ({
   user: null,
   userAddress: null,
@@ -555,47 +566,36 @@ export const useAuthStore = create((set, get) => ({
       return false;
     }
 
-    try {
-      const userRef = doc(db, "users", user.uid);
-      const userDoc = await getDoc(userRef);
-      const savedUser = userDoc.exists() ? userDoc.data() : user;
-      const currentAmount = Number(
-        savedUser.purchaseAmount ?? savedUser.orderPrice ?? 0
-      );
-      const currentCount = Number(
-        savedUser.purchaseCount ?? savedUser.orderCount ?? 0
-      );
-      const nextAmount = currentAmount + Number(purchaseAmount || 0);
-      const nextCount = currentCount + Number(purchaseCount || 0);
-      const grade = getMemberGrade(nextAmount);
-      const purchaseInfo = {
-        purchaseAmount: nextAmount,
-        purchaseCount: nextCount,
-        orderPrice: nextAmount,
-        orderCount: nextCount,
-        grade,
-      };
+    const savedPurchaseInfo = getLocalPurchaseInfo(user);
+    const currentAmount = Number(
+      savedPurchaseInfo.purchaseAmount ?? user.purchaseAmount ?? user.orderPrice ?? 0
+    );
+    const currentCount = Number(
+      savedPurchaseInfo.purchaseCount ?? user.purchaseCount ?? user.orderCount ?? 0
+    );
+    const nextAmount = currentAmount + Number(purchaseAmount || 0);
+    const nextCount = currentCount + Number(purchaseCount || 0);
+    const grade = getMemberGrade(nextAmount);
+    const purchaseInfo = {
+      purchaseAmount: nextAmount,
+      purchaseCount: nextCount,
+      orderPrice: nextAmount,
+      orderCount: nextCount,
+      grade,
+    };
+    const nextUser = {
+      ...user,
+      ...purchaseInfo,
+    };
 
-      await setDoc(userRef, purchaseInfo, { merge: true });
+    localStorage.setItem(getLocalPurchaseKey(user), JSON.stringify(purchaseInfo));
+    set({ user: nextUser });
 
-      const nextUser = {
-        ...user,
-        ...savedUser,
-        ...purchaseInfo,
-      };
-
-      set({ user: nextUser });
-
-      if (user.provider) {
-        localStorage.setItem("socialUser", JSON.stringify(nextUser));
-      }
-
-      return true;
-    } catch (err) {
-      console.error("구매 정보 저장 에러:", err);
-      alert("구매 정보를 저장하지 못했습니다.");
-      return false;
+    if (user.provider) {
+      localStorage.setItem("socialUser", JSON.stringify(nextUser));
     }
+
+    return true;
   },
 
   // 배송지 등록
