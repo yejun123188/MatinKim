@@ -5,6 +5,8 @@ import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
+import { useNavigate } from "react-router-dom";
+import { useLoginStore } from "../store/useLoginStore";
 
 const topmenus = [
   { key: "shop", label: "SHOP" },
@@ -53,17 +55,9 @@ export default function Header() {
 
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoginOpen, setLoginOpen] = useState(false);
-
-  const handleAuthButtonClick = async () => {
-    if (user) {
-      await onLogout();
-      return;
-    }
-
-    setLoginOpen(true);
-  };
-
+  const { user } = useAuthStore();
+  const navigate = useNavigate();
+  const { isLoginOpen, openLogin, closeLogin } = useLoginStore();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -114,43 +108,15 @@ export default function Header() {
                       alt="로고"
                     />
                   </Link>
-                </h1>
-
-                <nav>
-                  <ul className="main-menu">
-                    {topmenus.map((menu, id) => (
-                      <li
-                        key={id}
-                        onClick={() => setIsShopHovered(false)}
-                        onMouseEnter={() =>
-                          menu.key === "shop"
-                            ? setIsShopHovered(true)
-                            : setIsShopHovered(false)
-                        }
-                      >
-                        <Link
-                          to={menu.key === "shop" ? "/sale" : `/${menu.key}`}
-                        >
-                          {menu.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div>
-
-              <div className="header-right">
-                <ul className="gnb-list">
-                  <li>
-                    <input type="text" placeholder="SEARCH" />
-                  </li>
-
-                  <li className="header-cart">
-                    <button type="button" onClick={openCart}>
-                      <img src="/images/header-icon/cart.svg" alt="장바구니" />
-                      <span className="cart-num">
-                        <span>{cartCount}</span>
-                      </span>
+                </li>
+                <li className="member">
+                  {user ? (
+                    <Link to="/userInfo">
+                      <img src="/images/header-icon/user.svg" alt="" />
+                    </Link>
+                  ) : (
+                    <button type="button" onClick={openLogin}>
+                      <img src="/images/header-icon/user.svg" alt="" />
                     </button>
                   </li>
 
@@ -249,14 +215,10 @@ export default function Header() {
           </div>
         </div>
 
-        <div
-          className={`header-overlay ${isShopHovered ? "active" : ""}`}
-          onMouseEnter={() => setIsShopHovered(false)}
-        />
-      </header>
-
-      {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
-      {isCartOpen && <Cart onClose={closeCart} />}
+      </header >
+      {isLoginOpen && <Login onClose={closeLogin} />}
+      {isCartOpen && <Cart onClose={closeCart} />
+      }
     </>
   );
 }

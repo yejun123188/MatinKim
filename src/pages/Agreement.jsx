@@ -2,19 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { agreementData } from "../data/agreement";
 import "./scss/Agreement.scss";
+import HelpMenu from "../components/HelpMenu";
 
 export default function Agreement() {
     return (
         <section className="sub-section">
-            <div className="inner agreement-page">
-                <div className="agreement-page">
-                    <div className="agreement-inner">
-                        <aside className="agreement-side">
+            <div className="inner qna-page">
+                <div>
+                    <div className="qna-inner">
+                        <HelpMenu />
 
-
-                        </aside>
-
-                        <div className="agreement-content">
+                        <div className="qna-content">
                             <h2>T&amp;C</h2>
 
                             <div className="terms-box">
