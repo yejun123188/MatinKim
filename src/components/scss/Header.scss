@@ -138,10 +138,8 @@
           }
 
           img {
-            padding: 4.5px 0;
-            width: 24px;
-            height: 24px;
             display: block;
+            width: 16px;
           }
 
           .cart-num {
@@ -172,14 +170,22 @@
           align-items: center;
           justify-content: center;
           margin-left: 5px;
+
+          img {
+            width: 16px;
+          }
+        }
+
+        .auth-action {
+          img {
+            width: 22px;
+          }
         }
 
         .member,
         .auth-action {
           a,
           button {
-            width: 24px;
-            height: 24px;
             border: 0;
             padding: 0;
             background: transparent;
@@ -191,8 +197,6 @@
 
           img {
             display: block;
-            width: 24px;
-            height: 24px;
           }
         }
       }
