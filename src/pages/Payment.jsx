@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/Payment.scss";
 import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
+import { createOrder, ORDER_MENU } from "../utils/orderStorage";
 
 const PAYMENT_METHODS = [
     { id: "card", title: "신용카드 / 체크카드", description: "안전한 결제를 위해 Stripe로 처리됩니다", badges: ["VISA", "MC", "AMEX"] },
@@ -24,6 +25,7 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 
 export default function Payment() {
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase } = useAuthStore();
+    const navigate = useNavigate();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -165,7 +167,26 @@ export default function Payment() {
         setIsSubmitting(false);
 
         if (isSaved) {
+            const shippingInfo = useSame
+                ? {
+                    receiver: userAddress?.receiver || orderForm.name,
+                    mobile1: phone1,
+                    mobile2: phone2,
+                    mobile3: phone3,
+                    address: userAddress?.address || "",
+                    detail: userAddress?.detail || "",
+                }
+                : form;
+
+            createOrder({
+                orderItems,
+                orderForm,
+                shippingInfo,
+                payment: activeMethod.title,
+                deliveryCost: shippingFee + localShippingFee,
+            });
             alert("주문이 완료되었습니다!");
+            navigate("/userInfo", { state: { menu: ORDER_MENU } });
         }
     };
 

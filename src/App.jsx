@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -49,12 +49,11 @@ function App() {
   }, [onFetchItem, onMenus, stores]);
   useEffect(() => {
     if (window.Kakao && !window.Kakao.isInitialized()) {
-      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY)
+      window.Kakao.init(import.meta.env.VITE_KAKAO_JS_KEY);
     }
-  }, [])
+  }, []);
 
   if (!items.length) return <div>로딩중...</div>;
-
 
   return (
     <>
@@ -88,15 +87,17 @@ function App() {
         <Route path="/qna" element={<Qna />} />
         <Route
           path="/product-authentication"
-          element={<ProductAuthentication />} />
+          element={<ProductAuthentication />}
+        />
 
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/agreement" element={<Agreement />} />
 
-
-        <Route path="productauthentication" element={<ProductAuthentication />} />
+        <Route
+          path="productauthentication"
+          element={<ProductAuthentication />}
+        />
         <Route path="/cart" element={<Cart />} />
-
       </Routes>
       <Footer />
     </>

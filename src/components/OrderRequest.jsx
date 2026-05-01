@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ordersData from "../data/ordersData";
+import { getOrderById, requestOrderAction } from "../utils/orderStorage";
 import "./scss/orderRequest.scss";
 
 const orderMenu = "주문내역";
@@ -54,7 +54,7 @@ export default function OrderRequest() {
   const navigate = useNavigate();
   const { id, action, itemId } = useParams();
 
-  const orderDetail = ordersData.find((item) => String(item.id) === id);
+  const orderDetail = getOrderById(id);
   const actionState = actionMent[action];
   const isCancelAction = action === "cancel";
 
@@ -89,6 +89,7 @@ export default function OrderRequest() {
     <OrderRequestForm
       key={`${action}-${itemId || ""}`}
       actionState={actionState}
+      action={action}
       isCancelAction={isCancelAction}
       itemId={itemId}
       navigate={navigate}
@@ -100,6 +101,7 @@ export default function OrderRequest() {
 
 function OrderRequestForm({
   actionState,
+  action,
   isCancelAction,
   itemId,
   navigate,
@@ -145,6 +147,11 @@ function OrderRequestForm({
     }
 
     window.alert(`${actionState.detailState} 접수되었습니다.`);
+    requestOrderAction({
+      orderDetailId: orderDetail.id,
+      itemIds: isCancelAction ? [itemId] : selectedList,
+      action,
+    });
     navigate("/userInfo", { state: { menu: orderMenu } });
   };
 
