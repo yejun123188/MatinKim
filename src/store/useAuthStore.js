@@ -50,11 +50,80 @@ const usableCoupons = {
   },
 };
 
+const defaultSavedMoneyList = [
+  {
+    id: "welcome-point",
+    date: "2026-04-08",
+    point: 5000,
+    order: "-",
+    desc: "신규회원 적립금",
+    type: "history",
+  },
+  {
+    id: "shipping-pending-point",
+    date: "2026-04-09",
+    point: 2000,
+    order: "-",
+    desc: "배송 대기 적립금",
+    type: "pending",
+  },
+  {
+    id: "member-grade-point",
+    date: "2026-04-10",
+    point: 1000,
+    order: "-",
+    desc: "회원등급 적립금",
+    type: "grade",
+  },
+  {
+    id: "used-point",
+    date: "2026-04-11",
+    point: 2000,
+    order: "-",
+    desc: "상품 구매 사용 적립금",
+    type: "used",
+  },
+  {
+    id: "refund-point",
+    date: "2026-04-12",
+    point: 3000,
+    order: "-",
+    desc: "환불예정 적립금",
+    type: "refund",
+  },
+];
+
+const getSavedMoneySummary = (list) => {
+  const sumByType = (type) =>
+    list
+      .filter((item) => item.type === type)
+      .reduce((sum, item) => sum + Number(item.point || 0), 0);
+
+  const earnedPoint = sumByType("history");
+  const gradePoint = sumByType("grade");
+  const usedPoint = sumByType("used");
+  const unavailablePoint = sumByType("pending");
+  const refundPoint = sumByType("refund");
+  const totalPoint =
+    earnedPoint + gradePoint + unavailablePoint + refundPoint - usedPoint;
+  const availablePoint = Math.max(earnedPoint + gradePoint - usedPoint, 0);
+
+  return {
+    totalPoint,
+    availablePoint,
+    usedPoint,
+    unavailablePoint,
+    refundPoint,
+  };
+};
+
 export const useAuthStore = create((set, get) => ({
   user: null,
   userAddress: null,
   addressList: [],
   couponList: [],
+  savedMoneyList: [],
+  savedMoneySummary: getSavedMoneySummary([]),
 
   // 로그인 상태 유지
   initAuth: () => {
@@ -417,7 +486,12 @@ export const useAuthStore = create((set, get) => ({
     try {
       await signOut(auth);
       localStorage.removeItem("socialUser");
-      set({ user: null });
+      set({
+        user: null,
+        savedMoneyList: [],
+        savedMoneySummary: getSavedMoneySummary([]),
+      });
+      alert("로그아웃 되었습니다!");
     } catch (err) {
       console.error("로그아웃 에러:", err);
     }
@@ -616,6 +690,57 @@ export const useAuthStore = create((set, get) => ({
       console.error("쿠폰 등록 에러:", err);
       alert("쿠폰 등록에 실패했습니다.");
       return false;
+    }
+  },
+
+  onFetchSavedMoney: async () => {
+    const { user } = get();
+
+    if (!user) {
+      set({
+        savedMoneyList: [],
+        savedMoneySummary: getSavedMoneySummary([]),
+      });
+      return;
+    }
+
+    try {
+      const ref = collection(db, "users", user.uid, "savedMoney");
+      const snap = await getDocs(ref);
+      const savedIds = new Set(snap.docs.map((doc) => doc.id));
+      const missingDefaultList = defaultSavedMoneyList.filter(
+        (item) => !savedIds.has(item.id)
+      );
+
+      if (missingDefaultList.length > 0) {
+        await Promise.all(
+          missingDefaultList.map(({ id, ...item }) =>
+            setDoc(doc(db, "users", user.uid, "savedMoney", id), item)
+          )
+        );
+      }
+
+      const nextSnap =
+        missingDefaultList.length > 0 ? await getDocs(ref) : snap;
+      const savedMoneyList = nextSnap.docs
+        .map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+      const savedMoneySummary = getSavedMoneySummary(savedMoneyList);
+
+      await setDoc(
+        doc(db, "users", user.uid),
+        { savedMoneySummary },
+        { merge: true }
+      );
+
+      set({ savedMoneyList, savedMoneySummary });
+    } catch (err) {
+      console.error("적립금 불러오기 에러:", err);
+      alert("적립금을 불러오지 못했습니다.");
     }
   },
 }));

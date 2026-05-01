@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import "./scss/CouponList.scss";
+import UserInfoNone from "./UserInfoNone";
 
 export default function CouponList() {
   const { user, couponList, onFetchCoupons, onAddCoupon } = useAuthStore();
@@ -27,9 +28,7 @@ export default function CouponList() {
             value={couponCode}
             onChange={(e) => setCouponCode(e.target.value)}
           />
-          <button type="submit">
-            쿠폰번호 인증
-          </button>
+          <button type="submit">쿠폰번호 인증</button>
         </form>
         <p>
           • 반드시 쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.(10~35자 일련번호
@@ -85,11 +84,7 @@ export default function CouponList() {
                 </tr>
               ))
             ) : (
-              <tr>
-                <td colSpan={6} className="empty-coupon">
-                  쿠폰 내역이 없습니다.
-                </td>
-              </tr>
+              <UserInfoNone title="쿠폰" />
             )}
           </tbody>
         </table>
