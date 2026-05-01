@@ -29,6 +29,13 @@ import Privacy from "./pages/Privacy";
 import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 function App() {
   const { items, onFetchItem, onMenus } = useProductStore();
   const { onFetchStore, stores } = useMapStore();
@@ -52,6 +59,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:category1" element={<ProductList />} />

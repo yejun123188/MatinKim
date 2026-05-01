@@ -273,9 +273,12 @@ export default function ProductDetail() {
             onRemoveWish(key, user.uid);
             return;
         }
+        const sizeIndex = (product.sizes || []).findIndex(s => s === selectedSize);
+        const isSoldOut = sizeIndex !== -1 && Boolean(product.soldout?.[sizeIndex]);
 
         onAddWishList({
             ...product,
+            isSoldOut,
             selectedSize,
             selectedColor,
             quantity,
@@ -859,7 +862,8 @@ export default function ProductDetail() {
             )
             }
             {
-                showCartPopup && <CartPopup onClose={() => setShowCartPopup(false)}
+                showCartPopup && <CartPopup mode="wish"
+                    onClose={() => setShowCartPopup(false)}
                     product={product}
                     selectedColor={selectedColor}
                     selectedSize={selectedSize}
