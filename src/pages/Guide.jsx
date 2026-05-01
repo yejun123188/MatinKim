@@ -1,18 +1,19 @@
 import React from "react";
 import { guideData } from "../data/guideData";
 import "./scss/Guide.scss";
+import { Link } from "react-router-dom";
+import HelpMenu from "../components/HelpMenu";
 
 export default function Guide() {
     return (
         <section className="sub-section">
-            <div className="inner guide-page">
-                <div className="guide-page">
-                    <div className="guide-inner">
-                        <aside className="guide-side">
+            <div className="inner qna-page">
+                <div>
+                    <div className="qna-inner">
+                        <HelpMenu />
 
-                        </aside>
-
-                        <div className="guide-content">
+                        <div className="qna-content guide-content">
+                            <h2>이용약관</h2>
                             {guideData.map((section, idx) => (
                                 <article className="guide-section" key={idx}>
                                     <h3>{section.title}</h3>

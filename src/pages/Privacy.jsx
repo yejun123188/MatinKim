@@ -1,17 +1,17 @@
 import React from "react";
 import "./scss/Privacy.scss";
+import { Link } from "react-router-dom";
+import HelpMenu from "../components/HelpMenu";
 
 export default function Privacy() {
     return (
         <section className="sub-section">
-            <div className="inner privacy-page">
-                <div className="privacy-page">
-                    <div className="privacy-inner">
-                        <aside className="help-menu">
+            <div className="inner qna-page">
+                <div>
+                    <div className="qna-inner privacy-inner">
+                        <HelpMenu />
 
-                        </aside>
-
-                        <div className="privacy-content">
+                        <div className="qna-content privacy-content">
                             <h2>Privacy Policy</h2>
 
                             <p>
