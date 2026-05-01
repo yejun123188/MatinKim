@@ -1,69 +1,73 @@
-.privacy-page {
-    padding: 10px 40px 100px;
-    color: #111;
-    background: #fff;
+// .privacy-page {
+//     padding: 10px 40px 100px;
+//     color: #111;
+//     background: #fff;
 
-    .privacy-inner {
-        display: flex;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
+//     .privacy-inner {
+//         display: flex;
+//         max-width: 1400px;
+//         margin: 0 auto;
+//         gap: 120px;
 
-    .help-menu {
-        width: 220px;
-        flex-shrink: 0;
+//     }
 
-        h2 {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
+//     .help-menu {
+//         width: 220px;
+//         flex-shrink: 0;
+//         border: 1px solid blue;
 
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
+//         h2 {
+//             font-size: 18px;
+//             font-weight: 500;
+//             margin-bottom: 24px;
+//         }
 
-        li {
-            font-size: 13px;
-            color: #999;
-            cursor: pointer;
+//         ul {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 14px;
+//         }
 
-            &.active {
-                color: #111;
-                font-weight: 500;
-            }
-        }
-    }
+//         li {
+//             font-size: 13px;
+//             color: #999;
+//             cursor: pointer;
 
-    .privacy-content {
-        flex: 1;
-        max-width: 900px;
+//             &.active {
+//                 color: #111;
+//                 font-weight: 500;
+//             }
+//         }
+//     }
 
-        >h2 {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 34px;
-        }
+//     .privacy-content {
+//         flex: 1;
+//         max-width: 900px;
+//         border: 1px solid blue;
 
-        p {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 8px;
-            word-break: keep-all;
-        }
+//         >h2 {
+//             font-size: 22px;
+//             font-weight: 500;
+//             margin-bottom: 34px;
+//         }
 
-        .policy-block {
-            margin-top: 30px;
+//         p {
+//             font-size: 13px;
+//             line-height: 1.8;
+//             color: #333;
+//             margin-bottom: 8px;
+//             word-break: keep-all;
+//         }
 
-            h3 {
-                font-size: 14px;
-                font-weight: 500;
-                margin-bottom: 12px;
-                color: #111;
-            }
-        }
-    }
-}
+//         .policy-block {
+//             margin-top: 30px;
+
+//             h3 {
+//                 font-size: 14px;
+//                 font-weight: 500;
+//                 margin-bottom: 12px;
+//                 color: #111;
+//             }
+//         }
+//     }
+// }

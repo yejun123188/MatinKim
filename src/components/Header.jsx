@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Cart from "../pages/Cart"
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
+import { useLoginStore } from "../store/useLoginStore";
 
 const topmenus = [
   { key: "shop", label: "SHOP" },
@@ -44,9 +45,9 @@ export default function Header() {
   const { menus, cartCount, isCartOpen, openCart, closeCart } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoginOpen, setLoginOpen] = useState(false);
   const { user } = useAuthStore();
   const navigate = useNavigate();
+  const { isLoginOpen, openLogin, closeLogin } = useLoginStore();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -128,7 +129,7 @@ export default function Header() {
                       <img src="/images/header-icon/user.svg" alt="" />
                     </Link>
                   ) : (
-                    <button type="button" onClick={() => setLoginOpen(true)}>
+                    <button type="button" onClick={openLogin}>
                       <img src="/images/header-icon/user.svg" alt="" />
                     </button>
                   )}
@@ -189,8 +190,7 @@ export default function Header() {
         </div>
 
       </header >
-      {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
-
+      {isLoginOpen && <Login onClose={closeLogin} />}
       {isCartOpen && <Cart onClose={closeCart} />
       }
     </>
