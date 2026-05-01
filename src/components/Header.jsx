@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
-import Cart from "../pages/Cart"
+import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
 
 const topmenus = [
@@ -12,6 +12,7 @@ const topmenus = [
   { key: "collections", label: "COLLECTIONS" },
   { key: "about", label: "ABOUT" },
 ];
+
 const defaultMenus = [
   { name: "SALE", link: "/sale" },
   { name: "NEW IN", link: "/newin" },
@@ -19,32 +20,40 @@ const defaultMenus = [
   { name: "COLLAB", link: "/collab" },
   { name: "ALL", link: "/all" },
 ];
+
 const photoMenu = [
   {
-    src: "/images/collection/liz/img_liz_00007.jpg",
+    src: "/images/collection/jeno/img_jeno_00019.jpg",
+    subtitle: "MATIN KIM X NCT JENO",
+    title: "No Rush",
+    link: "/collections/1",
+  },
+  {
+    src: "/images/collection/liz/img_liz_00022.jpg",
     subtitle: "MATIN KIM X LIZ",
-    title: "26 S/S COLLECTION",
-  },
-  {
-    src: "/images/collection/liz/img_liz_00006.jpg",
-    subtitle: "26 Summer",
     title: "HOUSE, HAUS!",
+    link: "/collections/3",
   },
   {
-    src: "/images/collection/liz/img_liz_00020.jpg",
+    src: "/images/collection/liz/img_liz_00019.jpg",
     subtitle: "Matin Kim MAGAZINE",
     title: "BUCKET LIST",
+    link: "/collections/4",
   },
 ];
 
 export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const { menus, cartCount, isCartOpen, openCart, closeCart } = useProductStore();
+
+  const { menus, cartCount, isCartOpen, openCart, closeCart } =
+    useProductStore();
+
+  const { user, onLogout } = useAuthStore();
+
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setLoginOpen] = useState(false);
-  const { user, onLogout } = useAuthStore();
 
   const handleAuthButtonClick = async () => {
     if (user) {
@@ -59,9 +68,11 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   useEffect(() => {
     if (isCartOpen) {
       document.body.style.overflow = "hidden";
@@ -74,8 +85,6 @@ export default function Header() {
     };
   }, [isCartOpen]);
 
-
-
   return (
     <>
       <header>
@@ -84,95 +93,130 @@ export default function Header() {
             <Link to="/">1ST SPRING 2026</Link>
           </div>
         )}
+
         <div
-          className={`header-show 
-    ${isHome ? "home" : "subpage"} 
-    ${isScrolled ? "scrolled" : ""}
-    ${!isHome || isScrolled ? "no-banner" : ""}
-  `}
+          className={`header-wrapper ${isHome ? "home" : "subpage"} ${
+            isScrolled ? "scrolled" : ""
+          } ${!isHome || isScrolled ? "no-banner" : ""}`}
+          onMouseLeave={() => setIsShopHovered(false)}
         >
-          <div className="inner">
-            <div className="header-left">
-              <h1>
-                <Link to={"/"}>
-                  <img src="/images/header/logo-MatinKim-black.svg" alt="로고" />
-                </Link>
-              </h1>
-              <nav>
-                <ul className="main-menu">
-                  {topmenus.map((menu, id) => (
-                    <li
-                      key={id}
-                      onMouseEnter={() =>
-                        menu.key === "shop" && setIsShopHovered(true)
-                      }
-                      onMouseLeave={() =>
-                        menu.key === "shop" && setIsShopHovered(false)
-                      }
-                    >
-                      <Link to={menu.key === "shop" ? "/sale" : `/${menu.key}`}>{menu.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-            <div className="header-right">
-              <ul className="gnb-list">
-                <li>
-                  <input type="text" placeholder="SEARCH" />
-                </li>
-                <li className="header-cart">
-                  <Link
-                    onClick={openCart}>
-                    <img src="/images/header-icon/cart.svg" alt="" />
-                    <span className="cart-num">
-                      <span>{cartCount}</span>
-                    </span>
-                  </Link>
-                </li>
-                <li className="member">
-                  {user ? (
-                    <Link to="/userInfo">
-                      <img src="/images/header/user-black.svg" alt="회원정보" />
-                    </Link>
-                  ) : (
-                    <button type="button" onClick={() => setLoginOpen(true)}>
-                      <img src="/images/header/user-black.svg" alt="회원정보" />
-                    </button>
-                  )}
-                </li>
-                <li className="auth-action">
-                  <button type="button" onClick={handleAuthButtonClick}>
+          <div
+            className={`header-show ${isHome ? "home" : "subpage"} ${
+              isScrolled ? "scrolled" : ""
+            } ${!isHome || isScrolled ? "no-banner" : ""}`}
+          >
+            <div className="inner">
+              <div className="header-left">
+                <h1>
+                  <Link to="/" onClick={() => setIsShopHovered(false)}>
                     <img
-                      src={user ? "/images/header/logout.svg" : "/images/header/login.svg"}
-                      alt={user ? "로그아웃" : "로그인"}
+                      src="/images/header/logo-MatinKim-black.svg"
+                      alt="로고"
                     />
-                  </button>
-                </li>
-              </ul>
+                  </Link>
+                </h1>
+
+                <nav>
+                  <ul className="main-menu">
+                    {topmenus.map((menu, id) => (
+                      <li
+                        key={id}
+                        onClick={() => setIsShopHovered(false)}
+                        onMouseEnter={() =>
+                          menu.key === "shop"
+                            ? setIsShopHovered(true)
+                            : setIsShopHovered(false)
+                        }
+                      >
+                        <Link
+                          to={menu.key === "shop" ? "/sale" : `/${menu.key}`}
+                        >
+                          {menu.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+
+              <div className="header-right">
+                <ul className="gnb-list">
+                  <li>
+                    <input type="text" placeholder="SEARCH" />
+                  </li>
+
+                  <li className="header-cart">
+                    <button type="button" onClick={openCart}>
+                      <img src="/images/header-icon/cart.svg" alt="장바구니" />
+                      <span className="cart-num">
+                        <span>{cartCount}</span>
+                      </span>
+                    </button>
+                  </li>
+
+                  <li className="member">
+                    {user ? (
+                      <Link to="/userInfo">
+                        <img src="/images/header-icon/user.svg" alt="회원정보" />
+                      </Link>
+                    ) : (
+                      <button type="button" onClick={() => setLoginOpen(true)}>
+                        <img src="/images/header-icon/user.svg" alt="로그인" />
+                      </button>
+                    )}
+                  </li>
+
+                  <li className="auth-action">
+                    <button type="button" onClick={handleAuthButtonClick}>
+                      <img
+                        src={
+                          user
+                            ? "/images/header/logout.svg"
+                            : "/images/header/login.svg"
+                        }
+                        alt={user ? "로그아웃" : "로그인"}
+                      />
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div
             className={`header-active ${isShopHovered ? "active" : ""}`}
             onMouseEnter={() => setIsShopHovered(true)}
-            onMouseLeave={() => setIsShopHovered(false)}
+            onClick={() => setIsShopHovered(false)}
           >
             <div className="inner">
               <div className="header-active-left">
                 <ul className="default-menu">
                   {defaultMenus.map((m, id) => (
                     <li key={id}>
-                      <Link to={m.link}>{m.name}</Link>
+                      <Link to={m.link}>
+                        {m.name}
+                        <img
+                          src="/images/header/move-arrow-icon.svg"
+                          alt=""
+                        />
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
+
               <div className="header-active-middle">
                 <ul className="main-menu">
                   {menus.map((menu, id) => (
                     <li key={id}>
-                      <Link to={menu.link}>{menu.name}</Link>
+                      <Link to={menu.link}>
+                        {menu.name}
+                        <img
+                          src="/images/header/move-arrow-icon.svg"
+                          alt=""
+                        />
+                      </Link>
+
                       <ul className="sub-menu">
                         {menu.subMenu.map((m, id) => (
                           <li key={id}>
@@ -187,9 +231,10 @@ export default function Header() {
                   ))}
                 </ul>
               </div>
+
               <div className="header-active-right">
                 {photoMenu.map((m, id) => (
-                  <Link key={id}>
+                  <Link key={id} to={m.link}>
                     <div className="img-box">
                       <img src={m.src} alt="" />
                       <div className="text-box">
@@ -204,11 +249,14 @@ export default function Header() {
           </div>
         </div>
 
-      </header >
-      {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
+        <div
+          className={`header-overlay ${isShopHovered ? "active" : ""}`}
+          onMouseEnter={() => setIsShopHovered(false)}
+        />
+      </header>
 
-      {isCartOpen && <Cart onClose={closeCart} />
-      }
+      {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
+      {isCartOpen && <Cart onClose={closeCart} />}
     </>
   );
 }
