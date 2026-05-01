@@ -117,6 +117,14 @@ const getSavedMoneySummary = (list) => {
   };
 };
 
+export const getMemberGrade = (purchaseAmount = 0) => {
+  const amount = Number(purchaseAmount || 0);
+
+  if (amount >= 500000) return "VIP";
+  if (amount >= 200000) return "GOLD";
+  return "FRIENDS";
+};
+
 export const useAuthStore = create((set, get) => ({
   user: null,
   userAddress: null,
@@ -164,6 +172,9 @@ export const useAuthStore = create((set, get) => ({
           nickname: "",
           phone: firebaseUser.phoneNumber || "",
           profile: "",
+          purchaseAmount: 0,
+          purchaseCount: 0,
+          grade: "FRIENDS",
         };
 
         await setDoc(userRef, userInfo);
@@ -216,6 +227,9 @@ export const useAuthStore = create((set, get) => ({
         gender: gender || "",
         birth: birth || "",
         agreements: agreements || {},
+        purchaseAmount: 0,
+        purchaseCount: 0,
+        grade: "FRIENDS",
       };
 
       await setDoc(userRef, userInfo);
@@ -309,6 +323,9 @@ export const useAuthStore = create((set, get) => ({
         nickname: firebaseUser.displayName || "구글사용자",
         photoURL: firebaseUser.photoURL || "",
         provider: "google",
+        purchaseAmount: 0,
+        purchaseCount: 0,
+        grade: "FRIENDS",
       };
 
       const userRef = doc(db, "people", googleUser.uid);
@@ -362,6 +379,9 @@ export const useAuthStore = create((set, get) => ({
         nickname: res.kakao_account.profile?.nickname || "카카오사용자",
         photoURL: res.kakao_account.profile?.profile_image_url || "",
         provider: "kakao",
+        purchaseAmount: 0,
+        purchaseCount: 0,
+        grade: "FRIENDS",
       };
 
       const userRef = doc(db, "people", uid);
@@ -460,6 +480,9 @@ export const useAuthStore = create((set, get) => ({
         nickname: profile.nickname || profile.name || "네이버사용자",
         photoURL: profile.profile_image || "",
         provider: "naver",
+        purchaseAmount: 0,
+        purchaseCount: 0,
+        grade: "FRIENDS",
       };
 
       const userRef = doc(db, "people", uid);
@@ -521,6 +544,57 @@ export const useAuthStore = create((set, get) => ({
     } catch (err) {
       console.error("회원정보 수정 에러:", err);
       alert("회원정보 수정에 실패했습니다.");
+    }
+  },
+
+  onRecordPurchase: async (purchaseAmount, purchaseCount = 1) => {
+    const { user } = get();
+
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      return false;
+    }
+
+    try {
+      const userRef = doc(db, "users", user.uid);
+      const userDoc = await getDoc(userRef);
+      const savedUser = userDoc.exists() ? userDoc.data() : user;
+      const currentAmount = Number(
+        savedUser.purchaseAmount ?? savedUser.orderPrice ?? 0
+      );
+      const currentCount = Number(
+        savedUser.purchaseCount ?? savedUser.orderCount ?? 0
+      );
+      const nextAmount = currentAmount + Number(purchaseAmount || 0);
+      const nextCount = currentCount + Number(purchaseCount || 0);
+      const grade = getMemberGrade(nextAmount);
+      const purchaseInfo = {
+        purchaseAmount: nextAmount,
+        purchaseCount: nextCount,
+        orderPrice: nextAmount,
+        orderCount: nextCount,
+        grade,
+      };
+
+      await setDoc(userRef, purchaseInfo, { merge: true });
+
+      const nextUser = {
+        ...user,
+        ...savedUser,
+        ...purchaseInfo,
+      };
+
+      set({ user: nextUser });
+
+      if (user.provider) {
+        localStorage.setItem("socialUser", JSON.stringify(nextUser));
+      }
+
+      return true;
+    } catch (err) {
+      console.error("구매 정보 저장 에러:", err);
+      alert("구매 정보를 저장하지 못했습니다.");
+      return false;
     }
   },
 
