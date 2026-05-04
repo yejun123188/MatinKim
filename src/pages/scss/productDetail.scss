@@ -546,12 +546,53 @@
 }
 
 .tab-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    strong {
+        font-size: g.$size-14-main;
+    }
+
     p {
         margin: 0;
-        color: #3a342e;
-        font-size: 0.9375rem;
-        line-height: 1.9;
+        color: g.$text-main-color;
+        font-size: g.$size-14-main;
+        line-height: 2;
         white-space: pre-line;
+    }
+}
+
+.delivery-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.delivery-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 30px;
+}
+
+.delivery-faq-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    strong {
+        color: g.$text-main-color;
+        font-size: g.$size-14-main;
+        font-weight: g.$Bold;
+        padding-bottom: 8px;
+    }
+
+    p {
+        line-height: 1.5;
+        font-size: g.$size-14-main;
+        color: g.$text-sub-color;
+        text-indent: 10px;
     }
 }
 

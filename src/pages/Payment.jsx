@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/Payment.scss";
 import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
+import { createOrder, ORDER_MENU } from "../utils/orderStorage";
 
 const PAYMENT_METHODS = [
     { id: "card", title: "신용카드 / 체크카드", description: "안전한 결제를 위해 Stripe로 처리됩니다", badges: ["VISA", "MC", "AMEX"] },
@@ -23,7 +24,8 @@ const formatDeliveryDate = (date) => `${date.getFullYear()}년 ${date.getMonth()
 const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg || "/images/sub-cart/clothes-mini.jpg";
 
 export default function Payment() {
-    const { user, userAddress, onFetchAddress, onAddAddress } = useAuthStore();
+    const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase } = useAuthStore();
+    const navigate = useNavigate();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -52,10 +54,16 @@ export default function Payment() {
     const [showAddressModal, setShowAddressModal] = useState(false);
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
 
     useEffect(() => {
         if (user) onFetchAddress();
-    }, [user]);
+    }, [user, onFetchAddress]);
 
     const location = useLocation();
     const orderItems = location.state?.orderItems?.length ? location.state.orderItems : [];
@@ -155,9 +163,36 @@ export default function Payment() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!validate()) return;
-        alert("주문이 완료되었습니다!");
+        if (isSubmitting) return;
+
+        setIsSubmitting(true);
+        const isSaved = await onRecordPurchase(finalTotal, 1);
+        setIsSubmitting(false);
+
+        if (isSaved) {
+            const shippingInfo = useSame
+                ? {
+                    receiver: userAddress?.receiver || orderForm.name,
+                    mobile1: phone1,
+                    mobile2: phone2,
+                    mobile3: phone3,
+                    address: userAddress?.address || "",
+                    detail: userAddress?.detail || "",
+                }
+                : form;
+
+            createOrder({
+                orderItems,
+                orderForm,
+                shippingInfo,
+                payment: activeMethod.title,
+                deliveryCost: shippingFee + localShippingFee,
+            });
+            alert("주문이 완료되었습니다!");
+            navigate("/userInfo", { state: { menu: ORDER_MENU } });
+        }
     };
 
     const handleAddressSelect = (addr) => {
@@ -178,7 +213,7 @@ export default function Payment() {
 
     if (!orderItems.length) {
         return (
-            <main className="payment-page">
+            <main className={`payment-page ${isLoaded ? 'is-loaded' : ''}`}>
                 <div className="inner payment-empty">
                     <img src="/images/pages-icon/warning-icon.svg" alt="" />
                     <p>결제할 상품 정보가 없습니다.</p>
@@ -188,7 +223,7 @@ export default function Payment() {
     }
 
     return (
-        <main className="payment-page">
+        <main className={`payment-page ${isLoaded ? 'is-loaded' : ''}`}>
             <div className="inner payment-layout">
                 <div className="payment-form-column">
 
@@ -564,7 +599,7 @@ export default function Payment() {
                                     </div>
                                     <div className="summary-item-copy">
                                         <h3>{item.name}</h3>
-                                        <p>색상: {item.option.split(" / ")[0] || "-"} · 사이즈: {item.option.split(" / ")[1] || "-"}</p>
+                                        <p>색상: {item.color || "-"} · 사이즈: {item.size || "-"}</p>
                                         <span>수량: {item.quantity}</span>
                                     </div>
                                     <strong>{formatPrice(item.price * item.quantity)}</strong>
@@ -601,8 +636,8 @@ export default function Payment() {
                             <p>배송 완료 후 7일 이내 교환/반품 가능</p>
                         </div>
 
-                        <button type="button" className="order-submit-btn" onClick={handleSubmit}>
-                            주문하기
+                        <button type="button" className="order-submit-btn" onClick={handleSubmit} disabled={isSubmitting}>
+                            {isSubmitting ? "주문 처리중" : "주문하기"}
                         </button>
 
                         <p className="summary-terms">

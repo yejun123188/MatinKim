@@ -6,7 +6,15 @@ export const getRecentViewedProducts = () => {
     const savedProducts = localStorage.getItem(RECENT_VIEWED_PRODUCTS_KEY);
     const parsedProducts = savedProducts ? JSON.parse(savedProducts) : [];
 
-    return Array.isArray(parsedProducts) ? parsedProducts : [];
+    if (!Array.isArray(parsedProducts)) return [];
+
+    const limitedProducts = parsedProducts.slice(0, RECENT_VIEWED_PRODUCTS_LIMIT);
+
+    if (parsedProducts.length !== limitedProducts.length) {
+      setRecentViewedProducts(limitedProducts);
+    }
+
+    return limitedProducts;
   } catch {
     return [];
   }

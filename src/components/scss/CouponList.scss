@@ -6,18 +6,19 @@
     padding: 30px;
     margin-bottom: 24px;
 
+    .coupon-num {
+      display: flex;
+      gap: 10px;
+    }
+
     input {
+      @include g.myTextBox;
+      height: 40px;
       width: 500px;
-      height: 45px;
-      padding: 0 10px;
-      background-color: #ddd;
-      border: none;
-      margin-right: 10px;
-      font-size: g.$size-14-main;
     }
 
     button {
-      height: 45px;
+      height: 40px;
       padding: 0 20px;
       @include g.myBtn1();
     }
@@ -73,6 +74,11 @@
         border-bottom: 1px solid #eee;
         font-size: g.$size-14-main;
         color: g.$text-main-color;
+      }
+
+      .empty-coupon {
+        color: g.$text-sub-color;
+        height: 72px;
       }
     }
   }

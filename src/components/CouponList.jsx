@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAuthStore } from "../store/useAuthStore";
 import "./scss/CouponList.scss";
+import UserInfoNone from "./UserInfoNone";
+
 export default function CouponList() {
+  const { user, couponList, onFetchCoupons, onAddCoupon } = useAuthStore();
+  const [couponCode, setCouponCode] = useState("");
+
+  useEffect(() => {
+    if (!user) return;
+    onFetchCoupons();
+  }, [user, onFetchCoupons]);
+
+  const handleAddCoupon = async (e) => {
+    e.preventDefault();
+    const isSuccess = await onAddCoupon(couponCode);
+    if (isSuccess) setCouponCode("");
+  };
+
   return (
     <div className="couponlist-wrap">
       <div className="coupon-top">
-        <input type="text" placeholder="쿠폰번호 등록" />
-        <button>쿠폰번호 인증</button>
+        <form className="coupon-num" onSubmit={handleAddCoupon}>
+          <input
+            type="text"
+            placeholder="쿠폰번호 등록"
+            value={couponCode}
+            onChange={(e) => setCouponCode(e.target.value)}
+          />
+          <button type="submit">쿠폰번호 인증</button>
+        </form>
         <p>
           • 반드시 쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.(10~35자 일련번호
           "-" 제외)
@@ -33,13 +57,12 @@ export default function CouponList() {
       <div className="coupon-bottom">
         <div className="mycoupon-top">
           <p className="mycoupon-title">내 쿠폰</p>
-          <p className="count-coupon">1 개</p>
+          <p className="count-coupon">{couponList.length} 개</p>
         </div>
 
         <table>
           <thead>
             <tr>
-              <th>번호</th>
               <th>쿠폰명</th>
               <th>쿠폰혜택</th>
               <th>사용 가능 기간</th>
@@ -49,15 +72,20 @@ export default function CouponList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
+            {couponList.length > 0 ? (
+              couponList.map((coupon) => (
+                <tr key={coupon.id}>
+                  <td>{coupon.couponName}</td>
+                  <td>{coupon.benefit}</td>
+                  <td>{coupon.period}</td>
+                  <td>{coupon.applyProduct}</td>
+                  <td>{coupon.minPrice}</td>
+                  <td>{coupon.payment}</td>
+                </tr>
+              ))
+            ) : (
+              <UserInfoNone title="쿠폰" />
+            )}
           </tbody>
         </table>
       </div>
