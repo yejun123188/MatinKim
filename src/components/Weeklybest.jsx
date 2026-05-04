@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import SectionTitle from './SectionTitle'
 import { useProductStore } from '../store/useProductStore'
 import "./scss/weeklybest.scss"
+import { useNavigate } from 'react-router-dom';
 
 export default function Weeklybest() {
     const { BestItems, onBestMenus, items, onFetchItem, onColorCode } = useProductStore();
     const [showAll, setShowAll] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (items.length === 0) {
@@ -23,19 +25,27 @@ export default function Weeklybest() {
                 <SectionTitle title="WEEKLY BEST ITEM" subtitle="This season's favorites" />
                 <ul className="best-item-list">
                     {visibleItems.map((item, id) => (
-                        // 클릭하면 제품 상세페이지로 이동하는거 아직안함 상세페이지 만들면 연결예정!~!!~!
-                        //마우스 호버하면 이미지 어케 변할지도 정해야함
-                        //하트 이미지도 넣어야함
                         <li key={id}>
                             <div className="img-box">
                                 <img onMouseEnter={(e) => e.currentTarget.src = item.hoverImg}
                                     onMouseLeave={(e) => e.currentTarget.src = item.mainImg}
+                                    onClick={() => navigate(`/products/${item.id}`)}
                                     src={item.mainImg} alt={item.name} />
                                 <span className='heart'><img src="/images/heart-default.svg" alt="하트" /></span>
                             </div>
                             <ul className="text-box">
-                                <li id='name'>{item.name}</li>
-                                <li id='price'>₩ {item.price}</li>
+                                <li id='name' onClick={() => navigate(`products/${item.id}`)}>{item.name}</li>
+                                <li id=''>
+                                    {item.discountRate > 0 ? (
+                                        <>
+                                            <p className="discount-rate">{item.discountRate}%</p>
+                                            <p className="discount-price">₩{item.discountPrice.toLocaleString()}</p>
+                                            <p className="original-price">₩{item.price.toLocaleString()}</p>
+                                        </>
+                                    ) : (
+                                        <p className="price">₩{item.price.toLocaleString()}</p>
+                                    )}
+                                </li>
                                 <li id='colors'>
                                     {item.colors.map((c, id) => (
                                         <span key={id} style={{ backgroundColor: onColorCode(c) }}></span>

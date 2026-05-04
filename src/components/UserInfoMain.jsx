@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./scss/userInfoMain.scss";
-
 import { FreeMode } from "swiper/modules";
 import UserInfoNone from "./UserInfoNone";
 import {
@@ -25,13 +24,6 @@ const statusCode = {
   배송완료: "DONE",
 };
 
-const userInfo = {
-  name: "마뗑킴",
-  benefits: "적립 3%, 구매 할인 7%, 생일쿠폰 20%",
-  purchaseAmount: 0,
-  purchaseCount: 0,
-};
-
 const gradeColor = {
   FRIENDS: "#4A3AFF",
   GOLD: "#F3B94C",
@@ -40,17 +32,6 @@ const gradeColor = {
 
 const orderStatusList = ["결제완료", "배송준비중", "배송중", "배송완료"];
 const DELIVERY_COMPLETE_MS = 30 * 24 * 60 * 60 * 1000;
-const DELIVERY_COMPLETE_OFFSET_MS = 30 * 1000;
-
-const parseOrderDate = (date) => {
-  if (!date || date.length !== 8) return null;
-
-  return new Date(
-    Number(date.slice(0, 4)),
-    Number(date.slice(4, 6)) - 1,
-    Number(date.slice(6, 8)),
-  ).getTime();
-};
 
 export default function UserInfoMain() {
   const navigate = useNavigate();
@@ -58,6 +39,7 @@ export default function UserInfoMain() {
   const [cartItem, setCartItem] = useState(null);
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [showCart, setShowCart] = useState(false);
+
   const {
     user,
     couponList,
@@ -65,19 +47,18 @@ export default function UserInfoMain() {
     onFetchCoupons,
     onFetchSavedMoney,
   } = useAuthStore();
+
   const { wishList, onLoadWishList, onRemoveWish, onAddCart } =
     useProductStore();
 
   useEffect(() => {
     onFetchCoupons();
     onFetchSavedMoney();
-  }, [user, onFetchCoupons, onFetchSavedMoney]);
+  }, [user]);
 
   useEffect(() => {
-    if (user?.uid) {
-      onLoadWishList(user.uid);
-    }
-  }, [user, onLoadWishList]);
+    if (user?.uid) onLoadWishList(user.uid);
+  }, [user]);
 
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 1000);
@@ -87,79 +68,40 @@ export default function UserInfoMain() {
   const mainOrders = useMemo(
     () =>
       getAllOrders(now)
-        .flatMap((orderDetail) =>
-          orderDetail.orders.map((order) => ({
+        .flatMap((o) =>
+          o.orders.map((order) => ({
             ...order,
-            createdAt: orderDetail.createdAt,
-            date: orderDetail.date,
-            orderDetailId: orderDetail.id,
-          })),
+            createdAt: o.createdAt,
+          }))
         )
         .filter((order) => {
           if (!orderStatusList.includes(order.status)) return false;
           if (order.status !== "배송완료") return true;
 
-          const createdAt = new Date(order.createdAt).getTime();
-          if (Number.isNaN(createdAt)) {
-            const orderDate = parseOrderDate(order.date);
-            if (!orderDate) return false;
-
-            return now - orderDate < DELIVERY_COMPLETE_MS;
-          }
-
           return (
-            now - (createdAt + DELIVERY_COMPLETE_OFFSET_MS) <
+            now - new Date(order.createdAt).getTime() <
             DELIVERY_COMPLETE_MS
           );
         }),
-    [now],
+    [now]
   );
 
-  const displayName = user?.name || user?.nickname || userInfo.name;
-  const localPurchaseInfo = getLocalPurchaseInfo(user);
-  const purchaseAmount = Number(
-    localPurchaseInfo.purchaseAmount ??
-      user?.purchaseAmount ??
-      user?.orderPrice ??
-      userInfo.purchaseAmount,
-  );
-  const purchaseCount = Number(
-    localPurchaseInfo.purchaseCount ??
-      user?.purchaseCount ??
-      user?.orderCount ??
-      userInfo.purchaseCount,
-  );
+  const displayName = user?.name || user?.nickname || "고객";
+  const localInfo = getLocalPurchaseInfo(user);
+
+  const purchaseAmount = Number(localInfo.purchaseAmount || 0);
+  const purchaseCount = Number(localInfo.purchaseCount || 0);
+
   const grade = getMemberGrade(purchaseAmount);
   const totalPoint = savedMoneySummary.totalPoint || 0;
-  const couponCount = user ? couponList.length : 0;
+  const couponCount = couponList.length;
+
   const sortedWishList = [...wishList].sort(
-    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
+    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0)
   );
 
   const getWishPrice = (wish) =>
     wish.discountRate > 0 ? wish.discountPrice : wish.price;
-
-  const handleBuyNow = (wish) => {
-    if (wish.isSoldOut) return;
-
-    navigate("/payment", {
-      state: {
-        orderItems: [
-          {
-            id: wish.id,
-            brand: "MATIN KIM",
-            name: wish.name,
-            option: `${wish.selectedColor || "-"} / ${
-              wish.selectedSize || "-"
-            }`,
-            quantity: wish.quantity || 1,
-            price: getWishPrice(wish),
-            image: wish.mainImg || wish.hoverImg || "",
-          },
-        ],
-      },
-    });
-  };
 
   const handleAddCart = (wish) => {
     if (wish.isSoldOut) return;
@@ -168,20 +110,19 @@ export default function UserInfoMain() {
       id: wish.id,
       name: wish.name,
       price: getWishPrice(wish),
-      discountPrice: wish.discountPrice,
-      discountRate: wish.discountRate,
       mainImg: wish.mainImg,
-      hoverImg: wish.hoverImg,
       image: wish.mainImg || wish.hoverImg,
       key:
         wish.key ||
-        `${wish.id}-${wish.selectedSize || ""}-${wish.selectedColor || ""}`,
+        `${wish.id}-${wish.selectedSize}-${wish.selectedColor}`,
       size: wish.selectedSize,
       color: wish.selectedColor,
       count: wish.quantity || 1,
     };
 
     onAddCart(item);
+
+    // ⭐ branchHY 기능 유지 (팝업)
     setCartItem(wish);
     setShowCartPopup(true);
   };
@@ -193,6 +134,7 @@ export default function UserInfoMain() {
 
   return (
     <div className="main">
+      {/* 계정 */}
       <div className="frist-line">
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
@@ -201,19 +143,12 @@ export default function UserInfoMain() {
             </p>
             <ul className="myinfo-list">
               <li>
-                <div>
-                  <p>{displayName}님은</p>
-                  <p>
-                    <strong style={{ color: gradeColor[grade] }}>
-                      {grade} 등급
-                    </strong>
-                    입니다
-                  </p>
-                </div>
-                <div className="question">
-                  <img src="./images/userinfo/question.svg" alt="question" />
-                  <p>{userInfo.benefits}</p>
-                </div>
+                <p>
+                  <strong style={{ color: gradeColor[grade] }}>
+                    {grade}
+                  </strong>{" "}
+                  등급입니다
+                </p>
               </li>
               <li>
                 <p className="my-total-price">총 구매 금액</p>
@@ -224,6 +159,7 @@ export default function UserInfoMain() {
             </ul>
           </div>
         </UserInfoMainBox>
+
         <UserInfoMainBox title="My Wallet" className="my-wallet">
           <ul className="my-wallet-list">
             <li>
@@ -237,37 +173,16 @@ export default function UserInfoMain() {
           </ul>
         </UserInfoMainBox>
       </div>
+
+      {/* 주문 */}
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
           {mainOrders.length > 0 ? (
-            <Swiper
-              slidesPerView={2.7}
-              spaceBetween={24}
-              freeMode={true}
-              modules={[FreeMode]}
-              className="order-list"
-            >
+            <Swiper slidesPerView={2.7} spaceBetween={24} modules={[FreeMode]}>
               {mainOrders.map((order) => (
                 <SwiperSlide className="order-product" key={order.id}>
-                  <div className="img-box">
-                    <img src={order.img} alt={order.name} />
-                  </div>
-                  <div className="text-box">
-                    <div
-                      className={`status status-${statusCode[order.status]}`}
-                    >
-                      {order.status === "배송중" && (
-                        <span className="dot"></span>
-                      )}
-                      {order.status}
-                    </div>
-                    <div className="product-text">
-                      <p className="order-name">{order.name}</p>
-                      <p className="order-count">
-                        {order.size} / {order.count}개
-                      </p>
-                    </div>
-                  </div>
+                  <img src={order.img} alt={order.name} />
+                  <p>{order.name}</p>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -276,59 +191,38 @@ export default function UserInfoMain() {
           )}
         </UserInfoMainBox>
       </div>
+
+      {/* 위시리스트 */}
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
           {sortedWishList.length > 0 ? (
-            <Swiper
-              slidesPerView={2.7}
-              spaceBetween={24}
-              freeMode={true}
-              modules={[FreeMode]}
-              className="wish-list"
-            >
+            <Swiper slidesPerView={2.7} spaceBetween={24} modules={[FreeMode]}>
               {sortedWishList.map((wish) => (
-                <SwiperSlide className="wish-product" key={wish.key || wish.id}>
-                  <div className="img-box">
-                    <img src={wish.mainImg || wish.hoverImg} alt={wish.name} />
-                  </div>
-                  <div className="text-box">
-                    <div className="text-wrap">
-                      <p className="wish-name">{wish.name}</p>
-                      <p className="wish-price">
-                        ￦{getWishPrice(wish)?.toLocaleString()}
-                        {wish.discountRate > 0 && (
-                          <span>￦{wish.price?.toLocaleString()}</span>
-                        )}
-                      </p>
-                      <p className="wish-count">
-                        {wish.selectedSize || "-"} / {wish.quantity || 1}개
-                      </p>
-                    </div>
-                    <div className="button-wrap">
-                      {!wish.isSoldOut && (
-                        <>
-                          <button
-                            className="Bbtn"
-                            onClick={() => handleBuyNow(wish)}
-                          >
-                            Buy It Now
-                          </button>
-                          <button
-                            className="Wbtn"
-                            onClick={() => handleAddCart(wish)}
-                          >
-                            Add To Cart
-                          </button>
-                        </>
-                      )}
-                      <button
-                        className="Wbtn"
-                        onClick={() => handleRemoveWish(wish)}
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
+                <SwiperSlide
+                  className={`wish-product${
+                    wish.isSoldOut ? " is-soldout" : ""
+                  }`}
+                  key={wish.key || wish.id}
+                >
+                  <img src={wish.mainImg} alt={wish.name} />
+
+                  <p>{wish.name}</p>
+
+                  <p>
+                    {wish.isSoldOut
+                      ? "SOLD OUT"
+                      : `${wish.selectedSize} / ${wish.quantity}개`}
+                  </p>
+
+                  {!wish.isSoldOut && (
+                    <button onClick={() => handleAddCart(wish)}>
+                      Add To Cart
+                    </button>
+                  )}
+
+                  <button onClick={() => handleRemoveWish(wish)}>
+                    Remove
+                  </button>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -337,9 +231,11 @@ export default function UserInfoMain() {
           )}
         </UserInfoMainBox>
       </div>
+
+      {/* ⭐ branchHY 핵심 기능 유지 */}
       {showCartPopup && (
         <CartPopup
-          mode="best"
+          mode="wish"
           product={cartItem}
           selectedColor={cartItem?.selectedColor}
           selectedSize={cartItem?.selectedSize}
@@ -351,6 +247,7 @@ export default function UserInfoMain() {
           }}
         />
       )}
+
       {showCart && <Cart onClose={() => setShowCart(false)} />}
     </div>
   );

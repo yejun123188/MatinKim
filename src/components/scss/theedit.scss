@@ -1,6 +1,7 @@
 /* 섹션 타이틀 */
 .the-edit-section {
-  > h2,
+
+  >h2,
   .section-title {
     text-align: center;
     margin-bottom: 48px;
@@ -44,7 +45,7 @@
 .edit-list .top {
   margin-bottom: 14px;
 
-  > a {
+  >a {
     display: block;
     position: relative;
     text-decoration: none;
@@ -107,7 +108,7 @@
 }
 
 .bottom-edit-list {
-  > a {
+  >a {
     display: flex;
     align-items: flex-start;
     gap: 18px;
@@ -169,6 +170,7 @@
       font-size: 0;
       line-height: 0;
       overflow: hidden;
+      border: 1px solid black;
     }
   }
 }
@@ -216,7 +218,8 @@
 
 @media (max-width: 767px) {
   .the-edit-section {
-    > h2,
+
+    >h2,
     .section-title {
       margin-bottom: 34px;
 
@@ -279,8 +282,10 @@
 
 @media (max-width: 480px) {
   .the-edit-section {
-    > h2,
+
+    >h2,
     .section-title {
+
       h3,
       strong,
       .title {
@@ -312,7 +317,7 @@
   }
 
   .bottom-edit-list {
-    > a {
+    >a {
       gap: 14px;
     }
 
