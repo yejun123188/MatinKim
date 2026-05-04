@@ -55,6 +55,11 @@ export default function Payment() {
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
 
     useEffect(() => {
         if (user) onFetchAddress();
@@ -208,7 +213,7 @@ export default function Payment() {
 
     if (!orderItems.length) {
         return (
-            <main className="payment-page">
+            <main className={`payment-page ${isLoaded ? 'is-loaded' : ''}`}>
                 <div className="inner payment-empty">
                     <img src="/images/pages-icon/warning-icon.svg" alt="" />
                     <p>결제할 상품 정보가 없습니다.</p>
@@ -218,7 +223,7 @@ export default function Payment() {
     }
 
     return (
-        <main className="payment-page">
+        <main className={`payment-page ${isLoaded ? 'is-loaded' : ''}`}>
             <div className="inner payment-layout">
                 <div className="payment-form-column">
 
@@ -594,7 +599,7 @@ export default function Payment() {
                                     </div>
                                     <div className="summary-item-copy">
                                         <h3>{item.name}</h3>
-                                        <p>색상: {item.option.split(" / ")[0] || "-"} · 사이즈: {item.option.split(" / ")[1] || "-"}</p>
+                                        <p>색상: {item.color || "-"} · 사이즈: {item.size || "-"}</p>
                                         <span>수량: {item.quantity}</span>
                                     </div>
                                     <strong>{formatPrice(item.price * item.quantity)}</strong>

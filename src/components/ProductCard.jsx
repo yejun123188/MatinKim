@@ -18,19 +18,24 @@ export default function ProductCard({ cate }) {
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState(false);
     const [previewProduct, setPreviewProduct] = useState(null);
+    const [selectedColor, setSelectedColor] = useState(cate.colors?.[0] || '');
+    const [selectedSize, setSelectedSize] = useState(() => {
+        const availableSizeIndex = Array.isArray(cate.sizes)
+            ? cate.sizes.findIndex((size, index) => size && !cate.soldout?.[index])
+            : -1;
+        return availableSizeIndex >= 0 ? cate.sizes[availableSizeIndex] : cate.sizes?.[0] || '';
+    });
     const displayProduct = previewProduct || cate;
     const isSoldOut = Array.isArray(cate.soldout) && cate.soldout.length > 0 && cate.soldout.every(Boolean);
-    const availableSizeIndex = Array.isArray(cate.sizes)
-        ? cate.sizes.findIndex((size, index) => size && !cate.soldout?.[index])
-        : -1;
-    const defaultSize = availableSizeIndex >= 0 ? cate.sizes[availableSizeIndex] : cate.sizes?.[0] || '';
-    const defaultColor = cate.colors?.[0] || '';
     const salePrice = cate.discountRate > 0 ? cate.discountPrice : cate.price;
     const colorVariants = useMemo(() => {
         const baseName = getProductBaseName(cate);
         const variants = items.filter((item) => getProductBaseName(item) === baseName && item.colors?.[0]);
 
-        return variants.length > 0 ? variants : [cate];
+        // Sort variants based on the order of cate.colors
+        const sortedVariants = cate.colors?.map(color => variants.find(v => v.colors?.[0] === color)).filter(Boolean) || [];
+
+        return sortedVariants.length > 0 ? sortedVariants : [cate];
     }, [items, cate]);
     const badgeItems = isSoldOut
         ? [{
@@ -81,18 +86,32 @@ export default function ProductCard({ cate }) {
             id: cate.id,
             name: cate.name,
             price: salePrice,
-            size: defaultSize,
-            color: defaultColor,
+            size: selectedSize,
+            color: selectedColor,
             count: 1,
             image: cate.mainImg || cate.hoverImg,
-            key: `${cate.id}-${defaultSize}-${defaultColor}`
+            key: `${cate.id}-${selectedSize}-${selectedColor}`
         });
         openCart();
     };
 
     const handleBuyNow = (event) => {
         handleActionClick(event);
-        handleMoveDetail();
+        const selectedVariant = colorVariants.find(v => v.colors?.[0] === selectedColor) || cate;
+        const salePrice = selectedVariant.discountRate > 0 ? selectedVariant.discountPrice : selectedVariant.price;
+        navigate('/payment', {
+            state: {
+                orderItems: [{
+                    id: selectedVariant.id,
+                    name: selectedVariant.name,
+                    price: salePrice,
+                    size: selectedSize,
+                    color: selectedColor,
+                    quantity: 1,
+                    image: selectedVariant.mainImg || selectedVariant.hoverImg
+                }]
+            }
+        });
     };
 
     const handleKeyDown = (event) => {
@@ -105,13 +124,12 @@ export default function ProductCard({ cate }) {
     return (
         <li
             className="product-card"
-            onClick={handleMoveDetail}
             onKeyDown={handleKeyDown}
             role="link"
             tabIndex={0}
             aria-label={`${cate.name} 상세페이지 이동`}
         >
-            <div className="img-box">
+            <div className="img-box" onClick={handleMoveDetail}>
                 <img className="main-img" src={displayProduct.mainImg} alt={displayProduct.name} />
                 <img className="hover-img" src={previewProduct ? displayProduct.mainImg : cate.hoverImg} alt={displayProduct.name} />
                 {badgeItems.length > 0 && (
@@ -148,14 +166,18 @@ export default function ProductCard({ cate }) {
                     if (!color) return null;
 
                     return (
-                    <span
-                        key={`${variant.id}-${color}-${id}`}
-                        className="color-chip"
-                        style={getColorStyle(color)}
-                        aria-label={color}
-                        title={color}
-                        onMouseEnter={() => setPreviewProduct(variant)}
-                    ></span>
+                        <span
+                            key={`${variant.id}-${color}-${id}`}
+                            className={`color-chip ${selectedColor === color ? 'selected' : ''}`}
+                            style={getColorStyle(color)}
+                            aria-label={color}
+                            title={color}
+                            onMouseEnter={() => setPreviewProduct(variant)}
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                setSelectedColor(color);
+                            }}
+                        ></span>
                     );
                 })}
             </div>
@@ -164,7 +186,11 @@ export default function ProductCard({ cate }) {
                     {cate.sizes.filter(Boolean).map((size, index) => (
                         <span
                             key={`${cate.id}-${size}-${index}`}
-                            className={cate.soldout?.[index] ? 'is-soldout' : ''}
+                            className={`${cate.soldout?.[index] ? 'is-soldout' : ''} ${selectedSize === size ? 'selected' : ''}`}
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                if (!cate.soldout?.[index]) setSelectedSize(size);
+                            }}
                         >
                             {size}
                         </span>
