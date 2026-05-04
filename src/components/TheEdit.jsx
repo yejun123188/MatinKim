@@ -1,44 +1,64 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import SectionTitle from './SectionTitle'
 import { Link } from 'react-router-dom'
-
 import "./scss/theedit.scss"
+import { useProductStore } from '../store/useProductStore'
 
-const edits = [
+const EDIT_CONFIG = [
     {
-        src: "./images/main-theedit/edit1.png", alt: "edit1", title: "Matin Kim X Nct jeno", subscribe: "'No Rush!'", link: "",
-        sub: [
-            { img: "", name: "상품제목들어감", price: "₩89,000", colors: ["#ED7171", "#4D4D4D", "#008318"], link: "" },
-            { img: "", name: "2", price: "₩89,000", colors: ["#ED7171", "#4D4D4D", "#008318"], link: "" }
-        ]
+        src: "./images/main-theedit/edit1.png",
+        alt: "edit1",
+        title: "Matin Kim X Nct jeno",
+        subscribe: "'No Rush!'",
+        link: "",
+        subIds: ["5514", "9008"],
+        useHover: false,
     },
     {
-        src: "./images/main-theedit/edit2.png", alt: "edit2", title: "Matin kim x Liz ", subscribe: "'BUCKET LIST'", link: "",
-        sub: [
-            { img: "", name: "상품제목들어감", price: "₩89,000", colors: ["#ED7171", "#4D4D4D", "#008318"], link: "" },
-            { img: "", name: "2", price: "₩89,000", colors: ["#ED7171", "#4D4D4D", "#008318"], link: "" }
-        ]
+        src: "./images/main-theedit/edit2.png",
+        alt: "edit2",
+        title: "Matin kim x Liz",
+        subscribe: "'BUCKET LIST'",
+        link: "",
+        subIds: ["8721", "8951"],
+        useHover: true,  // ← 이것만 hoverImg 사용
     },
     {
-        src: "./images/main-theedit/edit3.png", alt: "edit3", title: "Matin kim x Ningning", subscribe: "'Record 2'", link: "",
-        sub: [
-            { img: "", name: "상품제목들어감", price: "₩89,000", colors: ["#ED7171", "#4D4D4D", "#008318"], link: "" },
-            { img: "", name: "2", price: "₩89,000", colors: ["#ED7171", "#4D4D4D", "#008318"], link: "" }
-        ]
-    }
+        src: "./images/main-theedit/edit3.png",
+        alt: "edit3",
+        title: "Matin kim x Ningning",
+        subscribe: "'Record 2'",
+        link: "",
+        subIds: ["8367", "8344"],
+        useHover: false,
+    },
 ]
 
 export default function TheEdit() {
+    const { items, onFetchItem, onColorCode } = useProductStore();
+
+    useEffect(() => {
+        if (items.length === 0) onFetchItem();
+    }, [items.length, onFetchItem]);
+
+    const edits = useMemo(() => {
+        return EDIT_CONFIG.map((edit) => ({
+            ...edit,
+            sub: edit.subIds
+                .map((id) => items.find((item) => item.id === id))
+                .filter(Boolean),
+        }));
+    }, [items]);
+
     return (
         <section className="the-edit-section">
             <div className="inner">
                 <SectionTitle title="THE EDIT" subtitle="Chosen by jeno, liz, ningning" />
                 <div className='edit-wrap'>
-                    {edits.map((e, id) => (
-                        <div className="edit-list" key={id}>
+                    {edits.map((e, idx) => (
+                        <div className="edit-list" key={idx}>
                             <div className="top">
-                                <Link>
-                                    {/* 포스트사진 누르면 링크해서 컬랙션 - 컬렉션 상세페이지로 이동 */}
+                                <Link to={e.link}>
                                     <div className="img-box">
                                         <img src={e.src} alt={e.alt} />
                                     </div>
@@ -49,25 +69,45 @@ export default function TheEdit() {
                                 </Link>
                             </div>
                             <div className="bottom">
-                                {e.sub.map((s, id) => (
-                                    <div className='bottom-edit-list' key={id}>
-                                        {/* 제품 누르면 제품 상세페이지로 이동 */}
-                                        <Link>
-                                            <div className="img-box">
-                                                <img src={s.src} alt="사진들어감" />
-                                            </div>
-                                            <ul className="text-box">
-                                                <li>{s.name}</li>
-                                                <li>{s.price}</li>
-                                                <li>{s.colors.map((c, id) => (
-                                                    <span key={id} style={{ backgroundColor: c }}>색상선택</span>
-                                                ))}</li>
-                                            </ul>
-                                        </Link>
-                                    </div>
-                                ))}
-                            </div>
+                                {e.sub.map((s) => {
+                                    // useHover가 true면 hoverImg, 없으면 mainImg fallback
+                                    const thumbnail = e.useHover
+                                        ? (s.hoverImg || s.mainImg)
+                                        : (s.mainImg || s.hoverImg);
 
+                                    return (
+                                        <div className='bottom-edit-list' key={s.id}>
+                                            <Link to={`/products/${s.id}`}>
+                                                <div className="img-box">
+                                                    <img src={thumbnail} alt={s.name} />
+                                                </div>
+                                                <ul className="text-box">
+                                                    <li>{s.name}</li>
+                                                    <li>
+                                                        {s.discountRate > 0 ? (
+                                                            <>
+                                                                <p className="discount-rate">{s.discountRate}%</p>
+                                                                <p className="discount-price">₩{s.discountPrice.toLocaleString()}</p>
+                                                                <p className="original-price">₩{s.price.toLocaleString()}</p>
+                                                            </>
+                                                        ) : (
+                                                            <p className="price">₩{s.price.toLocaleString()}</p>
+                                                        )}
+                                                    </li>
+                                                    <li className="color-list">
+                                                        {(s.colors || []).map((c, cIdx) => (
+                                                            <span
+                                                                key={cIdx}
+                                                                style={{ backgroundColor: onColorCode(c) }}
+                                                            />
+                                                        ))}
+                                                    </li>
+                                                </ul>
+                                            </Link>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
                     ))}
                 </div>
