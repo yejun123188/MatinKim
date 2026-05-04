@@ -313,6 +313,19 @@ export const useProductStore = create((set, get) => ({
         const updated = get().wishList.filter((w) => w.key !== key);
         set({ wishList: updated });
         if (uid) await get()._saveWishList(uid, updated);
+        alert("상품이 삭제되었습니다")
     },
-
+    //장바구니에서 옵션변경
+    onUpdateOption: (oldKey, newOption) => set((state) => ({
+        cartItem: state.cartItem.map((item) =>
+            item.key === oldKey
+                ? {
+                    ...item,
+                    size: newOption.size,
+                    color: newOption.color,
+                    key: `${item.id}-${newOption.size}-${newOption.color}`,
+                }
+                : item
+        ),
+    })),
 }))

@@ -5,11 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function NewArrivals() {
     const { NewItems, onNewMenus, onColorCode } = useProductStore();
-
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function NewArrivals() {
                             현실의 경계 위에 그려낸다.
                         </pre>
                         <div className="button-box">
-                            <Link> SHOP THE NEW IN</Link>
+                            <Link to="/newin"> SHOP THE NEW IN</Link>
                             <img src="/" alt="" />
                         </div>
                     </div>
@@ -54,13 +54,24 @@ export default function NewArrivals() {
                                     <div className="img-box" >
                                         <img onMouseEnter={(e) => (e.currentTarget.src = item.mainImg)}
                                             onMouseLeave={(e) => (e.currentTarget.src = item.hoverImg)}
+                                            onClick={() => navigate(`products/${item.id}`)}
                                             src={item.hoverImg}
                                             alt={item.name} />
                                         <span className='heart'><img src="/images/heart-default.svg" alt="하트" /></span>
                                     </div>
                                     <ul className="text-box">
-                                        <li id='name'>{item.name}</li>
-                                        <li id='price'>₩ {item.price}</li>
+                                        <li id='name' onClick={() => navigate(`products/${item.id}`)}>{item.name}</li>
+                                        <li id=''>
+                                            {item.discountRate > 0 ? (
+                                                <>
+                                                    <p className="discount-rate">{item.discountRate}%</p>
+                                                    <p className="discount-price">₩{item.discountPrice.toLocaleString()}</p>
+                                                    <p className="original-price">₩{item.price.toLocaleString()}</p>
+                                                </>
+                                            ) : (
+                                                <p className="price">₩{item.price.toLocaleString()}</p>
+                                            )}
+                                        </li>
                                         <li id='colors'>
                                             {item.colors.map((c, id) => (
                                                 <span key={id} style={{ backgroundColor: onColorCode(c) }}></span>

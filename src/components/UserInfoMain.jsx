@@ -4,10 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./scss/userInfoMain.scss";
-
 import { FreeMode } from "swiper/modules";
-import OptionPopup from "./OptionPopup";
 import UserInfoNone from "./UserInfoNone";
+import { useProductStore } from "../store/useProductStore";
+import { useAuthStore } from "../store/useAuthStore";
+import { useNavigate } from "react-router-dom";
+import WishItem from "./WishItem";
+import CartPopup from "../pages/CartPopup";
+import Cart from "../pages/Cart";
 
 const statusCode = {
   주문확인중: "ORDER",
@@ -57,42 +61,20 @@ const orders = [
   },
 ];
 
-const wishs = [
-  {
-    id: 1,
-    name: "CAMOUFLAGE LOGO BALL CAP IN BEIGE",
-    img: "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202602/377cb8c737dfecc223743aada3501cf5.jpg",
-    price: 68000,
-    discountRate: 0,
-    discountPrice: 68000,
-    size: "FREE",
-    count: 1,
-  },
-  {
-    id: 2,
-    name: "WAIST BUCKLE STITCH POINT TWILL DENIM PANTS IN BROWN",
-    img: "https://matinkim.com/web/product/medium/202602/fd89a5a318d1273c27a797ae411a5273.jpg",
-    price: 124600,
-    discountRate: 30,
-    discountPrice: 178000,
-    size: "M",
-    count: 1,
-  },
-  {
-    id: 3,
-    name: "MATIN KIM LOGO WAFFLE TOP FOR MEN IN LIGHT BEIGE",
-    img: "https://matinkim.com/web/product/medium/202603/61b2d05e56a5c7a435b49d89e32d4bde.jpg",
-    price: 70200,
-    discountRate: 10,
-    discountPrice: 78000,
-    size: "L",
-    count: 2,
-  },
-];
-
 export default function UserInfoMain() {
-  const [optionOpen, setOptionOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [showCartPopup, setShowCartPopup] = useState(false);
+  const [cartItem, setCartItem] = useState(null);
+  const [showCart, setShowCart] = useState(false);
+
+  const { wishList } = useProductStore();
+  const { user: authUser } = useAuthStore();
+  const navigate = useNavigate();
+
+  const sortedWishList = [...wishList].sort((a, b) => {
+    const aOut = a.isSoldOut ? 1 : 0;
+    const bOut = b.isSoldOut ? 1 : 0;
+    return aOut - bOut;
+  });
 
   return (
     <div className="main">
@@ -135,6 +117,7 @@ export default function UserInfoMain() {
           </ul>
         </UserInfoMainBox>
       </div>
+
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
           {orders.length > 0 ? (
@@ -151,12 +134,8 @@ export default function UserInfoMain() {
                     <img src={order.img} alt={order.name} />
                   </div>
                   <div className="text-box">
-                    <div
-                      className={`status status-${statusCode[order.status]}`}
-                    >
-                      {order.status === "배송중" && (
-                        <span className="dot"></span>
-                      )}
+                    <div className={`status status-${statusCode[order.status]}`}>
+                      {order.status === "배송중" && <span className="dot"></span>}
                       {order.status}
                     </div>
                     <div className="product-text">
@@ -174,9 +153,10 @@ export default function UserInfoMain() {
           )}
         </UserInfoMainBox>
       </div>
+
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
-          {wishs.length > 0 ? (
+          {sortedWishList.length > 0 ? (
             <Swiper
               slidesPerView={2.7}
               spaceBetween={24}
@@ -184,52 +164,43 @@ export default function UserInfoMain() {
               modules={[FreeMode]}
               className="wish-list"
             >
-              {wishs.map((wish) => (
-                <SwiperSlide className="wish-product" key={wish.id}>
-                  <div className="img-box">
-                    <img src={wish.img} alt={wish.name} />
-                  </div>
-                  <div className="text-box">
-                    <div className="text-wrap">
-                      <p className="wish-name">{wish.name}</p>
-                      <p className="wish-price">
-                        ￦{wish.price.toLocaleString()}
-                        {wish.discountRate > 0 && (
-                          <span>￦{wish.discountPrice.toLocaleString()}</span>
-                        )}
-                      </p>
-                      <p className="wish-count">
-                        {wish.size} / {wish.count}개
-                      </p>
-                    </div>
-                    <div className="button-wrap">
-                      <button
-                        className="Bbtn"
-                        onClick={() => {
-                          setSelectedItem(wish);
-                          setOptionOpen(true);
-                        }}
-                      >
-                        Edit Options
-                      </button>
-                      <button className="Wbtn">Add To Cart</button>
-                      <button className="Wbtn">Remove</button>
-                    </div>
-                  </div>
+              {sortedWishList.map((wish) => (
+                <SwiperSlide
+                  className={`wish-product${wish.isSoldOut ? " soldout" : ""}`}
+                  key={wish.key}
+                >
+                  <WishItem
+                    wish={wish}
+                    variant="card"
+                    onCartPopup={(item) => {
+                      setCartItem(item);
+                      setShowCartPopup(true);
+                    }}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
           ) : (
             <UserInfoNone title="관심상품" />
           )}
-
-          <OptionPopup
-            open={optionOpen}
-            data={selectedItem}
-            onClose={() => setOptionOpen(false)}
-          />
         </UserInfoMainBox>
       </div>
+
+      {showCartPopup && (
+        <CartPopup
+          mode="wish"
+          product={cartItem}
+          selectedColor={cartItem?.selectedColor}
+          selectedSize={cartItem?.selectedSize}
+          quantity={cartItem?.quantity}
+          onClose={() => setShowCartPopup(false)}
+          onGoCart={() => {
+            setShowCartPopup(false);
+            setShowCart(true);
+          }}
+        />
+      )}
+      {showCart && <Cart onClose={() => setShowCart(false)} />}
     </div>
   );
 }

@@ -5,26 +5,95 @@ import { useProductStore } from '../store/useProductStore';
 import "./scss/WishList.scss"
 import CartPopup from '../pages/CartPopup';
 import Cart from '../pages/Cart';
+import WishItem from './WishItem';
+
 export default function WishList() {
   const navigate = useNavigate();
   const { user } = useAuthStore();
   const { wishList, onRemoveWish, onLoadWishList, onAddCart } = useProductStore();
-  //장바구니 팝업 열었다 닫았다 체크
-  const [showCartPopup, setShowCartPopup] = useState(false)
+
+  const [showCartPopup, setShowCartPopup] = useState(false);
   const [cartItem, setCartItem] = useState(null);
   const [showCart, setShowCart] = useState(false);
-  //remove버튼 클릭시
-  const handleRemove = async (p) => {
-    await onRemoveWish(p.key, user.uid)
-    alert("상품이 삭제되었습니다")
+  const [checkedKeys, setCheckedKeys] = useState([]);
 
-  }
   // 로그인 유저 위시리스트 불러오기
   useEffect(() => {
     if (user?.uid) {
       onLoadWishList(user.uid);
     }
   }, [user]);
+
+  // 위시리스트 변경 시 체크 상태에서 삭제된 항목 정리
+  useEffect(() => {
+    const validKeys = wishList.map((p) => p.key);
+    setCheckedKeys((prev) => prev.filter((k) => validKeys.includes(k)));
+  }, [wishList]);
+
+  //품절된 상품은 리스트 아래뜨게
+  const sortedWishList = [...wishList].sort((a, b) => {
+    return (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0);
+  });
+
+  // 전체선택 여부
+  const isAllChecked =
+    sortedWishList.length > 0 &&
+    sortedWishList.every((p) => checkedKeys.includes(p.key));
+
+  const handleAllCheck = (e) => {
+    if (e.target.checked) {
+      setCheckedKeys(sortedWishList.map((p) => p.key));
+    } else {
+      setCheckedKeys([]);
+    }
+  };
+
+  const handleItemCheck = (key) => {
+    setCheckedKeys((prev) =>
+      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
+    );
+  };
+
+  // remove 버튼 클릭 시
+  const handleRemove = async (p) => {
+    await onRemoveWish(p.key, user.uid);
+
+  };
+
+  // 선택 삭제
+  const handleSelectedDelete = async () => {
+    if (checkedKeys.length === 0) {
+      alert('삭제할 상품을 선택해주세요.');
+      return;
+    }
+    const targets = wishList.filter((p) => checkedKeys.includes(p.key));
+    for (const p of targets) {
+      await onRemoveWish(p.key, user.uid);
+    }
+    setCheckedKeys([]);
+  };
+
+  // 선택 상품 주문
+  const handleSelectedOrder = () => {
+    if (checkedKeys.length === 0) {
+      alert('주문할 상품을 선택해주세요.');
+      return;
+    }
+    const targets = wishList.filter((p) => checkedKeys.includes(p.key));
+    const soldOutItems = targets.filter((p) => Boolean(p.isSoldOut));
+
+    if (soldOutItems.length > 0) {
+      const names = soldOutItems.map((p) => p.name).join(', ');
+      alert(
+        `아래 품절 상품은 주문이 불가합니다:\n${names}\n\n품절 상품을 제외하고 주문하시거나, 선택을 변경해주세요.`
+      );
+      return;
+    }
+
+    // 품절 없는 경우  실제 주문 
+    alert(`${targets.length}개 상품 주문을 진행합니다.`);
+    // navigate('/order', { state: { items: targets } }) 
+  };
 
   // 비로그인 상태
   if (!user) {
@@ -36,18 +105,19 @@ export default function WishList() {
     );
   }
 
-  const sortedWishList = [...wishList].sort((a, b) => {
-    return (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0);
-  });
-
   return (
     <div className="wishlist-wrap">
       <div className="top">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={isAllChecked}
+            onChange={handleAllCheck}
+          />
           전체선택
         </label>
       </div>
+
       <div className="middle">
         <ul className="wish-list">
           {wishList.length === 0 && (
@@ -55,104 +125,54 @@ export default function WishList() {
           )}
 
           {sortedWishList.map((p) => {
-            // 선택된 사이즈의 인덱스를 찾아 soldout 여부 확인
-            const sizeIndex = (p.sizes || []).findIndex(s => s === p.selectedSize);
             const isSoldOut = Boolean(p.isSoldOut);
-            console.log('soldout:', p.soldout);
-            console.log('selectedSize:', p.selectedSize);
+            const isChecked = checkedKeys.includes(p.key);
+
             return (
-              <li key={p.key} className={`items ${isSoldOut ? 'is-soldout' : ''}`}>
+              <li key={p.key} className={`items ${isSoldOut ? "is-soldout" : ""}`}>
                 <div>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => handleItemCheck(p.key)}
+                  />
                 </div>
-                <div className="img-box" onClick={() => navigate(`/products/${p.id}`)}>
-                  <img src={p.mainImg} alt={p.name} />
-                </div>
-                <div>
-                  <div className="text-box">
-                    <p className="title" onClick={() => navigate(`/products/${p.id}`)}>{p.name}</p>
-
-                    {p.discountRate > 0 ? (
-                      <div className='price-box'>
-                        <strong className="discount-price">
-                          ₩{p.discountPrice?.toLocaleString()}원
-                        </strong>
-                        <span className="price">
-                          {p.price?.toLocaleString()}원
-                        </span>
-                        <span className="discount-rate">
-                          {p.discountRate}%
-                        </span>
-                      </div>
-                    ) : (
-                      <strong className='price2'>₩{p.price?.toLocaleString()}원</strong>
-                    )}
-                  </div>
-
-                  {/* 솔드아웃이면 옵션 숨김 */}
-                  {!isSoldOut && (
-                    <div className="option-box">
-                      <p className="option">
-                        {p.selectedColor} /  {p.selectedSize} /  {p.quantity}개
-                      </p>
-                    </div>
-                  )}
-                  {isSoldOut && (
-                    <span className="soldout-badge">SOLD OUT</span>
-                  )}
-
-                  <div className="button-box">
-                    {/* 솔드아웃이면 Buy / Cart 버튼 숨김 */}
-                    {!isSoldOut && (
-                      <>
-                        <button>Buy It Now</button>
-                        <button onClick={() => {
-                          const item = {
-                            id: p.id,
-                            name: p.name,
-                            price: p.price,
-                            discountPrice: p.discountPrice,
-                            discountRate: p.discountRate,
-                            mainImg: p.mainImg,
-                            hoverImg: p.hoverImg, image: p.mainImg || p.hoverImg,
-                            key: `${p.id}-${p.selectedSize}-${p.selectedColor}`
-                          };
-                          setCartItem(p);
-                          setShowCartPopup(true);
-                          onAddCart({ ...item, size: p.selectedSize, color: p.selectedColor, count: p.quantity });
-                        }}
-
-                        >Add To Cart</button>
-                      </>
-                    )}
-                    <button onClick={() => {
-                      handleRemove(p)
-                    }}>
-                      Remove
-                    </button>
-                  </div>
-                </div>
+                <WishItem
+                  wish={p}
+                  variant="list"
+                  onCartPopup={(item) => {
+                    setCartItem(item);
+                    setShowCartPopup(true);
+                  }}
+                />
               </li>
             );
           })}
+
+
         </ul>
+
         <div className="button-box">
-          <button>선택상품주문</button>
-          <button>선택삭제</button>
+          <button onClick={handleSelectedOrder}>선택상품주문</button>
+          <button onClick={handleSelectedDelete}>선택삭제</button>
         </div>
       </div>
-      {showCartPopup && <CartPopup
-        mode="best"
-        product={cartItem}
-        selectedColor={cartItem?.selectedColor}
-        selectedSize={cartItem?.selectedSize}
-        quantity={cartItem?.quantity}
-        onClose={() => setShowCartPopup(false)}
-        onGoCart={() => {
-          setShowCartPopup(false);
-          setShowCart(true);
-        }} />}
+
+      {showCartPopup && (
+        <CartPopup
+          mode="best"
+          product={cartItem}
+          selectedColor={cartItem?.selectedColor}
+          selectedSize={cartItem?.selectedSize}
+          quantity={cartItem?.quantity}
+          onClose={() => setShowCartPopup(false)}
+          onGoCart={() => {
+            setShowCartPopup(false);
+            setShowCart(true);
+          }}
+        />
+      )}
       {showCart && <Cart onClose={() => setShowCart(false)} />}
-    </div >
+    </div>
   );
 }
