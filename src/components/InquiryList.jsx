@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getQuickRangeValues } from "../utils/orderDateUtils";
 import "./scss/InquiryList.scss";
+import UserInfoNone from "./UserInfoNone";
 
 const inquiryRows = [
   {
@@ -113,11 +114,7 @@ export default function InquiryList() {
               </tr>
             ))
           ) : (
-            <tr>
-              <td colSpan="5" className="inquiry-empty">
-                조회된 문의가 없습니다.
-              </td>
-            </tr>
+            <UserInfoNone title="문의" />
           )}
         </tbody>
       </table>

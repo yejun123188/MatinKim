@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
-import Cart from "../pages/Cart"
+import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
-import { useNavigate } from "react-router-dom";
+import { useLoginStore } from "../store/useLoginStore";
 
 const topmenus = [
   { key: "shop", label: "SHOP" },
@@ -13,6 +13,7 @@ const topmenus = [
   { key: "collections", label: "COLLECTIONS" },
   { key: "about", label: "ABOUT" },
 ];
+
 const defaultMenus = [
   { name: "SALE", link: "/sale" },
   { name: "NEW IN", link: "/newin" },
@@ -20,6 +21,7 @@ const defaultMenus = [
   { name: "COLLAB", link: "/collab" },
   { name: "ALL", link: "/all" },
 ];
+
 const photoMenu = [
   {
     src: "/images/collection/jeno/img_jeno_00019.jpg",
@@ -43,32 +45,58 @@ const photoMenu = [
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const isHome = location.pathname === "/";
-  const { menus, cartCount, isCartOpen, openCart, closeCart } = useProductStore();
+
+  const { menus, cartCount, isCartOpen, openCart, closeCart } =
+    useProductStore();
+
+  const { user, onLogout } = useAuthStore();
+  const { isLoginOpen, openLogin, closeLogin } = useLoginStore();
+
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoginOpen, setLoginOpen] = useState(false);
-  const { user } = useAuthStore();
-  const navigate = useNavigate();
+
+  const handleAuthButtonClick = async () => {
+    if (user) {
+      await onLogout();
+      navigate("/");
+    } else {
+      openLogin();
+    }
+  };
+
+  const handleTopMenuEnter = (key) => {
+    if (key === "shop") {
+      setIsShopHovered(true);
+    } else {
+      setIsShopHovered(false);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isCartOpen) {
+    if (isCartOpen || isLoginOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
+
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isCartOpen]);
+  }, [isCartOpen, isLoginOpen]);
 
   return (
     <>
@@ -80,59 +108,89 @@ export default function Header() {
         )}
 
         <div
-          className={`header-wrapper ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""} ${!isHome || isScrolled ? "no-banner" : ""}`}
+          className={`header-wrapper ${isHome ? "home" : "subpage"} ${
+            isScrolled ? "scrolled" : ""
+          } ${!isHome || isScrolled ? "no-banner" : ""}`}
           onMouseLeave={() => setIsShopHovered(false)}
         >
           <div
-            className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""} ${!isHome || isScrolled ? "no-banner" : ""}`}
+            className={`header-show ${isHome ? "home" : "subpage"} ${
+              isScrolled ? "scrolled" : ""
+            } ${!isHome || isScrolled ? "no-banner" : ""}`}
           >
             <div className="inner">
               <div className="header-left">
                 <h1>
-                  <Link to={"/"}
-                    onClick={() => setIsShopHovered(false)}>
-                    <img src="/images/header/logo-MatinKim-black.svg" alt="로고" />
+                  <Link to="/" onClick={() => setIsShopHovered(false)}>
+                    <img
+                      src="/images/header/logo-MatinKim-black.svg"
+                      alt="로고"
+                    />
                   </Link>
                 </h1>
+
                 <nav>
-                  <ul className="main-menu">
-                    {topmenus.map((menu, id) => (
+                  <ul>
+                    {topmenus.map((menu) => (
                       <li
-                        key={id}
-                        onClick={() => setIsShopHovered(false)}
-                        onMouseEnter={() =>
-                          menu.key === "shop" ? setIsShopHovered(true) : setIsShopHovered(false)
-                        }
+                        key={menu.key}
+                        onMouseEnter={() => handleTopMenuEnter(menu.key)}
                       >
-                        <Link to={menu.key === "shop" ? "/sale" : `/${menu.key}`}>{menu.label}</Link>
+                        <Link
+                          to={menu.key === "shop" ? "/all" : `/${menu.key}`}
+                          onClick={() => setIsShopHovered(false)}
+                        >
+                          {menu.label}
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </nav>
               </div>
+
               <div className="header-right">
                 <ul className="gnb-list">
                   <li>
                     <input type="text" placeholder="SEARCH" />
                   </li>
+
                   <li className="header-cart">
-                    <Link onClick={openCart}>
-                      <img src="/images/header-icon/cart.svg" alt="" />
-                      <span className="cart-num">
-                        <span>{cartCount}</span>
-                      </span>
-                    </Link>
+                    <button type="button" onClick={openCart}>
+                      <img src="/images/header-icon/cart.svg" alt="장바구니" />
+                      {cartCount > 0 && (
+                        <span className="cart-num">
+                          <span>{cartCount}</span>
+                        </span>
+                      )}
+                    </button>
                   </li>
+
                   <li className="member">
                     {user ? (
                       <Link to="/userInfo">
-                        <img src="/images/header-icon/user.svg" alt="" />
+                        <img
+                          src="/images/header-icon/user.svg"
+                          alt="회원정보"
+                        />
                       </Link>
                     ) : (
-                      <button type="button" onClick={() => setLoginOpen(true)}>
-                        <img src="/images/header-icon/user.svg" alt="" />
+                      <button type="button" onClick={openLogin}>
+                        <img src="/images/header-icon/user.svg" alt="로그인" />
                       </button>
                     )}
+                  </li>
+
+                  <li className="auth-action">
+                    <button type="button" onClick={handleAuthButtonClick}>
+                      <img
+                        src={
+                          user
+                            ? "/images/header/logout.svg"
+                            : "/images/header/login.svg"
+                        }
+                        alt={user ? "로그아웃" : "로그인"}
+                      />
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -157,6 +215,7 @@ export default function Header() {
                   ))}
                 </ul>
               </div>
+
               <div className="header-active-middle">
                 <ul className="main-menu">
                   {menus.map((menu, id) => (
@@ -165,6 +224,7 @@ export default function Header() {
                         {menu.name}
                         <img src="/images/header/move-arrow-icon.svg" alt="" />
                       </Link>
+
                       <ul className="sub-menu">
                         {menu.subMenu.map((m, id) => (
                           <li key={id}>
@@ -179,9 +239,10 @@ export default function Header() {
                   ))}
                 </ul>
               </div>
+
               <div className="header-active-right">
                 {photoMenu.map((m, id) => (
-                  <Link key={id} to={m.link}>  {/* to 추가 */}
+                  <Link key={id} to={m.link}>
                     <div className="img-box">
                       <img src={m.src} alt="" />
                       <div className="text-box">
@@ -195,14 +256,9 @@ export default function Header() {
             </div>
           </div>
         </div>
-
-        <div
-          className={`header-overlay ${isShopHovered ? "active" : ""}`}
-          onMouseEnter={() => setIsShopHovered(false)}
-        />
       </header>
 
-      {isLoginOpen && <Login onClose={() => setLoginOpen(false)} />}
+      {isLoginOpen && <Login onClose={closeLogin} />}
       {isCartOpen && <Cart onClose={closeCart} />}
     </>
   );

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ordersData from "../data/ordersData";
 import "./scss/orderList.scss";
 import OrderDateFilter from "./OrderDateFilter";
 import OrderProduct from "./OrderProduct";
 import OptionPopup from "./OptionPopup";
 import { getQuickRangeValues } from "../utils/orderDateUtils";
+import { getAllOrders } from "../utils/orderStorage";
+import UserInfoNone from "./UserInfoNone";
 
 const orderMenu = "주문내역";
 
@@ -24,31 +25,39 @@ const isWithinDateRange = (orderDate, range) => {
 export default function OrderList() {
   const navigate = useNavigate();
 
-  const tab1Status = [
-    "주문확인중",
-    "배송준비중",
-    "배송시작",
-    "배송중",
-    "배송완료",
-  ];
+  const tab1Status = ["결제완료", "배송준비중", "배송중", "배송완료"];
 
   const tab2Status = [
     "취소요청처리중",
     "취소완료",
     "반품요청처리중",
     "반품완료",
+    "교환요청처리중",
+    "교환완료",
   ];
 
   const tab3Status = ["조회불가"];
 
-  const orders = ordersData.flatMap((orderDetail) =>
-    orderDetail.orders.map((order) => ({
-      ...order,
-      orderNumber: orderDetail.orderNumber,
-      date: orderDetail.date,
-      state: orderDetail.state,
-      orderDetailId: orderDetail.id,
-    })),
+  const [now, setNow] = useState(Date.now());
+
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const orders = useMemo(
+    () =>
+      getAllOrders(now).flatMap((orderDetail) =>
+        orderDetail.orders.map((order) => ({
+          ...order,
+          orderNumber: orderDetail.orderNumber,
+          date: orderDetail.date,
+          state: orderDetail.state,
+          createdAt: orderDetail.createdAt,
+          orderDetailId: orderDetail.id,
+        })),
+      ),
+    [now],
   );
 
   const tab1Orders = orders.filter((order) =>
@@ -178,9 +187,7 @@ export default function OrderList() {
                   onTrackingClick={handleTrackingNavigate}
                 />
               ) : (
-                <p className="order-empty">
-                  선택한 날짜에 해당하는 주문이 없습니다.
-                </p>
+                <UserInfoNone title="주문내역" />
               )}
             </div>
           )}
@@ -216,9 +223,7 @@ export default function OrderList() {
                   }}
                 />
               ) : (
-                <p className="order-empty">
-                  선택한 날짜에 해당하는 주문이 없습니다.
-                </p>
+                <UserInfoNone title="주문내역" />
               )}
             </div>
           )}
@@ -235,9 +240,7 @@ export default function OrderList() {
               {filteredOrders.length > 0 ? (
                 <OrderProduct orders={filteredOrders} />
               ) : (
-                <p className="order-empty">
-                  선택한 연도에 해당하는 주문이 없습니다.
-                </p>
+                <UserInfoNone title="주문내역" />
               )}
             </div>
           )}

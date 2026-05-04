@@ -14,6 +14,7 @@ import Adress from "../components/Adress";
 import OrderTracking from "../components/OrderTracking";
 import InquiryList from "../components/InquiryList";
 import RecentViewedProducts from "../components/RecentViewedProducts";
+import UserAccountEdit from "../components/UserAccountEdit";
 
 const myMenu = "마이페이지";
 const orderMenu = "주문내역";
@@ -27,10 +28,11 @@ export default function UserInfo() {
   const selectMenu = orderId ? orderMenu : location.state?.menu || myMenu;
 
   const handleMenuClick = async (menu) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     if (menu === "로그아웃") {
       try {
         await onLogout();
-        alert("로그아웃 되었습니다!");
         navigate("/");
       } catch (err) {
         console.error("로그아웃 실패:", err);
@@ -68,7 +70,7 @@ export default function UserInfo() {
       case "최근 본 상품":
         return <p></p>;
       case "내 계정":
-        return <p></p>;
+        return <UserAccountEdit />;
       default:
         return <UserInfoMain />;
     }

@@ -49,6 +49,52 @@
                 padding: 24px 0;
                 border-bottom: 1px solid #eee;
 
+                .img-box {
+                    cursor: pointer;
+                }
+
+                .text-box {
+                    width: 346px;
+
+                    .title {
+                        cursor: pointer;
+                    }
+                }
+
+                &.is-soldout {
+                    .img-box {
+                        opacity: 0.4;
+                        cursor: pointer;
+                    }
+
+                    .text-box {
+
+
+                        .title {
+                            color: #bbb !important;
+                        }
+
+                        strong,
+                        .discount-price {
+                            color: #bbb !important;
+                        }
+
+                        .price,
+                        .discount-rate {
+                            color: #ccc !important;
+                        }
+                    }
+
+                    .soldout-badge {
+                        display: inline-block;
+                        margin-top: 6px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: #bbb;
+                        letter-spacing: 0.05em;
+                    }
+                }
+
                 input[type="checkbox"] {
                     width: 13px;
                     height: 13px;
@@ -79,33 +125,40 @@
                         font-size: 14px;
                         font-weight: 500;
                         color: #111;
-
                         white-space: nowrap;
-
-                        text-overflow: ellipsis;
-
+                        padding-bottom: 7px;
                     }
 
-                    .discount-price {
-                        font-size: 15px;
-                        font-weight: 700;
-                        color: #111;
-                    }
 
-                    .price {
-                        font-size: 13px;
-                        color: #aaa;
-                        text-decoration: line-through;
-                    }
 
-                    .discount-rate {
-                        font-size: 13px;
-                        color: #e74c3c;
-                        font-weight: 600;
+                    .price-box {
+                        display: flex;
+                        gap: 5px;
+                        align-items: flex-end;
+
+                        .discount-price {
+                            font-size: 15px;
+                            font-weight: 700;
+                            color: #111;
+                        }
+
+                        .price {
+                            font-size: 13px;
+                            color: #aaa;
+                            text-decoration: line-through;
+                        }
+
+                        .discount-rate {
+                            font-size: 13px;
+                            color: #e74c3c;
+                            font-weight: 600;
+                        }
                     }
                 }
 
                 .option-box {
+                    padding-top: 3px;
+
                     .option {
                         font-size: 13px;
                         color: #666;
@@ -117,7 +170,6 @@
                             margin-left: 6px;
                             font-size: 12px;
                             color: #888;
-                            text-decoration: underline;
                             background: none;
                             border: none;
                             cursor: pointer;
@@ -137,9 +189,7 @@
                         height: 36px;
                         font-size: 12px;
                         font-weight: 600;
-                        letter-spacing: 0.05em;
                         cursor: pointer;
-                        transition: background 0.2s, color 0.2s;
 
                         // BUY IT NOW - 검정 배경
                         &:nth-child(1) {
@@ -175,7 +225,7 @@
     }
 
     // 하단 버튼
-    >.button-box {
+    .button-box {
         display: flex;
         justify-content: flex-end;
         gap: 12px;
@@ -187,7 +237,7 @@
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s, color 0.2s;
+
 
             // 선택상품주문 - 검정
             &:nth-child(1) {
@@ -207,4 +257,5 @@
             }
         }
     }
+
 }

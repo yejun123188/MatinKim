@@ -1,16 +1,27 @@
 import React from "react";
 
 const statusCode = {
-  주문확인중: "ORDER",
+  결제완료: "ORDER",
   배송준비중: "READY",
-  배송시작: "START",
   배송중: "ING",
   배송완료: "DONE",
   취소요청처리중: "CANCEL_REQ",
   취소완료: "CANCEL_DONE",
   반품요청처리중: "RETURN_REQ",
   반품완료: "RETURN_DONE",
+  교환요청처리중: "EXCHANGE_REQ",
+  교환완료: "EXCHANGE_DONE",
   조회불가: "NONE",
+};
+
+const getOrderDateLabel = (orderDate, order) => {
+  if (orderDate !== "취소/반품") return orderDate;
+
+  if (order.status.startsWith("취소")) return "취소요청완료";
+  if (order.status.startsWith("반품")) return "반품요청완료";
+  if (order.status.startsWith("교환")) return "교환요청완료";
+
+  return orderDate;
 };
 
 const renderButtons = (
@@ -24,7 +35,7 @@ const renderButtons = (
     onTrackingClick,
   },
 ) => {
-  if (status === "주문확인중" || status === "배송준비중") {
+  if (status === "결제완료" || status === "배송준비중") {
     return (
       <button
         type="button"
@@ -107,7 +118,7 @@ export default function OrderProduct({
             {showHeader && showTitle && (
               <div className="order-list-title">
                 <div className="order-date">
-                  <p>{orderDate}</p>
+                  <p>{getOrderDateLabel(orderDate, representativeOrder)}</p>
                   <p>
                     {representativeOrder.date.slice(0, 4)}.
                     {representativeOrder.date.slice(4, 6)}.
