@@ -16,6 +16,9 @@
         height: 450px;
         transition: 0.6s;
 
+        opacity: 0;
+        transform: translateY(40px);
+
         &.active {
             width: 50%;
 
@@ -26,7 +29,6 @@
             }
 
             .text-box {
-
                 .text-bottom {
                     opacity: 1;
                 }
@@ -37,7 +39,7 @@
                 }
 
                 .text-top h3 {
-                    font-size: g.$size-30;
+                    font-size: 36px;
                     text-align: left;
                     transition: 0.6s;
                     opacity: 1;
@@ -64,7 +66,10 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+                background: linear-gradient(to bottom,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, 0) 50%,
+                        rgba(0, 0, 0, 0.4) 100%);
                 z-index: 1;
             }
         }
@@ -82,7 +87,6 @@
             z-index: 2;
 
             .text-top {
-
                 span {
                     font-size: g.$size-12-sub;
                     font-weight: g.$Regular;
@@ -92,13 +96,11 @@
                 }
 
                 h3 {
-                    font-size: g.$size-16;
                     letter-spacing: 2px;
                     font-weight: g.$Bold;
                     color: #fff;
                     text-align: center;
                     transition: 0.6s;
-                    opacity: 0.8;
                 }
             }
 
@@ -108,17 +110,16 @@
 
                 .text-des {
                     width: 300px;
-                    font-size: g.$size-12-sub;
+                    font-size: g.$size-14-main;
                     color: #fff;
                     margin-bottom: 10px;
-                    opacity: 0.7;
+                    opacity: 0.8;
                     line-height: 1.5;
                     height: calc(1.5em * 2);
                 }
 
                 .text-more {
                     display: flex;
-                    color: rgba(255, 255, 255, 0.7);
                     gap: 5px;
 
                     img {
@@ -132,6 +133,32 @@
                         opacity: 0.7;
                     }
                 }
+            }
+        }
+    }
+}
+
+@keyframes shortcutUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section.is-visible {
+    .shortcut-list {
+        li {
+            animation: shortcutUp 0.7s ease forwards;
+        }
+
+        @for $i from 1 through 4 {
+            li:nth-child(#{$i}) {
+                animation-delay: #{($i - 1) * 0.12}s;
             }
         }
     }

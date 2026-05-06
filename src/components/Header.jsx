@@ -108,15 +108,13 @@ export default function Header() {
         )}
 
         <div
-          className={`header-wrapper ${isHome ? "home" : "subpage"} ${
-            isScrolled ? "scrolled" : ""
-          } ${!isHome || isScrolled ? "no-banner" : ""}`}
+          className={`header-wrapper ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
+            } ${!isHome || isScrolled ? "no-banner" : ""}`}
           onMouseLeave={() => setIsShopHovered(false)}
         >
           <div
-            className={`header-show ${isHome ? "home" : "subpage"} ${
-              isScrolled ? "scrolled" : ""
-            } ${!isHome || isScrolled ? "no-banner" : ""}`}
+            className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
+              } ${!isHome || isScrolled ? "no-banner" : ""}`}
           >
             <div className="inner">
               <div className="header-left">
@@ -256,6 +254,10 @@ export default function Header() {
             </div>
           </div>
         </div>
+        <div
+          className={`header-overlay ${isShopHovered ? "active" : ""}`}
+          onMouseEnter={() => setIsShopHovered(false)}
+        />
       </header>
 
       {isLoginOpen && <Login onClose={closeLogin} />}

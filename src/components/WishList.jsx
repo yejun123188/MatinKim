@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuthStore } from "../store/useAuthStore";
-import { useProductStore } from "../store/useProductStore";
-import "./scss/WishList.scss";
-import CartPopup from "../pages/CartPopup";
-import Cart from "../pages/Cart";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../store/useAuthStore';
+import { useProductStore } from '../store/useProductStore';
+import "./scss/WishList.scss"
+import CartPopup from '../pages/CartPopup';
+import Cart from '../pages/Cart';
+import WishItem from './WishItem';
 
 const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
 const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
@@ -30,6 +31,78 @@ export default function WishList() {
     }
   }, [user, onLoadWishList]);
 
+  // 위시리스트 변경 시 체크 상태에서 삭제된 항목 정리
+  useEffect(() => {
+    const validKeys = wishList.map((p) => p.key);
+    setCheckedKeys((prev) => prev.filter((k) => validKeys.includes(k)));
+  }, [wishList]);
+
+  //품절된 상품은 리스트 아래뜨게
+  const sortedWishList = [...wishList].sort((a, b) => {
+    return (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0);
+  });
+
+  // 전체선택 여부
+  const isAllChecked =
+    sortedWishList.length > 0 &&
+    sortedWishList.every((p) => checkedKeys.includes(p.key));
+
+  const handleAllCheck = (e) => {
+    if (e.target.checked) {
+      setCheckedKeys(sortedWishList.map((p) => p.key));
+    } else {
+      setCheckedKeys([]);
+    }
+  };
+
+  const handleItemCheck = (key) => {
+    setCheckedKeys((prev) =>
+      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
+    );
+  };
+
+  // remove 버튼 클릭 시
+  const handleRemove = async (p) => {
+    await onRemoveWish(p.key, user.uid);
+
+  };
+
+  // 선택 삭제
+  const handleSelectedDelete = async () => {
+    if (checkedKeys.length === 0) {
+      alert('삭제할 상품을 선택해주세요.');
+      return;
+    }
+    const targets = wishList.filter((p) => checkedKeys.includes(p.key));
+    for (const p of targets) {
+      await onRemoveWish(p.key, user.uid);
+    }
+    setCheckedKeys([]);
+  };
+
+  // 선택 상품 주문
+  const handleSelectedOrder = () => {
+    if (checkedKeys.length === 0) {
+      alert('주문할 상품을 선택해주세요.');
+      return;
+    }
+    const targets = wishList.filter((p) => checkedKeys.includes(p.key));
+    const soldOutItems = targets.filter((p) => Boolean(p.isSoldOut));
+
+    if (soldOutItems.length > 0) {
+      const names = soldOutItems.map((p) => p.name).join(', ');
+      alert(
+        `아래 품절 상품은 주문이 불가합니다:\n${names}\n\n품절 상품을 제외하고 주문하시거나, 선택을 변경해주세요.`
+      );
+      return;
+    }
+
+    // 품절 없는 경우  실제 주문 
+    alert(`${targets.length}개 상품 주문을 진행합니다.`);
+    // navigate('/order', { state: { items: targets } }) 
+  };
+
+  // 비로그인 상태
   if (!user) {
     return (
       <div className="wishlist-wrap">
@@ -199,7 +272,6 @@ export default function WishList() {
           }}
         />
       )}
-
       {showCart && <Cart onClose={() => setShowCart(false)} />}
     </>
   );
