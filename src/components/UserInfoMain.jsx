@@ -52,12 +52,16 @@ const parseOrderDate = (date) => {
   ).getTime();
 };
 
+const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
+const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
+
 export default function UserInfoMain() {
   const navigate = useNavigate();
   const [now, setNow] = useState(Date.now());
   const [cartItem, setCartItem] = useState(null);
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [showCart, setShowCart] = useState(false);
+
   const {
     user,
     couponList,
@@ -65,6 +69,7 @@ export default function UserInfoMain() {
     onFetchCoupons,
     onFetchSavedMoney,
   } = useAuthStore();
+
   const { wishList, onLoadWishList, onRemoveWish, onAddCart } =
     useProductStore();
 
@@ -100,6 +105,7 @@ export default function UserInfoMain() {
           if (order.status !== "배송완료") return true;
 
           const createdAt = new Date(order.createdAt).getTime();
+
           if (Number.isNaN(createdAt)) {
             const orderDate = parseOrderDate(order.date);
             if (!orderDate) return false;
@@ -117,21 +123,25 @@ export default function UserInfoMain() {
 
   const displayName = user?.name || user?.nickname || userInfo.name;
   const localPurchaseInfo = getLocalPurchaseInfo(user);
+
   const purchaseAmount = Number(
     localPurchaseInfo.purchaseAmount ??
       user?.purchaseAmount ??
       user?.orderPrice ??
       userInfo.purchaseAmount,
   );
+
   const purchaseCount = Number(
     localPurchaseInfo.purchaseCount ??
       user?.purchaseCount ??
       user?.orderCount ??
       userInfo.purchaseCount,
   );
+
   const grade = getMemberGrade(purchaseAmount);
   const totalPoint = savedMoneySummary.totalPoint || 0;
   const couponCount = user ? couponList.length : 0;
+
   const sortedWishList = [...wishList].sort(
     (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
   );
@@ -149,9 +159,7 @@ export default function UserInfoMain() {
             id: wish.id,
             brand: "MATIN KIM",
             name: wish.name,
-            option: `${wish.selectedColor || "-"} / ${
-              wish.selectedSize || "-"
-            }`,
+            option: `${wish.selectedColor || "-"} / ${wish.selectedSize || "-"}`,
             quantity: wish.quantity || 1,
             price: getWishPrice(wish),
             image: wish.mainImg || wish.hoverImg || "",
@@ -199,6 +207,7 @@ export default function UserInfoMain() {
             <p>
               반가워요! <strong>{displayName}</strong> 님
             </p>
+
             <ul className="myinfo-list">
               <li>
                 <div>
@@ -207,14 +216,16 @@ export default function UserInfoMain() {
                     <strong style={{ color: gradeColor[grade] }}>
                       {grade} 등급
                     </strong>
-                    입니다
+                    입니다.
                   </p>
                 </div>
+
                 <div className="question">
                   <img src="./images/userinfo/question.svg" alt="question" />
                   <p>{userInfo.benefits}</p>
                 </div>
               </li>
+
               <li>
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
@@ -224,6 +235,7 @@ export default function UserInfoMain() {
             </ul>
           </div>
         </UserInfoMainBox>
+
         <UserInfoMainBox title="My Wallet" className="my-wallet">
           <ul className="my-wallet-list">
             <li>
@@ -237,6 +249,7 @@ export default function UserInfoMain() {
           </ul>
         </UserInfoMainBox>
       </div>
+
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
           {mainOrders.length > 0 ? (
@@ -252,6 +265,7 @@ export default function UserInfoMain() {
                   <div className="img-box">
                     <img src={order.img} alt={order.name} />
                   </div>
+
                   <div className="text-box">
                     <div
                       className={`status status-${statusCode[order.status]}`}
@@ -261,10 +275,11 @@ export default function UserInfoMain() {
                       )}
                       {order.status}
                     </div>
+
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
                       <p className="order-count">
-                        {order.size} / {order.count}개
+                        {order.size || "-"} / {formatCount(order.count)}
                       </p>
                     </div>
                   </div>
@@ -276,6 +291,7 @@ export default function UserInfoMain() {
           )}
         </UserInfoMainBox>
       </div>
+
       <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
           {sortedWishList.length > 0 ? (
@@ -291,19 +307,24 @@ export default function UserInfoMain() {
                   <div className="img-box">
                     <img src={wish.mainImg || wish.hoverImg} alt={wish.name} />
                   </div>
+
                   <div className="text-box">
                     <div className="text-wrap">
                       <p className="wish-name">{wish.name}</p>
+
                       <p className="wish-price">
-                        ￦{getWishPrice(wish)?.toLocaleString()}
+                        {formatPrice(getWishPrice(wish))}
                         {wish.discountRate > 0 && (
-                          <span>￦{wish.price?.toLocaleString()}</span>
+                          <span>{formatPrice(wish.price)}</span>
                         )}
                       </p>
+
                       <p className="wish-count">
-                        {wish.selectedSize || "-"} / {wish.quantity || 1}개
+                        {wish.selectedSize || "-"} /{" "}
+                        {formatCount(wish.quantity)}
                       </p>
                     </div>
+
                     <div className="button-wrap">
                       {!wish.isSoldOut && (
                         <>
@@ -311,21 +332,23 @@ export default function UserInfoMain() {
                             className="Bbtn"
                             onClick={() => handleBuyNow(wish)}
                           >
-                            Buy It Now
+                            바로구매
                           </button>
+
                           <button
                             className="Wbtn"
                             onClick={() => handleAddCart(wish)}
                           >
-                            Add To Cart
+                            장바구니
                           </button>
                         </>
                       )}
+
                       <button
                         className="Wbtn"
                         onClick={() => handleRemoveWish(wish)}
                       >
-                        Remove
+                        삭제
                       </button>
                     </div>
                   </div>
@@ -337,6 +360,7 @@ export default function UserInfoMain() {
           )}
         </UserInfoMainBox>
       </div>
+
       {showCartPopup && (
         <CartPopup
           mode="best"
@@ -351,6 +375,7 @@ export default function UserInfoMain() {
           }}
         />
       )}
+
       {showCart && <Cart onClose={() => setShowCart(false)} />}
     </div>
   );

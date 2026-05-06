@@ -113,26 +113,26 @@
     }
 
     .cart-popup-name {
-        font-size: g.$size-14-main;
-        font-weight: g.$Regular;
-        letter-spacing: 0.04em;
+        font-size: g.$size-16;
+        font-weight: g.$Bold;
+        letter-spacing: 0;
         color: g.$text-main-color;
-        line-height: 1.45;
+        line-height: 1.35;
         margin: 0;
     }
 
     .cart-popup-option {
-        font-size: g.$size-12-sub;
-        color: g.$text-sub-color;
-        letter-spacing: 0.03em;
+        font-size: 13px;
+        color: g.$text-sub-color2;
+        letter-spacing: 0;
         margin: 0;
     }
 
     .cart-popup-price {
         font-size: g.$size-14-main;
-        font-weight: g.$Bold;
+        font-weight: g.$Regular;
         color: g.$text-main-color;
-        letter-spacing: 0.03em;
+        letter-spacing: 0;
         margin: 4px 0 0;
     }
 
@@ -231,21 +231,23 @@
                     padding: 6px 2px;
 
                     .wish-item-name {
-                        font-size: 11px;
+                        font-size: g.$size-16;
+                        font-weight: g.$Bold;
+                        line-height: 1.35;
                         overflow: hidden;
                         white-space: nowrap;
                         text-overflow: ellipsis;
                     }
 
                     .wish-item-option {
-                        font-size: 10px;
-                        color: #888;
+                        font-size: 13px;
+                        color: g.$text-sub-color2;
                         margin-top: 2px;
                     }
 
                     .wish-item-price {
-                        font-size: 12px;
-                        font-weight: bold;
+                        font-size: g.$size-14-main;
+                        font-weight: g.$Regular;
                         margin-top: 2px;
                     }
                 }

@@ -4,12 +4,15 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
+
   h2 {
     font-size: 1.5rem;
   }
 
   .order-detail-back {
-    @include g.myBtn2;
+    @include g.myBtn2($pd: 0);
+    width: 120px;
+    height: 40px;
   }
 }
 
@@ -43,8 +46,7 @@
   }
 
   .order-detail-section {
-    border: 1px solid #e8e8e8;
-    background: #ffffff;
+    @include g.userInfoPanel;
     display: flex;
     flex-direction: column;
     padding: 30px 60px;
@@ -61,7 +63,8 @@
     justify-content: space-between;
     gap: 12px;
     padding-bottom: 16px;
-    border-bottom: 2px solid #eeeeee;
+
+    @include g.userInfoListLine;
 
     p {
       color: g.$text-sub-color;
@@ -76,8 +79,9 @@
     .order-product {
       display: flex;
       gap: 10px;
-      border-bottom: 2px solid #eeeeee;
-      padding: 12px 0;
+      padding: 20px 0;
+
+      @include g.userInfoListLine;
 
       .img-box {
         gap: 20px;
@@ -93,6 +97,27 @@
         .text-box {
           .order-status {
             padding-bottom: 10px;
+          }
+
+          .order-name {
+            font-size: g.$size-16;
+            font-weight: g.$Bold;
+            line-height: 1.35;
+          }
+
+          .order-price {
+            font-size: g.$size-14-main;
+            font-weight: g.$Regular;
+          }
+
+          .order-count {
+            font-size: 13px;
+            font-weight: g.$Regular;
+          }
+
+          .order-count {
+            color: g.$text-sub-color2;
+            margin-top: 4px;
           }
         }
       }
@@ -119,7 +144,8 @@
       &.is-total {
         margin-top: 4px;
         padding-top: 16px;
-        border-top: 2px solid #eeeeee;
+
+        @include g.userInfoListLine(top);
 
         p,
         span {
