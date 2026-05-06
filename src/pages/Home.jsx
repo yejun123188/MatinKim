@@ -22,10 +22,10 @@ export default function Home() {
                 <MainTop />
                 {/* 퀵메뉴 */}
                 <ShortCut />
-                {/* 신상품 */}
-                <NewArrivals />
                 {/* 베스트 아이템 */}
                 <Weeklybest />
+                {/* 신상품 */}
+                <NewArrivals />
                 {/* 더 에딧 */}
                 <TheEdit />
                 {/* 플래그쉽 */}

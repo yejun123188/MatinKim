@@ -13,7 +13,7 @@ const getProductBaseName = (item) => {
         : item.name;
 };
 
-export default function ProductCard({ cate }) {
+export default function ProductCard({ cate, as: CardTag = 'li', className = '' }) {
     const { items, onColorCode, onAddCart, openCart } = useProductStore();
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState(false);
@@ -122,8 +122,8 @@ export default function ProductCard({ cate }) {
     };
 
     return (
-        <li
-            className="product-card"
+        <CardTag
+            className={`product-card${className ? ` ${className}` : ''}`}
             onKeyDown={handleKeyDown}
             role="link"
             tabIndex={0}
@@ -231,6 +231,6 @@ export default function ProductCard({ cate }) {
                     구매하기
                 </button>
             </div>
-        </li>
+        </CardTag>
     )
 }
