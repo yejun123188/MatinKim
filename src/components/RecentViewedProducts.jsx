@@ -8,7 +8,8 @@ import {
 import "./scss/RecentViewedProducts.scss";
 import UserInfoNone from "./UserInfoNone";
 
-const formatPrice = (price) => `₩${Number(price || 0).toLocaleString("ko-KR")}`;
+const formatPrice = (price) =>
+  `₩ ${Number(price || 0).toLocaleString("ko-KR")}`;
 
 const trimName = (name = "") =>
   name.length > 32 ? `${name.slice(0, 32)}...` : name;
@@ -32,85 +33,90 @@ export default function RecentViewedProducts() {
   };
 
   const handleAddCart = (product) => {
+    const size = product.sizes?.[0] || "FREE";
+    const color = product.colors?.[0] || "";
+
     onAddCart({
       id: product.id,
       name: product.name,
       price: product.price,
-      size: product.sizes?.[0] || "FREE",
-      color: product.colors?.[0] || "",
+      size,
+      color,
       count: 1,
       image: product.img,
-      key: `${product.id}-${product.sizes?.[0] || "FREE"}-${product.colors?.[0] || ""}`,
+      key: `${product.id}-${size}-${color}`,
     });
   };
 
   return (
     <div className="recent-products-wrap">
       <div className="recent-products-top">
-        <button type="button" onClick={() => updateProducts([])}>
-          전체 삭제
+        <button type="button" className="Wbtn" onClick={() => updateProducts([])}>
+          전체삭제
         </button>
       </div>
 
-      <ul className="recent-product-list">
-        {products.length > 0 ? (
-          products.map((product) => (
-            <li key={product.id} className="recent-product-item">
-              <button
-                type="button"
-                className="recent-product-img"
-                onClick={() => navigate(`/products/${product.id}`)}
-                aria-label={`${product.name} 상세보기`}
-              >
-                <img src={product.img} alt={product.name} />
-              </button>
-
-              <div className="recent-product-info">
+      <div className="recent-products-panel">
+        <ul className="recent-product-list">
+          {products.length > 0 ? (
+            products.map((product) => (
+              <li key={product.id} className="recent-product-item">
                 <button
                   type="button"
-                  className="recent-product-name"
+                  className="recent-product-img"
                   onClick={() => navigate(`/products/${product.id}`)}
+                  aria-label={`${product.name} 상세보기`}
                 >
-                  {trimName(product.name)}
+                  <img src={product.img} alt={product.name} />
                 </button>
 
-                <div className="recent-product-price">
-                  <span>{formatPrice(product.price)}</span>
-                  {product.originalPrice && (
-                    <del>{formatPrice(product.originalPrice)}</del>
-                  )}
-                </div>
-
-                <div className="button-wrap">
+                <div className="recent-product-info">
                   <button
                     type="button"
-                    className="Bbtn"
+                    className="recent-product-name"
                     onClick={() => navigate(`/products/${product.id}`)}
                   >
-                    Buy It Now
+                    {trimName(product.name)}
                   </button>
-                  <button
-                    type="button"
-                    className="Wbtn"
-                    onClick={() => handleAddCart(product)}
-                  >
-                    Add to cart
-                  </button>
-                  <button
-                    type="button"
-                    className="Wbtn"
-                    onClick={() => handleRemove(product.id)}
-                  >
-                    Remove
-                  </button>
+
+                  <div className="recent-product-price">
+                    <span>{formatPrice(product.price)}</span>
+                    {product.originalPrice && <del>{formatPrice(product.originalPrice)}</del>}
+                  </div>
+
+                  <div className="button-wrap">
+                    <button
+                      type="button"
+                      className="Bbtn"
+                      onClick={() => navigate(`/products/${product.id}`)}
+                    >
+                      바로구매
+                    </button>
+
+                    <button
+                      type="button"
+                      className="Wbtn"
+                      onClick={() => handleAddCart(product)}
+                    >
+                      장바구니
+                    </button>
+
+                    <button
+                      type="button"
+                      className="Wbtn"
+                      onClick={() => handleRemove(product.id)}
+                    >
+                      삭제
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))
-        ) : (
-          <UserInfoNone title="상품" />
-        )}
-      </ul>
+              </li>
+            ))
+          ) : (
+            <UserInfoNone title="상품" />
+          )}
+        </ul>
+      </div>
     </div>
   );
 }

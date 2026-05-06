@@ -7,22 +7,29 @@ import CartPopup from '../pages/CartPopup';
 import Cart from '../pages/Cart';
 import WishItem from './WishItem';
 
+const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
+const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
+
 export default function WishList() {
   const navigate = useNavigate();
   const { user } = useAuthStore();
-  const { wishList, onRemoveWish, onLoadWishList, onAddCart } = useProductStore();
+  const { wishList, onRemoveWish, onLoadWishList, onAddCart } =
+    useProductStore();
 
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [cartItem, setCartItem] = useState(null);
   const [showCart, setShowCart] = useState(false);
-  const [checkedKeys, setCheckedKeys] = useState([]);
 
-  // 로그인 유저 위시리스트 불러오기
+  const handleRemove = async (product) => {
+    await onRemoveWish(product.key, user.uid);
+    alert("상품이 삭제되었습니다");
+  };
+
   useEffect(() => {
     if (user?.uid) {
       onLoadWishList(user.uid);
     }
-  }, [user]);
+  }, [user, onLoadWishList]);
 
   // 위시리스트 변경 시 체크 상태에서 삭제된 항목 정리
   useEffect(() => {
@@ -99,62 +106,155 @@ export default function WishList() {
   if (!user) {
     return (
       <div className="wishlist-wrap">
-        <p>로그인 후 이용 가능합니다.</p>
-        <button onClick={() => navigate('/login')}>로그인하러 가기</button>
+        <div className="middle">
+          <p className="empty">로그인 후 이용 가능합니다.</p>
+          <button className="Bbtn" onClick={() => navigate("/login")}>
+            로그인하러 가기
+          </button>
+        </div>
       </div>
     );
   }
 
+  const sortedWishList = [...wishList].sort(
+    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
+  );
+
   return (
-    <div className="wishlist-wrap">
-      <div className="top">
-        <label>
-          <input
-            type="checkbox"
-            checked={isAllChecked}
-            onChange={handleAllCheck}
-          />
-          전체선택
-        </label>
+    <>
+      <div className="wishlist-wrap">
+        <div className="middle">
+          <div className="top">
+            <label>
+              <input type="checkbox" />
+              전체선택
+            </label>
+          </div>
+
+          <ul className="wish-list">
+            {wishList.length === 0 && (
+              <li className="empty">찜한 상품이 없습니다.</li>
+            )}
+
+            {sortedWishList.map((product) => {
+              const isSoldOut = Boolean(product.isSoldOut);
+
+              return (
+                <li
+                  key={product.key}
+                  className={`items ${isSoldOut ? "is-soldout" : ""}`}
+                >
+                  <div>
+                    <input type="checkbox" />
+                  </div>
+
+                  <div
+                    className="img-box"
+                    onClick={() => navigate(`/products/${product.id}`)}
+                  >
+                    <img src={product.mainImg} alt={product.name} />
+                  </div>
+
+                  <div>
+                    <div className="text-box">
+                      <p
+                        className="title"
+                        onClick={() => navigate(`/products/${product.id}`)}
+                      >
+                        {product.name}
+                      </p>
+
+                      {product.discountRate > 0 ? (
+                        <div className="price-box">
+                          <strong className="discount-price">
+                            {formatPrice(product.discountPrice)}
+                          </strong>
+                          <span className="price">
+                            {formatPrice(product.price)}
+                          </span>
+                          <span className="discount-rate">
+                            {product.discountRate}%
+                          </span>
+                        </div>
+                      ) : (
+                        <strong className="price2">
+                          {formatPrice(product.price)}
+                        </strong>
+                      )}
+                    </div>
+
+                    {!isSoldOut && (
+                      <div className="option-box">
+                        <p className="option">
+                          {product.selectedSize || "-"} /{" "}
+                          {formatCount(product.quantity)}
+                        </p>
+                      </div>
+                    )}
+
+                    {isSoldOut && (
+                      <span className="soldout-badge">SOLD OUT</span>
+                    )}
+
+                    <div className="button-box">
+                      {!isSoldOut && (
+                        <>
+                          <button
+                            className="Bbtn"
+                            onClick={() => navigate(`/products/${product.id}`)}
+                          >
+                            바로구매
+                          </button>
+
+                          <button
+                            className="Wbtn"
+                            onClick={() => {
+                              const item = {
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                                discountPrice: product.discountPrice,
+                                discountRate: product.discountRate,
+                                mainImg: product.mainImg,
+                                hoverImg: product.hoverImg,
+                                image: product.mainImg || product.hoverImg,
+                                key: `${product.id}-${product.selectedSize}-${product.selectedColor}`,
+                              };
+
+                              setCartItem(product);
+                              setShowCartPopup(true);
+                              onAddCart({
+                                ...item,
+                                size: product.selectedSize,
+                                color: product.selectedColor,
+                                count: product.quantity,
+                              });
+                            }}
+                          >
+                            장바구니
+                          </button>
+                        </>
+                      )}
+
+                      <button
+                        className="Wbtn"
+                        onClick={() => handleRemove(product)}
+                      >
+                        삭제
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
 
-      <div className="middle">
-        <ul className="wish-list">
-          {wishList.length === 0 && (
-            <li className="empty">찜한 상품이 없습니다.</li>
-          )}
-
-          {sortedWishList.map((p) => {
-            const isSoldOut = Boolean(p.isSoldOut);
-            const isChecked = checkedKeys.includes(p.key);
-
-            return (
-              <li key={p.key} className={`items ${isSoldOut ? "is-soldout" : ""}`}>
-                <div>
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={() => handleItemCheck(p.key)}
-                  />
-                </div>
-                <WishItem
-                  wish={p}
-                  variant="list"
-                  onCartPopup={(item) => {
-                    setCartItem(item);
-                    setShowCartPopup(true);
-                  }}
-                />
-              </li>
-            );
-          })}
-
-
-        </ul>
-
-        <div className="button-box">
-          <button onClick={handleSelectedOrder}>선택상품주문</button>
-          <button onClick={handleSelectedDelete}>선택삭제</button>
+      <div className="wishlist-bottom">
+        <div className="bottom-button-box">
+          <button className="Bbtn">선택상품주문</button>
+          <button className="Wbtn">선택삭제</button>
         </div>
       </div>
 
@@ -173,6 +273,6 @@ export default function WishList() {
         />
       )}
       {showCart && <Cart onClose={() => setShowCart(false)} />}
-    </div>
+    </>
   );
 }

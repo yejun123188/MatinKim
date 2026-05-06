@@ -4,10 +4,10 @@
   width: 100%;
 
   .account-edit-panel {
+    @include g.userInfoPanel;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 64px;
-    background: g.$white-color;
     padding: 48px 44px 56px;
   }
 
@@ -65,11 +65,10 @@
     }
 
     button {
-      @include g.myBtn1;
-      width: 130px;
+      @include g.myBtn1($pd: 0);
+      width: 120px;
       height: 40px;
       border: none;
-      font-size: g.$size-14-main;
     }
   }
 
@@ -81,12 +80,11 @@
     }
 
     button {
-      @include g.myBtn1;
-      width: 130px;
+      @include g.myBtn1($pd: 0);
+      width: 120px;
       height: 40px;
       margin-left: 18px;
       border: none;
-      font-size: g.$size-14-main;
     }
   }
 
@@ -114,26 +112,29 @@
   .account-edit-buttons {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
     margin-top: 32px;
 
     button {
-      width: 150px;
-      height: 46px;
-      font-size: g.$size-16;
+      width: 120px;
+      height: 40px;
     }
 
     .submit {
-      @include g.myBtn1;
+      @include g.myBtn1($pd: 0);
       margin-left: auto;
     }
 
     .cancel {
-      @include g.myBtn2;
+      @include g.myBtn2($pd: 0);
     }
 
     .withdraw {
-      @include g.myBtn2($c: g.$text-sub-color, $bd: 1px solid g.$text-sub-color2);
+      @include g.myBtn2(
+        $c: g.$text-sub-color,
+        $bd: 1px solid g.$text-sub-color2,
+        $pd: 0
+      );
     }
   }
 }

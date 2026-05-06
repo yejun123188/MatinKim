@@ -8,7 +8,8 @@ const orderMenu = "주문내역";
 const formatDate = (date) =>
   `${date.slice(0, 4)}. ${date.slice(4, 6)}. ${date.slice(6, 8)}`;
 
-const formatPrice = (price) => `${price.toLocaleString()}`;
+const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
+const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
 
 export default function OrderDetail() {
   const { id } = useParams();
@@ -87,11 +88,9 @@ export default function OrderDetail() {
                   <div className="text-box">
                     <p className="order-status">{order.status}</p>
                     <p className="order-name">{order.name}</p>
-                    <p className="order-price">
-                      {order.price.toLocaleString()}원
-                    </p>
+                    <p className="order-price">{formatPrice(order.price)}</p>
                     <p className="order-count">
-                      {order.size} / {order.count}개
+                      {order.size || "-"} / {formatCount(order.count)}
                     </p>
                   </div>
                 </div>

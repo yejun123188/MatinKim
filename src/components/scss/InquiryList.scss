@@ -3,7 +3,7 @@
 .inquiry-list-wrap {
   width: 100%;
   padding: 30px;
-  background: #ffffff;
+  @include g.userInfoPanel;
 
   .inquiry-search {
     display: flex;
@@ -28,10 +28,10 @@
     }
 
     button {
-      @include g.myBtn1;
+      @include g.myBtn1($pd: 0);
+      width: 120px;
       height: 40px;
       margin-left: 10px;
-      font-size: g.$size-14-main;
     }
   }
 
@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    border-bottom: 1px solid #999999;
+    @include g.userInfoListLine;
 
     tr {
       display: flex;
@@ -62,7 +62,7 @@
     }
 
     td {
-      border-top: 1px solid #eee;
+      @include g.userInfoListLine(top);
       color: g.$text-main-color;
     }
 
@@ -98,15 +98,16 @@
     }
   }
 
-  .inquiry-bottom {
-    display: flex;
-    padding: 10px 0;
-    justify-content: end;
+}
 
-    .inquiry-write-btn {
-      @include g.myBtn1;
-      width: 100px;
-      height: 40px;
-    }
+.inquiry-bottom {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+
+  .inquiry-write-btn {
+    @include g.myBtn1($pd: 0);
+    width: 120px;
+    height: 40px;
   }
 }
