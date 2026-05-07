@@ -90,8 +90,12 @@ export default function UserInfo() {
         )}
 
         <div className="user-info-right">
-          {!isDetailMode && selectMenu !== myMenu && <h2>{selectMenu}</h2>}
-          <div className="user-info-content">{handleContent()}</div>
+          {!isDetailMode && selectMenu !== myMenu && (
+            <h2 key={`user-info-title-${selectMenu}`}>{selectMenu}</h2>
+          )}
+          <div className="user-info-content" key={`user-info-content-${selectMenu}`}>
+            {handleContent()}
+          </div>
         </div>
       </div>
     </section>

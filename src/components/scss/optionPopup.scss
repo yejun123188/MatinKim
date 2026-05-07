@@ -79,7 +79,13 @@
             width: 30px;
           }
           .active {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+          }
+
+          .is-soldout {
+            opacity: 0.35;
+            cursor: not-allowed;
+            text-decoration: line-through;
           }
         }
         p {
@@ -115,7 +121,7 @@
       justify-content: end;
 
       .btn:hover {
-        @include g.myBtn2;
+        @include g.myBtn2($pd: 0);
       }
     }
   }
@@ -126,14 +132,22 @@
   }
 
   .btn:hover {
-    @include g.myBtn1;
+    @include g.myBtn1($pd: 0);
   }
 
   .Bbtn {
-    @include g.myBtn1;
+    @include g.myBtn1($pd: 0);
+    width: 90px;
+    height: 30px;
   }
 
   .btn {
-    @include g.myBtn2;
+    @include g.myBtn2($pd: 0);
+    width: 90px;
+    height: 30px;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
   }
 }

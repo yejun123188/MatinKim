@@ -1,11 +1,36 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import SectionTitle from './SectionTitle'
 import { useProductStore } from '../store/useProductStore'
 import "./scss/weeklybest.scss"
+import ProductCard from './ProductCard';
 
 export default function Weeklybest() {
-    const { BestItems, onBestMenus, items, onFetchItem, onColorCode } = useProductStore();
+    const { BestItems, onBestMenus, items, onFetchItem } = useProductStore();
     const [showAll, setShowAll] = useState(false);
+    const [listHeight, setListHeight] = useState(0);
+    const listRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect(); // 한 번만 실행
+                }
+            },
+            {
+                threshold: 0.2, // 섹션 20% 보이면 실행
+            }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         if (items.length === 0) {
@@ -14,40 +39,51 @@ export default function Weeklybest() {
         onBestMenus();
     }, [])
 
+    useLayoutEffect(() => {
+        const list = listRef.current;
+        if (!list) return undefined;
+
+        const updateListHeight = () => {
+            const firstCard = list.querySelector('.product-card');
+            if (!firstCard) return;
+
+            setListHeight(showAll ? list.scrollHeight : firstCard.offsetHeight);
+        };
+
+        updateListHeight();
+        window.addEventListener('resize', updateListHeight);
+
+        return () => window.removeEventListener('resize', updateListHeight);
+    }, [BestItems.length, showAll]);
+
     //24번째부터가 여름느낌이라 24부터 함 
-    const visibleItems = showAll ? BestItems.slice(24, 32) : BestItems.slice(24, 28);
+    const visibleItems = BestItems.slice(24, 34);
 
     return (
-        <section className='weeklybest'>
+        <section
+            ref={sectionRef}
+            className={`weeklybest ${isVisible ? 'is-visible' : ''}`}
+        >
             <div className="inner">
-                <SectionTitle title="WEEKLY BEST ITEM" subtitle="This season's favorites" />
-                <ul className="best-item-list">
-                    {visibleItems.map((item, id) => (
-                        // 클릭하면 제품 상세페이지로 이동하는거 아직안함 상세페이지 만들면 연결예정!~!!~!
-                        //마우스 호버하면 이미지 어케 변할지도 정해야함
-                        //하트 이미지도 넣어야함
-                        <li key={id}>
-                            <div className="img-box">
-                                <img onMouseEnter={(e) => e.currentTarget.src = item.hoverImg}
-                                    onMouseLeave={(e) => e.currentTarget.src = item.mainImg}
-                                    src={item.mainImg} alt={item.name} />
-                                <span className='heart'><img src="/images/heart-default.svg" alt="하트" /></span>
-                            </div>
-                            <ul className="text-box">
-                                <li id='name'>{item.name}</li>
-                                <li id='price'>₩ {item.price}</li>
-                                <li id='colors'>
-                                    {item.colors.map((c, id) => (
-                                        <span key={id} style={{ backgroundColor: onColorCode(c) }}></span>
-                                    ))}
-                                </li>
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
-                <div className="see-more" onClick={() => setShowAll(!showAll)}>
-                    {showAll ? "CLOSE" : "SEE MORE"}
+                <SectionTitle title="WEEKLY BEST ITEM" subtitle="이번 시즌의 인기 아이템" />
+                <div
+                    className={`best-item-list-wrap ${showAll ? 'is-open is-animate' : ''}`}
+                    style={{ maxHeight: listHeight ? `${listHeight}px` : undefined }}
+                >
+                    <ul className="best-item-list" ref={listRef}>
+                        {visibleItems.map((item, id) => (
+                            <ProductCard cate={item} key={id} />
+                        ))}
+                    </ul>
                 </div>
+                <button type="button" className="see-more" onClick={() => setShowAll(!showAll)}>
+                    {showAll ? "CLOSE" : "SEE MORE"}
+                    <img
+                        src={`/images/pages-icon/${showAll ? 'top-icon.svg' : 'bottom-icon.svg'}`}
+                        alt=""
+                        aria-hidden="true"
+                    />
+                </button>
             </div>
         </section>
     )

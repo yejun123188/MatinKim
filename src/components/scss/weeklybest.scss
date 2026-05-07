@@ -1,51 +1,282 @@
+@use "../../App.scss" as g;
+
 .weeklybest {
-    .best-item-list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+    .best-item-list-wrap {
+        overflow: hidden;
+        transition: max-height 0.6s ease;
 
-        .img-box {
-            position: relative;
-
-            .heart {
-                position: absolute;
-                top: 3%;
-                right: 5%;
-
+        &:not(.is-open) {
+            .product-card:nth-child(n + 6) {
+                visibility: hidden;
+                pointer-events: none;
             }
         }
 
-        .text-box {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            font-size: 14px;
-
-            #name {
-                color: #484747;
+        &.is-animate {
+            .product-card:nth-child(n + 6) {
+                opacity: 0;
+                transform: translateY(-24px);
+                animation: weeklyCardDrop 0.7s ease forwards;
             }
 
-            #price {
-                font-weight: 600;
+            @for $i from 6 through 10 {
+                .product-card:nth-child(#{$i}) {
+                    animation-delay: #{($i - 6) * 0.08}s;
+                }
             }
-
-            span {
-                display: inline-block;
-                width: 7px;
-                height: 7px;
-                border-radius: 50%;
-                margin-right: 5px;
-                border: 1px solid #000000;
-            }
-
         }
     }
 
+    .best-item-list {
+        --weeklybest-card-width: calc((min(100vw, 1440px) - 96px) / 5);
+
+        display: grid;
+        grid-template-columns: repeat(5, var(--weeklybest-card-width));
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+
+        .product-card {
+            position: relative;
+            width: var(--weeklybest-card-width);
+            min-width: 0;
+            box-sizing: border-box;
+            padding-bottom: 10px;
+            background: g.$white-color;
+            transition: transform 0.5s ease, border-color 0.2s ease;
+            border: 1px solid rgba(g.$main-color, 0.2);
+
+            &:nth-child(-n + 5) {
+                opacity: 0;
+                transform: translateY(-24px);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: -8px -8px -104px;
+                border: 1px solid g.$main-color;
+                background: g.$white-color;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.2s ease;
+                z-index: 0;
+            }
+
+            .img-box {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                width: 100%;
+                aspect-ratio: 1 / 1.3;
+                overflow: hidden;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: translateX(-50%);
+                    transition: 0.3s;
+                }
+
+                .main-img {
+                    opacity: 1;
+                }
+
+                .hover-img {
+                    opacity: 0;
+                }
+
+                .badge-wrap {
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    z-index: 2;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    gap: 4px;
+
+                    .badge {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 6px 8px 3px;
+                        border: 1px solid g.$main-color;
+                        background: g.$main-color;
+                        color: g.$white-color;
+                        font-size: 0.625rem;
+                        font-weight: g.$Bold;
+                        letter-spacing: 0.05em;
+                        line-height: 1;
+                    }
+
+                    .discount-badge {
+                        background: g.$red-color;
+                        border-color: g.$red-color;
+                        color: g.$white-color;
+                    }
+
+                    .soldout-badge {
+                        background: #8c8c8c;
+                        border-color: #8c8c8c;
+                        color: g.$white-color;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.05);
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                z-index: 1;
+
+                .img-box {
+                    .hover-img {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .text-box {
+                position: relative;
+                z-index: 2;
+                width: auto;
+                min-width: 0;
+                margin: 20px 20px 20px;
+
+                .brand-name {
+                    margin: 0 0 7px;
+                    font-size: g.$size-12-sub;
+                    font-weight: 900;
+                    line-height: 1;
+                }
+
+                h3 {
+                    font-size: g.$size-14-main;
+                    font-weight: g.$Regular;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .price-wrap {
+                    padding: 14px 0 0;
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+
+                    .discount-price,
+                    .discount-rate {
+                        font-size: g.$size-18;
+                        font-weight: g.$Bold;
+                    }
+
+                    .discount-rate {
+                        color: g.$red-color;
+                    }
+
+                    .price {
+                        font-size: g.$size-14-main;
+                        color: g.$text-sub-color2;
+                        opacity: 0.7;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+
+            .color-wrap {
+                position: relative;
+                z-index: 2;
+                padding: 0 20px 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+
+                .color-chip {
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    border: 1px solid rgba(g.$main-color, 0.3);
+                    flex-shrink: 0;
+                    cursor: pointer;
+                }
+            }
+
+            .card-size-list {
+                display: none;
+            }
+
+            .card-action-bar {
+                display: none;
+            }
+        }
+    }
+
+    &.is-visible {
+        .product-card:nth-child(-n + 5) {
+            animation: weeklyCardDrop 0.7s ease forwards;
+        }
+
+        @for $i from 1 through 5 {
+            .product-card:nth-child(#{$i}) {
+                animation-delay: #{($i - 1) * 0.08}s;
+            }
+        }
+    }
+
+    @include g.respond(tablet) {
+        .best-item-list {
+            --weeklybest-card-width: calc((100vw - 48px - 96px) / 5);
+        }
+    }
 
     .see-more {
-        padding-top: 100px;
-        text-align: center;
-        text-decoration: underline;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        margin: 0 auto;
+        padding-top: 30px;
+        border: 0;
+        background: transparent;
+        font-size: g.$size-14-main;
+        line-height: 1;
+        opacity: 0.5;
         cursor: pointer;
+
+        img {
+            display: block;
+            width: 10px;
+            height: 7px;
+            flex-shrink: 0;
+            opacity: 0.5;
+        }
+    }
+}
+
+@keyframes weeklyCardDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
