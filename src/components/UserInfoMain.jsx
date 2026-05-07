@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import UserInfoMainBox from "./UserInfoMainBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,7 +14,6 @@ import {
 } from "../store/useAuthStore";
 import { getAllOrders } from "../utils/orderStorage";
 import { useProductStore } from "../store/useProductStore";
-import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
 import WishItem from "./WishItem";
 import CartPopup from "../pages/CartPopup";
@@ -28,14 +27,13 @@ const statusCode = {
   배송완료: "DONE",
 };
 
-const user = {
-  name: "마뗑킴",
-  grade: "VIP",
-  benefits: "적립 3%,구매 할인 7%, 생일쿠폰 20%",
-  orderCount: 34,
-  orderPrice: 946000,
-  pointCount: 5000,
-  couponCount: 3,
+// 등급별 색상 정의
+const gradeColor = {
+  BASIC: "#888",
+  SILVER: "#A0A0A0",
+  GOLD: "#D4AF37",
+  VIP: "#C0392B",
+  VVIP: "#8E44AD",
 };
 
 const userInfo = {
@@ -53,27 +51,19 @@ const orderStatusList = ["결제완료", "배송준비중", "배송중", "배송
 
 const DELIVERY_COMPLETE_MS = 30 * 24 * 60 * 60 * 1000;
 
-const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
-
 const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
 
 const parseOrderDate = (dateString) => {
   if (!dateString) return null;
-
   if (/^\d{8}$/.test(String(dateString))) {
     const str = String(dateString);
-
     const year = str.slice(0, 4);
     const month = str.slice(4, 6);
     const day = str.slice(6, 8);
-
     const time = new Date(`${year}-${month}-${day}`).getTime();
-
     return Number.isNaN(time) ? null : time;
   }
-
   const time = new Date(dateString).getTime();
-
   return Number.isNaN(time) ? null : time;
 };
 
@@ -81,25 +71,9 @@ export default function UserInfoMain() {
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [cartItem, setCartItem] = useState(null);
   const [showCart, setShowCart] = useState(false);
-
-  const { wishList } = useProductStore();
-  const { user: authUser } = useAuthStore();
-  const navigate = useNavigate();
-
-  const sortedWishList = [...wishList].sort((a, b) => {
-    const aOut = a.isSoldOut ? 1 : 0;
-    const bOut = b.isSoldOut ? 1 : 0;
-    return aOut - bOut;
-  });
-  const navigate = useNavigate();
-
   const [now, setNow] = useState(Date.now());
 
-  const [cartItem, setCartItem] = useState(null);
-
-  const [showCartPopup, setShowCartPopup] = useState(false);
-
-  const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
 
   const {
     user,
@@ -127,7 +101,6 @@ export default function UserInfoMain() {
     const timer = setInterval(() => {
       setNow(Date.now());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
@@ -138,27 +111,17 @@ export default function UserInfoMain() {
           ...order,
           createdAt: o.createdAt,
           date: o.date,
-        })),
+        }))
       )
       .filter((order) => {
-        if (!orderStatusList.includes(order.status)) {
-          return false;
-        }
-
-        if (order.status !== "배송완료") {
-          return true;
-        }
-
+        if (!orderStatusList.includes(order.status)) return false;
+        if (order.status !== "배송완료") return true;
         const createdAtTime = new Date(order.createdAt).getTime();
-
         if (!Number.isNaN(createdAtTime)) {
           return now - createdAtTime < DELIVERY_COMPLETE_MS;
         }
-
         const orderDateTime = parseOrderDate(order.date);
-
         if (!orderDateTime) return false;
-
         return now - orderDateTime < DELIVERY_COMPLETE_MS;
       });
   }, [now]);
@@ -168,28 +131,27 @@ export default function UserInfoMain() {
   const localPurchaseInfo = getLocalPurchaseInfo(user);
 
   const purchaseAmount = Number(
-    localPurchaseInfo.purchaseAmount ??
-      user?.purchaseAmount ??
-      user?.orderPrice ??
-      userInfo.purchaseAmount,
+    localPurchaseInfo?.purchaseAmount ??
+    user?.purchaseAmount ??
+    user?.orderPrice ??
+    userInfo.purchaseAmount
   );
 
   const purchaseCount = Number(
-    localPurchaseInfo.purchaseCount ??
-      user?.purchaseCount ??
-      user?.orderCount ??
-      userInfo.purchaseCount,
+    localPurchaseInfo?.purchaseCount ??
+    user?.purchaseCount ??
+    user?.orderCount ??
+    userInfo.purchaseCount
   );
 
   const grade = getMemberGrade(purchaseAmount);
   const membershipGuide = getMembershipGuide(grade);
 
   const totalPoint = savedMoneySummary?.totalPoint || 0;
-
   const couponCount = user ? couponList.length : 0;
 
   const sortedWishList = [...wishList].sort(
-    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
+    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0)
   );
 
   const getWishPrice = (wish) =>
@@ -197,7 +159,6 @@ export default function UserInfoMain() {
 
   const handleBuyNow = (wish) => {
     if (wish.isSoldOut) return;
-
     navigate("/payment", {
       state: {
         orderItems: [
@@ -205,9 +166,7 @@ export default function UserInfoMain() {
             id: wish.id,
             brand: "MATIN KIM",
             name: wish.name,
-            option: `${wish.selectedColor || "-"} / ${
-              wish.selectedSize || "-"
-            }`,
+            option: `${wish.selectedColor || "-"} / ${wish.selectedSize || "-"}`,
             quantity: wish.quantity || 1,
             price: getWishPrice(wish),
             image: wish.mainImg || wish.hoverImg || "",
@@ -219,7 +178,6 @@ export default function UserInfoMain() {
 
   const handleAddCart = (wish) => {
     if (wish.isSoldOut) return;
-
     const item = {
       id: wish.id,
       name: wish.name,
@@ -231,16 +189,13 @@ export default function UserInfoMain() {
       color: wish.selectedColor,
       count: wish.quantity || 1,
     };
-
     onAddCart(item);
-
     setCartItem(wish);
     setShowCartPopup(true);
   };
 
   const handleRemoveWish = async (wish) => {
     await onRemoveWish(wish.key, user?.uid);
-
     alert("상품이 삭제되었습니다");
   };
 
@@ -249,20 +204,12 @@ export default function UserInfoMain() {
       <div className="frist-line">
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
-            <p>
-              반가워요! <strong>{user.name}</strong> 님!
-            </p>
-
             <ul className="myinfo-list">
               <li>
                 <div>
                   <p>{displayName}님은</p>
                   <p>
-                    <strong
-                      style={{
-                        color: gradeColor[grade],
-                      }}
-                    >
+                    <strong style={{ color: gradeColor[grade] }}>
                       {grade} 등급
                     </strong>
                     입니다.
@@ -276,23 +223,21 @@ export default function UserInfoMain() {
               <li>
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
-                  {user.orderPrice.toLocaleString()}원 / ({user.orderCount}회)
+                  {purchaseAmount.toLocaleString()}원 / ({purchaseCount}회)
                 </span>
               </li>
             </ul>
           </div>
         </UserInfoMainBox>
+
         <UserInfoMainBox title="My Wallet" className="my-wallet">
           <ul className="my-wallet-list">
             <li>
               <span>총 적립금</span>
-
               <strong>{totalPoint.toLocaleString()} 원</strong>
             </li>
-
             <li>
               <span>내 쿠폰</span>
-
               <strong>{couponCount} 개</strong>
             </li>
           </ul>
@@ -313,21 +258,15 @@ export default function UserInfoMain() {
                   <div className="img-box">
                     <img src={order.img} alt={order.name} />
                   </div>
-
                   <div className="text-box">
-                    <div
-                      className={`status status-${statusCode[order.status]}`}
-                    >
+                    <div className={`status status-${statusCode[order.status]}`}>
                       {order.status === "배송중" && (
                         <span className="dot"></span>
                       )}
-
                       {order.status}
                     </div>
-
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
-
                       <p className="order-count">
                         {order.size || "-"} / {formatCount(order.count)}
                       </p>
@@ -342,7 +281,7 @@ export default function UserInfoMain() {
         </UserInfoMainBox>
       </div>
 
-     <div className="third-line">
+      <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
           {sortedWishList.length > 0 ? (
             <Swiper

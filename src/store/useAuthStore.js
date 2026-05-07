@@ -560,51 +560,11 @@ export const useAuthStore = create(
       onWithdraw: async () => {
         const { user } = get();
 
-        // ✅ 비회원이면 구매 기록 없이 바로 true 반환
         if (!user) {
-          return true;
+          alert("로그인이 필요합니다.");
+          return false;
         }
 
-        const savedPurchaseInfo = getLocalPurchaseInfo(user);
-        const currentAmount = Number(
-          savedPurchaseInfo.purchaseAmount ??
-          user.purchaseAmount ??
-          user.orderPrice ??
-          0
-        );
-        const currentCount = Number(
-          savedPurchaseInfo.purchaseCount ??
-          user.purchaseCount ??
-          user.orderCount ??
-          0
-        );
-
-        const nextAmount = currentAmount + Number(purchaseAmount || 0);
-        const nextCount = currentCount + Number(purchaseCount || 0);
-        const grade = getMemberGrade(nextAmount);
-
-        const purchaseInfo = {
-          purchaseAmount: nextAmount,
-          purchaseCount: nextCount,
-          orderPrice: nextAmount,
-          orderCount: nextCount,
-          grade,
-        };
-
-        const nextUser = {
-          ...user,
-          ...purchaseInfo,
-        };
-
-        localStorage.setItem(
-          getLocalPurchaseKey(user),
-          JSON.stringify(purchaseInfo)
-        );
-
-        set({ user: nextUser });
-
-        if (user.provider) {
-          localStorage.setItem("socialUser", JSON.stringify(nextUser));
         try {
           const uid = user.uid;
           const firebaseUser = auth.currentUser;
@@ -627,7 +587,7 @@ export const useAuthStore = create(
           if (firebaseUser?.uid === uid) {
             await deleteUser(firebaseUser);
           } else {
-            await signOut(auth).catch(() => {});
+            await signOut(auth).catch(() => { });
           }
 
           localStorage.removeItem("socialUser");
@@ -677,15 +637,15 @@ export const useAuthStore = create(
           const savedPurchaseInfo = getLocalPurchaseInfo(user);
           const currentAmount = Number(
             savedPurchaseInfo.purchaseAmount ??
-              user.purchaseAmount ??
-              user.orderPrice ??
-              0
+            user.purchaseAmount ??
+            user.orderPrice ??
+            0
           );
           const currentCount = Number(
             savedPurchaseInfo.purchaseCount ??
-              user.purchaseCount ??
-              user.orderCount ??
-              0
+            user.purchaseCount ??
+            user.orderCount ??
+            0
           );
           const amount = Number(purchaseAmount || 0);
           const currentGrade = getMemberGrade(currentAmount);
@@ -769,6 +729,7 @@ export const useAuthStore = create(
           return false;
         }
       },
+
       onAddAddress: async (addressData) => {
         const { user } = get();
 
@@ -981,13 +942,13 @@ export const useAuthStore = create(
             }))
             .map((item) =>
               item.type === "pending" &&
-              item.availableDate &&
-              item.availableDate <= getToday()
+                item.availableDate &&
+                item.availableDate <= getToday()
                 ? {
-                    ...item,
-                    type: "history",
-                    desc: item.desc?.replace("예정", "확정") || "구매 적립금",
-                  }
+                  ...item,
+                  type: "history",
+                  desc: item.desc?.replace("예정", "확정") || "구매 적립금",
+                }
                 : item
             )
             .sort((a, b) => String(b.date).localeCompare(String(a.date)));
