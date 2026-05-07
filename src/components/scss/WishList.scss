@@ -1,261 +1,206 @@
+@use "../../App.scss" as g;
+
 .wishlist-wrap {
-    width: 100%;
-    background-color: #FFFFFF;
-    padding: 30px;
+  width: 100%;
 
-    .top {
-        padding: 16px 0;
-        border-bottom: 1px solid #eee;
+  .top {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 0 16px;
+    margin-bottom: 0;
+    @include g.userInfoListLine;
 
-        label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            cursor: pointer;
+    label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      cursor: pointer;
 
-            input[type="checkbox"] {
-                width: 13px;
-                height: 13px;
-                cursor: pointer;
-            }
-        }
+      input[type="checkbox"] {
+        width: 13px;
+        height: 13px;
+        cursor: pointer;
+      }
     }
+  }
 
-    .middle {
+  .middle {
+    @include g.userInfoPanel;
+    padding: 30px 30px 0;
 
+    .wish-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
-        .wish-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+      .empty {
+        padding: 60px 0;
+        text-align: center;
+        color: #aaa;
+        font-size: 14px;
+      }
 
-            .items {
-                display: flex;
-
-            }
-
-            .empty {
-                padding: 40px 0;
-                text-align: center;
-                color: #aaa;
-                font-size: 14px;
-            }
-
-            li {
-                // display: flex;
-                align-items: center;
-                gap: 20px;
-                padding: 24px 0;
-                border-bottom: 1px solid #eee;
-
-                .img-box {
-                    cursor: pointer;
-                }
-
-                .text-box {
-                    width: 346px;
-
-                    .title {
-                        cursor: pointer;
-                    }
-                }
-
-                &.is-soldout {
-                    .img-box {
-                        opacity: 0.4;
-                        cursor: pointer;
-                    }
-
-                    .text-box {
-
-
-                        .title {
-                            color: #bbb !important;
-                        }
-
-                        strong,
-                        .discount-price {
-                            color: #bbb !important;
-                        }
-
-                        .price,
-                        .discount-rate {
-                            color: #ccc !important;
-                        }
-                    }
-
-                    .soldout-badge {
-                        display: inline-block;
-                        margin-top: 6px;
-                        font-size: 12px;
-                        font-weight: 600;
-                        color: #bbb;
-                        letter-spacing: 0.05em;
-                    }
-                }
-
-                input[type="checkbox"] {
-                    width: 13px;
-                    height: 13px;
-                    cursor: pointer;
-                }
-
-                .img-box {
-                    width: 80px;
-                    height: 100px;
-                    flex-shrink: 0;
-                    overflow: hidden;
-                    background: #f5f5f5;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        display: block;
-                    }
-                }
-
-                .text-box {
-                    flex: 1;
-
-                    flex-direction: column;
-
-                    .title {
-                        font-size: 14px;
-                        font-weight: 500;
-                        color: #111;
-                        white-space: nowrap;
-                        padding-bottom: 7px;
-                    }
-
-
-
-                    .price-box {
-                        display: flex;
-                        gap: 5px;
-                        align-items: flex-end;
-
-                        .discount-price {
-                            font-size: 15px;
-                            font-weight: 700;
-                            color: #111;
-                        }
-
-                        .price {
-                            font-size: 13px;
-                            color: #aaa;
-                            text-decoration: line-through;
-                        }
-
-                        .discount-rate {
-                            font-size: 13px;
-                            color: #e74c3c;
-                            font-weight: 600;
-                        }
-                    }
-                }
-
-                .option-box {
-                    padding-top: 3px;
-
-                    .option {
-                        font-size: 13px;
-                        color: #666;
-
-
-                        // 옵션변경 링크 스타일
-                        a,
-                        button {
-                            margin-left: 6px;
-                            font-size: 12px;
-                            color: #888;
-                            background: none;
-                            border: none;
-                            cursor: pointer;
-                            padding: 0;
-                        }
-                    }
-                }
-
-                .button-box {
-                    display: flex;
-
-                    gap: 8px;
-                    flex-shrink: 0;
-
-                    button {
-                        width: 110px;
-                        height: 36px;
-                        font-size: 12px;
-                        font-weight: 600;
-                        cursor: pointer;
-
-                        // BUY IT NOW - 검정 배경
-                        &:nth-child(1) {
-                            background: #111;
-                            color: #fff;
-                            border: 1px solid #111;
-
-
-                        }
-
-                        // ADD TO CART - 흰 배경
-                        &:nth-child(2) {
-                            background: #fff;
-                            color: #111;
-                            border: 1px solid #ccc;
-
-                        }
-
-                        // REMOVE - 흰 배경
-                        &:nth-child(3) {
-                            background: #fff;
-                            color: #111;
-                            border: 1px solid #ccc;
-
-                            &:hover {
-                                background: #f5f5f5;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // 하단 버튼
-    .button-box {
+      .items {
         display: flex;
-        justify-content: flex-end;
-        gap: 12px;
-        padding-top: 24px;
+        align-items: center;
+        gap: 20px;
+        padding: 24px 0;
+        @include g.userInfoListLine;
 
-        button {
-            width: 140px;
-            height: 48px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-
-
-            // 선택상품주문 - 검정
-            &:nth-child(1) {
-                background: #111;
-                color: #fff;
-                border: 1px solid #111;
-
-            }
-
-            // 선택삭제 - 흰색
-            &:nth-child(2) {
-                background: #fff;
-                color: #111;
-                border: 1px solid #ccc;
-
-
-            }
+        &:last-child {
+          border-bottom: 0;
         }
-    }
 
+        input[type="checkbox"] {
+          width: 13px;
+          height: 13px;
+          cursor: pointer;
+        }
+
+        .img-box {
+          width: 80px;
+          height: 100px;
+          flex-shrink: 0;
+          overflow: hidden;
+          background: #f5f5f5;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+        }
+
+        .text-box {
+          width: 346px;
+
+          .title {
+            font-size: g.$size-16;
+            font-weight: g.$Bold;
+            color: #111;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            padding-bottom: 7px;
+            line-height: 1.35;
+          }
+
+          .price-box {
+            display: flex;
+            gap: 5px;
+            align-items: flex-end;
+
+            .discount-price {
+              font-size: g.$size-14-main;
+              font-weight: g.$Regular;
+              color: #111;
+            }
+
+            .price {
+              font-size: g.$size-14-main;
+              color: #aaa;
+              text-decoration: line-through;
+            }
+
+            .discount-rate {
+              font-size: 13px;
+              color: #e74c3c;
+              font-weight: 600;
+            }
+          }
+
+          .price2 {
+            font-size: g.$size-14-main;
+            font-weight: g.$Regular;
+            color: #111;
+          }
+        }
+
+        .option-box {
+          padding-top: 3px;
+
+          .option {
+            font-size: 13px;
+            color: #666;
+          }
+        }
+
+        .soldout-badge {
+          display: inline-block;
+          margin-top: 6px;
+          font-size: 12px;
+          font-weight: 600;
+          color: #bbb;
+          letter-spacing: 0.05em;
+        }
+
+        &.is-soldout {
+          .img-box {
+            opacity: 0.4;
+          }
+
+          .text-box {
+            .title,
+            .discount-price,
+            .price2 {
+              color: #bbb !important;
+            }
+
+            .price,
+            .discount-rate {
+              color: #ccc !important;
+            }
+          }
+        }
+
+        .button-box {
+          display: flex;
+          gap: 8px;
+          flex-shrink: 0;
+          margin-top: 16px;
+
+          .Bbtn {
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 30px;
+          }
+
+          .Wbtn {
+            @include g.myBtn2($pd: 0);
+            width: 90px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.wishlist-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  .bottom-button-box {
+    display: flex;
+    gap: 10px;
+  }
+
+  .Bbtn {
+    @include g.myBtn1($pd: 0);
+    width: 90px;
+    height: 30px;
+  }
+
+  .Wbtn {
+    @include g.myBtn2($pd: 0);
+    width: 90px;
+    height: 30px;
+  }
 }

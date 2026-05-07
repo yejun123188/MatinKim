@@ -1,47 +1,41 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import "./scss/Cart.scss";
 import { useProductStore } from "../store/useProductStore";
 import { useNavigate } from "react-router-dom";
 
 export default function Cart({ onClose }) {
-    const { cartItem, onUpdateQuantity, onRemoveItem } = useProductStore();
+    const { cartItem, onUpdateQuantity, onRemoveItem, onUpdateOption } = useProductStore();
     const navigate = useNavigate();
 
     const [checkedItems, setCheckedItems] = useState([]);
+    // 옵션변경 중인 아이템 key
+    const [editingKey, setEditingKey] = useState(null);
+    // 변경 중인 옵션 임시 값
+    const [tempOption, setTempOption] = useState({ size: "", color: "" });
 
     const items = cartItem;
-
     const formatPrice = (price) => `₩${price.toLocaleString()}`;
 
-    // 전체 선택 여부
     const allChecked = items.length > 0 && checkedItems.length === items.length;
 
-    // 전체 선택
     const handleAllCheck = () => {
         if (allChecked) {
             setCheckedItems([]);
         } else {
-            setCheckedItems(items.map((item) => `${item.id}-${item.size}`));
+            setCheckedItems(items.map((item) => item.key));
         }
     };
 
-    // 개별 선택
     const handleItemCheck = (item) => {
-        const key = `${item.id}-${item.size}`;
-
         setCheckedItems((prev) =>
-            prev.includes(key)
-                ? prev.filter((v) => v !== key)
-                : [...prev, key]
+            prev.includes(item.key)
+                ? prev.filter((v) => v !== item.key)
+                : [...prev, item.key]
         );
     };
 
-    // 선택된 아이템
-    const selectedItems = items.filter((item) =>
-        checkedItems.includes(`${item.id}-${item.size}`)
-    );
+    const selectedItems = items.filter((item) => checkedItems.includes(item.key));
 
-    // 총 금액
     const productTotal = selectedItems.reduce(
         (sum, item) => sum + item.price * item.count,
         0
@@ -52,7 +46,6 @@ export default function Cart({ onClose }) {
             alert("상품을 선택해주세요");
             return;
         }
-
         navigate("/payment", {
             state: {
                 orderItems: selectedItems.map((item) => ({
@@ -61,13 +54,41 @@ export default function Cart({ onClose }) {
                     price: item.price,
                     quantity: item.count,
                     option: `${item.color} / ${item.size}`,
-                    image: item.image
-                }))
-            }
+                    image: item.image,
+                })),
+            },
         });
+        onClose();
+    };
 
-        onClose(); // 카트 닫기
-    }
+    // 옵션변경 열기
+    const handleOpenEdit = (item) => {
+        setEditingKey(item.key);
+        setTempOption({ size: item.size, color: item.color });
+    };
+
+    // 옵션변경 저장
+    const handleSaveOption = (item) => {
+        if (!tempOption.size || !tempOption.color) {
+            alert("사이즈와 컬러를 모두 선택해주세요.");
+            return;
+        }
+        // 같은 옵션이면 그냥 닫기
+        if (tempOption.size === item.size && tempOption.color === item.color) {
+            setEditingKey(null);
+            return;
+        }
+        // 이미 동일 옵션 상품이 있으면 중복 방지
+        const newKey = `${item.id}-${tempOption.size}-${tempOption.color}`;
+        const isDuplicate = items.some((i) => i.key === newKey && i.key !== item.key);
+        if (isDuplicate) {
+            alert("이미 동일한 옵션의 상품이 장바구니에 있습니다.");
+            return;
+        }
+        onUpdateOption(item.key, tempOption);
+        setEditingKey(null);
+    };
+
     const shippingFee = 0;
     const totalPayment = productTotal + shippingFee;
 
@@ -96,14 +117,11 @@ export default function Cart({ onClose }) {
                                 />
                                 <span>전체선택 ({selectedItems.length})</span>
                             </label>
-
                             <button
                                 className="delete-selected-btn"
                                 type="button"
                                 onClick={() => {
-                                    selectedItems.forEach((item) =>
-                                        onRemoveItem(item.id, item.size)
-                                    );
+                                    selectedItems.forEach((item) => onRemoveItem(item.id, item.size));
                                     setCheckedItems([]);
                                 }}
                             >
@@ -113,11 +131,11 @@ export default function Cart({ onClose }) {
 
                         <div className="cart-list">
                             {items.map((item) => {
-                                const key = `${item.id}-${item.size}`;
-                                const isChecked = checkedItems.includes(key);
+                                const isChecked = checkedItems.includes(item.key);
+                                const isEditing = editingKey === item.key;
 
                                 return (
-                                    <div className="cart-item" key={key}>
+                                    <div className="cart-item" key={item.key}>
                                         <div className="item-left">
                                             <label className="check-wrap item-check">
                                                 <input
@@ -133,25 +151,66 @@ export default function Cart({ onClose }) {
 
                                             <div className="item-info">
                                                 <h3>{item.name}</h3>
-                                                <p className="item-option">
-                                                    색상: {item.color} · 사이즈: {item.size}
-                                                </p>
+
+                                                {/* 옵션변경 토글 영역 */}
+                                                {isEditing ? (
+                                                    <div className="option-edit-box">
+                                                        <div className="option-edit-row">
+                                                            <label>컬러</label>
+                                                            <input
+                                                                type="text"
+                                                                value={tempOption.color}
+                                                                onChange={(e) =>
+                                                                    setTempOption((prev) => ({ ...prev, color: e.target.value }))
+                                                                }
+                                                                placeholder="컬러 입력"
+                                                            />
+                                                        </div>
+                                                        <div className="option-edit-row">
+                                                            <label>사이즈</label>
+                                                            <input
+                                                                type="text"
+                                                                value={tempOption.size}
+                                                                onChange={(e) =>
+                                                                    setTempOption((prev) => ({ ...prev, size: e.target.value }))
+                                                                }
+                                                                placeholder="사이즈 입력"
+                                                            />
+                                                        </div>
+                                                        <div className="option-edit-btns">
+                                                            <button type="button" onClick={() => handleSaveOption(item)}>
+                                                                저장
+                                                            </button>
+                                                            <button type="button" onClick={() => setEditingKey(null)}>
+                                                                취소
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div>
+                                                        <span
+                                                            className="option-change-btn"
+                                                            onClick={() => handleOpenEdit(item)}
+                                                        >
+                                                            옵션변경
+                                                        </span>
+                                                        <p className="item-option">
+                                                            색상: {item.color} · 사이즈: {item.size}
+                                                        </p>
+                                                    </div>
+                                                )}
 
                                                 <div className="item-qty">
                                                     <button
                                                         type="button"
-                                                        onClick={() =>
-                                                            onUpdateQuantity(item.key, "minus")
-                                                        }
+                                                        onClick={() => onUpdateQuantity(item.key, "minus")}
                                                     >
                                                         −
                                                     </button>
                                                     <span>{item.count}</span>
                                                     <button
                                                         type="button"
-                                                        onClick={() =>
-                                                            onUpdateQuantity(item.key, "plus")
-                                                        }
+                                                        onClick={() => onUpdateQuantity(item.key, "plus")}
                                                     >
                                                         +
                                                     </button>
@@ -160,9 +219,7 @@ export default function Cart({ onClose }) {
                                                 <button
                                                     className="remove-btn"
                                                     type="button"
-                                                    onClick={() =>
-                                                        onRemoveItem(item.id, item.size)
-                                                    }
+                                                    onClick={() => onRemoveItem(item.id, item.size)}
                                                 >
                                                     REMOVE
                                                 </button>

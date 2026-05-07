@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./scss/shortcut.scss"
 import { shortCutData } from '../data/shortCut'
 import SectionTitle from './SectionTitle'
@@ -6,6 +6,27 @@ import { Link } from 'react-router-dom'
 
 export default function ShortCut() {
     const [shortCut, setShortCut] = useState([]);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
     useEffect(() => {
         setShortCut(shortCutData.map(item => item.id === 1 ? { ...item, active: true } : item))
     }, [])
@@ -27,9 +48,9 @@ export default function ShortCut() {
     // console.log("마우스", shortCut)
 
     return (
-        <section>
+        <section ref={sectionRef} className={isVisible ? 'is-visible' : ''}>
             <div className="inner">
-                <SectionTitle title="SHORTCUT" subtitle="Start with a Tap" />
+                <SectionTitle title="SHORT CUT" subtitle="원하는 카테고리로 바로 이동" />
                 <ul className='shortcut-list'>
                     {shortCut.map((short, id) =>
                         <li key={id}

@@ -9,17 +9,26 @@ import 'swiper/css/navigation';
 
 export default function CartPopup({ product, selectedColor, selectedSize, quantity, onClose, onGoCart, mode = "wish" }) {
     const navigate = useNavigate();
-    const { wishList, BestItems, onBestMenus } = useProductStore();
+    const { wishList, BestItems, onFetchItem, onBestMenus } = useProductStore();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
+    const formatPrice = (value) => `₩ ${Number(value || 0).toLocaleString()}`;
+    const formatCount = (value) => `${Number(value || 1).toLocaleString()}개`;
     const price = product?.discountRate > 0 ? product?.discountPrice : product?.price;
-    const totalPrice = (price * quantity).toLocaleString();
+    const totalPrice = price * quantity;
 
     // mode가 best면 베스트 아이템 로드
     useEffect(() => {
-        if (mode === "best") onBestMenus();
-    }, [mode]);
+        if (mode !== "best") return;
+
+        const loadBestItems = async () => {
+            await onFetchItem();
+            onBestMenus();
+        };
+
+        loadBestItems();
+    }, [mode, onFetchItem, onBestMenus]);
 
     // mode에 따라 리스트와 타이틀 결정
     const recommendList = mode === "wish" ? wishList : BestItems;
@@ -47,8 +56,8 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
                     </div>
                     <div className="cart-go-text">
                         <p className='cart-popup-name'>{product?.name}</p>
-                        <p className='cart-popup-option'>{selectedColor} / {selectedSize} / {quantity}개</p>
-                        <p className='cart-popup-price'>{totalPrice}원</p>
+                        <p className='cart-popup-option'>{selectedSize || "-"} / {formatCount(quantity)}</p>
+                        <p className='cart-popup-price'>{formatPrice(totalPrice)}</p>
                     </div>
                 </div>
 
@@ -98,13 +107,13 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
                                             <p className="wish-item-name">{item.name}</p>
                                             {mode === "wish" && (
                                                 <p className="wish-item-option">
-                                                    {item.selectedColor} / {item.selectedSize}
+                                                    {item.selectedSize || "-"} / {formatCount(item.quantity)}
                                                 </p>
                                             )}
                                             <p className="wish-item-price">
                                                 {item.discountRate > 0
-                                                    ? item.discountPrice?.toLocaleString()
-                                                    : item.price?.toLocaleString()}원
+                                                    ? formatPrice(item.discountPrice)
+                                                    : formatPrice(item.price)}
                                             </p>
                                         </div>
                                     </div>
