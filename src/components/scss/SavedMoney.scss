@@ -2,13 +2,13 @@
 
 .savedmoney-wrap {
   .saved-top {
-    background-color: #ffffff;
+    @include g.userInfoPanel;
     padding: 30px;
     margin-bottom: 24px;
 
     .my-saved {
-      border-bottom: 1px solid g.$text-sub-color2;
-      padding-bottom: 10px;
+      @include g.userInfoListLine;
+      padding-bottom: 16px;
       font-size: g.$size-16;
       font-weight: g.$Bold;
       color: g.$text-main-color;
@@ -19,7 +19,7 @@
         @include g.myFlex(center, 100px, center);
         padding: 60px 40px;
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         gap: 240px;
 
         li {
@@ -41,20 +41,21 @@
       }
 
       .explain-list {
-        font-size: g.$size-14-main;
-        color: g.$text-sub-color;
+        @include g.userInfoNoticeList;
+        padding-top: 20px;
       }
     }
   }
 
   .saved-bottom {
-    background-color: #ffffff;
+    @include g.userInfoPanel;
     padding: 30px;
     margin-bottom: 24px;
 
     .top-menu {
       @include g.myFlex(flex-start, 20px, center);
-      padding-bottom: 10px;
+      padding-bottom: 16px;
+      @include g.userInfoListLine;
 
       p {
         cursor: pointer;
@@ -85,7 +86,7 @@
         width: 100px;
         padding: 14px;
         text-align: center;
-        border-bottom: 1px solid #eee;
+        @include g.userInfoListLine;
         font-size: g.$size-14-main;
         color: g.$text-main-color;
       }

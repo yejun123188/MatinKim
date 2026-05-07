@@ -1,7 +1,7 @@
 @use "../../App.scss" as g;
 
 .order-list-section {
-  background: #ffffff;
+  @include g.userInfoPanel;
   padding: 30px;
   width: 100%;
 
@@ -22,6 +22,7 @@
       color: #000000;
     }
   }
+
   .order-tab-content {
     .tab-order-wrap {
       .order-empty {
@@ -36,34 +37,39 @@
         gap: 10px;
         padding: 10px 0 20px;
         border-top: 1px solid #000000;
-        border-bottom: 2px solid #eeeeee;
+        @include g.userInfoListLine;
+
         .date-btn-wrap {
           display: flex;
           gap: 10px;
 
           button {
-            @include g.myBtn2;
+            @include g.myBtn2($pd: 0);
+            width: 90px;
+            height: 30px;
           }
 
           .active {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 30px;
           }
         }
+
         .custom-date-wrap {
           display: flex;
           align-items: center;
           gap: 10px;
+
           .date-input-wrap {
             display: flex;
             gap: 5px;
-
             position: relative;
             width: 110px;
             @include g.myTextBox;
 
             .date-input {
               display: flex;
-
               width: 80px;
               height: inherit;
               font-size: g.$size-14-main;
@@ -79,12 +85,16 @@
                 cursor: pointer;
               }
             }
+
             img {
               width: 8px;
             }
           }
+
           button {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 30px;
           }
         }
 
@@ -93,7 +103,9 @@
           gap: 10px;
 
           button {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 30px;
           }
 
           .custom-year-input {
@@ -111,9 +123,11 @@
               outline: none;
               cursor: pointer;
             }
+
             img {
               width: 8px;
             }
+
             .year-list {
               font-size: g.$size-14-main;
               position: absolute;
@@ -123,6 +137,7 @@
               z-index: 10;
               @include g.myTextBox;
               padding: 0;
+
               div {
                 color: g.$text-sub-color;
                 padding: 5px 7px;
@@ -138,6 +153,7 @@
           }
         }
       }
+
       .order-list-wrap {
         display: flex;
         flex-direction: column;
@@ -166,12 +182,13 @@
             }
           }
         }
+
         .order-list {
           .order-product {
             display: flex;
             gap: 10px;
-            border-bottom: 2px solid #eeeeee;
-            padding: 12px 12px;
+            padding: 20px 12px;
+            @include g.userInfoListLine;
 
             .img-box {
               gap: 20px;
@@ -183,10 +200,32 @@
                 min-width: 100px;
                 height: 150px;
               }
+
               .product-text {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+
+                .order-name {
+                  font-size: g.$size-16;
+                  font-weight: g.$Bold;
+                  line-height: 1.35;
+                }
+
+                .order-price {
+                  font-size: g.$size-14-main;
+                  font-weight: g.$Regular;
+                }
+
+                .order-count {
+                  font-size: 13px;
+                  font-weight: g.$Regular;
+                }
+
+                .order-count {
+                  color: g.$text-sub-color2;
+                  margin-top: 4px;
+                }
               }
             }
 
@@ -215,11 +254,13 @@
 
               .order-btn-wrap {
                 display: flex;
-                justify-content: end;
-                width: 160px;
+                justify-content: flex-end;
+                width: 190px;
 
                 .btn {
-                  @include g.myBtn1;
+                  @include g.myBtn1($pd: 0);
+                  width: 90px;
+                  height: 30px;
                 }
 
                 .order-btn {
@@ -234,8 +275,10 @@
     }
   }
 }
+
 .order-tab-text {
   ul {
-    padding: 10px 0;
+    @include g.userInfoNoticeList;
+    padding: 20px 0 0;
   }
 }
