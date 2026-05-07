@@ -8,6 +8,7 @@ import "./scss/userInfoMain.scss";
 import { FreeMode } from "swiper/modules";
 import UserInfoNone from "./UserInfoNone";
 import {
+  getGradeBenefit,
   getLocalPurchaseInfo,
   getMemberGrade,
   useAuthStore,
@@ -34,7 +35,29 @@ const userInfo = {
   name: "MATIN KIM",
   purchaseAmount: 0,
   purchaseCount: 0,
-  benefits: "적립 3%, 구매 할인 7%, 생일쿠폰 20%",
+};
+
+const getMembershipGuide = (grade) => {
+  const benefit = getGradeBenefit(grade);
+
+  return `마뗑킴의 회원이 되시면 다양한 혜택을 받아 보실 수 있습니다.
+
+현재 ${grade} 등급 혜택: ${benefit.summary}
+
+1. 회원가입 시 바로 사용할 수 있는 5,000원 신규 적립금 지급
+2. 1만원 이상 구매 시 구매금액의 ${benefit.pointRate}% 적립금 지급
+3. 배송 완료 시점으로부터 7일 후 적립금 사용 가능
+
+VIP - 적립 3%, 구매 할인 7%, 생일쿠폰 20%
+GOLD - 적립 2%, 구매 할인 5%, 생일쿠폰 15%
+FRIENDS - 적립 1%, WELCOME 쿠폰 5%
+
+SALE 상품 제외 상시 적용, 전 고객 무료배송
+회원등급은 6개월마다 구매금액 기준으로 조정됩니다.
+생일쿠폰은 발급일로부터 30일 이내 사용 가능합니다.
+
+적립금은 최소 결제금액 및 1회 사용 한도 없이 사용 가능합니다.
+적립금을 사용한 결제 건은 구매 적립금이 지급되지 않습니다.`;
 };
 
 const orderStatusList = [
@@ -194,6 +217,7 @@ export default function UserInfoMain() {
 
   const grade =
     getMemberGrade(purchaseAmount);
+  const membershipGuide = getMembershipGuide(grade);
 
   const totalPoint =
     savedMoneySummary?.totalPoint || 0;
@@ -317,7 +341,7 @@ export default function UserInfoMain() {
                   />
 
                   <p>
-                    {userInfo.benefits}
+                    {membershipGuide}
                   </p>
                 </div>
               </li>

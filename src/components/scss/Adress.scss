@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     height: 40px;
-    padding: 0 0 16px;
+    padding: 0 0 22px;
     margin-bottom: 0;
     @include g.userInfoListLine;
 
@@ -26,7 +26,7 @@
 
   .address-middle {
     @include g.userInfoPanel;
-    padding: 30px 30px 0;
+    padding: 22px 30px 30px 30px;
   }
 
   .address-item {
@@ -38,7 +38,7 @@
     @include g.userInfoListLine;
 
     &:last-child {
-      border-bottom: 0;
+      border-bottom: 1px solid #eeeeee;
     }
 
     .item-left {
@@ -80,14 +80,16 @@
 
       .Bbtn {
         @include g.myBtn1($pd: 0);
-        width: 90px;
-        height: 30px;
+        min-width: 90px;
+        padding: 0 12px;
+        height: 35px;
       }
 
       .Wbtn {
         @include g.myBtn2($pd: 0);
-        width: 90px;
-        height: 30px;
+        min-width: 90px;
+        padding: 0 12px;
+        height: 35px;
       }
     }
   }
@@ -112,14 +114,16 @@
 
     .Bbtn {
       @include g.myBtn1($pd: 0);
-      width: 90px;
-      height: 30px;
+      min-width: 120px;
+      padding: 0 12px;
+      height: 40px;
     }
 
     .Wbtn {
       @include g.myBtn2($pd: 0);
-      width: 90px;
-      height: 30px;
+      min-width: 120px;
+      padding: 0 12px;
+      height: 40px;
     }
   }
 }

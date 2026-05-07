@@ -38,6 +38,8 @@
         padding: 10px 0 20px;
         border-top: 1px solid #000000;
         @include g.userInfoListLine;
+        position: relative;
+        z-index: 2;
 
         .date-btn-wrap {
           display: flex;
@@ -46,13 +48,13 @@
           button {
             @include g.myBtn2($pd: 0);
             width: 90px;
-            height: 30px;
+            height: 35px;
           }
 
           .active {
             @include g.myBtn1($pd: 0);
             width: 90px;
-            height: 30px;
+            height: 35px;
           }
         }
 
@@ -63,18 +65,22 @@
 
           .date-input-wrap {
             display: flex;
-            gap: 5px;
+            align-items: center;
             position: relative;
-            width: 110px;
+            width: 120px;
+            height: 35px;
             @include g.myTextBox;
+            padding: 0 28px 0 10px;
 
             .date-input {
               display: flex;
-              width: 80px;
+              width: 100%;
               height: inherit;
               font-size: g.$size-14-main;
               border: none;
+              outline: none;
               font-family: inherit;
+              background: transparent;
 
               &::-webkit-calendar-picker-indicator {
                 position: absolute;
@@ -87,14 +93,20 @@
             }
 
             img {
-              width: 8px;
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              width: 10px;
+              height: 6px;
+              transform: translateY(-50%);
+              pointer-events: none;
             }
           }
 
           button {
             @include g.myBtn1($pd: 0);
             width: 90px;
-            height: 30px;
+            height: 35px;
           }
         }
 
@@ -105,15 +117,18 @@
           button {
             @include g.myBtn1($pd: 0);
             width: 90px;
-            height: 30px;
+            height: 35px;
           }
 
           .custom-year-input {
             position: relative;
-            width: 70px;
+            width: 90px;
+            height: 35px;
             display: flex;
+            align-items: center;
             cursor: pointer;
             @include g.myTextBox;
+            padding: 0 28px 0 10px;
 
             input {
               width: 100%;
@@ -122,10 +137,17 @@
               border: none;
               outline: none;
               cursor: pointer;
+              background: transparent;
             }
 
             img {
-              width: 8px;
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              width: 10px;
+              height: 6px;
+              transform: translateY(-50%);
+              pointer-events: none;
             }
 
             .year-list {
@@ -134,9 +156,10 @@
               top: 100%;
               left: 0;
               width: 100%;
-              z-index: 10;
+              z-index: 50;
               @include g.myTextBox;
               padding: 0;
+              background: #ffffff;
 
               div {
                 color: g.$text-sub-color;
@@ -233,17 +256,22 @@
               display: flex;
               gap: 10px;
               align-items: center;
+              flex: 1;
+              min-width: 0;
+              padding-left: 10px;
 
               .status {
                 display: flex;
                 justify-content: center;
-                width: 260px;
+                flex: 1 1 180px;
+                min-width: 120px;
               }
 
               .order-no {
                 display: flex;
                 flex-direction: column;
-                width: 260px;
+                flex: 1 1 180px;
+                min-width: 130px;
 
                 p,
                 span {
@@ -255,12 +283,14 @@
               .order-btn-wrap {
                 display: flex;
                 justify-content: flex-end;
-                width: 190px;
+                flex: 0 0 auto;
+                min-width: 190px;
 
                 .btn {
                   @include g.myBtn1($pd: 0);
-                  width: 90px;
-                  height: 30px;
+                  min-width: 90px;
+                  padding: 0 12px;
+                  height: 35px;
                 }
 
                 .order-btn {

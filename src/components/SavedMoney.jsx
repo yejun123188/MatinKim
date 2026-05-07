@@ -25,6 +25,14 @@ export default function SavedMoney() {
     [savedMoneyList, tab]
   );
 
+  const summaryItems = [
+    { label: "총 적립금", value: savedMoneySummary.totalPoint },
+    { label: "사용가능 적립금", value: savedMoneySummary.availablePoint },
+    { label: "사용된 적립금", value: savedMoneySummary.usedPoint },
+    { label: "미가용 적립금", value: savedMoneySummary.unavailablePoint },
+    { label: "환불예정 적립금", value: savedMoneySummary.refundPoint },
+  ];
+
   return (
     <div className="savedmoney-wrap">
       <div className="saved-top">
@@ -34,40 +42,13 @@ export default function SavedMoney() {
 
         <div className="my-saved-middle">
           <div className="list-wrap">
-            <ul className="left-list">
-              <li>
-                <div className="text">총 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.totalPoint)}
-                </p>
-              </li>
-              <li>
-                <div className="text">사용가능 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.availablePoint)}
-                </p>
-              </li>
-              <li>
-                <div className="text">사용된 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.usedPoint)}
-                </p>
-              </li>
-            </ul>
-
-            <ul className="right-list">
-              <li>
-                <div className="text">미가용 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.unavailablePoint)}
-                </p>
-              </li>
-              <li>
-                <div className="text">환불예정 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.refundPoint)}
-                </p>
-              </li>
+            <ul className="summary-list">
+              {summaryItems.map((item) => (
+                <li key={item.label}>
+                  <div className="text">{item.label}</div>
+                  <p className="price">{formatPoint(item.value)}</p>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -123,7 +104,11 @@ export default function SavedMoney() {
                 </tr>
               ))
             ) : (
-              <UserInfoNone title="적립금" />
+              <tr>
+                <td colSpan={4} className="empty-saved-money">
+                  <UserInfoNone title="적립금" />
+                </td>
+              </tr>
             )}
           </tbody>
         </table>
