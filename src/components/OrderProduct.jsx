@@ -14,6 +14,9 @@ const statusCode = {
   조회불가: "NONE",
 };
 
+const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
+const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
+
 const getOrderDateLabel = (orderDate, order) => {
   if (orderDate !== "취소/반품") return orderDate;
 
@@ -148,11 +151,9 @@ export default function OrderProduct({
                     <img src={order.img} alt={order.name} />
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
-                      <p className="order-price">
-                        {order.price.toLocaleString()}원
-                      </p>
+                      <p className="order-price">{formatPrice(order.price)}</p>
                       <p className="order-count">
-                        {order.size} / {order.count}개
+                        {order.size || "-"} / {formatCount(order.count)}
                       </p>
                     </div>
                   </div>

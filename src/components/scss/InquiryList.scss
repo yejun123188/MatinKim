@@ -3,110 +3,125 @@
 .inquiry-list-wrap {
   width: 100%;
   padding: 30px;
-  background: #ffffff;
+
+  @include g.userInfoPanel;
 
   .inquiry-search {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
 
     select {
       @include g.myTextBox;
-      height: 40px;
-      width: 150px;
+
+      appearance: none;
+      height: 35px;
+      width: 120px;
+      padding: 0 28px 0 10px;
+
+      background-image: url(../../../public/images/userinfo/input-under-btn.svg);
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 10px 6px;
+
+      color: g.$text-main-color;
+      outline: none;
     }
 
     div {
       display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     input {
       @include g.myTextBox;
-      height: 40px;
+
+      height: 35px;
       width: 264px;
     }
 
     button {
-      @include g.myBtn1;
-      height: 40px;
-      margin-left: 10px;
-      font-size: g.$size-14-main;
+      @include g.myBtn1($pd: 0);
+
+      min-width: 90px;
+      height: 35px;
+      padding: 0 12px;
     }
   }
 
   table {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border-bottom: 1px solid #999999;
-
-    tr {
-      display: flex;
-    }
-
-    th,
-    td {
-      display: flex;
-      height: 60px;
-      align-items: center;
-      justify-content: center;
-      font-weight: g.$Regular;
-    }
+    border-collapse: collapse;
 
     th {
       background-color: #f0f0f0;
+      padding: 12px;
+      font-size: g.$size-14-main;
+      text-align: center;
       border-top: 1px solid g.$main-color;
       color: g.$text-main-color;
+      font-weight: g.$Regular;
+
+      &:nth-child(3) {
+        width: 40%;
+      }
     }
 
     td {
-      border-top: 1px solid #eee;
+      padding: 14px;
+      text-align: center;
+
+      @include g.userInfoListLine;
+
+      font-size: g.$size-14-main;
       color: g.$text-main-color;
     }
 
-    .inquiry-empty {
-      flex: 1;
+    .subject {
+      text-align: center;
+    }
+
+    .subject-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       width: 100%;
-      color: g.$text-sub-color;
+      background: none;
+      border: 0;
+      padding: 0;
+
+      color: g.$text-main-color;
+      font: inherit;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
-    th:nth-child(1),
-    td:nth-child(1) {
-      flex: 1;
-    }
+    .empty-inquiry {
+      padding: 0;
+      height: 150px;
 
-    th:nth-child(2),
-    td:nth-child(2) {
-      flex: 1;
-    }
-
-    th:nth-child(3),
-    td:nth-child(3) {
-      flex: 3;
-    }
-
-    th:nth-child(4),
-    td:nth-child(4) {
-      flex: 1;
-    }
-
-    th:nth-child(5),
-    td:nth-child(5) {
-      flex: 1;
+      .none-info-wrap {
+        width: 100%;
+      }
     }
   }
+}
 
-  .inquiry-bottom {
-    display: flex;
-    padding: 10px 0;
-    justify-content: end;
+.inquiry-bottom {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
 
-    .inquiry-write-btn {
-      @include g.myBtn1;
-      width: 100px;
-      height: 40px;
-    }
+  .inquiry-write-btn {
+    @include g.myBtn1($pd: 0);
+
+    width: 120px;
+    height: 40px;
   }
 }

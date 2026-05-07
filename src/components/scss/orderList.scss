@@ -1,7 +1,7 @@
 @use "../../App.scss" as g;
 
 .order-list-section {
-  background: #ffffff;
+  @include g.userInfoPanel;
   padding: 30px;
   width: 100%;
 
@@ -22,6 +22,7 @@
       color: #000000;
     }
   }
+
   .order-tab-content {
     .tab-order-wrap {
       .order-empty {
@@ -36,39 +37,50 @@
         gap: 10px;
         padding: 10px 0 20px;
         border-top: 1px solid #000000;
-        border-bottom: 2px solid #eeeeee;
+        @include g.userInfoListLine;
+        position: relative;
+        z-index: 2;
+
         .date-btn-wrap {
           display: flex;
           gap: 10px;
 
           button {
-            @include g.myBtn2;
+            @include g.myBtn2($pd: 0);
+            width: 90px;
+            height: 35px;
           }
 
           .active {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 35px;
           }
         }
+
         .custom-date-wrap {
           display: flex;
           align-items: center;
           gap: 10px;
+
           .date-input-wrap {
             display: flex;
-            gap: 5px;
-
+            align-items: center;
             position: relative;
-            width: 110px;
+            width: 120px;
+            height: 35px;
             @include g.myTextBox;
+            padding: 0 28px 0 10px;
 
             .date-input {
               display: flex;
-
-              width: 80px;
+              width: 100%;
               height: inherit;
               font-size: g.$size-14-main;
               border: none;
+              outline: none;
               font-family: inherit;
+              background: transparent;
 
               &::-webkit-calendar-picker-indicator {
                 position: absolute;
@@ -79,12 +91,22 @@
                 cursor: pointer;
               }
             }
+
             img {
-              width: 8px;
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              width: 10px;
+              height: 6px;
+              transform: translateY(-50%);
+              pointer-events: none;
             }
           }
+
           button {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 35px;
           }
         }
 
@@ -93,15 +115,20 @@
           gap: 10px;
 
           button {
-            @include g.myBtn1;
+            @include g.myBtn1($pd: 0);
+            width: 90px;
+            height: 35px;
           }
 
           .custom-year-input {
             position: relative;
-            width: 70px;
+            width: 90px;
+            height: 35px;
             display: flex;
+            align-items: center;
             cursor: pointer;
             @include g.myTextBox;
+            padding: 0 28px 0 10px;
 
             input {
               width: 100%;
@@ -110,19 +137,30 @@
               border: none;
               outline: none;
               cursor: pointer;
+              background: transparent;
             }
+
             img {
-              width: 8px;
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              width: 10px;
+              height: 6px;
+              transform: translateY(-50%);
+              pointer-events: none;
             }
+
             .year-list {
               font-size: g.$size-14-main;
               position: absolute;
               top: 100%;
               left: 0;
               width: 100%;
-              z-index: 10;
+              z-index: 50;
               @include g.myTextBox;
               padding: 0;
+              background: #ffffff;
+
               div {
                 color: g.$text-sub-color;
                 padding: 5px 7px;
@@ -138,6 +176,7 @@
           }
         }
       }
+
       .order-list-wrap {
         display: flex;
         flex-direction: column;
@@ -166,12 +205,13 @@
             }
           }
         }
+
         .order-list {
           .order-product {
             display: flex;
             gap: 10px;
-            border-bottom: 2px solid #eeeeee;
-            padding: 12px 12px;
+            padding: 20px 12px;
+            @include g.userInfoListLine;
 
             .img-box {
               gap: 20px;
@@ -183,10 +223,32 @@
                 min-width: 100px;
                 height: 150px;
               }
+
               .product-text {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+
+                .order-name {
+                  font-size: g.$size-16;
+                  font-weight: g.$Bold;
+                  line-height: 1.35;
+                }
+
+                .order-price {
+                  font-size: g.$size-14-main;
+                  font-weight: g.$Regular;
+                }
+
+                .order-count {
+                  font-size: 13px;
+                  font-weight: g.$Regular;
+                }
+
+                .order-count {
+                  color: g.$text-sub-color2;
+                  margin-top: 4px;
+                }
               }
             }
 
@@ -194,17 +256,22 @@
               display: flex;
               gap: 10px;
               align-items: center;
+              flex: 1;
+              min-width: 0;
+              padding-left: 10px;
 
               .status {
                 display: flex;
                 justify-content: center;
-                width: 260px;
+                flex: 1 1 180px;
+                min-width: 120px;
               }
 
               .order-no {
                 display: flex;
                 flex-direction: column;
-                width: 260px;
+                flex: 1 1 180px;
+                min-width: 130px;
 
                 p,
                 span {
@@ -215,11 +282,15 @@
 
               .order-btn-wrap {
                 display: flex;
-                justify-content: end;
-                width: 160px;
+                justify-content: flex-end;
+                flex: 0 0 auto;
+                min-width: 190px;
 
                 .btn {
-                  @include g.myBtn1;
+                  @include g.myBtn1($pd: 0);
+                  min-width: 90px;
+                  padding: 0 12px;
+                  height: 35px;
                 }
 
                 .order-btn {
@@ -234,8 +305,10 @@
     }
   }
 }
+
 .order-tab-text {
   ul {
-    padding: 10px 0;
+    @include g.userInfoNoticeList;
+    padding: 20px 0 0;
   }
 }

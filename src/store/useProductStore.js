@@ -189,6 +189,15 @@ export const useProductStore = create((set, get) => ({
   isCartOpen: false,
   openCart: () => set({ isCartOpen: true }),
   closeCart: () => set({ isCartOpen: false }),
+  onClearUserProductData: () => {
+    localStorage.removeItem("cartItem");
+    set({
+      cartItem: [],
+      cartCount: 0,
+      totalPrice: 0,
+      wishList: [],
+    });
+  },
 
   //ProductDetail에서 색상변수 selectedColor 사이즈변수 selectedSize 개수 quantity 총가격 totalprice
   //상품을 장바구니에 담는 메서드

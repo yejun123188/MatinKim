@@ -4,10 +4,10 @@
   width: 100%;
 
   .account-edit-panel {
+    @include g.userInfoPanel;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 64px;
-    background: g.$white-color;
     padding: 48px 44px 56px;
   }
 
@@ -41,7 +41,9 @@
       appearance: none;
       background-image: url(../../../public/images/userinfo/input-under-btn.svg);
       background-repeat: no-repeat;
-      background-position: right 18px center;
+      background-position: right 10px center;
+      background-size: 10px 6px;
+      padding-right: 28px;
     }
 
     em {
@@ -65,33 +67,59 @@
     }
 
     button {
-      @include g.myBtn1;
-      width: 130px;
+      @include g.myBtn1($pd: 0);
+      width: 120px;
       height: 40px;
       border: none;
-      font-size: g.$size-14-main;
     }
   }
 
   .phone-row {
-    select,
+    width: 100%;
+    justify-content: flex-start;
+
+    select {
+      width: 80%;
+    }
+
     input {
-      width: 120px;
+      width: 100%;
       text-align: start;
     }
 
     button {
-      @include g.myBtn1;
-      width: 130px;
+      @include g.myBtn1($pd: 0);
+      flex: 0 0 120px;
+      width: 120px;
       height: 40px;
-      margin-left: 18px;
       border: none;
-      font-size: g.$size-14-main;
     }
   }
 
-  .birth-row {
+  .phone-verify-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     input {
+      width: 180px;
+    }
+
+    button {
+      @include g.myBtn1($pd: 0);
+      width: 120px;
+      height: 40px;
+      border: none;
+    }
+  }
+
+  .phone-verify-success {
+    color: g.$text-main-color;
+    font-size: g.$size-14-main;
+  }
+
+  .birth-row {
+    > input {
       width: 120px;
       text-align: center;
     }
@@ -114,26 +142,29 @@
   .account-edit-buttons {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
     margin-top: 32px;
 
     button {
-      width: 150px;
-      height: 46px;
-      font-size: g.$size-16;
+      width: 120px;
+      height: 40px;
     }
 
     .submit {
-      @include g.myBtn1;
+      @include g.myBtn1($pd: 0);
       margin-left: auto;
     }
 
     .cancel {
-      @include g.myBtn2;
+      @include g.myBtn2($pd: 0);
     }
 
     .withdraw {
-      @include g.myBtn2($c: g.$text-sub-color, $bd: 1px solid g.$text-sub-color2);
+      @include g.myBtn2(
+        $c: g.$text-sub-color,
+        $bd: 1px solid g.$text-sub-color2,
+        $pd: 0
+      );
     }
   }
 }

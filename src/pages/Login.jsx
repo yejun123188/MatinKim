@@ -164,9 +164,9 @@ export default function Login({ onClose, guestMode = false, guestOrderItems = []
             </button>
 
             <div className="login-links">
-              <a href="#!">아이디 찾기</a>
+              <Link to="/find" onClick={onClose}>아이디 찾기</Link>
               <span>|</span>
-              <a href="#!">비밀번호 재설정</a>
+              <Link to="/password/find" onClick={onClose}>비밀번호 찾기</Link>
             </div>
 
             <div className="sns-login">

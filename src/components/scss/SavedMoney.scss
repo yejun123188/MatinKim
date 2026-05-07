@@ -2,13 +2,13 @@
 
 .savedmoney-wrap {
   .saved-top {
-    background-color: #ffffff;
+    @include g.userInfoPanel;
     padding: 30px;
     margin-bottom: 24px;
 
     .my-saved {
-      border-bottom: 1px solid g.$text-sub-color2;
-      padding-bottom: 10px;
+      @include g.userInfoListLine;
+      padding-bottom: 16px;
       font-size: g.$size-16;
       font-weight: g.$Bold;
       color: g.$text-main-color;
@@ -16,45 +16,58 @@
 
     .my-saved-middle {
       .list-wrap {
-        @include g.myFlex(center, 100px, center);
-        padding: 60px 40px;
-        display: flex;
-        align-items: start;
-        gap: 240px;
+        padding: 24px 0;
+        @include g.userInfoListLine;
+
+        .summary-list {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
 
         li {
-          @include g.myFlex(space-between, 100px, center);
-          padding-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          min-height: 100px;
+
+          &:not(:last-child) {
+            border-right: 1px solid #eeeeee;
+          }
 
           .text {
-            width: 200px;
             font-size: g.$size-16;
-            color: g.$text-sub-color;
+            color: g.$text-main-color;
           }
 
           .price {
-            font-size: g.$size-16;
-            font-weight: g.$Regular;
+            font-size: 1.5rem;
+            font-weight: g.$Bold;
             color: g.$text-main-color;
           }
         }
       }
 
       .explain-list {
-        font-size: g.$size-14-main;
-        color: g.$text-sub-color;
+        @include g.userInfoNoticeList;
+        padding-top: 30px;
       }
     }
   }
 
   .saved-bottom {
-    background-color: #ffffff;
+    @include g.userInfoPanel;
     padding: 30px;
     margin-bottom: 24px;
 
     .top-menu {
       @include g.myFlex(flex-start, 20px, center);
-      padding-bottom: 10px;
+      padding-bottom: 16px;
+      @include g.userInfoListLine;
 
       p {
         cursor: pointer;
@@ -85,14 +98,19 @@
         width: 100px;
         padding: 14px;
         text-align: center;
-        border-bottom: 1px solid #eee;
+        @include g.userInfoListLine;
         font-size: g.$size-14-main;
         color: g.$text-main-color;
       }
 
       .empty-saved-money {
-        height: 80px;
+        padding: 0;
+        height: 150px;
         color: g.$text-sub-color;
+
+        .none-info-wrap {
+          width: 100%;
+        }
       }
     }
   }

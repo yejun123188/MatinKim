@@ -6,6 +6,13 @@ import "swiper/css/free-mode";
 import "./scss/userInfoMain.scss";
 import { FreeMode } from "swiper/modules";
 import UserInfoNone from "./UserInfoNone";
+import {
+  getGradeBenefit,
+  getLocalPurchaseInfo,
+  getMemberGrade,
+  useAuthStore,
+} from "../store/useAuthStore";
+import { getAllOrders } from "../utils/orderStorage";
 import { useProductStore } from "../store/useProductStore";
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
@@ -31,35 +38,44 @@ const user = {
   couponCount: 3,
 };
 
-const orders = [
-  {
-    id: 1,
-    name: "MATIN KIM CIRCLE LOGO TOP FOR MEN IN BLACK",
-    img: "https://matinkim.com/web/product/medium/202604/d6581a7ba9b5fa28d8890d1ad3aa9b42.jpg",
-    price: 68000,
-    status: "배송준비중",
-    size: "L",
-    count: 1,
-  },
-  {
-    id: 2,
-    name: "PATCHWORK CARGO BERMUDA PANTS FOR MEN IN BEIGE",
-    img: "https://matinkim.com/web/product/medium/202604/af24497fdacbac8b575687c878af7669.jpg",
-    price: 198000,
-    status: "배송중",
-    size: "L",
-    count: 1,
-  },
-  {
-    id: 3,
-    name: "MATIN LIGHT MESH CAP IN BLACK",
-    img: "https://cafe24img.poxo.com/kimdaniyaya/web/product/medium/202603/de8e4df27a4d897c4f265a7c5ac38a09.jpg",
-    price: 58000,
-    status: "배송완료",
-    size: "FREE",
-    count: 1,
-  },
-];
+const userInfo = {
+  name: "MATIN KIM",
+  purchaseAmount: 0,
+  purchaseCount: 0,
+};
+
+const getMembershipGuide = (grade) => {
+  const benefit = getGradeBenefit(grade);
+  return benefit.summary;
+};
+
+const orderStatusList = ["결제완료", "배송준비중", "배송중", "배송완료"];
+
+const DELIVERY_COMPLETE_MS = 30 * 24 * 60 * 60 * 1000;
+
+const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
+
+const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
+
+const parseOrderDate = (dateString) => {
+  if (!dateString) return null;
+
+  if (/^\d{8}$/.test(String(dateString))) {
+    const str = String(dateString);
+
+    const year = str.slice(0, 4);
+    const month = str.slice(4, 6);
+    const day = str.slice(6, 8);
+
+    const time = new Date(`${year}-${month}-${day}`).getTime();
+
+    return Number.isNaN(time) ? null : time;
+  }
+
+  const time = new Date(dateString).getTime();
+
+  return Number.isNaN(time) ? null : time;
+};
 
 export default function UserInfoMain() {
   const [showCartPopup, setShowCartPopup] = useState(false);
@@ -75,6 +91,158 @@ export default function UserInfoMain() {
     const bOut = b.isSoldOut ? 1 : 0;
     return aOut - bOut;
   });
+  const navigate = useNavigate();
+
+  const [now, setNow] = useState(Date.now());
+
+  const [cartItem, setCartItem] = useState(null);
+
+  const [showCartPopup, setShowCartPopup] = useState(false);
+
+  const [showCart, setShowCart] = useState(false);
+
+  const {
+    user,
+    couponList,
+    savedMoneySummary,
+    onFetchCoupons,
+    onFetchSavedMoney,
+  } = useAuthStore();
+
+  const { wishList, onLoadWishList, onRemoveWish, onAddCart } =
+    useProductStore();
+
+  useEffect(() => {
+    onFetchCoupons();
+    onFetchSavedMoney();
+  }, [user, onFetchCoupons, onFetchSavedMoney]);
+
+  useEffect(() => {
+    if (user?.uid) {
+      onLoadWishList(user.uid);
+    }
+  }, [user, onLoadWishList]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const mainOrders = useMemo(() => {
+    return getAllOrders(now)
+      .flatMap((o) =>
+        o.orders.map((order) => ({
+          ...order,
+          createdAt: o.createdAt,
+          date: o.date,
+        })),
+      )
+      .filter((order) => {
+        if (!orderStatusList.includes(order.status)) {
+          return false;
+        }
+
+        if (order.status !== "배송완료") {
+          return true;
+        }
+
+        const createdAtTime = new Date(order.createdAt).getTime();
+
+        if (!Number.isNaN(createdAtTime)) {
+          return now - createdAtTime < DELIVERY_COMPLETE_MS;
+        }
+
+        const orderDateTime = parseOrderDate(order.date);
+
+        if (!orderDateTime) return false;
+
+        return now - orderDateTime < DELIVERY_COMPLETE_MS;
+      });
+  }, [now]);
+
+  const displayName = user?.name || user?.nickname || userInfo.name;
+
+  const localPurchaseInfo = getLocalPurchaseInfo(user);
+
+  const purchaseAmount = Number(
+    localPurchaseInfo.purchaseAmount ??
+      user?.purchaseAmount ??
+      user?.orderPrice ??
+      userInfo.purchaseAmount,
+  );
+
+  const purchaseCount = Number(
+    localPurchaseInfo.purchaseCount ??
+      user?.purchaseCount ??
+      user?.orderCount ??
+      userInfo.purchaseCount,
+  );
+
+  const grade = getMemberGrade(purchaseAmount);
+  const membershipGuide = getMembershipGuide(grade);
+
+  const totalPoint = savedMoneySummary?.totalPoint || 0;
+
+  const couponCount = user ? couponList.length : 0;
+
+  const sortedWishList = [...wishList].sort(
+    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
+  );
+
+  const getWishPrice = (wish) =>
+    wish.discountRate > 0 ? wish.discountPrice : wish.price;
+
+  const handleBuyNow = (wish) => {
+    if (wish.isSoldOut) return;
+
+    navigate("/payment", {
+      state: {
+        orderItems: [
+          {
+            id: wish.id,
+            brand: "MATIN KIM",
+            name: wish.name,
+            option: `${wish.selectedColor || "-"} / ${
+              wish.selectedSize || "-"
+            }`,
+            quantity: wish.quantity || 1,
+            price: getWishPrice(wish),
+            image: wish.mainImg || wish.hoverImg || "",
+          },
+        ],
+      },
+    });
+  };
+
+  const handleAddCart = (wish) => {
+    if (wish.isSoldOut) return;
+
+    const item = {
+      id: wish.id,
+      name: wish.name,
+      price: getWishPrice(wish),
+      mainImg: wish.mainImg,
+      image: wish.mainImg || wish.hoverImg,
+      key: wish.key || `${wish.id}-${wish.selectedSize}-${wish.selectedColor}`,
+      size: wish.selectedSize,
+      color: wish.selectedColor,
+      count: wish.quantity || 1,
+    };
+
+    onAddCart(item);
+
+    setCartItem(wish);
+    setShowCartPopup(true);
+  };
+
+  const handleRemoveWish = async (wish) => {
+    await onRemoveWish(wish.key, user?.uid);
+
+    alert("상품이 삭제되었습니다");
+  };
 
   return (
     <div className="main">
@@ -84,15 +252,25 @@ export default function UserInfoMain() {
             <p>
               반가워요! <strong>{user.name}</strong> 님!
             </p>
+
             <ul className="myinfo-list">
               <li>
-                <p>
-                  {user.name}님은 <br />
-                  <strong>{user.grade}등급</strong> 입니다!
-                </p>
+                <div>
+                  <p>{displayName}님은</p>
+                  <p>
+                    <strong
+                      style={{
+                        color: gradeColor[grade],
+                      }}
+                    >
+                      {grade} 등급
+                    </strong>
+                    입니다.
+                  </p>
+                </div>
                 <div className="question">
                   <img src="./images/userinfo/question.svg" alt="question" />
-                  <p>적립 3%,구매 할인 7%, 생일쿠폰 20%</p>
+                  <p>{membershipGuide}</p>
                 </div>
               </li>
               <li>
@@ -108,11 +286,14 @@ export default function UserInfoMain() {
           <ul className="my-wallet-list">
             <li>
               <span>총 적립금</span>
-              <strong>{user.pointCount.toLocaleString()} 원</strong>
+
+              <strong>{totalPoint.toLocaleString()} 원</strong>
             </li>
+
             <li>
               <span>내 쿠폰</span>
-              <strong>{user.couponCount} 개</strong>
+
+              <strong>{couponCount} 개</strong>
             </li>
           </ul>
         </UserInfoMainBox>
@@ -120,28 +301,35 @@ export default function UserInfoMain() {
 
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
-          {orders.length > 0 ? (
+          {mainOrders.length > 0 ? (
             <Swiper
+              className="order-list"
               slidesPerView={2.7}
               spaceBetween={24}
-              freeMode={true}
               modules={[FreeMode]}
-              className="order-list"
             >
-              {orders.map((order) => (
+              {mainOrders.map((order) => (
                 <SwiperSlide className="order-product" key={order.id}>
                   <div className="img-box">
                     <img src={order.img} alt={order.name} />
                   </div>
+
                   <div className="text-box">
-                    <div className={`status status-${statusCode[order.status]}`}>
-                      {order.status === "배송중" && <span className="dot"></span>}
+                    <div
+                      className={`status status-${statusCode[order.status]}`}
+                    >
+                      {order.status === "배송중" && (
+                        <span className="dot"></span>
+                      )}
+
                       {order.status}
                     </div>
+
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
+
                       <p className="order-count">
-                        {order.size} / {order.count}개
+                        {order.size || "-"} / {formatCount(order.count)}
                       </p>
                     </div>
                   </div>
@@ -154,7 +342,7 @@ export default function UserInfoMain() {
         </UserInfoMainBox>
       </div>
 
-      <div className="third-line">
+     <div className="third-line">
         <UserInfoMainBox title="My Wishlist" className="my-wish">
           {sortedWishList.length > 0 ? (
             <Swiper

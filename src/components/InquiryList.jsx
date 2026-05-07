@@ -1,34 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getQuickRangeValues } from "../utils/orderDateUtils";
 import "./scss/InquiryList.scss";
 import UserInfoNone from "./UserInfoNone";
-
-const inquiryRows = [
-  {
-    id: 1,
-    date: "2026-04-28",
-    category: "배송문의",
-    subject: "언제 출고되나요?",
-    content: "주문한 상품의 출고 일정을 알고 싶습니다.",
-    writer: "마뗑킴",
-    reply: "답변대기",
-  },
-  {
-    id: 2,
-    date: "2026-04-07",
-    category: "상품문의",
-    subject: "사이즈 추천 부탁드립니다",
-    content: "평소 착용 사이즈 기준으로 추천 부탁드립니다.",
-    writer: "마뗑킴",
-    reply: "답변완료",
-  },
-];
+import { useNavigate } from "react-router-dom";
 
 const periodOptions = [
   { value: "all", label: "전체" },
-  { value: "week", label: "일주일" },
-  { value: "month", label: "한달" },
-  { value: "threeMonths", label: "세달" },
+  { value: "week", label: "1주일" },
+  { value: "month", label: "1개월" },
+  { value: "threeMonths", label: "3개월" },
 ];
 
 const isWithinDateRange = (date, period) => {
@@ -46,8 +26,13 @@ export default function InquiryList() {
   const [period, setPeriod] = useState("all");
   const [searchType, setSearchType] = useState("subject");
   const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
 
-  const filteredRows = inquiryRows.filter((row) => {
+  const [rows, setRows] = useState(() => {
+    return JSON.parse(localStorage.getItem("inquiries")) || [];
+  });
+
+  const filteredRows = rows.filter((row) => {
     const matchesDate = isWithinDateRange(row.date, period);
     const targetText = row[searchType] || "";
     const matchesKeyword = targetText
@@ -57,73 +42,120 @@ export default function InquiryList() {
     return matchesDate && matchesKeyword;
   });
 
+  useEffect(() => {
+    const waitingRows = rows.filter((row) => row.reply === "답변대기");
+
+    const timers = waitingRows.map((row, index) =>
+      setTimeout(
+        () => {
+          setRows((prev) => {
+            const updated = prev.map((item) =>
+              item.id === row.id ? { ...item, reply: "답변완료" } : item,
+            );
+
+            localStorage.setItem("inquiries", JSON.stringify(updated));
+
+            return updated;
+          });
+        },
+        (index + 1) * 3000,
+      ),
+    );
+
+    return () => timers.forEach((timer) => clearTimeout(timer));
+  }, []);
+
   return (
-    <div className="inquiry-list-wrap">
-      <div className="inquiry-search">
-        <select
-          value={period}
-          aria-label="조회 기간"
-          onChange={(e) => setPeriod(e.target.value)}
-        >
-          {periodOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+    <>
+      <div className="inquiry-list-wrap">
+        <div className="inquiry-search">
+          <select
+            value={period}
+            aria-label="조회 기간"
+            onChange={(e) => setPeriod(e.target.value)}
+          >
+            {periodOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
 
-        <select
-          value={searchType}
-          aria-label="검색 조건"
-          onChange={(e) => setSearchType(e.target.value)}
-        >
-          <option value="subject">제목</option>
-          <option value="content">내용</option>
-        </select>
+          <select
+            value={searchType}
+            aria-label="검색 조건"
+            onChange={(e) => setSearchType(e.target.value)}
+          >
+            <option value="subject">제목</option>
+            <option value="content">내용</option>
+          </select>
 
-        <div>
-          <input
-            type="text"
-            aria-label="검색어"
-            value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
-          />
-          <button type="button">검색</button>
+          <div>
+            <input
+              type="text"
+              aria-label="검색어"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            <button type="button">검색</button>
+          </div>
         </div>
+
+        <table className="inquiry-table">
+          <thead>
+            <tr>
+              <th>날짜</th>
+              <th>분류</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>답변상태</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {filteredRows.length > 0 ? (
+              filteredRows.map((row) => (
+                <tr key={row.id}>
+                  <td>{row.date}</td>
+                  <td>{row.category}</td>
+
+                  <td className="subject">
+                    <button
+                      type="button"
+                      className="subject-btn"
+                      onClick={() => navigate(`/inquiry/${row.id}`)}
+                    >
+                      {row.subject}
+                    </button>
+                  </td>
+
+                  <td>{row.writer}</td>
+
+                  <td>
+                    <span>{row.reply}</span>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={5} className="empty-inquiry">
+                  <UserInfoNone title="문의" />
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
 
-      <table className="inquiry-table">
-        <thead>
-          <tr>
-            <th>DATE</th>
-            <th>CATEGORY</th>
-            <th>SUBJECT</th>
-            <th>WRITER</th>
-            <th>REPLY</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredRows.length > 0 ? (
-            filteredRows.map((row) => (
-              <tr key={row.id}>
-                <td>{row.date}</td>
-                <td>{row.category}</td>
-                <td className="subject">{row.subject}</td>
-                <td>{row.writer}</td>
-                <td>{row.reply}</td>
-              </tr>
-            ))
-          ) : (
-            <UserInfoNone title="문의" />
-          )}
-        </tbody>
-      </table>
-
       <div className="inquiry-bottom">
-        <button type="button" className="inquiry-write-btn">
+        <button
+          type="button"
+          className="inquiry-write-btn"
+          onClick={() => navigate("/board")}
+        >
           작성
         </button>
       </div>
-    </div>
+    </>
   );
 }

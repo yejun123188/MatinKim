@@ -194,7 +194,7 @@ export default function Payment() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async () => {
+     const handleSubmit = async () => {
         if (!validate()) return;
         if (isSubmitting) return;
 

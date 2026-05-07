@@ -13,7 +13,7 @@
       flex: 2;
 
       .my-info-wrap {
-        background: #ffffff;
+        @include g.userInfoPanel;
         padding: 40px 40px;
         display: flex;
         flex-direction: column;
@@ -54,11 +54,16 @@
                 position: absolute;
                 left: 25px;
                 top: 15px;
+                z-index: 20;
                 font-size: g.$size-14-main;
+                line-height: 1.55;
                 background: #d9d9d9;
-                padding: 7px 10px;
+                padding: 5px 12px;
                 border-radius: 0 8px 8px 8px;
                 opacity: 0;
+                white-space: pre-line;
+                overflow: visible;
+                text-overflow: clip;
                 transition: opacity 1s ease 2s;
               }
               img:hover + p {
@@ -94,6 +99,7 @@
           padding: 0 30px;
           justify-content: center;
           background-color: #ffffff;
+          border: 1px solid #e8e8e8;
           width: 100%;
           height: 100%;
 
@@ -114,20 +120,30 @@
     .order-list {
       display: flex;
       gap: 24px;
+      width: 100%;
 
       .order-product {
         display: flex;
         gap: 20px;
         min-width: 420px;
-        height: 150px;
+        min-height: 190px;
         padding: 20px;
         background-color: #ffffff;
+        border: 1px solid #e8e8e8;
         align-items: center;
+        box-sizing: border-box;
 
         .img-box {
+          flex: 0 0 100px;
+          width: 100px;
+          height: 150px;
+          overflow: hidden;
+
           img {
-            min-width: 100px;
-            height: 150px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
 
@@ -139,7 +155,6 @@
             align-items: center;
             gap: 6px;
             font-size: g.$size-14-main;
-            font-weight: g.$Bold;
             color: #000;
             margin-bottom: 10px;
 
@@ -157,11 +172,15 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-size: g.$size-16;
+            font-weight: g.$Bold;
+            line-height: 1.35;
           }
 
           .order-count {
             font-size: g.$size-14-main;
             color: g.$text-sub-color2;
+            margin-top: 6px;
           }
 
           .status-DONE {
@@ -173,10 +192,11 @@
   }
 
   .my-wish {
-    
     .wish-list {
       display: flex;
       gap: 24px;
+      width: 100%;
+
       .wish-product {
         display: flex;
         gap: 20px;
@@ -184,11 +204,21 @@
         height: 190px;
         padding: 20px;
         background-color: #ffffff;
+        border: 1px solid #e8e8e8;
         align-items: center;
+        box-sizing: border-box;
+
         .img-box {
+          flex: 0 0 100px;
+          width: 100px;
+          height: 150px;
+          overflow: hidden;
+
           img {
-            min-width: 100px;
-            height: 150px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
         .text-box {
@@ -202,12 +232,17 @@
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
+              font-size: g.$size-16;
+              font-weight: g.$Bold;
+              line-height: 1.35;
             }
 
             .wish-price {
               display: flex;
               gap: 5px;
               align-items: flex-end;
+              margin-top: 6px;
+              font-size: g.$size-14-main;
 
               span {
                 color: g.$text-sub-color2;
@@ -217,8 +252,9 @@
             }
 
             .wish-count {
-              font-size: g.$size-14-main;
+              font-size: 13px;
               color: g.$text-sub-color2;
+              margin-top: 4px;
             }
           }
           .button-wrap {
@@ -226,11 +262,15 @@
             gap: 8px;
 
             .Bbtn {
-              @include g.myBtn1;
+              @include g.myBtn1($pd: 0);
+              width: 90px;
+              height: 35px;
             }
 
             .Wbtn {
-              @include g.myBtn2;
+              @include g.myBtn2($pd: 0);
+              width: 90px;
+              height: 35px;
             }
           }
         }

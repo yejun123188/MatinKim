@@ -2,51 +2,49 @@
 
 .couponlist-wrap {
   .coupon-top {
-    background-color: #ffffff;
+    @include g.userInfoPanel;
     padding: 30px;
     margin-bottom: 24px;
 
     .coupon-num {
       display: flex;
+      align-items: center;
       gap: 10px;
     }
 
     input {
       @include g.myTextBox;
+      width: 250px;
       height: 40px;
-      width: 500px;
     }
 
     button {
+      @include g.myBtn1($pd: 0);
+      width: 120px;
       height: 40px;
-      padding: 0 20px;
-      @include g.myBtn1();
     }
 
     p {
       margin-top: 10px;
       color: g.$text-sub-color;
       font-size: g.$size-14-main;
+      line-height: 1.5;
     }
 
     .explain-list {
-      padding-top: 24px;
-      font-size: g.$size-16;
-      color: g.$text-main-color;
-
-      li {
-        margin-bottom: 8px;
-      }
+      @include g.userInfoNoticeList;
+      padding-top: 20px;
     }
   }
 
   .coupon-bottom {
-    background-color: #ffffff;
+    @include g.userInfoPanel;
     padding: 30px;
 
     .mycoupon-top {
       @include g.myFlex(space-between, 0, center);
-      padding-bottom: 15px;
+      padding-bottom: 16px;
+      @include g.userInfoListLine;
 
       .mycoupon-title {
         font-size: g.$size-16;
@@ -71,14 +69,19 @@
       td {
         padding: 14px;
         text-align: center;
-        border-bottom: 1px solid #eee;
+        @include g.userInfoListLine;
         font-size: g.$size-14-main;
         color: g.$text-main-color;
       }
 
       .empty-coupon {
+        padding: 0;
         color: g.$text-sub-color;
-        height: 72px;
+        height: 150px;
+
+        .none-info-wrap {
+          width: 100%;
+        }
       }
     }
   }

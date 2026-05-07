@@ -13,7 +13,9 @@
   }
 
   .tracking-back-btn {
-    @include g.myBtn2;
+    @include g.myBtn2($pd: 0);
+    width: 120px;
+    height: 40px;
   }
 }
 
@@ -26,8 +28,7 @@
     align-items: center;
     justify-content: center;
     padding: 80px 24px;
-    background: #ffffff;
-    border: 1px solid #e8e8e8;
+    @include g.userInfoPanel;
     text-align: center;
 
     p {
@@ -37,8 +38,7 @@
 }
 
 .order-tracking-section {
-  background: #ffffff;
-  border: 1px solid #e8e8e8;
+  @include g.userInfoPanel;
   padding: 44px 72px 28px;
 }
 
@@ -81,7 +81,7 @@
     align-items: baseline;
     gap: 14px;
     padding-bottom: 14px;
-    border-bottom: 1px solid #acacac;
+    @include g.userInfoListLine;
 
     h4,
     p {
@@ -111,7 +111,7 @@
       gap: 24px;
       align-items: center;
       padding: 18px 0;
-      border-bottom: 1px solid #eeeeee;
+      @include g.userInfoListLine;
     }
 
     span {
@@ -128,7 +128,7 @@
 .tracking-footer {
   display: flex;
   justify-content: flex-end;
-  align-items: end;
+  align-items: flex-end;
   gap: 24px;
 
   p {
@@ -138,10 +138,10 @@
 }
 
 .tracking-carrier-btn {
-  min-width: 100px;
-  min-height: 40px;
+  @include g.myBtn1($pd: 0);
+  width: 120px;
+  height: 40px;
   font-family: inherit;
-  @include g.myBtn1;
 }
 
 @include g.respond(tablet) {

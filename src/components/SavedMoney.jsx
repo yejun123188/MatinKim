@@ -22,8 +22,16 @@ export default function SavedMoney() {
 
   const currentList = useMemo(
     () => savedMoneyList.filter((item) => item.type === tab),
-    [savedMoneyList, tab],
+    [savedMoneyList, tab]
   );
+
+  const summaryItems = [
+    { label: "총 적립금", value: savedMoneySummary.totalPoint },
+    { label: "사용가능 적립금", value: savedMoneySummary.availablePoint },
+    { label: "사용된 적립금", value: savedMoneySummary.usedPoint },
+    { label: "미가용 적립금", value: savedMoneySummary.unavailablePoint },
+    { label: "환불예정 적립금", value: savedMoneySummary.refundPoint },
+  ];
 
   return (
     <div className="savedmoney-wrap">
@@ -31,60 +39,37 @@ export default function SavedMoney() {
         <div className="my-saved">
           <p>내 적립금</p>
         </div>
+
         <div className="my-saved-middle">
           <div className="list-wrap">
-            <ul className="left-list">
-              <li>
-                <div className="text">• 총 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.totalPoint)}
-                </p>
-              </li>
-              <li>
-                <div className="text">• 사용가능 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.availablePoint)}
-                </p>
-              </li>
-              <li>
-                <div className="text">• 사용된 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.usedPoint)}
-                </p>
-              </li>
-            </ul>
-            <ul className="right-list">
-              <li>
-                <div className="text">• 미가용 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.unavailablePoint)}
-                </p>
-              </li>
-              <li>
-                <div className="text">• 환불예정 적립금</div>
-                <p className="price">
-                  {formatPoint(savedMoneySummary.refundPoint)}
-                </p>
-              </li>
+            <ul className="summary-list">
+              {summaryItems.map((item) => (
+                <li key={item.label}>
+                  <div className="text">{item.label}</div>
+                  <p className="price">{formatPoint(item.value)}</p>
+                </li>
+              ))}
             </ul>
           </div>
+
           <ul className="explain-list">
             <li>
-              • 주문으로 발생한 적립금은 배송완료 후 7일 부터 실제 사용 가능한
+              주문으로 발생한 적립금은 배송완료 후 7일 부터 실제 사용 가능한
               적립금으로 전환됩니다. 배송완료 시점으로부터 7일 동안은 미가용
               적립금으로 분류됩니다.
             </li>
             <li>
-              • 미가용 적립금은 반품, 구매취소 등을 대비한 임시 적립금으로
+              미가용 적립금은 반품, 구매취소 등을 대비한 임시 적립금으로
               사용가능 적립금으로 전환되기까지 상품구매에 사용하실 수 없습니다.
             </li>
             <li>
-              • 사용가능 적립금(총적립금 - 사용된적립금 - 미가용적립금)은
-              상품구매 시 바로 사용가능합니다.
+              사용가능 적립금(총적립금 - 사용된적립금 - 미가용적립금)은 상품구매
+              시 바로 사용가능합니다.
             </li>
           </ul>
         </div>
       </div>
+
       <div className="saved-bottom">
         <div className="top-menu">
           {tabs.map((item) => (
@@ -119,7 +104,11 @@ export default function SavedMoney() {
                 </tr>
               ))
             ) : (
-              <UserInfoNone title="적립금" />
+              <tr>
+                <td colSpan={4} className="empty-saved-money">
+                  <UserInfoNone title="적립금" />
+                </td>
+              </tr>
             )}
           </tbody>
         </table>
