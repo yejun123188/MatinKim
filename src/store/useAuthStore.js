@@ -560,11 +560,51 @@ export const useAuthStore = create(
       onWithdraw: async () => {
         const { user } = get();
 
+        // ✅ 비회원이면 구매 기록 없이 바로 true 반환
         if (!user) {
-          alert("로그인이 필요합니다.");
-          return false;
+          return true;
         }
 
+        const savedPurchaseInfo = getLocalPurchaseInfo(user);
+        const currentAmount = Number(
+          savedPurchaseInfo.purchaseAmount ??
+          user.purchaseAmount ??
+          user.orderPrice ??
+          0
+        );
+        const currentCount = Number(
+          savedPurchaseInfo.purchaseCount ??
+          user.purchaseCount ??
+          user.orderCount ??
+          0
+        );
+
+        const nextAmount = currentAmount + Number(purchaseAmount || 0);
+        const nextCount = currentCount + Number(purchaseCount || 0);
+        const grade = getMemberGrade(nextAmount);
+
+        const purchaseInfo = {
+          purchaseAmount: nextAmount,
+          purchaseCount: nextCount,
+          orderPrice: nextAmount,
+          orderCount: nextCount,
+          grade,
+        };
+
+        const nextUser = {
+          ...user,
+          ...purchaseInfo,
+        };
+
+        localStorage.setItem(
+          getLocalPurchaseKey(user),
+          JSON.stringify(purchaseInfo)
+        );
+
+        set({ user: nextUser });
+
+        if (user.provider) {
+          localStorage.setItem("socialUser", JSON.stringify(nextUser));
         try {
           const uid = user.uid;
           const firebaseUser = auth.currentUser;
@@ -729,7 +769,6 @@ export const useAuthStore = create(
           return false;
         }
       },
-
       onAddAddress: async (addressData) => {
         const { user } = get();
 

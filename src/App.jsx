@@ -28,6 +28,8 @@ import Guide from "./pages/Guide";
 import Privacy from "./pages/Privacy";
 import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
+import OrderComplete from "./pages/OrderComplete";
+import OrderLookup from "./pages/OrderLookup";
 import QnaWrite from "./pages/QnaWrite";
 import InquiryList from "./components/InquiryList";
 import FindId from "./pages/FindId";
@@ -102,6 +104,8 @@ function App() {
           element={<ProductAuthentication />}
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order-complete" element={<OrderComplete />} />
+        <Route path="/order-lookup" element={<OrderLookup />} />
         <Route path="/board" element={<QnaWrite />} />
         <Route path="/inquiry/write" element={<InquiryList />} />
         <Route path="/find" element={<FindId />} />
