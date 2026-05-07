@@ -28,6 +28,7 @@ import Guide from "./pages/Guide";
 import Privacy from "./pages/Privacy";
 import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
+import QnaWrite from "./pages/QnaWrite";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -98,6 +99,8 @@ function App() {
           element={<ProductAuthentication />}
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/board" element={<QnaWrite />} />
+        <Route path="/inquiry/write" element={<InquiryWrite />} />
       </Routes>
       <Footer />
     </>
