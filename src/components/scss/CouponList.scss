@@ -8,19 +8,20 @@
 
     .coupon-num {
       display: flex;
+      align-items: center;
       gap: 10px;
     }
 
     input {
       @include g.myTextBox;
+      width: 250px;
       height: 40px;
-      width: 500px;
     }
 
     button {
       @include g.myBtn1($pd: 0);
-      width: 90px;
-      height: 30px;
+      width: 120px;
+      height: 40px;
     }
 
     p {
@@ -74,8 +75,13 @@
       }
 
       .empty-coupon {
+        padding: 0;
         color: g.$text-sub-color;
-        height: 72px;
+        height: 150px;
+
+        .none-info-wrap {
+          width: 100%;
+        }
       }
     }
   }

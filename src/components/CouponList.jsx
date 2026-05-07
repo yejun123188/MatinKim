@@ -87,7 +87,11 @@ export default function CouponList() {
                 </tr>
               ))
             ) : (
-              <UserInfoNone title="쿠폰" />
+              <tr>
+                <td colSpan={6} className="empty-coupon">
+                  <UserInfoNone title="쿠폰" />
+                </td>
+              </tr>
             )}
           </tbody>
         </table>

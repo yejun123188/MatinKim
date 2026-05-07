@@ -41,7 +41,9 @@
       appearance: none;
       background-image: url(../../../public/images/userinfo/input-under-btn.svg);
       background-repeat: no-repeat;
-      background-position: right 18px center;
+      background-position: right 10px center;
+      background-size: 10px 6px;
+      padding-right: 28px;
     }
 
     em {
@@ -73,23 +75,51 @@
   }
 
   .phone-row {
-    select,
+    width: 100%;
+    justify-content: flex-start;
+
+    select {
+      width: 80%;
+    }
+
     input {
-      width: 120px;
+      width: 100%;
       text-align: start;
+    }
+
+    button {
+      @include g.myBtn1($pd: 0);
+      flex: 0 0 120px;
+      width: 120px;
+      height: 40px;
+      border: none;
+    }
+  }
+
+  .phone-verify-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      width: 180px;
     }
 
     button {
       @include g.myBtn1($pd: 0);
       width: 120px;
       height: 40px;
-      margin-left: 18px;
       border: none;
     }
   }
 
+  .phone-verify-success {
+    color: g.$text-main-color;
+    font-size: g.$size-14-main;
+  }
+
   .birth-row {
-    input {
+    > input {
       width: 120px;
       text-align: center;
     }

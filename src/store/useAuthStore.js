@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  deleteUser,
 } from "firebase/auth";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -17,6 +18,7 @@ import {
   updateDoc,
   collection,
   addDoc,
+  deleteDoc,
 } from "firebase/firestore";
 
 const formatCouponDate = (date) => {
@@ -33,6 +35,17 @@ const getCouponPeriod = () => {
   return `${formatCouponDate(startDate)} ~ ${formatCouponDate(endDate)}`;
 };
 
+const createWelcomeCoupon = () => ({
+  couponName: "WELCOME 5% 쿠폰",
+  benefit: "5% 할인",
+  period: getCouponPeriod(),
+  applyProduct: "전체상품",
+  minPrice: "제한없음",
+  payment: "제한없음",
+  code: "WELCOME5",
+  used: false,
+});
+
 const usableCoupons = {
   "000627": { couponName: "예준전용 쿠폰" },
   "021109": { couponName: "하영전용쿠폰" },
@@ -40,46 +53,22 @@ const usableCoupons = {
   "950325": { couponName: "재희전용쿠폰" },
 };
 
+const getToday = () => formatCouponDate(new Date());
+
+const getAvailableDate = (baseDate = new Date()) => {
+  const date = new Date(baseDate);
+  date.setDate(date.getDate() + 7);
+  return formatCouponDate(date);
+};
+
 const defaultSavedMoneyList = [
   {
     id: "welcome-point",
-    date: "2026-04-08",
+    date: getToday(),
     point: 5000,
     order: "-",
     desc: "신규회원 적립금",
     type: "history",
-  },
-  {
-    id: "shipping-pending-point",
-    date: "2026-04-09",
-    point: 2000,
-    order: "-",
-    desc: "배송 대기 적립금",
-    type: "pending",
-  },
-  {
-    id: "member-grade-point",
-    date: "2026-04-10",
-    point: 1000,
-    order: "-",
-    desc: "회원등급 적립금",
-    type: "grade",
-  },
-  {
-    id: "used-point",
-    date: "2026-04-11",
-    point: 2000,
-    order: "-",
-    desc: "상품 구매 사용 적립금",
-    type: "used",
-  },
-  {
-    id: "refund-point",
-    date: "2026-04-12",
-    point: 3000,
-    order: "-",
-    desc: "환불예정 적립금",
-    type: "refund",
   },
 ];
 
@@ -89,16 +78,13 @@ const getSavedMoneySummary = (list) => {
       .filter((item) => item.type === type)
       .reduce((sum, item) => sum + Number(item.point || 0), 0);
 
-  const earnedPoint = sumByType("history");
-  const gradePoint = sumByType("grade");
+  const earnedPoint = sumByType("history") + sumByType("grade");
   const usedPoint = sumByType("used");
   const unavailablePoint = sumByType("pending");
   const refundPoint = sumByType("refund");
 
-  const totalPoint =
-    earnedPoint + gradePoint + unavailablePoint + refundPoint - usedPoint;
-
-  const availablePoint = Math.max(earnedPoint + gradePoint - usedPoint, 0);
+  const totalPoint = earnedPoint + usedPoint + unavailablePoint;
+  const availablePoint = Math.max(totalPoint - usedPoint - unavailablePoint, 0);
 
   return {
     totalPoint,
@@ -118,6 +104,35 @@ export const getMemberGrade = (purchaseAmount = 0) => {
 
 const getLocalPurchaseKey = (user) =>
   `matinKimPurchase:${user?.uid || user?.email || "guest"}`;
+
+const deleteCollectionDocs = async (ref) => {
+  const snap = await getDocs(ref);
+  await Promise.all(snap.docs.map((item) => deleteDoc(item.ref)));
+};
+
+export const gradeBenefitMap = {
+  VIP: {
+    pointRate: 3,
+    discountRate: 7,
+    birthdayCouponRate: 20,
+    summary: "적립 3%, 구매 할인 7%, 생일쿠폰 20%",
+  },
+  GOLD: {
+    pointRate: 2,
+    discountRate: 5,
+    birthdayCouponRate: 15,
+    summary: "적립 2%, 구매 할인 5%, 생일쿠폰 15%",
+  },
+  FRIENDS: {
+    pointRate: 1,
+    discountRate: 0,
+    birthdayCouponRate: 0,
+    summary: "적립 1%, WELCOME 쿠폰 5%",
+  },
+};
+
+export const getGradeBenefit = (grade = "FRIENDS") =>
+  gradeBenefitMap[grade] || gradeBenefitMap.FRIENDS;
 
 export const getLocalPurchaseInfo = (user) => {
   try {
@@ -234,15 +249,17 @@ export const useAuthStore = create(
 
           await setDoc(doc(db, "users", user.uid), userInfo);
 
-          await setDoc(doc(db, "users", user.uid, "coupons", "WELCOME5"), {
-            couponName: "WELCOME 5% 쿠폰",
-            benefit: "5% 할인",
-            period: getCouponPeriod(),
-            applyProduct: "전체상품",
-            minPrice: "제한없음",
-            payment: "제한없음",
-            code: "WELCOME5",
-            used: false,
+          await setDoc(
+            doc(db, "users", user.uid, "coupons", "WELCOME5"),
+            createWelcomeCoupon()
+          );
+
+          await setDoc(doc(db, "users", user.uid, "savedMoney", "welcome-point"), {
+            date: getToday(),
+            point: 5000,
+            order: "-",
+            desc: "신규회원 적립금",
+            type: "history",
           });
 
           await setDoc(userIdRef, {
@@ -540,7 +557,7 @@ export const useAuthStore = create(
         }
       },
 
-      onRecordPurchase: async (purchaseAmount, purchaseCount = 1) => {
+      onWithdraw: async () => {
         const { user } = get();
 
         if (!user) {
@@ -548,49 +565,169 @@ export const useAuthStore = create(
           return false;
         }
 
-        const savedPurchaseInfo = getLocalPurchaseInfo(user);
-        const currentAmount = Number(
-          savedPurchaseInfo.purchaseAmount ??
-            user.purchaseAmount ??
-            user.orderPrice ??
-            0
-        );
-        const currentCount = Number(
-          savedPurchaseInfo.purchaseCount ??
-            user.purchaseCount ??
-            user.orderCount ??
-            0
-        );
+        try {
+          const uid = user.uid;
+          const firebaseUser = auth.currentUser;
 
-        const nextAmount = currentAmount + Number(purchaseAmount || 0);
-        const nextCount = currentCount + Number(purchaseCount || 0);
-        const grade = getMemberGrade(nextAmount);
+          await Promise.allSettled([
+            deleteCollectionDocs(collection(db, "users", uid, "addresses")),
+            deleteCollectionDocs(collection(db, "users", uid, "coupons")),
+            deleteCollectionDocs(collection(db, "users", uid, "savedMoney")),
+          ]);
 
-        const purchaseInfo = {
-          purchaseAmount: nextAmount,
-          purchaseCount: nextCount,
-          orderPrice: nextAmount,
-          orderCount: nextCount,
-          grade,
-        };
+          await Promise.allSettled(
+            [
+              deleteDoc(doc(db, "users", uid)),
+              deleteDoc(doc(db, "people", uid)),
+              deleteDoc(doc(db, "wishlists", uid)),
+              user.userId ? deleteDoc(doc(db, "userIds", user.userId)) : null,
+            ].filter(Boolean)
+          );
 
-        const nextUser = {
-          ...user,
-          ...purchaseInfo,
-        };
+          if (firebaseUser?.uid === uid) {
+            await deleteUser(firebaseUser);
+          } else {
+            await signOut(auth).catch(() => {});
+          }
 
-        localStorage.setItem(
-          getLocalPurchaseKey(user),
-          JSON.stringify(purchaseInfo)
-        );
+          localStorage.removeItem("socialUser");
+          localStorage.removeItem("auth-storage");
+          localStorage.removeItem(getLocalPurchaseKey(user));
+          localStorage.removeItem("matinKimOrders");
+          localStorage.removeItem("cartItem");
+          localStorage.removeItem("recentViewedProducts");
 
-        set({ user: nextUser });
+          set({
+            user: null,
+            userAddress: null,
+            addressList: [],
+            couponList: [],
+            savedMoneyList: [],
+            savedMoneySummary: getSavedMoneySummary([]),
+          });
 
-        if (user.provider) {
-          localStorage.setItem("socialUser", JSON.stringify(nextUser));
+          alert("회원탈퇴가 완료되었습니다.");
+          return true;
+        } catch (err) {
+          console.error("회원탈퇴 에러:", err);
+
+          if (err.code === "auth/requires-recent-login") {
+            alert("보안을 위해 다시 로그인한 뒤 회원탈퇴를 진행해주세요.");
+            return false;
+          }
+
+          alert("회원탈퇴에 실패했습니다.");
+          return false;
+        }
+      },
+
+      onRecordPurchase: async (
+        purchaseAmount,
+        purchaseCount = 1,
+        orderNumber = "-"
+      ) => {
+        const { user } = get();
+
+        if (!user) {
+          alert("로그인이 필요합니다.");
+          return false;
         }
 
-        return true;
+        try {
+          const savedPurchaseInfo = getLocalPurchaseInfo(user);
+          const currentAmount = Number(
+            savedPurchaseInfo.purchaseAmount ??
+              user.purchaseAmount ??
+              user.orderPrice ??
+              0
+          );
+          const currentCount = Number(
+            savedPurchaseInfo.purchaseCount ??
+              user.purchaseCount ??
+              user.orderCount ??
+              0
+          );
+          const amount = Number(purchaseAmount || 0);
+          const currentGrade = getMemberGrade(currentAmount);
+          const benefit = getGradeBenefit(currentGrade);
+          const pendingPoint = amount >= 10000
+            ? Math.floor(amount * (benefit.pointRate / 100))
+            : 0;
+
+          const nextAmount = currentAmount + amount;
+          const nextCount = currentCount + Number(purchaseCount || 0);
+          const grade = getMemberGrade(nextAmount);
+
+          const purchaseInfo = {
+            purchaseAmount: nextAmount,
+            purchaseCount: nextCount,
+            orderPrice: nextAmount,
+            orderCount: nextCount,
+            grade,
+          };
+
+          const nextUser = {
+            ...user,
+            ...purchaseInfo,
+          };
+
+          localStorage.setItem(
+            getLocalPurchaseKey(user),
+            JSON.stringify(purchaseInfo)
+          );
+
+          await setDoc(doc(db, "users", user.uid), purchaseInfo, { merge: true });
+
+          if (pendingPoint > 0) {
+            const id = `pending-${Date.now()}`;
+            await setDoc(doc(db, "users", user.uid, "savedMoney", id), {
+              date: getToday(),
+              point: pendingPoint,
+              order: orderNumber,
+              desc: `${currentGrade} 등급 구매 적립 예정`,
+              type: "pending",
+              availableDate: getAvailableDate(),
+            });
+          }
+
+          await get().onFetchSavedMoney();
+
+          set({ user: nextUser });
+
+          if (user.provider) {
+            localStorage.setItem("socialUser", JSON.stringify(nextUser));
+          }
+
+          return true;
+        } catch (err) {
+          console.error("구매 기록/적립금 저장 에러:", err);
+          alert("구매 적립금 저장에 실패했습니다.");
+          return false;
+        }
+      },
+
+      onRecordRefundPoint: async (refundAmount, orderNumber = "-") => {
+        const { user } = get();
+        const amount = Number(refundAmount || 0);
+
+        if (!user || amount <= 0) return false;
+
+        try {
+          const id = `refund-${Date.now()}`;
+          await setDoc(doc(db, "users", user.uid, "savedMoney", id), {
+            date: getToday(),
+            point: amount,
+            order: orderNumber,
+            desc: "환불예정 적립금",
+            type: "refund",
+          });
+
+          await get().onFetchSavedMoney();
+          return true;
+        } catch (err) {
+          console.error("환불예정 적립금 저장 에러:", err);
+          return false;
+        }
       },
 
       onAddAddress: async (addressData) => {
@@ -689,8 +826,20 @@ export const useAuthStore = create(
         try {
           const ref = collection(db, "users", user.uid, "coupons");
           const snap = await getDocs(ref);
+          const hasWelcomeCoupon = snap.docs.some(
+            (item) => item.id === "WELCOME5"
+          );
 
-          const coupons = snap.docs.map((doc) => ({
+          if (!hasWelcomeCoupon) {
+            await setDoc(
+              doc(db, "users", user.uid, "coupons", "WELCOME5"),
+              createWelcomeCoupon()
+            );
+          }
+
+          const nextSnap = hasWelcomeCoupon ? snap : await getDocs(ref);
+
+          const coupons = nextSnap.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
           }));
@@ -791,7 +940,34 @@ export const useAuthStore = create(
               id: doc.id,
               ...doc.data(),
             }))
+            .map((item) =>
+              item.type === "pending" &&
+              item.availableDate &&
+              item.availableDate <= getToday()
+                ? {
+                    ...item,
+                    type: "history",
+                    desc: item.desc?.replace("예정", "확정") || "구매 적립금",
+                  }
+                : item
+            )
             .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+          const convertedList = savedMoneyList.filter(
+            (item) =>
+              nextSnap.docs.find((docItem) => docItem.id === item.id)?.data()
+                ?.type !== item.type
+          );
+
+          if (convertedList.length > 0) {
+            await Promise.all(
+              convertedList.map(({ id, ...item }) =>
+                setDoc(doc(db, "users", user.uid, "savedMoney", id), item, {
+                  merge: true,
+                })
+              )
+            );
+          }
 
           const savedMoneySummary = getSavedMoneySummary(savedMoneyList);
 
