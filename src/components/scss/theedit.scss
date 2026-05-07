@@ -1,3 +1,5 @@
+@use "../../App.scss" as g;
+
 /* 섹션 타이틀 */
 .the-edit-section {
 
@@ -43,7 +45,7 @@
 
 /* 상단 큰 비주얼 */
 .edit-list .top {
-  margin-bottom: 14px;
+  margin-bottom: 30px;
 
   >a {
     display: block;
@@ -54,7 +56,7 @@
 
   .img-box {
     width: 100%;
-    aspect-ratio: 1 / 1.28;
+    // aspect-ratio: 1 / 1.28;
     overflow: hidden;
     background: #ddd;
 
@@ -65,31 +67,49 @@
       object-fit: cover;
       transition: transform 0.4s ease;
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(0, 0, 0, 0.7) 100%);
+      z-index: 1;
+    }
   }
 
   .text-box {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 52px;
+    bottom: 50px;
     text-align: center;
     color: #fff;
     z-index: 2;
     padding: 0 20px;
 
     h4 {
-      font-size: 40px;
-      line-height: 1.3;
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
+      font-size: 36px;
+      // line-height: 1.3;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      // margin-bottom: 10px;
       word-break: keep-all;
+      color: #fff;
     }
 
     p {
-      font-size: 20px;
-      line-height: 1.4;
-      font-weight: 300;
+      font-size: 14px;
+      // line-height: 1.4;
+      font-weight: 400;
+      color: #fff;
+      opacity: 0.7;
+      letter-spacing: 0.1em;
     }
   }
 
@@ -108,7 +128,27 @@
 }
 
 .bottom-edit-list {
+  position: relative;
+  background: g.$white-color;
+  transition: transform 0.3s ease;
+  // padding-top: 14px;
+  // border-top: 1px solid rgba(g.$main-color, 0.18);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px solid g.$main-color;
+    background: g.$white-color;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 0;
+  }
+
   >a {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: flex-start;
     gap: 18px;
@@ -117,68 +157,120 @@
   }
 
   .img-box {
-    flex: 0 0 88px;
-    width: 88px;
-    height: 88px;
+    position: relative;
+    flex: 0 0 110px;
+    width: 110px;
+    aspect-ratio: 1.2 / 1.3;
+    height: auto;
     background: #d9d9d9;
     overflow: hidden;
+    cursor: pointer;
 
     img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.05);
     }
   }
 
   .text-box {
     flex: 1;
-    padding-top: 2px;
+    min-width: 0;
+    padding: 6px 0 0;
 
     li {
-      &:nth-child(1) {
-        font-size: 12px;
-        line-height: 1.4;
-        font-weight: 400;
-        color: #555;
+      &.brand-name {
+        margin-bottom: 5px;
+        font-size: g.$size-12-sub;
+        // line-height: 1;
+        font-weight: 900;
+        color: g.$text-main-color;
         text-transform: uppercase;
-        letter-spacing: -0.02em;
-        margin-bottom: 4px;
       }
 
-      &:nth-child(2) {
-        font-size: 15px;
-        line-height: 1.4;
-        font-weight: 700;
-        color: #111;
-        letter-spacing: -0.02em;
-        margin-bottom: 8px;
+      &.product-name {
+        overflow: hidden;
+        margin-bottom: 0;
+        color: g.$text-main-color;
+        font-size: g.$size-14-main;
+        font-weight: g.$Regular;
+        // line-height: 1;
+        text-transform: uppercase;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
-      &:nth-child(3) {
+      &.price-wrap {
         display: flex;
+        padding: 12px 0 0;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
+        color: g.$text-main-color;
+
+        p {
+          margin: 0;
+          // line-height: 1;
+        }
+
+        .discount-rate,
+        .discount-price,
+        .price {
+          // font-size: g.$size-18;
+          font-weight: g.$Bold;
+        }
+
+        .discount-rate {
+          color: g.$red-color;
+        }
+
+        .original-price {
+          color: g.$text-sub-color2;
+          font-size: g.$size-14-main;
+          font-weight: g.$Regular;
+          opacity: 0.7;
+          text-decoration: line-through;
+        }
+      }
+
+      &.color-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        padding-top: 12px;
       }
     }
 
     span {
       display: block;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
+      width: 12px;
+      height: 12px;
       font-size: 0;
       line-height: 0;
       overflow: hidden;
-      border: 1px solid black;
+      border: 1px solid rgba(g.$main-color, 0.3);
     }
   }
 }
 
 /* hover */
 .bottom-edit-list:hover {
-  .text-box li:nth-child(1) {
-    color: #111;
+  z-index: 1;
+
+  &::before {
+    opacity: 1;
+  }
+
+  .img-box img {
+    // transform: scale(1.04);
   }
 }
 
@@ -263,16 +355,15 @@
     .img-box {
       flex: 0 0 84px;
       width: 84px;
-      height: 84px;
     }
 
     .text-box {
       li {
-        &:nth-child(1) {
+        &.brand-name {
           font-size: 12px;
         }
 
-        &:nth-child(2) {
+        &.product-name {
           font-size: 14px;
         }
       }
@@ -324,28 +415,42 @@
     .img-box {
       flex: 0 0 74px;
       width: 74px;
-      height: 74px;
     }
 
     .text-box {
       li {
-        &:nth-child(1) {
+        &.brand-name {
           font-size: 11px;
         }
 
-        &:nth-child(2) {
+        &.product-name {
           font-size: 13px;
           margin-bottom: 6px;
         }
 
-        &:nth-child(3) {
+        &.price-wrap {
+          padding-top: 10px;
+
+          .discount-rate,
+          .discount-price,
+          .price {
+            font-size: 14px;
+          }
+
+          .original-price {
+            font-size: 12px;
+          }
+        }
+
+        &.color-wrap {
           gap: 5px;
+          padding-top: 10px;
         }
       }
 
       span {
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
       }
     }
   }

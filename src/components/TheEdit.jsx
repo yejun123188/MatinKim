@@ -6,29 +6,29 @@ import { useProductStore } from '../store/useProductStore'
 
 const EDIT_CONFIG = [
     {
-        src: "./images/main-theedit/edit1.png",
+        src: "./images/collection/jeno/img_jeno_00005.jpg",
         alt: "edit1",
         title: "Matin Kim X Nct jeno",
         subscribe: "'No Rush!'",
-        link: "",
+        link: "/collections/1",
         subIds: ["5514", "9008"],
         useHover: false,
     },
     {
-        src: "./images/main-theedit/edit2.png",
+        src: "./images/collection/liz/img_liz_00012.jpg",
         alt: "edit2",
         title: "Matin kim x Liz",
         subscribe: "'BUCKET LIST'",
-        link: "",
+        link: "/collections/3",
         subIds: ["8721", "8951"],
         useHover: true,  // ← 이것만 hoverImg 사용
     },
     {
-        src: "./images/main-theedit/edit3.png",
+        src: "./images/collection/ningning/img_ningning_00019.jpg",
         alt: "edit3",
         title: "Matin kim x Ningning",
         subscribe: "'Record 2'",
-        link: "",
+        link: "/collections/8",
         subIds: ["8367", "8344"],
         useHover: false,
     },
@@ -82,8 +82,9 @@ export default function TheEdit() {
                                                     <img src={thumbnail} alt={s.name} />
                                                 </div>
                                                 <ul className="text-box">
-                                                    <li>{s.name}</li>
-                                                    <li>
+                                                    <li className="brand-name">MATIN KIM</li>
+                                                    <li className="product-name">{s.name}</li>
+                                                    <li className="price-wrap">
                                                         {s.discountRate > 0 ? (
                                                             <>
                                                                 <p className="discount-rate">{s.discountRate}%</p>
@@ -94,10 +95,11 @@ export default function TheEdit() {
                                                             <p className="price">₩{s.price.toLocaleString()}</p>
                                                         )}
                                                     </li>
-                                                    <li className="color-list">
+                                                    <li className="color-list color-wrap">
                                                         {(s.colors || []).map((c, cIdx) => (
                                                             <span
                                                                 key={cIdx}
+                                                                className="color-chip"
                                                                 style={{ backgroundColor: onColorCode(c) }}
                                                             />
                                                         ))}
