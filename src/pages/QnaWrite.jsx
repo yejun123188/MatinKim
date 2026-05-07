@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HelpMenu from "../components/HelpMenu";
 import "./scss/QnaWrite.scss";
 import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore";
 
 export default function QnaWrite() {
     const [form, setForm] = useState({
@@ -26,15 +27,31 @@ export default function QnaWrite() {
         }));
     };
 
+
+
+    const { user } = useAuthStore();
+    const navigate = useNavigate();
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("1:1 문의 등록", form);
-        navigate("/board");
+
+        const newInquiry = {
+            id: Date.now(),
+            date: new Date().toISOString().slice(0, 10),
+            category: form.category,
+            subject: form.subject,
+            content: form.content,
+            writer: user?.displayName || user?.name || user?.email || "회원",
+            reply: "답변대기",
+        };
+
+        const saved = JSON.parse(localStorage.getItem("inquiries")) || [];
+        localStorage.setItem("inquiries", JSON.stringify([newInquiry, ...saved]));
+
+        navigate("/inquiry/write");
     };
-
-
-
-    const navigate = useNavigate();
 
 
 
@@ -68,70 +85,12 @@ export default function QnaWrite() {
                                         <td>
                                             <input
                                                 type="text"
-                                                name="writer"
-                                                value={form.writer}
-                                                onChange={handleChange}
+                                                value={user?.displayName || user?.name || user?.email || "회원"}
+                                                readOnly
                                             />
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <th>비밀번호</th>
-                                        <td>
-                                            <input
-                                                type="password"
-                                                name="password"
-                                                value={form.password}
-                                                onChange={handleChange}
-                                            />
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>이메일</th>
-                                        <td>
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                value={form.email}
-                                                onChange={handleChange}
-                                            />
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th>휴대전화</th>
-                                        <td>
-                                            <div className="phone-box">
-                                                <select
-                                                    name="phone1"
-                                                    value={form.phone1}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option value="010">010</option>
-                                                    <option value="011">011</option>
-                                                    <option value="016">016</option>
-                                                    <option value="017">017</option>
-                                                    <option value="018">018</option>
-                                                    <option value="019">019</option>
-                                                </select>
-                                                <span>-</span>
-                                                <input
-                                                    type="text"
-                                                    name="phone2"
-                                                    value={form.phone2}
-                                                    onChange={handleChange}
-                                                />
-                                                <span>-</span>
-                                                <input
-                                                    type="text"
-                                                    name="phone3"
-                                                    value={form.phone3}
-                                                    onChange={handleChange}
-                                                />
-                                            </div>
-                                        </td>
-                                    </tr>
 
                                     <tr>
                                         <th>문의유형</th>
@@ -142,11 +101,11 @@ export default function QnaWrite() {
                                                 onChange={handleChange}
                                             >
                                                 <option value="">선택하세요</option>
-                                                <option value="order">주문/결제</option>
-                                                <option value="delivery">배송</option>
-                                                <option value="return">교환/반품</option>
-                                                <option value="product">상품</option>
-                                                <option value="etc">기타</option>
+                                                <option value="주문/결제문의">주문/결제문의</option>
+                                                <option value="배송문의">배송문의</option>
+                                                <option value="교환/반품문의">교환/반품문의</option>
+                                                <option value="상품문의">상품문의</option>
+                                                <option value="기타문의">기타문의</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -180,8 +139,8 @@ export default function QnaWrite() {
                                     취소
                                 </button>
 
-                                <button type="button" className="submit-btn"
-                                    onClick={() => navigate("/inquiry/write")}>
+                                <button type="submit" className="submit-btn"
+                                >
                                     등록
                                 </button>
 
