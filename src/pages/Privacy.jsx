@@ -3,6 +3,7 @@ import "./scss/Privacy.scss";
 import { Link } from "react-router-dom";
 import HelpMenu from "../components/HelpMenu";
 
+
 export default function Privacy() {
     return (
         <section className="sub-section">

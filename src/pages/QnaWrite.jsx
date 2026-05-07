@@ -63,7 +63,7 @@ export default function QnaWrite() {
                     <HelpMenu />
 
                     <div className="qna-content">
-                        <h2>1:1 문의</h2>
+                        <h2 className="qna">1:1 문의</h2>
 
                         <form className="qna-write-form" onSubmit={handleSubmit}>
                             <table>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLoginStore } from "../store/useLoginStore";
 import { useAuthStore } from "../store/useAuthStore"; import { useNavigate } from "react-router-dom";
+import "./scss/HelpMenu.scss"
 
 
 export default function HelpMenu() {
