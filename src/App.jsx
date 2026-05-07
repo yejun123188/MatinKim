@@ -30,6 +30,7 @@ import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
 import QnaWrite from "./pages/QnaWrite";
 import InquiryList from "./components/InquiryList";
+import FindId from "./pages/FindId";
 import InquiryDetail from "./components/InquiryDetail";
 
 function ScrollToTop() {
@@ -103,6 +104,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/board" element={<QnaWrite />} />
         <Route path="/inquiry/write" element={<InquiryList />} />
+        <Route path="/find" element={<FindId />} />
         <Route path="/inquiry/:id" element={<InquiryDetail />} />
       </Routes>
       <Footer />
