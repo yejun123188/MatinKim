@@ -97,10 +97,10 @@ export default function TimeSalePopup() {
                 </div>
 
                 <div className="sale-popup-btns">
-                    <button type="button" onClick={handleHideToday}>
-                        오늘 하루 열지 않기
+                    <button className="popup-close-today" onClick={handleHideToday}>
+                        오늘 하루 보지 않기
                     </button>
-                    <button type="button" onClick={handleClose}>
+                    <button className="popup-close-btn" onClick={handleClose}>
                         닫기
                     </button>
                 </div>

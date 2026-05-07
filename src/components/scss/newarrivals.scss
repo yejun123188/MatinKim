@@ -37,7 +37,7 @@
     }
 
     .newarrivals-title {
-      padding-bottom: 50px;
+      padding-bottom: 30px;
       color: g.$text-main-color;
       font-size: 50px;
       font-weight: 900;
@@ -45,26 +45,32 @@
       text-transform: uppercase;
     }
 
+    hr {
+      opacity: 0.5;
+    }
+
     .collection-name {
       // padding-bottom: 12px;
       font-size: g.$size-12-sub;
       color: g.$text-sub-color2;
+      padding-top: 30px;
     }
 
     .collection-title {
       margin-bottom: 12px;
       color: g.$text-main-color;
       font-size: g.$size-18;
-      font-weight: g.$Bold;
+      font-weight: 900;
     }
 
     .collection-text {
       margin: 0;
       padding-bottom: 32px;
       color: g.$text-sub-color;
-      font-size: g.$size-14-main;
+      font-size: g.$size-12-sub;
       line-height: 1.5;
       white-space: pre-line;
+      opacity: 0.7;
     }
 
     .button-box {
