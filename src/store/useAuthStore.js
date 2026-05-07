@@ -543,23 +543,23 @@ export const useAuthStore = create(
       onRecordPurchase: async (purchaseAmount, purchaseCount = 1) => {
         const { user } = get();
 
+        // ✅ 비회원이면 구매 기록 없이 바로 true 반환
         if (!user) {
-          alert("로그인이 필요합니다.");
-          return false;
+          return true;
         }
 
         const savedPurchaseInfo = getLocalPurchaseInfo(user);
         const currentAmount = Number(
           savedPurchaseInfo.purchaseAmount ??
-            user.purchaseAmount ??
-            user.orderPrice ??
-            0
+          user.purchaseAmount ??
+          user.orderPrice ??
+          0
         );
         const currentCount = Number(
           savedPurchaseInfo.purchaseCount ??
-            user.purchaseCount ??
-            user.orderCount ??
-            0
+          user.purchaseCount ??
+          user.orderCount ??
+          0
         );
 
         const nextAmount = currentAmount + Number(purchaseAmount || 0);
@@ -592,7 +592,6 @@ export const useAuthStore = create(
 
         return true;
       },
-
       onAddAddress: async (addressData) => {
         const { user } = get();
 

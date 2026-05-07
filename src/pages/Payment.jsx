@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/Payment.scss";
 import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
-import { createOrder, ORDER_MENU } from "../utils/orderStorage";
+import { createOrder, ORDER_MENU } from "../store/orderStorage";
 
 const PAYMENT_METHODS = [
     { id: "card", title: "신용카드 / 체크카드", description: "안전한 결제를 위해 Stripe로 처리됩니다", badges: ["VISA", "MC", "AMEX"] },
@@ -48,9 +48,12 @@ export default function Payment() {
         isDefault: false
     });
 
+    //  useSame 상태일 때 주소검색 결과를 별도 저장
+    const [sameAddress, setSameAddress] = useState({ zipcode: "", address: "", detail: "" });
+
     const [errors, setErrors] = useState({});
-    const [useSame, setUseSame] = useState(true);
-    const [useNew, setUseNew] = useState(false);
+    const [useSame, setUseSame] = useState(!!user);
+    const [useNew, setUseNew] = useState(!user);
     const [showAddressModal, setShowAddressModal] = useState(false);
     const [selectedMethod, setSelectedMethod] = useState(PAYMENT_METHODS[0].id);
     const [openFaq, setOpenFaq] = useState(FAQ_ITEMS[0].id);
@@ -64,6 +67,29 @@ export default function Payment() {
     useEffect(() => {
         if (user) onFetchAddress();
     }, [user, onFetchAddress]);
+
+    useEffect(() => {
+        if (!user) return;
+
+        const emailParts = user.email?.split("@") || [];
+        const emailLocal = emailParts[0] || "";
+        const emailDomainRaw = emailParts[1] || "";
+        const knownDomains = ["gmail.com", "naver.com", "daum.net"];
+        const emailDomain = knownDomains.includes(emailDomainRaw) ? emailDomainRaw : "custom";
+        const emailInput = emailDomain === "custom" ? emailDomainRaw : "";
+
+        const phoneParts = user.phone?.split("-") || [];
+
+        setOrderForm({
+            name: user.name || "",
+            mobile1: phoneParts[0] || "010",
+            mobile2: phoneParts[1] || "",
+            mobile3: phoneParts[2] || "",
+            email: emailLocal,
+            emailDomain,
+            emailInput,
+        });
+    }, [user]);
 
     const location = useLocation();
     const orderItems = location.state?.orderItems?.length ? location.state.orderItems : [];
@@ -85,11 +111,6 @@ export default function Payment() {
         [selectedMethod]
     );
 
-    const [phone1, phone2, phone3] = (
-        useSame ? userAddress?.phone : `${form.mobile1}-${form.mobile2}-${form.mobile3}`
-    )?.split("-") || ["010", "", ""];
-
-    // 주문자 입력 핸들러
     const handleOrderChange = (e) => {
         const { name, value } = e.target;
         setOrderForm(prev => ({ ...prev, [name]: value }));
@@ -103,7 +124,6 @@ export default function Payment() {
         }
     };
 
-    // 배송지 입력 핸들러
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setForm(prev => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
@@ -124,12 +144,13 @@ export default function Payment() {
                 const newAddr = { zipcode: data.zonecode, address, detail: "" };
 
                 if (useSame) {
-                    onAddAddress(newAddr);
+                    // 주문자 정보와 동일 상태: sameAddress에 저장 (로그인 유저면 서버에도 저장)
+                    setSameAddress(newAddr);
+                    if (user) onAddAddress(newAddr);
                 } else {
                     setForm(prev => ({ ...prev, ...newAddr }));
                 }
 
-                // 우편번호/주소 에러 제거
                 setErrors(prev => ({ ...prev, zipcode: "", address: "" }));
 
                 setTimeout(() => {
@@ -154,6 +175,16 @@ export default function Payment() {
             if (!form.detail.trim()) newErrors.detail = "상세주소를 입력해주세요";
         }
 
+        if (useSame) {
+            // ✅ useSame일 때도 주소 검증
+            const zip = sameAddress.zipcode || userAddress?.zipcode || "";
+            const addr = sameAddress.address || userAddress?.address || "";
+            const detail = sameAddress.detail || userAddress?.detail || "";
+            if (!zip) newErrors.zipcode = "우편번호를 입력해주세요";
+            if (!addr) newErrors.address = "기본주소를 입력해주세요";
+            if (!detail.trim()) newErrors.detail = "상세주소를 입력해주세요";
+        }
+
         setErrors(newErrors);
 
         setTimeout(() => {
@@ -174,26 +205,45 @@ export default function Payment() {
         if (isSaved) {
             const shippingInfo = useSame
                 ? {
-                    receiver: userAddress?.receiver || orderForm.name,
-                    mobile1: phone1,
-                    mobile2: phone2,
-                    mobile3: phone3,
-                    address: userAddress?.address || "",
-                    detail: userAddress?.detail || "",
+                    receiver: orderForm.name,
+                    mobile1: orderForm.mobile1,
+                    mobile2: orderForm.mobile2,
+                    mobile3: orderForm.mobile3,
+                    address: sameAddress.address || userAddress?.address || "",
+                    detail: sameAddress.detail || userAddress?.detail || "",
+                    zipcode: sameAddress.zipcode || userAddress?.zipcode || "",
                 }
                 : form;
 
-            createOrder({
+            const orderNumber = createOrder({
                 orderItems,
                 orderForm,
                 shippingInfo,
                 payment: activeMethod.title,
                 deliveryCost: shippingFee + localShippingFee,
             });
-            alert("주문이 완료되었습니다!");
-            navigate("/userInfo", { state: { menu: ORDER_MENU } });
+
+            // 로그인 여부에 따라 분기
+            if (user) {
+                // 회원 → 기존처럼 마이페이지 주문내역으로
+                alert("주문이 완료되었습니다!");
+                navigate("/userInfo", { state: { menu: ORDER_MENU } });
+            } else {
+                // 비회원 → 주문완료 페이지로 (주문번호 안내)
+                navigate("/order-complete", {
+                    state: {
+                        orderNumber,
+                        orderItems,
+                        finalTotal,
+                        shippingInfo,
+                        payment: activeMethod.title,
+                        isGuest: true
+                    }
+                });
+            }
         }
     };
+
 
     const handleAddressSelect = (addr) => {
         const [m1, m2, m3] = (addr.phone || "010--").split("-");
@@ -357,7 +407,9 @@ export default function Payment() {
                                 />
                                 <span>새로운 배송지</span>
                             </label>
-                            <button type="button" className="outline-btn" onClick={() => setShowAddressModal(true)}>배송주소록</button>
+                            {user && (
+                                <button type="button" className="outline-btn" onClick={() => setShowAddressModal(true)}>배송주소록</button>
+                            )}
                         </div>
 
                         <div className="payment-form-grid">
@@ -367,7 +419,7 @@ export default function Payment() {
                                     type="text"
                                     name="receiver"
                                     placeholder="받는사람 이름"
-                                    value={useSame ? userAddress?.receiver || "" : form.receiver}
+                                    value={useSame ? orderForm.name : form.receiver}
                                     onChange={handleChange}
                                     readOnly={useSame}
                                     className={errors.receiver ? "error" : ""}
@@ -380,7 +432,7 @@ export default function Payment() {
                                 <div className="inline-fields phone-fields">
                                     <select
                                         name="mobile1"
-                                        value={useSame ? phone1 : form.mobile1}
+                                        value={useSame ? orderForm.mobile1 : form.mobile1}
                                         onChange={(e) => {
                                             handleChange(e);
                                             setErrors(prev => ({ ...prev, mobile: "" }));
@@ -395,7 +447,7 @@ export default function Payment() {
                                     <input
                                         type="text"
                                         name="mobile2"
-                                        value={useSame ? phone2 || "" : form.mobile2}
+                                        value={useSame ? orderForm.mobile2 : form.mobile2}
                                         onChange={handleChange}
                                         readOnly={useSame}
                                         className={errors.mobile ? "error" : ""}
@@ -404,7 +456,7 @@ export default function Payment() {
                                     <input
                                         type="text"
                                         name="mobile3"
-                                        value={useSame ? phone3 || "" : form.mobile3}
+                                        value={useSame ? orderForm.mobile3 : form.mobile3}
                                         onChange={handleChange}
                                         readOnly={useSame}
                                         className={errors.mobile ? "error" : ""}
@@ -419,7 +471,8 @@ export default function Payment() {
                                     <input
                                         type="text"
                                         placeholder="우편번호"
-                                        value={useSame ? userAddress?.zipcode || "" : form.zipcode}
+                                        // sameAddress 우선, 없으면 userAddress
+                                        value={useSame ? (sameAddress.zipcode || userAddress?.zipcode || "") : form.zipcode}
                                         readOnly
                                         className={errors.zipcode ? "error" : ""}
                                     />
@@ -435,7 +488,8 @@ export default function Payment() {
                                 <input
                                     type="text"
                                     placeholder="기본주소"
-                                    value={useSame ? userAddress?.address || "" : form.address}
+                                    // sameAddress 우선, 없으면 userAddress
+                                    value={useSame ? (sameAddress.address || userAddress?.address || "") : form.address}
                                     readOnly
                                 />
                                 {errors.address && <p className="error-text">{errors.address}</p>}
@@ -448,9 +502,17 @@ export default function Payment() {
                                     name="detail"
                                     placeholder="상세주소"
                                     className={`detail-input ${errors.detail ? "error" : ""}`}
-                                    value={useSame ? userAddress?.detail || "" : form.detail}
-                                    onChange={handleChange}
-                                    readOnly={useSame}
+                                    // sameAddress 우선, 없으면 userAddress
+                                    value={useSame ? (sameAddress.detail || userAddress?.detail || "") : form.detail}
+                                    onChange={(e) => {
+                                        if (useSame) {
+                                            // useSame일 때 상세주소 직접 수정 가능
+                                            setSameAddress(prev => ({ ...prev, detail: e.target.value }));
+                                            setErrors(prev => ({ ...prev, detail: "" }));
+                                        } else {
+                                            handleChange(e);
+                                        }
+                                    }}
                                 />
                                 {errors.detail && <p className="error-text">{errors.detail}</p>}
                             </label>
@@ -464,7 +526,7 @@ export default function Payment() {
                             </label>
                         </div>
 
-                        <label className="check-field bottom-check">
+                        {user && <label className="check-field bottom-check">
                             <input
                                 type="checkbox"
                                 name="isDefault"
@@ -472,11 +534,11 @@ export default function Payment() {
                                 onChange={handleChange}
                             />
                             <span>기본 배송지로 저장</span>
-                        </label>
+                        </label>}
                     </div>
 
                     {/* STEP 3 할인 정보 */}
-                    <div className="payment-step-section">
+                    {user && <div className="payment-step-section">
                         <div className="payment-step-header">
                             <div className="step-title-row">
                                 <h2>할인 정보</h2>
@@ -518,7 +580,7 @@ export default function Payment() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>}
 
                     {/* STEP 4 결제 수단 */}
                     <div className="payment-step-section">
@@ -599,7 +661,7 @@ export default function Payment() {
                                     </div>
                                     <div className="summary-item-copy">
                                         <h3>{item.name}</h3>
-                                        <p>색상: {item.color || "-"} · 사이즈: {item.size || "-"}</p>
+                                        <p>{item.option}</p>
                                         <span>수량: {item.quantity}</span>
                                     </div>
                                     <strong>{formatPrice(item.price * item.quantity)}</strong>
