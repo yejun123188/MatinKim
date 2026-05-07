@@ -4,27 +4,6 @@ import "./scss/InquiryList.scss";
 import UserInfoNone from "./UserInfoNone";
 import { useNavigate } from "react-router-dom";
 
-const inquiryRows = [
-  {
-    id: 1,
-    date: "2026-04-28",
-    category: "배송문의",
-    subject: "언제 출고되나요?",
-    content: "주문한 상품의 출고 일정을 알고 싶습니다.",
-    writer: "마틴킴",
-    reply: "답변대기",
-  },
-  {
-    id: 2,
-    date: "2026-04-07",
-    category: "상품문의",
-    subject: "사이즈 추천 부탁드립니다.",
-    content: "평소 착용 사이즈 기준으로 추천 부탁드립니다.",
-    writer: "마틴킴",
-    reply: "답변완료",
-  },
-];
-
 const periodOptions = [
   { value: "all", label: "전체" },
   { value: "week", label: "1주일" },
@@ -43,18 +22,14 @@ const isWithinDateRange = (date, period) => {
   );
 };
 
-
 export default function InquiryList() {
   const [period, setPeriod] = useState("all");
   const [searchType, setSearchType] = useState("subject");
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
 
-  const savedRows = JSON.parse(localStorage.getItem("inquiries")) || [];
-
   const [rows, setRows] = useState(() => {
-    const savedRows = JSON.parse(localStorage.getItem("inquiries")) || [];
-    return [...savedRows, ...inquiryRows];
+    return JSON.parse(localStorage.getItem("inquiries")) || [];
   });
 
   const filteredRows = rows.filter((row) => {
@@ -65,19 +40,29 @@ export default function InquiryList() {
       .includes(keyword.trim().toLowerCase());
 
     return matchesDate && matchesKeyword;
-
   });
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setRows((prev) =>
-        prev.map((row) => ({
-          ...row,
-          reply: "답변완료",
-        }))
-      );
-    }, 10000);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    const waitingRows = rows.filter((row) => row.reply === "답변대기");
+
+    const timers = waitingRows.map((row, index) =>
+      setTimeout(
+        () => {
+          setRows((prev) => {
+            const updated = prev.map((item) =>
+              item.id === row.id ? { ...item, reply: "답변완료" } : item,
+            );
+
+            localStorage.setItem("inquiries", JSON.stringify(updated));
+
+            return updated;
+          });
+        },
+        (index + 1) * 3000,
+      ),
+    );
+
+    return () => timers.forEach((timer) => clearTimeout(timer));
   }, []);
 
   return (
@@ -119,34 +104,55 @@ export default function InquiryList() {
         <table className="inquiry-table">
           <thead>
             <tr>
-              <th>DATE</th>
-              <th>CATEGORY</th>
-              <th>SUBJECT</th>
-              <th>WRITER</th>
-              <th>REPLY</th>
+              <th>날짜</th>
+              <th>분류</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>답변상태</th>
             </tr>
           </thead>
+
           <tbody>
             {filteredRows.length > 0 ? (
               filteredRows.map((row) => (
                 <tr key={row.id}>
                   <td>{row.date}</td>
                   <td>{row.category}</td>
-                  <td className="subject">{row.subject}</td>
+
+                  <td className="subject">
+                    <button
+                      type="button"
+                      className="subject-btn"
+                      onClick={() => navigate(`/inquiry/${row.id}`)}
+                    >
+                      {row.subject}
+                    </button>
+                  </td>
+
                   <td>{row.writer}</td>
-                  <td>{row.reply}</td>
+
+                  <td>
+                    <span>{row.reply}</span>
+                  </td>
                 </tr>
               ))
             ) : (
-              <UserInfoNone title="문의" />
+              <tr>
+                <td colSpan={5} className="empty-inquiry">
+                  <UserInfoNone title="문의" />
+                </td>
+              </tr>
             )}
           </tbody>
         </table>
       </div>
 
       <div className="inquiry-bottom">
-        <button type="button" className="inquiry-write-btn"
-          onClick={() => navigate("/board")}>
+        <button
+          type="button"
+          className="inquiry-write-btn"
+          onClick={() => navigate("/board")}
+        >
           작성
         </button>
       </div>

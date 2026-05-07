@@ -32,8 +32,8 @@ export default function CouponList() {
         </form>
 
         <p>
-          반드시 쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.(10~35자 일련번호
-          "-" 제외)
+          반드시 쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.(10~35자 일련번호 "-"
+          제외)
         </p>
 
         <ul className="explain-list">
@@ -51,8 +51,8 @@ export default function CouponList() {
             시에만 사용이 가능합니다.
           </li>
           <li>
-            특정한 종이쿠폰/시리얼쿠폰/모바일쿠폰의 경우 단 1회만 사용이
-            가능할 수 있습니다.
+            특정한 종이쿠폰/시리얼쿠폰/모바일쿠폰의 경우 단 1회만 사용이 가능할
+            수 있습니다.
           </li>
         </ul>
       </div>
@@ -87,7 +87,11 @@ export default function CouponList() {
                 </tr>
               ))
             ) : (
-              <UserInfoNone title="쿠폰" />
+              <tr>
+                <td colSpan={6} className="empty-coupon">
+                  <UserInfoNone title="쿠폰" />
+                </td>
+              </tr>
             )}
           </tbody>
         </table>

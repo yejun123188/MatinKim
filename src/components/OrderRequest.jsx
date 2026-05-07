@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getOrderById, requestOrderAction } from "../utils/orderStorage";
+import { useAuthStore } from "../store/useAuthStore";
 import "./scss/orderRequest.scss";
 
 const orderMenu = "주문내역";
@@ -117,6 +118,7 @@ function OrderRequestForm({
   const [note, setNote] = useState("");
   const [showError, setShowError] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { onRecordRefundPoint } = useAuthStore();
 
   const dropdownRef = useRef(null);
 
@@ -137,7 +139,7 @@ function OrderRequestForm({
     };
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (
       (isCancelAction && !selectedValue) ||
       (!isCancelAction && selectedList.length === 0)
@@ -152,6 +154,22 @@ function OrderRequestForm({
       itemIds: isCancelAction ? [itemId] : selectedList,
       action,
     });
+
+    if (action === "cancel" || action === "return") {
+      const selectedIds = new Set(
+        (isCancelAction ? [itemId] : selectedList).map(String)
+      );
+      const refundAmount = orderDetail.orders
+        .filter((order) => selectedIds.has(String(order.id)))
+        .reduce(
+          (sum, order) =>
+            sum + Number(order.price || 0) * Number(order.count || 1),
+          0
+        );
+
+      await onRecordRefundPoint(refundAmount, orderDetail.orderNumber);
+    }
+
     navigate("/userInfo", { state: { menu: orderMenu } });
   };
 

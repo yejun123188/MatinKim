@@ -29,6 +29,7 @@ export default function NewArrivals() {
                     <div className="text-box">
                         <p className="matin-colabo">MATIN KIM X LIZ</p>
                         <h3 className="newarrivals-title">NEW <br /> ARRIVALS</h3>
+                        <hr />
                         <p className="collection-name">26 summer</p>
                         <p className="collection-title">'HOUSE, HAUS!'</p>
                         <p className="collection-text">
@@ -44,7 +45,7 @@ export default function NewArrivals() {
                         <Swiper
                             modules={[Navigation, Autoplay, Pagination]}
                             slidesPerView={5}
-                            spaceBetween={12}
+                            spaceBetween={24}
                             // navigation={true}
                             loop={true}
                             pagination={{

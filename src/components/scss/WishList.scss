@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     height: 40px;
-    padding: 0 0 16px;
+    padding: 0 0 22px;
     margin-bottom: 0;
     @include g.userInfoListLine;
 
@@ -28,15 +28,15 @@
 
   .middle {
     @include g.userInfoPanel;
-    padding: 30px 30px 0;
+    padding: 22px 30px 30px 30px;
 
     .wish-list {
       list-style: none;
       padding: 0;
       margin: 0;
+      @include g.userInfoListLine;
 
       .empty {
-        padding: 60px 0;
         text-align: center;
         color: #aaa;
         font-size: 14px;
@@ -166,20 +166,21 @@
 
           .Bbtn {
             @include g.myBtn1($pd: 0);
-            width: 90px;
-            height: 30px;
+            min-width: 90px;
+            padding: 0 12px;
+            height: 35px;
           }
 
           .Wbtn {
             @include g.myBtn2($pd: 0);
-            width: 90px;
-            height: 30px;
+            min-width: 90px;
+            padding: 0 12px;
+            height: 35px;
           }
         }
       }
     }
   }
-
 }
 
 .wishlist-bottom {
@@ -194,13 +195,15 @@
 
   .Bbtn {
     @include g.myBtn1($pd: 0);
-    width: 90px;
-    height: 30px;
+    min-width: 120px;
+    padding: 0 12px;
+    height: 40px;
   }
 
   .Wbtn {
     @include g.myBtn2($pd: 0);
-    width: 90px;
-    height: 30px;
+    min-width: 120px;
+    padding: 0 12px;
+    height: 40px;
   }
 }

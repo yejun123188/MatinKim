@@ -54,11 +54,16 @@
                 position: absolute;
                 left: 25px;
                 top: 15px;
+                z-index: 20;
                 font-size: g.$size-14-main;
+                line-height: 1.55;
                 background: #d9d9d9;
-                padding: 7px 10px;
+                padding: 5px 12px;
                 border-radius: 0 8px 8px 8px;
                 opacity: 0;
+                white-space: pre-line;
+                overflow: visible;
+                text-overflow: clip;
                 transition: opacity 1s ease 2s;
               }
               img:hover + p {
@@ -115,6 +120,7 @@
     .order-list {
       display: flex;
       gap: 24px;
+      width: 100%;
 
       .order-product {
         display: flex;
@@ -186,10 +192,11 @@
   }
 
   .my-wish {
-    
     .wish-list {
       display: flex;
       gap: 24px;
+      width: 100%;
+
       .wish-product {
         display: flex;
         gap: 20px;
@@ -257,13 +264,13 @@
             .Bbtn {
               @include g.myBtn1($pd: 0);
               width: 90px;
-              height: 30px;
+              height: 35px;
             }
 
             .Wbtn {
               @include g.myBtn2($pd: 0);
               width: 90px;
-              height: 30px;
+              height: 35px;
             }
           }
         }

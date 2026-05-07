@@ -23,12 +23,14 @@
 
   .recent-products-panel {
     @include g.userInfoPanel;
-    padding: 0 30px;
+    padding: 30px;
   }
 
   .recent-product-list {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
   }
 
   .recent-product-item {
@@ -98,14 +100,16 @@
 
     .Bbtn {
       @include g.myBtn1($pd: 0);
-      width: 90px;
-      height: 30px;
+      min-width: 90px;
+      padding: 0 12px;
+      height: 35px;
     }
 
     .Wbtn {
       @include g.myBtn2($pd: 0);
-      width: 90px;
-      height: 30px;
+      min-width: 90px;
+      padding: 0 12px;
+      height: 35px;
     }
   }
 }
