@@ -194,53 +194,55 @@ export default function Payment() {
         return Object.keys(newErrors).length === 0;
     };
 
-     const handleSubmit = async () => {
+    const handleSubmit = async () => {
         if (!validate()) return;
         if (isSubmitting) return;
 
         setIsSubmitting(true);
-        const isSaved = await onRecordPurchase(finalTotal, 1);
-        setIsSubmitting(false);
 
-        if (isSaved) {
-            const shippingInfo = useSame
-                ? {
-                    receiver: orderForm.name,
-                    mobile1: orderForm.mobile1,
-                    mobile2: orderForm.mobile2,
-                    mobile3: orderForm.mobile3,
-                    address: sameAddress.address || userAddress?.address || "",
-                    detail: sameAddress.detail || userAddress?.detail || "",
-                    zipcode: sameAddress.zipcode || userAddress?.zipcode || "",
-                }
-                : form;
+        // 로그인 유저만 구매 기록, 비회원은 건너뜀
+        if (user) {
+            const isSaved = await onRecordPurchase(finalTotal, 1);
+            setIsSubmitting(false);
+            if (!isSaved) return;
+        } else {
+            setIsSubmitting(false);
+        }
 
-            const orderNumber = createOrder({
-                orderItems,
-                orderForm,
-                shippingInfo,
-                payment: activeMethod.title,
-                deliveryCost: shippingFee + localShippingFee,
-            });
-
-            // 로그인 여부에 따라 분기
-            if (user) {
-                // 회원 → 기존처럼 마이페이지 주문내역으로
-                alert("주문이 완료되었습니다!");
-                navigate("/userInfo", { state: { menu: ORDER_MENU } });
-            } else {
-                // 비회원 → 주문완료 페이지로 (주문번호 안내)
-                navigate("/order-complete", {
-                    state: {
-                        orderNumber,
-                        orderItems,
-                        finalTotal,
-                        shippingInfo,
-                        payment: activeMethod.title,
-                        isGuest: true
-                    }
-                });
+        const shippingInfo = useSame
+            ? {
+                receiver: orderForm.name,
+                mobile1: orderForm.mobile1,
+                mobile2: orderForm.mobile2,
+                mobile3: orderForm.mobile3,
+                address: sameAddress.address || userAddress?.address || "",
+                detail: sameAddress.detail || userAddress?.detail || "",
+                zipcode: sameAddress.zipcode || userAddress?.zipcode || "",
             }
+            : form;
+
+        const orderNumber = createOrder({
+            orderItems,
+            orderForm,
+            shippingInfo,
+            payment: activeMethod.title,
+            deliveryCost: shippingFee + localShippingFee,
+        });
+
+        if (user) {
+            alert("주문이 완료되었습니다!");
+            navigate("/userInfo", { state: { menu: ORDER_MENU } });
+        } else {
+            navigate("/order-complete", {
+                state: {
+                    orderNumber,
+                    orderItems,
+                    finalTotal,
+                    shippingInfo,
+                    payment: activeMethod.title,
+                    isGuest: true,
+                },
+            });
         }
     };
 
