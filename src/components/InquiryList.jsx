@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getQuickRangeValues } from "../utils/orderDateUtils";
 import "./scss/InquiryList.scss";
 import UserInfoNone from "./UserInfoNone";
+import { useNavigate } from "react-router-dom";
 
 const inquiryRows = [
   {
@@ -42,12 +43,21 @@ const isWithinDateRange = (date, period) => {
   );
 };
 
+
 export default function InquiryList() {
   const [period, setPeriod] = useState("all");
   const [searchType, setSearchType] = useState("subject");
   const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
 
-  const filteredRows = inquiryRows.filter((row) => {
+  const savedRows = JSON.parse(localStorage.getItem("inquiries")) || [];
+
+  const [rows, setRows] = useState(() => {
+    const savedRows = JSON.parse(localStorage.getItem("inquiries")) || [];
+    return [...savedRows, ...inquiryRows];
+  });
+
+  const filteredRows = rows.filter((row) => {
     const matchesDate = isWithinDateRange(row.date, period);
     const targetText = row[searchType] || "";
     const matchesKeyword = targetText
@@ -55,7 +65,20 @@ export default function InquiryList() {
       .includes(keyword.trim().toLowerCase());
 
     return matchesDate && matchesKeyword;
+
   });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRows((prev) =>
+        prev.map((row) => ({
+          ...row,
+          reply: "답변완료",
+        }))
+      );
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -122,7 +145,8 @@ export default function InquiryList() {
       </div>
 
       <div className="inquiry-bottom">
-        <button type="button" className="inquiry-write-btn">
+        <button type="button" className="inquiry-write-btn"
+          onClick={() => navigate("/board")}>
           작성
         </button>
       </div>
