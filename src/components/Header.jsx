@@ -57,6 +57,7 @@ export default function Header() {
 
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isHomeIdle = isHome && !isScrolled && !isShopHovered;
 
   const handleAuthButtonClick = async () => {
     if (user) {
@@ -101,11 +102,11 @@ export default function Header() {
   return (
     <>
       <header>
-        {isHome && !isScrolled && (
+        {/* {isHome && !isScrolled && (
           <div className="top-banner">
             <Link to="/">1ST SPRING 2026</Link>
           </div>
-        )}
+        )} */}
 
         <div
           className={`header-wrapper ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
@@ -114,6 +115,7 @@ export default function Header() {
         >
           <div
             className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
+              } ${isHomeIdle ? "home-idle" : ""
               } ${!isHome || isScrolled ? "no-banner" : ""}`}
           >
             <div className="inner">

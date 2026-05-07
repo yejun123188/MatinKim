@@ -4,6 +4,7 @@ import { agreementData } from "../data/agreement";
 import "./scss/Agreement.scss";
 import HelpMenu from "../components/HelpMenu";
 
+
 export default function Agreement() {
     return (
         <section className="sub-section">

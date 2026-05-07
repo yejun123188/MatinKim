@@ -1,0 +1,150 @@
+.qna-page {
+    .qna-inner {
+        margin: 0 auto;
+        display: flex;
+        gap: 70px;
+        align-items: flex-start;
+    }
+
+    .qna-title-wrap {
+        flex: 0 0 220px;
+        padding-bottom: 30px;
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            color: #000;
+        }
+    }
+}
+
+.qna-content {
+    flex: 1;
+    max-width: 1080px;
+    min-width: 0;
+
+    h2 {
+        font-size: 36px;
+        font-weight: 500;
+        color: #111;
+        line-height: 1;
+        padding-bottom: 34px;
+        margin-bottom: 46px;
+        border-bottom: 1px solid #111;
+    }
+}
+
+.qna-content .qna {
+    border-bottom: none;
+}
+
+/* Guide */
+.guide-section {
+    padding-bottom: 58px;
+    margin-bottom: 58px;
+
+
+    &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 22px;
+        font-weight: 500;
+        color: #111;
+        margin-bottom: 28px;
+        letter-spacing: -0.02em;
+    }
+
+    h4 {
+        font-size: 17px;
+        font-weight: 500;
+        color: #111;
+        margin: 36px 0 18px;
+    }
+}
+
+/* Privacy */
+.policy-block {
+    padding-bottom: 42px;
+    margin-bottom: 42px;
+    border-bottom: 1px solid #e6e6e6;
+
+    &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #111;
+        margin-bottom: 18px;
+        letter-spacing: -0.02em;
+    }
+}
+
+/* Agreement */
+.terms-box {
+    .term-item {
+        padding-bottom: 42px;
+        margin-bottom: 42px;
+        border-bottom: 1px solid #e6e6e6;
+
+        &:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #111;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+    }
+}
+
+/* Common Text */
+.guide-section,
+.policy-block,
+.term-item {
+    p {
+        font-size: 15px;
+        font-weight: 400;
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 6px;
+        word-break: keep-all;
+    }
+
+    ul {
+        margin-top: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    li {
+        position: relative;
+        padding-left: 12px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #555;
+        line-height: 1.9;
+        word-break: keep-all;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #777;
+        }
+    }
+}
