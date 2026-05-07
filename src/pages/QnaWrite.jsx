@@ -29,19 +29,15 @@ export default function QnaWrite() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("1:1 문의 등록", form);
+        navigate("/board");
     };
 
 
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        // 등록 처리
 
-        navigate("/board");
-    };
 
     return (
         <section className="sub-section">
