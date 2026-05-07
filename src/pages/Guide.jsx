@@ -4,6 +4,7 @@ import "./scss/Guide.scss";
 import { Link } from "react-router-dom";
 import HelpMenu from "../components/HelpMenu";
 
+
 export default function Guide() {
     return (
         <section className="sub-section">
@@ -13,7 +14,7 @@ export default function Guide() {
                         <HelpMenu />
 
                         <div className="qna-content guide-content">
-                            <h2>이용약관</h2>
+
                             {guideData.map((section, idx) => (
                                 <article className="guide-section" key={idx}>
                                     <h3>{section.title}</h3>
