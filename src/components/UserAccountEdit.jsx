@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
+import { useProductStore } from "../store/useProductStore";
 import "./scss/UserAccountEdit.scss";
 
 const splitPhone = (phone = "") => {
@@ -31,17 +32,41 @@ const createInitialForm = (user) => ({
   calendarType: user.calendarType || "solar",
 });
 
-function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
+const getPhoneValue = (form) => `${form.phone1}-${form.phone2}-${form.phone3}`;
+function UserAccountEditForm({
+  user,
+  openPostcode,
+  onUpdateUserInfo,
+  onWithdraw,
+  onClearUserProductData,
+}) {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     ...createInitialForm(user),
   });
   const [errors, setErrors] = useState({});
+  const [phoneVerify, setPhoneVerify] = useState({
+    sent: false,
+    code: "",
+    input: "",
+    verifiedPhone: getPhoneValue(createInitialForm(user)),
+    isVerified: Boolean(user.phone || user.phoneNumber),
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: false }));
+  };
+
+  const handlePhoneChange = (e) => {
+    handleChange(e);
+    setPhoneVerify((prev) => ({
+      ...prev,
+      sent: false,
+      input: "",
+      isVerified: false,
+    }));
   };
 
   const handlePostcode = () => {
@@ -52,6 +77,65 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
         address,
       }));
     });
+  };
+
+  const handleBirthChange = (e) => {
+    const { name, value } = e.target;
+    const onlyNumbers = value.replace(/\D/g, "");
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: onlyNumbers,
+    }));
+  };
+
+  const handleSendPhoneCode = () => {
+    const nextPhone = getPhoneValue(form);
+
+    if (!form.phone2.trim() || !form.phone3.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        phone2: !form.phone2.trim(),
+        phone3: !form.phone3.trim(),
+      }));
+      alert("휴대전화 번호를 입력해주세요.");
+      return;
+    }
+
+    if (!/^\d{3,4}$/.test(form.phone2) || !/^\d{4}$/.test(form.phone3)) {
+      alert("휴대전화 번호 형식을 확인해주세요.");
+      return;
+    }
+
+    const code = String(Math.floor(100000 + Math.random() * 900000));
+    setPhoneVerify({
+      sent: true,
+      code,
+      input: "",
+      verifiedPhone: nextPhone,
+      isVerified: false,
+    });
+    alert(`인증번호는 ${code} 입니다.`);
+  };
+
+  const handleVerifyPhoneCode = () => {
+    const nextPhone = getPhoneValue(form);
+
+    if (!phoneVerify.sent || phoneVerify.verifiedPhone !== nextPhone) {
+      alert("인증번호를 다시 받아주세요.");
+      return;
+    }
+
+    if (phoneVerify.input.trim() !== phoneVerify.code) {
+      alert("인증번호가 일치하지 않습니다.");
+      return;
+    }
+
+    setPhoneVerify((prev) => ({
+      ...prev,
+      isVerified: true,
+    }));
+    alert("휴대전화 인증이 완료되었습니다.");
   };
 
   const handleSubmit = async (e) => {
@@ -83,6 +167,14 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
       return;
     }
 
+    if (
+      !phoneVerify.isVerified ||
+      phoneVerify.verifiedPhone !== getPhoneValue(form)
+    ) {
+      alert("휴대전화 인증을 완료해주세요.");
+      return;
+    }
+
     await onUpdateUserInfo({
       userId: form.userId,
       name: form.name,
@@ -94,6 +186,20 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
       birth: `${form.birthYear}-${form.birthMonth}-${form.birthDay}`,
       calendarType: form.calendarType,
     });
+  };
+
+  const handleWithdraw = async () => {
+    const isConfirmed = window.confirm(
+      "회원탈퇴 시 계정 정보와 마이페이지 데이터가 삭제됩니다. 탈퇴하시겠습니까?"
+    );
+
+    if (!isConfirmed) return;
+
+    const isSuccess = await onWithdraw();
+    if (isSuccess) {
+      onClearUserProductData();
+      navigate("/");
+    }
   };
 
   return (
@@ -144,6 +250,62 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
               className={errors.name ? "error" : ""}
             />
           </label>
+
+          <div className="form-field">
+            <span>생년월일</span>
+            <div className="birth-row">
+              <input
+                type="text"
+                name="birthYear"
+                value={form.birthYear}
+                onChange={handleBirthChange}
+                maxLength={4}
+                inputMode="numeric"
+                placeholder="YYYY"
+              />
+              <span>/</span>
+              <input
+                type="text"
+                name="birthMonth"
+                value={form.birthMonth}
+                onChange={handleBirthChange}
+                maxLength={2}
+                inputMode="numeric"
+                placeholder="MM"
+              />
+              <span>/</span>
+              <input
+                type="text"
+                name="birthDay"
+                value={form.birthDay}
+                onChange={handleBirthChange}
+                maxLength={2}
+                inputMode="numeric"
+                placeholder="DD"
+              />
+
+              <label>
+                <input
+                  type="radio"
+                  name="calendarType"
+                  value="solar"
+                  checked={form.calendarType === "solar"}
+                  onChange={handleChange}
+                />
+                양력
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="calendarType"
+                  value="lunar"
+                  checked={form.calendarType === "lunar"}
+                  onChange={handleChange}
+                />
+                음력
+              </label>
+            </div>
+          </div>
         </div>
 
         <div className="account-edit-column">
@@ -180,7 +342,7 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
           <div className="form-field">
             <span>휴대전화*</span>
             <div className="phone-row">
-              <select name="phone1" value={form.phone1} onChange={handleChange}>
+              <select name="phone1" value={form.phone1} onChange={handlePhoneChange}>
                 <option value="010">010</option>
                 <option value="011">011</option>
                 <option value="016">016</option>
@@ -193,7 +355,7 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
                 type="text"
                 name="phone2"
                 value={form.phone2}
-                onChange={handleChange}
+                onChange={handlePhoneChange}
                 maxLength={4}
                 className={errors.phone2 ? "error" : ""}
               />
@@ -202,12 +364,36 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
                 type="text"
                 name="phone3"
                 value={form.phone3}
-                onChange={handleChange}
+                onChange={handlePhoneChange}
                 maxLength={4}
                 className={errors.phone3 ? "error" : ""}
               />
-              <button type="button">인증번호 받기</button>
+              <button type="button" onClick={handleSendPhoneCode}>
+                인증번호 받기
+              </button>
             </div>
+            {phoneVerify.sent && !phoneVerify.isVerified && (
+              <div className="phone-verify-row">
+                <input
+                  type="text"
+                  value={phoneVerify.input}
+                  onChange={(e) =>
+                    setPhoneVerify((prev) => ({
+                      ...prev,
+                      input: e.target.value,
+                    }))
+                  }
+                  maxLength={6}
+                  placeholder="인증번호 입력"
+                />
+                <button type="button" onClick={handleVerifyPhoneCode}>
+                  확인
+                </button>
+              </div>
+            )}
+            {phoneVerify.isVerified && (
+              <p className="phone-verify-success">휴대전화 인증 완료</p>
+            )}
           </div>
 
           <label className="form-field">
@@ -221,60 +407,11 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
             />
           </label>
 
-          <div className="form-field">
-            <span>생년월일</span>
-            <div className="birth-row">
-              <input
-                type="text"
-                name="birthYear"
-                value={form.birthYear}
-                onChange={handleChange}
-                maxLength={4}
-              />
-              <span>/</span>
-              <input
-                type="text"
-                name="birthMonth"
-                value={form.birthMonth}
-                onChange={handleChange}
-                maxLength={2}
-              />
-              <span>/</span>
-              <input
-                type="text"
-                name="birthDay"
-                value={form.birthDay}
-                onChange={handleChange}
-                maxLength={2}
-              />
-
-              <label>
-                <input
-                  type="radio"
-                  name="calendarType"
-                  value="solar"
-                  checked={form.calendarType === "solar"}
-                  onChange={handleChange}
-                />
-                양력
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="calendarType"
-                  value="lunar"
-                  checked={form.calendarType === "lunar"}
-                  onChange={handleChange}
-                />
-                음력
-              </label>
-            </div>
-          </div>
         </div>
       </div>
 
       <div className="account-edit-buttons">
-        <button type="button" className="withdraw">
+        <button type="button" className="withdraw" onClick={handleWithdraw}>
           회원탈퇴
         </button>
         <button type="submit" className="submit">
@@ -293,7 +430,8 @@ function UserAccountEditForm({ user, openPostcode, onUpdateUserInfo }) {
 }
 
 export default function UserAccountEdit() {
-  const { user, openPostcode, onUpdateUserInfo } = useAuthStore();
+  const { user, openPostcode, onUpdateUserInfo, onWithdraw } = useAuthStore();
+  const { onClearUserProductData } = useProductStore();
 
   if (!user)
     return <div className="account-edit-empty">로그인이 필요합니다.</div>;
@@ -304,6 +442,8 @@ export default function UserAccountEdit() {
       user={user}
       openPostcode={openPostcode}
       onUpdateUserInfo={onUpdateUserInfo}
+      onWithdraw={onWithdraw}
+      onClearUserProductData={onClearUserProductData}
     />
   );
 }

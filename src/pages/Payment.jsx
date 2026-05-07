@@ -166,30 +166,36 @@ export default function Payment() {
     const handleSubmit = async () => {
         if (!validate()) return;
         if (isSubmitting) return;
+        if (!user) {
+            alert("로그인이 필요합니다.");
+            return;
+        }
 
         setIsSubmitting(true);
-        const isSaved = await onRecordPurchase(finalTotal, 1);
+
+        const shippingInfo = useSame
+            ? {
+                receiver: userAddress?.receiver || orderForm.name,
+                mobile1: phone1,
+                mobile2: phone2,
+                mobile3: phone3,
+                address: userAddress?.address || "",
+                detail: userAddress?.detail || "",
+            }
+            : form;
+
+        const order = createOrder({
+            orderItems,
+            orderForm,
+            shippingInfo,
+            payment: activeMethod.title,
+            deliveryCost: shippingFee + localShippingFee,
+        });
+
+        const isSaved = await onRecordPurchase(finalTotal, 1, order.orderNumber);
         setIsSubmitting(false);
 
         if (isSaved) {
-            const shippingInfo = useSame
-                ? {
-                    receiver: userAddress?.receiver || orderForm.name,
-                    mobile1: phone1,
-                    mobile2: phone2,
-                    mobile3: phone3,
-                    address: userAddress?.address || "",
-                    detail: userAddress?.detail || "",
-                }
-                : form;
-
-            createOrder({
-                orderItems,
-                orderForm,
-                shippingInfo,
-                payment: activeMethod.title,
-                deliveryCost: shippingFee + localShippingFee,
-            });
             alert("주문이 완료되었습니다!");
             navigate("/userInfo", { state: { menu: ORDER_MENU } });
         }

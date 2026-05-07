@@ -8,30 +8,40 @@
   .inquiry-search {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
 
     select {
       @include g.myTextBox;
-      height: 40px;
-      width: 150px;
+      appearance: none;
+      height: 35px;
+      width: 120px;
+      padding: 0 28px 0 10px;
+      background-image: url(../../../public/images/userinfo/input-under-btn.svg);
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 10px 6px;
+      color: g.$text-main-color;
+      outline: none;
     }
 
     div {
       display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     input {
       @include g.myTextBox;
-      height: 40px;
+      height: 35px;
       width: 264px;
     }
 
     button {
       @include g.myBtn1($pd: 0);
-      width: 120px;
-      height: 40px;
-      margin-left: 10px;
+      min-width: 90px;
+      height: 35px;
+      padding: 0 12px;
     }
   }
 
