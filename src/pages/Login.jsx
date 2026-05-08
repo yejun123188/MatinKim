@@ -20,7 +20,7 @@ export default function Login({ onClose, guestMode = false, guestOrderItems = []
   const handleBlurUserId = () => {
     setErrors((prev) => ({
       ...prev,
-      userId: !userId.trim()
+      // userId: !userId.trim()
     }));
   };
 
@@ -28,7 +28,7 @@ export default function Login({ onClose, guestMode = false, guestOrderItems = []
   const handleBlurPassword = () => {
     setErrors((prev) => ({
       ...prev,
-      password: !password.trim()
+      // password: !password.trim()
     }));
   };
 
