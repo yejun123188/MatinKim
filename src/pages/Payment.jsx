@@ -4,6 +4,7 @@ import "./scss/Payment.scss";
 import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
 import { createOrder, ORDER_MENU } from "../store/orderStorage";
+import { useProductStore } from "../store/useProductStore";
 
 const PAYMENT_METHODS = [
     { id: "card", title: "신용카드 / 체크카드", description: "안전한 결제를 위해 Stripe로 처리됩니다", badges: ["VISA", "MC", "AMEX"] },
@@ -26,6 +27,7 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 export default function Payment() {
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase } = useAuthStore();
     const navigate = useNavigate();
+    const { onClearCart } = useProductStore();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -228,6 +230,7 @@ export default function Payment() {
             payment: activeMethod.title,
             deliveryCost: shippingFee + localShippingFee,
         });
+        onClearCart();
 
         if (user) {
             alert("주문이 완료되었습니다!");
