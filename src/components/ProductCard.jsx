@@ -13,7 +13,7 @@ const getProductBaseName = (item) => {
         : item.name;
 };
 
-export default function ProductCard({ cate, as: CardTag = 'li', className = '' }) {
+export default function ProductCard({ cate, as: CardTag = 'li', className = '', onClick }) {
     const { items, onColorCode, onAddCart, openCart } = useProductStore();
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState(false);
@@ -66,6 +66,7 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
     };
 
     const handleMoveDetail = () => {
+        if (onClick) onClick();
         navigate(`/products/${cate.id}`);
     };
 

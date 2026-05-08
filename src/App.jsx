@@ -30,6 +30,7 @@ import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
 import QnaWrite from "./pages/QnaWrite";
 import InquiryList from "./components/InquiryList";
+import Search from "./pages/Search";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -63,6 +64,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/:category1" element={<ProductList />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />

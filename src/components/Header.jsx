@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
+import ProductCard from "./ProductCard";
 import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
@@ -43,13 +44,28 @@ const photoMenu = [
   },
 ];
 
+const popularKeywords = [
+  "볼캡",
+  "가디건",
+  "청바지",
+  "크로스백",
+  "반팔티",
+  "후드집업",
+  "카고팬츠",
+  "비니",
+  "스커트",
+  "바람막이",
+];
+
+const bestTabs = ["ALL", "CLOTHING", "GOODS", "ACCESSORIES"];
+
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
   const isHome = location.pathname === "/";
 
-  const { menus, cartCount, isCartOpen, openCart, closeCart } =
+  const { menus, cartCount, isCartOpen, openCart, closeCart, items, BestItems, onFetchItem, onBestMenus } =
     useProductStore();
 
   const { user, onLogout } = useAuthStore();
@@ -57,7 +73,32 @@ export default function Header() {
 
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchWord, setSearchWord] = useState("");
+  const [recentKeywords, setRecentKeywords] = useState([]);
+  const [activeBestTab, setActiveBestTab] = useState("ALL");
+  const searchInputRef = useRef(null);
   const isHomeIdle = isHome && !isScrolled && !isShopHovered;
+
+  const searchBestItems = useMemo(() => {
+    const sourceItems = BestItems.length > 0
+      ? BestItems
+      : items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"));
+
+    const filteredItems = sourceItems.filter((item) => {
+      if (activeBestTab === "ALL") return true;
+      return item.category1 === activeBestTab;
+    });
+
+    const displayItems = filteredItems.length > 0 ? filteredItems : sourceItems;
+
+    if (activeBestTab === "ALL", "CLOTHING", "GOODS", "ACCESSORIES") {
+      const shuffled = [...displayItems].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, Math.min(shuffled.length, 5));
+    }
+
+    return displayItems.length > 24 ? displayItems.slice(24, 29) : displayItems.slice(0, 5);
+  }, [BestItems, items, activeBestTab]);
 
   const handleAuthButtonClick = async () => {
     if (user) {
@@ -76,6 +117,39 @@ export default function Header() {
     }
   };
 
+  const handleSearchClick = () => {
+    setIsShopHovered(false);
+    setIsSearchOpen(true);
+  };
+
+  const handleCloseSearch = () => {
+    setIsSearchOpen(false);
+  };
+
+  const handleRemoveKeyword = (keywordToRemove) => {
+    const nextKeywords = recentKeywords.filter((keyword) => keyword !== keywordToRemove);
+    setRecentKeywords(nextKeywords);
+    localStorage.setItem("recentSearchKeywords", JSON.stringify(nextKeywords));
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+
+    const keyword = searchWord.trim();
+    if (!keyword) return;
+
+    const nextKeywords = [
+      keyword,
+      ...recentKeywords.filter((recentKeyword) => recentKeyword !== keyword),
+    ].slice(0, 5);
+
+    setRecentKeywords(nextKeywords);
+    localStorage.setItem("recentSearchKeywords", JSON.stringify(nextKeywords));
+    setIsSearchOpen(false);
+    setSearchWord('');
+    navigate(`/search?q=${encodeURIComponent(keyword)}`);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -88,7 +162,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (isCartOpen || isLoginOpen) {
+    if (isCartOpen || isLoginOpen || isSearchOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -97,7 +171,47 @@ export default function Header() {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isCartOpen, isLoginOpen]);
+  }, [isCartOpen, isLoginOpen, isSearchOpen]);
+
+  useEffect(() => {
+    try {
+      const savedKeywords = JSON.parse(localStorage.getItem("recentSearchKeywords")) || [];
+      setRecentKeywords(Array.isArray(savedKeywords) ? savedKeywords.slice(0, 5) : []);
+    } catch {
+      setRecentKeywords([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isSearchOpen) return;
+
+    onFetchItem();
+    onBestMenus();
+  }, [isSearchOpen, onFetchItem, onBestMenus]);
+
+  useEffect(() => {
+    if (!isSearchOpen) return undefined;
+
+    const frameId = requestAnimationFrame(() => {
+      searchInputRef.current?.focus();
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [isSearchOpen]);
+
+  useEffect(() => {
+    if (!isSearchOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsSearchOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isSearchOpen]);
 
   return (
     <>
@@ -150,13 +264,15 @@ export default function Header() {
 
               <div className="header-right">
                 <ul className="gnb-list">
-                  <li>
-                    <input type="text" placeholder="SEARCH" />
+                  <li className="header-search">
+                    <button type="button" onClick={handleSearchClick}>
+                      <img src="/images/icon/search-icon-black.svg" alt="검색" />
+                    </button>
                   </li>
 
                   <li className="header-cart">
                     <button type="button" onClick={openCart}>
-                      <img src="/images/header-icon/cart.svg" alt="장바구니" />
+                      <img src="/images/icon/cart-icon-black.svg" alt="장바구니" />
                       {cartCount > 0 && (
                         <span className="cart-num">
                           <span>{cartCount}</span>
@@ -169,13 +285,13 @@ export default function Header() {
                     {user ? (
                       <Link to="/userInfo">
                         <img
-                          src="/images/header-icon/user.svg"
+                          src="/images/icon/user-icon-black.svg"
                           alt="회원정보"
                         />
                       </Link>
                     ) : (
                       <button type="button" onClick={openLogin}>
-                        <img src="/images/header-icon/user.svg" alt="로그인" />
+                        <img src="/images/icon/user-icon-black.svg" alt="로그인" />
                       </button>
                     )}
                   </li>
@@ -185,8 +301,8 @@ export default function Header() {
                       <img
                         src={
                           user
-                            ? "/images/header/logout.svg"
-                            : "/images/header/login.svg"
+                            ? "/images/icon/logout-icon-black.svg"
+                            : "/images/icon/login-icon-black.svg"
                         }
                         alt={user ? "로그아웃" : "로그인"}
                       />
@@ -261,6 +377,115 @@ export default function Header() {
           onMouseEnter={() => setIsShopHovered(false)}
         />
       </header>
+
+      <div className={`search-drawer ${isSearchOpen ? "active" : ""}`}>
+        <button type="button" className="search-drawer-close" onClick={handleCloseSearch}>
+          <img src="/images/icon/close-icon-black.svg" alt="검색창 닫기" />
+        </button>
+
+        <div className="search-drawer-inner">
+          <form className="search-drawer-form" onSubmit={handleSearchSubmit}>
+            <input
+              ref={searchInputRef}
+              type="search"
+              placeholder="검색어 입력"
+              value={searchWord}
+              onChange={(event) => setSearchWord(event.target.value)}
+              aria-label="검색어 입력"
+              autoFocus={isSearchOpen}
+            />
+            <button type="submit" aria-label="검색">
+              <img src="/images/icon/search-icon-black.svg" alt="" aria-hidden="true" />
+            </button>
+          </form>
+
+          <div className="search-keyword-area">
+            <div>
+              <h2>최근 검색어</h2>
+              {recentKeywords.length > 0 ? (
+                <ul className="recent-keyword-list">
+                  {recentKeywords.map((keyword) => (
+                    <li key={keyword}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSearchWord(keyword);
+                          setIsSearchOpen(false);
+                          navigate(`/search?q=${encodeURIComponent(keyword)}`);
+                        }}
+                      >
+                        {keyword}
+                      </button>
+                      <button
+                        type="button"
+                        className="remove-keyword-btn"
+                        onClick={() => handleRemoveKeyword(keyword)}
+                        aria-label={`${keyword} 삭제`}
+                      >
+                        <img src="/images/icon/close-icon-black.svg" alt="삭제" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>최근 검색어가 없습니다</p>
+              )}
+            </div>
+
+            <div>
+              <h2>인기 검색어</h2>
+              <ol className="popular-keyword-list">
+                {popularKeywords.map((keyword, index) => (
+                  <li key={keyword}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSearchWord(keyword);
+                        setIsSearchOpen(false);
+                        navigate(`/search?q=${encodeURIComponent(keyword)}`);
+                      }}
+                    >
+                      <span>{index + 1}</span>
+                      <strong>{keyword}</strong>
+                      <em>NEW</em>
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <div className="search-best">
+            <div className="search-best-head">
+              <h2>이번주 베스트</h2>
+              <div className="search-best-tabs">
+                {bestTabs.map((tab) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    className={activeBestTab === tab ? "active" : ""}
+                    onClick={() => setActiveBestTab(tab)}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <ul className="search-best-list">
+              {searchBestItems.map((item) => (
+                <ProductCard cate={item} key={item.id} onClick={handleCloseSearch} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        className={`search-drawer-dim ${isSearchOpen ? "active" : ""}`}
+        onClick={handleCloseSearch}
+        aria-label="검색창 닫기"
+      />
 
       {isLoginOpen && <Login onClose={closeLogin} />}
       {isCartOpen && <Cart onClose={closeCart} />}
