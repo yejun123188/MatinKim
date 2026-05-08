@@ -34,6 +34,7 @@ import QnaWrite from "./pages/QnaWrite";
 import InquiryList from "./components/InquiryList";
 import FindId from "./pages/FindId";
 import InquiryDetail from "./components/InquiryDetail";
+import FindPw from "./pages/FindPw";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -110,6 +111,7 @@ function App() {
         <Route path="/inquiry/write" element={<InquiryList />} />
         <Route path="/find" element={<FindId />} />
         <Route path="/inquiry/:id" element={<InquiryDetail />} />
+        <Route path="/password/find" element={<FindPw />} />
       </Routes>
       <Footer />
     </>
