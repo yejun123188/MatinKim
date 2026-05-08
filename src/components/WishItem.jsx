@@ -81,16 +81,16 @@ export default function WishItem({ wish, onEditOptions, onCartPopup, variant = "
                     ) : (
                         <span className="soldout-badge">SOLD OUT</span>
                     )}
-                    <div className="button-box">
+                    <div className="button-wrap">
                         {!isSoldOut && (
                             <>
-                                {/* ✅ Buy It Now → /payment으로 이동 */}
-                                <button onClick={handleBuyNow}>Buy It Now</button>
-                                {/* ✅ Add To Cart → onAddCart + CartPopup */}
-                                <button onClick={handleAddCart}>Add To Cart</button>
+                                {/* Buy It Now → /payment으로 이동 */}
+                                <button className="Bbtn" onClick={handleBuyNow}>바로구매</button>
+                                {/* Add To Cart → onAddCart + CartPopup */}
+                                <button className="Wbtn" onClick={handleAddCart}>카트담기</button>
                             </>
                         )}
-                        <button onClick={handleRemove}>Remove</button>
+                        <button className="Wbtn" onClick={handleRemove}>삭제</button>
                     </div>
                 </div>
             </>
@@ -122,15 +122,15 @@ export default function WishItem({ wish, onEditOptions, onCartPopup, variant = "
                     {!isSoldOut && (
                         <>
                             <button className="Bbtn" onClick={handleBuyNow}>
-                                Buy It Now
+                                바로구매
                             </button>
                             <button className="Wbtn" onClick={handleAddCart}>
-                                Add To Cart
+                                카트담기
                             </button>
                         </>
                     )}
                     <button className="Wbtn" onClick={handleRemove}>
-                        Remove
+                        삭제
                     </button>
                 </div>
             </div>

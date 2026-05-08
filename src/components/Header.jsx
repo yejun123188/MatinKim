@@ -8,6 +8,7 @@ import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
 
+
 const topmenus = [
   { key: "shop", label: "SHOP" },
   { key: "project", label: "PROJECT" },
@@ -69,7 +70,7 @@ export default function Header() {
     useProductStore();
 
   const { user, onLogout } = useAuthStore();
-  const { isLoginOpen, openLogin, closeLogin } = useLoginStore();
+  const { isLoginOpen, openLogin, closeLogin, guestMode, guestOrderItems } = useLoginStore();
 
   const [isShopHovered, setIsShopHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

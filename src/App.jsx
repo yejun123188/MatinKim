@@ -28,9 +28,14 @@ import Guide from "./pages/Guide";
 import Privacy from "./pages/Privacy";
 import Agreement from "./pages/Agreement";
 import Cart from "./pages/Cart";
+import OrderComplete from "./pages/OrderComplete";
+import OrderLookup from "./pages/OrderLookup";
 import QnaWrite from "./pages/QnaWrite";
 import InquiryList from "./components/InquiryList";
 import Search from "./pages/Search";
+import FindId from "./pages/FindId";
+import InquiryDetail from "./components/InquiryDetail";
+import FindPw from "./pages/FindPw";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -102,8 +107,13 @@ function App() {
           element={<ProductAuthentication />}
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order-complete" element={<OrderComplete />} />
+        <Route path="/order-lookup" element={<OrderLookup />} />
         <Route path="/board" element={<QnaWrite />} />
         <Route path="/inquiry/write" element={<InquiryList />} />
+        <Route path="/find" element={<FindId />} />
+        <Route path="/inquiry/:id" element={<InquiryDetail />} />
+        <Route path="/password/find" element={<FindPw />} />
       </Routes>
       <Footer />
     </>

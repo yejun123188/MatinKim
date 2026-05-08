@@ -37,7 +37,6 @@
       @include g.userInfoListLine;
 
       .empty {
-        padding: 60px 0;
         text-align: center;
         color: #aaa;
         font-size: 14px;
@@ -146,6 +145,7 @@
           }
 
           .text-box {
+
             .title,
             .discount-price,
             .price2 {
@@ -159,7 +159,7 @@
           }
         }
 
-        .button-box {
+        .button-wrap {
           display: flex;
           gap: 8px;
           flex-shrink: 0;

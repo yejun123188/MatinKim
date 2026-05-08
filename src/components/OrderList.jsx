@@ -187,7 +187,7 @@ export default function OrderList() {
                   onTrackingClick={handleTrackingNavigate}
                 />
               ) : (
-                <UserInfoNone title="주문내역" />
+                <UserInfoNone title="주문" />
               )}
             </div>
           )}
@@ -223,7 +223,7 @@ export default function OrderList() {
                   }}
                 />
               ) : (
-                <UserInfoNone title="주문내역" />
+                <UserInfoNone title="주문" />
               )}
             </div>
           )}
@@ -240,7 +240,7 @@ export default function OrderList() {
               {filteredOrders.length > 0 ? (
                 <OrderProduct orders={filteredOrders} />
               ) : (
-                <UserInfoNone title="주문내역" />
+                <UserInfoNone title="주문" />
               )}
             </div>
           )}
