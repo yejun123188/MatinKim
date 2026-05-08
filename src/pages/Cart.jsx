@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import "./scss/Cart.scss";
 import { useProductStore } from "../store/useProductStore";
 import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore";
+import { useLoginStore } from "../store/useLoginStore";
+import Login from "./Login";
 
 export default function Cart({ onClose }) {
     const { cartItem, onUpdateQuantity, onRemoveItem, onUpdateOption } = useProductStore();
+    const { user } = useAuthStore();
     const navigate = useNavigate();
-
+    const { openLogin } = useLoginStore();
     const [checkedItems, setCheckedItems] = useState([]);
     // 옵션변경 중인 아이템 key
     const [editingKey, setEditingKey] = useState(null);
     // 변경 중인 옵션 임시 값
     const [tempOption, setTempOption] = useState({ size: "", color: "" });
-
+    const [showLogin, setShowLogin] = useState(false);
+    const [pendingOrderItems, setPendingOrderItems] = useState([]);
     const items = cartItem;
     const formatPrice = (price) => `₩${price.toLocaleString()}`;
 
@@ -46,18 +51,23 @@ export default function Cart({ onClose }) {
             alert("상품을 선택해주세요");
             return;
         }
-        navigate("/payment", {
-            state: {
-                orderItems: selectedItems.map((item) => ({
-                    id: item.id,
-                    name: item.name,
-                    price: item.price,
-                    quantity: item.count,
-                    option: `${item.color} / ${item.size}`,
-                    image: item.image,
-                })),
-            },
-        });
+        const orderItems = selectedItems.map((item) => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: item.count,
+            option: `${item.color} / ${item.size}`,
+            image: item.image,
+        }));
+
+        // 비로그인 체크 추가
+        if (!user) {
+            openLogin(orderItems);  // ← guestOrderItems 담아서 열기
+            onClose();              // ← Cart는 닫아도 됨 (Login은 Header에서 렌더링)
+            return;
+        }
+
+        navigate("/payment", { state: { orderItems } });
         onClose();
     };
 
@@ -255,6 +265,16 @@ export default function Cart({ onClose }) {
                     </div>
                 )}
             </div>
+            {showLogin && (
+                <Login
+                    onClose={() => {
+                        setShowLogin(false);
+                        setPendingOrderItems([]);
+                    }}
+                    guestMode={true}
+                    guestOrderItems={pendingOrderItems}
+                />
+            )}
         </section>
     );
 }

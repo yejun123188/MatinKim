@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./scss/AddressRegister.scss";
 import { useAuthStore } from "../store/useAuthStore";
-import { db } from "../firebase/firebase";
-import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 
 export default function AddressRegister() {
     const navigate = useNavigate();
     const location = useLocation();
     const editData = location.state;
 
-    const { addAddress, openPostcode, onAddAddress, onEditAddress } = useAuthStore();
+    const { openPostcode, onAddAddress, onEditAddress } = useAuthStore();
 
     const [form, setForm] = useState({
         name: "",
@@ -54,27 +52,12 @@ export default function AddressRegister() {
 
         setErrors((prev) => ({
             ...prev,
-            [name]: ""
+            [name]: "",
+            // ✅ mobile2, mobile3 입력 시 mobile 에러 제거
+            ...(name === "mobile2" || name === "mobile3" ? { mobile: "" } : {}),
         }));
     };
 
-    // const openPostcode = () => {
-    //     new window.daum.Postcode({
-    //         oncomplete: function (data) {
-    //             const address = data.roadAddress || data.jibunAddress;
-
-    //             setForm((prev) => ({
-    //                 ...prev,
-    //                 zipcode: data.zonecode,
-    //                 address: address
-    //             }));
-
-    //             setTimeout(() => {
-    //                 document.querySelector(".detail-input")?.focus();
-    //             }, 100);
-    //         }
-    //     }).open();
-    // };
     const handlePostcode = () => {
         openPostcode(({ zipcode, address }) => {
             setForm((prev) => ({
@@ -82,6 +65,9 @@ export default function AddressRegister() {
                 zipcode,
                 address,
             }));
+
+            // ✅ 주소 선택 시 zipcode 에러 제거
+            setErrors((prev) => ({ ...prev, zipcode: "" }));
 
             setTimeout(() => {
                 document.querySelector(".detail-input")?.focus();
@@ -120,10 +106,8 @@ export default function AddressRegister() {
         };
 
         if (editData?.id) {
-            // 수정 모드 - id가 있으면 updateDoc
             await onEditAddress(editData.id, data);
         } else {
-
             await onAddAddress(data);
         }
 
@@ -145,13 +129,23 @@ export default function AddressRegister() {
                 <div className='address-register-wrap'>
                     <div className="form-row">
                         <p>배송지명<em>*</em></p>
-                        <input name="name" value={form.name} onChange={handleChange} className={errors.name ? "error" : ""} />
+                        <input
+                            name="name"
+                            value={form.name}
+                            onChange={handleChange}
+                            className={errors.name ? "error" : ""}
+                        />
                         {errors.name && <p className="error-text">{errors.name}</p>}
                     </div>
 
                     <div className="form-row">
                         <p>받는 사람<em>*</em></p>
-                        <input name="receiver" value={form.receiver} onChange={handleChange} className={errors.receiver ? "error" : ""} />
+                        <input
+                            name="receiver"
+                            value={form.receiver}
+                            onChange={handleChange}
+                            className={errors.receiver ? "error" : ""}
+                        />
                         {errors.receiver && <p className="error-text">{errors.receiver}</p>}
                     </div>
 
@@ -159,15 +153,17 @@ export default function AddressRegister() {
                         <p>주소<em>*</em></p>
                         <div className="address-box">
                             <div className="zip">
-                                <input value={form.zipcode} readOnly className={errors.zipcode ? "error" : ""} />
+                                <input
+                                    value={form.zipcode}
+                                    readOnly
+                                    className={errors.zipcode ? "error" : ""}
+                                />
                                 <button type="button" onClick={handlePostcode}>주소검색</button>
                             </div>
                             <div>
-                                {/* <p>기본주소<em>*</em></p> */}
                                 <input value={form.address} readOnly />
                             </div>
                             <div>
-                                {/* <p>상세주소<em>*</em></p> */}
                                 <input
                                     name="detail"
                                     value={form.detail}
@@ -187,15 +183,30 @@ export default function AddressRegister() {
                                 <option value="011">011</option>
                                 <option value="016">016</option>
                             </select>
-                            <input name="mobile2" value={form.mobile2} onChange={handleChange} className={errors.mobile ? "error" : ""} />
-                            <input name="mobile3" value={form.mobile3} onChange={handleChange} className={errors.mobile ? "error" : ""} />
+                            <input
+                                name="mobile2"
+                                value={form.mobile2}
+                                onChange={handleChange}
+                                className={errors.mobile ? "error" : ""}
+                            />
+                            <input
+                                name="mobile3"
+                                value={form.mobile3}
+                                onChange={handleChange}
+                                className={errors.mobile ? "error" : ""}
+                            />
                         </div>
                         {errors.mobile && <p className="error-text">{errors.mobile}</p>}
                     </div>
 
                     <div className="check">
                         <label>
-                            <input type="checkbox" name="isDefault" checked={form.isDefault} onChange={handleChange} />
+                            <input
+                                type="checkbox"
+                                name="isDefault"
+                                checked={form.isDefault}
+                                onChange={handleChange}
+                            />
                             기본 배송지로 저장
                         </label>
                     </div>

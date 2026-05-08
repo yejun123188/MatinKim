@@ -3,7 +3,7 @@ import "./scss/Login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 
-export default function Login({ onClose }) {
+export default function Login({ onClose, guestMode = false, guestOrderItems = [] }) {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [googleLoading, setGoogleLoading] = useState(false);
@@ -96,6 +96,10 @@ export default function Login({ onClose }) {
     } catch (err) {
       console.error(err);
     }
+  };
+  const handleGuestOrder = () => {
+    onClose?.();
+    navigate('/payment', { state: { orderItems: guestOrderItems } });
   };
   return (
     <div className="login-page">
@@ -191,10 +195,22 @@ export default function Login({ onClose }) {
               회원가입 후 혜택받기
             </Link>
 
-            <Link to="/guest-order" className="guest-order" onClick={onClose}>
-              비회원 주문 조회하기
-            </Link>
+            {!guestMode && (
+              <Link to="/order-lookup" className="guest-order" onClick={onClose}>
+                비회원 주문 조회하기
+              </Link>
+            )}
+            {guestMode && (
+              <button
+                type="button"
+                className="guest-order-btn"
+                onClick={handleGuestOrder}
+              >
+                비회원으로 주문하기
+              </button>
+            )}
           </form>
+
         </div>
       </div>
     </div>

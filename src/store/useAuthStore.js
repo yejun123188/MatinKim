@@ -587,7 +587,7 @@ export const useAuthStore = create(
           if (firebaseUser?.uid === uid) {
             await deleteUser(firebaseUser);
           } else {
-            await signOut(auth).catch(() => {});
+            await signOut(auth).catch(() => { });
           }
 
           localStorage.removeItem("socialUser");
@@ -637,15 +637,15 @@ export const useAuthStore = create(
           const savedPurchaseInfo = getLocalPurchaseInfo(user);
           const currentAmount = Number(
             savedPurchaseInfo.purchaseAmount ??
-              user.purchaseAmount ??
-              user.orderPrice ??
-              0
+            user.purchaseAmount ??
+            user.orderPrice ??
+            0
           );
           const currentCount = Number(
             savedPurchaseInfo.purchaseCount ??
-              user.purchaseCount ??
-              user.orderCount ??
-              0
+            user.purchaseCount ??
+            user.orderCount ??
+            0
           );
           const amount = Number(purchaseAmount || 0);
           const currentGrade = getMemberGrade(currentAmount);
@@ -942,13 +942,13 @@ export const useAuthStore = create(
             }))
             .map((item) =>
               item.type === "pending" &&
-              item.availableDate &&
-              item.availableDate <= getToday()
+                item.availableDate &&
+                item.availableDate <= getToday()
                 ? {
-                    ...item,
-                    type: "history",
-                    desc: item.desc?.replace("예정", "확정") || "구매 적립금",
-                  }
+                  ...item,
+                  type: "history",
+                  desc: item.desc?.replace("예정", "확정") || "구매 적립금",
+                }
                 : item
             )
             .sort((a, b) => String(b.date).localeCompare(String(a.date)));
