@@ -10,6 +10,8 @@ export default function InquiryDetail() {
   const inquiries = JSON.parse(localStorage.getItem("inquiries")) || [];
 
   const inquiry = inquiries.find((item) => String(item.id) === String(id));
+  const isReplyDone = inquiry?.reply === "답변완료";
+  const replyEmail = inquiry?.email?.trim();
 
   if (!inquiry) {
     return (
@@ -79,12 +81,10 @@ export default function InquiryDetail() {
                 {inquiry.reply}
               </span>
             </div>
-          </div>
+            <div className="detail-content-wrap">
+              <div className="detail-content">{inquiry.content}</div>
 
-          <div className="detail-content-wrap">
-            <p className="detail-title">문의 내용</p>
-
-            <div className="detail-content">{inquiry.content}</div>
+            </div>
           </div>
 
           {inquiry.files?.length > 0 && (
@@ -94,19 +94,29 @@ export default function InquiryDetail() {
               <ul>
                 {inquiry.files.map((file, index) => (
                   <li key={`${file.name}-${index}`}>
-                    <a href={file.url} target="_blank" rel="noreferrer">
-                      {file.name}
-                    </a>
-
-                    {file.type?.startsWith("image/") && (
+                    {file.type?.startsWith("image/") ? (
                       <img
                         src={file.url}
                         alt={file.name}
                         onClick={() => setSelectedImage(file.url)}
                       />
+                    ) : (
+                      <a href={file.url} target="_blank" rel="noreferrer">
+                        {file.name}
+                      </a>
                     )}
                   </li>
                 ))}
+              </ul>
+            </div>
+          )}
+
+          {isReplyDone && (
+            <div className="inquiry-detail-notice">
+              <ul>
+                <li>
+                  답변이 완료되어 {replyEmail || "등록된 이메일"}로 안내드렸습니다.
+                </li>
               </ul>
             </div>
           )}

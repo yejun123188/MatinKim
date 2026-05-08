@@ -160,11 +160,109 @@
     }
 
     .withdraw {
-      @include g.myBtn2(
-        $c: g.$text-sub-color,
-        $bd: 1px solid g.$text-sub-color2,
-        $pd: 0
-      );
+      @include g.myBtn2($pd: 0);
+    }
+  }
+}
+
+@include g.respond(tablet) {
+  .account-edit {
+    .account-edit-panel {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 36px 32px 44px;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .account-edit {
+    .account-edit-panel {
+      padding: 24px 20px 30px;
+    }
+
+    .address-row,
+    .phone-row,
+    .phone-verify-row {
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .address-row {
+      input {
+        max-width: none;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .phone-row {
+      select,
+      input,
+      button {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+    }
+
+    .phone-verify-row {
+      input,
+      button {
+        width: 100%;
+      }
+    }
+
+    .birth-row {
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 6px;
+
+      > span {
+        flex: 0 0 auto;
+      }
+
+      > input {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+        padding: 0 8px;
+      }
+
+      label {
+        flex: 0 0 auto;
+        gap: 4px;
+        font-size: 12px;
+
+        input {
+          flex: 0 0 14px;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    .account-edit-buttons {
+      flex-direction: column;
+
+      button,
+      .submit {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .submit {
+        order: 1;
+      }
+
+      .cancel {
+        order: 2;
+      }
+
+      .withdraw {
+        order: 3;
+      }
     }
   }
 }

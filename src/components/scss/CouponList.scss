@@ -86,3 +86,58 @@
     }
   }
 }
+
+@include g.respond(tablet) {
+  .couponlist-wrap {
+    .coupon-top,
+    .coupon-bottom {
+      padding: 20px;
+    }
+
+    .coupon-bottom {
+      overflow-x: auto;
+
+      table {
+        min-width: 560px;
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .couponlist-wrap {
+    .coupon-top,
+    .coupon-bottom {
+      padding: 14px;
+    }
+
+    .coupon-top {
+      .coupon-num {
+        align-items: stretch;
+        flex-direction: column;
+
+        input,
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .coupon-bottom {
+      margin-left: -14px;
+      margin-right: -14px;
+      width: calc(100% + 28px);
+
+      .mycoupon-top {
+        padding: 0 14px 14px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      table {
+        min-width: 520px;
+      }
+    }
+  }
+}

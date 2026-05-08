@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useProductStore } from '../store/useProductStore'
+import { useAuthStore } from '../store/useAuthStore';
 
 const getProductBaseName = (item) => {
     if (!item?.name) return '';
@@ -14,9 +15,18 @@ const getProductBaseName = (item) => {
 };
 
 export default function ProductCard({ cate, as: CardTag = 'li', className = '' }) {
-    const { items, onColorCode, onAddCart, openCart } = useProductStore();
+    const {
+        items,
+        onColorCode,
+        onAddCart,
+        openCart,
+        wishList,
+        onAddWishList,
+        onRemoveWish,
+        onLoadWishList
+    } = useProductStore();
+    const { user } = useAuthStore();
     const navigate = useNavigate();
-    const [isLiked, setIsLiked] = useState(false);
     const [previewProduct, setPreviewProduct] = useState(null);
     const [selectedColor, setSelectedColor] = useState(cate.colors?.[0] || '');
     const [selectedSize, setSelectedSize] = useState(() => {
@@ -27,7 +37,6 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
     });
     const displayProduct = previewProduct || cate;
     const isSoldOut = Array.isArray(cate.soldout) && cate.soldout.length > 0 && cate.soldout.every(Boolean);
-    const salePrice = cate.discountRate > 0 ? cate.discountPrice : cate.price;
     const colorVariants = useMemo(() => {
         const baseName = getProductBaseName(cate);
         const variants = items.filter((item) => getProductBaseName(item) === baseName && item.colors?.[0]);
@@ -37,6 +46,9 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
 
         return sortedVariants.length > 0 ? sortedVariants : [cate];
     }, [items, cate]);
+    const selectedVariant = colorVariants.find(v => v.colors?.[0] === selectedColor) || cate;
+    const wishKey = `${selectedVariant.id}-${selectedSize}-${selectedColor}`;
+    const isLiked = wishList.some((wish) => wish.key === wishKey);
     const badgeItems = isSoldOut
         ? [{
             key: 'sold-out',
@@ -69,35 +81,74 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
         navigate(`/products/${cate.id}`);
     };
 
+    useEffect(() => {
+        if (user?.uid) {
+            onLoadWishList(user.uid);
+        }
+    }, [user?.uid, onLoadWishList]);
+
     const handleActionClick = (event) => {
         event.stopPropagation();
     };
 
-    const handleToggleLike = (event) => {
+    const handleToggleLike = async (event) => {
         handleActionClick(event);
-        setIsLiked((prev) => !prev);
+
+        if (!user?.uid) {
+            alert("로그인 후 이용 가능합니다.");
+            navigate("/login");
+            return;
+        }
+
+        if (isLiked) {
+            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+            if (!ok) return;
+
+            await onRemoveWish(wishKey, user.uid);
+            return;
+        }
+
+        await onAddWishList({
+            id: selectedVariant.id,
+            name: selectedVariant.name,
+            price: selectedVariant.price,
+            discountPrice: selectedVariant.discountPrice,
+            discountRate: selectedVariant.discountRate,
+            mainImg: selectedVariant.mainImg,
+            hoverImg: selectedVariant.hoverImg,
+            selectedSize,
+            selectedColor,
+            quantity: 1,
+            key: wishKey,
+            category1: selectedVariant.category1,
+            category2: selectedVariant.category2,
+            isSoldOut,
+        }, user.uid);
+
+        alert("위시리스트에 상품이 담겼습니다");
     };
 
     const handleAddCart = (event) => {
         handleActionClick(event);
         if (isSoldOut) return;
 
+        const cartPrice = selectedVariant.discountRate > 0 ? selectedVariant.discountPrice : selectedVariant.price;
+
         onAddCart({
-            id: cate.id,
-            name: cate.name,
-            price: salePrice,
+            id: selectedVariant.id,
+            name: selectedVariant.name,
+            price: cartPrice,
             size: selectedSize,
             color: selectedColor,
             count: 1,
-            image: cate.mainImg || cate.hoverImg,
-            key: `${cate.id}-${selectedSize}-${selectedColor}`
+            image: selectedVariant.mainImg || selectedVariant.hoverImg,
+            key: `${selectedVariant.id}-${selectedSize}-${selectedColor}`
         });
         openCart();
     };
 
     const handleBuyNow = (event) => {
         handleActionClick(event);
-        const selectedVariant = colorVariants.find(v => v.colors?.[0] === selectedColor) || cate;
         const salePrice = selectedVariant.discountRate > 0 ? selectedVariant.discountPrice : selectedVariant.price;
         navigate('/payment', {
             state: {

@@ -1,9 +1,15 @@
 @use "../../App.scss" as g;
 
+.detail-back-btn {
+  @include g.myBtn2($pd: 0);
+  width: 120px;
+  height: 40px;
+  flex: 0 0 120px;
+}
+
 .inquiry-detail-page {
   display: flex;
   flex-direction: column;
-  gap: 24px;
 
   .inner {
     width: 100%;
@@ -15,6 +21,7 @@
     align-items: center;
 
     margin-bottom: 24px;
+    animation: inquiryDetailSnapIn 0.75s ease both;
 
     h2 {
       font-size: g.$size-30;
@@ -23,33 +30,26 @@
     }
 
     .detail-back-btn {
-      @include g.myBtn2($bd: 1px solid #ccc, $pd: 0);
-
       width: 120px;
       height: 40px;
     }
   }
 
   .detail-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .detail-top {
     @include g.userInfoPanel;
 
     display: flex;
     flex-direction: column;
-    gap: 32px;
-
-    width: 100%;
-
-    padding: 40px 80px;
-  }
-
-  .detail-top {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-
-    padding-bottom: 32px;
-
-    border-bottom: 1px solid #ddd;
+    gap: 18px;
+    padding: 30px 60px;
+    animation: inquiryDetailSnapIn 0.75s ease 120ms both;
 
     .detail-head {
       display: flex;
@@ -60,10 +60,10 @@
       h2 {
         flex: 1;
 
-        font-size: g.$size-30;
+        font-size: 1.5rem;
         color: g.$text-main-color;
         font-weight: g.$Bold;
-        line-height: 1.4;
+        line-height: 1.35;
       }
     }
 
@@ -72,6 +72,7 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 30px;
 
       span {
         font-size: g.$size-14-main;
@@ -79,27 +80,8 @@
       }
 
       .reply-state {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        min-width: 76px;
-        height: 30px;
-        padding: 0 14px;
-
-        border-radius: 999px;
-
-        font-size: g.$size-12-sub;
-
-        &.wait {
-          background: #f3f3f3;
-          color: g.$text-sub-color;
-        }
-
-        &.done {
-          background: g.$main-color;
-          color: #fff;
-        }
+        font-size: g.$size-14-main;
+        color: g.$text-sub-color;
       }
     }
   }
@@ -107,7 +89,7 @@
   .detail-content-wrap {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 
     .detail-title {
       font-size: g.$size-16;
@@ -116,24 +98,22 @@
     }
 
     .detail-content {
-      @include g.myTextBox;
-
-      min-height: 320px;
-
-      padding: 32px;
-
       line-height: 1.8;
       white-space: pre-wrap;
 
       color: g.$text-main-color;
       font-size: g.$size-14-main;
     }
+
   }
 
   .detail-files {
+    @include g.userInfoPanel;
+
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    padding: 30px 60px;
+    animation: inquiryDetailSnapIn 0.75s ease 220ms both;
 
     .detail-title {
       font-size: g.$size-16;
@@ -143,14 +123,22 @@
 
     ul {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
 
     li {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      animation: inquiryDetailItemTick 0.75s ease both;
+
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{220ms + (($i - 1) * 80ms)};
+        }
+      }
     }
 
     a {
@@ -165,13 +153,13 @@
     }
 
     img {
-      width: 240px;
-
+      width: 160px;
+      height: 160px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border: 1px solid #eee;
-
       cursor: pointer;
       transition: 0.2s ease;
-
       &:hover {
         opacity: 0.85;
       }
@@ -179,12 +167,24 @@
   }
 
   .empty-text {
+    @include g.userInfoPanel;
+
     padding: 100px 0;
+    animation: inquiryDetailSnapIn 0.75s ease 120ms both;
 
     text-align: center;
 
     color: g.$text-sub-color;
     font-size: g.$size-14-main;
+  }
+
+  .inquiry-detail-notice {
+    padding-top: 4px;
+    animation: inquiryDetailSnapIn 0.75s ease 320ms both;
+
+    ul {
+      @include g.userInfoNoticeList;
+    }
   }
 }
 
@@ -199,11 +199,112 @@
   background: rgba(0, 0, 0, 0.85);
 
   z-index: 10000;
+  animation: inquiryDetailModalFade 0.25s ease both;
 
   img {
     max-width: 90vw;
     max-height: 90vh;
 
     object-fit: contain;
+    animation: inquiryDetailSnapIn 0.35s ease both;
+  }
+}
+
+@keyframes inquiryDetailSnapIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inquiryDetailItemTick {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inquiryDetailModalFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include g.respond(tablet) {
+  .inquiry-detail-page {
+    .detail-top,
+    .detail-files {
+      padding: 28px 36px;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .inquiry-detail-page {
+    .inquiry-detail-top {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .detail-top,
+    .detail-files {
+      padding: 22px 20px;
+    }
+
+    .detail-top {
+      .detail-head {
+        h2 {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .detail-files {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  .detail-back-btn {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inquiry-detail-page {
+    .inquiry-detail-top,
+    .detail-top,
+    .detail-files,
+    .detail-files li,
+    .empty-text {
+      animation: none;
+    }
+  }
+
+  .image-modal,
+  .image-modal img {
+    animation: none;
   }
 }

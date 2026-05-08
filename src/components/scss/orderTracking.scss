@@ -1,5 +1,12 @@
 @use "../../App.scss" as g;
 
+.tracking-back-btn {
+  @include g.myBtn2($pd: 0);
+  width: 120px;
+  height: 40px;
+  flex: 0 0 120px;
+}
+
 .order-tracking-top {
   display: flex;
   justify-content: space-between;
@@ -13,7 +20,6 @@
   }
 
   .tracking-back-btn {
-    @include g.myBtn2($pd: 0);
     width: 120px;
     height: 40px;
   }

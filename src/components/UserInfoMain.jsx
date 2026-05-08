@@ -346,7 +346,12 @@ export default function UserInfoMain() {
                         {formatPrice(getWishPrice(wish))}
 
                         {wish.discountRate > 0 && (
-                          <span>{formatPrice(wish.price)}</span>
+                          <>
+                            <span>{formatPrice(wish.price)}</span>
+                            <em className="discount-rate">
+                              {wish.discountRate}%
+                            </em>
+                          </>
                         )}
                       </p>
 

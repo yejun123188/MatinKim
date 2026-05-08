@@ -148,7 +148,9 @@ function OrderRequestForm({
       return;
     }
 
-    window.alert(`${actionState.detailState} 접수되었습니다.`);
+    const ok = window.confirm("요청을 접수하시겠습니까?");
+    if (!ok) return;
+
     requestOrderAction({
       orderDetailId: orderDetail.id,
       itemIds: isCancelAction ? [itemId] : selectedList,
@@ -169,6 +171,8 @@ function OrderRequestForm({
 
       await onRecordRefundPoint(refundAmount, orderDetail.orderNumber);
     }
+
+    window.alert("요청이 접수되었습니다.");
 
     navigate("/userInfo", { state: { menu: orderMenu } });
   };

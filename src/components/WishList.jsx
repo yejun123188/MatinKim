@@ -66,7 +66,11 @@ export default function WishList() {
 
   // 삭제
   const handleRemove = async (product) => {
+    const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+    if (!ok) return;
+
     await onRemoveWish(product.key, user.uid);
+    alert("위시리스트에서 상품이 삭제되었습니다.");
   };
 
   // 선택삭제
@@ -76,6 +80,9 @@ export default function WishList() {
       return;
     }
 
+    const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+    if (!ok) return;
+
     const targets = wishList.filter((p) => checkedKeys.includes(p.key));
 
     for (const p of targets) {
@@ -83,6 +90,7 @@ export default function WishList() {
     }
 
     setCheckedKeys([]);
+    alert("위시리스트에서 상품이 삭제되었습니다.");
   };
 
   // 선택주문
@@ -103,6 +111,9 @@ export default function WishList() {
 
       return;
     }
+
+    const ok = window.confirm("선택한 상품을 주문하시겠습니까?");
+    if (!ok) return;
 
     alert(`${targets.length}개 상품 주문 진행`);
   };

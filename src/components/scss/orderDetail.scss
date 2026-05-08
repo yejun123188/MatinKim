@@ -1,5 +1,12 @@
 @use "../../App.scss" as g;
 
+.order-detail-back {
+  @include g.myBtn2($pd: 0);
+  width: 120px;
+  height: 40px;
+  flex: 0 0 120px;
+}
+
 .order-detail-top {
   display: flex;
   justify-content: space-between;
@@ -10,9 +17,74 @@
   }
 
   .order-detail-back {
-    @include g.myBtn2($pd: 0);
     width: 120px;
     height: 40px;
+  }
+}
+
+@include g.respond(tablet) {
+  .order-detail-page {
+    .order-detail-section {
+      padding: 28px 36px;
+    }
+
+    .order-detail-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-detail-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .order-detail-back {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .order-detail-page {
+    .order-detail-header {
+      .order-detail-section {
+        h2 {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .order-detail-section {
+      padding: 22px 20px;
+    }
+
+    .section-head {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .order-detail-list {
+      .order-product {
+        .img-box {
+          align-items: flex-start;
+          width: 100%;
+
+          img {
+            min-width: 80px;
+            width: 80px;
+            height: 120px;
+          }
+        }
+      }
+    }
+
+    .detail-info-list {
+      div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
   }
 }
 
@@ -88,6 +160,7 @@
         display: flex;
         align-items: center;
         width: 450px;
+        min-width: 0;
 
         img {
           min-width: 100px;
@@ -95,11 +168,17 @@
         }
 
         .text-box {
+          min-width: 0;
+
           .order-status {
             padding-bottom: 10px;
           }
 
           .order-name {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             font-size: g.$size-16;
             font-weight: g.$Bold;
             line-height: 1.35;

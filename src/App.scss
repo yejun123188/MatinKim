@@ -35,14 +35,29 @@ $Bold: 700;
   $fs: $size-14-main,
   $fw: $Regular
 ) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   color: $c;
   background: $bg;
   border: $bd;
   padding: $pd;
   font-size: $fs;
   font-weight: $fw;
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    color: $c;
+    background: #4a4a4a;
+    border-color: #4a4a4a;
+  }
 }
 
 @mixin myBtn2(
@@ -53,14 +68,29 @@ $Bold: 700;
   $fs: $size-14-main,
   $fw: $Regular
 ) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   color: $c;
   background: $bg;
   border: $bd;
   padding: $pd;
   font-size: $fs;
   font-weight: $fw;
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    color: $c;
+    background: #eeeeee;
+    border-color: #777777;
+  }
 }
 
 @mixin myTextBox(
@@ -141,6 +171,25 @@ $breakpoints: (
 }
 
 html {
+  font-size: 100%;
   overflow-y: scroll;
   scrollbar-gutter: stable;
+}
+
+@include respond(tablet) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@include respond(mobile) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@include respond(small) {
+  html {
+    font-size: 84.375%;
+  }
 }

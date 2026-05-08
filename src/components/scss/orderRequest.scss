@@ -1,5 +1,12 @@
 @use "../../App.scss" as g;
 
+.request-back-btn {
+  @include g.myBtn2($pd: 0);
+  width: 120px;
+  height: 40px;
+  flex: 0 0 120px;
+}
+
 .order-request-top {
   display: flex;
   justify-content: space-between;
@@ -8,9 +15,49 @@
   font-size: 1rem;
 
   button {
-    @include g.myBtn2($bd: 1px solid #ccc, $pd: 0);
     width: 120px;
     height: 40px;
+  }
+}
+
+@include g.respond(tablet) {
+  .order-request-page {
+    .request-section {
+      .request-order-info,
+      .request-form-top {
+        padding: 28px 36px;
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-request-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+
+    .request-back-btn {
+      width: 100%;
+      flex-basis: auto;
+    }
+  }
+
+  .order-request-page {
+    .request-section {
+      .request-order-info,
+      .request-form-top {
+        padding: 22px 20px;
+      }
+    }
+
+    .request-notice-box {
+      flex-direction: column;
+
+      .request-submit-btn {
+        width: 100%;
+      }
+    }
   }
 }
 
