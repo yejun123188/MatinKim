@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useProductStore } from '../store/useProductStore'
+import { useAuthStore } from '../store/useAuthStore';
 
 const getProductBaseName = (item) => {
     if (!item?.name) return '';
@@ -15,6 +16,8 @@ const getProductBaseName = (item) => {
 
 export default function ProductCard({ cate, as: CardTag = 'li', className = '' }) {
     const { items, onColorCode, onAddCart, openCart } = useProductStore();
+    const { user } = useAuthStore();
+    const { onAddWishList, wishList, onRemoveWish } = useProductStore();
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState(false);
     const [previewProduct, setPreviewProduct] = useState(null);
@@ -94,7 +97,14 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
         });
         openCart();
     };
-
+    useEffect(() => {
+        if (!cate || !user) {
+            setIsLiked(false);
+            return;
+        }
+        const key = `${cate.id}-${selectedSize}-${selectedColor}`;
+        setIsLiked(wishList.some((w) => w.key === key));
+    }, [cate, selectedSize, selectedColor, wishList, user]);
     const handleBuyNow = (event) => {
         handleActionClick(event);
         const selectedVariant = colorVariants.find(v => v.colors?.[0] === selectedColor) || cate;
@@ -119,6 +129,48 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
             event.preventDefault();
             handleMoveDetail();
         }
+    };
+
+    const handleAddToWish = () => {
+        if (!cate) return;
+
+        if (!user) {
+            const ok = window.confirm("로그인이 필요한 서비스입니다.\n로그인하시겠습니까?");
+            if (ok) openLogin();
+            return;
+        }
+
+        if (!selectedSize) {
+            alert("사이즈를 선택해주세요");
+            return;
+        }
+        if (!selectedColor) {
+            alert("색상을 선택해주세요");
+            return;
+        }
+
+        const key = `${cate.id}-${selectedSize}-${selectedColor}`;
+        const alreadyLiked = wishList.some((w) => w.key === key);
+
+        if (alreadyLiked) {
+            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+            if (!ok) return;
+            onRemoveWish(key, user.uid);
+            return;
+        }
+
+        const sizeIndex = (cate.sizes || []).findIndex(s => s === selectedSize);
+        const isSoldOut = sizeIndex !== -1 && Boolean(cate.soldout?.[sizeIndex]);
+
+        onAddWishList({
+            ...cate,
+            isSoldOut,
+            selectedSize,
+            selectedColor,
+            quantity: 1,
+            key
+        }, user.uid);
+        alert("위시리스트에 상품이 담겼습니다");
     };
 
     return (
@@ -206,7 +258,7 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
                 <button
                     type="button"
                     className={`card-like-btn ${isLiked ? 'is-active' : ''}`}
-                    onClick={handleToggleLike}
+                    onClick={handleAddToWish}
                     aria-label="찜하기"
                 >
                     <img
