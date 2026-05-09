@@ -1,18 +1,344 @@
 @use "../../App.scss" as g;
 
+.order-detail-back {
+  @include g.myBtn2($pd: 0);
+  width: fit-content;
+  min-width: 74px;
+  height: 40px;
+  flex: 0 0 auto;
+  padding: 0 14px;
+}
+
 .order-detail-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 16px;
   margin-bottom: 24px;
 
   h2 {
-    font-size: 1.5rem;
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: g.$size-22;
+    white-space: nowrap;
   }
 
   .order-detail-back {
-    @include g.myBtn2($pd: 0);
-    width: 120px;
+    width: fit-content;
+    min-width: 74px;
     height: 40px;
+    flex: 0 0 auto;
+    padding: 0 14px;
+  }
+}
+
+@include g.respond(mobile) {
+  .order-detail-page {
+    .order-detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .order-detail-section.simple {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .detail-info-list {
+      gap: 12px;
+      margin-top: 14px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        width: 100%;
+        min-width: 0;
+      }
+
+      p {
+        width: 100%;
+        color: g.$text-sub-color;
+        line-height: 1.35;
+        white-space: nowrap;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-left: 0;
+        line-height: 1.45;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-detail-page {
+    .order-detail-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .order-detail-section.simple {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .detail-info-list {
+      width: 100%;
+      min-width: 0;
+      gap: 12px;
+      margin-top: 14px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        width: 100%;
+        min-width: 0;
+
+        &.is-total {
+          margin-top: 2px;
+          padding-top: 12px;
+        }
+      }
+
+      p {
+        width: 100%;
+        color: g.$text-sub-color;
+        line-height: 1.35;
+        white-space: nowrap;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        line-height: 1.45;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-detail-page {
+    .order-detail-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .order-detail-section {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .detail-info-list {
+      width: 100%;
+      min-width: 0;
+      gap: 10px;
+      margin-top: 14px;
+
+      div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+        min-width: 0;
+        width: 100%;
+      }
+
+      p,
+      span {
+        min-width: 0;
+        max-width: 100%;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+@include g.respond(tablet) {
+  .order-detail-back {
+    width: fit-content;
+    min-width: 68px;
+    height: 34px;
+    flex-basis: auto;
+    padding: 0 12px;
+    font-size: 0.75rem;
+  }
+
+  .order-detail-top {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.375rem;
+    }
+  }
+
+  .order-detail-page {
+    .order-detail-section {
+      padding: 20px;
+    }
+
+    .order-detail-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-detail-top {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 16px;
+
+    h2 {
+      width: auto;
+      flex: 1 1 auto;
+      font-size: 1.125rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .order-detail-back {
+    width: fit-content;
+    min-width: 58px;
+    height: 30px;
+    flex: 0 0 auto;
+    padding: 0 10px;
+    font-size: 0.6875rem;
+  }
+
+  .order-detail-page {
+    .order-detail-header {
+      .order-detail-section {
+        h2 {
+          font-size: 1.125rem;
+          line-height: 1.35;
+          white-space: normal;
+          word-break: keep-all;
+        }
+
+        p {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4px 8px;
+          line-height: 1.45;
+        }
+
+        span {
+          margin-left: 0;
+          overflow-wrap: anywhere;
+        }
+      }
+    }
+
+    .order-detail-section {
+      padding: 14px;
+    }
+
+    .section-head {
+      align-items: center;
+      flex-direction: row;
+      gap: 10px;
+
+      h3,
+      p {
+        min-width: 0;
+      }
+    }
+
+    .order-detail-list {
+      .order-product {
+        padding: 16px 0;
+
+        .img-box {
+          align-items: flex-start;
+          width: 100%;
+          gap: 12px;
+
+          img {
+            flex: 0 0 76px;
+            min-width: 76px;
+            width: 76px;
+            height: 114px;
+          }
+
+          .text-box {
+            min-width: 0;
+
+            .order-status,
+            .order-name,
+            .order-price,
+            .order-count {
+              line-height: 1.35;
+            }
+
+            .order-name {
+              white-space: normal;
+              word-break: keep-all;
+              overflow-wrap: anywhere;
+            }
+          }
+        }
+      }
+    }
+
+    .detail-info-list {
+      gap: 12px;
+
+      div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+
+        p,
+        span {
+          min-width: 0;
+          line-height: 1.45;
+        }
+
+        span {
+          overflow-wrap: anywhere;
+        }
+      }
+    }
   }
 }
 
@@ -35,7 +361,7 @@
 
       h2 {
         color: g.$text-main-color;
-        font-size: g.$size-30;
+        font-size: g.$size-22;
       }
 
       span {
@@ -49,11 +375,12 @@
     @include g.userInfoPanel;
     display: flex;
     flex-direction: column;
-    padding: 30px 60px;
+    min-width: 0;
+    padding: 30px;
     width: 100%;
 
     &.simple {
-      height: 100%;
+      height: auto;
     }
   }
 
@@ -88,6 +415,7 @@
         display: flex;
         align-items: center;
         width: 450px;
+        min-width: 0;
 
         img {
           min-width: 100px;
@@ -95,11 +423,17 @@
         }
 
         .text-box {
+          min-width: 0;
+
           .order-status {
             padding-bottom: 10px;
           }
 
           .order-name {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             font-size: g.$size-16;
             font-weight: g.$Bold;
             line-height: 1.35;
@@ -128,6 +462,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+    min-width: 0;
   }
 
   .detail-info-list {
@@ -140,6 +475,7 @@
       display: grid;
       grid-template-columns: 110px minmax(0, 1fr);
       gap: 16px;
+      min-width: 0;
 
       &.is-total {
         margin-top: 4px;
@@ -156,6 +492,66 @@
 
     p {
       color: g.$text-sub-color;
+    }
+
+    span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: keep-all;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-detail-page {
+    .order-detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .order-detail-section.simple {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .detail-info-list {
+      gap: 12px;
+      margin-top: 14px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        width: 100%;
+        min-width: 0;
+      }
+
+      p {
+        width: 100%;
+        color: g.$text-sub-color;
+        line-height: 1.35;
+        white-space: nowrap;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-left: 0;
+        line-height: 1.45;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
     }
   }
 }

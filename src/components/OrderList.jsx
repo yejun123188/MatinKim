@@ -109,6 +109,13 @@ export default function OrderList() {
         ? filteredTab2Orders
         : filteredTab3Orders;
 
+  const filterAnimationKey =
+    tab === "tab1"
+      ? `${tab}-${tab1Range.type}-${tab1Range.startDate}-${tab1Range.endDate}`
+      : tab === "tab2"
+        ? `${tab}-${tab2Range.type}-${tab2Range.startDate}-${tab2Range.endDate}`
+        : `${tab}-${tab3Year}`;
+
   const handleDetailSelect = (orderDetailId) => {
     if (!orderDetailId) return;
 
@@ -141,21 +148,21 @@ export default function OrderList() {
             className={tab === "tab1" ? "active" : ""}
             onClick={() => setTab("tab1")}
           >
-            주문내역조회({tab1Count})
+            주문내역조회<span className="order-tab-count">({tab1Count})</span>
           </button>
 
           <button
             className={tab === "tab2" ? "active" : ""}
             onClick={() => setTab("tab2")}
           >
-            취소/반품/교환 내역({tab2Count})
+            취소/반품/교환 내역<span className="order-tab-count">({tab2Count})</span>
           </button>
 
           <button
             className={tab === "tab3" ? "active" : ""}
             onClick={() => setTab("tab3")}
           >
-            과거주문내역({tab3Count})
+            과거주문내역<span className="order-tab-count">({tab3Count})</span>
           </button>
         </div>
 
@@ -172,6 +179,7 @@ export default function OrderList() {
 
               {filteredOrders.length > 0 ? (
                 <OrderProduct
+                  key={filterAnimationKey}
                   orderDate="주문완료"
                   orders={filteredOrders}
                   onDetailClick={handleDetailSelect}
@@ -204,6 +212,7 @@ export default function OrderList() {
 
               {filteredOrders.length > 0 ? (
                 <OrderProduct
+                  key={filterAnimationKey}
                   orderDate="취소/반품"
                   orders={filteredOrders}
                   onDetailClick={handleDetailSelect}
@@ -238,7 +247,7 @@ export default function OrderList() {
               />
 
               {filteredOrders.length > 0 ? (
-                <OrderProduct orders={filteredOrders} />
+                <OrderProduct key={filterAnimationKey} orders={filteredOrders} />
               ) : (
                 <UserInfoNone title="주문" />
               )}

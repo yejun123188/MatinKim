@@ -36,10 +36,13 @@ export default function Adress() {
   };
 
   const handleDeleteSelected = async () => {
-    if (checkedItems.length === 0) return;
+    if (checkedItems.length === 0) {
+      alert("삭제할 배송지를 선택해주세요.");
+      return;
+    }
 
     const resultConfirm = window.confirm(
-      "선택한 배송지를 삭제하시겠습니까?",
+      "배송지를 삭제하시겠습니까?",
     );
     if (!resultConfirm) return;
 
@@ -54,6 +57,7 @@ export default function Adress() {
       await Promise.all(promises);
       await onFetchAddress();
       setCheckedItems([]);
+      alert("배송지가 삭제되었습니다.");
     } catch (err) {
       console.error(err);
     }
@@ -65,6 +69,7 @@ export default function Adress() {
 
     try {
       await onSetDefaultAddress(selectedId);
+      alert("기본 배송지로 설정되었습니다.");
     } catch (err) {
       console.error(err);
     }

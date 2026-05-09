@@ -77,8 +77,11 @@
 
         .text-box {
           width: 346px;
+          min-width: 0;
 
           .title {
+            display: block;
+            width: 100%;
             font-size: g.$size-16;
             font-weight: g.$Bold;
             color: #111;
@@ -145,7 +148,6 @@
           }
 
           .text-box {
-
             .title,
             .discount-price,
             .price2 {
@@ -159,7 +161,8 @@
           }
         }
 
-        .button-wrap {
+        .button-wrap,
+        .button-box {
           display: flex;
           gap: 8px;
           flex-shrink: 0;
@@ -206,5 +209,92 @@
     min-width: 120px;
     padding: 0 12px;
     height: 40px;
+  }
+}
+
+@include g.respond(tablet) {
+  .wishlist-wrap {
+    .middle {
+      padding: 18px 24px 24px;
+
+      .wish-list {
+        .items {
+          display: grid;
+          grid-template-columns: auto 80px minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 16px;
+
+          .text-box {
+            width: auto;
+            min-width: 0;
+          }
+
+          .button-wrap,
+          .button-box {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .wishlist-wrap {
+    .middle {
+      padding: 14px 16px 18px;
+
+      .wish-list {
+        .items {
+          grid-template-columns: auto 72px minmax(0, 1fr);
+          gap: 12px;
+          padding: 18px 0;
+
+          .img-box {
+            width: 72px;
+            height: 96px;
+          }
+
+          .text-box {
+            width: auto;
+            min-width: 0;
+          }
+
+          .button-wrap,
+          .button-box {
+            grid-column: 2 / -1;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 0;
+
+            .Bbtn,
+            .Wbtn {
+              flex: 1 1 86px;
+              min-width: 0;
+              height: 30px;
+              padding: 0 8px;
+              font-size: 0.6875rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wishlist-bottom {
+    justify-content: stretch;
+
+    .bottom-button-box {
+      width: 100%;
+
+      .Bbtn,
+      .Wbtn {
+        flex: 1;
+        min-width: 0;
+        height: 34px;
+        padding: 0 8px;
+        font-size: 0.75rem;
+      }
+    }
   }
 }

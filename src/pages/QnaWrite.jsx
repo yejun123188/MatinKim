@@ -74,6 +74,7 @@ export default function QnaWrite() {
     const nextErrors = {
       subject: !form.subject.trim(),
       writer: !writerName.trim(),
+      email: !form.email.trim(),
       category: !form.category.trim(),
       content: !form.content.trim(),
     };
@@ -81,10 +82,13 @@ export default function QnaWrite() {
     if (Object.values(nextErrors).some(Boolean)) {
       setErrors(nextErrors);
 
-      alert("제목, 작성자, 문의유형, 내용을 모두 작성해주세요.");
+      alert("제목, 이메일, 문의유형, 내용을 모두 작성해주세요.");
 
       return;
     }
+
+    const ok = window.confirm("문의를 등록하시겠습니까?");
+    if (!ok) return;
 
     const newInquiry = {
       id: Date.now(),
@@ -93,6 +97,7 @@ export default function QnaWrite() {
       subject: form.subject,
       content: form.content,
       writer: writerName,
+      email: form.email,
 
       files: form.files.map((file) => ({
         name: file.name,
@@ -106,6 +111,8 @@ export default function QnaWrite() {
     const saved = JSON.parse(localStorage.getItem("inquiries")) || [];
 
     localStorage.setItem("inquiries", JSON.stringify([newInquiry, ...saved]));
+
+    alert("문의가 등록되었습니다.");
 
     navigate("/userInfo", {
       state: { menu: "1:1 문의" },
@@ -147,6 +154,21 @@ export default function QnaWrite() {
                         value={writerName}
                         readOnly
                         className={errors.writer ? "error" : ""}
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>답변 받을 이메일</th>
+
+                    <td>
+                      <input
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        className={errors.email ? "error" : ""}
+                        placeholder="example@email.com"
                       />
                     </td>
                   </tr>
@@ -233,10 +255,6 @@ export default function QnaWrite() {
               </table>
 
               <div className="qna-btn-wrap">
-                <button type="button" className="cancel-btn">
-                  취소
-                </button>
-
                 <button type="submit" className="submit-btn">
                   등록
                 </button>
