@@ -206,29 +206,35 @@
           }
         }
 
-        .order-list {
-          .order-product {
-            display: flex;
-            gap: 10px;
-            padding: 20px 12px;
-            @include g.userInfoListLine;
+          .order-list {
+            .order-product {
+              display: grid;
+              grid-template-columns: 120px minmax(0, 1fr);
+              gap: 0 28px;
+              padding: 28px 12px;
+              @include g.userInfoListLine;
 
-            .img-box {
-              gap: 20px;
-              display: flex;
-              align-items: center;
-              width: 450px;
-              min-width: 0;
+              .img-box {
+                display: contents;
 
-              img {
-                min-width: 100px;
-                height: 150px;
-              }
+                img {
+                  grid-column: 1;
+                  grid-row: 1 / span 5;
+                  min-width: 120px;
+                  width: 120px;
+                  height: 160px;
+                  object-fit: cover;
+                }
 
-              .product-text {
-                min-width: 0;
-                white-space: nowrap;
-                overflow: hidden;
+                .product-text {
+                  grid-column: 2;
+                  grid-row: 2 / span 3;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 5px;
+                  min-width: 0;
+                  white-space: nowrap;
+                  overflow: hidden;
                 text-overflow: ellipsis;
 
                 .order-name {
@@ -247,8 +253,8 @@
                 }
 
                 .order-count {
-                  font-size: 13px;
-                  font-weight: g.$Regular;
+                font-size: 13px;
+                font-weight: g.$Regular;
                 }
 
                 .order-count {
@@ -259,44 +265,55 @@
             }
 
             .text-box {
-              display: flex;
-              gap: 10px;
-              align-items: center;
-              flex: 1;
-              min-width: 0;
-              padding-left: 10px;
+              display: contents;
 
               .status {
                 display: flex;
-                justify-content: center;
-                flex: 1 1 180px;
-                min-width: 120px;
+                grid-column: 2;
+                grid-row: 1;
+                justify-content: flex-start;
+                max-width: 48%;
+                min-width: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: g.$text-main-color;
               }
 
               .order-no {
                 display: flex;
-                flex-direction: column;
-                flex: 1 1 180px;
-                min-width: 130px;
+                grid-column: 2;
+                grid-row: 1;
+                justify-content: flex-end;
+                min-width: 0;
+                color: g.$text-sub-color;
 
-                p,
+                p {
+                  display: none;
+                }
+
                 span {
-                  display: flex;
-                  justify-content: center;
+                  display: block;
+                  max-width: none;
+                  overflow: visible;
+                  text-overflow: clip;
+                  white-space: nowrap;
                 }
               }
 
               .order-btn-wrap {
                 display: flex;
-                justify-content: flex-end;
-                flex: 0 0 auto;
-                min-width: 190px;
+                grid-column: 2;
+                grid-row: 5;
+                justify-content: flex-start;
+                min-width: 0;
+                margin-top: 12px;
 
                 .btn {
                   @include g.myBtn1($pd: 0);
-                  min-width: 90px;
+                  min-width: 74px;
                   padding: 0 12px;
-                  height: 35px;
+                  height: 36px;
                 }
 
                 .order-btn {
@@ -418,6 +435,22 @@
               width: 100%;
             }
           }
+
+          .custom-date-wrap {
+            align-items: center;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            gap: 8px;
+
+            .date-input-wrap {
+              width: 100%;
+              min-width: 0;
+            }
+
+            > button {
+              grid-column: 1 / -1;
+            }
+          }
         }
 
         .order-list-wrap {
@@ -426,7 +459,7 @@
             flex-direction: row;
             justify-content: space-between;
             gap: 10px;
-            padding: 8px 10px;
+            padding: 4px 10px;
 
             .order-date,
             .order-detail {
@@ -526,6 +559,125 @@
                     min-width: 64px;
                     padding: 0 8px;
                     font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include g.respond(tablet) {
+  .order-list-section {
+    .order-tab-content {
+      .tab-order-wrap {
+        .order-list-wrap {
+          .order-list {
+            .order-product {
+              display: grid;
+              grid-template-columns: 108px minmax(0, 1fr);
+              align-items: start;
+              gap: 0 22px;
+
+              .img-box {
+                display: contents;
+
+                img {
+                  grid-column: 1;
+                  grid-row: 1 / span 5;
+                  width: 108px;
+                  min-width: 108px;
+                  height: 144px;
+                }
+              }
+
+              .text-box {
+                display: contents;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .order-list-section {
+    .order-tab-content {
+      .tab-order-wrap {
+        .order-list-wrap {
+          .order-list {
+            .order-product {
+              display: grid;
+              grid-template-columns: 96px minmax(0, 1fr);
+              align-items: start;
+              gap: 0 16px;
+              padding: 20px 0;
+
+              .img-box {
+                display: contents;
+
+                img {
+                  grid-column: 1;
+                  grid-row: 1 / span 5;
+                  width: 96px;
+                  min-width: 96px;
+                  height: 128px;
+                }
+
+                .product-text {
+                  grid-column: 2;
+                  grid-row: 2 / span 3;
+                  gap: 3px;
+                }
+              }
+
+              .text-box {
+                display: contents;
+
+                .status {
+                  grid-column: 2;
+                  grid-row: 1;
+                  justify-content: flex-start;
+                  max-width: 46%;
+                  font-size: 12px;
+                  line-height: 1.3;
+                }
+
+                .order-no {
+                  grid-column: 2;
+                  grid-row: 1;
+                  justify-content: flex-end;
+
+                  span {
+                    max-width: none;
+                    font-size: 12px;
+                    line-height: 1.3;
+                    overflow: visible;
+                    text-overflow: clip;
+                  }
+                }
+
+                .order-btn-wrap {
+                  grid-column: 2;
+                  grid-row: 5;
+                  justify-content: flex-start;
+                  margin-top: 8px;
+
+                  .order-btn {
+                    flex-wrap: wrap;
+                    gap: 6px;
+                  }
+
+                  .btn {
+                    height: 30px;
+                    min-width: 58px;
+                    padding: 0 8px;
+                    font-size: 11px;
                   }
                 }
               }

@@ -2,9 +2,11 @@
 
 .detail-back-btn {
   @include g.myBtn2($pd: 0);
-  width: 120px;
+  width: fit-content;
+  min-width: 74px;
   height: 40px;
-  flex: 0 0 120px;
+  flex: 0 0 auto;
+  padding: 0 14px;
 }
 
 .inquiry-detail-page {
@@ -19,18 +21,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 
     margin-bottom: 24px;
     animation: inquiryDetailSnapIn 0.75s ease both;
 
     h2 {
+      width: auto;
+      flex: 1 1 auto;
+      min-width: 0;
       font-size: g.$size-30;
       font-weight: g.$Bold;
       color: g.$text-main-color;
+      white-space: nowrap;
     }
 
     .detail-back-btn {
-      width: 120px;
+      width: fit-content;
+      min-width: 74px;
       height: 40px;
     }
   }
@@ -60,7 +68,7 @@
       h2 {
         flex: 1;
 
-        font-size: 1.5rem;
+        font-size: g.$size-22;
         color: g.$text-main-color;
         font-weight: g.$Bold;
         line-height: 1.35;
@@ -245,6 +253,15 @@
 }
 
 @include g.respond(tablet) {
+  .detail-back-btn {
+    width: fit-content;
+    min-width: 68px;
+    height: 34px;
+    flex-basis: auto;
+    padding: 0 12px;
+    font-size: 0.75rem;
+  }
+
   .inquiry-detail-page {
     .detail-top,
     .detail-files {
@@ -256,12 +273,27 @@
 @include g.respond(mobile) {
   .inquiry-detail-page {
     .inquiry-detail-top {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 14px;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 16px;
 
       h2 {
-        font-size: 1.5rem;
+        width: auto;
+        flex: 1 1 auto;
+        font-size: 1.125rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .detail-back-btn {
+        width: fit-content;
+        min-width: 58px;
+        height: 30px;
+        flex: 0 0 auto;
+        padding: 0 10px;
+        font-size: 0.6875rem;
       }
     }
 
@@ -273,7 +305,7 @@
     .detail-top {
       .detail-head {
         h2 {
-          font-size: 1.25rem;
+          font-size: g.$size-22;
         }
       }
     }
@@ -284,11 +316,6 @@
         height: 120px;
       }
     }
-  }
-
-  .detail-back-btn {
-    width: 100%;
-    flex-basis: auto;
   }
 }
 

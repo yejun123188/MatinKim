@@ -41,16 +41,29 @@
               overflow: hidden;
               text-overflow: ellipsis;
             }
+
+            .grade-line {
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+              max-width: 100%;
+              overflow: visible;
+              text-overflow: clip;
+            }
+
             .question {
               position: relative;
-              display: flex;
-              width: 70%;
+              display: inline-flex;
+              flex: 0 0 auto;
+              align-items: center;
+              width: auto;
 
               img {
-                padding: 5px 0;
+                display: block;
+                padding: 0;
               }
 
-              p {
+              span {
                 position: absolute;
                 left: 25px;
                 top: 15px;
@@ -61,12 +74,26 @@
                 padding: 5px 12px;
                 border-radius: 0 8px 8px 8px;
                 opacity: 0;
-                white-space: pre-line;
+                white-space: nowrap;
                 overflow: visible;
                 text-overflow: clip;
                 transition: opacity 1s ease 2s;
+
+                .guide-comma,
+                .guide-part {
+                  position: static;
+                  display: inline;
+                  padding: 0;
+                  background: transparent;
+                  border-radius: 0;
+                  opacity: 1;
+                  font-size: inherit;
+                  line-height: inherit;
+                  white-space: inherit;
+                  transition: none;
+                }
               }
-              img:hover + p {
+              img:hover + span {
                 opacity: 1;
                 transition: opacity 0.5s ease;
               }
@@ -351,11 +378,30 @@
                 font-size: 1.125rem;
               }
 
-              .question {
-                width: 100%;
+              .grade-line {
+                display: inline-flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 4px;
+                max-width: 100%;
+                overflow: visible;
+              }
 
-                p {
+              .question {
+                width: auto;
+
+                span {
                   max-width: calc(100vw - 90px);
+                  white-space: normal;
+
+                  .guide-comma {
+                    display: none;
+                  }
+
+                  .guide-part {
+                    display: block;
+                    white-space: nowrap;
+                  }
                 }
               }
             }
@@ -415,9 +461,11 @@
 
               .Bbtn,
               .Wbtn {
-                flex: 1 1 82px;
+                flex: 1 1 76px;
                 min-width: 0;
                 width: auto;
+                height: 30px;
+                font-size: 0.6875rem;
               }
             }
           }

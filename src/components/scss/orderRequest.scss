@@ -2,30 +2,53 @@
 
 .request-back-btn {
   @include g.myBtn2($pd: 0);
-  width: 120px;
+  width: fit-content;
+  min-width: 74px;
   height: 40px;
-  flex: 0 0 120px;
+  flex: 0 0 auto;
+  padding: 0 14px;
 }
 
 .order-request-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   margin-bottom: 24px;
   font-size: 1rem;
 
-  button {
-    width: 120px;
+  h2,
+  p {
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .request-back-btn {
+    width: fit-content;
+    min-width: 74px;
     height: 40px;
   }
 }
 
 @include g.respond(tablet) {
+  .request-back-btn {
+    width: fit-content;
+    min-width: 68px;
+    height: 34px;
+    flex-basis: auto;
+    padding: 0 12px;
+    font-size: 0.75rem;
+  }
+
   .order-request-page {
     .request-section {
       .request-order-info,
       .request-form-top {
-        padding: 28px 36px;
+        padding: 20px;
       }
     }
   }
@@ -33,13 +56,20 @@
 
 @include g.respond(mobile) {
   .order-request-top {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
 
     .request-back-btn {
-      width: 100%;
-      flex-basis: auto;
+      width: fit-content;
+      min-width: 58px;
+      height: 30px;
+      flex: 0 0 auto;
+      padding: 0 10px;
+      font-size: 0.6875rem;
     }
   }
 
@@ -47,7 +77,7 @@
     .request-section {
       .request-order-info,
       .request-form-top {
-        padding: 22px 20px;
+        padding: 14px;
       }
     }
 
@@ -81,11 +111,11 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      padding: 30px 60px;
+      padding: 30px;
 
       h2 {
         margin-bottom: 23px;
-        font-size: g.$size-30;
+        font-size: g.$size-22;
       }
 
       div {
@@ -110,7 +140,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding: 30px 60px;
+      padding: 30px;
 
       h3 {
         font-size: g.$size-16;
@@ -147,7 +177,7 @@
           align-items: center;
           justify-content: space-between;
           cursor: pointer;
-          padding: 20px;
+          padding: 16px;
 
           span {
             font-size: g.$size-14-main;
@@ -193,7 +223,7 @@
           display: flex;
           align-items: flex-start;
           cursor: pointer;
-          padding: 20px;
+          padding: 16px;
 
           &:hover {
             border-color: g.$main-color;
@@ -239,7 +269,7 @@
         @include g.myTextBox;
         font-family: inherit;
         line-height: 1.2;
-        padding: 20px;
+        padding: 16px;
         color: g.$text-main-color;
 
         &:focus {

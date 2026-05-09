@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useProductStore } from '../store/useProductStore'
-import { useAuthStore } from '../store/useAuthStore';
 
 const getProductBaseName = (item) => {
     if (!item?.name) return '';
@@ -19,15 +18,11 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
         items,
         onColorCode,
         onAddCart,
-        openCart,
-        wishList,
-        onAddWishList,
-        onRemoveWish,
-        onLoadWishList
+        openCart
     } = useProductStore();
-    const { user } = useAuthStore();
     const navigate = useNavigate();
     const [previewProduct, setPreviewProduct] = useState(null);
+    const [isLiked, setIsLiked] = useState(false);
     const [selectedColor, setSelectedColor] = useState(cate.colors?.[0] || '');
     const [selectedSize, setSelectedSize] = useState(() => {
         const availableSizeIndex = Array.isArray(cate.sizes)
@@ -47,8 +42,6 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
         return sortedVariants.length > 0 ? sortedVariants : [cate];
     }, [items, cate]);
     const selectedVariant = colorVariants.find(v => v.colors?.[0] === selectedColor) || cate;
-    const wishKey = `${selectedVariant.id}-${selectedSize}-${selectedColor}`;
-    const isLiked = wishList.some((wish) => wish.key === wishKey);
     const badgeItems = isSoldOut
         ? [{
             key: 'sold-out',
@@ -81,51 +74,13 @@ export default function ProductCard({ cate, as: CardTag = 'li', className = '' }
         navigate(`/products/${cate.id}`);
     };
 
-    useEffect(() => {
-        if (user?.uid) {
-            onLoadWishList(user.uid);
-        }
-    }, [user?.uid, onLoadWishList]);
-
     const handleActionClick = (event) => {
         event.stopPropagation();
     };
 
-    const handleToggleLike = async (event) => {
+    const handleToggleLike = (event) => {
         handleActionClick(event);
-
-        if (!user?.uid) {
-            alert("로그인 후 이용 가능합니다.");
-            navigate("/login");
-            return;
-        }
-
-        if (isLiked) {
-            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
-            if (!ok) return;
-
-            await onRemoveWish(wishKey, user.uid);
-            return;
-        }
-
-        await onAddWishList({
-            id: selectedVariant.id,
-            name: selectedVariant.name,
-            price: selectedVariant.price,
-            discountPrice: selectedVariant.discountPrice,
-            discountRate: selectedVariant.discountRate,
-            mainImg: selectedVariant.mainImg,
-            hoverImg: selectedVariant.hoverImg,
-            selectedSize,
-            selectedColor,
-            quantity: 1,
-            key: wishKey,
-            category1: selectedVariant.category1,
-            category2: selectedVariant.category2,
-            isSoldOut,
-        }, user.uid);
-
-        alert("위시리스트에 상품이 담겼습니다");
+        setIsLiked((prev) => !prev);
     };
 
     const handleAddCart = (event) => {

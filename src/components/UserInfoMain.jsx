@@ -163,6 +163,7 @@ export default function UserInfoMain() {
 
   const grade = getMemberGrade(purchaseAmount);
   const membershipGuide = getMembershipGuide(grade);
+  const membershipGuideParts = membershipGuide.split(/,\s*/);
 
   const totalPoint = savedMoneySummary?.totalPoint || 0;
 
@@ -237,7 +238,7 @@ export default function UserInfoMain() {
               <li>
                 <div>
                   <p>{displayName}님은</p>
-                  <p>
+                  <p className="grade-line">
                     <strong
                       style={{
                         color: gradeColor[grade],
@@ -246,11 +247,18 @@ export default function UserInfoMain() {
                       {grade} 등급
                     </strong>
                     입니다.
+                    <span className="question">
+                      <img src="./images/userinfo/question.svg" alt="question" />
+                      <span>
+                        {membershipGuideParts.map((part, index) => (
+                          <React.Fragment key={`${part}-${index}`}>
+                            {index > 0 && <span className="guide-comma">, </span>}
+                            <span className="guide-part">{part}</span>
+                          </React.Fragment>
+                        ))}
+                      </span>
+                    </span>
                   </p>
-                </div>
-                <div className="question">
-                  <img src="./images/userinfo/question.svg" alt="question" />
-                  <p>{membershipGuide}</p>
                 </div>
               </li>
               <li>

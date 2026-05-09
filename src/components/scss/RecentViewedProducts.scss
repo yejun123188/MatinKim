@@ -136,6 +136,8 @@
 
       .Wbtn {
         width: 100%;
+        height: 34px;
+        font-size: 0.75rem;
       }
     }
 
@@ -166,10 +168,15 @@
     .button-wrap {
       grid-column: 2 / -1;
       flex-wrap: wrap;
+      gap: 6px;
 
       .Bbtn,
       .Wbtn {
-        flex: 1 1 120px;
+        flex: 1 1 86px;
+        min-width: 0;
+        height: 30px;
+        padding: 0 8px;
+        font-size: 0.6875rem;
       }
     }
   }
