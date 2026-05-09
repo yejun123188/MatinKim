@@ -28,6 +28,7 @@ const statusCode = {
 };
 
 const gradeColor = {
+  FRIENDS: "#4A3AFF",
   BASIC: "#888",
   SILVER: "#A0A0A0",
   GOLD: "#D4AF37",
@@ -166,6 +167,10 @@ export default function UserInfoMain() {
       <div className="frist-line">
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
+            <p>
+              반가워요! <strong>{displayName}</strong> 님
+            </p>
+
             <ul className="myinfo-list">
               <li>
                 <div>
@@ -174,7 +179,7 @@ export default function UserInfoMain() {
                   <p className="grade-line">
                     <strong
                       style={{
-                        color: gradeColor[grade],
+                        color: gradeColor[grade] || gradeColor.FRIENDS,
                       }}
                     >
                       {grade} 등급
