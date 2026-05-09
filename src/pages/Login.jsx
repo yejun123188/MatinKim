@@ -3,7 +3,7 @@ import "./scss/Login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 
-export default function Login({ onClose }) {
+export default function Login({ onClose, guestMode = false, guestOrderItems = [] }) {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [googleLoading, setGoogleLoading] = useState(false);
@@ -20,7 +20,7 @@ export default function Login({ onClose }) {
   const handleBlurUserId = () => {
     setErrors((prev) => ({
       ...prev,
-      userId: !userId.trim()
+      // userId: !userId.trim()
     }));
   };
 
@@ -28,7 +28,7 @@ export default function Login({ onClose }) {
   const handleBlurPassword = () => {
     setErrors((prev) => ({
       ...prev,
-      password: !password.trim()
+      // password: !password.trim()
     }));
   };
 
@@ -97,6 +97,10 @@ export default function Login({ onClose }) {
       console.error(err);
     }
   };
+  const handleGuestOrder = () => {
+    onClose?.();
+    navigate('/payment', { state: { orderItems: guestOrderItems } });
+  };
   return (
     <div className="login-page">
       <div className="login-dim" onClick={onClose}></div>
@@ -160,9 +164,9 @@ export default function Login({ onClose }) {
             </button>
 
             <div className="login-links">
-              <a href="#!">아이디 찾기</a>
+              <Link to="/find" onClick={onClose}>아이디 찾기</Link>
               <span>|</span>
-              <a href="#!">비밀번호 재설정</a>
+              <Link to="/password/find" onClick={onClose}>비밀번호 찾기</Link>
             </div>
 
             <div className="sns-login">
@@ -191,10 +195,22 @@ export default function Login({ onClose }) {
               회원가입 후 혜택받기
             </Link>
 
-            <Link to="/guest-order" className="guest-order" onClick={onClose}>
-              비회원 주문 조회하기
-            </Link>
+            {!guestMode && (
+              <Link to="/order-lookup" className="guest-order" onClick={onClose}>
+                비회원 주문 조회하기
+              </Link>
+            )}
+            {guestMode && (
+              <button
+                type="button"
+                className="guest-order-btn"
+                onClick={handleGuestOrder}
+              >
+                비회원으로 주문하기
+              </button>
+            )}
           </form>
+
         </div>
       </div>
     </div>

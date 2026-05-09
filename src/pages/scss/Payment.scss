@@ -136,6 +136,15 @@
         font-size: g.$size-14-main;
         color: g.$text-main-color;
         outline: none;
+
+        &:focus {
+            border-color: g.$main-color;
+        }
+
+        // ✅ 추가
+        &.error {
+            border-color: g.$red-color;
+        }
     }
 
     select {
@@ -266,6 +275,11 @@
         border: 1px solid rgba(g.$main-color, 0.3);
         padding: 0 14px;
         font-size: g.$size-14-main;
+
+        &:focus {
+            border-color: g.$main-color;
+            outline: none;
+        }
     }
 
     button {

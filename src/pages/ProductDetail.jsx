@@ -6,14 +6,12 @@ import "./scss/productDetail.scss";
 import CartPopup from './CartPopup';
 import Cart from './Cart';
 import { useAuthStore } from '../store/useAuthStore';
-import Login from './Login';
+import { useLoginStore } from '../store/useLoginStore';
 import { addRecentViewedProduct } from '../utils/recentViewedProducts';
 import { qnadata } from '../data/Qna';
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
 const RELATED_PER_PAGE = 10;
-
-// 페이지네이션 갯수
 const PAGE_BUTTON_LIMIT = 5;
 const THUMBNAILS_PER_VIEW = 5;
 const CATEGORY2_URL_MAP = {
@@ -99,13 +97,10 @@ const formatOptionLabel = (value = '') =>
 
 const formatColorLabelKo = (value = '') => COLOR_NAME_KO[value] || value;
 
-// 같은 상품의 다른 컬러 페이지를 찾기 위해 상품명에서 컬러 suffix를 제거
 const getProductBaseName = (item) => {
     if (!item?.name) return '';
-
     const primaryColor = item.colors?.[0];
     const colorSuffix = primaryColor ? ` IN ${primaryColor}` : '';
-
     return colorSuffix && item.name.endsWith(colorSuffix)
         ? item.name.slice(0, -colorSuffix.length)
         : item.name;
@@ -115,6 +110,8 @@ export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     const { items, onFetchItem, onColorCode, onAddCart, onAddWishList, onRemoveWish, wishList, onLoadWishList } = useProductStore();
+    const { user } = useAuthStore();
+    const { openLogin } = useLoginStore();
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [thumbStartIndex, setThumbStartIndex] = useState(0);
@@ -127,8 +124,9 @@ export default function ProductDetail() {
     const [isZoomOpen, setIsZoomOpen] = useState(false);
     const [zoomImageIndex, setZoomImageIndex] = useState(0);
     const [isPageVisible, setIsPageVisible] = useState(false);
+    const [showCartPopup, setShowCartPopup] = useState(false);
+    const [showCart, setShowCart] = useState(false);
 
-    // 상세 진입 시 전역 상품 목록이 비어 있으면 한 번만 불러오기
     useEffect(() => {
         if (items.length === 0) onFetchItem();
     }, [items.length, onFetchItem]);
@@ -137,33 +135,26 @@ export default function ProductDetail() {
         () => items.find((item) => item.id === id),
         [items, id]
     );
-    // 현재 상품과 같은 이름 그룹의 컬러별 상세 페이지 찾기
+
     const colorProductMap = useMemo(() => {
         if (!product) return {};
-
         const baseName = getProductBaseName(product);
-
         return items.reduce((acc, item) => {
             if (getProductBaseName(item) !== baseName) return acc;
-
             const itemPrimaryColor = item.colors?.[0];
-            if (itemPrimaryColor) {
-                acc[itemPrimaryColor] = item;
-            }
-
+            if (itemPrimaryColor) acc[itemPrimaryColor] = item;
             return acc;
         }, {});
     }, [items, product]);
-    // 상품 전환 버튼 - 전체 상품 배열 기준으로 다음 상품 페이지로 이동
+
     const nextProductId = useMemo(() => {
         if (!product || items.length === 0) return null;
-
         const currentIndex = items.findIndex((item) => item.id === product.id);
         if (currentIndex === -1) return null;
-
         const nextIndex = (currentIndex + 1) % items.length;
         return items[nextIndex]?.id || null;
     }, [items, product]);
+
     const isProductSoldOut = Boolean(
         product &&
         Array.isArray(product.soldout) &&
@@ -171,7 +162,6 @@ export default function ProductDetail() {
         product.soldout.every(Boolean)
     );
 
-    // 상품이 바뀌면 상세 페이지의 모든 로컬 UI 상태를 초기화
     useEffect(() => {
         if (!product) return;
         addRecentViewedProduct(product);
@@ -189,52 +179,29 @@ export default function ProductDetail() {
 
     useEffect(() => {
         setIsPageVisible(false);
-
         if (!product) return undefined;
-
-        const timer = window.setTimeout(() => {
-            setIsPageVisible(true);
-        }, 60);
-
+        const timer = window.setTimeout(() => setIsPageVisible(true), 60);
         return () => window.clearTimeout(timer);
     }, [product]);
 
-    // 확대 모달이 열려 있을 때만 스크롤 잠금과 ESC 닫기를 활성화
     useEffect(() => {
         if (!isZoomOpen) return undefined;
-
         const previousOverflow = document.body.style.overflow;
         const handleKeyDown = (event) => {
-            if (event.key === 'Escape') {
-                setIsZoomOpen(false);
-            }
+            if (event.key === 'Escape') setIsZoomOpen(false);
         };
-
         document.body.style.overflow = 'hidden';
         window.addEventListener('keydown', handleKeyDown);
-
         return () => {
             document.body.style.overflow = previousOverflow;
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [isZoomOpen]);
-    // 현재 선택된 사이즈의 sold-out 여부
-    const isSoldOutSelectedSize = useMemo(() => {
-        if (!product || !selectedSize) return false;
-        const sizeIndex = product.sizes.findIndex(s => s === selectedSize);
-        return Boolean(product.soldout?.[sizeIndex]);
-    }, [product, selectedSize]);
-    //장바구니 팝업  열고 닫기 상태변수
-    const [showCartPopup, setShowCartPopup] = useState(false);
-    const [showCart, setShowCart] = useState(false);
-    //위시리스트에 상품담기
 
-    const { user } = useAuthStore();
     useEffect(() => {
-        if (user?.uid) {
-            onLoadWishList(user.uid);
-        }
+        if (user?.uid) onLoadWishList(user.uid);
     }, [user]);
+
     useEffect(() => {
         if (!product || !user) {
             setIsLiked(false);
@@ -243,65 +210,25 @@ export default function ProductDetail() {
         const key = `${product.id}-${selectedSize}-${selectedColor}`;
         setIsLiked(wishList.some((w) => w.key === key));
     }, [product, selectedSize, selectedColor, wishList, user]);
-    //로그인 페이지
-    const [showLogin, setShowLogin] = useState(false);
-    const handleAddToWish = () => {
-        if (!product) return;
 
-        //  비로그인 체크
-        if (!user) {
-            const ok = window.confirm("로그인이 필요한 서비스입니다.\n로그인하시겠습니까?");
-            if (ok); setShowLogin(true)
-            return;
-        }
+    const isSoldOutSelectedSize = useMemo(() => {
+        if (!product || !selectedSize) return false;
+        const sizeIndex = product.sizes.findIndex(s => s === selectedSize);
+        return Boolean(product.soldout?.[sizeIndex]);
+    }, [product, selectedSize]);
 
-        if (!selectedSize) {
-            alert("사이즈를 선택해주세요");
-            return;
-        }
-        if (!selectedColor) {
-            alert("색상을 선택해주세요");
-        }
-
-        const key = `${product.id}-${selectedSize}-${selectedColor}`;
-        const alreadyLiked = wishList.some((w) => w.key === key);
-
-        // 이미 찜한 상품이면 취소 confirm
-        if (alreadyLiked) {
-            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
-            if (!ok) return;
-            onRemoveWish(key, user.uid);
-            return;
-        }
-        const sizeIndex = (product.sizes || []).findIndex(s => s === selectedSize);
-        const isSoldOut = sizeIndex !== -1 && Boolean(product.soldout?.[sizeIndex]);
-
-        onAddWishList({
-            ...product,
-            isSoldOut,
-            selectedSize,
-            selectedColor,
-            quantity,
-            key
-        }, user.uid);
-        alert("위시리스트에 상품이 담겼습니다");
-    }
-    // 상세 이미지 목록은 hover 이미지를 제외하고 main 이미지를 앞에 고정해 구성
     const detailImages = useMemo(() => {
         if (!product) return [];
-
         const filteredImages = (product.detailImages || []).filter((image) => image && image !== product.hoverImg);
         const galleryImages = filteredImages.length > 0 ? filteredImages : [product.mainImg].filter(Boolean);
-
         if (product.mainImg && !galleryImages.includes(product.mainImg)) {
             return [product.mainImg, ...galleryImages];
         }
-
         return galleryImages;
     }, [product]);
+
     const selectedImage = detailImages[selectedImageIndex] || product?.mainImg || '';
     const zoomSelectedImage = detailImages[zoomImageIndex] || selectedImage;
-
     const visibleThumbs = detailImages.slice(thumbStartIndex, thumbStartIndex + THUMBNAILS_PER_VIEW);
     const canThumbPrev = thumbStartIndex > 0;
     const canThumbNext = thumbStartIndex + THUMBNAILS_PER_VIEW < detailImages.length;
@@ -313,9 +240,7 @@ export default function ProductDetail() {
         ? sizeRows[0].map((_, columnIndex) => sizeRows.map((row) => row[columnIndex] || ''))
         : [];
     const sizeColumnCount = transposedSizeRows[0]?.length || 0;
-    const sizeValueColumnWidth = sizeColumnCount > 1
-        ? `${80 / (sizeColumnCount - 1)}%`
-        : '80%';
+    const sizeValueColumnWidth = sizeColumnCount > 1 ? `${80 / (sizeColumnCount - 1)}%` : '80%';
     const deliveryText = product?.tabContents?.DELIVERY || '';
     const deliveryFaqs = qnadata.delivery || [];
     const detailText = product?.tabContents?.DETAILS || '';
@@ -326,7 +251,6 @@ export default function ProductDetail() {
 
     const relatedProducts = useMemo(() => {
         if (!product) return [];
-
         return items.filter((item) => (
             item.id !== product.id &&
             (item.category2 === product.category2 || item.category1 === product.category1)
@@ -346,7 +270,6 @@ export default function ProductDetail() {
         relatedPage * RELATED_PER_PAGE
     );
 
-    // 수량 변경은 1개 미만으로 내려가지 않도록 막음
     const totalPrice = (product?.discountRate > 0 ? product.discountPrice : product?.price || 0) * quantity;
     const originalTotalPrice = (product?.price || 0) * quantity;
 
@@ -362,12 +285,7 @@ export default function ProductDetail() {
 
     const handleSelectImage = (index) => {
         setSelectedImageIndex(index);
-
-        // 메인 이미지 변경 시 현재 선택 이미지가 썸네일 영역 안에 보이도록 함께 이동
-        if (index < thumbStartIndex) {
-            setThumbStartIndex(index);
-        }
-
+        if (index < thumbStartIndex) setThumbStartIndex(index);
         if (index >= thumbStartIndex + THUMBNAILS_PER_VIEW) {
             setThumbStartIndex(index - THUMBNAILS_PER_VIEW + 1);
         }
@@ -380,24 +298,65 @@ export default function ProductDetail() {
     const handleBuyNow = () => {
         if (!product || isProductSoldOut) return;
 
-        // 결제 페이지에서는 바로 구매에 필요한 최소 주문 정보만 state로 넘김
         const purchasePrice = product.discountRate > 0 ? product.discountPrice : product.price;
+        const orderItems = [{
+            id: product.id,
+            brand: 'MATIN KIM',
+            name: product.name,
+            option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
+            quantity,
+            price: purchasePrice,
+            image: product.mainImg || product.hoverImg || ''
+        }];
 
-        navigate('/payment', {
-            state: {
-                orderItems: [
-                    {
-                        id: product.id,
-                        brand: 'MATIN KIM',
-                        name: product.name,
-                        option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
-                        quantity,
-                        price: purchasePrice,
-                        image: product.mainImg || product.hoverImg || ''
-                    }
-                ]
-            }
-        });
+        if (!user) {
+            openLogin(orderItems);
+            return;
+        }
+
+        navigate('/payment', { state: { orderItems } });
+    };
+
+    const handleAddToWish = () => {
+        if (!product) return;
+
+        if (!user) {
+            const ok = window.confirm("로그인이 필요한 서비스입니다.\n로그인하시겠습니까?");
+            if (ok) openLogin();
+            return;
+        }
+
+        if (!selectedSize) {
+            alert("사이즈를 선택해주세요");
+            return;
+        }
+        if (!selectedColor) {
+            alert("색상을 선택해주세요");
+            return;
+        }
+
+        const key = `${product.id}-${selectedSize}-${selectedColor}`;
+        const alreadyLiked = wishList.some((w) => w.key === key);
+
+        if (alreadyLiked) {
+            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+            if (!ok) return;
+            onRemoveWish(key, user.uid);
+            return;
+        }
+
+        const sizeIndex = (product.sizes || []).findIndex(s => s === selectedSize);
+        const isSoldOut = sizeIndex !== -1 && Boolean(product.soldout?.[sizeIndex]);
+
+        onAddWishList({
+            ...product,
+            isSoldOut,
+            selectedSize,
+            selectedColor,
+            quantity,
+            key
+        }, user.uid);
+        alert("위시리스트에 상품이 담겼습니다");
     };
 
     const handleSwitchProduct = () => {
@@ -407,12 +366,8 @@ export default function ProductDetail() {
 
     const handleSelectColor = (color) => {
         const targetProduct = colorProductMap[color];
-
         if (!targetProduct) return;
-
         setSelectedColor(color);
-
-        // 컬러 선택은 옵션 변경이 아니라 해당 컬러 상품 상세 페이지로 이동
         if (targetProduct.id !== product?.id) {
             navigate(`/products/${targetProduct.id}`);
         }
@@ -424,25 +379,14 @@ export default function ProductDetail() {
         setIsZoomOpen(true);
     };
 
-    const handleCloseZoom = () => {
-        setIsZoomOpen(false);
-    };
-
-    const handleZoomPrev = () => {
-        if (!canZoomPrev) return;
-        setZoomImageIndex((prev) => prev - 1);
-    };
-
-    const handleZoomNext = () => {
-        if (!canZoomNext) return;
-        setZoomImageIndex((prev) => prev + 1);
-    };
+    const handleCloseZoom = () => setIsZoomOpen(false);
+    const handleZoomPrev = () => { if (canZoomPrev) setZoomImageIndex((prev) => prev - 1); };
+    const handleZoomNext = () => { if (canZoomNext) setZoomImageIndex((prev) => prev + 1); };
 
     const renderTabContent = () => {
         if (activeTab === 'SIZE GUIDE') {
             return (
                 <div className='tab-pane size-guide-pane'>
-
                     {sizeRows.length > 0 && (
                         <div className='size-table-wrap'>
                             <table>
@@ -529,7 +473,6 @@ export default function ProductDetail() {
                             <div className='thumb-track'>
                                 {visibleThumbs.map((image, index) => {
                                     const imageIndex = thumbStartIndex + index;
-
                                     return (
                                         <button
                                             type="button"
@@ -612,8 +555,6 @@ export default function ProductDetail() {
                         </div>
 
                         <p className='detail-path'>
-                            {/* <Link to={category1Path}>SHOP</Link>
-                            <span>|</span> */}
                             <Link to={category1Path}>{formatCategory(product.category1)}</Link>
                             <span>|</span>
                             <Link to={category2Path}>{formatCategory(product.category2)}</Link>
@@ -677,7 +618,6 @@ export default function ProductDetail() {
                                 <div className='option-grid'>
                                     {(product.sizes || []).map((size, index) => {
                                         const isSoldOut = Boolean(product.soldout?.[index]);
-
                                         return (
                                             <button
                                                 type="button"
@@ -703,25 +643,23 @@ export default function ProductDetail() {
                                 <span>{quantity}</span>
                                 <button type="button" onClick={() => handleQuantityChange(quantity + 1)} aria-label='수량 증가'>+</button>
                             </div>
-                            <button type="button" className='cart-btn' disabled={isSoldOutSelectedSize || isProductSoldOut}
+                            <button
+                                type="button"
+                                className='cart-btn'
+                                disabled={isSoldOutSelectedSize || isProductSoldOut}
                                 onClick={() => {
                                     if (!product) return;
-
-                                    const price = product.discountRate > 0
-                                        ? product.discountPrice
-                                        : product.price;
-
+                                    const price = product.discountRate > 0 ? product.discountPrice : product.price;
                                     onAddCart({
                                         id: product.id,
                                         name: product.name,
-                                        price: price,
+                                        price,
                                         size: selectedSize,
                                         color: selectedColor,
                                         count: quantity,
                                         image: product.mainImg || product.hoverImg,
                                         key: `${product.id}-${selectedSize}-${selectedColor}`
                                     });
-
                                     setShowCartPopup(true);
                                 }}
                             >장바구니 담기</button>
@@ -732,7 +670,6 @@ export default function ProductDetail() {
                                 onClick={handleBuyNow}
                             >
                                 {isProductSoldOut ? 'SOLD OUT' : '바로 구매하기'}
-                                {/* <img src="/images/pages-icon/next-icon.svg" alt="" aria-hidden="true" /> */}
                             </button>
                         </div>
                     </div>
@@ -758,13 +695,11 @@ export default function ProductDetail() {
 
                 <section className='related-products-section'>
                     <h2>RELATED PRODUCTS</h2>
-
                     <ul className='related-products-grid'>
                         {visibleRelatedProducts.map((related) => (
                             <ProductCard key={related.id} cate={related} />
                         ))}
                     </ul>
-
                     {relatedTotalPages > 1 && (
                         <div className='related-pagination'>
                             <button
@@ -816,7 +751,7 @@ export default function ProductDetail() {
                         </div>
                     )}
                 </section>
-            </div >
+            </div>
 
             {isZoomOpen && (
                 <div
@@ -859,11 +794,10 @@ export default function ProductDetail() {
                         </button>
                     </div>
                 </div>
-            )
-            }
-            {
-                showCartPopup && <CartPopup mode="wish"
-                    onClose={() => setShowCartPopup(false)}
+            )}
+            {showCartPopup && (
+                <CartPopup
+                    mode="wish"
                     product={product}
                     selectedColor={selectedColor}
                     selectedSize={selectedSize}
@@ -872,10 +806,10 @@ export default function ProductDetail() {
                     onGoCart={() => {
                         setShowCartPopup(false);
                         setShowCart(true);
-                    }} />
-            }
+                    }}
+                />
+            )}
             {showCart && <Cart onClose={() => setShowCart(false)} />}
-            {showLogin && <Login onClose={() => setShowLogin(false)} />}
-        </main >
-    )
+        </main>
+    );
 }

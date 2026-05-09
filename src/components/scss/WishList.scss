@@ -161,6 +161,7 @@
           }
         }
 
+        .button-wrap,
         .button-box {
           display: flex;
           gap: 8px;
@@ -228,6 +229,7 @@
             min-width: 0;
           }
 
+          .button-wrap,
           .button-box {
             margin-top: 0;
           }
@@ -258,6 +260,7 @@
             min-width: 0;
           }
 
+          .button-wrap,
           .button-box {
             grid-column: 2 / -1;
             flex-wrap: wrap;

@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useMemo } from "react";
 import UserInfoMainBox from "./UserInfoMainBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -15,20 +14,25 @@ import {
 } from "../store/useAuthStore";
 import { getAllOrders } from "../utils/orderStorage";
 import { useProductStore } from "../store/useProductStore";
+import { useNavigate } from "react-router-dom";
+import WishItem from "./WishItem";
 import CartPopup from "../pages/CartPopup";
 import Cart from "../pages/Cart";
 
 const statusCode = {
-  결제완료: "ORDER",
+  주문확인중: "ORDER",
   배송준비중: "READY",
+  배송시작: "START",
   배송중: "ING",
   배송완료: "DONE",
 };
 
 const gradeColor = {
-  FRIENDS: "#4A3AFF",
-  GOLD: "#F3B94C",
-  VIP: "#FF3D3D",
+  BASIC: "#888",
+  SILVER: "#A0A0A0",
+  GOLD: "#D4AF37",
+  VIP: "#C0392B",
+  VVIP: "#8E44AD",
 };
 
 const userInfo = {
@@ -46,8 +50,6 @@ const orderStatusList = ["결제완료", "배송준비중", "배송중", "배송
 
 const DELIVERY_COMPLETE_MS = 30 * 24 * 60 * 60 * 1000;
 
-const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
-
 const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
 
 const parseOrderDate = (dateString) => {
@@ -55,31 +57,25 @@ const parseOrderDate = (dateString) => {
 
   if (/^\d{8}$/.test(String(dateString))) {
     const str = String(dateString);
-
     const year = str.slice(0, 4);
     const month = str.slice(4, 6);
     const day = str.slice(6, 8);
-
     const time = new Date(`${year}-${month}-${day}`).getTime();
 
     return Number.isNaN(time) ? null : time;
   }
 
   const time = new Date(dateString).getTime();
-
   return Number.isNaN(time) ? null : time;
 };
 
 export default function UserInfoMain() {
-  const navigate = useNavigate();
-
+  const [showCartPopup, setShowCartPopup] = useState(false);
+  const [cartItem, setCartItem] = useState(null);
+  const [showCart, setShowCart] = useState(false);
   const [now, setNow] = useState(Date.now());
 
-  const [cartItem, setCartItem] = useState(null);
-
-  const [showCartPopup, setShowCartPopup] = useState(false);
-
-  const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
 
   const {
     user,
@@ -89,8 +85,7 @@ export default function UserInfoMain() {
     onFetchSavedMoney,
   } = useAuthStore();
 
-  const { wishList, onLoadWishList, onRemoveWish, onAddCart } =
-    useProductStore();
+  const { wishList, onLoadWishList } = useProductStore();
 
   useEffect(() => {
     onFetchCoupons();
@@ -101,7 +96,7 @@ export default function UserInfoMain() {
     if (user?.uid) {
       onLoadWishList(user.uid);
     }
-  }, [user, onLoadWishList]);
+  }, [user?.uid, onLoadWishList]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -118,16 +113,11 @@ export default function UserInfoMain() {
           ...order,
           createdAt: o.createdAt,
           date: o.date,
-        })),
+        }))
       )
       .filter((order) => {
-        if (!orderStatusList.includes(order.status)) {
-          return false;
-        }
-
-        if (order.status !== "배송완료") {
-          return true;
-        }
+        if (!orderStatusList.includes(order.status)) return false;
+        if (order.status !== "배송완료") return true;
 
         const createdAtTime = new Date(order.createdAt).getTime();
 
@@ -136,7 +126,6 @@ export default function UserInfoMain() {
         }
 
         const orderDateTime = parseOrderDate(order.date);
-
         if (!orderDateTime) return false;
 
         return now - orderDateTime < DELIVERY_COMPLETE_MS;
@@ -148,17 +137,17 @@ export default function UserInfoMain() {
   const localPurchaseInfo = getLocalPurchaseInfo(user);
 
   const purchaseAmount = Number(
-    localPurchaseInfo.purchaseAmount ??
+    localPurchaseInfo?.purchaseAmount ??
       user?.purchaseAmount ??
       user?.orderPrice ??
-      userInfo.purchaseAmount,
+      userInfo.purchaseAmount
   );
 
   const purchaseCount = Number(
-    localPurchaseInfo.purchaseCount ??
+    localPurchaseInfo?.purchaseCount ??
       user?.purchaseCount ??
       user?.orderCount ??
-      userInfo.purchaseCount,
+      userInfo.purchaseCount
   );
 
   const grade = getMemberGrade(purchaseAmount);
@@ -166,78 +155,22 @@ export default function UserInfoMain() {
   const membershipGuideParts = membershipGuide.split(/,\s*/);
 
   const totalPoint = savedMoneySummary?.totalPoint || 0;
-
   const couponCount = user ? couponList.length : 0;
 
   const sortedWishList = [...wishList].sort(
-    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0),
+    (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0)
   );
-
-  const getWishPrice = (wish) =>
-    wish.discountRate > 0 ? wish.discountPrice : wish.price;
-
-  const handleBuyNow = (wish) => {
-    if (wish.isSoldOut) return;
-
-    navigate("/payment", {
-      state: {
-        orderItems: [
-          {
-            id: wish.id,
-            brand: "MATIN KIM",
-            name: wish.name,
-            option: `${wish.selectedColor || "-"} / ${
-              wish.selectedSize || "-"
-            }`,
-            quantity: wish.quantity || 1,
-            price: getWishPrice(wish),
-            image: wish.mainImg || wish.hoverImg || "",
-          },
-        ],
-      },
-    });
-  };
-
-  const handleAddCart = (wish) => {
-    if (wish.isSoldOut) return;
-
-    const item = {
-      id: wish.id,
-      name: wish.name,
-      price: getWishPrice(wish),
-      mainImg: wish.mainImg,
-      image: wish.mainImg || wish.hoverImg,
-      key: wish.key || `${wish.id}-${wish.selectedSize}-${wish.selectedColor}`,
-      size: wish.selectedSize,
-      color: wish.selectedColor,
-      count: wish.quantity || 1,
-    };
-
-    onAddCart(item);
-
-    setCartItem(wish);
-    setShowCartPopup(true);
-  };
-
-  const handleRemoveWish = async (wish) => {
-    await onRemoveWish(wish.key, user?.uid);
-
-    alert("상품이 삭제되었습니다");
-  };
 
   return (
     <div className="main">
       <div className="frist-line">
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
-            <p>
-              반가워요! <strong>{displayName}</strong> 님
-            </p>
-
             <ul className="myinfo-list">
               <li>
                 <div>
                   <p>{displayName}님은</p>
+
                   <p className="grade-line">
                     <strong
                       style={{
@@ -247,12 +180,16 @@ export default function UserInfoMain() {
                       {grade} 등급
                     </strong>
                     입니다.
+
                     <span className="question">
                       <img src="./images/userinfo/question.svg" alt="question" />
+
                       <span>
                         {membershipGuideParts.map((part, index) => (
                           <React.Fragment key={`${part}-${index}`}>
-                            {index > 0 && <span className="guide-comma">, </span>}
+                            {index > 0 && (
+                              <span className="guide-comma">, </span>
+                            )}
                             <span className="guide-part">{part}</span>
                           </React.Fragment>
                         ))}
@@ -261,6 +198,7 @@ export default function UserInfoMain() {
                   </p>
                 </div>
               </li>
+
               <li>
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
@@ -275,13 +213,10 @@ export default function UserInfoMain() {
           <ul className="my-wallet-list">
             <li>
               <span>총 적립금</span>
-
               <strong>{totalPoint.toLocaleString()} 원</strong>
             </li>
-
             <li>
               <span>내 쿠폰</span>
-
               <strong>{couponCount} 개</strong>
             </li>
           </ul>
@@ -304,19 +239,15 @@ export default function UserInfoMain() {
                   </div>
 
                   <div className="text-box">
-                    <div
-                      className={`status status-${statusCode[order.status]}`}
-                    >
+                    <div className={`status status-${statusCode[order.status]}`}>
                       {order.status === "배송중" && (
                         <span className="dot"></span>
                       )}
-
                       {order.status}
                     </div>
 
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
-
                       <p className="order-count">
                         {order.size || "-"} / {formatCount(order.count)}
                       </p>
@@ -335,67 +266,25 @@ export default function UserInfoMain() {
         <UserInfoMainBox title="My Wishlist" className="my-wish">
           {sortedWishList.length > 0 ? (
             <Swiper
-              className="wish-list"
               slidesPerView={2.7}
               spaceBetween={24}
+              freeMode={true}
               modules={[FreeMode]}
+              className="wish-list"
             >
               {sortedWishList.map((wish) => (
-                <SwiperSlide className="wish-product" key={wish.key || wish.id}>
-                  <div className="img-box">
-                    <img src={wish.mainImg || wish.hoverImg} alt={wish.name} />
-                  </div>
-
-                  <div className="text-box">
-                    <div className="text-wrap">
-                      <p className="wish-name">{wish.name}</p>
-
-                      <p className="wish-price">
-                        {formatPrice(getWishPrice(wish))}
-
-                        {wish.discountRate > 0 && (
-                          <>
-                            <span>{formatPrice(wish.price)}</span>
-                            <em className="discount-rate">
-                              {wish.discountRate}%
-                            </em>
-                          </>
-                        )}
-                      </p>
-
-                      <p className="wish-count">
-                        {wish.selectedSize || "-"} /{" "}
-                        {formatCount(wish.quantity)}
-                      </p>
-                    </div>
-
-                    <div className="button-wrap">
-                      {!wish.isSoldOut && (
-                        <>
-                          <button
-                            className="Bbtn"
-                            onClick={() => handleBuyNow(wish)}
-                          >
-                            바로구매
-                          </button>
-
-                          <button
-                            className="Wbtn"
-                            onClick={() => handleAddCart(wish)}
-                          >
-                            장바구니
-                          </button>
-                        </>
-                      )}
-
-                      <button
-                        className="Wbtn"
-                        onClick={() => handleRemoveWish(wish)}
-                      >
-                        삭제
-                      </button>
-                    </div>
-                  </div>
+                <SwiperSlide
+                  className={`wish-product${wish.isSoldOut ? " soldout" : ""}`}
+                  key={wish.key || wish.id}
+                >
+                  <WishItem
+                    wish={wish}
+                    variant="card"
+                    onCartPopup={(item) => {
+                      setCartItem(item);
+                      setShowCartPopup(true);
+                    }}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
