@@ -1,0 +1,97 @@
+.find-id-result-page {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 55px;
+
+    .find-id-result-box {
+        width: 100%;
+        max-width: 630px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #111;
+        padding-bottom: 14px;
+        border-bottom: 3px solid #222;
+        margin-bottom: 42px;
+    }
+
+    .result-text {
+        margin-bottom: 36px;
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 19px;
+            color: #111;
+            line-height: 1.5;
+        }
+    }
+
+    .user-info {
+        margin-bottom: 36px;
+
+        p {
+            font-size: 18px;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    .id-result {
+        margin-bottom: 66px;
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            color: #111;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            accent-color: #111;
+        }
+
+        em {
+            font-style: normal;
+            color: #111;
+        }
+    }
+
+    .result-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        button {
+            width: 160px;
+            height: 68px;
+            border: 1px solid #222;
+            background: #fff;
+            color: #111;
+            font-size: 22px;
+            cursor: pointer;
+
+            &.black {
+                width: 230px;
+                background: #1f1f1f;
+                color: #fff;
+            }
+        }
+    }
+}
