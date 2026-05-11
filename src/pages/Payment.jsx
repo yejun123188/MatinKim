@@ -32,10 +32,12 @@ const formatPrice = (value) => `₩${value.toLocaleString()}`;
 const formatDeliveryDate = (date) => `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
 const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg || "/images/sub-cart/clothes-mini.jpg";
 
+
 export default function Payment() {
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase, couponList, savedMoneySummary, onFetchCoupons, onFetchSavedMoney } = useAuthStore();
     const navigate = useNavigate();
-    const { onClearCart } = useProductStore();
+    // 상단 구조분해에 onRemoveItems 추가
+    const { onClearCart, onReduceItems } = useProductStore();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -323,8 +325,12 @@ export default function Payment() {
             discounts: { promoDiscount, pointDiscount: appliedPoint, couponDiscount },
             finalTotal,
         });
-
-        onClearCart();
+        const orderedKeys = orderItems.map((item) => item.key).filter(Boolean);
+        if (orderedKeys.length > 0) {
+            onReduceItems(orderedKeys);
+        } else {
+            onClearCart();
+        }
 
         if (user) {
             navigate("/userInfo", { state: { menu: ORDER_MENU } });
