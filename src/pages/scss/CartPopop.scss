@@ -1,17 +1,17 @@
 @use "../../App.scss" as g;
 
-.cart-popup {
 
-    .modal-overlay {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.35);
-        z-index: 1000;
 
-        @include g.myFlex(flex-end, 0, flex-start);
+.modal-overlay-cart-popup {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
 
-        animation: overlayFadeIn 0.25s ease forwards;
-    }
+    @include g.myFlex(center, 0, center);
+
+    animation: overlayFadeIn 0.25s ease forwards;
+
 
     @keyframes overlayFadeIn {
         from {
