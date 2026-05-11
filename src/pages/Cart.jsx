@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./scss/Cart.scss";
 import { useProductStore } from "../store/useProductStore";
 import { useNavigate } from "react-router-dom";
@@ -6,45 +6,56 @@ import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
 import Login from "./Login";
 
+// ProductDetail과 동일한 베이스명 추출 로직
+const getProductBaseName = (item) => {
+    if (!item?.name) return "";
+    const primaryColor = item.colors?.[0];
+    const colorSuffix = primaryColor ? ` IN ${primaryColor}` : "";
+    return colorSuffix && item.name.endsWith(colorSuffix)
+        ? item.name.slice(0, -colorSuffix.length)
+        : item.name;
+};
+
+// 해당 상품의 모든 사이즈가 품절인지 확인
+const isAllSoldOut = (product) => {
+    if (!product?.soldout?.length) return false;
+    return product.soldout.every(Boolean);
+};
+
 export default function Cart({ onClose }) {
-    const { cartItem, onUpdateQuantity, onRemoveItem, onUpdateOption } = useProductStore();
+    const { cartItem, items, onUpdateQuantity, onRemoveItem, onUpdateOption } = useProductStore();
     const { user } = useAuthStore();
     const navigate = useNavigate();
     const { openLogin } = useLoginStore();
+
     const [checkedItems, setCheckedItems] = useState([]);
-    // 옵션변경 중인 아이템 key
     const [editingKey, setEditingKey] = useState(null);
-    // 변경 중인 옵션 임시 값
     const [tempOption, setTempOption] = useState({ size: "", color: "" });
+    // 편집 중 미리보기: 이름·이미지
+    const [previewName, setPreviewName] = useState(null);
+    const [previewImage, setPreviewImage] = useState(null);
     const [showLogin, setShowLogin] = useState(false);
     const [pendingOrderItems, setPendingOrderItems] = useState([]);
-    const items = cartItem;
+
+    const cartItems = cartItem;
     const formatPrice = (price) => `₩${price.toLocaleString()}`;
 
-    const allChecked = items.length > 0 && checkedItems.length === items.length;
+    const allChecked = cartItems.length > 0 && checkedItems.length === cartItems.length;
 
     const handleAllCheck = () => {
-        if (allChecked) {
-            setCheckedItems([]);
-        } else {
-            setCheckedItems(items.map((item) => item.key));
-        }
+        setCheckedItems(allChecked ? [] : cartItems.map((item) => item.key));
     };
 
     const handleItemCheck = (item) => {
         setCheckedItems((prev) =>
-            prev.includes(item.key)
-                ? prev.filter((v) => v !== item.key)
-                : [...prev, item.key]
+            prev.includes(item.key) ? prev.filter((v) => v !== item.key) : [...prev, item.key]
         );
     };
 
-    const selectedItems = items.filter((item) => checkedItems.includes(item.key));
-
-    const productTotal = selectedItems.reduce(
-        (sum, item) => sum + item.price * item.count,
-        0
-    );
+    const selectedItems = cartItems.filter((item) => checkedItems.includes(item.key));
+    const productTotal = selectedItems.reduce((sum, item) => sum + item.price * item.count, 0);
+    const shippingFee = 0;
+    const totalPayment = productTotal + shippingFee;
 
     const handleSubmit = () => {
         if (selectedItems.length === 0) {
@@ -62,48 +73,88 @@ export default function Cart({ onClose }) {
             option: `${item.color} / ${item.size}`,
             image: item.image,
         }));
-
-        // 비로그인 체크 추가
         if (!user) {
-            openLogin(orderItems);  // ← guestOrderItems 담아서 열기
-            onClose();              // ← Cart는 닫아도 됨 (Login은 Header에서 렌더링)
+            openLogin(orderItems);
+            onClose();
             return;
         }
-
         navigate("/payment", { state: { orderItems } });
         onClose();
     };
+
+    // 각 장바구니 상품 ID별 colorProductMap (ProductDetail과 동일)
+    const colorProductMapByCartItem = useMemo(() => {
+        const result = {};
+        cartItems.forEach((cartItem) => {
+            if (result[cartItem.id]) return;
+            const productData = items.find((p) => p.id === cartItem.id);
+            if (!productData) return;
+            const baseName = getProductBaseName(productData);
+            result[cartItem.id] = items.reduce((acc, item) => {
+                if (getProductBaseName(item) !== baseName) return acc;
+                const primary = item.colors?.[0];
+                if (primary) acc[primary] = item;
+                return acc;
+            }, {});
+        });
+        return result;
+    }, [cartItems, items]);
 
     // 옵션변경 열기
     const handleOpenEdit = (item) => {
         setEditingKey(item.key);
         setTempOption({ size: item.size, color: item.color });
+        setPreviewImage(item.image);
+        setPreviewName(item.name);
     };
 
-    // 옵션변경 저장
+    // 색상 변경 → 이름·이미지 미리보기 동시 업데이트
+    const handleColorChange = (cartItemData, color) => {
+        const colorMap = colorProductMapByCartItem[cartItemData.id] || {};
+        const targetProduct = colorMap[color];
+
+        setTempOption((prev) => ({ ...prev, color }));
+        if (targetProduct?.mainImg) setPreviewImage(targetProduct.mainImg);
+        if (targetProduct?.name) setPreviewName(targetProduct.name);
+
+        // 색상 변경 시 사이즈도 첫 번째 가능한 사이즈로 리셋
+        const allSizes = targetProduct?.sizes || [];
+        const soldout = targetProduct?.soldout || [];
+        const firstAvailable = allSizes.find((_, idx) => !soldout[idx]);
+        if (firstAvailable) setTempOption({ color, size: firstAvailable });
+    };
+
+    // 옵션 저장
     const handleSaveOption = (item) => {
         if (!tempOption.size || !tempOption.color) {
             alert("사이즈와 컬러를 모두 선택해주세요.");
             return;
         }
-        // 같은 옵션이면 그냥 닫기
         if (tempOption.size === item.size && tempOption.color === item.color) {
             setEditingKey(null);
+            setPreviewImage(null);
+            setPreviewName(null);
             return;
         }
-        // 이미 동일 옵션 상품이 있으면 중복 방지
-        const newKey = `${item.id}-${tempOption.size}-${tempOption.color}`;
-        const isDuplicate = items.some((i) => i.key === newKey && i.key !== item.key);
-        if (isDuplicate) {
+        const colorMap = colorProductMapByCartItem[item.id] || {};
+        const targetProduct = colorMap[tempOption.color];
+        const newId = targetProduct?.id || item.id;
+        const newKey = `${newId}-${tempOption.size}-${tempOption.color}`;
+        if (cartItems.some((i) => i.key === newKey && i.key !== item.key)) {
             alert("이미 동일한 옵션의 상품이 장바구니에 있습니다.");
             return;
         }
         onUpdateOption(item.key, tempOption);
         setEditingKey(null);
+        setPreviewImage(null);
+        setPreviewName(null);
     };
 
-    const shippingFee = 0;
-    const totalPayment = productTotal + shippingFee;
+    const handleCancelEdit = () => {
+        setEditingKey(null);
+        setPreviewImage(null);
+        setPreviewName(null);
+    };
 
     return (
         <section className="cart-panel">
@@ -111,23 +162,19 @@ export default function Cart({ onClose }) {
 
             <div className="cart-panel-inner">
                 <div className="cart-header">
-                    <h2>Shopping Bag</h2>
+                    <h2>SHOPPING BAG</h2>
                     <button className="close-btn" type="button" onClick={onClose}>
                         <img src="/images/sub-cart/x-icon.svg" alt="x버튼" />
                     </button>
                 </div>
 
-                {items.length === 0 ? (
+                {cartItems.length === 0 ? (
                     <p className="cart-empty">쇼핑백이 비어있습니다</p>
                 ) : (
                     <div>
                         <div className="cart-select-row">
                             <label className="check-wrap">
-                                <input
-                                    type="checkbox"
-                                    checked={allChecked}
-                                    onChange={handleAllCheck}
-                                />
+                                <input type="checkbox" checked={allChecked} onChange={handleAllCheck} />
                                 <span>전체선택 ({selectedItems.length})</span>
                             </label>
                             <button
@@ -143,9 +190,25 @@ export default function Cart({ onClose }) {
                         </div>
 
                         <div className="cart-list">
-                            {items.map((item) => {
+                            {cartItems.map((item) => {
                                 const isChecked = checkedItems.includes(item.key);
                                 const isEditing = editingKey === item.key;
+                                const colorMap = colorProductMapByCartItem[item.id] || {};
+                                const productData = items.find((p) => p.id === item.id);
+
+                                // 색상 목록: colorMap 키 기준, 모든 사이즈 품절인 색상은 disabled
+                                const availableColors = (productData?.colors || [item.color]).filter(
+                                    (c) => colorMap[c] // colorMap에 없는 색상은 아예 제외
+                                );
+
+                                // 현재 선택된 색상의 상품 기준으로 사이즈 목록 결정
+                                const targetProductForSize = colorMap[tempOption.color] || productData;
+                                const allSizes = targetProductForSize?.sizes || [item.size];
+                                const soldoutFlags = targetProductForSize?.soldout || [];
+
+                                // 썸네일·이름: 편집 중이면 미리보기, 아니면 저장값
+                                const displayImage = isEditing && previewImage ? previewImage : item.image;
+                                const displayName = isEditing && previewName ? previewName : item.name;
 
                                 return (
                                     <div className="cart-item" key={item.key}>
@@ -159,52 +222,59 @@ export default function Cart({ onClose }) {
                                             </label>
 
                                             <div className="item-thumb">
-                                                <img src={item.image} alt={item.name} />
+                                                <img src={displayImage} alt={displayName} />
                                             </div>
 
                                             <div className="item-info">
-                                                <h3>{item.name}</h3>
+                                                {/* 이름: 색상 변경 시 실시간 미리보기 */}
+                                                <h3>{displayName}</h3>
 
-                                                {/* 옵션변경 토글 영역 */}
                                                 {isEditing ? (
                                                     <div className="option-edit-box">
                                                         <div className="option-edit-row">
                                                             <label>컬러</label>
-                                                            <input
-                                                                type="text"
+                                                            <select
                                                                 value={tempOption.color}
-                                                                onChange={(e) =>
-                                                                    setTempOption((prev) => ({ ...prev, color: e.target.value }))
-                                                                }
-                                                                placeholder="컬러 입력"
-                                                            />
+                                                                onChange={(e) => handleColorChange(item, e.target.value)}
+                                                            >
+                                                                {availableColors.map((color) => {
+                                                                    const colorProduct = colorMap[color];
+                                                                    // 해당 색상 상품의 모든 사이즈가 품절이면 disabled
+                                                                    const soldOut = isAllSoldOut(colorProduct);
+                                                                    return (
+                                                                        <option key={color} value={color} disabled={soldOut}>
+                                                                            {color}{soldOut ? " (품절)" : ""}
+                                                                        </option>
+                                                                    );
+                                                                })}
+                                                            </select>
                                                         </div>
                                                         <div className="option-edit-row">
                                                             <label>사이즈</label>
-                                                            <input
-                                                                type="text"
+                                                            <select
                                                                 value={tempOption.size}
                                                                 onChange={(e) =>
                                                                     setTempOption((prev) => ({ ...prev, size: e.target.value }))
                                                                 }
-                                                                placeholder="사이즈 입력"
-                                                            />
+                                                            >
+                                                                {allSizes.map((size, idx) => {
+                                                                    const soldOut = Boolean(soldoutFlags[idx]);
+                                                                    return (
+                                                                        <option key={size} value={size} disabled={soldOut}>
+                                                                            {size}{soldOut ? " (품절)" : ""}
+                                                                        </option>
+                                                                    );
+                                                                })}
+                                                            </select>
                                                         </div>
                                                         <div className="option-edit-btns">
-                                                            <button type="button" onClick={() => handleSaveOption(item)}>
-                                                                저장
-                                                            </button>
-                                                            <button type="button" onClick={() => setEditingKey(null)}>
-                                                                취소
-                                                            </button>
+                                                            <button type="button" onClick={() => handleSaveOption(item)}>저장</button>
+                                                            <button type="button" onClick={handleCancelEdit}>취소</button>
                                                         </div>
                                                     </div>
                                                 ) : (
-                                                    <div>
-                                                        <span
-                                                            className="option-change-btn"
-                                                            onClick={() => handleOpenEdit(item)}
-                                                        >
+                                                    <div className="change">
+                                                        <span className="option-change-btn" onClick={() => handleOpenEdit(item)}>
                                                             옵션변경
                                                         </span>
                                                         <p className="item-option">
@@ -214,19 +284,9 @@ export default function Cart({ onClose }) {
                                                 )}
 
                                                 <div className="item-qty">
-                                                    <button
-                                                        type="button"
-                                                        onClick={() => onUpdateQuantity(item.key, "minus")}
-                                                    >
-                                                        −
-                                                    </button>
+                                                    <button type="button" onClick={() => onUpdateQuantity(item.key, "minus")}>−</button>
                                                     <span>{item.count}</span>
-                                                    <button
-                                                        type="button"
-                                                        onClick={() => onUpdateQuantity(item.key, "plus")}
-                                                    >
-                                                        +
-                                                    </button>
+                                                    <button type="button" onClick={() => onUpdateQuantity(item.key, "plus")}>+</button>
                                                 </div>
 
                                                 <button
@@ -268,6 +328,7 @@ export default function Cart({ onClose }) {
                     </div>
                 )}
             </div>
+
             {showLogin && (
                 <Login
                     onClose={() => {

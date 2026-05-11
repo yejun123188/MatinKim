@@ -107,7 +107,7 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
                                             <p className="wish-item-name">{item.name}</p>
                                             {mode === "wish" && (
                                                 <p className="wish-item-option">
-                                                    {item.selectedSize || "-"} / {formatCount(item.quantity)}
+                                                    {item.selectedColor}/ {item.selectedSize || "-"} / {formatCount(item.quantity)}
                                                 </p>
                                             )}
                                             <p className="wish-item-price">
