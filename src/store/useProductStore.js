@@ -158,6 +158,19 @@ export const useProductStore = create((set, get) => ({
     set({ BestItems: items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE")) });
   },
 
+  // 선택한 아이템들만 장바구니에서 제거
+  onRemoveItems: (keys) => {
+    const cart = get().cartItem;
+    const updateCart = cart.filter((item) => !keys.includes(item.key));
+    localStorage.setItem("cartItem", JSON.stringify(updateCart));
+    set({
+      cartItem: updateCart,
+      cartCount: updateCart.length,
+      totalPrice: get().onTotal(updateCart),
+    });
+  },
+  //신상품(NEW IN)만 뽑는 메서드
+  //신상품아이템 저장할 배열
   NewItems: [],
   onNewMenus: () => {
     const { items } = get();
@@ -217,6 +230,35 @@ export const useProductStore = create((set, get) => ({
     localStorage.setItem("cartItem", JSON.stringify(updateCart));
     set({ cartItem: updateCart, totalPrice: get().onTotal(updateCart) });
   },
+  onRemoveItem: (key) => {
+    const cart = get().cartItem;
+    const updateCart = cart.filter((item) => item.key !== key);
+    localStorage.setItem("cartItem", JSON.stringify(updateCart));
+    set({
+      cartItem: updateCart,
+      cartCount: updateCart.length,
+      totalPrice: get().onTotal(updateCart),
+    });
+  },
+  onReduceItems: (orderedItems) => {
+    const cart = get().cartItem;
+
+    const updateCart = cart.reduce((acc, cartItem) => {
+      const ordered = orderedItems.find((o) => o.key === cartItem.key);
+      if (!ordered) {
+        // 주문 안 한 상품은 그대로
+        acc.push(cartItem);
+      } else {
+        const remaining = cartItem.count - ordered.quantity;
+        if (remaining > 0) {
+          // 수량이 남으면 차감해서 유지
+          acc.push({ ...cartItem, count: remaining });
+        }
+        // remaining <= 0 이면 제거 (push 안 함)
+      }
+      return acc;
+    }, []);
+
 
   onRemoveItem: (id, size) => {
     const cart = get().cartItem;
@@ -270,6 +312,22 @@ export const useProductStore = create((set, get) => ({
       );
     });
     set({});
+  },
+  onUpdateOption: (key, { size, color }) => {
+    const cart = get().cartItem;
+    const newKey = (item) => `${item.id}-${size}-${color}`;
+
+    const updateCart = cart.map((item) =>
+      item.key === key
+        ? { ...item, size, color, key: newKey(item) }
+        : item
+    );
+    localStorage.setItem("cartItem", JSON.stringify(updateCart));
+    set({
+      cartItem: updateCart,
+      cartCount: updateCart.length,
+      totalPrice: get().onTotal(updateCart),
+    });
   },
 
   //~~~위시리스트~~~~~~~~~~~~~~~~~~~~~

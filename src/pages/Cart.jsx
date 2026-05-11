@@ -62,8 +62,11 @@ export default function Cart({ onClose }) {
             alert("상품을 선택해주세요");
             return;
         }
+
+
         const orderItems = selectedItems.map((item) => ({
             id: item.id,
+            key: item.key,  // ← 이 줄 추가
             name: item.name,
             price: item.price,
             quantity: item.count,
@@ -178,7 +181,7 @@ export default function Cart({ onClose }) {
                                 className="delete-selected-btn"
                                 type="button"
                                 onClick={() => {
-                                    selectedItems.forEach((item) => onRemoveItem(item.id, item.size));
+                                    selectedItems.forEach((item) => onRemoveItem(item.key));
                                     setCheckedItems([]);
                                 }}
                             >
@@ -289,7 +292,7 @@ export default function Cart({ onClose }) {
                                                 <button
                                                     className="remove-btn"
                                                     type="button"
-                                                    onClick={() => onRemoveItem(item.id, item.size)}
+                                                    onClick={() => onRemoveItem(item.key)}
                                                 >
                                                     REMOVE
                                                 </button>
