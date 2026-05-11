@@ -47,7 +47,7 @@ export default function NewArrivals() {
                             slidesPerView={5}
                             spaceBetween={24}
                             // navigation={true}
-                            loop={true}
+                            loop={visibleNewItems.length > 5}
                             pagination={{
                                 type: 'progressbar',
                             }}
