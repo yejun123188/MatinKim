@@ -2,6 +2,8 @@
 
 .account-edit {
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 
   .account-edit-panel {
     @include g.userInfoPanel;
@@ -15,12 +17,14 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    min-width: 0;
   }
 
   .form-field {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 0;
     color: g.$text-sub-color2;
     font-size: g.$size-14-main;
 
@@ -28,9 +32,11 @@
     select {
       @include g.myTextBox;
       width: 100%;
+      min-width: 0;
       height: 40px;
       outline: none;
       font-size: g.$size-14-main;
+      box-sizing: border-box;
 
       &.error {
         border-color: g.$red-color;
@@ -59,6 +65,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    min-width: 0;
   }
 
   .address-row {
@@ -160,11 +167,234 @@
     }
 
     .withdraw {
-      @include g.myBtn2(
-        $c: g.$text-sub-color,
-        $bd: 1px solid g.$text-sub-color2,
-        $pd: 0
-      );
+      @include g.myBtn2($pd: 0);
+    }
+  }
+}
+
+@include g.respond(tablet) {
+  .account-edit {
+    .account-edit-panel {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 36px 32px 44px;
+    }
+
+    .address-row,
+    .phone-row,
+    .phone-verify-row {
+      button {
+        height: 36px;
+        font-size: 0.8125rem;
+      }
+    }
+
+    .account-edit-buttons {
+      button {
+        width: 110px;
+        height: 36px;
+        font-size: 0.8125rem;
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .account-edit {
+    .account-edit-panel {
+      gap: 24px;
+      padding: 20px 14px 26px;
+    }
+
+    .account-edit-column {
+      gap: 22px;
+    }
+
+    .form-field {
+      gap: 8px;
+      font-size: 0.8125rem;
+
+      input,
+      select {
+        height: 34px;
+        padding: 0 8px;
+        font-size: 0.8125rem;
+      }
+
+      select {
+        padding-right: 24px;
+        background-position: right 8px center;
+      }
+
+      em {
+        font-size: 0.6875rem;
+        line-height: 1.45;
+        white-space: normal;
+      }
+    }
+
+    .address-row,
+    .phone-row,
+    .phone-verify-row {
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .address-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 86px;
+      gap: 8px;
+
+      input {
+        max-width: none;
+      }
+
+      button {
+        width: 86px;
+        height: 34px;
+        font-size: 0.75rem;
+      }
+    }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 58px 6px minmax(0, 1fr) 6px minmax(0, 1fr);
+      gap: 6px;
+
+      select,
+      input {
+        width: 100%;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+      }
+
+      button {
+        grid-column: 1 / -1;
+        width: 100%;
+        height: 34px;
+        font-size: 0.75rem;
+      }
+    }
+
+    .phone-verify-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 72px;
+      gap: 8px;
+
+      input,
+      button {
+        width: 100%;
+      }
+
+      button {
+        height: 34px;
+        font-size: 0.75rem;
+      }
+    }
+
+    .birth-row {
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 5px;
+
+      > span {
+        flex: 0 0 auto;
+        font-size: 0.75rem;
+      }
+
+      > input {
+        flex: 1 1 30px;
+        min-width: 0;
+        width: auto;
+        padding: 0 4px;
+        font-size: 0.75rem;
+      }
+
+      label {
+        flex: 0 0 auto;
+        gap: 3px;
+        font-size: 0.6875rem;
+
+        input {
+          flex: 0 0 12px;
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .account-edit-buttons {
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 24px;
+
+      button,
+      .submit {
+        width: 100%;
+        height: 34px;
+        margin-left: 0;
+        font-size: 0.75rem;
+      }
+
+      .submit {
+        order: 1;
+      }
+
+      .cancel {
+        order: 2;
+      }
+
+      .withdraw {
+        order: 3;
+      }
+    }
+  }
+}
+
+@include g.respond(small) {
+  .account-edit {
+    .account-edit-panel {
+      padding: 18px 12px 24px;
+    }
+
+    .address-row {
+      grid-template-columns: minmax(0, 1fr) 78px;
+
+      button {
+        width: 78px;
+        font-size: 0.6875rem;
+      }
+    }
+
+    .phone-row {
+      grid-template-columns: 52px 5px minmax(0, 1fr) 5px minmax(0, 1fr);
+      gap: 5px;
+    }
+
+    .birth-row {
+      gap: 4px;
+
+      > input {
+        flex-basis: 26px;
+        padding: 0 3px;
+        font-size: 0.6875rem;
+      }
+
+      label {
+        gap: 2px;
+        font-size: 0.625rem;
+
+        input {
+          flex-basis: 11px;
+          width: 11px;
+          height: 11px;
+        }
+      }
     }
   }
 }

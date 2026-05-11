@@ -6,12 +6,14 @@ import "./scss/WishList.scss";
 import CartPopup from "../pages/CartPopup";
 import Cart from "../pages/Cart";
 import UserInfoNone from "./UserInfoNone";
-import WishItem from "./WishItem"; // ✅ 추가
+import WishItem from "./WishItem";
 
 export default function WishList() {
   const navigate = useNavigate();
+
   const { user } = useAuthStore();
-  const { wishList, onRemoveWish, onLoadWishList, onAddCart } = useProductStore();
+
+  const { wishList, onRemoveWish, onLoadWishList } = useProductStore();
 
   const [checkedKeys, setCheckedKeys] = useState([]);
   const [showCartPopup, setShowCartPopup] = useState(false);
@@ -22,15 +24,13 @@ export default function WishList() {
     if (user?.uid) {
       onLoadWishList(user.uid);
     }
-  }, [user]);
+  }, [user?.uid, onLoadWishList]);
 
-  // 삭제된 상품 체크목록 제거
   useEffect(() => {
     const validKeys = wishList.map((p) => p.key);
     setCheckedKeys((prev) => prev.filter((k) => validKeys.includes(k)));
   }, [wishList]);
 
-  // 품절 아이템 아래로 정렬
   const sortedWishList = [...wishList].sort(
     (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0)
   );
@@ -39,8 +39,10 @@ export default function WishList() {
     sortedWishList.length > 0 &&
     sortedWishList.every((p) => checkedKeys.includes(p.key));
 
-  const handleAllCheck = (e) => {
-    setCheckedKeys(e.target.checked ? sortedWishList.map((p) => p.key) : []);
+  const handleAllCheck = (event) => {
+    setCheckedKeys(
+      event.target.checked ? sortedWishList.map((p) => p.key) : []
+    );
   };
 
   const handleItemCheck = (key) => {
@@ -54,11 +56,18 @@ export default function WishList() {
       alert("삭제할 상품을 선택해주세요.");
       return;
     }
+
+    const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+    if (!ok) return;
+
     const targets = wishList.filter((p) => checkedKeys.includes(p.key));
+
     for (const p of targets) {
       await onRemoveWish(p.key, user.uid);
     }
+
     setCheckedKeys([]);
+    alert("위시리스트에서 상품이 삭제되었습니다.");
   };
 
   const handleSelectedOrder = () => {
@@ -66,23 +75,45 @@ export default function WishList() {
       alert("주문할 상품을 선택해주세요.");
       return;
     }
+
     const targets = wishList.filter((p) => checkedKeys.includes(p.key));
+
     const soldOutItems = targets.filter((p) => Boolean(p.isSoldOut));
+
     if (soldOutItems.length > 0) {
       const names = soldOutItems.map((p) => p.name).join(", ");
       alert(`아래 품절 상품은 주문이 불가합니다:\n${names}`);
       return;
     }
-    alert(`${targets.length}개 상품 주문 진행`);
+
+    const ok = window.confirm("선택한 상품을 주문하시겠습니까?");
+    if (!ok) return;
+
+    navigate("/payment", {
+      state: {
+        orderItems: targets.map((item) => ({
+          id: item.id,
+          brand: "MATIN KIM",
+          name: item.name,
+          option: `${item.selectedColor || "-"} / ${
+            item.selectedSize || "-"
+          }`,
+          quantity: item.quantity || 1,
+          price:
+            item.discountRate > 0 ? item.discountPrice : item.price,
+          image: item.mainImg || item.hoverImg || "",
+          size: item.selectedSize,
+          color: item.selectedColor,
+        })),
+      },
+    });
   };
 
-  // ✅ WishItem에서 장바구니 버튼 클릭 시 호출
   const handleCartPopup = (wish) => {
     setCartItem(wish);
     setShowCartPopup(true);
   };
 
-  // 비로그인
   if (!user) {
     return (
       <div className="wishlist-wrap">
@@ -123,7 +154,6 @@ export default function WishList() {
                 key={product.key}
                 className={`items ${product.isSoldOut ? "is-soldout" : ""}`}
               >
-                {/* ✅ 체크박스는 선택 상태 관리가 WishList에 있으므로 여기서 유지 */}
                 <div>
                   <input
                     type="checkbox"
@@ -132,7 +162,6 @@ export default function WishList() {
                   />
                 </div>
 
-                {/* ✅ 상품 내용은 WishItem에 위임 */}
                 <WishItem
                   wish={product}
                   variant="list"
@@ -149,6 +178,7 @@ export default function WishList() {
           <button className="Bbtn" onClick={handleSelectedOrder}>
             선택상품주문
           </button>
+
           <button className="Wbtn" onClick={handleSelectedDelete}>
             선택삭제
           </button>

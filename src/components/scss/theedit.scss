@@ -6,7 +6,7 @@
   >h2,
   .section-title {
     text-align: center;
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
 
     h3,
     strong,
@@ -17,16 +17,6 @@
       color: #222;
       letter-spacing: -0.02em;
       margin-bottom: 8px;
-    }
-
-    p,
-    span,
-    .subtitle {
-      font-size: 15px;
-      line-height: 1.4;
-      font-weight: 300;
-      color: #9a9a9a;
-      letter-spacing: -0.02em;
     }
   }
 }
@@ -322,8 +312,7 @@
       }
 
       p,
-      span,
-      .subtitle {
+      span {
         font-size: 13px;
       }
     }
@@ -384,8 +373,7 @@
       }
 
       p,
-      span,
-      .subtitle {
+      span {
         font-size: 12px;
       }
     }

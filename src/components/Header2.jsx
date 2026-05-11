@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./scss/Header.scss";
 import { useProductStore } from "../store/useProductStore";
 import Login from "../pages/Login";
@@ -38,6 +38,7 @@ const photoMenu = [
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
   const { menus, isCartOpen, openCart, closeCart } = useProductStore();
   const [isShopHovered, setIsShopHovered] = useState(false);
@@ -61,6 +62,11 @@ export default function Header() {
       document.body.style.overflow = "unset";
     };
   }, [isCartOpen]);
+
+  const handleSearchClick = () => {
+    setIsShopHovered(false);
+    navigate("/search");
+  };
 
   return (
     <>
@@ -96,22 +102,23 @@ export default function Header() {
             </div>
             <div className="header-right">
               <ul className="gnb-list">
-                <li>
-                  <input type="text" placeholder="SEARCH" />
+                <li className="header-search">
+                  <button type="button" onClick={handleSearchClick}>
+                    <img src="/images/icon/search-icon-black.svg" alt="검색" />
+                  </button>
                 </li>
                 <li className="header-cart">
-                  <Link
-                    onClick={openCart}>
-                    <img src="/images/header-icon/cart.svg" alt="" />
+                  <button type="button" onClick={openCart}>
+                    <img src="/images/icon/cart-icon-black.svg" alt="장바구니" />
                     <span className="cart-num">
                       <span>1</span>
                     </span>
-                  </Link>
+                  </button>
                 </li>
                 <li className="member">
                   <Link to="/userInfo">
                     {/* <button onClick={() => setLoginOpen(true)}> */}
-                    <img src="/images/header-icon/user.svg" alt="" />
+                    <img src="/images/icon/user-icon-black.svg" alt="회원정보" />
                     {/* </button> */}
                   </Link>
                 </li>
