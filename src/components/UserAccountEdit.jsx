@@ -186,6 +186,8 @@ function UserAccountEditForm({
       birth: `${form.birthYear}-${form.birthMonth}-${form.birthDay}`,
       calendarType: form.calendarType,
     });
+
+    alert("회원정보가 수정되었습니다.");
   };
 
   const handleWithdraw = async () => {
@@ -198,6 +200,7 @@ function UserAccountEditForm({
     const isSuccess = await onWithdraw();
     if (isSuccess) {
       onClearUserProductData();
+      alert("회원탈퇴가 완료되었습니다.");
       navigate("/");
     }
   };

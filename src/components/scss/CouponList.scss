@@ -86,3 +86,87 @@
     }
   }
 }
+
+@include g.respond(tablet) {
+  .couponlist-wrap {
+    .coupon-top,
+    .coupon-bottom {
+      padding: 20px;
+    }
+
+    .coupon-bottom {
+      overflow-x: hidden;
+
+      table {
+        table-layout: fixed;
+        min-width: 0;
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .couponlist-wrap {
+    .coupon-top,
+    .coupon-bottom {
+      padding: 14px;
+    }
+
+    .coupon-top {
+      .coupon-num {
+        align-items: stretch;
+        flex-direction: column;
+
+        input,
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .coupon-bottom {
+      margin-left: -14px;
+      margin-right: -14px;
+      width: calc(100% + 28px);
+      overflow-x: hidden;
+
+      .mycoupon-top {
+        padding: 0 14px 14px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      table {
+        table-layout: fixed;
+        min-width: 0;
+
+        th,
+        td {
+          padding: 10px 4px;
+          font-size: 11px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        th:nth-child(1) {
+          width: 38%;
+        }
+
+        th:nth-child(2) {
+          width: 24%;
+        }
+
+        th:nth-child(3) {
+          width: 38%;
+        }
+
+        th:nth-child(n + 4),
+        td:nth-child(n + 4) {
+          display: none;
+        }
+      }
+    }
+  }
+}
