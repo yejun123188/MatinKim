@@ -1,320 +1,240 @@
 @use "../../App.scss" as g;
 
 .new-arrivals {
-  // background-color: #f5f5f5;
-  // padding: 80px 0;
+  // 다른 섹션 inner와 동일한 시작점 기준
+  --section-side-space: max(0px, calc((100vw - 1440px) / 2));
+  --weeklybest-card-width: calc((min(100vw, 1440px) - 96px) / 5);
 
   .inner {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding-left: max(20px, calc((100vw - 1440px) / 2));
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
     box-sizing: border-box;
   }
 
-  .new-new {
-    display: flex;
-    align-items: flex-start;
-    gap: 100px;
+  .section-title {
+    margin-bottom: 32px;
   }
 
-  .new-new>.text-box {
-    width: 280px;
-    min-width: 280px;
-
-    .matin-colabo,
-    .collection-name {
-      font-size: g.$size-14-main;
-      font-weight: g.$Regular;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .matin-colabo {
-      padding-bottom: 6px;
-      font-weight: g.$Bold;
-      font-size: g.$size-12-sub;
-    }
-
-    .newarrivals-title {
-      padding-bottom: 30px;
-      color: g.$text-main-color;
-      font-size: 50px;
-      font-weight: 900;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-
-    hr {
-      opacity: 0.5;
-    }
-
-    .collection-name {
-      // padding-bottom: 12px;
-      font-size: g.$size-12-sub;
-      color: g.$text-sub-color2;
-      padding-top: 30px;
-    }
-
-    .collection-title {
-      margin-bottom: 12px;
-      color: g.$text-main-color;
-      font-size: g.$size-18;
-      font-weight: 900;
-    }
-
-    .collection-text {
-      margin: 0;
-      padding-bottom: 32px;
-      color: g.$text-sub-color;
-      font-size: g.$size-12-sub;
-      line-height: 1.5;
-      white-space: pre-line;
-      opacity: 0.7;
-    }
-
-    .button-box {
-      display: inline-flex;
-
-      a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 42px;
-        padding: 10px 20px;
-        border: 1px solid rgba(g.$main-color, 0.2);
-        background: g.$main-color;
-        color: g.$white-color;
-        font-size: g.$size-14-main;
-        font-weight: g.$Regular;
-        line-height: 1;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition:
-          background-color 0.5s ease,
-          color 0.5s ease,
-          border-color 0.5s ease;
-
-        &:hover {
-          border-color: g.$main-color;
-          color: g.$main-color;
-          background-color: g.$white-color;
-        }
-      }
-    }
+  .slide-outer {
+    width: 100%;
+    overflow: hidden;
   }
 
-  .newitem-list-box {
-    flex: 1;
-    min-width: 0;
+  .slide-wrap {
+    margin-left: var(--section-side-space);
 
     .swiper {
-      overflow: hidden;
+      overflow: visible;
       padding-bottom: 28px;
     }
 
-    .swiper-slide {
-      overflow: visible;
+    .swiper-wrapper {
+      transition-timing-function: ease;
     }
 
     .swiper-slide {
+      width: var(--weeklybest-card-width) !important;
+      overflow: visible;
       height: auto;
     }
+  }
 
-    .product-card {
-      position: relative;
-      width: 100%;
-      box-sizing: border-box;
-      padding-bottom: 10px;
+  .progress-bar-wrap {
+    width: 100%;
+    padding: 0 var(--section-side-space);
+    margin-top: 4px;
+    box-sizing: border-box;
+  }
+
+  .progress-bar-track {
+    width: 100%;
+    height: 3px;
+    background: rgba(g.$main-color, 0.15);
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: g.$main-color;
+  }
+
+  .product-card {
+    position: relative;
+    width: var(--weeklybest-card-width);
+    min-width: 0;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    background: g.$white-color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -8px -8px -104px;
+      border: 1px solid g.$main-color;
       background: g.$white-color;
-      transition: transform 0.5s ease, border-color 0.2s ease;
-      border: 1px solid rgba(g.$main-color, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 0;
+    }
 
-      &::before {
-        content: '';
+    .img-box {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      width: 100%;
+      aspect-ratio: 1 / 1.3;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      img {
         position: absolute;
-        inset: -8px -8px -104px;
-        border: 1px solid g.$main-color;
-        background: g.$white-color;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease;
-        z-index: 0;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translateX(-50%);
+        transition: 0.3s;
       }
 
-      .img-box {
-        position: relative;
+      .main-img {
+        opacity: 1;
+      }
+
+      .hover-img {
+        opacity: 0;
+      }
+
+      .badge-wrap {
+        position: absolute;
+        top: 12px;
+        right: 12px;
         z-index: 2;
         display: flex;
-        width: 100%;
-        aspect-ratio: 1 / 1.3;
-        overflow: hidden;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
-        cursor: pointer;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
 
-        img {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transform: translateX(-50%);
-          transition: 0.3s;
-        }
-
-        .main-img {
-          opacity: 1;
-        }
-
-        .hover-img {
-          opacity: 0;
-        }
-
-        .badge-wrap {
-          position: absolute;
-          top: 12px;
-          right: 12px;
-          z-index: 2;
-          display: flex;
-          flex-direction: row;
+        .badge {
+          display: inline-flex;
           align-items: center;
-          flex-wrap: wrap;
-          justify-content: flex-end;
-          gap: 4px;
-
-          .badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 8px 3px;
-            border: 1px solid g.$main-color;
-            background: g.$main-color;
-            color: g.$white-color;
-            font-size: 0.625rem;
-            font-weight: g.$Bold;
-            letter-spacing: 0.05em;
-            line-height: 1;
-          }
-
-          .discount-badge {
-            background: g.$red-color;
-            border-color: g.$red-color;
-            color: g.$white-color;
-          }
-
-          .soldout-badge {
-            background: #8c8c8c;
-            border-color: #8c8c8c;
-            color: g.$white-color;
-          }
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.05);
-          opacity: 1;
-        }
-      }
-
-      &:hover {
-        z-index: 1;
-
-        .img-box {
-          .hover-img {
-            opacity: 1;
-          }
-        }
-      }
-
-      .text-box {
-        position: relative;
-        z-index: 2;
-        width: auto;
-        min-width: 0;
-        margin: 20px 20px 20px;
-
-        .brand-name {
-          margin: 0 0 7px;
-          font-size: g.$size-12-sub;
-          font-weight: 900;
+          justify-content: center;
+          padding: 6px 8px 3px;
+          border: 1px solid g.$main-color;
+          background: g.$main-color;
+          color: g.$white-color;
+          font-size: 0.625rem;
+          font-weight: g.$Bold;
+          letter-spacing: 0.05em;
           line-height: 1;
         }
 
-        h3 {
-          font-size: g.$size-14-main;
-          font-weight: g.$Regular;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
+        .discount-badge {
+          background: g.$red-color;
+          border-color: g.$red-color;
+          color: g.$white-color;
         }
 
-        .price-wrap {
-          padding: 14px 0 0;
-          display: flex;
-          gap: 8px;
-          align-items: center;
-
-          .discount-price,
-          .discount-rate {
-            font-size: g.$size-18;
-            font-weight: g.$Bold;
-          }
-
-          .discount-rate {
-            color: g.$red-color;
-          }
-
-          .price {
-            font-size: g.$size-14-main;
-            color: g.$text-sub-color2;
-            opacity: 0.7;
-            text-decoration: line-through;
-          }
+        .soldout-badge {
+          background: #8c8c8c;
+          border-color: #8c8c8c;
+          color: g.$white-color;
         }
       }
 
-      .color-wrap {
-        position: relative;
-        z-index: 2;
-        padding: 0 20px 10px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7px;
-
-        .color-chip {
-          display: block;
-          width: 12px;
-          height: 12px;
-          border: 1px solid rgba(g.$main-color, 0.3);
-          flex-shrink: 0;
-          cursor: pointer;
-        }
-      }
-
-      .card-size-list {
-        display: none;
-      }
-
-      .card-action-bar {
-        display: none;
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.05);
+        opacity: 1;
       }
     }
 
-    .swiper-pagination-progressbar {
-      top: auto;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: rgba(g.$main-color, 0.15);
+    &:hover {
+      z-index: 1;
 
-      .swiper-pagination-progressbar-fill {
-        background: g.$main-color;
+      .img-box {
+        .hover-img {
+          opacity: 1;
+        }
       }
+    }
+
+    .text-box {
+      position: relative;
+      z-index: 2;
+      width: auto;
+      min-width: 0;
+      margin: 20px 20px 20px 0;
+
+      .brand-name {
+        margin: 0 0 7px;
+        font-size: g.$size-12-sub;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      h3 {
+        font-size: g.$size-14-main;
+        font-weight: g.$Regular;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .price-wrap {
+        padding: 14px 0 0;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        .discount-price,
+        .discount-rate {
+          font-size: g.$size-18;
+          font-weight: g.$Bold;
+        }
+
+        .discount-rate {
+          color: g.$red-color;
+        }
+
+        .price {
+          font-size: g.$size-14-main;
+          color: g.$text-sub-color2;
+          opacity: 0.7;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .color-wrap {
+      position: relative;
+      z-index: 2;
+      padding: 0 0 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+
+      .color-chip {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid rgba(g.$main-color, 0.3);
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+    }
+
+    .card-size-list,
+    .card-action-bar {
+      display: none;
     }
   }
 }

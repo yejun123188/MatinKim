@@ -27,8 +27,8 @@ const statusCode = {
   배송완료: "DONE",
 };
 
-// 등급별 색상 정의
 const gradeColor = {
+  FRIENDS: "#4A3AFF",
   BASIC: "#888",
   SILVER: "#A0A0A0",
   GOLD: "#D4AF37",
@@ -55,14 +55,17 @@ const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
 
 const parseOrderDate = (dateString) => {
   if (!dateString) return null;
+
   if (/^\d{8}$/.test(String(dateString))) {
     const str = String(dateString);
     const year = str.slice(0, 4);
     const month = str.slice(4, 6);
     const day = str.slice(6, 8);
     const time = new Date(`${year}-${month}-${day}`).getTime();
+
     return Number.isNaN(time) ? null : time;
   }
+
   const time = new Date(dateString).getTime();
   return Number.isNaN(time) ? null : time;
 };
@@ -83,8 +86,7 @@ export default function UserInfoMain() {
     onFetchSavedMoney,
   } = useAuthStore();
 
-  const { wishList, onLoadWishList, onRemoveWish, onAddCart } =
-    useProductStore();
+  const { wishList, onLoadWishList } = useProductStore();
 
   useEffect(() => {
     onFetchCoupons();
@@ -95,12 +97,13 @@ export default function UserInfoMain() {
     if (user?.uid) {
       onLoadWishList(user.uid);
     }
-  }, [user, onLoadWishList]);
+  }, [user?.uid, onLoadWishList]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setNow(Date.now());
     }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
@@ -116,12 +119,16 @@ export default function UserInfoMain() {
       .filter((order) => {
         if (!orderStatusList.includes(order.status)) return false;
         if (order.status !== "배송완료") return true;
+
         const createdAtTime = new Date(order.createdAt).getTime();
+
         if (!Number.isNaN(createdAtTime)) {
           return now - createdAtTime < DELIVERY_COMPLETE_MS;
         }
+
         const orderDateTime = parseOrderDate(order.date);
         if (!orderDateTime) return false;
+
         return now - orderDateTime < DELIVERY_COMPLETE_MS;
       });
   }, [now]);
@@ -132,20 +139,21 @@ export default function UserInfoMain() {
 
   const purchaseAmount = Number(
     localPurchaseInfo?.purchaseAmount ??
-    user?.purchaseAmount ??
-    user?.orderPrice ??
-    userInfo.purchaseAmount
+      user?.purchaseAmount ??
+      user?.orderPrice ??
+      userInfo.purchaseAmount
   );
 
   const purchaseCount = Number(
     localPurchaseInfo?.purchaseCount ??
-    user?.purchaseCount ??
-    user?.orderCount ??
-    userInfo.purchaseCount
+      user?.purchaseCount ??
+      user?.orderCount ??
+      userInfo.purchaseCount
   );
 
   const grade = getMemberGrade(purchaseAmount);
   const membershipGuide = getMembershipGuide(grade);
+  const membershipGuideParts = membershipGuide.split(/,\s*/);
 
   const totalPoint = savedMoneySummary?.totalPoint || 0;
   const couponCount = user ? couponList.length : 0;
@@ -154,72 +162,48 @@ export default function UserInfoMain() {
     (a, b) => (a.isSoldOut ? 1 : 0) - (b.isSoldOut ? 1 : 0)
   );
 
-  const getWishPrice = (wish) =>
-    wish.discountRate > 0 ? wish.discountPrice : wish.price;
-
-  const handleBuyNow = (wish) => {
-    if (wish.isSoldOut) return;
-    navigate("/payment", {
-      state: {
-        orderItems: [
-          {
-            id: wish.id,
-            brand: "MATIN KIM",
-            name: wish.name,
-            option: `${wish.selectedColor || "-"} / ${wish.selectedSize || "-"}`,
-            quantity: wish.quantity || 1,
-            price: getWishPrice(wish),
-            image: wish.mainImg || wish.hoverImg || "",
-          },
-        ],
-      },
-    });
-  };
-
-  const handleAddCart = (wish) => {
-    if (wish.isSoldOut) return;
-    const item = {
-      id: wish.id,
-      name: wish.name,
-      price: getWishPrice(wish),
-      mainImg: wish.mainImg,
-      image: wish.mainImg || wish.hoverImg,
-      key: wish.key || `${wish.id}-${wish.selectedSize}-${wish.selectedColor}`,
-      size: wish.selectedSize,
-      color: wish.selectedColor,
-      count: wish.quantity || 1,
-    };
-    onAddCart(item);
-    setCartItem(wish);
-    setShowCartPopup(true);
-  };
-
-  const handleRemoveWish = async (wish) => {
-    await onRemoveWish(wish.key, user?.uid);
-    alert("상품이 삭제되었습니다");
-  };
-
   return (
     <div className="main">
       <div className="frist-line">
         <UserInfoMainBox title="Account Informations" className="my-info">
           <div className="my-info-wrap">
+            <p>
+              반가워요! <strong>{displayName}</strong> 님
+            </p>
+
             <ul className="myinfo-list">
               <li>
                 <div>
                   <p>{displayName}님은</p>
-                  <p>
-                    <strong style={{ color: gradeColor[grade] }}>
+
+                  <p className="grade-line">
+                    <strong
+                      style={{
+                        color: gradeColor[grade] || gradeColor.FRIENDS,
+                      }}
+                    >
                       {grade} 등급
                     </strong>
                     입니다.
+
+                    <span className="question">
+                      <img src="./images/userinfo/question.svg" alt="question" />
+
+                      <span>
+                        {membershipGuideParts.map((part, index) => (
+                          <React.Fragment key={`${part}-${index}`}>
+                            {index > 0 && (
+                              <span className="guide-comma">, </span>
+                            )}
+                            <span className="guide-part">{part}</span>
+                          </React.Fragment>
+                        ))}
+                      </span>
+                    </span>
                   </p>
                 </div>
-                <div className="question">
-                  <img src="./images/userinfo/question.svg" alt="question" />
-                  <p>{membershipGuide}</p>
-                </div>
               </li>
+
               <li>
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
@@ -258,6 +242,7 @@ export default function UserInfoMain() {
                   <div className="img-box">
                     <img src={order.img} alt={order.name} />
                   </div>
+
                   <div className="text-box">
                     <div className={`status status-${statusCode[order.status]}`}>
                       {order.status === "배송중" && (
@@ -265,6 +250,7 @@ export default function UserInfoMain() {
                       )}
                       {order.status}
                     </div>
+
                     <div className="product-text">
                       <p className="order-name">{order.name}</p>
                       <p className="order-count">
@@ -294,7 +280,7 @@ export default function UserInfoMain() {
               {sortedWishList.map((wish) => (
                 <SwiperSlide
                   className={`wish-product${wish.isSoldOut ? " soldout" : ""}`}
-                  key={wish.key}
+                  key={wish.key || wish.id}
                 >
                   <WishItem
                     wish={wish}
@@ -327,6 +313,7 @@ export default function UserInfoMain() {
           }}
         />
       )}
+
       {showCart && <Cart onClose={() => setShowCart(false)} />}
     </div>
   );

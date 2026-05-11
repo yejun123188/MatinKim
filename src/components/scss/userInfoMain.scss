@@ -7,6 +7,7 @@
 
   .frist-line {
     display: flex;
+    align-items: stretch;
     gap: 24px;
 
     .my-info {
@@ -35,22 +36,40 @@
             display: flex;
             align-items: flex-end;
             gap: 12px;
+
+            > div {
+              min-width: 0;
+            }
+
             p {
               font-size: 1.5rem;
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
             }
+
+            .grade-line {
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+              max-width: 100%;
+              overflow: visible;
+              text-overflow: clip;
+            }
+
             .question {
               position: relative;
-              display: flex;
-              width: 70%;
+              display: inline-flex;
+              flex: 0 0 auto;
+              align-items: center;
+              width: auto;
 
               img {
-                padding: 5px 0;
+                display: block;
+                padding: 0;
               }
 
-              p {
+              span {
                 position: absolute;
                 left: 25px;
                 top: 15px;
@@ -61,12 +80,26 @@
                 padding: 5px 12px;
                 border-radius: 0 8px 8px 8px;
                 opacity: 0;
-                white-space: pre-line;
+                white-space: nowrap;
                 overflow: visible;
                 text-overflow: clip;
                 transition: opacity 1s ease 2s;
+
+                .guide-comma,
+                .guide-part {
+                  position: static;
+                  display: inline;
+                  padding: 0;
+                  background: transparent;
+                  border-radius: 0;
+                  opacity: 1;
+                  font-size: inherit;
+                  line-height: inherit;
+                  white-space: inherit;
+                  transition: none;
+                }
               }
-              img:hover + p {
+              img:hover + span {
                 opacity: 1;
                 transition: opacity 0.5s ease;
               }
@@ -91,6 +124,7 @@
         background-color: #f5f5f5;
         width: 100%;
         height: 100%;
+        min-height: 100%;
 
         li {
           display: flex;
@@ -102,6 +136,7 @@
           border: 1px solid #e8e8e8;
           width: 100%;
           height: 100%;
+          min-height: 0;
 
           span {
             font-size: g.$size-16;
@@ -126,7 +161,8 @@
         display: flex;
         gap: 20px;
         min-width: 420px;
-        min-height: 190px;
+        height: 210px;
+        min-height: 210px;
         padding: 20px;
         background-color: #ffffff;
         border: 1px solid #e8e8e8;
@@ -149,6 +185,11 @@
 
         .text-box {
           width: 250px;
+          height: 150px;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
 
           .status {
             display: flex;
@@ -167,6 +208,7 @@
           }
 
           .order-name {
+            display: block;
             width: 100%;
             min-width: 0;
             white-space: nowrap;
@@ -201,7 +243,8 @@
         display: flex;
         gap: 20px;
         min-width: 420px;
-        height: 190px;
+        height: 210px;
+        min-height: 210px;
         padding: 20px;
         background-color: #ffffff;
         border: 1px solid #e8e8e8;
@@ -223,10 +266,18 @@
         }
         .text-box {
           width: 250px;
+          height: 150px;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
           .text-wrap {
             margin-bottom: 15px;
+            min-width: 0;
 
             .wish-name {
+              display: block;
               width: 100%;
               min-width: 0;
               white-space: nowrap;
@@ -248,6 +299,14 @@
                 color: g.$text-sub-color2;
                 font-size: g.$size-14-main;
                 text-decoration: line-through;
+              }
+
+              .discount-rate {
+                color: #e74c3c;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 600;
+                text-decoration: none;
               }
             }
 
@@ -271,6 +330,169 @@
               @include g.myBtn2($pd: 0);
               width: 90px;
               height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include g.respond(tablet) {
+  .main {
+    gap: 28px;
+
+    .frist-line {
+      flex-direction: column;
+
+      .my-info,
+      .my-wallet {
+        flex: none;
+      }
+
+      .my-wallet {
+        .my-wallet-list {
+          flex-direction: row;
+
+          li {
+            min-height: 120px;
+          }
+        }
+      }
+    }
+
+    .my-order,
+    .my-wish {
+      .order-list,
+      .wish-list {
+        .order-product,
+        .wish-product {
+          min-width: 340px;
+          height: 190px;
+          min-height: 190px;
+        }
+      }
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .main {
+    gap: 24px;
+
+    .frist-line {
+      .my-info {
+        .my-info-wrap {
+          padding: 24px 20px;
+
+          p {
+            font-size: 1.5rem;
+          }
+
+          .myinfo-list {
+            li {
+              align-items: flex-start;
+              flex-direction: column;
+
+              p {
+                font-size: 1.125rem;
+              }
+
+              .grade-line {
+                display: inline-flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 4px;
+                max-width: 100%;
+                overflow: visible;
+              }
+
+              .question {
+                width: auto;
+
+                img {
+                  width: 14px;
+                  height: 14px;
+                }
+
+                span {
+                  max-width: calc(100vw - 90px);
+                  white-space: normal;
+
+                  .guide-comma {
+                    display: none;
+                  }
+
+                  .guide-part {
+                    display: block;
+                    white-space: nowrap;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .my-wallet {
+        .my-wallet-list {
+          flex-direction: column;
+          gap: 14px;
+
+          li {
+            min-height: 96px;
+            padding: 20px;
+          }
+        }
+      }
+    }
+
+    .my-order,
+    .my-wish {
+      .order-list,
+      .wish-list {
+        .order-product,
+        .wish-product {
+          align-items: center;
+          flex-direction: row;
+          gap: 14px;
+          min-width: min(360px, calc(100vw - 48px));
+          height: 156px;
+          min-height: 156px;
+          padding: 16px;
+
+          .img-box {
+            width: 82px;
+            height: 124px;
+            flex: 0 0 82px;
+            aspect-ratio: auto;
+          }
+
+          .text-box {
+            height: 124px;
+            min-width: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .my-wish {
+      .wish-list {
+        .wish-product {
+          .text-box {
+            .button-wrap {
+              flex-wrap: wrap;
+              gap: 6px;
+
+              .Bbtn,
+              .Wbtn {
+                flex: 1 1 76px;
+                min-width: 0;
+                width: auto;
+                height: 30px;
+                font-size: 0.6875rem;
+              }
             }
           }
         }

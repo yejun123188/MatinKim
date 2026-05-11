@@ -32,6 +32,7 @@ import OrderComplete from "./pages/OrderComplete";
 import OrderLookup from "./pages/OrderLookup";
 import QnaWrite from "./pages/QnaWrite";
 import InquiryList from "./components/InquiryList";
+import Search from "./pages/Search";
 import FindId from "./pages/FindId";
 import InquiryDetail from "./components/InquiryDetail";
 import FindPw from "./pages/FindPw";
@@ -69,6 +70,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/:category1" element={<ProductList />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />

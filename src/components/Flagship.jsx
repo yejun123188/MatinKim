@@ -36,11 +36,9 @@ export default function Flagship() {
                         </Swiper>
                     </div>
                     <div className='notice-wrap'>
-                        <img src="./images/main-flagship/flagshipbg.png" alt="" />
                         <div className="text-box">
                             <div className="title">
-                                <h4>SPECIAL</h4>
-                                <h4>PROMOTION</h4>
+                                <h4>SPECIAL<br />PROMOTION</h4>
                             </div>
                             <div className="sale">
                                 <p className="per">20%</p>

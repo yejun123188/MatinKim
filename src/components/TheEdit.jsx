@@ -53,7 +53,7 @@ export default function TheEdit() {
     return (
         <section className="the-edit-section">
             <div className="inner">
-                <SectionTitle title="THE EDIT" subtitle="Chosen by jeno, liz, ningning" />
+                <SectionTitle title="THE EDIT" subtitle="지금 가장 주목받는 셀럽 셀렉션" />
                 <div className='edit-wrap'>
                     {edits.map((e, idx) => (
                         <div className="edit-list" key={idx}>
@@ -72,7 +72,7 @@ export default function TheEdit() {
                                 {e.sub.map((s) => {
                                     // useHover가 true면 hoverImg, 없으면 mainImg fallback
                                     const thumbnail = e.useHover
-                                        ? (s.hoverImg || s.mainImg)
+                                        ? (s.mainImg || s.hoverImg)
                                         : (s.mainImg || s.hoverImg);
 
                                     return (

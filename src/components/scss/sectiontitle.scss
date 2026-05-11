@@ -1,8 +1,11 @@
 @use "../../App.scss" as g;
 
 .section-title {
-    text-align: center;
-    margin-bottom: 50px;
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    margin-bottom: 42px;
+
     opacity: 0;
     transform: translateY(24px);
     transition:
@@ -14,14 +17,23 @@
         transform: translateY(0);
     }
 
+    h2,
+    p {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
+
     h2 {
-        font-size: 36px;
+        font-size: 38px;
         font-weight: 900;
         color: g.$text-main-color;
+        position: relative;
+        top: 7px;
     }
 
     p {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         color: g.$text-sub-color2;
     }

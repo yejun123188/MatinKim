@@ -1,0 +1,120 @@
+@use "../../App.scss" as g;
+
+.search-page {
+  .product-list-wrap {
+    width: 100%;
+  }
+
+  .search-head {
+    padding: 64px 0 36px;
+    border-bottom: 1px solid rgba(g.$main-color, 0.12);
+    margin-bottom: 28px;
+
+    .search-eyebrow {
+      margin: 0 0 8px;
+      color: g.$text-sub-color;
+      font-size: g.$size-12-sub;
+      font-weight: g.$Bold;
+      letter-spacing: 0.12em;
+    }
+
+    h2 {
+      margin: 0 0 24px;
+      color: g.$text-main-color;
+      font-size: 34px;
+      font-weight: g.$Bold;
+      line-height: 1.2;
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: minmax(0, 520px) 96px;
+      gap: 8px;
+      align-items: center;
+
+      input {
+        width: 100%;
+        height: 46px;
+        padding: 0 14px;
+        border: 1px solid rgba(g.$main-color, 0.22);
+        background: g.$white-color;
+        color: g.$text-main-color;
+        font-size: g.$size-14-main;
+        outline: none;
+
+        &:focus {
+          border-color: g.$main-color;
+        }
+      }
+
+      button {
+        height: 46px;
+        border: 1px solid g.$main-color;
+        background: g.$main-color;
+        color: g.$white-color;
+        font-size: g.$size-14-main;
+        cursor: pointer;
+      }
+    }
+
+    .search-summary {
+      margin: 18px 0 0;
+      color: g.$text-sub-color;
+      font-size: g.$size-14-main;
+
+      strong {
+        color: g.$text-main-color;
+      }
+    }
+  }
+
+  .search-empty {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(g.$main-color, 0.12);
+    background: g.$white-color;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      color: g.$text-main-color;
+      font-size: g.$size-18;
+      font-weight: g.$Bold;
+    }
+
+    p {
+      margin: 0;
+      color: g.$text-sub-color;
+      font-size: g.$size-14-main;
+    }
+
+    a {
+      margin-top: 8px;
+      padding: 12px 22px;
+      border: 1px solid g.$main-color;
+      background: g.$main-color;
+      color: g.$white-color;
+      font-size: g.$size-14-main;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .search-page {
+    .search-head {
+      padding-top: 40px;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .search-form {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
