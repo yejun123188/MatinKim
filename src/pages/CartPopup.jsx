@@ -35,7 +35,7 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
     const recommendTitle = mode === "wish" ? "MY WISHLIST" : "BEST ITEM";
 
     return (
-        <div className='modal-overlay cart-popup' onClick={onClose}>
+        <div className='modal-overlay-cart-popup' onClick={onClose}>
             <div className='modal-wrap' onClick={(e) => e.stopPropagation()}>
 
                 {recommendList.length > 0 && (

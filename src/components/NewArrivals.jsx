@@ -59,25 +59,27 @@ export default function NewArrivals() {
 
             <div className="slide-outer">
                 <div className="slide-wrap" ref={slideWrapRef}>
-                    <Swiper
-                        modules={[Navigation, Autoplay]}
-                        slidesPerView="auto"
-                        spaceBetween={24}
-                        loop={true}
-                        speed={700}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true,
-                        }}
-                        onSlideChangeTransitionStart={handleSlideChange}
-                    >
-                        {visibleNewItems.map((item) => (
-                            <SwiperSlide key={item.id}>
-                                <ProductCard cate={item} as="article" />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    {visibleNewItems.length > 0 && (
+                        <Swiper
+                            modules={[Navigation, Autoplay]}
+                            slidesPerView="auto"
+                            spaceBetween={24}
+                            loop={visibleNewItems.length > 6}
+                            speed={700}
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            onSlideChangeTransitionStart={handleSlideChange}
+                        >
+                            {visibleNewItems.map((item) => (
+                                <SwiperSlide key={item.id}>
+                                    <ProductCard cate={item} as="article" />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    )}
                 </div>
 
                 <div className="progress-bar-wrap">
