@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import products from "../data/products";
+import WishList from "../components/WishList";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
@@ -32,7 +33,7 @@ const urlMap = {
   "Pouches & Cases": "pouches",
   Others: "others",
 };
-
+//색상이름이랑 색상코드 매칭
 const COLOR_PALETTE = {
   "LIGHT BEIGE": "#F5F5DC",
   CREAM: "#FFFDD0",
@@ -90,38 +91,40 @@ const COLOR_PALETTE = {
   GOLD: "#FFD700",
   VIOLET: "#EE82EE",
 };
-
-// ProductDetail과 동일한 베이스명 추출 로직
-const getProductBaseName = (item) => {
-  if (!item?.name) return "";
-  const primaryColor = item.colors?.[0];
-  const colorSuffix = primaryColor ? ` IN ${primaryColor}` : "";
-  return colorSuffix && item.name.endsWith(colorSuffix)
-    ? item.name.slice(0, -colorSuffix.length)
-    : item.name;
-};
-
 export const useProductStore = create((set, get) => ({
   //상품~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //상품을 저장할 배열
   items: [],
+  //데이터 파일에 있는 색상 컬러 뭐 있는지 저장할 배열
   colors: [],
+  //데이터 파일 불러오기
   onFetchItem: async () => {
     const existing = get().items;
+    //만약 데이터가 이미 존재하면 아무것도 하지 않고 반환하지롱
     if (existing.length > 0) return;
+    //데이터가 존재하면 items배열에 products를 넣어
 
     const allColors = [
       ...new Set([].concat(...products.map((item) => item.colors))),
     ];
 
-    set({ items: products, colors: allColors });
+    set({
+      items: products,
+      colors: allColors,
+    });
+    // console.log(products, allColors)
   },
 
+
+
+  //글자로 되어있는 색상 -> 색상코드로 변환하는 메서드
   onColorCode: (colorName) => {
     if (!colorName) return "#ccc";
     return COLOR_PALETTE[colorName.toUpperCase()] || "#ccc";
   },
 
   //메뉴~~~~~~~~~~~~~~~~~~~~~~~
+  //메뉴(category1)를 저장할 배열
   menus: [],
   onMenus: () => {
     const { items } = get();
@@ -130,16 +133,19 @@ export const useProductStore = create((set, get) => ({
     items.forEach(({ category1, category2 }) => {
       const cat1 = category1.toLowerCase();
       const cat2 = category2?.toUpperCase();
+
       const catOut = cat2 === "OUTERWEARS" ? "OUTER" : cat2;
       const koCat2 = subMenuMap[category2] || category2;
 
       let mainMenu = menuList.find((menu) => menu.name === cat1);
+
       if (!mainMenu) {
         mainMenu = { name: cat1, link: `/${cat1}`, subMenu: [] };
         menuList.push(mainMenu);
       }
 
-      const subMenu = mainMenu.subMenu.find((menu) => menu.name === koCat2);
+      let subMenu = mainMenu.subMenu.find((menu) => menu.name === koCat2);
+
       if (!subMenu && cat2) {
         mainMenu.subMenu.push({
           name: koCat2,
@@ -150,12 +156,19 @@ export const useProductStore = create((set, get) => ({
     });
 
     set({ menus: menuList });
+    // console.log(menuList);
   },
-
+  //베스트 아이템(MUST HAVE)만 뽑는 메서드
+  //베스트아이템 저장할 배열
   BestItems: [],
   onBestMenus: () => {
     const { items } = get();
-    set({ BestItems: items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE")) });
+    const bestItems = items.filter(
+      (item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"),
+    );
+
+    set({ BestItems: bestItems });
+    // console.log("베수트", bestItems);
   },
 
   // 선택한 아이템들만 장바구니에서 제거
@@ -174,31 +187,55 @@ export const useProductStore = create((set, get) => ({
   NewItems: [],
   onNewMenus: () => {
     const { items } = get();
-    set({ NewItems: items.filter((item) => Array.isArray(item.tag) && item.tag.includes("NEW IN")) });
-  },
+    const newItems = items.filter(
+      (item) => Array.isArray(item.tag) && item.tag.includes("NEW IN"),
+    );
 
+    set({ NewItems: newItems });
+    // console.log("신상", newItems);
+  },
   //~~~~~~~장바구니~~~~~~~~~~~~~~~~~~~~
+  //장바구니에 담을 아이템저장
   cartItem: JSON.parse(localStorage.getItem("cartItem")) || [],
   cartCount: JSON.parse(localStorage.getItem("cartItem"))?.length || 0,
   totalPrice: 0,
   isCartOpen: false,
   openCart: () => set({ isCartOpen: true }),
   closeCart: () => set({ isCartOpen: false }),
-
   onClearCart: () => {
     localStorage.removeItem("cartItem");
-    set({ cartItem: [], cartCount: 0, totalPrice: 0 });
+
+    set({
+      cartItem: [],
+      cartCount: 0,
+      totalPrice: 0,
+
+    });
   },
   onClearUserProductData: () => {
     localStorage.removeItem("cartItem");
-    set({ cartItem: [], cartCount: 0, totalPrice: 0, wishList: [] });
-  },
 
+    set({
+      cartItem: [],
+      cartCount: 0,
+      totalPrice: 0,
+      wishList: [],
+    });
+  },
+  //ProductDetail에서 색상변수 selectedColor 사이즈변수 selectedSize 개수 quantity 총가격 totalprice
+  //상품을 장바구니에 담는 메서드
   onAddCart: (product) => {
+    //장바구니 정보를 가져옴
     const cart = get().cartItem;
+
+    //장바구니에 같은제품이 있는지 없는지 체크
+    //제품의 아이디와 사이즈, 색상 같으면 같은제품 아이디와 사이즈가 색상 다르면 다른제품
+    //3개다 비교하는게 코드가 길어져거  3가지로 key를 만들어서 비교
     const existing = cart.find((item) => item.key === product.key);
 
+    //새롭게 담을 카트 변수
     let updateCart;
+    //같은제품이 있으면 카트에서 수량값만 하나 올라가게
     if (existing) {
       updateCart = cart.map((item) =>
         item.key === product.key
@@ -215,20 +252,30 @@ export const useProductStore = create((set, get) => ({
       totalPrice: get().onTotal(updateCart),
     });
   },
-
-  onTotal: (cart) => cart.reduce((acc, cur) => acc + cur.price * cur.count, 0),
-
+  //카트에 담긴 아이템들의 가격의 합을 누적해서 구해주는 메서드
+  onTotal: (cart) => {
+    //배열의 데이터를 누적해서 구하기 .reduce((누적값,현재값),초기값)
+    return cart.reduce((acc, cur) => acc + cur.price * cur.count, 0);
+  },
   onUpdateQuantity: (key, type) => {
     const cart = get().cartItem;
+
     const updateCart = cart.map((item) => {
       if (item.key === key) {
-        if (type === "minus" && item.count > 1) return { ...item, count: item.count - 1 };
-        if (type === "plus") return { ...item, count: item.count + 1 };
+        if (type === "minus" && item.count > 1) {
+          return { ...item, count: item.count - 1 };
+        }
+        if (type === "plus") {
+          return { ...item, count: item.count + 1 };
+        }
       }
       return item;
     });
     localStorage.setItem("cartItem", JSON.stringify(updateCart));
-    set({ cartItem: updateCart, totalPrice: get().onTotal(updateCart) });
+    set({
+      cartItem: updateCart,
+      totalPrice: get().onTotal(updateCart),
+    });
   },
   onRemoveItem: (key) => {
     const cart = get().cartItem;
@@ -240,75 +287,24 @@ export const useProductStore = create((set, get) => ({
       totalPrice: get().onTotal(updateCart),
     });
   },
-  onReduceItems: (orderedItems) => {
+  onReduceItems: (orderedKeys) => {
     const cart = get().cartItem;
+    const updateCart = cart.filter((cartItem) => !orderedKeys.includes(cartItem.key));
 
-    const updateCart = cart.reduce((acc, cartItem) => {
-      const ordered = orderedItems.find((o) => o.key === cartItem.key);
-      if (!ordered) {
-        // 주문 안 한 상품은 그대로
-        acc.push(cartItem);
-      } else {
-        const remaining = cartItem.count - ordered.quantity;
-        if (remaining > 0) {
-          // 수량이 남으면 차감해서 유지
-          acc.push({ ...cartItem, count: remaining });
-        }
-        // remaining <= 0 이면 제거 (push 안 함)
-      }
-      return acc;
-    }, []);
-
-
-  onRemoveItem: (id, size) => {
-    const cart = get().cartItem;
-    const updateCart = cart.filter((item) => !(item.id === id && item.size === size));
     localStorage.setItem("cartItem", JSON.stringify(updateCart));
-    set({ cartItem: updateCart, cartCount: updateCart.length, totalPrice: get().onTotal(updateCart) });
-  },
-
-  // 옵션(색상·사이즈) 변경 — 이름·이미지·id 모두 색상 상품 기준으로 교체
-  onUpdateOption: (oldKey, { size, color }) => {
-    const cart = get().cartItem;
-    const target = cart.find((item) => item.key === oldKey);
-    if (!target) return;
-
-    const allItems = get().items;
-    const productData = allItems.find((p) => p.id === target.id) || target;
-    const baseName = getProductBaseName(productData);
-
-    // colorProductMap 방식: 같은 베이스명 + primary color 일치
-    const colorProduct = allItems.find((p) => {
-      if (p.colors?.[0] !== color) return false;
-      return getProductBaseName(p) === baseName;
+    set({
+      cartItem: updateCart,
+      cartCount: updateCart.length,
+      totalPrice: get().onTotal(updateCart),
     });
-
-    const newImage = colorProduct?.mainImg || target.image;
-    const newName = colorProduct?.name || target.name;
-    const newId = colorProduct?.id || target.id;
-    const newKey = `${newId}-${size}-${color}`;
-
-    const updatedItem = {
-      ...target,
-      id: newId,
-      name: newName,
-      size,
-      color,
-      image: newImage,
-      key: newKey,
-    };
-
-    const updateCart = cart.map((item) => item.key === oldKey ? updatedItem : item);
-    localStorage.setItem("cartItem", JSON.stringify(updateCart));
-    set({ cartItem: updateCart, totalPrice: get().onTotal(updateCart) });
   },
-
   //~~~~상품검색~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   onSearchitem: (word) => {
     const items = get();
     const result = items.map((item) => {
       const filter = item.filter(
-        (i) => i.name.includes(word.toLowerCase()) || i.bullet_point.includes(word),
+        (i) =>
+          i.name.includes(word.toLowerCase()) || i.bullet_point.includes(word),
       );
     });
     set({});
@@ -329,8 +325,23 @@ export const useProductStore = create((set, get) => ({
       totalPrice: get().onTotal(updateCart),
     });
   },
-
   //~~~위시리스트~~~~~~~~~~~~~~~~~~~~~
+  // wishList: [],
+  // onAddWishList: (product) => {
+  //     const wish = get().wishList;
+
+  //     const existing = wish.find((w) => w.key === product.key);
+  //     if (existing) {
+  //         alert("이미 존재하는 상품입니다")
+  //         return;
+  //     }
+  //     set({ wishList: [...wish, product] })
+  // },
+  // onRemoveWish: (key) => {
+  //     const updateWish = get().wishList.filter((w) => !(w.key === key))
+  //     set({ wishList: updateWish })
+  // },
+  // wishList 관련 메서드 전체 교체
   wishList: [],
 
   onLoadWishList: async (uid) => {
@@ -350,6 +361,7 @@ export const useProductStore = create((set, get) => ({
   _saveWishList: async (uid, list) => {
     if (!uid || typeof uid !== "string" || uid.trim() === "") return;
     try {
+      // Firestore는 중첩 배열 불가 → 필요한 필드만 추려서 저장
       const safeList = list.map((p) => ({
         id: p.id,
         name: p.name,
@@ -365,6 +377,7 @@ export const useProductStore = create((set, get) => ({
         category2: p.category2 || "",
         isSoldOut: p.isSoldOut ?? false,
       }));
+
       const ref = doc(db, "wishlists", uid);
       await setDoc(ref, { list: safeList });
     } catch (e) {
