@@ -287,8 +287,9 @@ export const useProductStore = create((set, get) => ({
       totalPrice: get().onTotal(updateCart),
     });
   },
-  onReduceItems: (orderedItems) => {
+  onReduceItems: (orderedKeys) => {
     const cart = get().cartItem;
+    const updateCart = cart.filter((cartItem) => !orderedKeys.includes(cartItem.key));
 
     const updateCart = cart.reduce((acc, cartItem) => {
       const ordered = orderedItems.find((o) => o.key === cartItem.key);

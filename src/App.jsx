@@ -111,9 +111,10 @@ function App() {
         <Route path="/inquiry/:id" element={<InquiryDetail />} />
         <Route path="/password/find" element={<FindPw />} />
         <Route path="/findid/result" element={<FindIdResult />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
 
-      {/* ✅ Routes 밖으로 꺼내야 어느 페이지에서든 렌더링됨 */}
+      {/* Routes 밖으로 꺼내야 어느 페이지에서든 렌더링됨 */}
       {isLoginOpen && (
         <Login
           onClose={closeLogin}
