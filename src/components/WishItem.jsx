@@ -115,7 +115,7 @@ export default function WishItem({ wish, onEditOptions, onCartPopup, variant = "
                     <p className="wish-count">
                         {isSoldOut
                             ? "SOLD OUT"
-                            : `${wish.selectedSize} / ${wish.selectedColor} / ${wish.quantity}개`}
+                            : `${wish.selectedColor} / ${wish.selectedSize}   / ${wish.quantity}개`}
                     </p>
                 </div>
                 <div className="button-wrap">

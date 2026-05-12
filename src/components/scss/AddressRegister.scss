@@ -141,3 +141,40 @@
     }
   }
 }
+
+@include g.respond(mobile) {
+  .add-r {
+    .address-register-wrap {
+      padding: 24px 20px;
+    }
+
+    .address-box {
+      .zip {
+        flex-direction: column;
+
+        input,
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .phone-box {
+      flex-wrap: wrap;
+
+      select,
+      input {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+    }
+
+    .button-wrap {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

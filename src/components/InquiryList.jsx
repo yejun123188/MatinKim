@@ -42,6 +42,19 @@ export default function InquiryList() {
     return matchesDate && matchesKeyword;
   });
 
+  const handleDeleteInquiry = (id) => {
+    const ok = window.confirm("문의 내역을 삭제하시겠습니까?");
+    if (!ok) return;
+
+    setRows((prev) => {
+      const updated = prev.filter((row) => String(row.id) !== String(id));
+      localStorage.setItem("inquiries", JSON.stringify(updated));
+      return updated;
+    });
+
+    alert("문의 내역이 삭제되었습니다.");
+  };
+
   useEffect(() => {
     const waitingRows = rows.filter((row) => row.reply === "답변대기");
 
@@ -109,6 +122,7 @@ export default function InquiryList() {
               <th>제목</th>
               <th>작성자</th>
               <th>답변상태</th>
+              <th></th>
             </tr>
           </thead>
 
@@ -134,11 +148,20 @@ export default function InquiryList() {
                   <td>
                     <span>{row.reply}</span>
                   </td>
+                  <td>
+                    <button
+                      type="button"
+                      className="delete-inquiry-btn"
+                      onClick={() => handleDeleteInquiry(row.id)}
+                    >
+                      삭제
+                    </button>
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={5} className="empty-inquiry">
+                <td colSpan={6} className="empty-inquiry">
                   <UserInfoNone title="문의" />
                 </td>
               </tr>

@@ -127,3 +127,75 @@
     }
   }
 }
+
+@include g.respond(tablet) {
+  .address-wrap {
+    .address-item {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 18px;
+
+      .item-right {
+        justify-content: flex-end;
+        width: 100%;
+      }
+    }
+  }
+
+  .address-bottom {
+    flex-direction: column;
+
+    .bottom-button-box {
+      width: 100%;
+    }
+  }
+}
+
+@include g.respond(mobile) {
+  .address-wrap {
+    .address-middle {
+      padding: 18px 20px 24px;
+    }
+
+    .address-item {
+      .item-left {
+        width: 100%;
+
+        .content {
+          min-width: 0;
+
+          .address-list {
+            li {
+              display: flex;
+              flex-direction: column;
+              gap: 3px;
+            }
+
+            span {
+              width: auto;
+            }
+          }
+        }
+      }
+
+      .item-right {
+        flex-wrap: wrap;
+
+        .Bbtn,
+        .Wbtn {
+          flex: 1 1 120px;
+        }
+      }
+    }
+  }
+
+  .address-bottom {
+    .bottom-button-box {
+      .Bbtn,
+      .Wbtn {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  }
+}

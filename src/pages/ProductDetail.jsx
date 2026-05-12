@@ -6,7 +6,7 @@ import "./scss/productDetail.scss";
 import CartPopup from './CartPopup';
 import Cart from './Cart';
 import { useAuthStore } from '../store/useAuthStore';
-import { useLoginStore } from '../store/useLoginStore';
+import Login from './Login';
 import { addRecentViewedProduct } from '../utils/recentViewedProducts';
 import { qnadata } from '../data/Qna';
 
@@ -31,69 +31,27 @@ const CATEGORY2_URL_MAP = {
 
 const formatCategory = (value = '') => value.replace(/_/g, ' ').toUpperCase();
 const COLOR_NAME_KO = {
-    "LIGHT BEIGE": "라이트 베이지",
-    "CREAM": "크림",
-    "DARK BROWN": "다크 브라운",
-    "BLUE": "블루",
-    "LIGHT GREY": "라이트 그레이",
-    "CHARCOAL": "차콜",
-    "WHITE": "화이트",
-    "BLACK": "블랙",
-    "DARK GREY": "다크 그레이",
-    "PINK": "핑크",
-    "MINT": "민트",
-    "IVORY": "아이보리",
-    "BEIGE": "베이지",
-    "GREY": "그레이",
-    "STRONG BLACK": "스트롱 블랙",
-    "BROWN": "브라운",
-    "KHAKI": "카키",
-    "NAVY": "네이비",
-    "LIGHT BLUE": "라이트 블루",
-    "MIX": "믹스",
-    "KHAKI BROWN": "카키 브라운",
-    "BURGUNDY": "버건디",
-    "LILAC": "라일락",
-    "OLIVE": "올리브",
-    "SMOKE BLUE": "스모크 블루",
-    "COCOA": "코코아",
-    "LIGHT KHAKI": "라이트 카키",
-    "RED": "레드",
-    "DARK NAVY": "다크 네이비",
-    "SKY": "스카이",
-    "POWDER BLUE": "파우더 블루",
-    "LIGHT YELLOW": "라이트 옐로우",
-    "CAMEL": "카멜",
-    "BUTTER": "버터",
-    "DARK BEIGE": "다크 베이지",
-    "PURPLE": "퍼플",
-    "LIGHT GREEN": "라이트 그린",
-    "LIGHT ORANGE": "라이트 오렌지",
-    "LIME": "라임",
-    "TURQUISE BLUE": "터키즈 블루",
-    "PEACH": "피치",
-    "YELLOW": "옐로우",
-    "KHAKI BEIGE": "카키 베이지",
-    "LIGHT PINK": "라이트 핑크",
-    "SMOKE PINK": "스모크 핑크",
-    "GREEN": "그린",
-    "OFF WHITE": "오프화이트",
-    "ORANGE": "오렌지",
-    "INDIAN PINK": "인디언 핑크",
-    "SILVER": "실버",
-    "WINE": "와인",
-    "DARK SILVER": "다크 실버",
-    "DARK GREEN": "다크 그린",
-    "GOLD": "골드",
-    "VIOLET": "바이올렛"
+    "LIGHT BEIGE": "라이트 베이지", "CREAM": "크림", "DARK BROWN": "다크 브라운",
+    "BLUE": "블루", "LIGHT GREY": "라이트 그레이", "CHARCOAL": "차콜",
+    "WHITE": "화이트", "BLACK": "블랙", "DARK GREY": "다크 그레이",
+    "PINK": "핑크", "MINT": "민트", "IVORY": "아이보리", "BEIGE": "베이지",
+    "GREY": "그레이", "STRONG BLACK": "스트롱 블랙", "BROWN": "브라운",
+    "KHAKI": "카키", "NAVY": "네이비", "LIGHT BLUE": "라이트 블루", "MIX": "믹스",
+    "KHAKI BROWN": "카키 브라운", "BURGUNDY": "버건디", "LILAC": "라일락",
+    "OLIVE": "올리브", "SMOKE BLUE": "스모크 블루", "COCOA": "코코아",
+    "LIGHT KHAKI": "라이트 카키", "RED": "레드", "DARK NAVY": "다크 네이비",
+    "SKY": "스카이", "POWDER BLUE": "파우더 블루", "LIGHT YELLOW": "라이트 옐로우",
+    "CAMEL": "카멜", "BUTTER": "버터", "DARK BEIGE": "다크 베이지", "PURPLE": "퍼플",
+    "LIGHT GREEN": "라이트 그린", "LIGHT ORANGE": "라이트 오렌지", "LIME": "라임",
+    "TURQUISE BLUE": "터키즈 블루", "PEACH": "피치", "YELLOW": "옐로우",
+    "KHAKI BEIGE": "카키 베이지", "LIGHT PINK": "라이트 핑크", "SMOKE PINK": "스모크 핑크",
+    "GREEN": "그린", "OFF WHITE": "오프화이트", "ORANGE": "오렌지",
+    "INDIAN PINK": "인디언 핑크", "SILVER": "실버", "WINE": "와인",
+    "DARK SILVER": "다크 실버", "DARK GREEN": "다크 그린", "GOLD": "골드", "VIOLET": "바이올렛"
 };
 
 const formatOptionLabel = (value = '') =>
-    value
-        .toLowerCase()
-        .split(' ')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+    value.toLowerCase().split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 const formatColorLabelKo = (value = '') => COLOR_NAME_KO[value] || value;
 
@@ -110,8 +68,6 @@ export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     const { items, onFetchItem, onColorCode, onAddCart, onAddWishList, onRemoveWish, wishList, onLoadWishList } = useProductStore();
-    const { user } = useAuthStore();
-    const { openLogin } = useLoginStore();
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [thumbStartIndex, setThumbStartIndex] = useState(0);
@@ -124,8 +80,12 @@ export default function ProductDetail() {
     const [isZoomOpen, setIsZoomOpen] = useState(false);
     const [zoomImageIndex, setZoomImageIndex] = useState(0);
     const [isPageVisible, setIsPageVisible] = useState(false);
+    const [showShare, setShowShare] = useState(false);
     const [showCartPopup, setShowCartPopup] = useState(false);
     const [showCart, setShowCart] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+
+    const { user } = useAuthStore();
 
     useEffect(() => {
         if (items.length === 0) onFetchItem();
@@ -203,10 +163,7 @@ export default function ProductDetail() {
     }, [user]);
 
     useEffect(() => {
-        if (!product || !user) {
-            setIsLiked(false);
-            return;
-        }
+        if (!product || !user) { setIsLiked(false); return; }
         const key = `${product.id}-${selectedSize}-${selectedColor}`;
         setIsLiked(wishList.some((w) => w.key === key));
     }, [product, selectedSize, selectedColor, wishList, user]);
@@ -286,9 +243,7 @@ export default function ProductDetail() {
     const handleSelectImage = (index) => {
         setSelectedImageIndex(index);
         if (index < thumbStartIndex) setThumbStartIndex(index);
-        if (index >= thumbStartIndex + THUMBNAILS_PER_VIEW) {
-            setThumbStartIndex(index - THUMBNAILS_PER_VIEW + 1);
-        }
+        if (index >= thumbStartIndex + THUMBNAILS_PER_VIEW) setThumbStartIndex(index - THUMBNAILS_PER_VIEW + 1);
     };
 
     const handleQuantityChange = (nextValue) => {
@@ -297,66 +252,20 @@ export default function ProductDetail() {
 
     const handleBuyNow = () => {
         if (!product || isProductSoldOut) return;
-
         const purchasePrice = product.discountRate > 0 ? product.discountPrice : product.price;
-        const orderItems = [{
-            id: product.id,
-            brand: 'MATIN KIM',
-            name: product.name,
-            option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
-            quantity,
-            price: purchasePrice,
-            image: product.mainImg || product.hoverImg || ''
-        }];
-
-        if (!user) {
-            openLogin(orderItems);
-            return;
-        }
-
-        navigate('/payment', { state: { orderItems } });
-    };
-
-    const handleAddToWish = () => {
-        if (!product) return;
-
-        if (!user) {
-            const ok = window.confirm("로그인이 필요한 서비스입니다.\n로그인하시겠습니까?");
-            if (ok) openLogin();
-            return;
-        }
-
-        if (!selectedSize) {
-            alert("사이즈를 선택해주세요");
-            return;
-        }
-        if (!selectedColor) {
-            alert("색상을 선택해주세요");
-            return;
-        }
-
-        const key = `${product.id}-${selectedSize}-${selectedColor}`;
-        const alreadyLiked = wishList.some((w) => w.key === key);
-
-        if (alreadyLiked) {
-            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
-            if (!ok) return;
-            onRemoveWish(key, user.uid);
-            return;
-        }
-
-        const sizeIndex = (product.sizes || []).findIndex(s => s === selectedSize);
-        const isSoldOut = sizeIndex !== -1 && Boolean(product.soldout?.[sizeIndex]);
-
-        onAddWishList({
-            ...product,
-            isSoldOut,
-            selectedSize,
-            selectedColor,
-            quantity,
-            key
-        }, user.uid);
-        alert("위시리스트에 상품이 담겼습니다");
+        navigate('/payment', {
+            state: {
+                orderItems: [{
+                    id: product.id,
+                    brand: 'MATIN KIM',
+                    name: product.name,
+                    option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
+                    quantity,
+                    price: purchasePrice,
+                    image: product.mainImg || product.hoverImg || ''
+                }]
+            }
+        });
     };
 
     const handleSwitchProduct = () => {
@@ -368,9 +277,7 @@ export default function ProductDetail() {
         const targetProduct = colorProductMap[color];
         if (!targetProduct) return;
         setSelectedColor(color);
-        if (targetProduct.id !== product?.id) {
-            navigate(`/products/${targetProduct.id}`);
-        }
+        if (targetProduct.id !== product?.id) navigate(`/products/${targetProduct.id}`);
     };
 
     const handleOpenZoom = () => {
@@ -380,8 +287,84 @@ export default function ProductDetail() {
     };
 
     const handleCloseZoom = () => setIsZoomOpen(false);
-    const handleZoomPrev = () => { if (canZoomPrev) setZoomImageIndex((prev) => prev - 1); };
-    const handleZoomNext = () => { if (canZoomNext) setZoomImageIndex((prev) => prev + 1); };
+    const handleZoomPrev = () => { if (!canZoomPrev) return; setZoomImageIndex((prev) => prev - 1); };
+    const handleZoomNext = () => { if (!canZoomNext) return; setZoomImageIndex((prev) => prev + 1); };
+
+    const handleAddToWish = () => {
+        if (!product) return;
+        if (!user) {
+            const ok = window.confirm("로그인이 필요한 서비스입니다.\n로그인하시겠습니까?");
+            if (ok) setShowLogin(true);
+            return;
+        }
+        if (!selectedSize) { alert("사이즈를 선택해주세요"); return; }
+        if (!selectedColor) { alert("색상을 선택해주세요"); return; }
+
+        const key = `${product.id}-${selectedSize}-${selectedColor}`;
+        const alreadyLiked = wishList.some((w) => w.key === key);
+        if (alreadyLiked) {
+            const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+            if (!ok) return;
+            onRemoveWish(key, user.uid);
+            return;
+        }
+        const sizeIndex = (product.sizes || []).findIndex(s => s === selectedSize);
+        const isSoldOut = sizeIndex !== -1 && Boolean(product.soldout?.[sizeIndex]);
+        onAddWishList({ ...product, isSoldOut, selectedSize, selectedColor, quantity, key }, user.uid);
+        alert("위시리스트에 상품이 담겼습니다");
+    };
+
+    const currentUrl = window.location.href;
+
+    const handleCopyUrl = async () => {
+        try {
+            await navigator.clipboard.writeText(currentUrl);
+            alert("주소가 복사되었습니다.");
+            setShowShare(false);
+        } catch (error) {
+            alert("주소 복사에 실패했습니다.");
+        }
+    };
+
+    // ✅ twitter, facebook 모두 작동하도록 수정
+    const handleShare = (type) => {
+        const shareUrl = encodeURIComponent(currentUrl);
+        const shareText = encodeURIComponent(product?.name || '');
+        let url = '';
+
+        switch (type) {
+            case 'kakao':
+                if (window.Kakao?.isInitialized()) {
+                    window.Kakao.Share.sendDefault({
+                        objectType: 'feed',
+                        content: {
+                            title: product?.name,
+                            description: 'MATIN KIM 상품 상세보기',
+                            imageUrl: product?.mainImg,
+                            link: { mobileWebUrl: currentUrl, webUrl: currentUrl },
+                        },
+                        buttons: [{ title: '상품 보러가기', link: { mobileWebUrl: currentUrl, webUrl: currentUrl } }],
+                    });
+                    return;
+                }
+                // SDK 미초기화 시 fallback
+                url = `https://sharer.kakao.com/talk/friends/picker/easylink?app_key=YOUR_KAKAO_APP_KEY&url=${shareUrl}`;
+                break;
+
+            case 'twitter':
+                url = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+                break;
+
+            case 'facebook':
+                url = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+                break;
+
+            default:
+                return;
+        }
+
+        window.open(url, '_blank', 'width=600,height=700');
+    };
 
     const renderTabContent = () => {
         if (activeTab === 'SIZE GUIDE') {
@@ -410,9 +393,7 @@ export default function ProductDetail() {
                             </table>
                         </div>
                     )}
-                    <p className='tab-note'>
-                        (상세 사이즈 치수는 측정 방법과 위치에 따라 1-2cm 오차가 있을 수 있습니다)
-                    </p>
+                    <p className='tab-note'>(상세 사이즈 치수는 측정 방법과 위치에 따라 1-2cm 오차가 있을 수 있습니다)</p>
                 </div>
             );
         }
@@ -461,13 +442,7 @@ export default function ProductDetail() {
                 <section className='product-detail-hero'>
                     <div className='gallery-column'>
                         <div className='gallery-thumbs'>
-                            <button
-                                type="button"
-                                className='thumb-nav'
-                                onClick={handleThumbPrev}
-                                disabled={!canThumbPrev}
-                                aria-label='이전 이미지'
-                            >
+                            <button type="button" className='thumb-nav' onClick={handleThumbPrev} disabled={!canThumbPrev} aria-label='이전 이미지'>
                                 <img src="/images/pages-icon/top-icon.svg" alt="" aria-hidden="true" />
                             </button>
                             <div className='thumb-track'>
@@ -485,42 +460,21 @@ export default function ProductDetail() {
                                     );
                                 })}
                             </div>
-                            <button
-                                type="button"
-                                className='thumb-nav'
-                                onClick={handleThumbNext}
-                                disabled={!canThumbNext}
-                                aria-label='다음 이미지'
-                            >
+                            <button type="button" className='thumb-nav' onClick={handleThumbNext} disabled={!canThumbNext} aria-label='다음 이미지'>
                                 <img src="/images/pages-icon/bottom-icon.svg" alt="" aria-hidden="true" />
                             </button>
                         </div>
 
                         <div className='gallery-main'>
-                            <button
-                                type="button"
-                                className='zoom-btn'
-                                aria-label='이미지 확대'
-                                onClick={handleOpenZoom}
-                            >
+                            <button type="button" className='zoom-btn' aria-label='이미지 확대' onClick={handleOpenZoom}>
                                 <img src="/images/pages-icon/zoom-in-icon.svg" alt="" aria-hidden="true" />
                             </button>
                             <img src={selectedImage} alt={product.name} />
                             <div className='gallery-bottom-nav'>
-                                <button
-                                    type="button"
-                                    onClick={() => handleSelectImage(Math.max(selectedImageIndex - 1, 0))}
-                                    disabled={selectedImageIndex === 0}
-                                    aria-label='이전 메인 이미지'
-                                >
+                                <button type="button" onClick={() => handleSelectImage(Math.max(selectedImageIndex - 1, 0))} disabled={selectedImageIndex === 0} aria-label='이전 메인 이미지'>
                                     <img src="/images/pages-icon/prev-icon.svg" alt="" aria-hidden="true" />
                                 </button>
-                                <button
-                                    type="button"
-                                    onClick={() => handleSelectImage(Math.min(selectedImageIndex + 1, detailImages.length - 1))}
-                                    disabled={selectedImageIndex === detailImages.length - 1}
-                                    aria-label='다음 메인 이미지'
-                                >
+                                <button type="button" onClick={() => handleSelectImage(Math.min(selectedImageIndex + 1, detailImages.length - 1))} disabled={selectedImageIndex === detailImages.length - 1} aria-label='다음 메인 이미지'>
                                     <img src="/images/pages-icon/next-icon.svg" alt="" aria-hidden="true" />
                                 </button>
                             </div>
@@ -529,28 +483,14 @@ export default function ProductDetail() {
 
                     <div className='info-column'>
                         <div className='detail-actions'>
-                            <button type="button" aria-label='공유하기'>
+                            <button type="button" aria-label='공유하기' onClick={() => setShowShare(true)}>
                                 <img src="/images/pages-icon/share-icon.svg" alt="" aria-hidden="true" />
                             </button>
-                            <button
-                                type="button"
-                                aria-label='다음 상품으로 이동'
-                                onClick={handleSwitchProduct}
-                                disabled={!nextProductId}
-                            >
+                            <button type="button" aria-label='다음 상품으로 이동' onClick={handleSwitchProduct} disabled={!nextProductId}>
                                 <img src="/images/pages-icon/switch-icon.svg" alt="" aria-hidden="true" />
                             </button>
-                            <button
-                                type="button"
-                                aria-label='찜하기'
-                                className={isLiked ? 'is-active' : ''}
-                                onClick={handleAddToWish}
-                            >
-                                <img
-                                    src={isLiked ? "/images/pages-icon/like-hover-icon.svg" : "/images/pages-icon/like-icon.svg"}
-                                    alt=""
-                                    aria-hidden="true"
-                                />
+                            <button type="button" aria-label='찜하기' className={isLiked ? 'is-active' : ''} onClick={handleAddToWish}>
+                                <img src={isLiked ? "/images/pages-icon/like-hover-icon.svg" : "/images/pages-icon/like-icon.svg"} alt="" aria-hidden="true" />
                             </button>
                         </div>
 
@@ -592,7 +532,6 @@ export default function ProductDetail() {
                                         const targetProduct = colorProductMap[color];
                                         const isCurrentColor = product.colors?.[0] === color;
                                         const isUnavailableColor = !targetProduct;
-
                                         return (
                                             <button
                                                 type="button"
@@ -627,9 +566,7 @@ export default function ProductDetail() {
                                                 disabled={isSoldOut}
                                             >
                                                 <strong>{formatOptionLabel(size)}</strong>
-                                                <span className='option-card-sub'>
-                                                    {isSoldOut ? 'SOLD OUT' : ''}
-                                                </span>
+                                                <span className='option-card-sub'>{isSoldOut ? 'SOLD OUT' : ''}</span>
                                             </button>
                                         );
                                     })}
@@ -678,19 +615,12 @@ export default function ProductDetail() {
                 <section className='product-detail-tabs'>
                     <div className='tab-header'>
                         {TAB_ITEMS.map((tab) => (
-                            <button
-                                type="button"
-                                key={tab}
-                                className={activeTab === tab ? 'is-active' : ''}
-                                onClick={() => setActiveTab(tab)}
-                            >
+                            <button type="button" key={tab} className={activeTab === tab ? 'is-active' : ''} onClick={() => setActiveTab(tab)}>
                                 {tab}
                             </button>
                         ))}
                     </div>
-                    <div className='tab-content'>
-                        {renderTabContent()}
-                    </div>
+                    <div className='tab-content'>{renderTabContent()}</div>
                 </section>
 
                 <section className='related-products-section'>
@@ -702,50 +632,21 @@ export default function ProductDetail() {
                     </ul>
                     {relatedTotalPages > 1 && (
                         <div className='related-pagination'>
-                            <button
-                                type="button"
-                                className='page-btn page-jump'
-                                onClick={() => setRelatedPage(Math.max(relatedStartPage - PAGE_BUTTON_LIMIT, 1))}
-                                disabled={relatedStartPage === 1}
-                                aria-label='10 pages previous'
-                            >
+                            <button type="button" className='page-btn page-jump' onClick={() => setRelatedPage(Math.max(relatedStartPage - PAGE_BUTTON_LIMIT, 1))} disabled={relatedStartPage === 1} aria-label='10 pages previous'>
                                 <img src="/images/pages-icon/first-icon.svg" alt="" />
                             </button>
-                            <button
-                                type="button"
-                                className='page-btn page-arrow'
-                                onClick={() => setRelatedPage((prev) => Math.max(prev - 1, 1))}
-                                disabled={relatedPage === 1}
-                                aria-label='Previous page'
-                            >
+                            <button type="button" className='page-btn page-arrow' onClick={() => setRelatedPage((prev) => Math.max(prev - 1, 1))} disabled={relatedPage === 1} aria-label='Previous page'>
                                 <img src="/images/pages-icon/prev-icon.svg" alt="" aria-hidden="true" />
                             </button>
                             {visibleRelatedPages.map((page) => (
-                                <button
-                                    type="button"
-                                    key={`related-page-${page}`}
-                                    className={`page-btn ${relatedPage === page ? 'is-active' : ''}`}
-                                    onClick={() => setRelatedPage(page)}
-                                >
+                                <button type="button" key={`related-page-${page}`} className={`page-btn ${relatedPage === page ? 'is-active' : ''}`} onClick={() => setRelatedPage(page)}>
                                     {page}
                                 </button>
                             ))}
-                            <button
-                                type="button"
-                                className='page-btn page-arrow'
-                                onClick={() => setRelatedPage((prev) => Math.min(prev + 1, relatedTotalPages))}
-                                disabled={relatedPage === relatedTotalPages}
-                                aria-label='Next page'
-                            >
+                            <button type="button" className='page-btn page-arrow' onClick={() => setRelatedPage((prev) => Math.min(prev + 1, relatedTotalPages))} disabled={relatedPage === relatedTotalPages} aria-label='Next page'>
                                 <img src="/images/pages-icon/next-icon.svg" alt="" aria-hidden="true" />
                             </button>
-                            <button
-                                type="button"
-                                className='page-btn page-jump'
-                                onClick={() => setRelatedPage(Math.min(relatedEndPage + 1, relatedTotalPages))}
-                                disabled={relatedEndPage === relatedTotalPages}
-                                aria-label='10 pages next'
-                            >
+                            <button type="button" className='page-btn page-jump' onClick={() => setRelatedPage(Math.min(relatedEndPage + 1, relatedTotalPages))} disabled={relatedEndPage === relatedTotalPages} aria-label='10 pages next'>
                                 <img src="/images/pages-icon/last-icon.svg" alt="" />
                             </button>
                         </div>
@@ -753,48 +654,23 @@ export default function ProductDetail() {
                 </section>
             </div>
 
+            {/* 이미지 줌 모달 */}
             {isZoomOpen && (
-                <div
-                    className='image-zoom-modal'
-                    role='dialog'
-                    aria-modal='true'
-                    aria-label={`${product.name} 이미지 확대 보기`}
-                    onClick={handleCloseZoom}
-                >
-                    <div
-                        className='image-zoom-modal-content'
-                        onClick={(event) => event.stopPropagation()}
-                    >
-                        <button
-                            type="button"
-                            className='image-zoom-nav image-zoom-prev'
-                            aria-label='이전 확대 이미지'
-                            onClick={handleZoomPrev}
-                            disabled={!canZoomPrev}
-                        >
+                <div className='image-zoom-modal' role='dialog' aria-modal='true' aria-label={`${product.name} 이미지 확대 보기`} onClick={handleCloseZoom}>
+                    <div className='image-zoom-modal-content' onClick={(event) => event.stopPropagation()}>
+                        <button type="button" className='image-zoom-nav image-zoom-prev' aria-label='이전 확대 이미지' onClick={handleZoomPrev} disabled={!canZoomPrev}>
                             <img src="/images/pages-icon/prev-icon.svg" alt="" aria-hidden="true" />
                         </button>
-                        <button
-                            type="button"
-                            className='image-zoom-close'
-                            aria-label='확대 이미지 닫기'
-                            onClick={handleCloseZoom}
-                        >
-                            ×
-                        </button>
+                        <button type="button" className='image-zoom-close' aria-label='확대 이미지 닫기' onClick={handleCloseZoom}>×</button>
                         <img src={zoomSelectedImage} alt={`${product.name} 확대 이미지`} />
-                        <button
-                            type="button"
-                            className='image-zoom-nav image-zoom-next'
-                            aria-label='다음 확대 이미지'
-                            onClick={handleZoomNext}
-                            disabled={!canZoomNext}
-                        >
+                        <button type="button" className='image-zoom-nav image-zoom-next' aria-label='다음 확대 이미지' onClick={handleZoomNext} disabled={!canZoomNext}>
                             <img src="/images/pages-icon/next-icon.svg" alt="" aria-hidden="true" />
                         </button>
                     </div>
                 </div>
             )}
+
+            {/* 장바구니 팝업 */}
             {showCartPopup && (
                 <CartPopup
                     mode="wish"
@@ -803,13 +679,48 @@ export default function ProductDetail() {
                     selectedSize={selectedSize}
                     quantity={quantity}
                     onClose={() => setShowCartPopup(false)}
-                    onGoCart={() => {
-                        setShowCartPopup(false);
-                        setShowCart(true);
-                    }}
+                    onGoCart={() => { setShowCartPopup(false); setShowCart(true); }}
                 />
             )}
+
             {showCart && <Cart onClose={() => setShowCart(false)} />}
+            {showLogin && <Login onClose={() => setShowLogin(false)} />}
+
+            {/* ✅ 공유하기 모달 */}
+            {showShare && (
+                <div className="share-modal" onClick={() => setShowShare(false)}>
+                    <div className="share-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <div className="share-modal-header">
+                            <h3>공유하기</h3>
+                            <button className="share-close" onClick={() => setShowShare(false)}>×</button>
+                        </div>
+                        <div className="share-buttons">
+                            <button className="share-btn kakao" onClick={() => handleShare('kakao')}>
+                                <span className="share-icon-wrap">
+                                    <img src="/images/sns/kakao.svg" alt="카카오톡" />
+                                </span>
+                                <span>카카오톡</span>
+                            </button>
+                            <button className="share-btn twitter" onClick={() => handleShare('twitter')}>
+                                <span className="share-icon-wrap">
+                                    <img src="/images/sns/twitter.svg" alt="X" />
+                                </span>
+                                <span>X(트위터)</span>
+                            </button>
+                            <button className="share-btn facebook" onClick={() => handleShare('facebook')}>
+                                <span className="share-icon-wrap">
+                                    <img src="/images/sns/facebook.svg" alt="페이스북" />
+                                </span>
+                                <span>페이스북</span>
+                            </button>
+                            <button className="share-btn copy" onClick={handleCopyUrl}>
+                                <span className="share-icon-wrap">🔗</span>
+                                <span>주소 복사</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }

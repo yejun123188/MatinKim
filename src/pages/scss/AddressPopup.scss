@@ -1,102 +1,137 @@
 @use "../../App.scss" as g;
 
-.modal-overlay {
+.modal-overlay-add {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1000;
-
     @include g.myFlex(center, 0, center);
+
+    animation: overlayFadeIn 0.25s ease forwards; // 오버레이 페이드인
+
+    @keyframes overlayFadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 
     .modal-box {
         background: g.$white-color;
         width: 100%;
-        max-width: 560px;
-        max-height: 60vh;
-        border-radius: 8px;
-
+        max-width: 520px;
+        max-height: 65vh;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        animation: slideInRight 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
         .modal-header {
             @include g.myFlex(space-between, 0, center);
-
-            padding: 20px 24px;
+            padding: 24px 28px;
             border-bottom: 1px solid g.$text-sub-color2;
 
             h3 {
                 font-size: g.$size-16;
                 font-weight: g.$Bold;
                 color: g.$text-main-color;
+                letter-spacing: -0.01em;
             }
 
             button {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 background: none;
                 border: none;
-
-
-                font-size: 20px;
+                font-size: 18px;
                 line-height: 1;
-                color: g.$text-main-color;
+                color: g.$text-sub-color;
                 cursor: pointer;
-                padding: 4px;
-
-                transition: opacity 0.15s ease;
+                transition: color 0.15s;
 
                 &:hover {
-                    opacity: 0.45;
+                    color: g.$text-main-color;
                 }
             }
         }
 
         .address-list {
             overflow-y: auto;
-            padding: 16px 24px;
-
+            padding: 20px 28px 24px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             list-style: none;
 
-            p {
+            // 스크롤바 스타일
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: g.$text-sub-color2;
+            }
+
+            // 주소 없을 때
+            >p {
                 text-align: center;
                 color: g.$text-sub-color2;
-                padding: 40px 0;
+                font-size: g.$size-14-main;
+                padding: 48px 0;
             }
 
             .address-item {
                 @include g.myFlex(space-between, 0, center);
-
-                padding: 16px;
+                padding: 18px 20px;
                 border: 1px solid g.$text-sub-color2;
+                gap: 16px;
                 transition: border-color 0.2s;
 
                 &:hover {
-                    border-color: g.$main-color;
+                    border-color: g.$text-main-color;
                 }
 
                 .address-info {
                     display: flex;
                     flex-direction: column;
-                    gap: 4px;
+                    gap: 5px;
+                    min-width: 0;
 
                     strong {
                         font-size: g.$size-14-main;
                         font-weight: g.$Bold;
-
+                        color: g.$text-main-color;
                         display: flex;
                         align-items: center;
                         gap: 8px;
+                        margin-top: 2px;
+                    }
+
+                    .my-address {
+                        display: flex;
+                        gap: 8px;
+
                     }
 
                     .badge {
-                        font-size: g.$size-12-sub;
+                        font-size: 10px;
                         font-weight: g.$Regular;
                         color: g.$white-color;
-                        background: g.$main-color;
-                        padding: 2px 8px;
+                        background: #cac6b9;
+                        padding: 4px 8px 0 8px;
+                        width: 60px;
                         border-radius: 20px;
+                        text-align: center;
                     }
 
                     p {
@@ -104,23 +139,26 @@
                         color: g.$text-sub-color;
                         text-align: left;
                         padding: 0;
+                        line-height: 1.55;
                     }
                 }
 
                 >button {
                     flex-shrink: 0;
-
-                    @include g.myBtn2(g.$text-main-color,
-                        g.$white-color,
-                        1px solid g.$main-color,
-                        8px 20px);
-
+                    height: 36px;
+                    padding: 0 18px;
+                    background: g.$white-color;
+                    color: g.$text-main-color;
+                    border: 1px solid g.$text-main-color;
                     font-size: g.$size-12-sub;
-
-                    transition: all 0.2s;
+                    font-weight: g.$Bold;
+                    cursor: pointer;
+                    letter-spacing: 0.02em;
+                    transition: background 0.18s, color 0.18s;
+                    white-space: nowrap;
 
                     &:hover {
-                        background: g.$main-color;
+                        background: g.$text-main-color;
                         color: g.$white-color;
                     }
                 }
