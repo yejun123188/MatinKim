@@ -1,0 +1,231 @@
+@use "../../App.scss" as g;
+
+.floating-recent-viewed {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+
+    .floating-panel {
+        position: relative;
+        // width: 320px;
+        max-height: 0;
+        background: #ffffff;
+        border: 1px solid #e8e8e8;
+        // border-radius: 18px;
+        // box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, max-height 0.2s ease;
+
+        &.open {
+            max-height: 600px;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+
+        .floating-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 16px 12px;
+            border-bottom: 1px solid #f2f2f2;
+            background: g.$main-color;
+
+            strong {
+                display: block;
+                color: g.$text-main-color;
+                font-size: g.$size-16;
+                font-weight: g.$Bold;
+                margin-bottom: 4px;
+                color: g.$white-color;
+            }
+
+            span {
+                display: block;
+                color: g.$text-sub-color;
+                font-size: g.$size-14-main;
+            }
+
+            .close-panel-btn {
+                border: none;
+                background: none;
+                padding: 8px;
+                cursor: pointer;
+
+                img {
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+
+        .floating-body {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 0 16px;
+
+            .floating-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin: 12px 0 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .floating-item {
+                display: grid;
+                grid-template-columns: 70px 1fr 28px;
+                gap: 10px;
+                align-items: start;
+                padding: 10px 0;
+                border-bottom: 1px solid #f4f4f4;
+
+                .floating-thumb {
+                    width: 70px;
+                    height: 85px;
+                    border: none;
+                    background: none;
+                    padding: 0;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        // border-radius: 12px;
+                    }
+                }
+
+                .floating-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+
+                    .floating-name {
+                        text-align: left;
+                        border: none;
+                        background: none;
+                        padding: 0;
+                        color: g.$text-main-color;
+                        font-size: g.$size-14-main;
+                        font-weight: g.$Bold;
+                        line-height: 1.4;
+                        cursor: pointer;
+                    }
+
+                    .floating-price {
+                        color: g.$text-main-color;
+                        font-size: g.$size-14-main;
+                    }
+                }
+
+                .remove-btn {
+                    border: none;
+                    background: none;
+                    color: g.$text-sub-color;
+                    font-size: 1rem;
+                    // line-height: 1;
+                    cursor: pointer;
+                    align-self: flex-start;
+                    opacity: 0.5;
+                }
+            }
+
+            .floating-empty {
+                padding: 24px 0 12px;
+                color: g.$text-sub-color;
+                font-size: g.$size-14-main;
+                text-align: center;
+            }
+        }
+
+        .clear-all-btn {
+            width: calc(100% - 32px);
+            margin: 12px 16px 16px;
+            @include g.myBtn2($pd: 10px 0, $fs: g.$size-14-main);
+            // border-radius: 12px;
+            font-weight: g.$Bold;
+        }
+    }
+
+    .floating-button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .floating-toggle-btn,
+        .floating-top-btn {
+            width: 50px;
+            height: 50px;
+            // border-radius: 18px;
+            border: 1px solid #e8e8e8;
+            background: #ffffff;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        }
+
+        .floating-toggle-btn {
+            gap: 6px;
+            padding: 8px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
+            span {
+                font-size: 0.75rem;
+                color: g.$text-main-color;
+                font-weight: g.$Bold;
+            }
+        }
+
+        .floating-top-btn {
+            font-size: 0.8125rem;
+            font-weight: g.$Bold;
+            color: g.$text-main-color;
+        }
+    }
+}
+
+@include g.respond(tablet) {
+    .floating-recent-viewed {
+        right: 16px;
+        bottom: 16px;
+
+        .floating-panel {
+            width: 300px;
+        }
+    }
+}
+
+@include g.respond(mobile) {
+    .floating-recent-viewed {
+        right: 12px;
+        bottom: 12px;
+
+        .floating-panel {
+            width: 100vw;
+            max-width: 340px;
+            right: -12px;
+            left: auto;
+        }
+    }
+}

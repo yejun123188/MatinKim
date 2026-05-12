@@ -22,11 +22,17 @@
   }
 
   .slide-wrap {
+
     margin-left: var(--section-side-space);
 
+    will-change: transform;
+
     .swiper {
+
       overflow: visible;
+
       padding-bottom: 28px;
+
     }
 
     .swiper-wrapper {
