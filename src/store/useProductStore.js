@@ -324,21 +324,23 @@ export const useProductStore = create((set, get) => ({
     });
     set({});
   },
-  onUpdateOption: (key, { size, color }) => {
-    const cart = get().cartItem;
-    const newKey = (item) => `${item.id}-${size}-${color}`;
-
-    const updateCart = cart.map((item) =>
-      item.key === key
-        ? { ...item, size, color, key: newKey(item) }
-        : item
-    );
-    localStorage.setItem("cartItem", JSON.stringify(updateCart));
-    set({
-      cartItem: updateCart,
-      cartCount: updateCart.length,
-      totalPrice: get().onTotal(updateCart),
-    });
+  onUpdateOption: (key, { size, color, id, image, name }) => {
+    set((state) => ({
+      cartItem: state.cartItem.map((item) => {
+        if (item.key !== key) return item;
+        const newId = id ?? item.id;
+        const newKey = `${newId}-${size}-${color}`;
+        return {
+          ...item,
+          key: newKey,
+          size,
+          color,
+          id: newId,
+          image: image ?? item.image,  
+          name: name ?? item.name,     
+        };
+      }),
+    }));
   },
   //~~~위시리스트~~~~~~~~~~~~~~~~~~~~~
   // wishList: [],
