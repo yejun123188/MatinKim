@@ -12,6 +12,7 @@ export default function NewArrivals() {
     const slideWrapRef = useRef(null);
     const progressFillRef = useRef(null);
     const shiftRef = useRef(0);
+
     const { NewItems, onNewMenus, items, onFetchItem } = useProductStore();
 
     useEffect(() => {
@@ -22,29 +23,36 @@ export default function NewArrivals() {
     const visibleNewItems = NewItems.slice(54, 66);
     const TOTAL = visibleNewItems.length;
 
-    // weeklybest grid 시작점과 동일
-    const getSideSpace = () => (window.innerWidth - Math.min(window.innerWidth, 1440)) / 2;
-    const getCardWidth = () => (Math.min(window.innerWidth, 1440) - 96) / 5;
+    // 왼쪽 여백 계산
+    const getSideSpace = () => {
+        return (window.innerWidth - Math.min(window.innerWidth, 1440)) / 2;
+    };
 
     const handleSlideChange = (swiper) => {
-        if (slideWrapRef.current) {
-            const sideSpace = getSideSpace();
-            const cardWidth = getCardWidth();
+        const maxShift = 140;
+        const movePerSlide = 0;
 
-            if (shiftRef.current < sideSpace) {
-                shiftRef.current = Math.min(shiftRef.current + cardWidth, sideSpace);
-                slideWrapRef.current.style.transition =
-                    'margin-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                slideWrapRef.current.style.marginLeft =
-                    `${getSideSpace() - shiftRef.current}px`;
-            }
+        shiftRef.current = Math.min(
+            swiper.realIndex * movePerSlide,
+            maxShift
+        );
+
+        if (slideWrapRef.current) {
+            slideWrapRef.current.style.transition =
+                'transform 0.6s ease-out';
+
+            slideWrapRef.current.style.transform =
+                `translateX(-${shiftRef.current}px)`;
         }
 
         if (progressFillRef.current) {
             const progress = (swiper.realIndex + 1) / TOTAL;
+
             progressFillRef.current.style.transition =
-                'width 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            progressFillRef.current.style.width = `${progress * 100}%`;
+                'width 0.6s ease-out';
+
+            progressFillRef.current.style.width =
+                `${progress * 100}%`;
         }
     };
 
@@ -84,7 +92,10 @@ export default function NewArrivals() {
 
                 <div className="progress-bar-wrap">
                     <div className="progress-bar-track">
-                        <div className="progress-bar-fill" ref={progressFillRef}></div>
+                        <div
+                            className="progress-bar-fill"
+                            ref={progressFillRef}
+                        ></div>
                     </div>
                 </div>
             </div>

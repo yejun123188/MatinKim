@@ -10,7 +10,7 @@
 
     .qna-title-wrap {
         padding-bottom: 30px;
-        flex: 0 0 1;
+        flex: 0 0 120px;
 
         h2 {
             font-size: 40px;
@@ -28,7 +28,7 @@
     }
 
     .qna-sidebar {
-        width: 220px;
+        width: 120px;
         flex-shrink: 0;
 
         ul {
@@ -38,8 +38,8 @@
         }
 
         li {
-            font-size: 18px;
-            color: #999;
+            font-size: 1rem;
+            color: #777;
             cursor: pointer;
 
             &.active {
@@ -153,11 +153,10 @@
 }
 
 .qna-page .qna-sidebar ul li {
-    color: #999;
+    color: #777;
 
     &:hover {
         color: #000;
-        text-decoration: underline;
     }
 
     &.active {

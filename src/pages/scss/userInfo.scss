@@ -38,24 +38,26 @@
 
         li {
           button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
             border: none;
             background: none;
+            padding: 0 0 4px;
             font-size: 1rem;
             color: g.$text-sub-color;
             cursor: pointer;
             transition:
-              color 0.3s ease,
+              color 0.25s ease,
               font-weight 0.2s ease;
 
             &:hover {
               color: #1e1e1e;
-              font-weight: 700;
             }
 
             &.active {
               color: #000000;
-              font-weight: g.$Bold;
-              animation: userInfoMenuActive 0.35s ease both;
+              font-weight: 600;
             }
           }
         }
@@ -420,18 +422,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes userInfoMenuActive {
-  0% {
-    opacity: 0.45;
-    transform: translateX(-6px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 

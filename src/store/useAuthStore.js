@@ -20,7 +20,7 @@ import {
   addDoc,
   deleteDoc,
 } from "firebase/firestore";
-
+import { useProductStore } from "./useProductStore";
 const formatCouponDate = (date) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -517,15 +517,23 @@ export const useAuthStore = create(
 
       onLogout: async () => {
         try {
-          await signOut(auth);
+          // localStorage 먼저 제거
           localStorage.removeItem("socialUser");
           localStorage.removeItem("auth-storage");
 
+          await signOut(auth);
+
+          // 상태 한번에 초기화
           set({
             user: null,
             savedMoneyList: [],
             savedMoneySummary: getSavedMoneySummary([]),
           });
+
+          //wishList 직접 초기화 (import 없이)
+          const { useProductStore } = await import("./useProductStore");
+          useProductStore.setState({ wishList: [] });
+
         } catch (err) {
           console.error("로그아웃 에러:", err);
         }
