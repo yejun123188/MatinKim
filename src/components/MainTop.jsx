@@ -10,7 +10,11 @@ export default function MainTop() {
     <div className="main-top">
       <div className="video-wrap">
         <video
-          src="./videos/main-top/top-video-2160p.mp4"
+          src={
+            isKimMatin
+              ? "./videos/main-top/top-video2-2160p.mp4"
+              : "./videos/main-top/top-video-2160p.mp4"
+          }
           autoPlay
           muted
           loop

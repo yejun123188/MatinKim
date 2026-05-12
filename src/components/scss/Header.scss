@@ -325,6 +325,53 @@
   }
 }
 
+.header-show.kimmatin-header {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+
+  .header-left {
+    h1 {
+      width: 128px;
+    }
+
+    h1 img {
+      filter: none !important;
+      height: 42px;
+    }
+
+    ul li a {
+      color: #fff !important;
+
+      &::after {
+        background: #fff !important;
+      }
+    }
+  }
+
+  .header-right {
+    .gnb-list {
+      img {
+        filter: brightness(0) invert(1) !important;
+      }
+
+      .cart-num {
+        background: #fff !important;
+
+        span {
+          color: #000 !important;
+        }
+      }
+    }
+  }
+}
+
+.header-wrapper:hover .header-show.kimmatin-header,
+.header-show.kimmatin-header.scrolled,
+.header-show.kimmatin-header.subpage {
+  background: #000;
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
 .header-active {
   display: flex;
   justify-content: space-between;

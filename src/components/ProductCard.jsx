@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProductStore } from "../store/useProductStore";
 import { useAuthStore } from "../store/useAuthStore";
+import products2 from "../data/products2.json";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 const getProductBaseName = (item) => {
   if (!item?.name) return "";
@@ -32,6 +34,9 @@ export default function ProductCard({
   } = useProductStore();
 
   const { user } = useAuthStore();
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
+  const activeItems = isKimMatin ? products2 : items;
   const navigate = useNavigate();
 
   const [previewProduct, setPreviewProduct] = useState(null);
@@ -49,7 +54,7 @@ export default function ProductCard({
   const colorVariants = useMemo(() => {
     const baseName = getProductBaseName(cate);
 
-    const variants = items.filter(
+    const variants = activeItems.filter(
       (item) => getProductBaseName(item) === baseName && item.colors?.[0]
     );
 
@@ -59,7 +64,7 @@ export default function ProductCard({
         .filter(Boolean) || [];
 
     return sortedVariants.length > 0 ? sortedVariants : [cate];
-  }, [items, cate]);
+  }, [activeItems, cate]);
 
   const selectedVariant =
     colorVariants.find((v) => v.colors?.[0] === selectedColor) || cate;
@@ -272,7 +277,7 @@ export default function ProductCard({
       </div>
 
       <div className="text-box">
-        <p className="brand-name">MATIN KIM</p>
+        <p className="brand-name">{isKimMatin ? "KIMMATIN" : "MATIN KIM"}</p>
         <h3>{cate.name}</h3>
 
         <div className="price-wrap">
