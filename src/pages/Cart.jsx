@@ -144,7 +144,15 @@ export default function Cart({ onClose }) {
             alert("이미 동일한 옵션의 상품이 장바구니에 있습니다.");
             return;
         }
-        onUpdateOption(item.key, tempOption);
+
+
+        onUpdateOption(item.key, {
+            ...tempOption,
+            id: newId,
+            image: previewImage || item.image,
+            name: previewName || item.name,
+        });
+
         setEditingKey(null);
         setPreviewImage(null);
         setPreviewName(null);
