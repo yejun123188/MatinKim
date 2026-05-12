@@ -37,6 +37,7 @@ export default function ProductCard({
   const { brand } = useBrandStore();
   const isKimMatin = brand === BRAND.KIMMATIN;
   const activeItems = isKimMatin ? products2 : items;
+
   const navigate = useNavigate();
 
   const [previewProduct, setPreviewProduct] = useState(null);
@@ -267,7 +268,9 @@ export default function ProductCard({
                 key={badge.key}
                 className={`badge ${
                   badge.type === "discount" ? "discount-badge" : ""
-                } ${badge.type === "soldout" ? "soldout-badge" : ""}`}
+                } ${badge.type === "soldout" ? "soldout-badge" : ""} ${
+                  badge.label === "MUST HAVE" ? "must-have-badge" : ""
+                }`}
               >
                 {badge.label}
               </span>

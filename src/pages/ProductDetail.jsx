@@ -12,6 +12,7 @@ import { addRecentViewedProduct } from '../utils/recentViewedProducts';
 import { qnadata } from '../data/Qna';
 import products2 from "../data/products2.json";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
+import { useLoginStore } from '../store/useLoginStore';
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
 const RELATED_PER_PAGE = 10;
@@ -92,7 +93,7 @@ export default function ProductDetail() {
     const [showLogin, setShowLogin] = useState(false);
 
     const { user } = useAuthStore();
-
+    const { openLogin } = useLoginStore();
     useEffect(() => {
         if (!isKimMatin && items.length === 0) onFetchItem();
     }, [items.length, isKimMatin, onFetchItem]);
@@ -258,20 +259,25 @@ export default function ProductDetail() {
 
     const handleBuyNow = () => {
         if (!product || isProductSoldOut) return;
+
         const purchasePrice = product.discountRate > 0 ? product.discountPrice : product.price;
-        navigate('/payment', {
-            state: {
-                orderItems: [{
-                    id: product.id,
-                    brand: 'MATIN KIM',
-                    name: product.name,
-                    option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
-                    quantity,
-                    price: purchasePrice,
-                    image: product.mainImg || product.hoverImg || ''
-                }]
-            }
-        });
+        const orderItems = [{
+            id: product.id,
+            brand: 'MATIN KIM',
+            name: product.name,
+            option: `${selectedColor || product.colors?.[0] || ''} / ${selectedSize || product.sizes?.[0] || ''}`,
+            quantity,
+            price: purchasePrice,
+            image: product.mainImg || product.hoverImg || ''
+        }];
+
+        // 비로그인 시 전역 로그인 모달 열기 (guestOrderItems 전달)
+        if (!user) {
+            openLogin(orderItems);
+            return;
+        }
+
+        navigate('/payment', { state: { orderItems } });
     };
 
     const handleSwitchProduct = () => {
@@ -332,7 +338,7 @@ export default function ProductDetail() {
         }
     };
 
-    // ✅ twitter, facebook 모두 작동하도록 수정
+    // twitter, facebook 모두 작동하도록 수정
     const handleShare = (type) => {
         const shareUrl = encodeURIComponent(currentUrl);
         const shareText = encodeURIComponent(product?.name || '');
@@ -692,7 +698,7 @@ export default function ProductDetail() {
             {showCart && <Cart onClose={() => setShowCart(false)} />}
             {showLogin && <Login onClose={() => setShowLogin(false)} />}
 
-            {/* ✅ 공유하기 모달 */}
+            {/* 공유하기 모달 */}
             {showShare && (
                 <div className="share-modal" onClick={() => setShowShare(false)}>
                     <div className="share-modal-content" onClick={(e) => e.stopPropagation()}>
