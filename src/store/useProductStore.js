@@ -291,6 +291,22 @@ export const useProductStore = create((set, get) => ({
     const cart = get().cartItem;
     const updateCart = cart.filter((cartItem) => !orderedKeys.includes(cartItem.key));
 
+    const updateCart = cart.reduce((acc, cartItem) => {
+      const ordered = orderedItems.find((o) => o.key === cartItem.key);
+      if (!ordered) {
+        // 주문 안 한 상품은 그대로
+        acc.push(cartItem);
+      } else {
+        const remaining = cartItem.count - ordered.quantity;
+        if (remaining > 0) {
+          // 수량이 남으면 차감해서 유지
+          acc.push({ ...cartItem, count: remaining });
+        }
+        // remaining <= 0 이면 제거 (push 안 함)
+      }
+      return acc;
+    }, []);
+
     localStorage.setItem("cartItem", JSON.stringify(updateCart));
     set({
       cartItem: updateCart,
