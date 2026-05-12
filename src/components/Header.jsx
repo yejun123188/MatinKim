@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 
 const topmenus = [
@@ -59,10 +60,17 @@ const popularKeywords = [
 ];
 
 const bestTabs = ["ALL", "CLOTHING", "GOODS", "ACCESSORIES"];
+const kimMatinMenus = [
+  { key: "shop", label: "SHOP", link: "/all" },
+  { key: "archive", label: "ARCHIVE", link: "/kimmatin/archive" },
+  { key: "about", label: "ABOUT", link: "/kimmatin/about" },
+];
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
 
   const isHome = location.pathname === "/";
 
@@ -111,6 +119,11 @@ export default function Header() {
   };
 
   const handleTopMenuEnter = (key) => {
+    if (isKimMatin) {
+      setIsShopHovered(false);
+      return;
+    }
+
     if (key === "shop") {
       setIsShopHovered(true);
     } else {
@@ -231,14 +244,18 @@ export default function Header() {
           <div
             className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
               } ${isHomeIdle ? "home-idle" : ""
-              } ${!isHome || isScrolled ? "no-banner" : ""}`}
+              } ${!isHome || isScrolled ? "no-banner" : ""} ${isKimMatin ? "kimmatin-header" : ""}`}
           >
             <div className="inner">
               <div className="header-left">
                 <h1>
                   <Link to="/" onClick={() => setIsShopHovered(false)}>
                     <img
-                      src="/images/header/logo-MatinKim-black.svg"
+                      src={
+                        isKimMatin
+                          ? "/images/header/logo-KIMMATIN-white.svg"
+                          : "/images/header/logo-MatinKim-black.svg"
+                      }
                       alt="로고"
                     />
                   </Link>
@@ -246,13 +263,13 @@ export default function Header() {
 
                 <nav>
                   <ul>
-                    {topmenus.map((menu) => (
+                    {(isKimMatin ? kimMatinMenus : topmenus).map((menu) => (
                       <li
                         key={menu.key}
                         onMouseEnter={() => handleTopMenuEnter(menu.key)}
                       >
                         <Link
-                          to={menu.key === "shop" ? "/all" : `/${menu.key}`}
+                          to={menu.link || (menu.key === "shop" ? "/all" : `/${menu.key}`)}
                           onClick={() => setIsShopHovered(false)}
                         >
                           {menu.label}
@@ -315,8 +332,8 @@ export default function Header() {
           </div>
 
           <div
-            className={`header-active ${isShopHovered ? "active" : ""}`}
-            onMouseEnter={() => setIsShopHovered(true)}
+            className={`header-active ${!isKimMatin && isShopHovered ? "active" : ""}`}
+            onMouseEnter={() => !isKimMatin && setIsShopHovered(true)}
             onClick={() => setIsShopHovered(false)}
           >
             <div className="inner">

@@ -8,8 +8,7 @@ export default function Collection() {
     <section className="collection">
       <div className="inner2">
         <SectionTitle title="COLLECTION" subtitle="This season's favorites" />
-        {/* 연결필요 */}
-        <Link>
+        <Link to="/collections">
           <div className="collection-list">
             <div className="card card-1">
               <img src="./images/main-collection/collection1.jpg" alt="card1" />
