@@ -37,6 +37,7 @@ import FindId from "./pages/FindId";
 import InquiryDetail from "./components/InquiryDetail";
 import FindPw from "./pages/FindPw";
 import FindIdResult from "./pages/FindIdResult";
+import Login from "./pages/Login";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -116,6 +117,7 @@ function App() {
         <Route path="/inquiry/:id" element={<InquiryDetail />} />
         <Route path="/password/find" element={<FindPw />} />
         <Route path="/findid/result" element={<FindIdResult />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </>
