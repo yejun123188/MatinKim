@@ -1018,6 +1018,158 @@
     }
 }
 
+// ─── Share Modal ───────────────────────────────────────────
+.share-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+
+    @media (min-width: 768px) {
+        align-items: center;
+    }
+}
+
+.share-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    padding: 28px 28px 40px;
+    animation: slideUp 0.25s ease;
+
+    @media (min-width: 768px) {
+        padding: 32px 36px;
+    }
+}
+
+.share-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    h3 {
+
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        color: #111;
+    }
+
+    .share-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        line-height: 1;
+        color: #111;
+        cursor: pointer;
+        transition: color 0.15s;
+
+        &:hover {
+            color: #aaa;
+        }
+    }
+}
+
+.share-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+.share-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 4px;
+    border-radius: 12px;
+    transition: background 0.15s, transform 0.15s;
+
+    &:hover {
+        background: #f7f7f7;
+        transform: translateY(-2px);
+    }
+
+    .share-icon-wrap {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    span:last-child {
+        font-size: 11px;
+        color: #555;
+        letter-spacing: 0.02em;
+    }
+
+    &.kakao .share-icon-wrap {
+
+        img {
+            width: 95%;
+            height: 95%;
+        }
+    }
+
+    &.twitter .share-icon-wrap {
+        img {
+            width: 95%;
+            height: 95%;
+        }
+    }
+
+    &.facebook .share-icon-wrap {
+        img {
+            width: 95%;
+            height: 95%;
+        }
+    }
+
+    &.copy .share-icon-wrap {
+        background: #f2f2f2;
+        border: 1px solid #e8e8e8;
+        font-size: 22px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .product-detail-empty {
     padding: 160px 24px 120px;
     text-align: center;

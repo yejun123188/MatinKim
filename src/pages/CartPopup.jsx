@@ -35,7 +35,7 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
     const recommendTitle = mode === "wish" ? "MY WISHLIST" : "BEST ITEM";
 
     return (
-        <div className='modal-overlay cart-popup' onClick={onClose}>
+        <div className='modal-overlay-cart-popup' onClick={onClose}>
             <div className='modal-wrap' onClick={(e) => e.stopPropagation()}>
 
                 {recommendList.length > 0 && (
@@ -107,7 +107,7 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
                                             <p className="wish-item-name">{item.name}</p>
                                             {mode === "wish" && (
                                                 <p className="wish-item-option">
-                                                    {item.selectedSize || "-"} / {formatCount(item.quantity)}
+                                                    {item.selectedColor}/ {item.selectedSize || "-"} / {formatCount(item.quantity)}
                                                 </p>
                                             )}
                                             <p className="wish-item-price">
