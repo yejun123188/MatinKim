@@ -65,49 +65,53 @@ export default function FindIdResult() {
     if (!member) return null;
 
     return (
-        <section className="find-id-result-page">
-            <div className="find-id-result-box">
-                <h2>아이디 찾기</h2>
+        <section className="sub-section">
+            <div className="inner find-id-result-page">
+                <div className="find-id-result-page">
+                    <div className="find-id-result-box">
+                        <h2>아이디 찾기</h2>
 
-                <div className="result-text">
-                    <h3>고객님 아이디 찾기가 완료 되었습니다.</h3>
-                    <p>다음정보로 가입된 아이디가 총 1개 있습니다.</p>
-                </div>
+                        <div className="result-text">
+                            <h3>고객님 아이디 찾기가 완료 되었습니다.</h3>
+                            <p>다음정보로 가입된 아이디가 총 1개 있습니다.</p>
+                        </div>
 
-                <div className="user-info">
-                    <p>
-                        이름: <span>{member.name}</span>
-                    </p>
-                    <p>
-                        휴대폰번호: <span>{member.phone}</span>
-                    </p>
-                </div>
+                        <div className="user-info">
+                            <p>
+                                이름: <span>{member.name}</span>
+                            </p>
+                            <p>
+                                휴대폰번호: <span>{member.phone}</span>
+                            </p>
+                        </div>
 
-                <div className="id-result">
-                    <label>
-                        <input type="radio" checked readOnly />
-                        <span>
-                            {member.userId}
-                            <em>
-                                {" "}
-                                ( 개인회원, {member.joinDate || "2026-04-06"} 가입 )
-                            </em>
-                        </span>
-                    </label>
-                </div>
+                        <div className="id-result">
+                            <label>
+                                <input type="radio" checked readOnly />
+                                <span>
+                                    {member.userId}
+                                    <em>
+                                        {" "}
+                                        ( 개인회원, {member.joinDate || "2026-04-06"} 가입 )
+                                    </em>
+                                </span>
+                            </label>
+                        </div>
 
-                <div className="result-buttons">
-                    <button type="button" onClick={() => navigate("/login")}>
-                        로그인
-                    </button>
+                        <div className="result-buttons">
+                            <button type="button" onClick={() => navigate("/login")}>
+                                로그인
+                            </button>
 
-                    <button
-                        type="button"
-                        className="black"
-                        onClick={() => navigate("/findpw")}
-                    >
-                        비밀번호 찾기
-                    </button>
+                            <button
+                                type="button"
+                                className="black"
+                                onClick={() => navigate("/password/find")}
+                            >
+                                비밀번호 찾기
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
