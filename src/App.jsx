@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Member from "./pages/Member";
 import Footer from "./components/Footer";
+import Floating from "./components/Floating";
 import Project from "./pages/Project";
 import Collections from "./pages/Collections";
 import About from "./pages/About";
@@ -124,6 +125,7 @@ function App() {
       )}
 
       <Footer />
+      <Floating />
     </>
   );
 }
