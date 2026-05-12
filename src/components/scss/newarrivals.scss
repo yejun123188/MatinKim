@@ -132,24 +132,30 @@
           align-items: center;
           justify-content: center;
           padding: 6px 8px 3px;
-          border: 1px solid g.$main-color;
-          background: g.$main-color;
-          color: g.$white-color;
+          border: 1px solid rgba(g.$main-color, 0.3);
+          background: g.$white-color;
+          color: rgba(g.$main-color, 0.9);
           font-size: 0.625rem;
-          font-weight: g.$Bold;
+          font-weight: 900;
           letter-spacing: 0.05em;
           line-height: 1;
         }
 
         .discount-badge {
-          background: g.$red-color;
+          background: g.$white-color;
           border-color: g.$red-color;
-          color: g.$white-color;
+          color: g.$red-color;
         }
 
         .soldout-badge {
           background: #8c8c8c;
           border-color: #8c8c8c;
+          color: g.$white-color;
+        }
+
+        .must-have-badge {
+          background: g.$main-color;
+          border-color: g.$main-color;
           color: g.$white-color;
         }
       }
