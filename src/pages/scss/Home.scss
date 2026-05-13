@@ -1,6 +1,6 @@
 .home-brand-bg--matinkim {
   min-height: 100vh;
-  background: #fff !important;
+  background: #fff;
 }
 
 .kimmatin-home.home-brand-bg--matinkim,
@@ -8,12 +8,12 @@
 .kimmatin-home.home-brand-bg--matinkim .weeklybest,
 .kimmatin-home.home-brand-bg--matinkim .collection,
 .kimmatin-home.home-brand-bg--matinkim .insta {
-  background: #fff !important;
+  background: #fff;
 }
 
 .home-brand-bg--kimmatin {
   min-height: 100vh;
-  background: #050505 !important;
+  background: #050505;
 }
 
 .home-brand-switching {
@@ -28,12 +28,14 @@
 }
 
 .home-brand-switching.is-exit .home-brand-animate-item {
-  animation: homeBrandFadeOut 0.42s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+  animation: homeBrandFadeOut 0.42s cubic-bezier(0.45, 0, 0.55, 1)
+    forwards;
   pointer-events: none;
 }
 
 .home-brand-switching.is-enter .home-brand-animate-item {
-  animation: homeBrandFadeIn 0.64s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: homeBrandFadeIn 0.64s cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
   pointer-events: none;
 }
 
@@ -45,22 +47,34 @@
   position: fixed;
   inset: 0;
   z-index: 2000;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
+
+  padding-top: calc(50vh - 100px);
+
   opacity: 0;
   pointer-events: none;
+
   transition: opacity 0.64s cubic-bezier(0.16, 1, 0.3, 1);
 
   img {
     display: block;
+
     width: min(320px, 48vw);
-    max-height: 86px;
+    height: 86px;
+
     object-fit: contain;
+
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    visibility: visible;
+
+    transform: scale(1);
+
     transition:
-      transform 0.64s cubic-bezier(0.16, 1, 0.3, 1);
+      transform 0.64s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.64s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
@@ -75,24 +89,24 @@
 .brand-transition-overlay.is-prepare,
 .brand-transition-overlay.is-exit {
   opacity: 1;
+
   transition-duration: 0.42s;
   transition-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
 
   img {
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
   }
-}
-
-.brand-transition-overlay.is-active img {
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .brand-transition-overlay.is-enter {
   opacity: 0;
 
   img {
-    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
   }
 }
 

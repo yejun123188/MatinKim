@@ -340,7 +340,7 @@ export default function Header() {
                     <img
                       className="brand-logo brand-logo--matinkim"
                       src="/images/header/logo-MatinKim-black.svg"
-                      alt="濡쒓퀬"
+                      alt="로고"
                     />
                     <img
                       className="brand-logo brand-logo--kimmatin"
