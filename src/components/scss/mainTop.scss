@@ -27,12 +27,32 @@
       z-index: 1;
     }
 
-    video {
+    video,
+    .kimmatin-hero-swiper,
+    .swiper-slide {
       display: block;
-      object-fit: cover;
       width: 100%;
-      height: inherit;
+      height: 100%;
       margin: 0 auto;
+    }
+
+    .swiper-wrapper {
+      height: 100%;
+    }
+
+    .kimmatin-hero-swiper {
+      height: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    video {
+      object-fit: cover;
     }
   }
 

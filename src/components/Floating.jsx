@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { getRecentViewedProducts, setRecentViewedProducts } from "../utils/recentViewedProducts";
 import { useProductStore } from "../store/useProductStore";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
+import products2 from "../data/products2.json";
 import "./scss/Floating.scss";
 
 const formatPrice = (price) =>
@@ -17,6 +19,8 @@ const TOP_ICON = "/images/icon/top-icon-black.svg";
 export default function Floating() {
     const navigate = useNavigate();
     const { onColorCode } = useProductStore();
+    const { brand } = useBrandStore();
+    const isKimMatin = brand === BRAND.KIMMATIN;
     const [products, setProducts] = useState([]);
     const [open, setOpen] = useState(false);
     const [showTopButton, setShowTopButton] = useState(false);
@@ -71,9 +75,15 @@ export default function Floating() {
 
     const hasProducts = products.length > 0;
     const visibleProducts = useMemo(() => products, [products]);
+    const kimMatinProductIds = useMemo(
+        () => new Set(products2.map((product) => product.id)),
+        []
+    );
+    const getBrandName = (product) =>
+        kimMatinProductIds.has(product.id) ? "KIMMATIN" : "MATIN KIM";
 
     return (
-        <aside className={`floating-recent-viewed ${open ? "open" : ""}`}>
+        <aside className={`floating-recent-viewed ${open ? "open" : ""} ${isKimMatin ? "kimmatin-floating" : ""}`}>
             <div className={`floating-panel ${open ? "open" : ""}`} aria-hidden={!open}>
                 <div className="floating-panel-header">
                     <div>
@@ -100,7 +110,7 @@ export default function Floating() {
                                             <img src={product.img} alt={product.name} />
                                         </div>
                                         <ul className="text-box">
-                                            <li className="brand-name">MATIN KIM</li>
+                                            <li className="brand-name">{getBrandName(product)}</li>
                                             <li className="product-name">{trimName(product.name)}</li>
                                             <li className="price-wrap">
                                                 {product.discountRate > 0 ? (

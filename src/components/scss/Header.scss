@@ -1090,6 +1090,94 @@
   }
 }
 
+.search-drawer.kimmatin-search-drawer {
+  background: #050505;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+
+  .search-drawer-close img,
+  .search-drawer-form button img,
+  .remove-keyword-btn img {
+    filter: brightness(0) invert(1);
+  }
+
+  .search-drawer-form {
+    border-bottom-color: rgba(255, 255, 255, 0.82);
+
+    input {
+      color: #fff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+    }
+  }
+
+  .search-keyword-area {
+    border-bottom-color: rgba(255, 255, 255, 0.16);
+
+    h2 {
+      color: #fff;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.48);
+    }
+  }
+
+  .recent-keyword-list button,
+  .popular-keyword-list button,
+  .search-best-head h2,
+  .search-best-list .brand-name,
+  .search-best-list h3,
+  .search-best-list .discount-price {
+    color: #fff;
+  }
+
+  .popular-keyword-list button span {
+    background: #fff;
+    color: #000;
+  }
+
+  .search-best-tabs button {
+    color: rgba(255, 255, 255, 0.48);
+
+    &.active {
+      border-color: #fff;
+      color: #fff;
+    }
+  }
+
+  .search-best-list {
+    .product-card {
+      background: #050505;
+
+      &::before {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: #050505;
+      }
+
+      .price {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .color-chip {
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+
+      .badge {
+        border-color: #fff;
+        background: #fff;
+        color: #000;
+      }
+    }
+  }
+}
+
+.search-drawer-dim.kimmatin-search-dim.active {
+  background: rgba(0, 0, 0, 0.72);
+}
+
 @include g.respond(tablet) {
   .search-drawer {
     .search-drawer-close {

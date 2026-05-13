@@ -27,8 +27,8 @@ export default function Home() {
         {!isKimMatin && <NewArrivals />}
         {!isKimMatin && <TheEdit />}
         {!isKimMatin && <Flagship />}
-        <Collection />
-        <Instagram />
+        {!isKimMatin && <Collection />}
+        {!isKimMatin && <Instagram />}
       </main>
     </>
   );

@@ -94,9 +94,14 @@ export default function Header() {
   const headerShopMenus = isKimMatin ? kimMatinShopMenus : menus;
 
   const searchBestItems = useMemo(() => {
-    const sourceItems = BestItems.length > 0
-      ? BestItems
-      : items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"));
+    const kimBestItems = products2.filter(
+      (item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"),
+    );
+    const sourceItems = isKimMatin
+      ? kimBestItems
+      : BestItems.length > 0
+        ? BestItems
+        : items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"));
 
     const filteredItems = sourceItems.filter((item) => {
       if (activeBestTab === "ALL") return true;
@@ -111,7 +116,7 @@ export default function Header() {
     }
 
     return displayItems.length > 24 ? displayItems.slice(24, 29) : displayItems.slice(0, 5);
-  }, [BestItems, items, activeBestTab]);
+  }, [BestItems, items, activeBestTab, isKimMatin]);
 
   const handleAuthButtonClick = async () => {
     if (user) {
@@ -395,7 +400,7 @@ export default function Header() {
         />
       </header>
 
-      <div className={`search-drawer ${isSearchOpen ? "active" : ""}`}>
+      <div className={`search-drawer ${isSearchOpen ? "active" : ""} ${isKimMatin ? "kimmatin-search-drawer" : ""}`}>
         <button type="button" className="search-drawer-close" onClick={handleCloseSearch}>
           <img src="/images/icon/close-icon-black.svg" alt="검색창 닫기" />
         </button>
@@ -499,7 +504,7 @@ export default function Header() {
       </div>
       <button
         type="button"
-        className={`search-drawer-dim ${isSearchOpen ? "active" : ""}`}
+        className={`search-drawer-dim ${isSearchOpen ? "active" : ""} ${isKimMatin ? "kimmatin-search-dim" : ""}`}
         onClick={handleCloseSearch}
         aria-label="검색창 닫기"
       />

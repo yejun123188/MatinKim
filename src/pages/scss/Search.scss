@@ -103,6 +103,68 @@
   }
 }
 
+.search-page.kimmatin-product-list {
+  background: #050505 !important;
+  color: #fff !important;
+
+  .product-list-wrap,
+  .inner {
+    background: #050505 !important;
+    color: #fff !important;
+  }
+
+  .search-head {
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
+
+    .search-eyebrow,
+    .search-summary {
+      color: rgba(255, 255, 255, 0.66) !important;
+    }
+
+    h2,
+    .search-summary strong {
+      color: #fff !important;
+    }
+
+    .search-form {
+      input {
+        border-color: rgba(255, 255, 255, 0.22) !important;
+        background: #050505 !important;
+        color: #fff !important;
+
+        &:focus {
+          border-color: #fff !important;
+        }
+      }
+
+      button {
+        border-color: #fff !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+    }
+  }
+
+  .search-empty {
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    background: #050505 !important;
+
+    h3 {
+      color: #fff !important;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.66) !important;
+    }
+
+    a {
+      border-color: #fff !important;
+      background: #fff !important;
+      color: #000 !important;
+    }
+  }
+}
+
 @include g.respond(mobile) {
   .search-page {
     .search-head {

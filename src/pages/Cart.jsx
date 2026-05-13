@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
 import Login from "./Login";
+import products2 from "../data/products2.json";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 // ProductDetail과 동일한 베이스명 추출 로직
 const getProductBaseName = (item) => {
@@ -25,6 +27,9 @@ const isAllSoldOut = (product) => {
 export default function Cart({ onClose }) {
     const { cartItem, items, onUpdateQuantity, onRemoveItem, onUpdateOption } = useProductStore();
     const { user } = useAuthStore();
+    const { brand } = useBrandStore();
+    const isKimMatin = brand === BRAND.KIMMATIN;
+    const activeItems = isKimMatin ? products2 : items;
     const navigate = useNavigate();
     const { openLogin } = useLoginStore();
 
@@ -87,10 +92,10 @@ export default function Cart({ onClose }) {
         const result = {};
         cartItems.forEach((cartItem) => {
             if (result[cartItem.id]) return;
-            const productData = items.find((p) => p.id === cartItem.id);
+            const productData = activeItems.find((p) => p.id === cartItem.id);
             if (!productData) return;
             const baseName = getProductBaseName(productData);
-            result[cartItem.id] = items.reduce((acc, item) => {
+            result[cartItem.id] = activeItems.reduce((acc, item) => {
                 if (getProductBaseName(item) !== baseName) return acc;
                 const primary = item.colors?.[0];
                 if (primary) acc[primary] = item;
@@ -98,7 +103,7 @@ export default function Cart({ onClose }) {
             }, {});
         });
         return result;
-    }, [cartItems, items]);
+    }, [cartItems, activeItems]);
 
     // 옵션변경 열기
     const handleOpenEdit = (item) => {
@@ -165,7 +170,7 @@ export default function Cart({ onClose }) {
     };
 
     return (
-        <section className="cart-panel">
+        <section className={`cart-panel ${isKimMatin ? "kimmatin-cart" : ""}`}>
             <div className="cart-dim" onClick={onClose}></div>
 
             <div className="cart-panel-inner">
@@ -202,7 +207,7 @@ export default function Cart({ onClose }) {
                                 const isChecked = checkedItems.includes(item.key);
                                 const isEditing = editingKey === item.key;
                                 const colorMap = colorProductMapByCartItem[item.id] || {};
-                                const productData = items.find((p) => p.id === item.id);
+                                const productData = activeItems.find((p) => p.id === item.id);
 
                                 // 색상 목록: colorMap 키 기준, 모든 사이즈 품절인 색상은 disabled
                                 const availableColors = (productData?.colors || [item.color]).filter(

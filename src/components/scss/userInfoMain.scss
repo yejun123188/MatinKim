@@ -35,8 +35,20 @@
           gap: 10px;
 
           li:nth-child(2) {
+            align-items: center;
             border-top: 1px solid rgb(217, 217, 217);
             padding-top: 25px;
+
+            .my-total-price {
+              flex: 0 0 auto;
+              padding-right: 0;
+            }
+
+            span {
+              flex: 0 0 auto;
+              white-space: nowrap;
+              text-align: right;
+            }
           }
 
           li {
@@ -44,9 +56,7 @@
             align-items: flex-end;
             gap: 12px;
 
-
-
-            >div {
+            > div {
               min-width: 0;
             }
 
@@ -55,7 +65,6 @@
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
-
             }
 
             .grade-line {
@@ -67,8 +76,6 @@
               text-overflow: clip;
               padding-bottom: 10px;
             }
-
-
 
             .question {
               position: relative;
@@ -113,7 +120,7 @@
                 }
               }
 
-              img:hover+span {
+              img:hover + span {
                 opacity: 1;
                 transition: opacity 0.5s ease;
               }
@@ -122,7 +129,7 @@
             .my-total-price {
               font-size: 14px;
               color: g.$text-sub-color;
-              padding-right: 670px;
+              padding-right: 0;
             }
 
             span {
@@ -384,10 +391,8 @@
 
     .my-order,
     .my-wish {
-
       .order-list,
       .wish-list {
-
         .order-product,
         .wish-product {
           min-width: 340px;
@@ -472,10 +477,8 @@
 
     .my-order,
     .my-wish {
-
       .order-list,
       .wish-list {
-
         .order-product,
         .wish-product {
           align-items: center;
