@@ -493,8 +493,12 @@ export default function ProductList() {
                     <div className='product-list'>
                         {/* 상품리스트 */}
                         <ul>
-                            {pagedItems.map((cate) => (
-                                <ProductCard cate={cate} key={cate.id} />
+                            {pagedItems.map((cate, idx) => (
+                                <ProductCard
+                                    cate={cate}
+                                    key={cate.id}
+                                    rank={tagCategory === "MUST HAVE" ? (currentPage - 1) * ITEMS_PER_PAGE + idx + 1 : undefined}
+                                />
                             ))}
                         </ul>
                     </div>

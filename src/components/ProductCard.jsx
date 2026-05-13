@@ -17,10 +17,11 @@ const getProductBaseName = (item) => {
 };
 
 export default function ProductCard({
-  cate,
-  as: CardTag = "li",
-  className = "",
-  onClick,
+    cate,
+    as: CardTag = "li",
+    className = "",
+    onClick,
+    rank,
 }) {
   const {
     items,
@@ -374,35 +375,160 @@ export default function ProductCard({
           onClick={handleAddToWish}
           aria-label="찜하기"
         >
-          <img
-            src={
-              isLiked
-                ? "/images/pages-icon/like-hover-icon.svg"
-                : "/images/pages-icon/like-icon.svg"
-            }
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
+            <div className="img-box" onClick={handleMoveDetail}>
+                <img
+                    className="main-img"
+                    src={displayProduct.mainImg}
+                    alt={displayProduct.name}
+                />
+                <img
+                    className="hover-img"
+                    src={previewProduct ? displayProduct.mainImg : cate.hoverImg}
+                    alt={displayProduct.name}
+                />
 
-        <button
-          type="button"
-          className="card-action-btn"
-          onClick={handleAddCart}
-          disabled={isSoldOut}
-        >
-          장바구니
-        </button>
+                {rank ? (
+                    <div className="badge-wrap rank-badge-wrap">
+                        <span className="rank-badge">{rank}</span>
+                    </div>
+                ) : badgeItems.length > 0 && (
+                    <div className="badge-wrap">
+                        {badgeItems.map((badge) => (
+                            <span
+                                key={badge.key}
+                                className={`badge ${badge.type === "discount" ? "discount-badge" : ""
+                                    } ${badge.type === "soldout" ? "soldout-badge" : ""} ${badge.label === "MUST HAVE" ? "must-have-badge" : ""
+                                    }`}
+                            >
+                                {badge.label}
+                            </span>
+                        ))}
+                    </div>
+                )}
+            </div>
 
-        <button
-          type="button"
-          className="card-action-btn"
-          onClick={handleBuyNow}
-          disabled={isSoldOut}
-        >
-          구매하기
-        </button>
-      </div>
-    </CardTag>
-  );
+            <div className="text-box">
+                <p className="brand-name">MATIN KIM</p>
+                <h3>{cate.name}</h3>
+
+                <div className="price-wrap">
+                    {cate.discountRate > 0 ? (
+                        <>
+                            <span className="discount-rate">{cate.discountRate}%</span>
+                            <strong className="discount-price">
+                                {cate.discountPrice.toLocaleString()}
+                            </strong>
+                            <span className="price">{cate.price.toLocaleString()}</span>
+                        </>
+                    ) : (
+                        <strong className="discount-price">
+                            {cate.price.toLocaleString()}
+                        </strong>
+                    )}
+                </div>
+            </div>
+
+            <div className="color-wrap" onMouseLeave={() => setPreviewProduct(null)}>
+                {colorVariants.map((variant, id) => {
+                    const color = variant.colors?.[0];
+                    if (!color) return null;
+
+                    return (
+                        <span
+                            key={`${variant.id}-${color}-${id}`}
+                            className={`color-chip ${selectedColor === color ? "selected" : ""
+                                }`}
+                            style={getColorStyle(color)}
+                            aria-label={color}
+                            title={color}
+                            onMouseEnter={() => setPreviewProduct(variant)}
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                setSelectedColor(color);
+
+                                const nextSizeIndex = Array.isArray(variant.sizes)
+                                    ? variant.sizes.findIndex(
+                                        (size, index) => size && !variant.soldout?.[index]
+                                    )
+                                    : -1;
+
+                                setSelectedSize(
+                                    nextSizeIndex >= 0
+                                        ? variant.sizes[nextSizeIndex]
+                                        : variant.sizes?.[0] || ""
+                                );
+                            }}
+                        ></span>
+                    );
+                })}
+            </div>
+
+            {Array.isArray(selectedVariant.sizes) &&
+                selectedVariant.sizes.length > 0 && (
+                    <div
+                        className="card-size-list"
+                        aria-label={`${cate.name} 사이즈 목록`}
+                    >
+                        {selectedVariant.sizes.filter(Boolean).map((size, index) => (
+                            <span
+                                key={`${selectedVariant.id}-${size}-${index}`}
+                                className={`${selectedVariant.soldout?.[index] ? "is-soldout" : ""
+                                    } ${selectedSize === size ? "selected" : ""}`}
+                                onClick={(event) => {
+                                    event.stopPropagation();
+
+                                    if (!selectedVariant.soldout?.[index]) {
+                                        setSelectedSize(size);
+                                    }
+                                }}
+                            >
+                                {size}
+                            </span>
+                        ))}
+                    </div>
+                )}
+
+            <div
+                className="card-action-bar"
+                aria-label={`${cate.name} 빠른 메뉴`}
+                onClick={handleActionClick}
+                onKeyDown={(event) => event.stopPropagation()}
+            >
+                <button
+                    type="button"
+                    className={`card-like-btn ${isLiked ? "is-active" : ""}`}
+                    onClick={handleAddToWish}
+                    aria-label="찜하기"
+                >
+                    <img
+                        src={
+                            isLiked
+                                ? "/images/pages-icon/like-hover-icon.svg"
+                                : "/images/pages-icon/like-icon.svg"
+                        }
+                        alt=""
+                        aria-hidden="true"
+                    />
+                </button>
+
+                <button
+                    type="button"
+                    className="card-action-btn"
+                    onClick={handleAddCart}
+                    disabled={isSoldOut}
+                >
+                    장바구니
+                </button>
+
+                <button
+                    type="button"
+                    className="card-action-btn"
+                    onClick={handleBuyNow}
+                    disabled={isSoldOut}
+                >
+                    구매하기
+                </button>
+            </div>
+        </CardTag>
+    );
 }

@@ -2,14 +2,13 @@ import React from "react";
 import Instagram from "../components/Instagram";
 import Flagship from "../components/Flagship";
 import TheEdit from "../components/TheEdit";
-import Weeklybest from "../components/Weeklybest";
-import NewArrivals from "../components/NewArrivals";
-import MainTop from "../components/MainTop";
-import Collection from "../components/Collection";
-import ShortCut from "../components/ShortCut";
-import TimeSalePopup from "../components/TimeSalePopup";
-import { BRAND, useBrandStore } from "../store/useBrandStore";
-import "./scss/KimMatin.scss";
+import Weeklybest from '../components/Weeklybest';
+import NewArrivals from '../components/NewArrivals';
+import MainTop from '../components/MainTop';
+import Collection from '../components/Collection';
+import ShortCut from '../components/ShortCut';
+import TimeSalePopup from '../components/TimeSalePopup';
+import MiddleBanner from '../components/MiddleBanner';
 
 export default function Home() {
   const { brand } = useBrandStore();
@@ -23,6 +22,7 @@ export default function Home() {
         <MainTop />
         {!isKimMatin && <ShortCut />}
         <Weeklybest />
+        {!isKimMatin && <MiddleBanner />}
         {!isKimMatin && <NewArrivals />}
         {!isKimMatin && <TheEdit />}
         {!isKimMatin && <Flagship />}

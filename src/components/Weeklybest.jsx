@@ -79,21 +79,27 @@ export default function Weeklybest() {
           className={`best-item-list-wrap ${showAll ? "is-open is-animate" : ""}`}
           style={{ maxHeight: listHeight ? `${listHeight}px` : undefined }}
         >
-          <ul className="best-item-list" ref={listRef}>
-            {visibleItems.map((item) => (
-              <ProductCard cate={item} key={item.id} />
-            ))}
-          </ul>
-        </div>
-        <button type="button" className="see-more" onClick={() => setShowAll(!showAll)}>
-          {showAll ? "CLOSE" : "SEE MORE"}
-          <img
-            src={`/images/pages-icon/${showAll ? "top-icon.svg" : "bottom-icon.svg"}`}
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
-      </div>
-    </section>
-  );
+            <div className="inner">
+                <SectionTitle title="WEEKLY BEST ITEM" subtitle="이번 시즌의 인기 아이템" />
+                <div
+                    className={`best-item-list-wrap ${showAll ? 'is-open is-animate' : ''}`}
+                    style={{ maxHeight: listHeight ? `${listHeight}px` : undefined }}
+                >
+                    <ul className="best-item-list" ref={listRef}>
+                        {visibleItems.map((item, id) => (
+                            <ProductCard cate={item} key={id} rank={id + 1} />
+                        ))}
+                    </ul>
+                </div>
+                <button type="button" className="see-more" onClick={() => setShowAll(!showAll)}>
+                    {showAll ? "CLOSE" : "SEE MORE"}
+                    <img
+                        src={`/images/pages-icon/${showAll ? 'top-icon.svg' : 'bottom-icon.svg'}`}
+                        alt=""
+                        aria-hidden="true"
+                    />
+                </button>
+            </div>
+        </section>
+    )
 }
