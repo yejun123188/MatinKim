@@ -2,13 +2,14 @@ import React from "react";
 import Instagram from "../components/Instagram";
 import Flagship from "../components/Flagship";
 import TheEdit from "../components/TheEdit";
-import Weeklybest from '../components/Weeklybest';
-import NewArrivals from '../components/NewArrivals';
-import MainTop from '../components/MainTop';
-import Collection from '../components/Collection';
-import ShortCut from '../components/ShortCut';
-import TimeSalePopup from '../components/TimeSalePopup';
-import MiddleBanner from '../components/MiddleBanner';
+import Weeklybest from "../components/Weeklybest";
+import NewArrivals from "../components/NewArrivals";
+import MainTop from "../components/MainTop";
+import Collection from "../components/Collection";
+import ShortCut from "../components/ShortCut";
+import TimeSalePopup from "../components/TimeSalePopup";
+import MiddleBanner from "../components/MiddleBanner";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 export default function Home() {
   const { brand } = useBrandStore();
