@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Member from "./pages/Member";
 import Footer from "./components/Footer";
+import Floating from "./components/Floating";
 import Project from "./pages/Project";
 import Collections from "./pages/Collections";
 import About from "./pages/About";
@@ -37,6 +38,13 @@ import FindId from "./pages/FindId";
 import InquiryDetail from "./components/InquiryDetail";
 import FindPw from "./pages/FindPw";
 import FindIdResult from "./pages/FindIdResult";
+import KimMatinArchive from "./pages/KimMatinArchive";
+import KimMatinAbout from "./pages/KimMatinAbout";
+import KimMatinFaq from "./pages/KimMatinFaq";
+import KimMatinQna from "./pages/KimMatinQna";
+import KimMatinGuide from "./pages/KimMatinGuide";
+import KimMatinPrivacy from "./pages/KimMatinPrivacy";
+import KimMatinTerms from "./pages/KimMatinTerms";
 import { useLoginStore } from "./store/useLoginStore";
 import Login from "./pages/Login";
 
@@ -80,6 +88,18 @@ function App() {
         <Route path="/:category1" element={<ProductList />} />
         <Route path="/:category1/:category2" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/kimmatin/archive" element={<KimMatinArchive />} />
+        <Route path="/kimmatin/about" element={<KimMatinAbout />}>
+          <Route index element={<></>} />
+          <Route path="brand" element={<></>} />
+          <Route path="stockist" element={<></>} />
+          <Route path="contact" element={<></>} />
+        </Route>
+        <Route path="/kimmatin/faq" element={<KimMatinFaq />} />
+        <Route path="/kimmatin/qna" element={<KimMatinQna />} />
+        <Route path="/kimmatin/guide" element={<KimMatinGuide />} />
+        <Route path="/kimmatin/privacy-policy" element={<KimMatinPrivacy />} />
+        <Route path="/kimmatin/terms" element={<KimMatinTerms />} />
         <Route path="/guest-order" element={<GuestOrder />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/signup" element={<Signup />} />
@@ -124,6 +144,7 @@ function App() {
       )}
 
       <Footer />
+      <Floating />
     </>
   );
 }

@@ -3,12 +3,15 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { useProductStore } from '../store/useProductStore';
 import "./scss/productDetail.scss";
+import "./scss/KimMatin.scss";
 import CartPopup from './CartPopup';
 import Cart from './Cart';
 import { useAuthStore } from '../store/useAuthStore';
 import Login from './Login';
 import { addRecentViewedProduct } from '../utils/recentViewedProducts';
 import { qnadata } from '../data/Qna';
+import products2 from "../data/products2.json";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 import { useLoginStore } from '../store/useLoginStore';
 
 const TAB_ITEMS = ["SIZE GUIDE", "DETAILS", "DELIVERY"];
@@ -69,6 +72,9 @@ export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     const { items, onFetchItem, onColorCode, onAddCart, onAddWishList, onRemoveWish, wishList, onLoadWishList } = useProductStore();
+    const { brand } = useBrandStore();
+    const isKimMatin = brand === BRAND.KIMMATIN;
+    const activeItems = isKimMatin ? products2 : items;
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [thumbStartIndex, setThumbStartIndex] = useState(0);
@@ -89,32 +95,32 @@ export default function ProductDetail() {
     const { user } = useAuthStore();
     const { openLogin } = useLoginStore();
     useEffect(() => {
-        if (items.length === 0) onFetchItem();
-    }, [items.length, onFetchItem]);
+        if (!isKimMatin && items.length === 0) onFetchItem();
+    }, [items.length, isKimMatin, onFetchItem]);
 
     const product = useMemo(
-        () => items.find((item) => item.id === id),
-        [items, id]
+        () => activeItems.find((item) => item.id === id),
+        [activeItems, id]
     );
 
     const colorProductMap = useMemo(() => {
         if (!product) return {};
         const baseName = getProductBaseName(product);
-        return items.reduce((acc, item) => {
+        return activeItems.reduce((acc, item) => {
             if (getProductBaseName(item) !== baseName) return acc;
             const itemPrimaryColor = item.colors?.[0];
             if (itemPrimaryColor) acc[itemPrimaryColor] = item;
             return acc;
         }, {});
-    }, [items, product]);
+    }, [activeItems, product]);
 
     const nextProductId = useMemo(() => {
-        if (!product || items.length === 0) return null;
-        const currentIndex = items.findIndex((item) => item.id === product.id);
+        if (!product || activeItems.length === 0) return null;
+        const currentIndex = activeItems.findIndex((item) => item.id === product.id);
         if (currentIndex === -1) return null;
-        const nextIndex = (currentIndex + 1) % items.length;
-        return items[nextIndex]?.id || null;
-    }, [items, product]);
+        const nextIndex = (currentIndex + 1) % activeItems.length;
+        return activeItems[nextIndex]?.id || null;
+    }, [activeItems, product]);
 
     const isProductSoldOut = Boolean(
         product &&
@@ -209,11 +215,11 @@ export default function ProductDetail() {
 
     const relatedProducts = useMemo(() => {
         if (!product) return [];
-        return items.filter((item) => (
+        return activeItems.filter((item) => (
             item.id !== product.id &&
             (item.category2 === product.category2 || item.category1 === product.category1)
         ));
-    }, [items, product]);
+    }, [activeItems, product]);
 
     const relatedTotalPages = Math.max(1, Math.ceil(relatedProducts.length / RELATED_PER_PAGE));
     const relatedPageGroup = Math.ceil(relatedPage / PAGE_BUTTON_LIMIT);
@@ -431,7 +437,7 @@ export default function ProductDetail() {
         );
     };
 
-    if (!items.length) return <div className='inner product-detail-empty'>로딩중...</div>;
+    if (!activeItems.length) return <div className='inner product-detail-empty'>로딩중...</div>;
 
     if (!product) {
         return (
@@ -443,7 +449,7 @@ export default function ProductDetail() {
     }
 
     return (
-        <main className='product-detail-page'>
+        <main className={`product-detail-page ${isKimMatin ? "kimmatin-product-detail" : ""}`}>
             <div className={`inner product-detail-page-inner ${isPageVisible ? 'is-visible' : ''}`}>
                 <section className='product-detail-hero'>
                     <div className='gallery-column'>
