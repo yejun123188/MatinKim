@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useProductStore } from "../store/useProductStore";
 import { useParams } from "react-router-dom";
 import Filter from "../components/Filter";
@@ -55,6 +55,7 @@ import "./scss/productList.scss";
 import "./scss/KimMatin.scss";
 import products2 from "../data/products2.json";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
+import { buildProductMenus, getProductMainCategory } from "../utils/productMenu";
 
 const PRICE_STEP = 1000;
 
@@ -150,6 +151,9 @@ export default function ProductList() {
   const [isPageVisible, setIsPageVisible] = useState(false);
   const { brand } = useBrandStore();
   const isKimMatin = brand === BRAND.KIMMATIN;
+  const normalizedMainCate = isKimMatin
+    ? getProductMainCategory(mainCate || "")
+    : mainCate;
 
   // 카테고리별 필터링 및 옵션 생성 함수를 동적으로 선택
   const categoryFilterMap = {
@@ -210,6 +214,7 @@ export default function ProductList() {
   // 상태 가져오기
   const { items, onFetchItem } = useProductStore();
   const activeItems = isKimMatin ? products2 : items;
+  const kimMatinShopMenus = useMemo(() => buildProductMenus(products2), []);
 
   // 가격 상태 추가
   const [priceRange, setPriceRange] = useState({
@@ -280,7 +285,7 @@ export default function ProductList() {
     }
 
     //1.메인 메뉴 카테고리 필터
-    if (mainCate && item.category1.toLowerCase() !== mainCate) {
+    if (normalizedMainCate && item.category1.toLowerCase() !== normalizedMainCate) {
       return false;
     }
     //2. subcategory가 있을 경우 필터
@@ -479,6 +484,7 @@ export default function ProductList() {
           className={`filter-sidebar ${!showFilter ? "is-hidden" : ""} ${isPageVisible ? "is-visible" : ""}`}
         >
           <Filter
+            shopMenus={isKimMatin ? kimMatinShopMenus : undefined}
             showCategoryFilter={hasSubCategoryFilter}
             colorCount={colorCount}
             onPriceChange={setPriceRange}
