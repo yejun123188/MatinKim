@@ -218,6 +218,15 @@ export default function ProductList() {
   const { items, onFetchItem } = useProductStore();
   const activeItems = isKimMatin ? products2 : items;
   const kimMatinShopMenus = useMemo(() => buildProductMenus(products2), []);
+  const mustHaveRankMap = useMemo(() => {
+    const mustHaveItems = activeItems.filter(
+      (item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"),
+    );
+
+    return new Map(
+      mustHaveItems.map((item, index) => [String(item.id), index + 1]),
+    );
+  }, [activeItems]);
 
   // 가격 상태 추가
   const [priceRange, setPriceRange] = useState({
@@ -381,6 +390,13 @@ export default function ProductList() {
 
   // 정렬 로직
   const sortedItems = [...cateItems].sort((a, b) => {
+    if (tagCategory === "MUST HAVE") {
+      return (
+        (mustHaveRankMap.get(String(a.id)) || Number.MAX_SAFE_INTEGER) -
+        (mustHaveRankMap.get(String(b.id)) || Number.MAX_SAFE_INTEGER)
+      );
+    }
+
     switch (sortBy) {
       case "newest":
         // NEW IN 태그가 있는 상품을 우선 정렬, 그 다음 ID 기준 내림차순
@@ -632,7 +648,15 @@ export default function ProductList() {
             {/* 상품리스트 */}
             <ul>
               {pagedItems.map((cate) => (
-                <ProductCard cate={cate} key={cate.id} />
+                <ProductCard
+                  cate={cate}
+                  key={cate.id}
+                  rank={
+                    tagCategory === "MUST HAVE"
+                      ? mustHaveRankMap.get(String(cate.id))
+                      : undefined
+                  }
+                />
               ))}
             </ul>
           </div>

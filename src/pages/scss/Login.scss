@@ -1,6 +1,6 @@
 .login-page {
     position: fixed;
-    background: #fff;
+    background: transparent;
     top: 0;
     right: 0;
     width: 760px;
@@ -8,7 +8,7 @@
     min-width: 320px;
     min-height: 100vh;
     z-index: 10000;
-    box-shadow: 0 -3px;
+    box-shadow: none;
 }
 
 
@@ -22,6 +22,7 @@
 .login-page .login-right {
     min-height: 100vh;
     background: #fff;
+    box-shadow: -3px 0 18px rgba(0, 0, 0, 0.12);
     padding-top: 115px;
     padding-left: 60px;
     padding-right: 60px;
@@ -216,9 +217,9 @@
 }
 
 .login-page.kimmatin-login {
-    background: #050505;
+    background: transparent;
     color: #fff;
-    box-shadow: 0 -3px #050505;
+    box-shadow: none;
 
     .login-dim {
         background: rgba(0, 0, 0, 0.35);
@@ -229,6 +230,7 @@
         border-left: 1px solid rgba(255, 255, 255, 0.22);
         background: #050505;
         color: #fff;
+        box-shadow: -3px 0 18px rgba(0, 0, 0, 0.28);
     }
 
     .login-top h2,

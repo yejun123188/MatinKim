@@ -47,6 +47,7 @@ import KimMatinPrivacy from "./pages/KimMatinPrivacy";
 import KimMatinTerms from "./pages/KimMatinTerms";
 import { useLoginStore } from "./store/useLoginStore";
 import Login from "./pages/Login";
+import { BRAND, useBrandStore } from "./store/useBrandStore";
 
 
 function ScrollToTop() {
@@ -58,10 +59,13 @@ function ScrollToTop() {
 }
 
 function App() {
+  const { pathname } = useLocation();
   const { items, onFetchItem, onMenus } = useProductStore();
   const { onFetchStore, stores } = useMapStore();
   const { initAuth } = useAuthStore();
   const { isLoginOpen, guestMode, guestOrderItems, closeLogin } = useLoginStore();
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
 
   useEffect(() => {
     initAuth();
@@ -79,10 +83,11 @@ function App() {
   if (!items.length) return <div>로딩중...</div>;
 
   return (
-    <>
+    <div className={`app-shell ${isKimMatin ? "app-shell--kimmatin" : "app-shell--matinkim"}`}>
       <Header />
       <ScrollToTop />
-      <Routes>
+      <div className="app-content" key={pathname}>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/:category1" element={<ProductList />} />
@@ -132,7 +137,8 @@ function App() {
         <Route path="/password/find" element={<FindPw />} />
         <Route path="/findid/result" element={<FindIdResult />} />
         <Route path="/login" element={<Login />} />
-      </Routes>
+        </Routes>
+      </div>
 
       {/* Routes 밖으로 꺼내야 어느 페이지에서든 렌더링됨 */}
       {isLoginOpen && (
@@ -145,7 +151,7 @@ function App() {
 
       <Footer />
       <Floating />
-    </>
+    </div>
   );
 }
 

@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
 import { createPortal } from 'react-dom'  // ✅ 추가
 import { useAuthStore } from '../store/useAuthStore'
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 import "./scss/AddressPopup.scss"
 
 export default function AddressPopup({ onClose, onSelect }) {
     const { addressList, onFetchAddress } = useAuthStore();
+    const { brand } = useBrandStore();
+    const isKimMatin = brand === BRAND.KIMMATIN;
 
     useEffect(() => {
         onFetchAddress();
@@ -23,7 +26,7 @@ export default function AddressPopup({ onClose, onSelect }) {
 
     //createPortal로 body에 직접 렌더링
     return createPortal(
-        <div className="modal-overlay-add" onClick={(e) => e.target === e.currentTarget && onClose()}>
+        <div className={`modal-overlay-add ${isKimMatin ? "kimmatin-address-popup" : ""}`} onClick={(e) => e.target === e.currentTarget && onClose()}>
             <div className="modal-box">
                 <div className="modal-header">
                     <h3>배송주소록</h3>

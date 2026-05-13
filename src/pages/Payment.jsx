@@ -6,6 +6,7 @@ import AddressPopup from "./AddressPopup";
 import { createOrder, ORDER_MENU } from "../store/orderStorage";
 import { useProductStore } from "../store/useProductStore";
 import PaymentModal from "./PaymentModal";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 const PAYMENT_METHODS = [
     { id: "card", title: "신용카드 / 체크카드", description: "안전한 결제를 위해 Stripe로 처리됩니다", badges: ["VISA", "MC", "AMEX"] },
@@ -37,6 +38,8 @@ export default function Payment() {
     console.log("✅ Payment 컴포넌트 진입");
 
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase, couponList, savedMoneySummary, onFetchCoupons, onFetchSavedMoney } = useAuthStore();
+    const { brand } = useBrandStore();
+    const isKimMatin = brand === BRAND.KIMMATIN;
     const navigate = useNavigate();
     // 상단 구조분해에 onRemoveItems 추가
     const { onClearCart, onReduceItems } = useProductStore();
@@ -152,6 +155,7 @@ export default function Payment() {
 
     const availablePoint = savedMoneySummary?.availablePoint || 0;
     const usableCouponList = (couponList || []).filter(c => !c.used);
+    const paymentPageClassName = `payment-page ${isLoaded ? "is-loaded" : ""} ${isKimMatin ? "kimmatin-payment-page" : ""}`;
     // ────────────────────────────────────────────────────────────
 
     const expectedDeliveryDate = useMemo(() => {
@@ -287,7 +291,7 @@ export default function Payment() {
 
     if (!orderItems.length) {
         return (
-            <main className={`payment-page ${isLoaded ? 'is-loaded' : ''}`}>
+            <main className={paymentPageClassName}>
                 <div className="inner payment-empty">
                     <img src="/images/pages-icon/warning-icon.svg" alt="" />
                     <p>결제할 상품 정보가 없습니다.</p>
@@ -348,7 +352,7 @@ export default function Payment() {
     };
 
     return (
-        <main className={`payment-page ${isLoaded ? 'is-loaded' : ''}`}>
+        <main className={paymentPageClassName}>
             <div className="inner payment-layout">
                 <div className="payment-form-column">
 

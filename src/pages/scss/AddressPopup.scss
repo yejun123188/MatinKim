@@ -166,3 +166,74 @@
         }
     }
 }
+
+.modal-overlay-add.kimmatin-address-popup {
+    background: rgba(0, 0, 0, 0.72);
+
+    .modal-box {
+        background: #050505;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .modal-header {
+        border-bottom-color: rgba(255, 255, 255, 0.22);
+
+        h3 {
+            color: #fff;
+        }
+
+        button {
+            color: rgba(255, 255, 255, 0.66);
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .address-list {
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        >p {
+            color: rgba(255, 255, 255, 0.58);
+        }
+
+        .address-item {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: #0f0f0f;
+
+            &:hover {
+                border-color: #fff;
+            }
+
+            .address-info {
+                strong {
+                    color: #fff;
+                }
+
+                p {
+                    color: rgba(255, 255, 255, 0.62);
+                }
+
+                .badge {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+
+            >button {
+                border-color: #fff;
+                background: #050505;
+                color: #fff;
+
+                &:hover {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
