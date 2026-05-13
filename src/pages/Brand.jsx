@@ -84,7 +84,7 @@ export default function Brand() {
                     </div>
                     <div className='brand-hero__text'>
                         <p className='brand-hero__eyebrow'>Brand Story</p>
-                        <h1 className='brand-hero__name'>MATIN<br />KIM</h1>
+                        <img src="/images/header/logo-MatinKim-black.svg" alt="" />
                         <div className='brand-hero__divider' />
                         <p className='brand-hero__ko'>
                             마뗑킴은 트렌디하면서도 편안하고,<br />

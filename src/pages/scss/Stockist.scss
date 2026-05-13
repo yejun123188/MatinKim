@@ -5,10 +5,27 @@
         @include g.myFlex(flex-start, 20px, flex-start);
         width: 100%;
 
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+
         .map-left {
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
             #map {
                 width: 720px;
                 height: 720px;
+
+                @media (max-width: 1024px) {
+                    width: 100%;
+                    height: 400px;
+                }
             }
         }
 
@@ -16,6 +33,10 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
 
             .top-menu {
                 @include g.myFlex(flex-start, 0px, center);
@@ -38,10 +59,8 @@
                         border-right: none;
                     }
 
-
                     background-color: rgba(0, 0, 0, 0.02);
                     color: g.$text-main-color;
-
                 }
 
                 .active {
@@ -116,7 +135,6 @@
                         font-weight: 500;
                         letter-spacing: 0.05em;
                         border: none;
-                        // background: #5e5c5c;
                         color: #000000;
                         cursor: pointer;
                         transition: opacity 0.15s;
@@ -155,7 +173,7 @@
                                 transition: background 0.15s;
 
                                 .name {
-                                    font-size: 15px;
+                                    font-size: 16px;
                                     font-weight: 500;
                                     padding-bottom: 4px;
                                     color: g.$text-main-color;
@@ -202,6 +220,14 @@
         grid-template-columns: repeat(4, 1fr);
         border: 0.5px solid rgba(0, 0, 0, 0.1);
         overflow: hidden;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+        }
 
         .store {
             padding: 20px;
