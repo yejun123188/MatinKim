@@ -3,7 +3,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useProductStore } from "../store/useProductStore";
 import ProductCard from "../components/ProductCard";
 import { expandSearchQuery } from "../utils/searchKeywords";
+import products2 from "../data/products2.json";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 import "./scss/productList.scss";
+import "./scss/KimMatin.scss";
 import "./scss/Search.scss";
 
 const ITEMS_PER_PAGE = 20;
@@ -34,15 +37,18 @@ export default function Search() {
   const trimmedQuery = query.trim();
 
   const { items, onFetchItem } = useProductStore();
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
+  const activeItems = isKimMatin ? products2 : items;
 
   const [inputValue, setInputValue] = useState(query);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    if (items.length === 0) {
+    if (!isKimMatin && items.length === 0) {
       onFetchItem();
     }
-  }, [items.length, onFetchItem]);
+  }, [isKimMatin, items.length, onFetchItem]);
 
   useEffect(() => {
     setInputValue(query);
@@ -58,7 +64,7 @@ export default function Search() {
 
     const expandedWordGroups = expandSearchQuery(trimmedQuery);
 
-    return items.filter((item) => {
+    return activeItems.filter((item) => {
       const searchText = getSearchText(item);
       const category2 = normalizeText(item.category2);
 
@@ -82,7 +88,7 @@ export default function Search() {
         return textMatch || category2Match;
       });
     });
-  }, [items, trimmedQuery]);
+  }, [activeItems, trimmedQuery]);
 
   const totalPages = Math.ceil(searchResults.length / ITEMS_PER_PAGE);
 
@@ -101,7 +107,7 @@ export default function Search() {
   };
 
   return (
-    <main className="product-list-wrap search-page">
+    <main className={`product-list-wrap search-page ${isKimMatin ? "kimmatin-product-list" : ""}`}>
       <div className="inner filter-hidden">
         <div className="product-list-wrap filter-hidden is-visible">
           <section className="search-head">

@@ -55,7 +55,10 @@ import "./scss/productList.scss";
 import "./scss/KimMatin.scss";
 import products2 from "../data/products2.json";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
-import { buildProductMenus, getProductMainCategory } from "../utils/productMenu";
+import {
+  buildProductMenus,
+  getProductMainCategory,
+} from "../utils/productMenu";
 
 const PRICE_STEP = 1000;
 
@@ -285,7 +288,10 @@ export default function ProductList() {
     }
 
     //1.메인 메뉴 카테고리 필터
-    if (normalizedMainCate && item.category1.toLowerCase() !== normalizedMainCate) {
+    if (
+      normalizedMainCate &&
+      item.category1.toLowerCase() !== normalizedMainCate
+    ) {
       return false;
     }
     //2. subcategory가 있을 경우 필터
@@ -503,13 +509,15 @@ export default function ProductList() {
         <div
           className={`product-list-wrap ${!showFilter ? "filter-hidden" : ""} ${isPageVisible ? "is-visible" : ""}`}
         >
-          <div className="section-banner">
-            <img className="banner-img" src={bannerImage} alt={bannerTitle} />
-            <div className="banner-text">
-              <h2 className="banner-name">{bannerTitle}</h2>
-              <p className="banner-description">{bannerDescription}</p>
+          {!isKimMatin && (
+            <div className="section-banner">
+              <img className="banner-img" src={bannerImage} alt={bannerTitle} />
+              <div className="banner-text">
+                <h2 className="banner-name">{bannerTitle}</h2>
+                <p className="banner-description">{bannerDescription}</p>
+              </div>
             </div>
-          </div>
+          )}
           <div className="section-bottom">
             <div className="filter-controls">
               <div className="filter-actions">

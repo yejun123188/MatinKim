@@ -1,5 +1,9 @@
 @use "./App.scss" as g;
 
 * {
+  color: inherit;
+}
+
+body {
   color: g.$text-main-color;
 }

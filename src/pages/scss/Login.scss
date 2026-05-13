@@ -214,3 +214,74 @@
         background: #f5f5f5;
     }
 }
+
+.login-page.kimmatin-login {
+    background: #050505;
+    color: #fff;
+    box-shadow: 0 -3px #050505;
+
+    .login-dim {
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(2px);
+    }
+
+    .login-right {
+        border-left: 1px solid rgba(255, 255, 255, 0.22);
+        background: #050505;
+        color: #fff;
+    }
+
+    .login-top h2,
+    .login-links a,
+    .login-links span,
+    .save-id,
+    .guest-order {
+        color: #fff;
+    }
+
+    .close-btn img {
+        filter: brightness(0) invert(1);
+    }
+
+    .input-wrap input {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: #111;
+        color: #fff;
+
+        &:focus {
+            border-color: #fff;
+            background: #111;
+        }
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.48);
+        }
+    }
+
+    .input-wrap.error input {
+        background: #111;
+    }
+
+    .save-id input[type="checkbox"] {
+        accent-color: #fff;
+    }
+
+    .login-btn,
+    .join-btn,
+    .guest-order-btn {
+        border: 1px solid #fff;
+        background: #fff;
+        color: #000;
+    }
+
+    .naver,
+    .google {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: #111;
+        color: #fff;
+    }
+
+    .guest-order-btn:hover {
+        background: #e8e8e8;
+    }
+}

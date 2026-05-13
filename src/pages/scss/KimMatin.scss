@@ -382,13 +382,30 @@
   }
 
   .sort-select {
-    background: $kim-bg url("/images/pages-icon/bottom-icon.svg") no-repeat
-      right 14px center !important;
-    background-size: 10px auto !important;
+    appearance: none !important;
+    background: $kim-bg !important;
+    padding-right: 34px !important;
 
     option {
       background: $kim-bg !important;
       color: $kim-text !important;
+    }
+  }
+
+  .sort-select-wrap {
+    position: relative !important;
+
+    &::after {
+      content: "" !important;
+      position: absolute !important;
+      top: 50% !important;
+      right: 14px !important;
+      width: 10px !important;
+      height: 5px !important;
+      background: $kim-text !important;
+      mask: url("/images/pages-icon/bottom-icon.svg") center / contain no-repeat !important;
+      pointer-events: none !important;
+      transform: translateY(-50%) !important;
     }
   }
 
@@ -489,7 +506,8 @@
     }
 
     .card-size-list {
-      border-top-color: rgba(255, 255, 255, 0.18) !important;
+      border-top: 1px solid $kim-line !important;
+      border-bottom: 0 !important;
       background: $kim-bg !important;
 
       span {
@@ -504,31 +522,98 @@
     }
 
     .card-action-bar {
-      background: #000 !important;
-      border-color: rgba(255, 255, 255, 0.2) !important;
+      background: $kim-text !important;
+      border: 0 !important;
+
+      &::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 1px !important;
+        background: $kim-line !important;
+        opacity: 1 !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+      }
 
       .card-like-btn {
-        background: $kim-bg !important;
-        border-color: rgba(255, 255, 255, 0.18) !important;
+        background: #000 !important;
+        border-color: $kim-line !important;
+
         img {
-          filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1) !important;
         }
 
         img.liked {
-          filter: none;
+          filter: none !important;
         }
       }
 
       .card-action-btn {
-        background: #000 !important;
-        color: $kim-text !important;
+        background: $kim-text !important;
+        color: #000 !important;
 
         & + .card-action-btn {
-          border-left-color: rgba(255, 255, 255, 0.24) !important;
+          border-left-color: rgba(0, 0, 0, 0.2) !important;
         }
 
         &:hover:not(:disabled) {
-          background: #1d1d1d !important;
+          background: #e8e8e8 !important;
+          color: #000 !important;
+        }
+      }
+    }
+  }
+
+  &.product-list-wrap {
+    .inner {
+      .product-list-wrap {
+        .product-list {
+          ul {
+            .product-card {
+              &::before {
+                border: 1px solid $kim-line !important;
+              }
+
+              &:hover {
+                .color-chip {
+                  &.selected {
+                    border: 1px solid $kim-bg !important;
+                    box-shadow: 0 0 0 1px $kim-line !important;
+                  }
+                }
+              }
+
+              .card-size-list {
+                border-top: 1px solid $kim-line !important;
+                border-bottom: 0 !important;
+              }
+
+              .card-action-bar {
+                border: 0 !important;
+
+                &::before {
+                  content: "" !important;
+                  position: absolute !important;
+                  top: 0 !important;
+                  left: 0 !important;
+                  right: 0 !important;
+                  height: 1px !important;
+                  background: $kim-line !important;
+                  opacity: 1 !important;
+                  z-index: 2 !important;
+                  pointer-events: none !important;
+                }
+              }
+
+              .card-like-btn {
+                border: 1px solid $kim-line !important;
+                border-top: 0 !important;
+              }
+            }
+          }
         }
       }
     }
@@ -559,6 +644,13 @@
 }
 
 .kimmatin-product-detail {
+  $kim-bg: #050505;
+  $kim-panel: #111;
+  $kim-text: #fff;
+  $kim-muted: rgba(255, 255, 255, 0.66);
+  $kim-line: rgba(255, 255, 255, 0.2);
+  $kim-accent: #37cad5;
+
   background: #050505 !important;
   color: #fff !important;
 
@@ -580,6 +672,27 @@
     }
   }
 
+  .thumb-item,
+  .gallery-main {
+    background: $kim-panel !important;
+
+    &::after {
+      background: rgba(255, 255, 255, 0.04) !important;
+    }
+  }
+
+  .thumb-item {
+    border-color: rgba(255, 255, 255, 0.16) !important;
+
+    &.is-active {
+      border-color: $kim-text !important;
+    }
+  }
+
+  .detail-actions button.is-active img {
+    filter: none !important;
+  }
+
   .detail-path,
   .detail-path a,
   .detail-points,
@@ -592,6 +705,9 @@
   .detail-title,
   .detail-total,
   .detail-total strong,
+  .detail-total span,
+  .detail-total-meta,
+  .discount-rate,
   .related-products-section h2,
   .product-detail-tabs .tab-header button.is-active {
     color: #fff !important;
@@ -600,8 +716,10 @@
   .product-detail-tabs,
   .product-detail-tabs .tab-header,
   .detail-total,
+  .option-block,
   .option-card,
   .quantity-box,
+  .quantity-box span,
   .related-products-grid .product-card::before {
     border-color: rgba(255, 255, 255, 0.2) !important;
   }
@@ -609,9 +727,33 @@
   .option-card,
   .quantity-box,
   .quantity-box button,
+  .quantity-box span,
   .cart-btn {
     background: #111 !important;
     color: #fff !important;
+  }
+
+  .option-card {
+    strong,
+    .option-card-top {
+      color: $kim-text !important;
+    }
+
+    &:disabled {
+      background: #0b0b0b !important;
+      color: rgba(255, 255, 255, 0.35) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+
+      strong,
+      .option-card-top,
+      .option-card-sub {
+        color: rgba(255, 255, 255, 0.35) !important;
+      }
+    }
+  }
+
+  .option-color-chip {
+    border-color: rgba(255, 255, 255, 0.48) !important;
   }
 
   .option-card-sub,
@@ -628,14 +770,73 @@
     background: #fff !important;
     border-color: #fff !important;
     color: #000 !important;
+
+    img {
+      filter: none !important;
+    }
+
+    &.is-soldout {
+      background: #737373 !important;
+      border-color: #737373 !important;
+      color: $kim-text !important;
+    }
+  }
+
+  .tab-header {
+    button {
+      color: rgba(255, 255, 255, 0.48) !important;
+
+      &.is-active::after {
+        background: $kim-text !important;
+      }
+    }
+  }
+
+  .tab-pane strong,
+  .tab-pane p,
+  .delivery-faq-item strong,
+  .delivery-faq-item p,
+  .tab-note {
+    color: #fff !important;
+  }
+
+  .delivery-faq-item p,
+  .tab-pane p {
+    color: $kim-muted !important;
+  }
+
+  .size-table-wrap {
+    th,
+    td {
+      border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+      color: $kim-muted !important;
+    }
+
+    tbody tr:first-child {
+      th,
+      td {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-top-color: rgba(255, 255, 255, 0.28) !important;
+        border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+        color: $kim-text !important;
+      }
+    }
+
+    tbody tr:last-child {
+      th,
+      td {
+        border-bottom-color: rgba(255, 255, 255, 0.28) !important;
+      }
+    }
   }
 
   .related-products-grid .product-card {
-    background: #111 !important;
-    color: #fff !important;
+    background: $kim-bg !important;
+    color: $kim-text !important;
 
     &::before {
-      background: #111 !important;
+      background: $kim-bg !important;
+      border-color: $kim-line !important;
     }
 
     .brand-name,
@@ -652,6 +853,7 @@
 
     .color-chip {
       border-color: rgba(255, 255, 255, 0.35) !important;
+      filter: none !important;
     }
 
     .badge {
@@ -660,9 +862,116 @@
       color: #000 !important;
     }
 
+    .discount-badge {
+      border-color: $kim-accent !important;
+      background: $kim-accent !important;
+      color: #000 !important;
+    }
+
+    .soldout-badge {
+      border-color: #737373 !important;
+      background: #737373 !important;
+      color: $kim-text !important;
+    }
+
     .card-size-list {
-      border-top-color: rgba(255, 255, 255, 0.18) !important;
-      background: #111 !important;
+      border-top: 1px solid $kim-line !important;
+      background: $kim-bg !important;
+    }
+
+    .card-action-bar {
+      background: $kim-text !important;
+      border-top: 1px solid $kim-line !important;
+
+      .card-like-btn {
+        background: #000 !important;
+        border-color: #000 !important;
+
+        img {
+          filter: brightness(0) invert(1) !important;
+        }
+
+        img.liked {
+          filter: none !important;
+        }
+      }
+
+      .card-action-btn {
+        background: $kim-text !important;
+        color: #000 !important;
+
+        & + .card-action-btn {
+          border-left-color: rgba(0, 0, 0, 0.2) !important;
+        }
+
+        &:hover:not(:disabled) {
+          background: #e8e8e8 !important;
+          color: #000 !important;
+        }
+      }
+    }
+  }
+
+  .related-pagination .page-btn {
+    background: transparent !important;
+    border: 0 !important;
+
+    &:hover:not(:disabled),
+    &.is-active {
+      color: $kim-text !important;
+    }
+
+    img {
+      filter: brightness(0) invert(1) !important;
+    }
+  }
+
+  .image-zoom-modal {
+    background: rgba(0, 0, 0, 0.88) !important;
+  }
+
+  .image-zoom-nav,
+  .image-zoom-close {
+    background: $kim-panel !important;
+    border-color: $kim-line !important;
+    color: $kim-text !important;
+
+    img {
+      filter: brightness(0) invert(1) !important;
+    }
+  }
+
+  .share-modal {
+    background: rgba(0, 0, 0, 0.72) !important;
+  }
+
+  .share-modal-content {
+    background: $kim-panel !important;
+    color: $kim-text !important;
+  }
+
+  .share-modal-header {
+    h3,
+    .share-close {
+      color: $kim-text !important;
+    }
+  }
+
+  .share-btn {
+    color: $kim-text !important;
+
+    &:hover {
+      background: #1d1d1d !important;
+    }
+
+    span:last-child {
+      color: $kim-muted !important;
+    }
+
+    &.copy .share-icon-wrap {
+      background: #000 !important;
+      border-color: $kim-line !important;
+      color: $kim-text !important;
     }
   }
 }

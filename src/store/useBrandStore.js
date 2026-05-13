@@ -16,6 +16,14 @@ const getInitialBrand = () => {
 
 export const useBrandStore = create((set) => ({
   brand: getInitialBrand(),
+  setBrand: (brand) =>
+    set(() => {
+      if (!Object.values(BRAND).includes(brand)) return {};
+
+      window.localStorage.setItem(BRAND_STORAGE_KEY, brand);
+
+      return { brand };
+    }),
   toggleBrand: () =>
     set((state) => {
       const brand =

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./scss/Login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 export default function Login({ onClose, guestMode = false, guestOrderItems = [] }) {
   const [userId, setUserId] = useState("");
@@ -10,6 +11,8 @@ export default function Login({ onClose, guestMode = false, guestOrderItems = []
   const [errors, setErrors] = useState({ userId: false, password: false });
 
   const { onLoginByUserId, onGoogleLogin, onKakaoLogin, onNaverLogin } = useAuthStore();
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
   const navigate = useNavigate();
 
   // ✅ 로그인 후 이동 공통 함수
@@ -83,7 +86,7 @@ export default function Login({ onClose, guestMode = false, guestOrderItems = []
   };
 
   return (
-    <div className="login-page">
+    <div className={`login-page ${isKimMatin ? "kimmatin-login" : ""}`}>
       <div className="login-dim" onClick={onClose}></div>
 
       <div className="login-right">
