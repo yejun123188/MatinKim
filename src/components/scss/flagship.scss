@@ -2,18 +2,40 @@
 
 .flagship {
   overflow: hidden;
+
+  .inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 }
 
 .flag-wrap {
-  display: flex;
-  align-items: stretch;
+  position: relative;
 
   /* =========================
   왼쪽 슬라이드
   ========================= */
 
   .banner-wrap {
-    width: calc(100% - 332px);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to left,
+          rgba(0, 0, 0, 0.32) 0%,
+          rgba(0, 0, 0, 0.42) 24%,
+          rgba(0, 0, 0, 0.14) 46%,
+          rgba(0, 0, 0, 0) 68%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s ease;
+    }
 
     .mySwiper {
       width: 100%;
@@ -39,19 +61,21 @@
   ========================= */
 
   .notice-wrap {
-    width: 332px;
-    flex-shrink: 0;
-
-    background: g.$main-color;
-
-    position: relative;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
     overflow: hidden;
 
     .text-box {
+      position: relative;
       height: 100%;
       min-height: 520px;
 
-      padding: 30px 30px;
+      padding: 40px 40px;
+      isolation: isolate;
 
       display: flex;
       flex-direction: column;
@@ -60,6 +84,30 @@
       gap: 70px;
 
       color: g.$white-color;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transition: opacity 0.45s ease;
+      }
+
+      &::before {
+        background: rgba(g.$main-color, 0.88);
+        backdrop-filter: blur(8px);
+        opacity: 1;
+      }
+
+      &::after {
+        background: linear-gradient(to left,
+            rgba(0, 0, 0, 0.80) 0%,
+            rgba(0, 0, 0, 0.70) 35%,
+            rgba(0, 0, 0, 0.60) 50%,
+            rgba(0, 0, 0, 0) 100%);
+        opacity: 0;
+      }
     }
 
     /* =========================
@@ -214,6 +262,22 @@
       }
     }
   }
+
+  .banner-wrap:hover+.notice-wrap {
+    .text-box {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .banner-wrap:hover::after {
+    opacity: 1;
+  }
 }
 
 /* =========================
@@ -223,8 +287,6 @@
 @media (max-width: 1200px) {
   .flag-wrap {
     .banner-wrap {
-      width: calc(100% - 280px);
-
       .mySwiper {
         min-height: 460px;
 
@@ -270,8 +332,6 @@
 
 @media (max-width: 900px) {
   .flag-wrap {
-    flex-direction: column;
-
     .banner-wrap {
       width: 100%;
 
@@ -285,6 +345,10 @@
     }
 
     .notice-wrap {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
       width: 100%;
 
       .text-box {
@@ -293,6 +357,14 @@
         padding: 38px 28px;
 
         gap: 60px;
+
+        &::before {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 0;
+        }
       }
 
       .store-info {
