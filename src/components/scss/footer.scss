@@ -202,7 +202,143 @@
   color: #fff;
 }
 
-/* 반응형 */
+/* ───────────────────────────────
+   KIMMATIN 전용 푸터
+─────────────────────────────── */
+.kimmatin-footer {
+  background: #000;
+  color: #fff;
+  padding: 44px 0 36px;
+  border-top-color: rgba(255, 255, 255, 0.18);
+
+  .footer-top {
+    margin-bottom: 48px;
+  }
+
+  .footer-logo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 258px;
+      height: auto;
+      filter: none;
+    }
+  }
+
+  .footer-slogan,
+  .footer-address p,
+  .footer-address a,
+  .copyright,
+  .customer-center .custom-link a,
+  .customer-center strong,
+  .customer-center p,
+  .customer-center span {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+
+  .customer-center .custom-link a img {
+    filter: invert(1);
+  }
+}
+
+.kimmatin-footer-menu {
+  display: flex;
+  justify-content: flex-start;
+  gap: 34px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.kimmatin-footer-menu-item {
+  position: relative;
+
+  >button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    min-width: 0;
+    height: auto;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    padding: 0;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    span {
+      color: #fff;
+    }
+
+    .footer-dropdown-icon {
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 7px solid #fff;
+      transform: translateY(1px);
+    }
+
+    &.is-open {
+      opacity: 0.72;
+
+      .footer-dropdown-icon {
+        transform: translateY(0) rotate(180deg);
+      }
+    }
+
+    &:hover {
+      opacity: 0.72;
+    }
+  }
+}
+
+.kimmatin-footer-dropdown {
+  position: absolute;
+  right: 0px;
+  bottom: calc(100% + 10px);
+  min-width: 142px;
+  margin: 0;
+  padding: 12px 14px;
+  list-style: none;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -14px 36px rgba(0, 0, 0, 0.32);
+  z-index: 5;
+
+  li {
+    width: 20px;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/* ───────────────────────────────
+   반응형
+─────────────────────────────── */
 @media (max-width: 900px) {
   .footer {
     padding: 70px 0 50px;
@@ -229,6 +365,27 @@
 
   .footer .customer-center span {
     font-size: 26px;
+  }
+
+  .kimmatin-footer {
+    padding: 36px 0 30px;
+
+    .footer-top {
+      margin-bottom: 36px;
+    }
+
+    .footer-bottom {
+      align-items: flex-start;
+    }
+
+    .footer-right {
+      min-width: 0;
+    }
+  }
+
+  .kimmatin-footer-menu {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
 
