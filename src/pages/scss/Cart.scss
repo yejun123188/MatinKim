@@ -463,3 +463,150 @@
     transition: background 0.2s;
 
 }
+
+.cart-panel.kimmatin-cart {
+    color: #fff;
+
+    .cart-dim {
+        background: rgba(0, 0, 0, 0.72);
+    }
+
+    .cart-panel-inner {
+        border-left: 1px solid rgba(255, 255, 255, 0.22);
+        background: #050505;
+        color: #fff;
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.24);
+        }
+    }
+
+    .cart-header {
+        border-bottom-color: rgba(255, 255, 255, 0.82);
+
+        h2 {
+            color: #fff;
+        }
+
+        .close-btn img {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .cart-empty,
+    .delete-selected-btn,
+    .option-change-btn,
+    .item-option,
+    .cart-summary .summary-row {
+        color: rgba(255, 255, 255, 0.66);
+    }
+
+    .cart-select-row,
+    .cart-item,
+    .cart-summary {
+        border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .cart-select-row span,
+    .item-info h3,
+    .item-price,
+    .cart-summary .summary-row span:last-child,
+    .cart-summary .summary-row.total span,
+    .cart-summary .summary-row.total strong {
+        color: #fff;
+    }
+
+    .cart-summary .summary-row.total {
+        border-top-color: rgba(255, 255, 255, 0.82);
+    }
+
+    .item-thumb,
+    .option-edit-box {
+        background: #111;
+    }
+
+    .check-wrap input[type="checkbox"] {
+        border-color: rgba(255, 255, 255, 0.42);
+        background-color: #050505;
+
+        &:checked {
+            background-color: #fff;
+            border-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='black' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+            border-color: #fff;
+        }
+    }
+
+    .option-edit-row {
+        label {
+            color: rgba(255, 255, 255, 0.66);
+        }
+
+        select {
+            border-color: rgba(255, 255, 255, 0.22);
+            background-color: #050505;
+            color: #fff;
+
+            &:focus {
+                border-color: #fff;
+            }
+        }
+    }
+
+    .option-edit-btns button {
+        &:first-child {
+            border-color: #fff;
+            background: #fff;
+            color: #000;
+
+            &:hover {
+                background: #e8e8e8;
+            }
+        }
+
+        &:last-child {
+            border-color: rgba(255, 255, 255, 0.22);
+            background: #111;
+            color: #fff;
+
+            &:hover {
+                background: #1d1d1d;
+                color: #fff;
+            }
+        }
+    }
+
+    .item-qty {
+        border-color: rgba(255, 255, 255, 0.22);
+
+        button,
+        span {
+            background: #111;
+            color: #fff;
+        }
+
+        button:hover {
+            background: #1d1d1d;
+        }
+
+        span {
+            border-left-color: rgba(255, 255, 255, 0.22);
+            border-right-color: rgba(255, 255, 255, 0.22);
+        }
+    }
+
+    .remove-btn:hover,
+    .delete-selected-btn:hover,
+    .option-change-btn:hover {
+        color: #fff;
+    }
+
+    .order-btn {
+        border: 1px solid #fff;
+        background: #fff;
+        color: #000;
+    }
+}

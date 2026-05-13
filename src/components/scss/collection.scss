@@ -1,3 +1,27 @@
+@use "../../App.scss" as g;
+
+.collection {
+  padding: 120px 0;
+  background: g.$main-color;
+  color: g.$white-color;
+
+  .section-title {
+    margin-bottom: 40px;
+    text-align: center;
+
+    h2,
+    strong,
+    .title {
+      color: g.$white-color;
+    }
+
+    p,
+    span {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
 .collection-list {
   position: relative;
   width: 100%;
@@ -89,6 +113,7 @@
 }
 
 @keyframes card1 {
+
   0%,
   15% {
     width: 441px;
@@ -119,7 +144,7 @@
   65%,
   75% {
     width: 0;
-    height: 0px;
+    height: 0;
     transform: translate(0, 0);
   }
 
@@ -136,6 +161,7 @@
 }
 
 @keyframes card3 {
+
   0%,
   15% {
     width: 441px;
@@ -166,7 +192,7 @@
   65%,
   75% {
     width: 0;
-    height: 0px;
+    height: 0;
     transform: translate(0, 0);
   }
 
@@ -183,6 +209,7 @@
 }
 
 @keyframes card2 {
+
   0%,
   35% {
     transform: translate(-50%, -50%) scaleX(1);
@@ -199,6 +226,7 @@
 }
 
 @keyframes card4 {
+
   0%,
   15% {
     width: 441px;
@@ -236,6 +264,7 @@
 }
 
 @keyframes card5 {
+
   0%,
   15% {
     width: 441px;
@@ -273,6 +302,7 @@
 }
 
 @keyframes card6 {
+
   0%,
   35% {
     transform: translate(-50%, -50%) scaleX(0);

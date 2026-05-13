@@ -1,207 +1,325 @@
 @use "../../App.scss" as g;
 
 .flagship {
-  padding: 60px 0 80px;
+  overflow: hidden;
+
+  .inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 }
 
 .flag-wrap {
-  display: flex;
-  // gap: 24px;
-  align-items: stretch;
-  justify-content: space-between;
+  position: relative;
+
+  /* =========================
+  왼쪽 슬라이드
+  ========================= */
 
   .banner-wrap {
-    width: 70%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to left,
+          rgba(0, 0, 0, 0.32) 0%,
+          rgba(0, 0, 0, 0.42) 24%,
+          rgba(0, 0, 0, 0.14) 46%,
+          rgba(0, 0, 0, 0) 68%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s ease;
+    }
 
     .mySwiper {
       width: 100%;
       height: 100%;
-      min-height: 332px;
+      min-height: 520px;
 
       .swiper-slide {
-        height: 100%;
+        overflow: hidden;
       }
 
       img {
         width: 100%;
-        // height: 100%;
-        // min-height: 332px;
-        // object-fit: cover;
+        height: 100%;
+        min-height: 520px;
+        object-fit: cover;
         display: block;
       }
     }
   }
 
+  /* =========================
+  오른쪽 프로모션
+  ========================= */
+
   .notice-wrap {
-    position: relative;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
     overflow: hidden;
-    flex: 1 1 0;
-    min-height: 332px;
-    background-color: g.$main-color;
 
     .text-box {
-      position: absolute;
-      top: 28px;
-      left: 20px;
-      right: 20px;
-      bottom: 18px;
+      position: relative;
+      height: 100%;
+      min-height: 520px;
+
+      padding: 40px 40px;
+      isolation: isolate;
+
       display: flex;
       flex-direction: column;
+
+      justify-content: flex-start;
+      gap: 70px;
+
       color: g.$white-color;
-      align-items: center;
-      justify-content: space-around;
 
-      .title {
-        text-align: center;
-
-        h4 {
-          margin: 0;
-          font-size: 34px;
-          line-height: 1;
-          font-weight: 900;
-          letter-spacing: 0.05em;
-          color: g.$white-color;
-        }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transition: opacity 0.45s ease;
       }
 
-      .sale,
-      .purchase {
-        display: flex;
-        gap: 25px;
-        align-items: flex-start;
+      &::before {
+        background: rgba(g.$main-color, 0.88);
+        backdrop-filter: blur(8px);
+        opacity: 1;
       }
 
-      .sale {
-        border-bottom: 1px solid rgba(g.$white-color, 0.35);
-        padding-bottom: 30px;
+      &::after {
+        background: linear-gradient(to left,
+            rgba(0, 0, 0, 0.80) 0%,
+            rgba(0, 0, 0, 0.70) 35%,
+            rgba(0, 0, 0, 0.60) 50%,
+            rgba(0, 0, 0, 0) 100%);
+        opacity: 0;
+      }
+    }
 
-        .per {
-          width: 72px;
-          flex-shrink: 0;
-          margin: 2px 0 0;
-          font-size: 40px;
-          line-height: 1;
-          font-weight: 600;
-          letter-spacing: 0;
-          color: g.$white-color;
-        }
+    /* =========================
+    상단 스토어 정보
+    ========================= */
+
+    .store-info {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      .label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        // opacity: 0.45;
+        color: g.$white-color;
       }
 
-      .purchase {
-        .coffee {
-          width: 72px;
-          flex-shrink: 0;
-          margin: 0;
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
-
-          img {
-            width: 60px;
-            height: 60px;
-            display: block;
-            object-fit: contain;
-            filter: invert(1);
-          }
-        }
+      h3 {
+        margin: 0;
+        font-size: 40px;
+        line-height: 0.9;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        color: g.$white-color;
       }
 
-      .sale-content {
-        .title {
-          margin: 0 0 8px;
-          text-align: left;
-          font-size: 20px;
-          line-height: 1.45;
-          font-weight: 500;
-          letter-spacing: 0;
-          color: g.$white-color;
-        }
-
-        .text {
-          margin: 0;
-          font-size: 12px;
-          line-height: 1.4;
-          font-weight: 400;
-          color: g.$white-color;
-          word-break: keep-all;
-          opacity: 0.3;
-        }
+      p {
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.7;
+        letter-spacing: 0.08em;
+        color: rgba(g.$white-color, 0.5);
       }
+    }
 
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        width: 194px;
-        height: 52px;
-        background-color: transparent;
-        border: 1px solid rgba(g.$white-color, 0.8);
-        // border-radius: 7px;
-        // padding: 20px 5px;
+    /* =========================
+    하단 콘텐츠
+    ========================= */
 
-        a {
-          font-size: 15px;
-          line-height: 1;
-          font-weight: 400;
-          color: g.$white-color;
+    .bottom-content {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* 프로모션 타이틀 */
+
+    .title-wrap {
+      h4 {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        // opacity: 0.45;
+        color: g.$white-color;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 30px;
+          height: 1px;
+          background: g.$white-color;
+          margin-top: 8px;
         }
       }
     }
+
+    /* 프로모션 내용 */
+
+    .info-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sale {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(g.$white-color, 0.15);
+    }
+
+    .sale-content {
+      width: 100%;
+
+      .title {
+        margin: 0 0 8px;
+        font-size: 14px;
+        line-height: 1.45;
+        // font-weight: 600;
+        color: g.$white-color;
+        word-break: keep-all;
+      }
+
+      .text {
+        margin: 0;
+        font-size: 8px;
+        line-height: 1.6;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        color: g.$white-color;
+        opacity: 0.3;
+      }
+    }
+
+    /* 버튼 */
+
+    .button {
+      width: 100%;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid rgba(g.$white-color, 0.5);
+      text-decoration: none;
+      transition:
+        // background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+
+      span {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        color: g.$white-color;
+      }
+
+      img {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+        transition: 0.3s ease;
+      }
+
+      &:hover {
+        background: g.$white-color;
+        border-color: g.$white-color;
+        // transform: translateY(-2px);
+
+        span {
+          color: g.$main-color;
+        }
+
+        img {
+          filter: brightness(0);
+        }
+      }
+    }
+  }
+
+  .banner-wrap:hover+.notice-wrap {
+    .text-box {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .banner-wrap:hover::after {
+    opacity: 1;
   }
 }
 
 /* =========================
 1200px 이하
 ========================= */
+
 @media (max-width: 1200px) {
   .flag-wrap {
+    .banner-wrap {
+      .mySwiper {
+        min-height: 460px;
+
+        img {
+          min-height: 460px;
+        }
+      }
+    }
+
     .notice-wrap {
-      width: 230px;
-      min-height: 320px;
+      width: 280px;
 
       .text-box {
-        top: 24px;
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
+        min-height: 460px;
 
+        padding: 30px 24px;
+
+        gap: 60px;
+      }
+
+      .store-info {
+        h3 {
+          font-size: 26px;
+        }
+      }
+
+      .sale-content {
         .title {
-          margin-bottom: 28px;
-
-          h4 {
-            font-size: 18px;
-          }
+          font-size: 15px;
         }
 
-        .sale {
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-
-          .per {
-            width: 64px;
-            font-size: 20px;
-          }
-        }
-
-        .purchase {
-          .coffee {
-            width: 64px;
-
-            img {
-              width: 30px;
-            }
-          }
-        }
-
-        .sale-content {
-          .title {
-            font-size: 13px;
-          }
-
-          .text {
-            font-size: 10px;
-          }
+        .text {
+          font-size: 10px;
         }
       }
     }
@@ -209,12 +327,69 @@
 }
 
 /* =========================
-1024px 이하
+900px 이하
 ========================= */
-@media (max-width: 1024px) {
-  .flag-wrap {
-    gap: 16px;
 
+@media (max-width: 900px) {
+  .flag-wrap {
+    .banner-wrap {
+      width: 100%;
+
+      .mySwiper {
+        min-height: 380px;
+
+        img {
+          min-height: 380px;
+        }
+      }
+    }
+
+    .notice-wrap {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      width: 100%;
+
+      .text-box {
+        min-height: auto;
+
+        padding: 38px 28px;
+
+        gap: 60px;
+
+        &::before {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      .store-info {
+        h3 {
+          font-size: 26px;
+        }
+      }
+
+      .info-group {
+        gap: 22px;
+      }
+
+      .sale {
+        padding-bottom: 22px;
+      }
+    }
+  }
+}
+
+/* =========================
+768px 이하
+========================= */
+
+@media (max-width: 768px) {
+  .flag-wrap {
     .banner-wrap {
       .mySwiper {
         min-height: 300px;
@@ -226,205 +401,33 @@
     }
 
     .notice-wrap {
-      width: 220px;
-      min-height: 300px;
-
       .text-box {
-        top: 22px;
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
+        padding: 30px 22px;
 
+        gap: 48px;
+      }
+
+      .store-info {
+        gap: 12px;
+
+        h3 {
+          font-size: 24px;
+        }
+      }
+
+      .sale-content {
         .title {
-          margin-bottom: 24px;
-
-          h4 {
-            font-size: 17px;
-          }
+          font-size: 14px;
         }
 
-        .sale {
-          .per {
-            width: 58px;
-            font-size: 18px;
-          }
-        }
-
-        .purchase {
-          .coffee {
-            width: 58px;
-
-            img {
-              width: 28px;
-            }
-          }
-        }
-
-        .sale-content {
-          .title {
-            font-size: 12px;
-          }
-
-          .text {
-            font-size: 10px;
-            line-height: 1.35;
-          }
-        }
-
-        .button {
-          width: 110px;
-          height: 30px;
+        .text {
+          font-size: 10px;
+          line-height: 1.5;
         }
       }
-    }
-  }
-}
 
-/* =========================
-900px 이하
-========================= */
-@media (max-width: 900px) {
-  .flag-wrap {
-    flex-direction: column;
-
-    .banner-wrap {
-      width: 100%;
-
-      .mySwiper {
-        min-height: 360px;
-
-        img {
-          min-height: 360px;
-        }
-      }
-    }
-
-    .notice-wrap {
-      width: 100%;
-      min-height: 320px;
-
-      .text-box {
-        top: 28px;
-        left: 28px;
-        right: 28px;
-        bottom: 24px;
-
-        .title {
-          margin-bottom: 28px;
-
-          h4 {
-            font-size: 22px;
-          }
-        }
-
-        .sale {
-          .per {
-            width: 80px;
-            font-size: 24px;
-          }
-        }
-
-        .purchase {
-          .coffee {
-            width: 80px;
-
-            img {
-              width: 36px;
-            }
-          }
-        }
-
-        .sale-content {
-          .title {
-            font-size: 15px;
-          }
-
-          .text {
-            font-size: 12px;
-          }
-        }
-
-        .button {
-          width: 130px;
-          height: 36px;
-
-          a {
-            font-size: 11px;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* =========================
-768px 이하
-========================= */
-@media (max-width: 768px) {
-  .flag-wrap {
-    gap: 14px;
-
-    .banner-wrap {
-      .mySwiper {
-        min-height: 280px;
-
-        img {
-          min-height: 280px;
-        }
-      }
-    }
-
-    .notice-wrap {
-      min-height: 280px;
-
-      .text-box {
-        top: 22px;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-
-        .title {
-          margin-bottom: 24px;
-
-          h4 {
-            font-size: 20px;
-          }
-        }
-
-        .sale {
-          padding-bottom: 18px;
-          margin-bottom: 18px;
-
-          .per {
-            width: 68px;
-            font-size: 21px;
-          }
-        }
-
-        .purchase {
-          .coffee {
-            width: 68px;
-
-            img {
-              width: 32px;
-            }
-          }
-        }
-
-        .sale-content {
-          .title {
-            font-size: 14px;
-          }
-
-          .text {
-            font-size: 11px;
-          }
-        }
-
-        .button {
-          width: 124px;
-          height: 34px;
-        }
+      .button {
+        height: 48px;
       }
     }
   }
@@ -433,88 +436,65 @@
 /* =========================
 480px 이하
 ========================= */
+
 @media (max-width: 480px) {
   .flag-wrap {
-    gap: 12px;
-
     .banner-wrap {
       .mySwiper {
-        min-height: 220px;
+        min-height: 240px;
 
         img {
-          min-height: 220px;
+          min-height: 240px;
         }
       }
     }
 
     .notice-wrap {
-      min-height: 250px;
-
       .text-box {
-        top: 18px;
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
+        padding: 24px 18px;
 
+        gap: 40px;
+      }
+
+      .store-info {
+        gap: 10px;
+
+        .label {
+          font-size: 10px;
+        }
+
+        h3 {
+          font-size: 22px;
+        }
+
+        p {
+          font-size: 11px;
+        }
+      }
+
+      .info-group {
+        gap: 18px;
+      }
+
+      .sale {
+        padding-bottom: 18px;
+      }
+
+      .sale-content {
         .title {
-          margin-bottom: 18px;
-
-          h4 {
-            font-size: 17px;
-            line-height: 1.2;
-          }
+          font-size: 13px;
         }
 
-        .sale {
-          padding-bottom: 14px;
-          margin-bottom: 14px;
-
-          .per {
-            width: 56px;
-            font-size: 18px;
-          }
+        .text {
+          font-size: 10px;
         }
+      }
 
-        .purchase {
-          .coffee {
-            width: 56px;
+      .button {
+        height: 44px;
 
-            img {
-              width: 26px;
-            }
-          }
-        }
-
-        .sale-content {
-          .title {
-            font-size: 12px;
-            line-height: 1.35;
-          }
-
-          .text {
-            font-size: 10px;
-            line-height: 1.35;
-          }
-        }
-
-        .button {
-          width: 112px;
-          height: 32px;
-          gap: 6px;
-
-          a {
-            font-size: 10px;
-          }
-
-          i {
-            width: 9px;
-            height: 9px;
-
-            &::before {
-              width: 6px;
-              height: 6px;
-            }
-          }
+        span {
+          font-size: 11px;
         }
       }
     }

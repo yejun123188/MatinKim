@@ -21,6 +21,7 @@ export default function ProductCard({
   as: CardTag = "li",
   className = "",
   onClick,
+  rank,
 }) {
   const {
     items,
@@ -35,13 +36,16 @@ export default function ProductCard({
 
   const { user } = useAuthStore();
   const { brand } = useBrandStore();
+
   const isKimMatin = brand === BRAND.KIMMATIN;
   const activeItems = isKimMatin ? products2 : items;
 
   const navigate = useNavigate();
 
   const [previewProduct, setPreviewProduct] = useState(null);
+
   const [selectedColor, setSelectedColor] = useState(cate.colors?.[0] || "");
+
   const [selectedSize, setSelectedSize] = useState(() => {
     const availableSizeIndex = Array.isArray(cate.sizes)
       ? cate.sizes.findIndex((size, index) => size && !cate.soldout?.[index])
@@ -56,7 +60,7 @@ export default function ProductCard({
     const baseName = getProductBaseName(cate);
 
     const variants = activeItems.filter(
-      (item) => getProductBaseName(item) === baseName && item.colors?.[0]
+      (item) => getProductBaseName(item) === baseName && item.colors?.[0],
     );
 
     const sortedVariants =
@@ -92,13 +96,20 @@ export default function ProductCard({
     Boolean(user?.uid) && wishList.some((wish) => wish.key === wishKey);
 
   const badgeItems = isSoldOut
-    ? [{ key: "sold-out", label: "SOLD OUT", type: "soldout" }]
+    ? [
+        {
+          key: "sold-out",
+          label: "SOLD OUT",
+          type: "soldout",
+        },
+      ]
     : [
         ...(cate.tag || []).map((tag) => ({
           key: tag,
           label: tag,
           type: "default",
         })),
+
         ...(cate.discountRate > 0
           ? [
               {
@@ -138,9 +149,11 @@ export default function ProductCard({
 
     if (!user?.uid) {
       const ok = window.confirm(
-        "로그인이 필요한 서비스입니다.\n로그인하시겠습니까?"
+        "로그인이 필요한 서비스입니다.\n로그인하시겠습니까?",
       );
+
       if (ok) navigate("/login");
+
       return;
     }
 
@@ -156,9 +169,11 @@ export default function ProductCard({
 
     if (isLiked) {
       const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
+
       if (!ok) return;
 
       await onRemoveWish(wishKey, user.uid);
+
       return;
     }
 
@@ -179,7 +194,7 @@ export default function ProductCard({
         category2: selectedVariant.category2,
         isSoldOut,
       },
-      user.uid
+      user.uid,
     );
 
     alert("위시리스트에 상품이 담겼습니다");
@@ -187,6 +202,7 @@ export default function ProductCard({
 
   const handleAddCart = (event) => {
     handleActionClick(event);
+
     if (isSoldOut) return;
 
     const cartPrice =
@@ -210,6 +226,7 @@ export default function ProductCard({
 
   const handleBuyNow = (event) => {
     handleActionClick(event);
+
     if (isSoldOut) return;
 
     const salePrice =
@@ -255,41 +272,51 @@ export default function ProductCard({
           src={displayProduct.mainImg}
           alt={displayProduct.name}
         />
+
         <img
           className="hover-img"
           src={previewProduct ? displayProduct.mainImg : cate.hoverImg}
           alt={displayProduct.name}
         />
 
-        {badgeItems.length > 0 && (
-          <div className="badge-wrap">
-            {badgeItems.map((badge) => (
-              <span
-                key={badge.key}
-                className={`badge ${
-                  badge.type === "discount" ? "discount-badge" : ""
-                } ${badge.type === "soldout" ? "soldout-badge" : ""} ${
-                  badge.label === "MUST HAVE" ? "must-have-badge" : ""
-                }`}
-              >
-                {badge.label}
-              </span>
-            ))}
+        {rank ? (
+          <div className="badge-wrap rank-badge-wrap">
+            <span className="rank-badge">{rank}</span>
           </div>
+        ) : (
+          badgeItems.length > 0 && (
+            <div className="badge-wrap">
+              {badgeItems.map((badge) => (
+                <span
+                  key={badge.key}
+                  className={`badge ${
+                    badge.type === "discount" ? "discount-badge" : ""
+                  } ${badge.type === "soldout" ? "soldout-badge" : ""} ${
+                    badge.label === "MUST HAVE" ? "must-have-badge" : ""
+                  }`}
+                >
+                  {badge.label}
+                </span>
+              ))}
+            </div>
+          )
         )}
       </div>
 
       <div className="text-box">
         <p className="brand-name">{isKimMatin ? "KIMMATIN" : "MATIN KIM"}</p>
+
         <h3>{cate.name}</h3>
 
         <div className="price-wrap">
           {cate.discountRate > 0 ? (
             <>
               <span className="discount-rate">{cate.discountRate}%</span>
+
               <strong className="discount-price">
                 {cate.discountPrice.toLocaleString()}
               </strong>
+
               <span className="price">{cate.price.toLocaleString()}</span>
             </>
           ) : (
@@ -303,6 +330,7 @@ export default function ProductCard({
       <div className="color-wrap" onMouseLeave={() => setPreviewProduct(null)}>
         {colorVariants.map((variant, id) => {
           const color = variant.colors?.[0];
+
           if (!color) return null;
 
           return (
@@ -317,18 +345,19 @@ export default function ProductCard({
               onMouseEnter={() => setPreviewProduct(variant)}
               onClick={(event) => {
                 event.stopPropagation();
+
                 setSelectedColor(color);
 
                 const nextSizeIndex = Array.isArray(variant.sizes)
                   ? variant.sizes.findIndex(
-                      (size, index) => size && !variant.soldout?.[index]
+                      (size, index) => size && !variant.soldout?.[index],
                     )
                   : -1;
 
                 setSelectedSize(
                   nextSizeIndex >= 0
                     ? variant.sizes[nextSizeIndex]
-                    : variant.sizes?.[0] || ""
+                    : variant.sizes?.[0] || "",
                 );
               }}
             ></span>
@@ -375,6 +404,7 @@ export default function ProductCard({
           aria-label="찜하기"
         >
           <img
+            className={isLiked ? "liked" : ""}
             src={
               isLiked
                 ? "/images/pages-icon/like-hover-icon.svg"

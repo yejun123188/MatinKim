@@ -136,6 +136,29 @@
                         border-color: g.$main-color;
                         color: g.$white-color;
                     }
+
+                    &.rank-badge-wrap {
+                        position: absolute;
+                        top: 0px;
+                        right: auto;
+                        left: 0px;
+                        width: auto;
+                        gap: 0;
+
+                        .rank-badge {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 30px;
+                            height: 30px;
+                            background: g.$main-color;
+                            border: none;
+                            color: g.$white-color;
+                            font-size: 0.875rem;
+                            font-weight: g.$Bold;
+                            line-height: 1;
+                        }
+                    }
                 }
 
                 &::after {
@@ -257,7 +280,7 @@
         gap: 8px;
         width: fit-content;
         margin: 0 auto;
-        padding-top: 30px;
+        // padding-top: 30px;
         border: 0;
         background: transparent;
         font-size: g.$size-14-main;
@@ -271,6 +294,33 @@
             height: 7px;
             flex-shrink: 0;
             opacity: 0.5;
+        }
+    }
+
+    &.kimmatin-weeklybest {
+        .best-item-list-wrap {
+            max-height: none;
+            overflow: visible;
+
+            &:not(.is-open) {
+                .product-card:nth-child(n + 6) {
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        .best-item-list {
+            --weeklybest-card-width: calc((min(100vw, 1440px) - 72px) / 4);
+            grid-template-columns: repeat(4, var(--weeklybest-card-width));
+
+            .product-card {
+                padding-bottom: 0;
+
+                .color-wrap {
+                    display: none;
+                }
+            }
         }
     }
 }
