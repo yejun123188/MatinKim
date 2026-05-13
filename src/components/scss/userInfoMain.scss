@@ -15,37 +15,47 @@
 
       .my-info-wrap {
         @include g.userInfoPanel;
-        padding: 40px 40px;
+        padding: 25px 40px;
         display: flex;
         flex-direction: column;
         gap: 24px;
         height: 100%;
 
         p {
-          font-size: g.$size-30;
+          font-size: 20px;
 
           strong {
             font-weight: g.$Bold;
           }
         }
+
         .myinfo-list {
           display: flex;
           flex-direction: column;
           gap: 10px;
+
+          li:nth-child(2) {
+            border-top: 1px solid rgb(217, 217, 217);
+            padding-top: 25px;
+          }
+
           li {
             display: flex;
             align-items: flex-end;
             gap: 12px;
 
-            > div {
+
+
+            >div {
               min-width: 0;
             }
 
             p {
-              font-size: 1.5rem;
+              font-size: 18px;
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
+
             }
 
             .grade-line {
@@ -55,7 +65,10 @@
               max-width: 100%;
               overflow: visible;
               text-overflow: clip;
+              padding-bottom: 10px;
             }
+
+
 
             .question {
               position: relative;
@@ -74,7 +87,7 @@
                 left: 25px;
                 top: 15px;
                 z-index: 20;
-                font-size: g.$size-14-main;
+                font-size: 20px;
                 line-height: 1.55;
                 background: #d9d9d9;
                 padding: 5px 12px;
@@ -99,15 +112,21 @@
                   transition: none;
                 }
               }
-              img:hover + span {
+
+              img:hover+span {
                 opacity: 1;
                 transition: opacity 0.5s ease;
               }
             }
 
             .my-total-price {
-              font-size: g.$size-16;
+              font-size: 14px;
               color: g.$text-sub-color;
+              padding-right: 670px;
+            }
+
+            span {
+              font-size: 14px;
             }
           }
         }
@@ -139,12 +158,12 @@
           min-height: 0;
 
           span {
-            font-size: g.$size-16;
+            font-size: 14px;
             color: g.$text-sub-color;
           }
 
           strong {
-            font-size: 1.5rem;
+            font-size: 18px;
           }
         }
       }
@@ -264,6 +283,7 @@
             object-fit: cover;
           }
         }
+
         .text-box {
           width: 250px;
           height: 150px;
@@ -316,6 +336,7 @@
               margin-top: 4px;
             }
           }
+
           .button-wrap {
             display: flex;
             gap: 8px;
@@ -363,12 +384,14 @@
 
     .my-order,
     .my-wish {
+
       .order-list,
       .wish-list {
+
         .order-product,
         .wish-product {
           min-width: 340px;
-          height: 190px;
+          height: 170px;
           min-height: 190px;
         }
       }
@@ -449,8 +472,10 @@
 
     .my-order,
     .my-wish {
+
       .order-list,
       .wish-list {
+
         .order-product,
         .wish-product {
           align-items: center;

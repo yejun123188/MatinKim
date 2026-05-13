@@ -139,16 +139,16 @@ export default function UserInfoMain() {
 
   const purchaseAmount = Number(
     localPurchaseInfo?.purchaseAmount ??
-      user?.purchaseAmount ??
-      user?.orderPrice ??
-      userInfo.purchaseAmount
+    user?.purchaseAmount ??
+    user?.orderPrice ??
+    userInfo.purchaseAmount
   );
 
   const purchaseCount = Number(
     localPurchaseInfo?.purchaseCount ??
-      user?.purchaseCount ??
-      user?.orderCount ??
-      userInfo.purchaseCount
+    user?.purchaseCount ??
+    user?.orderCount ??
+    userInfo.purchaseCount
   );
 
   const grade = getMemberGrade(purchaseAmount);
@@ -204,7 +204,7 @@ export default function UserInfoMain() {
                 </div>
               </li>
 
-              <li>
+              <li >
                 <p className="my-total-price">총 구매 금액</p>
                 <span>
                   {purchaseAmount.toLocaleString()}원 / ({purchaseCount}회)
@@ -226,7 +226,7 @@ export default function UserInfoMain() {
             </li>
           </ul>
         </UserInfoMainBox>
-      </div>
+      </div >
 
       <div className="second-line">
         <UserInfoMainBox title="My Orders" className="my-order">
@@ -299,22 +299,24 @@ export default function UserInfoMain() {
         </UserInfoMainBox>
       </div>
 
-      {showCartPopup && (
-        <CartPopup
-          mode="wish"
-          product={cartItem}
-          selectedColor={cartItem?.selectedColor}
-          selectedSize={cartItem?.selectedSize}
-          quantity={cartItem?.quantity}
-          onClose={() => setShowCartPopup(false)}
-          onGoCart={() => {
-            setShowCartPopup(false);
-            setShowCart(true);
-          }}
-        />
-      )}
+      {
+        showCartPopup && (
+          <CartPopup
+            mode="wish"
+            product={cartItem}
+            selectedColor={cartItem?.selectedColor}
+            selectedSize={cartItem?.selectedSize}
+            quantity={cartItem?.quantity}
+            onClose={() => setShowCartPopup(false)}
+            onGoCart={() => {
+              setShowCartPopup(false);
+              setShowCart(true);
+            }}
+          />
+        )
+      }
 
       {showCart && <Cart onClose={() => setShowCart(false)} />}
-    </div>
+    </div >
   );
 }
