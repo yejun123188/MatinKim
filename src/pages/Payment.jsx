@@ -34,8 +34,7 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 
 
 export default function Payment() {
-    console.log("✅ Payment 컴포넌트 진입");
-    const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase } = useAuthStore();
+    console.log("Payment 컴포넌트 진입");
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase, couponList, savedMoneySummary, onFetchCoupons, onFetchSavedMoney } = useAuthStore();
     const navigate = useNavigate();
     // 상단 구조분해에 onRemoveItems 추가

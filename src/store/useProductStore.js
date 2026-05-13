@@ -289,7 +289,6 @@ export const useProductStore = create((set, get) => ({
   },
   onReduceItems: (orderedKeys) => {
     const cart = get().cartItem;
-    const updateCart = cart.filter((cartItem) => !orderedKeys.includes(cartItem.key));
 
     const updateCart = cart.reduce((acc, cartItem) => {
       const ordered = orderedItems.find((o) => o.key === cartItem.key);
@@ -337,8 +336,8 @@ export const useProductStore = create((set, get) => ({
           size,
           color,
           id: newId,
-          image: image ?? item.image,  
-          name: name ?? item.name,     
+          image: image ?? item.image,
+          name: name ?? item.name,
         };
       }),
     }));
