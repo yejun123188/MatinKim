@@ -64,12 +64,9 @@ export default function Weeklybest() {
   );
 
   const weeklyItems = isKimMatin ? kimBestItems : BestItems;
+  const MAX_WEEKLY_ITEMS = 10;
 
-  const visibleItems = showAll
-    ? weeklyItems
-    : isKimMatin
-      ? weeklyItems.slice(0, 10)
-      : weeklyItems.slice(24, 34);
+  const visibleItems = weeklyItems.slice(0, MAX_WEEKLY_ITEMS);
 
   /* =========================
   높이 계산

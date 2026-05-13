@@ -30,7 +30,7 @@
 
   .weeklybest {
     .best-item-list .product-card {
-      background: #111 !important;
+      background: none !important;
       color: #fff !important;
 
       &::before {
@@ -90,7 +90,7 @@
       }
     }
 
-    .insta-list-wrap li > a {
+    .insta-list-wrap li>a {
       background: #151515 !important;
     }
   }
@@ -111,6 +111,7 @@
 }
 
 .kimmatin-archive-page {
+
   .collections-title,
   .collection-list li .text-box h5 {
     color: #fff !important;
@@ -203,6 +204,7 @@
 
   .qna-item.open {
     .qna-question {
+
       span:first-child,
       .qna-icon {
         color: #fff !important;
@@ -320,7 +322,7 @@
 
     .filter-title::after,
     .shop-by,
-    .filter-section + .filter-section::before,
+    .filter-section+.filter-section::before,
     .filter-main-menu .sub-menu::after {
       border-color: rgba(255, 255, 255, 0.2) !important;
     }
