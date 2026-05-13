@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import SectionTitle from './SectionTitle'
 import { Link } from 'react-router-dom'
 import "./scss/theedit.scss"
@@ -21,7 +21,7 @@ const EDIT_CONFIG = [
         subscribe: "리즈의 재미있는 상상력을 담은 버킷리스트",
         link: "/collections/3",
         subIds: ["8721", "8951"],
-        useHover: true,  // ← 이것만 hoverImg 사용
+        useHover: true,
     },
     {
         src: "./images/collection/ningning/img_ningning_00019.jpg",
@@ -36,10 +36,31 @@ const EDIT_CONFIG = [
 
 export default function TheEdit() {
     const { items, onFetchItem, onColorCode } = useProductStore();
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
 
     useEffect(() => {
         if (items.length === 0) onFetchItem();
     }, [items.length, onFetchItem]);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.disconnect();
+                    }
+                },
+                { threshold: 0.2, rootMargin: "0px 0px -700px 0px" }
+            );
+
+            if (sectionRef.current) observer.observe(sectionRef.current);
+            return () => observer.disconnect();
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const edits = useMemo(() => {
         return EDIT_CONFIG.map((edit) => ({
@@ -51,7 +72,10 @@ export default function TheEdit() {
     }, [items]);
 
     return (
-        <section className="the-edit-section">
+        <section
+            ref={sectionRef}
+            className={`the-edit-section ${isVisible ? "is-visible" : ""}`}
+        >
             <div className="inner">
                 <SectionTitle title="THE EDIT" subtitle="지금 가장 주목받는 셀럽 셀렉션" />
                 <div className='edit-wrap'>
@@ -70,10 +94,7 @@ export default function TheEdit() {
                             </div>
                             <div className="bottom">
                                 {e.sub.map((s) => {
-                                    // useHover가 true면 hoverImg, 없으면 mainImg fallback
-                                    const thumbnail = e.useHover
-                                        ? (s.mainImg || s.hoverImg)
-                                        : (s.mainImg || s.hoverImg);
+                                    const thumbnail = s.mainImg || s.hoverImg;
 
                                     return (
                                         <div className='bottom-edit-list' key={s.id}>
