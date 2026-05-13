@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../data/archive.json";
 import "./scss/KimMatinArchive.scss";
+
 
 export default function KimMatinArchive() {
   const [selectedId, setSelectedId] = useState(null);
@@ -27,7 +28,20 @@ export default function KimMatinArchive() {
     collection.sections.reduce((sum, s) => sum + s.images.length, 0);
 
   const coverImage = (collection) => collection.sections?.[0]?.images?.[0] || "";
-
+  useEffect(() => {
+    if (selectedId) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.documentElement.style.overflow = "";
+      document.documentElement.style.paddingRight = "";
+    }
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.documentElement.style.paddingRight = "";
+    };
+  }, [selectedId]);
   return (
     <div className="background">
       <section className="km-archive">

@@ -148,3 +148,44 @@
         }
     }
 }
+
+.qna-title-wrap .qna-sidebar {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0; // 원하는 간격으로 조정
+    }
+
+    li {
+
+        a,
+        button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-size: 15px; // 기존 메뉴 폰트와 맞게
+            font-weight: 400;
+            color: #555;
+            text-decoration: none;
+            padding: 8px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &:hover {
+                color: #000; // hover 색상
+                font-weight: 500;
+            }
+        }
+
+        &.active {
+
+            a,
+            button {
+                color: #000;
+                font-weight: 700; // 이미지처럼 굵게
+            }
+        }
+    }
+}
