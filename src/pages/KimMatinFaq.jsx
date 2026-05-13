@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import KimMatinHelpMenu from "../components/KimMatinHelpMenu";
 import { faqTabs, qnadata } from "../data/Qna";
-import "./scss/Qna.scss";
 import "./scss/KimMatin.scss";
+import HelpMenuKm from "../components/HelpMenuKm";
+
 
 export default function KimMatinFaq() {
   const [activeTab, setActiveTab] = useState("top5");
@@ -17,9 +17,9 @@ export default function KimMatinFaq() {
     <section className="sub-section kimmatin-help-section">
       <div className="inner qna-page">
         <div className="qna-inner">
-          <KimMatinHelpMenu />
+          <HelpMenuKm />
 
-          <div className="qna-content">
+          <div className="qna-content2">
             <h2>FAQ</h2>
             <div className="qna-tabs">
               {faqTabs.map((tab) => (

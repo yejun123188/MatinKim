@@ -1,33 +1,52 @@
-import React from "react";
-import KimMatinHelpMenu from "../components/KimMatinHelpMenu";
-import { agreementData } from "../data/agreement";
-import "./scss/Qna.scss";
-import "./scss/Agreement.scss";
-import "./scss/KimMatin.scss";
+import LegalMenu from "../components/LegalMenu";
+import { kmTncData } from "../data/kmTncData";
+import "./scss/KimMatinTerms.scss";
 
 export default function KimMatinTerms() {
   return (
-    <section className="sub-section kimmatin-help-section">
-      <div className="inner qna-page">
-        <div>
-          <div className="qna-inner">
-            <KimMatinHelpMenu />
+    <section className="terms-page">
+      <div className="terms-inner">
 
-            <div className="qna-content">
-              <h2>이용약관</h2>
-              <div className="terms-box">
-                {agreementData.map((item, index) => (
-                  <div className="term-item" key={index}>
-                    <h3>{item.title}</h3>
-                    {item.content.map((text, idx) => (
-                      <p key={idx}>{text}</p>
-                    ))}
-                  </div>
+        {/* 왼쪽 메뉴 */}
+        <aside className="terms-left">
+          <LegalMenu />
+        </aside>
+
+        {/* 오른쪽 컨텐츠 */}
+        <main className="terms-right">
+          <h1>T&C</h1>
+
+          {kmTncData.map((section) => (
+            <section
+              className="terms-section"
+              key={section.id}
+            >
+              <h2>{section.title}</h2>
+
+              <div className="terms-contents">
+
+                {/* 일반 문단 */}
+                {section.content?.map((text, idx) => (
+                  <p key={idx}>
+                    {text}
+                  </p>
                 ))}
+
+                {/* 리스트 */}
+                {section.list?.length > 0 && (
+                  <ul>
+                    {section.list.map((item, idx) => (
+                      <li key={idx}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-            </div>
-          </div>
-        </div>
+            </section>
+          ))}
+        </main>
+
       </div>
     </section>
   );

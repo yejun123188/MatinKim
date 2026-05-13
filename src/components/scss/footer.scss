@@ -6,7 +6,7 @@
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.footer > .inner {
+.footer>.inner {
   padding: 0 24px;
 }
 
@@ -223,7 +223,7 @@
 .kimmatin-footer-menu-item {
   position: relative;
 
-  > button {
+  >button {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
@@ -271,7 +271,7 @@
 
 .kimmatin-footer-dropdown {
   position: absolute;
-  right: 0px;
+  left: 0px;
   bottom: calc(100% + 10px);
   min-width: 142px;
   margin: 0;
@@ -283,7 +283,7 @@
   z-index: 5;
 
   li {
-    width: 20px;
+    position: relative;
   }
 
   a {

@@ -1,45 +1,39 @@
-import React from "react";
-import KimMatinHelpMenu from "../components/KimMatinHelpMenu";
-import { guideData } from "../data/guideData";
-import "./scss/Qna.scss";
-import "./scss/Guide.scss";
-import "./scss/KimMatin.scss";
+import LegalMenu from "../components/LegalMenu";
+import { kmGuideData } from "../data/kmGuideData";
+import "./scss/KimMatinGuide.scss";
 
 export default function KimMatinGuide() {
   return (
-    <section className="sub-section kimmatin-help-section">
-      <div className="inner qna-page">
-        <div>
-          <div className="qna-inner">
-            <KimMatinHelpMenu />
+    <section className="guide-page">
+      <div className="guide-inner">
 
-            <div className="qna-content guide-content">
-              {guideData.map((section, idx) => (
-                <article className="guide-section" key={idx}>
-                  <h3>{section.title}</h3>
-                  {section.paragraphs?.map((text, i) => (
-                    <p key={i}>{text}</p>
-                  ))}
-                  {section.list && (
-                    <ul>
-                      {section.list.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                  {section.subTitle && <h4>{section.subTitle}</h4>}
-                  {section.subList && (
-                    <ul>
-                      {section.subList.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* 왼쪽 메뉴 */}
+        <aside className="guide-left">
+          <LegalMenu />
+        </aside>
+
+        {/* 오른쪽 컨텐츠 */}
+        <main className="guide-right">
+          <h1>GUIDE</h1>
+
+          {kmGuideData.map((section, index) => (
+            <section
+              className="guide-section"
+              key={index}
+            >
+              <h2>{section.category}</h2>
+
+              <div className="guide-contents">
+                {section.contents.map((content, idx) => (
+                  <p key={idx}>
+                    {content}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </main>
+
       </div>
     </section>
   );

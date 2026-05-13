@@ -90,7 +90,7 @@
       }
     }
 
-    .insta-list-wrap li > a {
+    .insta-list-wrap li>a {
       background: #151515;
     }
   }
@@ -111,6 +111,7 @@
 }
 
 .kimmatin-archive-page {
+
   .collections-title,
   .collection-list li .text-box h5 {
     color: #fff;
@@ -135,7 +136,7 @@
     }
 
     a {
-      color: inherit;
+      color: #fff;
     }
   }
 }
@@ -146,16 +147,25 @@
   background: #050505;
   color: #fff;
 
-  .qna-content {
+  .qna-inner {
+    display: flex;
+    align-items: flex-start; // 각자 높이 기준 상단 정렬
+  }
+
+  .qna-content2 {
+    flex: 1;
+
     h2 {
       color: #fff;
       border-bottom-color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 140px;
     }
   }
 
+
   .qna-sidebar {
     li {
-      color: rgba(255, 255, 255, 0.48);
+      color: #fff;
 
       &:hover,
       &.active {
@@ -165,7 +175,7 @@
 
     a,
     button {
-      color: inherit;
+      color: #fff;
     }
   }
 
@@ -176,7 +186,7 @@
       color: rgba(255, 255, 255, 0.45);
 
       &.active {
-        color: #fff;
+        color: #fff !important;
       }
     }
   }
@@ -203,6 +213,7 @@
 
   .qna-item.open {
     .qna-question {
+
       span:first-child,
       .qna-icon {
         color: #fff;
@@ -285,7 +296,7 @@
 
     .filter-title::after,
     .shop-by,
-    .filter-section + .filter-section::before,
+    .filter-section+.filter-section::before,
     .filter-main-menu .sub-menu::after {
       border-color: rgba(255, 255, 255, 0.2);
     }
@@ -436,7 +447,7 @@
         background: #000;
         color: #fff;
 
-        & + .card-action-btn {
+        &+.card-action-btn {
           border-left-color: rgba(255, 255, 255, 0.24);
         }
 
@@ -455,7 +466,9 @@
 
       &.is-active {
         background: #fff;
-        color: #000;
+
+
+
       }
 
       img {
@@ -589,6 +602,7 @@
   }
 
   .related-pagination .page-btn {
+
     &.is-active,
     &:hover:not(:disabled) {
       color: #fff;
