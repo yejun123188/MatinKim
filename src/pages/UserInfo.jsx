@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UserInfoMain from "../components/UserInfoMain";
 import UserMenus from "../components/UserMenus";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -15,6 +15,7 @@ import OrderTracking from "../components/OrderTracking";
 import InquiryList from "../components/InquiryList";
 import RecentViewedProducts from "../components/RecentViewedProducts";
 import UserAccountEdit from "../components/UserAccountEdit";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 const myMenu = "마이페이지";
 const orderMenu = "주문내역";
@@ -25,7 +26,12 @@ export default function UserInfo() {
   const navigate = useNavigate();
   const { id: orderId, action } = useParams();
   const { onLogout } = useAuthStore();
+  const { setBrand } = useBrandStore();
   const selectMenu = orderId ? orderMenu : location.state?.menu || myMenu;
+
+  useEffect(() => {
+    setBrand(BRAND.MATINKIM);
+  }, [setBrand]);
 
   const handleMenuClick = async (menu) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
