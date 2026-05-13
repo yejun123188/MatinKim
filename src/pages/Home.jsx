@@ -1,7 +1,5 @@
-import React from 'react'
-import Instagram from '../components/Instagram';
-
-
+import React from "react";
+import Instagram from "../components/Instagram";
 import Flagship from "../components/Flagship";
 import TheEdit from "../components/TheEdit";
 import Weeklybest from '../components/Weeklybest';
@@ -13,31 +11,24 @@ import TimeSalePopup from '../components/TimeSalePopup';
 import MiddleBanner from '../components/MiddleBanner';
 
 export default function Home() {
-    return (
-        <>
-            {/* 팝업 */}
-            <TimeSalePopup />
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
 
-            <main>
-                {/* 메인 상단 */}
-                <MainTop />
-                {/* 퀵메뉴 */}
-                <ShortCut />
-                {/* 베스트 아이템 */}
-                <Weeklybest />
-                {/* 중간 배너 */}
-                <MiddleBanner />
-                {/* 신상품 */}
-                <NewArrivals />
-                {/* 더 에딧 */}
-                <TheEdit />
-                {/* 플래그쉽 */}
-                <Flagship />
-                {/* 프로젝트 */}
-                <Collection />
-                {/* 인스타 */}
-                <Instagram />
-            </main>
-        </>
-    );
+  return (
+    <>
+      {!isKimMatin && <TimeSalePopup />}
+
+      <main className={isKimMatin ? "kimmatin-home" : ""}>
+        <MainTop />
+        {!isKimMatin && <ShortCut />}
+        <Weeklybest />
+        {!isKimMatin && <MiddleBanner />}
+        {!isKimMatin && <NewArrivals />}
+        {!isKimMatin && <TheEdit />}
+        {!isKimMatin && <Flagship />}
+        <Collection />
+        <Instagram />
+      </main>
+    </>
+  );
 }

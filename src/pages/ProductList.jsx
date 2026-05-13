@@ -16,6 +16,9 @@ import { buildPouchesSubCategoryOptions, filterProductsByPouchesSubCategory } fr
 import { buildOthersSubCategoryOptions, filterProductsByOthersSubCategory } from '../utils/othersCategory';
 import { buildDressesSubCategoryOptions, filterProductsByDressesSubCategory } from '../utils/dressesCategory';
 import "./scss/productList.scss"
+import "./scss/KimMatin.scss";
+import products2 from "../data/products2.json";
+import { BRAND, useBrandStore } from "../store/useBrandStore";
 
 const PRICE_STEP = 1000;
 
@@ -109,6 +112,8 @@ export default function ProductList() {
     const [selectedSize, setSelectedSize] = useState('');
     const [selectedSubCategory, setSelectedSubCategory] = useState('');
     const [isPageVisible, setIsPageVisible] = useState(false);
+    const { brand } = useBrandStore();
+    const isKimMatin = brand === BRAND.KIMMATIN;
 
     // 카테고리별 필터링 및 옵션 생성 함수를 동적으로 선택
     const categoryFilterMap = {
@@ -131,6 +136,7 @@ export default function ProductList() {
     console.log("카테고리", mainCate, subCategory);
     // 상태 가져오기
     const { items, onFetchItem } = useProductStore();
+    const activeItems = isKimMatin ? products2 : items;
 
     // 가격 상태 추가
     const [priceRange, setPriceRange] = useState({
@@ -140,8 +146,8 @@ export default function ProductList() {
 
     // 데이터 불러오기
     useEffect(() => {
-        if (items.length === 0) onFetchItem();
-    }, [items])
+        if (!isKimMatin && items.length === 0) onFetchItem();
+    }, [items, isKimMatin, onFetchItem])
 
     useEffect(() => {
         setCurrentPage(1);
@@ -168,7 +174,7 @@ export default function ProductList() {
     }, [currentPage]);
 
 
-    const categoryItems = items.filter((item) => {
+    const categoryItems = activeItems.filter((item) => {
         const isSoldOutItem = Array.isArray(item.soldout) && item.soldout.length > 0 && item.soldout.every(Boolean);
 
         if (excludeSoldOut && isSoldOutItem) {
@@ -367,7 +373,7 @@ export default function ProductList() {
     };
 
     return (
-        <main className='product-list-wrap'>
+        <main className={`product-list-wrap ${isKimMatin ? "kimmatin-product-list" : ""}`}>
             <div className={`inner ${!showFilter ? 'filter-hidden' : ''}`}>
                 <div className={`filter-sidebar ${!showFilter ? 'is-hidden' : ''} ${isPageVisible ? 'is-visible' : ''}`}>
                     <Filter

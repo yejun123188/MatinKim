@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import "./scss/Collections.scss"
 
-export default function ACSubpage({ title, data }) {
+export default function ACSubpage({ title, data, linkBase }) {
     return (
         <div className='inner collections'>
             <h2 className="collections-title">{title}</h2>
@@ -13,7 +13,7 @@ export default function ACSubpage({ title, data }) {
                     {data.map((c, id) => (
 
                         <li key={id}>
-                            <Link to={`/${title.toLowerCase()}/${c.collectionId}`}>
+                            <Link to={`${linkBase ?? `/${title.toLowerCase()}`}/${c.collectionId}`}>
                                 <div className="img-box">
                                     <img src={c.thumbnail} alt={c.title} />
                                 </div>
