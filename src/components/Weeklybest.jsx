@@ -64,7 +64,7 @@ export default function Weeklybest() {
   );
 
   const weeklyItems = isKimMatin ? kimBestItems : BestItems;
-  const MAX_WEEKLY_ITEMS = 10;
+  const MAX_WEEKLY_ITEMS = isKimMatin ? 20 : 10;
 
   const visibleItems = weeklyItems.slice(0, MAX_WEEKLY_ITEMS);
 
@@ -74,7 +74,7 @@ export default function Weeklybest() {
   useLayoutEffect(() => {
     const list = listRef.current;
 
-    if (!list) return;
+    if (!list || isKimMatin) return;
 
     const updateListHeight = () => {
       if (showAll) {
@@ -96,12 +96,12 @@ export default function Weeklybest() {
     return () => {
       window.removeEventListener("resize", updateListHeight);
     };
-  }, [weeklyItems.length, showAll]);
+  }, [weeklyItems.length, showAll, isKimMatin]);
 
   return (
     <section
       ref={sectionRef}
-      className={`weeklybest ${isVisible ? "is-visible" : ""}`}
+      className={`weeklybest ${isVisible ? "is-visible" : ""} ${isKimMatin ? "kimmatin-weeklybest" : ""}`}
     >
       <div className="inner">
         <SectionTitle
@@ -113,7 +113,7 @@ export default function Weeklybest() {
           className={`best-item-list-wrap ${showAll ? "is-open is-animate" : ""
             }`}
           style={{
-            maxHeight: listHeight
+            maxHeight: !isKimMatin && listHeight
               ? `${listHeight}px`
               : undefined,
           }}
@@ -129,22 +129,24 @@ export default function Weeklybest() {
           </ul>
         </div>
 
-        <button
-          type="button"
-          className="see-more"
-          onClick={() => setShowAll(!showAll)}
-        >
-          {showAll ? "CLOSE" : "SEE MORE"}
+        {!isKimMatin && (
+          <button
+            type="button"
+            className="see-more"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "CLOSE" : "SEE MORE"}
 
-          <img
-            src={`/images/pages-icon/${showAll
-              ? "top-icon.svg"
-              : "bottom-icon.svg"
-              }`}
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
+            <img
+              src={`/images/pages-icon/${showAll
+                ? "top-icon.svg"
+                : "bottom-icon.svg"
+                }`}
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+        )}
       </div>
     </section>
   );

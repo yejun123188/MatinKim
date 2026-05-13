@@ -296,6 +296,33 @@
             opacity: 0.5;
         }
     }
+
+    &.kimmatin-weeklybest {
+        .best-item-list-wrap {
+            max-height: none;
+            overflow: visible;
+
+            &:not(.is-open) {
+                .product-card:nth-child(n + 6) {
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        .best-item-list {
+            --weeklybest-card-width: calc((min(100vw, 1440px) - 72px) / 4);
+            grid-template-columns: repeat(4, var(--weeklybest-card-width));
+
+            .product-card {
+                padding-bottom: 0;
+
+                .color-wrap {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 @keyframes weeklyCardDrop {
