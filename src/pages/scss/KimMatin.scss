@@ -1,80 +1,80 @@
 @use "../../App.scss" as g;
 
 .kimmatin-home {
-  background: #050505;
-  color: #fff;
+  background: #050505 !important;
+  color: #fff !important;
 
   .main-top {
-    background: #050505;
+    background: #050505 !important;
   }
 
   .weeklybest,
   .collection,
   .insta {
-    background: #050505;
-    color: #fff;
+    background: #050505 !important;
+    color: #fff !important;
   }
 
   .section-title {
-    align-items: baseline;
+    align-items: baseline !important;
 
     h2 {
-      color: #fff;
-      top: 0;
+      color: #fff !important;
+      top: 0 !important;
     }
 
     p {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.55) !important;
     }
   }
 
   .weeklybest {
     .best-item-list .product-card {
-      background: #111;
-      color: #fff;
+      background: #111 !important;
+      color: #fff !important;
 
       &::before {
-        border-color: rgba(255, 255, 255, 0.22);
-        background: #111;
+        border-color: rgba(255, 255, 255, 0.22) !important;
+        background: #111 !important;
       }
 
       .brand-name,
       h3,
       .discount-price {
-        color: #fff;
+        color: #fff !important;
       }
 
       .price {
-        color: rgba(255, 255, 255, 0.55);
+        color: rgba(255, 255, 255, 0.55) !important;
       }
 
       .color-chip {
-        border-color: rgba(255, 255, 255, 0.35);
+        border-color: rgba(255, 255, 255, 0.35) !important;
       }
 
       .badge {
-        border-color: #fff;
-        background: #fff;
-        color: #000;
+        border-color: #fff !important;
+        background: #fff !important;
+        color: #000 !important;
       }
 
       .card-action-bar {
-        background: #000;
-        border-color: rgba(255, 255, 255, 0.2);
+        background: #000 !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
 
         button {
-          background: #fff;
-          color: #000;
-          border-color: #fff;
+          background: #fff !important;
+          color: #000 !important;
+          border-color: #fff !important;
         }
       }
     }
 
     .see-more {
-      color: #fff;
+      color: #fff !important;
 
       img {
-        filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1) !important;
       }
     }
   }
@@ -82,122 +82,122 @@
   .insta {
     .insta-h2 {
       span {
-        color: #fff;
+        color: #fff !important;
       }
 
       img {
-        filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1) !important;
       }
     }
 
     .insta-list-wrap li > a {
-      background: #151515;
+      background: #151515 !important;
     }
   }
 
   .collection-list {
     .card {
-      background: #111;
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+      background: #111 !important;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
     }
   }
 }
 
 .kimmatin-archive-page,
 .kimmatin-about-page {
-  min-height: 100vh;
-  background: #050505;
-  color: #fff;
+  min-height: 100vh !important;
+  background: #050505 !important;
+  color: #fff !important;
 }
 
 .kimmatin-archive-page {
   .collections-title,
   .collection-list li .text-box h5 {
-    color: #fff;
+    color: #fff !important;
   }
 
   .collection-list li .text-box .sub-title {
-    color: rgba(255, 255, 255, 0.58);
+    color: rgba(255, 255, 255, 0.58) !important;
   }
 }
 
 .kimmatin-about-page {
-  background: #050505;
+  background: #050505 !important;
 
   .button-list {
     li {
-      color: rgba(255, 255, 255, 0.48);
+      color: rgba(255, 255, 255, 0.48) !important;
 
       &:hover,
       &.active {
-        color: #fff;
+        color: #fff !important;
       }
     }
 
     a {
-      color: inherit;
+      color: inherit !important;
     }
   }
 }
 
 .kimmatin-help-section {
-  min-height: 100vh;
-  padding: 120px 0 80px;
-  background: #050505;
-  color: #fff;
+  min-height: 100vh !important;
+  padding: 120px 0 80px !important;
+  background: #050505 !important;
+  color: #fff !important;
 
   .qna-content {
     h2 {
-      color: #fff;
-      border-bottom-color: rgba(255, 255, 255, 0.82);
+      color: #fff !important;
+      border-bottom-color: rgba(255, 255, 255, 0.82) !important;
     }
   }
 
   .qna-sidebar {
     li {
-      color: rgba(255, 255, 255, 0.48);
+      color: rgba(255, 255, 255, 0.48) !important;
 
       &:hover,
       &.active {
-        color: #fff;
+        color: #fff !important;
       }
     }
 
     a,
     button {
-      color: inherit;
+      color: inherit !important;
     }
   }
 
   .qna-tabs {
-    border-bottom-color: rgba(255, 255, 255, 0.16);
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
 
     button {
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(255, 255, 255, 0.45) !important;
 
       &.active {
-        color: #fff;
+        color: #fff !important;
       }
     }
   }
 
   .qna-item {
-    border-bottom-color: rgba(255, 255, 255, 0.16);
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
 
     &.open {
       .qna-answer {
-        background: #111;
+        background: #111 !important;
       }
     }
   }
 
   .qna-question {
     span:first-child {
-      color: rgba(255, 255, 255, 0.58);
+      color: rgba(255, 255, 255, 0.58) !important;
     }
 
     .qna-icon {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.55) !important;
     }
   }
 
@@ -205,7 +205,7 @@
     .qna-question {
       span:first-child,
       .qna-icon {
-        color: #fff;
+        color: #fff !important;
       }
     }
   }
@@ -215,233 +215,309 @@
   .guide-section li,
   .policy-block p,
   .term-item p {
-    color: rgba(255, 255, 255, 0.66);
+    color: rgba(255, 255, 255, 0.66) !important;
   }
 
   .guide-section,
   .policy-block,
   .term-item {
-    border-bottom-color: rgba(255, 255, 255, 0.16);
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
 
     h3,
     h4 {
-      color: #fff;
+      color: #fff !important;
     }
 
     li::before {
-      background: rgba(255, 255, 255, 0.62);
+      background: rgba(255, 255, 255, 0.62) !important;
     }
   }
 
   .guide-section h3 {
-    border-bottom-color: rgba(255, 255, 255, 0.82);
+    border-bottom-color: rgba(255, 255, 255, 0.82) !important;
   }
 
   .kimmatin-qna-write-link {
     p {
-      margin: 0 0 8px;
-      color: rgba(255, 255, 255, 0.66);
-      font-size: g.$size-16;
-      line-height: 1.8;
+      margin: 0 0 8px !important;
+      color: rgba(255, 255, 255, 0.66) !important;
+      font-size: g.$size-16 !important;
+      line-height: 1.8 !important;
     }
 
     a {
-      display: inline-flex;
-      margin-top: 20px;
-      padding: 12px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      color: #fff;
-      text-decoration: none;
-      font-size: g.$size-14-main;
-      line-height: 1;
+      display: inline-flex !important;
+      margin-top: 20px !important;
+      padding: 12px 18px !important;
+      border: 1px solid rgba(255, 255, 255, 0.8) !important;
+      color: #fff !important;
+      text-decoration: none !important;
+      font-size: g.$size-14-main !important;
+      line-height: 1 !important;
     }
   }
 }
 
 .kimmatin-product-list {
-  background: #050505;
-  color: #fff;
+  $kim-bg: #050505;
+  $kim-text: #fff;
+  $kim-muted: rgba(255, 255, 255, 0.68);
+  $kim-line: rgba(255, 255, 255, 0.22);
+  $kim-accent: #37cad5;
+
+  background: $kim-bg !important;
+  color: $kim-text !important;
+
+  .inner,
+  .filter-sidebar,
+  .product-list-wrap,
+  .section-bottom {
+    background: $kim-bg !important;
+    color: $kim-text !important;
+  }
 
   .section-banner::after {
-    background: rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.32) !important;
   }
 
   .filter-wrap {
-    border-right-color: rgba(255, 255, 255, 0.16);
-    background: #050505;
+    border-right-color: rgba(255, 255, 255, 0.16) !important;
+    background: $kim-bg !important;
 
     .filter-title,
+    h2.filter-title,
     .filter-main-label,
-    .filter-subtitle,
     .filter-toggle-icon,
     .sub-menu-item a,
+    .sub-menu-item a p {
+      color: $kim-text !important;
+    }
+
+    .filter-subtitle,
     .size-option-item,
     .size-option-label,
     .size-option-count,
     .size-empty-text,
     .color-more-btn {
-      color: rgba(255, 255, 255, 0.72);
+      color: $kim-muted !important;
+    }
+
+    .filter-main-label.is-active,
+    .sub-menu-item a.is-active,
+    .sub-menu-item a.is-active p,
+    .sub-menu-item a:hover,
+    .sub-menu-item a:hover p,
+    .size-option-item:hover,
+    .size-option-item.is-active,
+    .size-option-item.is-active .size-option-label,
+    .size-option-item.is-active .size-option-count {
+      color: $kim-text !important;
     }
 
     .filter-title::after,
     .shop-by,
     .filter-section + .filter-section::before,
     .filter-main-menu .sub-menu::after {
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .filter-main-label.is-active,
-    .sub-menu-item a.is-active,
-    .sub-menu-item a:hover,
-    .size-option-item:hover,
-    .size-option-item.is-active,
-    .size-option-item.is-active .size-option-label,
-    .size-option-item.is-active .size-option-count {
-      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2) !important;
     }
 
     .color-item.is-active .color-chip {
-      border-color: #fff;
-      box-shadow: inset 0 0 0 1px #fff;
+      border-color: $kim-text !important;
+      box-shadow: inset 0 0 0 1px $kim-text !important;
+    }
+
+    .color-list-wrap .color-chip {
+      border-color: rgba(255, 255, 255, 0.35) !important;
+      filter: none !important;
     }
 
     .price-container {
       .track {
-        background: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.22) !important;
       }
 
       .range,
       button {
-        background: #fff;
+        background: $kim-text !important;
       }
 
       button {
-        color: #000;
+        color: #000 !important;
       }
 
       .thumb-left,
       .thumb-right {
-        filter: invert(1);
+        filter: invert(1) !important;
       }
 
       .price-inputs {
         span {
-          color: rgba(255, 255, 255, 0.55);
+          color: $kim-muted !important;
         }
 
         input {
-          border-color: rgba(255, 255, 255, 0.26);
-          background: #050505;
-          color: #fff;
+          border-color: rgba(255, 255, 255, 0.26) !important;
+          background: $kim-bg !important;
+          color: $kim-text !important;
         }
       }
     }
   }
 
   .filter-toggle-btn,
+  .sort-select {
+    border-color: $kim-line !important;
+    background: $kim-bg !important;
+    color: $kim-text !important;
+
+    &:hover,
+    &:focus {
+      border-color: $kim-text !important;
+      color: $kim-text !important;
+    }
+  }
+
+  .sort-select {
+    background: $kim-bg url("/images/pages-icon/bottom-icon.svg") no-repeat
+      right 14px center !important;
+    background-size: 10px auto !important;
+
+    option {
+      background: $kim-bg !important;
+      color: $kim-text !important;
+    }
+  }
+
   .filter-reset-btn,
   .filter-tag,
   .soldout-checkbox,
-  .soldout-checkbox span,
-  .sort-select {
-    color: #fff;
+  .soldout-checkbox span {
+    color: $kim-text !important;
   }
 
   .filter-toggle-btn img,
   .filter-reset-btn img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1) !important;
   }
 
-  .filter-tag,
-  .sort-select {
-    border-color: rgba(255, 255, 255, 0.28);
-    background: #050505;
+  .filter-tag {
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    background: $kim-bg !important;
+
+    &:hover {
+      border-color: $kim-text !important;
+    }
   }
 
-  .sort-select {
-    background-color: #050505;
+  .soldout-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: $kim-text !important;
+    font-size: g.$size-14-main;
+    cursor: pointer;
 
-    option {
-      background: #050505;
-      color: #fff;
+    input {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      cursor: pointer;
+      accent-color: #fff !important;
     }
   }
 
   .product-list ul .product-card {
-    background: #111;
-    color: #fff;
+    background: $kim-bg !important;
+    color: $kim-text !important;
 
     &::before {
-      border-color: rgba(255, 255, 255, 0.22);
-      background: #111;
+      border-color: $kim-line !important;
+      background: $kim-bg !important;
     }
 
     .brand-name,
     h3,
     .discount-price,
     .card-size-list span {
-      color: #fff;
+      color: $kim-text !important;
+    }
+
+    .discount-rate {
+      color: $kim-accent !important;
     }
 
     .price {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.55) !important;
     }
 
     .color-chip {
-      border-color: rgba(255, 255, 255, 0.35);
+      border-color: rgba(255, 255, 255, 0.35) !important;
+      filter: none !important;
     }
 
     &:hover {
       .color-chip {
-        border-color: rgba(255, 255, 255, 0.35);
+        border-color: rgba(255, 255, 255, 0.35) !important;
 
         &.selected {
-          border-color: #111;
-          box-shadow: 0 0 0 1px #fff;
+          border-color: $kim-bg !important;
+          box-shadow: 0 0 0 1px $kim-text !important;
         }
       }
     }
 
     .badge {
-      border-color: #fff;
-      background: #fff;
-      color: #000;
+      border-color: $kim-text !important;
+      background: $kim-text !important;
+      color: #000 !important;
+    }
+
+    .discount-badge {
+      border-color: $kim-accent !important;
+      background: $kim-accent !important;
+      color: #000 !important;
+    }
+
+    .soldout-badge {
+      border-color: #737373 !important;
+      background: #737373 !important;
+      color: $kim-text !important;
     }
 
     .card-size-list {
-      border-top-color: rgba(255, 255, 255, 0.18);
-      background: #111;
+      border-top-color: rgba(255, 255, 255, 0.18) !important;
+      background: $kim-bg !important;
 
       span {
         &.is-soldout {
-          color: rgba(255, 255, 255, 0.45);
+          color: rgba(255, 255, 255, 0.45) !important;
         }
 
         &.selected {
-          color: #fff;
+          color: $kim-text !important;
         }
       }
     }
 
     .card-action-bar {
-      background: #000;
-      border-color: rgba(255, 255, 255, 0.2);
+      background: #000 !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
 
       .card-like-btn {
-        background: #fff;
-        border-color: #fff;
+        background: $kim-text !important;
+        border-color: $kim-text !important;
       }
 
       .card-action-btn {
-        background: #000;
-        color: #fff;
+        background: #000 !important;
+        color: $kim-text !important;
 
         & + .card-action-btn {
-          border-left-color: rgba(255, 255, 255, 0.24);
+          border-left-color: rgba(255, 255, 255, 0.24) !important;
         }
 
         &:hover:not(:disabled) {
-          background: #1d1d1d;
+          background: #1d1d1d !important;
         }
       }
     }
@@ -449,41 +525,40 @@
 
   .pagination {
     .page-btn {
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.25);
-      background: transparent;
+      border: 0 !important;
+      background: $kim-bg !important;
+      color: $kim-muted !important;
 
       &.is-active {
-        background: #fff;
-        color: #000;
+        color: $kim-text !important;
       }
 
       img {
-        filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1) !important;
       }
     }
   }
 }
 
 .kimmatin-product-detail {
-  background: #050505;
-  color: #fff;
+  background: #050505 !important;
+  color: #fff !important;
 
   .product-detail-page-inner,
   .info-column,
   .related-products-section {
-    color: #fff;
+    color: #fff !important;
   }
 
   .detail-actions button,
   .thumb-nav,
   .gallery-bottom-nav button,
   .zoom-btn {
-    background: #111;
-    border-color: rgba(255, 255, 255, 0.2);
+    background: #111 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
 
     img {
-      filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1) !important;
     }
   }
 
@@ -493,7 +568,7 @@
   .option-label,
   .tab-content,
   .related-pagination .page-btn {
-    color: rgba(255, 255, 255, 0.66);
+    color: rgba(255, 255, 255, 0.66) !important;
   }
 
   .detail-title,
@@ -501,7 +576,7 @@
   .detail-total strong,
   .related-products-section h2,
   .product-detail-tabs .tab-header button.is-active {
-    color: #fff;
+    color: #fff !important;
   }
 
   .product-detail-tabs,
@@ -510,92 +585,81 @@
   .option-card,
   .quantity-box,
   .related-products-grid .product-card::before {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2) !important;
   }
 
   .option-card,
   .quantity-box,
   .quantity-box button,
   .cart-btn {
-    background: #111;
-    color: #fff;
+    background: #111 !important;
+    color: #fff !important;
   }
 
   .option-card-sub,
   .original-price {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.55) !important;
   }
 
   .option-card.is-selected,
   .quantity-box button:hover {
-    border-color: #fff;
+    border-color: #fff !important;
   }
 
   .buy-btn {
-    background: #fff;
-    border-color: #fff;
-    color: #000;
+    background: #fff !important;
+    border-color: #fff !important;
+    color: #000 !important;
   }
 
   .related-products-grid .product-card {
-    background: #111;
-    color: #fff;
+    background: #111 !important;
+    color: #fff !important;
 
     &::before {
-      background: #111;
+      background: #111 !important;
     }
 
     .brand-name,
     h3,
     .discount-price,
     .card-size-list span {
-      color: #fff;
+      color: #fff !important;
     }
 
     .price,
     .card-size-list span.is-soldout {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.55) !important;
     }
 
     .color-chip {
-      border-color: rgba(255, 255, 255, 0.35);
+      border-color: rgba(255, 255, 255, 0.35) !important;
     }
 
     .badge {
-      border-color: #fff;
-      background: #fff;
-      color: #000;
+      border-color: #fff !important;
+      background: #fff !important;
+      color: #000 !important;
     }
 
     .card-size-list {
-      border-top-color: rgba(255, 255, 255, 0.18);
-      background: #111;
+      border-top-color: rgba(255, 255, 255, 0.18) !important;
+      background: #111 !important;
     }
 
     .card-action-bar {
-      background: #000;
-      border-top-color: rgba(255, 255, 255, 0.2);
+      background: #000 !important;
+      border-top-color: rgba(255, 255, 255, 0.2) !important;
 
       .card-like-btn {
-        background: #fff;
-        border-color: #fff;
+        background: #000 !important;
+        border-color: #fff !important;
       }
 
       .card-action-btn {
-        background: #000;
-        color: #fff;
+        background: #000 !important;
+        color: #fff !important;
       }
-    }
-  }
-
-  .related-pagination .page-btn {
-    &.is-active,
-    &:hover:not(:disabled) {
-      color: #fff;
-    }
-
-    img {
-      filter: brightness(0) invert(1);
     }
   }
 }

@@ -74,6 +74,7 @@
 
             .date-input {
               display: flex;
+              padding: 0 2px 0 0;
               width: 100%;
               height: inherit;
               font-size: g.$size-14-main;
@@ -514,7 +515,9 @@
 
               .text-box {
                 display: grid;
-                grid-template-columns: minmax(48px, 0.7fr) minmax(88px, 1fr) auto;
+                grid-template-columns:
+                  minmax(48px, 0.7fr) minmax(88px, 1fr)
+                  auto;
                 align-items: center;
                 gap: 6px;
                 width: 100%;

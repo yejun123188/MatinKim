@@ -1,21 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import { useProductStore } from '../store/useProductStore'
-import { useParams } from 'react-router-dom';
-import Filter from '../components/Filter';
-import ProductCard from '../components/ProductCard';
-import { buildOuterSubCategoryOptions, filterProductsByOuterSubCategory } from '../utils/outerCategory';
-import { buildTopsSubCategoryOptions, filterProductsByTopsSubCategory } from '../utils/topsCategory';
-import { buildBottomsSubCategoryOptions, filterProductsByBottomsSubCategory } from '../utils/bottomsCategory';
-import { buildBagsSubCategoryOptions, filterProductsByBagsSubCategory } from '../utils/bagsCategory';
-import { buildShoesSubCategoryOptions, filterProductsByShoeSubCategory } from '../utils/shoesCategory';
-import { buildWalletsSubCategoryOptions, filterProductsByWalletsSubCategory } from '../utils/walletsCategory';
-import { buildHatsSubCategoryOptions, filterProductsByHatsSubCategory } from '../utils/hatsCategory';
-import { buildHairSubCategoryOptions, filterProductsByHairSubCategory } from '../utils/hairCategory';
-import { buildNeckwearSubCategoryOptions, filterProductsByNeckwearSubCategory } from '../utils/neckwearCategory';
-import { buildPouchesSubCategoryOptions, filterProductsByPouchesSubCategory } from '../utils/pouchesCategory';
-import { buildOthersSubCategoryOptions, filterProductsByOthersSubCategory } from '../utils/othersCategory';
-import { buildDressesSubCategoryOptions, filterProductsByDressesSubCategory } from '../utils/dressesCategory';
-import "./scss/productList.scss"
+import React, { useEffect, useState } from "react";
+import { useProductStore } from "../store/useProductStore";
+import { useParams } from "react-router-dom";
+import Filter from "../components/Filter";
+import ProductCard from "../components/ProductCard";
+import {
+  buildOuterSubCategoryOptions,
+  filterProductsByOuterSubCategory,
+} from "../utils/outerCategory";
+import {
+  buildTopsSubCategoryOptions,
+  filterProductsByTopsSubCategory,
+} from "../utils/topsCategory";
+import {
+  buildBottomsSubCategoryOptions,
+  filterProductsByBottomsSubCategory,
+} from "../utils/bottomsCategory";
+import {
+  buildBagsSubCategoryOptions,
+  filterProductsByBagsSubCategory,
+} from "../utils/bagsCategory";
+import {
+  buildShoesSubCategoryOptions,
+  filterProductsByShoeSubCategory,
+} from "../utils/shoesCategory";
+import {
+  buildWalletsSubCategoryOptions,
+  filterProductsByWalletsSubCategory,
+} from "../utils/walletsCategory";
+import {
+  buildHatsSubCategoryOptions,
+  filterProductsByHatsSubCategory,
+} from "../utils/hatsCategory";
+import {
+  buildHairSubCategoryOptions,
+  filterProductsByHairSubCategory,
+} from "../utils/hairCategory";
+import {
+  buildNeckwearSubCategoryOptions,
+  filterProductsByNeckwearSubCategory,
+} from "../utils/neckwearCategory";
+import {
+  buildPouchesSubCategoryOptions,
+  filterProductsByPouchesSubCategory,
+} from "../utils/pouchesCategory";
+import {
+  buildOthersSubCategoryOptions,
+  filterProductsByOthersSubCategory,
+} from "../utils/othersCategory";
+import {
+  buildDressesSubCategoryOptions,
+  filterProductsByDressesSubCategory,
+} from "../utils/dressesCategory";
+import "./scss/productList.scss";
 import "./scss/KimMatin.scss";
 import products2 from "../data/products2.json";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
@@ -23,190 +59,266 @@ import { BRAND, useBrandStore } from "../store/useBrandStore";
 const PRICE_STEP = 1000;
 
 const urlMap = {
-    Outerwears: "outerwears",
-    Tops: "tops",
-    Bottoms: "bottoms",
-    Dresses: "dresses",
-    Bags: "bags",
-    Shoes: "shoes",
-    Wallets: "wallets",
-    "Hats & Caps": "hats",
-    Hair: "hair",
-    Neckwear: "neckwear",
-    "Pouches & Cases": "pouches",
-    Others: "others"
+  Outerwears: "outerwears",
+  Tops: "tops",
+  Bottoms: "bottoms",
+  Dresses: "dresses",
+  Bags: "bags",
+  Shoes: "shoes",
+  Wallets: "wallets",
+  "Hats & Caps": "hats",
+  Hair: "hair",
+  Neckwear: "neckwear",
+  "Pouches & Cases": "pouches",
+  Others: "others",
 };
 
 const TAG_ROUTE_MAP = {
-    sale: "SALE",
-    newin: "NEW IN",
-    musthave: "MUST HAVE",
-    collab: "COLLAB",
-    all: "ALL"
+  sale: "SALE",
+  newin: "NEW IN",
+  musthave: "MUST HAVE",
+  collab: "COLLAB",
+  all: "ALL",
 };
 
 const TAG_DESCRIPTION_MAP = {
-    "SALE": "세일",
-    "NEW IN": "신상품",
-    "MUST HAVE": "인기상품",
-    "COLLAB": "콜라보",
-    "ALL": "전체상품"
+  SALE: "세일",
+  "NEW IN": "신상품",
+  "MUST HAVE": "인기상품",
+  COLLAB: "콜라보",
+  ALL: "전체상품",
 };
 
 const CATEGORY1_DESCRIPTION_MAP = {
-    "CLOTHING": "의류",
-    "GOODS": "굿즈",
-    "ACCESSORIES": "액세서리"
+  CLOTHING: "의류",
+  GOODS: "굿즈",
+  ACCESSORIES: "액세서리",
 };
 
 // 각 메인 카테고리별 배너 이미지
 const TAG_BANNER_IMAGE_MAP = {
-    "SALE": "/images/banner-img/banner-img-sale.png",
-    "NEW IN": "/images/banner-img/banner-img-newIn.png",
-    "MUST HAVE": "/images/banner-img/banner-img-mustHave.png",
-    "COLLAB": "/images/banner-img/banner-img-collab.png",
-    "ALL": "/images/banner-img/banner-img-all.png"
+  SALE: "/images/banner-img/banner-img-sale.png",
+  "NEW IN": "/images/banner-img/banner-img-newIn.png",
+  "MUST HAVE": "/images/banner-img/banner-img-mustHave.png",
+  COLLAB: "/images/banner-img/banner-img-collab.png",
+  ALL: "/images/banner-img/banner-img-all.png",
 };
 
 // 각 메인 카테고리별 배너 이미지 (category1)
 const CATEGORY1_BANNER_IMAGE_MAP = {
-    "CLOTHING": "/images/banner-img/banner-img-clothing.png",
-    "GOODS": "/images/banner-img/banner-img-goods.png",
-    "ACCESSORIES": "/images/banner-img/banner-img-accessories.png"
+  CLOTHING: "/images/banner-img/banner-img-clothing.png",
+  GOODS: "/images/banner-img/banner-img-goods.png",
+  ACCESSORIES: "/images/banner-img/banner-img-accessories.png",
 };
 
 // 각 서브 카테고리별 배너 이미지 (category2)
 const CATEGORY2_BANNER_IMAGE_MAP = {
-    Outerwears: "/images/banner-img/banner-img-outerwears.png",
-    Tops: "/images/banner-img/banner-img-top.png",
-    Bottoms: "/images/banner-img/banner-img-bottoms.png",
-    Dresses: "/images/banner-img/banner-img-dresses.png",
-    Bags: "/images/banner-img/banner-img-bags.png",
-    Shoes: "/images/banner-img/banner-img-shoes.png",
-    Wallets: "/images/banner-img/banner-img-wallets.png",
-    "Hats & Caps": "/images/banner-img/banner-img-hatsCaps.png",
-    Hair: "/images/banner-img/banner-img-hair.png",
-    Neckwear: "/images/banner-img/banner-img-neckwear.png",
-    "Pouches & Cases": "/images/banner-img/banner-img-pouches.png",
-    Others: "/images/banner-img/banner-img-others.png"
+  Outerwears: "/images/banner-img/banner-img-outerwears.png",
+  Tops: "/images/banner-img/banner-img-top.png",
+  Bottoms: "/images/banner-img/banner-img-bottoms.png",
+  Dresses: "/images/banner-img/banner-img-dresses.png",
+  Bags: "/images/banner-img/banner-img-bags.png",
+  Shoes: "/images/banner-img/banner-img-shoes.png",
+  Wallets: "/images/banner-img/banner-img-wallets.png",
+  "Hats & Caps": "/images/banner-img/banner-img-hatsCaps.png",
+  Hair: "/images/banner-img/banner-img-hair.png",
+  Neckwear: "/images/banner-img/banner-img-neckwear.png",
+  "Pouches & Cases": "/images/banner-img/banner-img-pouches.png",
+  Others: "/images/banner-img/banner-img-others.png",
 };
 
 export default function ProductList() {
-    const ITEMS_PER_ROW = 4;
-    const MAX_VISIBLE_ROWS = 5;
-    const ITEMS_PER_PAGE = ITEMS_PER_ROW * MAX_VISIBLE_ROWS;
+  const ITEMS_PER_ROW = 4;
+  const MAX_VISIBLE_ROWS = 5;
+  const ITEMS_PER_PAGE = ITEMS_PER_ROW * MAX_VISIBLE_ROWS;
 
-    // 페이지네이션 갯수
-    const PAGE_BUTTON_LIMIT = 10;
+  // 페이지네이션 갯수
+  const PAGE_BUTTON_LIMIT = 10;
 
-    //주소줄에 있는 파라메터 값 받아서 사용하기
-    const params = useParams();
-    const mainCate = params.category1?.toLowerCase();
-    const subCategory = params.category2?.toLowerCase();
-    const tagCategory = TAG_ROUTE_MAP[(mainCate || '').toLowerCase()] || null;
-    const [currentPage, setCurrentPage] = useState(1);
-    const [sortBy, setSortBy] = useState('newest');
-    const [showFilter, setShowFilter] = useState(true);
-    const [excludeSoldOut, setExcludeSoldOut] = useState(false);
-    const [selectedColor, setSelectedColor] = useState('');
-    const [selectedSize, setSelectedSize] = useState('');
-    const [selectedSubCategory, setSelectedSubCategory] = useState('');
-    const [isPageVisible, setIsPageVisible] = useState(false);
-    const { brand } = useBrandStore();
-    const isKimMatin = brand === BRAND.KIMMATIN;
+  //주소줄에 있는 파라메터 값 받아서 사용하기
+  const params = useParams();
+  const mainCate = params.category1?.toLowerCase();
+  const subCategory = params.category2?.toLowerCase();
+  const tagCategory = TAG_ROUTE_MAP[(mainCate || "").toLowerCase()] || null;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortBy, setSortBy] = useState("newest");
+  const [showFilter, setShowFilter] = useState(true);
+  const [excludeSoldOut, setExcludeSoldOut] = useState(false);
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedSubCategory, setSelectedSubCategory] = useState("");
+  const [isPageVisible, setIsPageVisible] = useState(false);
+  const { brand } = useBrandStore();
+  const isKimMatin = brand === BRAND.KIMMATIN;
 
-    // 카테고리별 필터링 및 옵션 생성 함수를 동적으로 선택
-    const categoryFilterMap = {
-        'outerwears': { build: buildOuterSubCategoryOptions, filter: filterProductsByOuterSubCategory },
-        'tops': { build: buildTopsSubCategoryOptions, filter: filterProductsByTopsSubCategory },
-        'bottoms': { build: buildBottomsSubCategoryOptions, filter: filterProductsByBottomsSubCategory },
-        'bags': { build: buildBagsSubCategoryOptions, filter: filterProductsByBagsSubCategory },
-        'shoes': { build: buildShoesSubCategoryOptions, filter: filterProductsByShoeSubCategory },
-        'wallets': { build: buildWalletsSubCategoryOptions, filter: filterProductsByWalletsSubCategory },
-        'hats': { build: buildHatsSubCategoryOptions, filter: filterProductsByHatsSubCategory },
-        'hair': { build: buildHairSubCategoryOptions, filter: filterProductsByHairSubCategory },
-        'neckwear': { build: buildNeckwearSubCategoryOptions, filter: filterProductsByNeckwearSubCategory },
-        'pouches': { build: buildPouchesSubCategoryOptions, filter: filterProductsByPouchesSubCategory },
-        'others': { build: buildOthersSubCategoryOptions, filter: filterProductsByOthersSubCategory },
-        'dresses': { build: buildDressesSubCategoryOptions, filter: filterProductsByDressesSubCategory }
-    };
+  // 카테고리별 필터링 및 옵션 생성 함수를 동적으로 선택
+  const categoryFilterMap = {
+    outerwears: {
+      build: buildOuterSubCategoryOptions,
+      filter: filterProductsByOuterSubCategory,
+    },
+    tops: {
+      build: buildTopsSubCategoryOptions,
+      filter: filterProductsByTopsSubCategory,
+    },
+    bottoms: {
+      build: buildBottomsSubCategoryOptions,
+      filter: filterProductsByBottomsSubCategory,
+    },
+    bags: {
+      build: buildBagsSubCategoryOptions,
+      filter: filterProductsByBagsSubCategory,
+    },
+    shoes: {
+      build: buildShoesSubCategoryOptions,
+      filter: filterProductsByShoeSubCategory,
+    },
+    wallets: {
+      build: buildWalletsSubCategoryOptions,
+      filter: filterProductsByWalletsSubCategory,
+    },
+    hats: {
+      build: buildHatsSubCategoryOptions,
+      filter: filterProductsByHatsSubCategory,
+    },
+    hair: {
+      build: buildHairSubCategoryOptions,
+      filter: filterProductsByHairSubCategory,
+    },
+    neckwear: {
+      build: buildNeckwearSubCategoryOptions,
+      filter: filterProductsByNeckwearSubCategory,
+    },
+    pouches: {
+      build: buildPouchesSubCategoryOptions,
+      filter: filterProductsByPouchesSubCategory,
+    },
+    others: {
+      build: buildOthersSubCategoryOptions,
+      filter: filterProductsByOthersSubCategory,
+    },
+    dresses: {
+      build: buildDressesSubCategoryOptions,
+      filter: filterProductsByDressesSubCategory,
+    },
+  };
 
-    const hasSubCategoryFilter = !tagCategory && subCategory && categoryFilterMap[subCategory];
+  const hasSubCategoryFilter =
+    !tagCategory && subCategory && categoryFilterMap[subCategory];
 
-    console.log("카테고리", mainCate, subCategory);
-    // 상태 가져오기
-    const { items, onFetchItem } = useProductStore();
-    const activeItems = isKimMatin ? products2 : items;
+  console.log("카테고리", mainCate, subCategory);
+  // 상태 가져오기
+  const { items, onFetchItem } = useProductStore();
+  const activeItems = isKimMatin ? products2 : items;
 
-    // 가격 상태 추가
-    const [priceRange, setPriceRange] = useState({
-        min: 0,
-        max: PRICE_STEP
-    })
+  // 가격 상태 추가
+  const [priceRange, setPriceRange] = useState({
+    min: 0,
+    max: PRICE_STEP,
+  });
 
-    // 데이터 불러오기
-    useEffect(() => {
-        if (!isKimMatin && items.length === 0) onFetchItem();
-    }, [items, isKimMatin, onFetchItem])
+  // 데이터 불러오기
+  useEffect(() => {
+    if (!isKimMatin && items.length === 0) onFetchItem();
+  }, [items, isKimMatin, onFetchItem]);
 
-    useEffect(() => {
-        setCurrentPage(1);
-    }, [mainCate, subCategory, sortBy, excludeSoldOut, selectedColor, selectedSize, selectedSubCategory]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [
+    mainCate,
+    subCategory,
+    sortBy,
+    excludeSoldOut,
+    selectedColor,
+    selectedSize,
+    selectedSubCategory,
+  ]);
 
-    useEffect(() => {
-        setSelectedColor('');
-        setSelectedSize('');
-        setSelectedSubCategory('');
-    }, [mainCate, subCategory, tagCategory]);
+  useEffect(() => {
+    setSelectedColor("");
+    setSelectedSize("");
+    setSelectedSubCategory("");
+  }, [mainCate, subCategory, tagCategory]);
 
-    useEffect(() => {
-        setIsPageVisible(false);
+  useEffect(() => {
+    setIsPageVisible(false);
 
-        const timer = window.setTimeout(() => {
-            setIsPageVisible(true);
-        }, 60);
+    const timer = window.setTimeout(() => {
+      setIsPageVisible(true);
+    }, 60);
 
-        return () => window.clearTimeout(timer);
-    }, [mainCate, subCategory, tagCategory]);
+    return () => window.clearTimeout(timer);
+  }, [mainCate, subCategory, tagCategory]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [currentPage]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
+  const categoryItems = activeItems.filter((item) => {
+    const isSoldOutItem =
+      Array.isArray(item.soldout) &&
+      item.soldout.length > 0 &&
+      item.soldout.every(Boolean);
 
-    const categoryItems = activeItems.filter((item) => {
-        const isSoldOutItem = Array.isArray(item.soldout) && item.soldout.length > 0 && item.soldout.every(Boolean);
+    if (excludeSoldOut && isSoldOutItem) {
+      return false;
+    }
 
-        if (excludeSoldOut && isSoldOutItem) {
-            return false;
-        }
+    if (tagCategory) {
+      if (tagCategory === "ALL") return true;
 
-        if (tagCategory) {
-            if (tagCategory === 'ALL') return true;
+      if (tagCategory === "SALE") {
+        if (item.discountRate <= 0) return false;
+        return true;
+      }
 
-            if (tagCategory === 'SALE') {
-                if (item.discountRate <= 0) return false;
-                return true;
-            }
+      if (!Array.isArray(item.tag) || !item.tag.includes(tagCategory)) {
+        return false;
+      }
 
-            if (!Array.isArray(item.tag) || !item.tag.includes(tagCategory)) {
-                return false;
-            }
+      return true;
+    }
 
-            return true;
-        }
+    //1.메인 메뉴 카테고리 필터
+    if (mainCate && item.category1.toLowerCase() !== mainCate) {
+      return false;
+    }
+    //2. subcategory가 있을 경우 필터
+    const normalizedSub =
+      urlMap[item.category2] || item.category2.toLowerCase();
+    if (subCategory && normalizedSub !== subCategory) {
+      return false;
+    }
+    return true;
+  });
 
-        //1.메인 메뉴 카테고리 필터
-        if (mainCate && item.category1.toLowerCase() !== mainCate) {
-            return false;
-        }
-        //2. subcategory가 있을 경우 필터
-        const normalizedSub = urlMap[item.category2] || item.category2.toLowerCase();
-        if (subCategory && normalizedSub !== subCategory) {
-            return false;
-        }
-        return true
+  const priceBaseItems =
+    hasSubCategoryFilter && categoryFilterMap[subCategory]
+      ? categoryFilterMap[subCategory].filter(
+          categoryItems,
+          selectedSubCategory,
+        )
+      : categoryItems;
+
+  const categoryMinPrice =
+    priceBaseItems.length > 0
+      ? Math.min(...priceBaseItems.map((item) => item.price))
+      : 0;
+  const categoryMaxPrice =
+    priceBaseItems.length > 0
+      ? Math.max(...priceBaseItems.map((item) => item.price))
+      : PRICE_STEP;
+  const safeMaxPrice =
+    categoryMaxPrice > categoryMinPrice
+      ? categoryMaxPrice
+      : categoryMinPrice + PRICE_STEP;
+
+  useEffect(() => {
+    setPriceRange({
+      min: categoryMinPrice,
+      max: categoryMaxPrice,
     });
+  }, [categoryMinPrice, categoryMaxPrice]);
 
     const priceBaseItems = hasSubCategoryFilter && categoryFilterMap[subCategory]
         ? categoryFilterMap[subCategory].filter(categoryItems, selectedSubCategory)
@@ -470,91 +582,99 @@ export default function ProductList() {
                                             필터초기화
                                         </button>
                                     )}
-                                </div>
-                            </div>
-                            <div className='sort-select-wrap'>
-                                <label htmlFor="product-sort" className='sort-select-label'></label>
-                                <select
-                                    id="product-sort"
-                                    className='sort-select'
-                                    value={sortBy}
-                                    onChange={(event) => setSortBy(event.target.value)}
-                                >
-                                    <option value="newest">신상품순</option>
-                                    <option value="name">상품명순</option>
-                                    <option value="price-high">높은가격순</option>
-                                    <option value="price-low">낮은가격순</option>
-                                    <option value="popular">인기상품순</option>
-                                    <option value="discount">할인율높은순</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='product-list'>
-                        {/* 상품리스트 */}
-                        <ul>
-                            {pagedItems.map((cate, idx) => (
-                                <ProductCard
-                                    cate={cate}
-                                    key={cate.id}
-                                    rank={tagCategory === "MUST HAVE" ? (currentPage - 1) * ITEMS_PER_PAGE + idx + 1 : undefined}
-                                />
-                            ))}
-                        </ul>
-                    </div>
-                    {/* 페이징 영역 */}
-                    {totalPages > 1 && (
-                        <div className='pagination'>
-                            <button
-                                type="button"
-                                className='page-btn page-jump'
-                                onClick={() => setCurrentPage(Math.max(startPage - PAGE_BUTTON_LIMIT, 1))}
-                                disabled={startPage === 1}
-                                aria-label='10 pages previous'
-                            >
-                                <img src="/images/pages-icon/first-icon.svg" alt="" />
-                            </button>
-                            <button
-                                type="button"
-                                className='page-btn page-arrow'
-                                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                                disabled={currentPage === 1}
-                                aria-label='Previous page'
-                            >
-                                <img src="/images/pages-icon/prev-icon.svg" alt="" />
-                            </button>
-                            {visiblePages.map((pageNumber) => (
-                                <button
-                                    type="button"
-                                    key={pageNumber}
-                                    className={`page-btn ${currentPage === pageNumber ? 'is-active' : ''}`}
-                                    onClick={() => setCurrentPage(pageNumber)}
-                                >
-                                    {pageNumber}
-                                </button>
-                            ))}
-                            <button
-                                type="button"
-                                className='page-btn page-arrow'
-                                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                                disabled={currentPage === totalPages}
-                                aria-label='Next page'
-                            >
-                                <img src="/images/pages-icon/next-icon.svg" alt="" />
-                            </button>
-                            <button
-                                type="button"
-                                className='page-btn page-jump'
-                                onClick={() => setCurrentPage(Math.min(startPage + PAGE_BUTTON_LIMIT, totalPages))}
-                                disabled={endPage === totalPages}
-                                aria-label='10 pages next'
-                            >
-                                <img src="/images/pages-icon/last-icon.svg" alt="" />
-                            </button>
-                        </div>
-                    )}
+                              
                 </div>
+              </div>
+              <div className="sort-select-wrap">
+                <label
+                  htmlFor="product-sort"
+                  className="sort-select-label"
+                ></label>
+                <select
+                  id="product-sort"
+                  className="sort-select"
+                  value={sortBy}
+                  onChange={(event) => setSortBy(event.target.value)}
+                >
+                  <option value="newest">신상품순</option>
+                  <option value="name">상품명순</option>
+                  <option value="price-high">높은가격순</option>
+                  <option value="price-low">낮은가격순</option>
+                  <option value="popular">인기상품순</option>
+                  <option value="discount">할인율높은순</option>
+                </select>
+              </div>
             </div>
-        </main>
-    )
+          </div>
+          <div className="product-list">
+            {/* 상품리스트 */}
+            <ul>
+              {pagedItems.map((cate) => (
+                <ProductCard cate={cate} key={cate.id} />
+              ))}
+            </ul>
+          </div>
+          {/* 페이징 영역 */}
+          {totalPages > 1 && (
+            <div className="pagination">
+              <button
+                type="button"
+                className="page-btn page-jump"
+                onClick={() =>
+                  setCurrentPage(Math.max(startPage - PAGE_BUTTON_LIMIT, 1))
+                }
+                disabled={startPage === 1}
+                aria-label="10 pages previous"
+              >
+                <img src="/images/pages-icon/first-icon.svg" alt="" />
+              </button>
+              <button
+                type="button"
+                className="page-btn page-arrow"
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                aria-label="Previous page"
+              >
+                <img src="/images/pages-icon/prev-icon.svg" alt="" />
+              </button>
+              {visiblePages.map((pageNumber) => (
+                <button
+                  type="button"
+                  key={pageNumber}
+                  className={`page-btn ${currentPage === pageNumber ? "is-active" : ""}`}
+                  onClick={() => setCurrentPage(pageNumber)}
+                >
+                  {pageNumber}
+                </button>
+              ))}
+              <button
+                type="button"
+                className="page-btn page-arrow"
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                disabled={currentPage === totalPages}
+                aria-label="Next page"
+              >
+                <img src="/images/pages-icon/next-icon.svg" alt="" />
+              </button>
+              <button
+                type="button"
+                className="page-btn page-jump"
+                onClick={() =>
+                  setCurrentPage(
+                    Math.min(startPage + PAGE_BUTTON_LIMIT, totalPages),
+                  )
+                }
+                disabled={endPage === totalPages}
+                aria-label="10 pages next"
+              >
+                <img src="/images/pages-icon/last-icon.svg" alt="" />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </main>
+  );
 }

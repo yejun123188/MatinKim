@@ -11,9 +11,6 @@ import UserInfoNone from "./UserInfoNone";
 const formatPrice = (price) =>
   `₩ ${Number(price || 0).toLocaleString("ko-KR")}`;
 
-const trimName = (name = "") =>
-  name.length > 32 ? `${name.slice(0, 32)}...` : name;
-
 export default function RecentViewedProducts() {
   const navigate = useNavigate();
   const { onAddCart } = useProductStore();
@@ -76,7 +73,7 @@ export default function RecentViewedProducts() {
                     className="recent-product-name"
                     onClick={() => navigate(`/products/${product.id}`)}
                   >
-                    {trimName(product.name)}
+                    {product.name}
                   </button>
 
                   <div className="recent-product-price">
