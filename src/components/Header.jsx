@@ -8,6 +8,8 @@ import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
+import products2 from "../data/products2.json";
+import { buildProductMenus } from "../utils/productMenu";
 
 
 const topmenus = [
@@ -88,11 +90,18 @@ export default function Header() {
   const [activeBestTab, setActiveBestTab] = useState("ALL");
   const searchInputRef = useRef(null);
   const isHomeIdle = isHome && !isScrolled && !isShopHovered;
+  const kimMatinShopMenus = useMemo(() => buildProductMenus(products2), []);
+  const headerShopMenus = isKimMatin ? kimMatinShopMenus : menus;
 
   const searchBestItems = useMemo(() => {
-    const sourceItems = BestItems.length > 0
-      ? BestItems
-      : items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"));
+    const kimBestItems = products2.filter(
+      (item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"),
+    );
+    const sourceItems = isKimMatin
+      ? kimBestItems
+      : BestItems.length > 0
+        ? BestItems
+        : items.filter((item) => Array.isArray(item.tag) && item.tag.includes("MUST HAVE"));
 
     const filteredItems = sourceItems.filter((item) => {
       if (activeBestTab === "ALL") return true;
@@ -107,7 +116,7 @@ export default function Header() {
     }
 
     return displayItems.length > 24 ? displayItems.slice(24, 29) : displayItems.slice(0, 5);
-  }, [BestItems, items, activeBestTab]);
+  }, [BestItems, items, activeBestTab, isKimMatin]);
 
   const handleAuthButtonClick = async () => {
     if (user) {
@@ -119,11 +128,6 @@ export default function Header() {
   };
 
   const handleTopMenuEnter = (key) => {
-    if (isKimMatin) {
-      setIsShopHovered(false);
-      return;
-    }
-
     if (key === "shop") {
       setIsShopHovered(true);
     } else {
@@ -332,8 +336,8 @@ export default function Header() {
           </div>
 
           <div
-            className={`header-active ${!isKimMatin && isShopHovered ? "active" : ""}`}
-            onMouseEnter={() => !isKimMatin && setIsShopHovered(true)}
+            className={`header-active ${isShopHovered ? "active" : ""} ${isKimMatin ? "kimmatin-active" : ""}`}
+            onMouseEnter={() => setIsShopHovered(true)}
             onClick={() => setIsShopHovered(false)}
           >
             <div className="inner">
@@ -352,7 +356,7 @@ export default function Header() {
 
               <div className="header-active-middle">
                 <ul className="main-menu">
-                  {menus.map((menu, id) => (
+                  {headerShopMenus.map((menu, id) => (
                     <li key={id}>
                       <Link to={menu.link}>
                         {menu.name}
@@ -396,7 +400,7 @@ export default function Header() {
         />
       </header>
 
-      <div className={`search-drawer ${isSearchOpen ? "active" : ""}`}>
+      <div className={`search-drawer ${isSearchOpen ? "active" : ""} ${isKimMatin ? "kimmatin-search-drawer" : ""}`}>
         <button type="button" className="search-drawer-close" onClick={handleCloseSearch}>
           <img src="/images/icon/close-icon-black.svg" alt="검색창 닫기" />
         </button>
@@ -500,7 +504,7 @@ export default function Header() {
       </div>
       <button
         type="button"
-        className={`search-drawer-dim ${isSearchOpen ? "active" : ""}`}
+        className={`search-drawer-dim ${isSearchOpen ? "active" : ""} ${isKimMatin ? "kimmatin-search-dim" : ""}`}
         onClick={handleCloseSearch}
         aria-label="검색창 닫기"
       />

@@ -1,77 +1,298 @@
 @use "../../App.scss" as g;
 
-.brand {
+// ─── tokens ───────────────────────────────────────────────
+$black: #000000ab;
+$white: #fafaf8;
+$stone: #e8e6e1;
+$muted: #9c9c98;
+$accent: #000000c9; // warm gold accent
 
-    .brand-title {
-        font-size: g.$size-30;
-        font-weight: g.$Bold;
-        color: g.$text-main-color;
+
+// ─── HERO ─────────────────────────────────────────────────
+.brand-hero {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    min-height: 90vh;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
     }
 
-    img {
-        width: 600px;
-    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        background: $white;
 
-    .brand-top {
-        @include g.myFlex(flex-start, 230px, center);
-
-        .text {
-            padding-top: 10px;
-            padding-bottom: 155px;
-            font-size: g.$size-16;
-            font-weight: g.$ExtraLight;
-            color: g.$text-main-color;
-
-            li {
-                padding-bottom: 24px;
-                font-size: g.$size-16;
-                font-weight: g.$ExtraLight;
-            }
+        img {
+            width: 90%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 8s ease;
         }
     }
 
-    .line {
-        margin: 50px 0;
-        height: 2px;
-        background-color: #f2f2f2;
+    &__overlay {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
     }
 
-    .brand-bottom {
-        @include g.myFlex(flex-start, 230px);
-        padding: 150px 0 0 0;
+    &__tag {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $white;
+        background: rgba(0, 0, 0, 0.45);
+        padding: 6px 14px;
+        backdrop-filter: blur(4px);
+    }
 
-        .text2 {
-            padding-top: 10px;
-            padding-bottom: 155px;
-            font-size: g.$size-16;
-            font-weight: g.$ExtraLight;
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 60px 80px 72px;
+        background: $white;
+        width: 100%;
 
-            li {
-                padding-bottom: 50px;
-                font-size: g.$size-16;
-                font-weight: g.$ExtraLight;
-            }
+        img {
+            width: 80%;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 900px) {
+            padding: 60px 32px;
         }
     }
 
-    .insta-title {
-        text-align: center;
-        font-size: g.$size-30;
-        font-weight: g.$Bold;
-        padding-bottom: 10px;
-        color: g.$text-main-color;
+    &__eyebrow {
+        font-size: 11px;
+
+        text-transform: uppercase;
+        color: $accent;
+        margin: 0 0 24px;
     }
 
-    .insta {
-        background-color: g.$main-color;
-        padding: 40px 20px;
+    &__name {
+        font-size: 4.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 0.92;
+        margin: 0 0 32px;
+        color: $black;
+    }
 
-        .insta-list {
-            @include g.myFlex(flex-start, 24px, center);
+
+
+    &__ko {
+        font-size: 14px;
+        line-height: 2;
+        color: $black;
+        margin: 0 0 16px;
+        word-break: keep-all;
+    }
+
+    &__en {
+        font-size: 13px;
+        line-height: 1.9;
+        color: $muted;
+        margin: 0 0 48px;
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $black;
+        border-bottom: 1px solid $black;
+        padding-bottom: 4px;
+        width: fit-content;
+        transition: color 0.25s, border-color 0.25s;
+
+        &:hover {
+            color: $accent;
+            border-color: $accent;
         }
+    }
+
+    &__arrow {
+        font-size: 16px;
+        transition: transform 0.25s;
+    }
+
+    &__cta:hover &__arrow {
+        transform: translateX(4px);
     }
 }
 
-.about {
-    padding: 120px 0 0 0;
+// ─── INFO ─────────────────────────────────────────────────
+.brand-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // border-top: 1px solid $stone;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+
+    &__map {
+        img {
+            width: 80%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(20%);
+        }
+    }
+
+    &__cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border-left: 1px solid $stone;
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__col {
+        padding: 64px 48px;
+        border-right: 1px solid $stone;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        @media (max-width: 900px) {
+            padding: 48px 32px;
+        }
+    }
+
+    &__section-label {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $accent;
+        margin: 0 0 40px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $stone;
+    }
+
+    &__item {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item-label {
+        font-size: 14px;
+
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $black;
+        margin: 0 0 10px;
+    }
+
+    &__item-line {
+        font-size: 12.5px;
+        line-height: 1.9;
+        color: $muted;
+        margin: 0;
+    }
+}
+
+// ─── INSTAGRAM ────────────────────────────────────────────
+.brand-insta {
+    border-top: 1px solid $stone;
+    padding: 80px 0 0;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 48px;
+        padding: 0 24px;
+    }
+
+    &__hash {
+        font-size: 3rem;
+        font-weight: 700;
+        color: $stone;
+        margin-right: 4px;
+    }
+
+    &__word {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: $black;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 500px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, filter 0.6s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.65);
+        }
+    }
+
+    &__hover {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        span {
+            font-size: 28px;
+            color: $white;
+            font-weight: 300;
+        }
+    }
+
+    &__item:hover &__hover {
+        opacity: 1;
+    }
 }

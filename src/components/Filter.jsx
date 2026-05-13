@@ -6,6 +6,7 @@ import PriceRange from './PriceRange';
 export default function Filter({
     showCategoryFilter = false,
     categoryOptions = [],
+    shopMenus,
     selectedCategory = '',
     onCategoryChange,
     colorCount,
@@ -20,6 +21,7 @@ export default function Filter({
 }) {
     const INITIAL_VISIBLE_COLORS = 18;
     const { menus, onColorCode } = useProductStore();
+    const displayMenus = shopMenus || menus;
     const location = useLocation();
     const currentMainCategory = decodeURIComponent(location.pathname.split('/')[1] || '').toUpperCase();
     const currentSubCategory = decodeURIComponent(location.pathname.split('/')[2] || '').toUpperCase();
@@ -35,7 +37,7 @@ export default function Filter({
     useEffect(() => {
         setOpenShopMenus((prev) => {
             const nextState = Object.fromEntries(
-                menus.map((menu) => {
+                displayMenus.map((menu) => {
                     const hasPrevState = Object.prototype.hasOwnProperty.call(prev, menu.name);
 
                     return [menu.name, hasPrevState ? prev[menu.name] : true];
@@ -52,7 +54,7 @@ export default function Filter({
             'SIZE OPTIONS': true
         });
         setShowAllColors(false);
-    }, [menus, currentMainCategory]);
+    }, [displayMenus, currentMainCategory]);
 
     const toggleShopMenu = (menuName) => {
         setOpenShopMenus((prev) => ({
@@ -106,7 +108,7 @@ export default function Filter({
             <div className='filter-section shop'>
                 <h2 className='filter-title'>SHOP</h2>
                 <ul className="filter-main-menu">
-                    {menus.map((menu, id) => (
+                    {displayMenus.map((menu, id) => (
                         <li key={id} className='filter-main-item'>
                             <button
                                 type="button"

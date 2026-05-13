@@ -15,23 +15,42 @@
 
       .my-info-wrap {
         @include g.userInfoPanel;
-        padding: 40px 40px;
+        padding: 25px 40px;
         display: flex;
         flex-direction: column;
         gap: 24px;
         height: 100%;
 
         p {
-          font-size: g.$size-30;
+          font-size: 20px;
 
           strong {
             font-weight: g.$Bold;
           }
         }
+
         .myinfo-list {
           display: flex;
           flex-direction: column;
           gap: 10px;
+
+          li:nth-child(2) {
+            align-items: center;
+            border-top: 1px solid rgb(217, 217, 217);
+            padding-top: 25px;
+
+            .my-total-price {
+              flex: 0 0 auto;
+              padding-right: 0;
+            }
+
+            span {
+              flex: 0 0 auto;
+              white-space: nowrap;
+              text-align: right;
+            }
+          }
+
           li {
             display: flex;
             align-items: flex-end;
@@ -42,7 +61,7 @@
             }
 
             p {
-              font-size: 1.5rem;
+              font-size: 18px;
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
@@ -55,6 +74,7 @@
               max-width: 100%;
               overflow: visible;
               text-overflow: clip;
+              padding-bottom: 10px;
             }
 
             .question {
@@ -74,7 +94,7 @@
                 left: 25px;
                 top: 15px;
                 z-index: 20;
-                font-size: g.$size-14-main;
+                font-size: 20px;
                 line-height: 1.55;
                 background: #d9d9d9;
                 padding: 5px 12px;
@@ -99,6 +119,7 @@
                   transition: none;
                 }
               }
+
               img:hover + span {
                 opacity: 1;
                 transition: opacity 0.5s ease;
@@ -106,8 +127,13 @@
             }
 
             .my-total-price {
-              font-size: g.$size-16;
+              font-size: 14px;
               color: g.$text-sub-color;
+              padding-right: 0;
+            }
+
+            span {
+              font-size: 14px;
             }
           }
         }
@@ -139,12 +165,12 @@
           min-height: 0;
 
           span {
-            font-size: g.$size-16;
+            font-size: 14px;
             color: g.$text-sub-color;
           }
 
           strong {
-            font-size: 1.5rem;
+            font-size: 18px;
           }
         }
       }
@@ -264,6 +290,7 @@
             object-fit: cover;
           }
         }
+
         .text-box {
           width: 250px;
           height: 150px;
@@ -316,6 +343,7 @@
               margin-top: 4px;
             }
           }
+
           .button-wrap {
             display: flex;
             gap: 8px;
@@ -368,7 +396,7 @@
         .order-product,
         .wish-product {
           min-width: 340px;
-          height: 190px;
+          height: 170px;
           min-height: 190px;
         }
       }

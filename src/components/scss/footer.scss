@@ -1,9 +1,11 @@
+@use "../../App.scss" as g;
+
 .footer {
-  background: #fafafa;
-  color: #000;
-  padding: 44px 0 36px;
+  background: g.$main-color;
+  color: #fff;
+  padding: 100px 0;
   font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer>.inner {
@@ -13,29 +15,34 @@
 /* 상단 중앙 */
 .footer-top {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 100px;
 }
 
 .footer-logo {
-  margin: 0;
-  font-family: "Times New Roman", serif;
-  font-size: 54px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 15%;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
 }
 
 .footer-logo a {
-  color: #111;
+  color: #fff;
   text-decoration: none;
 }
 
 .footer-slogan {
   margin-top: 16px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #000;
-  letter-spacing: 0.02em;
+  font-size: 8px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.08em;
 }
 
 /* 하단 좌우 */
@@ -60,7 +67,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   padding: 0;
   list-style: none;
 }
@@ -71,9 +78,10 @@
 
 .footer-menu li a {
   font-size: 14px;
-  color: #000;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
+  transition: opacity 0.2s ease;
 }
 
 .footer-menu li:first-child a {
@@ -81,36 +89,37 @@
 }
 
 .footer-menu li a:hover {
-  text-decoration: underline;
+  opacity: 0.6;
 }
 
 /* 주소 */
 .footer-address {
   font-style: normal;
-  margin: 0 0 14px;
+  margin: 0 0 16px;
 }
 
 .footer-address p {
-  margin: 0 0 5px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #000;
+  margin: 0 0 6px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .footer-address a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 .footer-address a:hover {
-  text-decoration: underline;
+  opacity: 0.6;
 }
 
 /* 카피라이트 */
 .footer .copyright {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #000;
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.04em;
 }
 
 /* SNS */
@@ -118,7 +127,7 @@
   display: flex;
   justify-content: flex-start;
   gap: 12px;
-  margin: 0 0 18px;
+  margin: 0 0 24px;
   padding: 0;
   list-style: none;
 }
@@ -127,32 +136,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #cfcfcf;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer .sns-list li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .footer .sns-list li a img {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   display: block;
-  filter: invert(1);
+  filter: brightness(0) invert(1);
 }
 
 /* 고객센터 */
-
 .footer .custom-link {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer .customer-center .custom-link a {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 6px;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   line-height: 1;
 }
 
@@ -160,34 +179,52 @@
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
+}
+
+.footer .customer-center img {
+  filter: brightness(0) invert(1);
 }
 
 .footer .customer-center p {
-  margin: 0 0 4px;
+  margin: 0 0 6px;
   font-size: 12px;
-  line-height: 1.5;
-  color: #000;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .footer .customer-center span {
   display: block;
-  font-size: 26px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: #000;
+  letter-spacing: -0.04em;
+  color: #fff;
 }
 
+/* ───────────────────────────────
+   KIMMATIN 전용 푸터
+─────────────────────────────── */
 .kimmatin-footer {
   background: #000;
   color: #fff;
+  padding: 44px 0 36px;
   border-top-color: rgba(255, 255, 255, 0.18);
 
+  .footer-top {
+    margin-bottom: 48px;
+  }
+
   .footer-logo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
       width: 258px;
       height: auto;
+      filter: none;
     }
   }
 
@@ -299,30 +336,44 @@
   }
 }
 
-/* 반응형 */
+/* ───────────────────────────────
+   반응형
+─────────────────────────────── */
 @media (max-width: 900px) {
   .footer {
-    padding: 36px 0 30px;
+    padding: 70px 0 50px;
   }
 
   .footer-top {
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
 
   .footer-logo {
-    font-size: 42px;
+    img {
+      width: 24%;
+    }
   }
 
   .footer-bottom {
     flex-direction: column;
-    gap: 28px;
+    gap: 36px;
   }
 
   .footer-right {
     width: 100%;
   }
 
+  .footer .customer-center span {
+    font-size: 26px;
+  }
+
   .kimmatin-footer {
+    padding: 36px 0 30px;
+
+    .footer-top {
+      margin-bottom: 36px;
+    }
+
     .footer-bottom {
       align-items: flex-start;
     }
@@ -336,38 +387,46 @@
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-
-  .footer .customer-center span {
-    font-size: 28px;
-  }
 }
 
 @media (max-width: 600px) {
-  .footer-inner {
+  .footer>.inner {
     padding: 0 16px;
   }
 
+  .footer {
+    padding: 56px 0 40px;
+  }
+
   .footer-logo {
-    font-size: 34px;
+    img {
+      width: 38%;
+    }
   }
 
   .footer-slogan {
     font-size: 10px;
+    line-height: 1.6;
   }
 
   .footer-menu {
-    gap: 10px 12px;
+    gap: 10px 14px;
   }
 
   .footer-menu li a,
   .footer-address p,
   .copyright {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .footer .sns-list li a {
-    width: 26px;
-    height: 26px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer .sns-list li a img {
+    width: 16px;
+    height: 16px;
   }
 
   .footer .customer-center span {

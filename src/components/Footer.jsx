@@ -62,10 +62,7 @@ export default function Footer() {
                       }
                     >
                       <span>{menu.title}</span>
-                      <span
-                        className="footer-dropdown-icon"
-                        aria-hidden="true"
-                      />
+                      <span className="footer-dropdown-icon" aria-hidden="true" />
                     </button>
 
                     {openMenu === menu.title && (
@@ -82,7 +79,9 @@ export default function Footer() {
               </ul>
 
               <address className="footer-address">
-                <p>MATIN KIM / Business Contact : matinkimcrew@matinkim.com</p>
+                <p>(주)마뗑킴 | 대표이사 : 홍길동 / 경기 성남시 분당구 판교로 242 더샵 702호 / 통신판매업신고번호 : 2025-성남분당A-0780</p>
+                <p>사업자등록번호 : 743-88-00954 <Link to="/">[사업자정보확인]</Link> / 개인정보보호책임자 : 이지은</p>
+                <p>비즈니스 관련문의 : matinkimcrew@matinkim.com</p>
               </address>
 
               <p className="copyright">MATINKIM All Rights Reserved</p>
@@ -114,6 +113,7 @@ export default function Footer() {
     );
   }
 
+  // 기본 Matin Kim 푸터 (내 코드 기준, 한국어 주소 상세 버전)
   return (
     <footer className="footer">
       <div className="inner">
@@ -122,8 +122,7 @@ export default function Footer() {
             <img src="/images/footer-icon/logo-name.svg" alt="logo" />
           </h2>
           <p className="footer-slogan">
-            Matin Kim Strives To Harmonize A Distinctive Sense Of Freedom And A
-            Rough Style
+            Matin Kim Strives To Harmonize A Distinctive Sense Of Freedom And A Rough Style
             <br />
             Within The Diverse Tapestry Of Daily Fashion Cultures.
           </p>
@@ -132,55 +131,33 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-left">
             <ul className="footer-menu">
-              <li>
-                <Link to="/">MATIN KIM</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/agreement">T&C</Link>
-              </li>
-              <li>
-                <Link to="/privacy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/guide">Guide</Link>
-              </li>
-              <li>
-                <Link to="/product-authentication">Authenticity</Link>
-              </li>
+              <li><Link to="/">(주)마뗑킴</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/agreement">이용약관</Link></li>
+              <li><Link to="/privacy">개인정보처리방침</Link></li>
+              <li><Link to="/guide">이용안내</Link></li>
+              <li><Link to="/product-authentication">정품인증</Link></li>
             </ul>
 
             <address className="footer-address">
-              <p>MATIN KIM / Business Contact : matinkimcrew@matinkim.com</p>
+              <p>(주)마뗑킴 | 대표이사 : 홍길동 / 경기 성남시 분당구 판교로 242 더샵 702호 / 통신판매업신고번호 : 2025-성남분당A-0780</p>
+              <p>사업자등록번호 : 743-88-00954 <Link to="/">[사업자정보확인]</Link> / 개인정보보호책임자 : 이지은</p>
+              <p>비즈니스 관련문의 : matinkimcrew@matinkim.com</p>
             </address>
 
-            <p className="copyright">MATINKIM All Rights Reserved</p>
+            <p className="copyright">Ⓒ MATINKIM All Rights Reserved</p>
           </div>
 
           <div className="footer-right">
             <ul className="sns-list">
               <li>
-                <Link
-                  to="https://www.instagram.com/matinkim_magazine/?hl=ko"
-                  aria-label="Instagram"
-                >
-                  <img
-                    src="/images/footer-icon/imstagram-icon.svg"
-                    alt="Instagram"
-                  />
+                <Link to="https://www.instagram.com/matinkim_magazine/?hl=ko" aria-label="인스타그램">
+                  <img src="/images/footer-icon/imstagram-icon.svg" alt="인스타그램" />
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.youtube.com/@MATINKIM-is2dm"
-                  aria-label="YouTube"
-                >
-                  <img
-                    src="/images/footer-icon/youtube-logo.svg"
-                    alt="YouTube"
-                  />
+                <Link to="https://www.youtube.com/@MATINKIM-is2dm" aria-label="유튜브">
+                  <img src="/images/footer-icon/youtube-logo.svg" alt="유튜브" />
                 </Link>
               </li>
             </ul>
@@ -188,11 +165,11 @@ export default function Footer() {
             <div className="customer-center">
               <div className="custom-link">
                 <Link to="/qna">
-                  <strong>Customer Center</strong>
-                  <img src="/images/footer-icon/Vector.svg" alt="" />
+                  <strong>고객센터</strong>
+                  <img src="/images/footer-icon/Vector.svg" alt="화살표" />
                 </Link>
               </div>
-              <p>09:30 - 18:00 / Weekend and holidays off</p>
+              <p>문의시간 : 09:30 ~ 18:00 / 주말·공휴일 휴무</p>
               <span>1877-8170</span>
             </div>
           </div>

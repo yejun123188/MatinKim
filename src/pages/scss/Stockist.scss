@@ -1,15 +1,31 @@
 @use "../../App.scss" as g;
 
 .stock {
-
     .map {
         @include g.myFlex(flex-start, 20px, flex-start);
         width: 100%;
 
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+
         .map-left {
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
             #map {
                 width: 720px;
                 height: 720px;
+
+                @media (max-width: 1024px) {
+                    width: 100%;
+                    height: 400px;
+                }
             }
         }
 
@@ -18,103 +34,169 @@
             display: flex;
             flex-direction: column;
 
-            .top-menu {
-                @include g.myFlex(flex-start, 5px, center);
-                cursor: pointer;
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
 
-                font-size: 20px;
+            .top-menu {
+                @include g.myFlex(flex-start, 0px, center);
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 
                 div {
-                    padding: 6px 12px;
+                    flex: 1;
+                    text-align: center;
+                    padding: 14px 0;
+                    font-size: 15px;
+                    font-weight: 500;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: g.$text-sub-color;
+                    cursor: pointer;
+                    border-right: 1px solid rgba(0, 0, 0, 0.1);
+                    transition: all 0.15s;
+
+                    &:last-child {
+                        border-right: none;
+                    }
+
+                    background-color: rgba(0, 0, 0, 0.02);
+                    color: g.$text-main-color;
                 }
 
-                & .active {
-                    background-color: rgba(0, 0, 0, 0.06);
+                .active {
+                    background-color: g.$text-main-color;
+                    color: #fff;
 
+                    &:hover {
+                        background-color: g.$text-main-color;
+                    }
                 }
-
-
             }
 
             .menu-box {
-                border: 2px solid rgba(0, 0, 0, 0.06);
-                flex: 1;
+                border-left: 2px solid rgba(0, 0, 0, 0.1);
+                border-right: 2px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+                height: 672px;
+                overflow: hidden;
 
                 .top {
-                    @include g.myFlex(flex-start, 10px, center);
-                    padding: 10px;
-                    font-size: g.$size-14-main;
-                    color: g.$text-main-color;
+                    @include g.myFlex(flex-start, 0px, center);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                    padding: 5px;
 
                     select {
-                        border: 1px solid g.$main-color;
-                        padding: 0 10px;
-                        height: 35px;
-                        width: 120px;
+                        height: 44px;
+                        width: 140px;
+                        padding: 0 14px;
+                        font-size: 12px;
+                        color: g.$text-main-color;
+                        border: none;
+                        border-right: 1px solid rgba(0, 0, 0, 0.08);
                         appearance: none;
                         -webkit-appearance: none;
                         -moz-appearance: none;
-                        background: url("/images/sub-about/downarrow.svg") no-repeat right 10px center;
-                        background-size: 16px;
+                        background: url("/images/sub-about/downarrow.svg") no-repeat right 12px center;
+                        background-size: 12px;
+                        cursor: pointer;
+                        flex-shrink: 0;
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
 
                     input {
-                        width: 450px;
-                        height: 35px;
-                        padding: 0 10px;
+                        flex: 1;
+                        height: 44px;
+                        width: 416px;
+                        padding: 0 14px;
+                        border: none;
+                        border-right: 1px solid rgba(0, 0, 0, 0.08);
+                        font-size: 12px;
+                        color: g.$text-main-color;
 
-                        border: 1px solid g.$main-color;
+                        &::placeholder {
+                            color: g.$text-sub-color2;
+                            font-size: 12px;
+                        }
 
-                        font-size: g.$size-14-main;
+                        &:focus {
+                            outline: none;
+                            background-color: rgba(0, 0, 0, 0.01);
+                        }
                     }
 
                     button {
-                        height: 35px;
-                        @include g.myBtn1($pd: 5px 30px);
+                        height: 44px;
+                        width: 140px;
+                        flex-shrink: 0;
+                        font-size: 12px;
+                        font-weight: 500;
+                        letter-spacing: 0.05em;
+                        border: none;
+                        color: #000000;
+                        cursor: pointer;
+                        transition: opacity 0.15s;
+
+                        &:hover {
+                            opacity: 0.75;
+                        }
                     }
                 }
 
                 .show {
-                    padding: 10px 10px 0 10px;
+                    padding: 0;
                     height: 625px;
                     overflow-y: auto;
 
-                    li {
+                    &::-webkit-scrollbar {
+                        width: 4px;
+                    }
 
-                        font-size: g.$size-14-main;
-                        padding: 5px;
-                        cursor: pointer;
+                    &::-webkit-scrollbar-track {
+                        background: transparent;
+                    }
 
-                        .name {
-                            font-size: 18px;
-                            padding-bottom: 4px;
-                            color: g.$text-main-color;
+                    &::-webkit-scrollbar-thumb {
+                        background: rgba(0, 0, 0, 0.12);
+                        border-radius: 2px;
+                    }
+
+                    .store-list {
+                        .store-position {
+                            li {
+                                padding: 14px 16px;
+                                border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
+                                font-size: g.$size-14-main;
+                                cursor: pointer;
+                                transition: background 0.15s;
+
+                                .name {
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    padding-bottom: 4px;
+                                    color: g.$text-main-color;
+                                }
+
+                                .address,
+                                .tel {
+                                    font-size: 12px;
+                                    font-weight: 400;
+                                    color: g.$text-sub-color;
+                                    line-height: 1.6;
+                                }
+
+                                &:hover {
+                                    background-color: rgba(0, 0, 0, 0.03);
+                                }
+                            }
                         }
-
-                        .address,
-                        .tel {
-                            font-weight: 300;
-                        }
-
-
                     }
 
                     .active {
-                        background-color: #e6e6e6;
+                        background-color: rgba(0, 0, 0, 0.05);
                     }
-
-                    li:hover {
-                        background-color: rgba(0, 0, 0, 0.06);
-
-                    }
-
-                    .store-position li {
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-                        padding: 10px;
-
-                    }
-
                 }
             }
         }
@@ -125,37 +207,76 @@
     }
 
     .stock-title {
-        font-size: g.$size-30;
-        font-weight: g.$Bold;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: g.$text-sub-color;
         padding-bottom: 30px;
-        color: g.$text-main-color;
+        text-align: center;
     }
 
     .online-store {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+        }
 
         .store {
-            background-color: g.$sub-color;
-            padding: 10px;
+            padding: 20px;
             font-size: g.$size-14-main;
+            border-right: 0.5px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+            transition: background 0.15s;
+            cursor: pointer;
 
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.03);
 
-
+                .store-name img {
+                    opacity: 1;
+                    transform: translate(1px, -1px);
+                }
+            }
 
             .store-name {
-                font-size: g.$size-16;
+                font-size: 13px;
+                font-weight: 500;
                 color: g.$text-main-color;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 6px;
 
                 img {
-                    width: 24px;
+                    width: 16px;
+                    opacity: 0.3;
+                    transition: all 0.15s;
                 }
-
             }
 
             .store-url {
-                color: g.$text-sub-color;
+                font-size: 11px;
+                color: g.$text-sub-color2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
@@ -163,9 +284,10 @@
     .story-text {
         .te {
             text-align: center;
-            padding: 150px 0 80px 0;
+            padding: 100px 0 80px 0;
             color: g.$text-sub-color2;
             font-size: g.$size-14-main;
+            line-height: 1.9;
         }
     }
 }

@@ -1,54 +1,80 @@
 import React, { useEffect, useState } from 'react'
-import { instaData } from '../data/instaData';
-import { like } from 'firebase/firestore/pipelines';
-import { Link } from 'react-router-dom';
+import { instaData } from '../data/instaData'
+import { Link } from 'react-router-dom'
+import SectionTitle from './SectionTitle'
 import "./scss/instagram.scss"
 
-
 export default function Instagram() {
-    const [insta, setInsta] = useState([]);
+    const [insta, setInsta] = useState([])
+
+    const shuffleArray = (array) => {
+        const arr = [...array]
+
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+                ;[arr[i], arr[j]] = [arr[j], arr[i]]
+        }
+
+        return arr
+    }
+
     useEffect(() => {
-        setInsta(instaData)
+        const randomFive = shuffleArray(instaData).slice(0, 5)
+        setInsta(randomFive)
     }, [])
 
-    console.log("외부자료인스타", insta)
+    // 하트 클릭
+    // const handleHeart = (id) => {
+    //     setInsta((prev) =>
+    //         prev.map((item) =>
+    //             item.id === id
+    //                 ? { ...item, heartCheck: !item.heartCheck }
+    //                 : item
+    //         )
+    //     )
+    // }
 
-    // 하트 클릭시 변경되는 메서드
-    const handleHeart = (id) => {
-        console.log(id)
-        setInsta((prev) =>
-            prev.map((item) =>
-                item.id === id ? { ...item, heartCheck: !item.heartCheck } : item
-            )
-        )
-    }
     return (
-        <section className='insta'>
+        <div className='insta'>
             <div className="inner">
 
-                <h2 className='insta-h2'><img src="./images/insta-icon/logo-icon.svg" alt="log" /><span>MATINKIM_MAGAZINE</span></h2>
+                <SectionTitle
+                    title="INSTAGRAM"
+                    subtitle="Follow @matinkim_magazine"
+                />
+
                 <div className="insta-list-wrap">
                     <ul>
-                        {insta.map((item, id) =>
-                            <li key={id}>
-                                <Link to={item.linkUrl}>
+                        {insta.map((item) => (
+                            <li key={item.id}>
+                                <a
+                                    href={item.linkUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <div className="img-box">
-                                        <img src={item.imgUrl} alt="" />
+                                        <img
+                                            src={item.imgUrl}
+                                            alt="instagram post"
+                                        />
                                     </div>
+
                                     <div className="text-box">
                                         <div className='hash-wrap'>
-                                            {item.hash.map((h, id) => <span key={id}>#{h}</span>)}
-
+                                            {item.hash.map((h, idx) => (
+                                                <span key={idx}>
+                                                    #{h}
+                                                </span>
+                                            ))}
                                         </div>
-                                        <button onClick={() => handleHeart(item.id)}>
-                                            <img src={"./images/insta-icon/heart-icon.svg"} alt="" />
-                                        </button>
                                     </div>
-                                </Link>
-                            </li>)}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
+
             </div>
-        </section>
+        </div>
     )
 }

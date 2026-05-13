@@ -2,7 +2,7 @@
   {
     "id": "8857",
     "name": "OVERSIZE LEATHER BIKER JUMPER IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["모던한 디자인의 오버핏 하이넥 페이크레더 바이커 자켓"],
     "price": 458000,
     "discountRate": 0,
     "discountPrice": 458000,
@@ -48,7 +48,7 @@
   {
     "id": "8856",
     "name": "OVERSIZE LEATHER BIKER JUMPER IN BROWN",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["모던한 디자인의 오버핏 하이넥 페이크레더 바이커 자켓"],
     "price": 458000,
     "discountRate": 0,
     "discountPrice": 458000,
@@ -94,7 +94,9 @@
   {
     "id": "8866",
     "name": "FAUX LEATHER OVERSIZE JACKET IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "포멀하면서 시크한 무드로 연출이 가능한 페이크 레더 테일러드 자켓"
+    ],
     "price": 458000,
     "discountRate": 0,
     "discountPrice": 458000,
@@ -140,7 +142,9 @@
   {
     "id": "8867",
     "name": "COLLARLESS OVERSIZE JACKET IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "스커트와 셋업으로 착용이 가능한 포멀한 무드의 노카라 오버사이즈 트윌 자켓"
+    ],
     "price": 428000,
     "discountRate": 0,
     "discountPrice": 428000,
@@ -186,7 +190,9 @@
   {
     "id": "8868",
     "name": "WASHED TRENCH JACKET IN KHAKI",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "카라라인의 와이어로 넥을 다양하게 연출이 가능한 내추럴한 무드의 더블 숏 트렌치 자켓"
+    ],
     "price": 458000,
     "discountRate": 0,
     "discountPrice": 458000,
@@ -229,7 +235,9 @@
   {
     "id": "8869",
     "name": "WASHED TRENCH JACKET IN BROWN",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "카라라인의 와이어로 넥을 다양하게 연출이 가능한 내추럴한 무드의 더블 숏 트렌치 자켓"
+    ],
     "price": 458000,
     "discountRate": 0,
     "discountPrice": 458000,
@@ -272,7 +280,9 @@
   {
     "id": "8870",
     "name": "WASHED BLOUSON VEST IN BROWN",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "왁스코팅 원단에 내추럴한 워싱으로 소재감을 살린 투웨이 지퍼 베스트"
+    ],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -316,7 +326,7 @@
   {
     "id": "8550",
     "name": "ZIPPER DETAIL GOOSE DOWN JUMPER IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["레더라이크 원단에 워싱효과를 더한 구스다운"],
     "price": 518000,
     "discountRate": 0,
     "discountPrice": 518000,
@@ -360,7 +370,7 @@
   {
     "id": "8549",
     "name": "ZIPPER DETAIL GOOSE DOWN JUMPER IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["레더라이크 원단에 워싱효과를 더한 구스다운"],
     "price": 518000,
     "discountRate": 0,
     "discountPrice": 518000,
@@ -403,7 +413,9 @@
   {
     "id": "8548",
     "name": "DRAW STRING LONG DOWN JUMPER IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "넓은 하이넥 후디와 밑단 스트링으로 캐주얼하게 연출가능한 야상형 다운점퍼"
+    ],
     "price": 548000,
     "discountRate": 0,
     "discountPrice": 548000,
@@ -448,7 +460,9 @@
   {
     "id": "8547",
     "name": "DRAW STRING LONG DOWN JUMPER IN WHITE",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "넓은 하이넥 후디와 밑단 스트링으로 캐주얼하게 연출가능한 야상형 다운점퍼"
+    ],
     "price": 548000,
     "discountRate": 0,
     "discountPrice": 548000,
@@ -491,7 +505,7 @@
   {
     "id": "8546",
     "name": "CURLY FUR MIDI JACKET IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["가볍고 따뜻한 미디기장의 테디베어퍼 자켓"],
     "price": 498000,
     "discountRate": 0,
     "discountPrice": 498000,
@@ -536,7 +550,9 @@
   {
     "id": "8545",
     "name": "HIGH NECK LAYERED MUSTANG JUMPER IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "빈티지한 텍스쳐의 워싱 면트윌과 퍼를 합포하여 제작한 캐주얼 하이넥 무스탕 점퍼"
+    ],
     "price": 568000,
     "discountRate": 0,
     "discountPrice": 568000,
@@ -584,7 +600,9 @@
   {
     "id": "8544",
     "name": "OVERSIZE REVERSIBLE MUSTANG JUMPER IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "힙을 덮는 기장감과 오버한 실루엣으로 멋스럽게 연출가능한 스웨이드 하이넥 무스탕"
+    ],
     "price": 548000,
     "discountRate": 0,
     "discountPrice": 548000,
@@ -682,7 +700,9 @@
   {
     "id": "8542",
     "name": "FUR TRIMMING VOLUME BOMBER JUMPER IN KHAKI GREY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "드롭숄더로 오버사이즈한 핏감과 퍼배색이 스타일리쉬한 후디 버블헴 볼륨봄버"
+    ],
     "price": 458000,
     "discountRate": 0,
     "discountPrice": 458000,
@@ -726,7 +746,9 @@
   {
     "id": "8436",
     "name": "DYING EFFECT VOLUME PUFFER DOWN JUMPER IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "프린트로 워싱효과를 주어 빈티지한 컬러감의 하이넥 볼륨 덕다운"
+    ],
     "price": 438000,
     "discountRate": 0,
     "discountPrice": 438000,
@@ -770,7 +792,9 @@
   {
     "id": "8435",
     "name": "DYING EFFECT VOLUME PUFFER DOWN JUMPER IN LIGHT GREY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "프린트로 워싱효과를 주어 빈티지한 컬러감의 하이넥 볼륨 덕다운"
+    ],
     "price": 438000,
     "discountRate": 0,
     "discountPrice": 438000,
@@ -814,7 +838,7 @@
   {
     "id": "8434",
     "name": "HIGHNECK OVERSIZE PADDED JUMPER IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["광택감있는 외관의 오버핏 하이넥 패딩코트"],
     "price": 498000,
     "discountRate": 0,
     "discountPrice": 498000,
@@ -858,7 +882,9 @@
   {
     "id": "8438",
     "name": "HAND MADE BELTED DOUBLE WOOL COAT IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "제천 벨트로 여러가지 연출이 가능한 오버사이즈 핸드메이드 울 더블코트"
+    ],
     "price": 558000,
     "discountRate": 0,
     "discountPrice": 558000,
@@ -904,7 +930,9 @@
   {
     "id": "8437",
     "name": "HAND MADE BELTED DOUBLE WOOL COAT IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "제천 벨트로 여러가지 연출이 가능한 오버사이즈 핸드메이드 울 더블코트"
+    ],
     "price": 558000,
     "discountRate": 0,
     "discountPrice": 558000,
@@ -950,7 +978,9 @@
   {
     "id": "8440",
     "name": "WOOL BLENDED TWILL MAXI DOUBLE COAT IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "제천 벨트로 여러가지 연출이 가능한 오버사이즈 핸드메이드 울 더블코트"
+    ],
     "price": 578000,
     "discountRate": 0,
     "discountPrice": 578000,
@@ -996,7 +1026,9 @@
   {
     "id": "8439",
     "name": "WOOL BLENDED TWILL MAXI DOUBLE COAT IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "제천 벨트로 여러가지 연출이 가능한 오버사이즈 핸드메이드 울 더블코트"
+    ],
     "price": 578000,
     "discountRate": 0,
     "discountPrice": 578000,
@@ -1042,7 +1074,9 @@
   {
     "id": "8263",
     "name": "PADDED NYLON WORK JUMPER IN LIGHT KHAKI",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": [
+      "나일론 소재로 제작된 워크자켓으로 봄버자켓과 믹스된듯한 디자인"
+    ],
     "price": 498000,
     "discountRate": 0,
     "discountPrice": 498000,
@@ -1084,7 +1118,9 @@
   {
     "id": "8262",
     "name": "PADDED NYLON WORK JUMPER IN BLACK",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": [
+      "나일론 소재로 제작된 워크자켓으로 봄버자켓과 믹스된듯한 디자인"
+    ],
     "price": 498000,
     "discountRate": 0,
     "discountPrice": 498000,
@@ -1126,7 +1162,9 @@
   {
     "id": "8261",
     "name": "PATCH POCKET TWEED JACKET IN IVORY",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": [
+      "과감한 아웃포켓과 로우 컷이 포인트인 오버핏의 트위드 자켓"
+    ],
     "price": 398000,
     "discountRate": 0,
     "discountPrice": 398000,
@@ -1168,7 +1206,9 @@
   {
     "id": "8260",
     "name": "PATCH POCKET TWEED JACKET IN BLACK",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": [
+      "과감한 아웃포켓과 로우 컷이 포인트인 오버핏의 트위드 자켓"
+    ],
     "price": 398000,
     "discountRate": 0,
     "discountPrice": 398000,
@@ -1210,7 +1250,9 @@
   {
     "id": "8259",
     "name": "SUEDE FRINGE JACKET IN DARK GREY",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": [
+      "이너겸 아우터로 착용가능한 프린지 디테일의 스웨이드 오버핏 자켓"
+    ],
     "price": 488000,
     "discountRate": 0,
     "discountPrice": 488000,
@@ -1252,7 +1294,9 @@
   {
     "id": "8258",
     "name": "SUEDE FRINGE JACKET IN BEIGE",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": [
+      "이너겸 아우터로 착용가능한 프린지 디테일의 스웨이드 오버핏 자켓"
+    ],
     "price": 488000,
     "discountRate": 0,
     "discountPrice": 488000,
@@ -1294,7 +1338,7 @@
   {
     "id": "8185",
     "name": "NEOPRENE DOUBLE LAYERED ZIP UP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["레이어드하여 다양한 연출이 가능한 캐주얼 오버핏 점퍼"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -1329,7 +1373,7 @@
   {
     "id": "8184",
     "name": "NEOPRENE DOUBLE LAYERED ZIP UP IN GREY",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["레이어드하여 다양한 연출이 가능한 캐주얼 오버핏 점퍼"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -1372,7 +1416,9 @@
   {
     "id": "8183",
     "name": "OVERSIZE LOW EDGE CROP JACKET IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "자켓을 컷팅한듯한 디자인이 포인트인 헴라인 오버사이즈 자켓"
+    ],
     "price": 398000,
     "discountRate": 0,
     "discountPrice": 398000,
@@ -1415,7 +1461,9 @@
   {
     "id": "8182",
     "name": "OVERSIZE LOW EDGE CROP JACKET IN GREY",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "자켓을 컷팅한듯한 디자인이 포인트인 헴라인 오버사이즈 자켓"
+    ],
     "price": 398000,
     "discountRate": 0,
     "discountPrice": 398000,
@@ -1458,7 +1506,7 @@
   {
     "id": "8181",
     "name": "OVERSIZE LAYERED LEATHER JUMPER IN BLACK",
-    "bullet_points": ["가죽 드라이클리닝 권장"],
+    "bullet_points": ["앞 여밈 레이어링이 포인트인 오버핏 페이크 레더 점퍼"],
     "price": 498000,
     "discountRate": 0,
     "discountPrice": 498000,
@@ -1501,7 +1549,7 @@
   {
     "id": "8180",
     "name": "OVERSIZE LAYERED LEATHER JUMPER IN KHAKI BROWN",
-    "bullet_points": ["가죽 드라이클리닝 권장"],
+    "bullet_points": ["앞 여밈 레이어링이 포인트인 오버핏 페이크 레더 점퍼"],
     "price": 498000,
     "discountRate": 0,
     "discountPrice": 498000,
@@ -1544,7 +1592,7 @@
   {
     "id": "8040",
     "name": "LOGO EMBROIDERY BALLOON JUMPER IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": ["자수와 뒷판 고무 와펜이 포인트인 캐주얼 반하이넥 점퍼"],
     "price": 318000,
     "discountRate": 0,
     "discountPrice": 318000,
@@ -1588,7 +1636,7 @@
   {
     "id": "8039",
     "name": "LOGO EMBROIDERY BALLOON JUMPER IN LIGHT KHAKI",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": ["자수와 뒷판 고무 와펜이 포인트인 캐주얼 반하이넥 점퍼"],
     "price": 318000,
     "discountRate": 0,
     "discountPrice": 318000,
@@ -1631,7 +1679,9 @@
   {
     "id": "7362",
     "name": "MESH BACK LOGO KNIT JUMPER IN BLACK",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "뒷판 로고 자카드가 포인트로 캐주얼하게 연출 가능한 루즈핏 니트 집업 가디건"
+    ],
     "price": 348000,
     "discountRate": 0,
     "discountPrice": 348000,
@@ -1677,7 +1727,9 @@
   {
     "id": "7361",
     "name": "MESH BACK LOGO KNIT JUMPER IN IVORY",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "뒷판 로고 자카드가 포인트로 캐주얼하게 연출 가능한 루즈핏 니트 집업 가디건"
+    ],
     "price": 348000,
     "discountRate": 0,
     "discountPrice": 348000,
@@ -1724,7 +1776,9 @@
   {
     "id": "7380",
     "name": "LOGO RIVET POINT PRINTING JUMPER IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "로고 자수와 리벳 포인트와 후면의 레이어드 된 듯한 디테일이 포인트인 캐주얼 셋업 점퍼"
+    ],
     "price": 318000,
     "discountRate": 0,
     "discountPrice": 318000,
@@ -1772,7 +1826,9 @@
   {
     "id": "7379",
     "name": "LOGO RIVET POINT PRINTING JUMPER IN WHITE",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "로고 자수와 리벳 포인트와 후면의 레이어드 된 듯한 디테일이 포인트인 캐주얼 셋업 점퍼"
+    ],
     "price": 318000,
     "discountRate": 0,
     "discountPrice": 318000,
@@ -1821,7 +1877,9 @@
   {
     "id": "7249",
     "name": "POCKET POINT WASHED WORK JACKET IN BLACK",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": [
+      "빈티지한 워싱으로 네추럴한 컬러감이 돋보이는 여유있는 실루엣의 워크자켓"
+    ],
     "price": 358000,
     "discountRate": 0,
     "discountPrice": 358000,
@@ -1870,7 +1928,9 @@
   {
     "id": "7250",
     "name": "POCKET POINT WASHED WORK JACKET IN KHAKI",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": [
+      "빈티지한 워싱으로 네추럴한 컬러감이 돋보이는 여유있는 실루엣의 워크자켓"
+    ],
     "price": 358000,
     "discountRate": 0,
     "discountPrice": 358000,
@@ -1922,7 +1982,7 @@
   {
     "id": "8859",
     "name": "HIGH NECK TWO WAY ZIP UP CARDIGAN IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["시크한 무드와 슬림한 아웃핏이 포인트인 하이넥 가디건"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -1968,7 +2028,7 @@
   {
     "id": "8858",
     "name": "HIGH NECK TWO WAY ZIP UP CARDIGAN IN IVORY",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["시크한 무드와 슬림한 아웃핏이 포인트인 하이넥 가디건"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -2014,7 +2074,9 @@
   {
     "id": "8861",
     "name": "UNBALANCE SLIM CARDIGAN IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "좌우 비대칭의 짜임과 디자인이 특징인 쉬어한 소재의 가디건"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -2060,7 +2122,9 @@
   {
     "id": "8860",
     "name": "UNBALANCE SLIM CARDIGAN IN BLUE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "좌우 비대칭의 짜임과 디자인이 특징인 쉬어한 소재의 가디건"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -2106,7 +2170,9 @@
   {
     "id": "8863",
     "name": "SLIM HOODY JERSEY TOP IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "앞넥의 배색 자수가 포인트인 부드러운 터치감의 반하이넥 라글란 후디 티셔츠"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -2152,7 +2218,9 @@
   {
     "id": "8862",
     "name": "SLIM HOODY JERSEY TOP IN CHARCOAL",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "앞넥의 배색 자수가 포인트인 부드러운 터치감의 반하이넥 라글란 후디 티셔츠"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -2198,7 +2266,7 @@
   {
     "id": "8865",
     "name": "SHOULDER HOLE HALF SLEEVE TOP IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["숄더의 홀 디테일이 포인트인 하프 슬리브 티셔츠"],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -2244,7 +2312,7 @@
   {
     "id": "8864",
     "name": "SHOULDER HOLE HALF SLEEVE TOP IN WHITE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["숄더의 홀 디테일이 포인트인 하프 슬리브 티셔츠"],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -2290,7 +2358,9 @@
   {
     "id": "8874",
     "name": "BUSTIER LAYERED CRINKLE SHIRT IN WHITE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "끈길이 조정 가능한 뷔스티에로 다양한 연출이 가능한 오버핏 셔츠"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -2335,7 +2405,9 @@
   {
     "id": "8873",
     "name": "BUSTIER LAYERED CRINKLE SHIRT IN BLUE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "끈길이 조정 가능한 뷔스티에로 다양한 연출이 가능한 오버핏 셔츠"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -2380,7 +2452,9 @@
   {
     "id": "8541",
     "name": "OVERSIZE HIGHNECK VOLUME PULLOVER IN IVORY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "비대칭 데미지 케이블조직과 끝 구제로 러프한 무드를 자아내는 볼륨실루엣 터틀넥 풀오버"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -2423,7 +2497,9 @@
   {
     "id": "8540",
     "name": "OVERSIZE HIGHNECK VOLUME PULLOVER IN GREY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "비대칭 데미지 케이블조직과 끝 구제로 러프한 무드를 자아내는 볼륨실루엣 터틀넥 풀오버"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -2466,7 +2542,9 @@
   {
     "id": "8539",
     "name": "BOLERO LAYERED CABLE KNIT PULLOVER IN IVORY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "헤어리한 원사로 제작된 케이블조직 니트베스트와 볼레로 세트"
+    ],
     "price": 268000,
     "discountRate": 0,
     "discountPrice": 268000,
@@ -2511,7 +2589,9 @@
   {
     "id": "8538",
     "name": "BOLERO LAYERED CABLE KNIT PULLOVER IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "헤어리한 원사로 제작된 케이블조직 니트베스트와 볼레로 세트"
+    ],
     "price": 268000,
     "discountRate": 0,
     "discountPrice": 268000,
@@ -2601,7 +2681,7 @@
   {
     "id": "8536",
     "name": "VOLUME NECK BOUCLE PULLOVER IN BLUE",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["빅 부클 원사로 조직감있게 제작된 오버사이즈 풀오버"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -2736,7 +2816,7 @@
   {
     "id": "8425",
     "name": "OFF SHOULDER DETAIL TOP IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["오프숄더 디테일이 가미된 슬림핏 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -2780,7 +2860,7 @@
   {
     "id": "8424",
     "name": "OFF SHOULDER DETAIL TOP IN GREY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["오프숄더 디테일이 가미된 슬림핏 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -2823,7 +2903,7 @@
   {
     "id": "8423",
     "name": "OFF SHOULDER DETAIL TOP IN LIGHT BEIGE",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["오프숄더 디테일이 가미된 슬림핏 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -2866,7 +2946,9 @@
   {
     "id": "8428",
     "name": "TWIST STRAP LONG SLEEVE TOP IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "어깨 스트랩으로 레이어드한 듯 한 연출 가능한 코튼 져지 탑"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -2911,7 +2993,9 @@
   {
     "id": "8427",
     "name": "TWIST STRAP LONG SLEEVE TOP IN IVORY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "어깨 스트랩으로 레이어드한 듯 한 연출 가능한 코튼 져지 탑"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -2954,7 +3038,9 @@
   {
     "id": "8426",
     "name": "TWIST STRAP LONG SLEEVE TOP IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "어깨 스트랩으로 레이어드한 듯 한 연출 가능한 코튼 져지 탑"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -2998,7 +3084,7 @@
   {
     "id": "8271",
     "name": "WASHED CABLE PULLOVER IN BEIGE",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["투톤의 워싱이펙트로 포인트를 준 크랍 피셔맨 니트"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -3041,7 +3127,7 @@
   {
     "id": "8270",
     "name": "WASHED CABLE PULLOVER IN DARK BROWN",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["투톤의 워싱이펙트로 포인트를 준 크랍 피셔맨 니트"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -3084,7 +3170,7 @@
   {
     "id": "8269",
     "name": "HAND WARMER LAYERED PULLOVER IN CHARCOAL",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["소매에 암워머를 레이어드한 듯 한 배색디자인의 니트탑"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -3127,7 +3213,7 @@
   {
     "id": "8268",
     "name": "HAND WARMER LAYERED PULLOVER IN BEIGE",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["소매에 암워머를 레이어드한 듯 한 배색디자인의 니트탑"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -3171,7 +3257,7 @@
   {
     "id": "8267",
     "name": "DAMAGE DETAIL LOGO PULLOVER IN MINT",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["디스트로이드 디테일의 캐주얼한 루즈핏 니트 풀오버"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -3214,7 +3300,7 @@
   {
     "id": "8266",
     "name": "DAMAGE DETAIL LOGO PULLOVER IN CHARCOAL",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["디스트로이드 디테일의 캐주얼한 루즈핏 니트 풀오버"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -3257,7 +3343,9 @@
   {
     "id": "8179",
     "name": "HALF OPEN SLIM HOODY TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "네크스냅과 옆선의 끈으로 다양한 연출이 가능한 슬림핏 하이넥 후디"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -3301,7 +3389,9 @@
   {
     "id": "8178",
     "name": "HALF OPEN SLIM HOODY TOP IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "네크스냅과 옆선의 끈으로 다양한 연출이 가능한 슬림핏 하이넥 후디"
+    ],
     "price": 138000,
     "discountRate": 0,
     "discountPrice": 138000,
@@ -3345,7 +3435,7 @@
   {
     "id": "8177",
     "name": "RAW CUT BODYSUIT TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["로우컷 디테일과 워싱감이 돋보이는 바디수트"],
     "price": 188000,
     "discountRate": 0,
     "discountPrice": 188000,
@@ -3389,7 +3479,7 @@
   {
     "id": "8176",
     "name": "RAW CUT BODYSUIT TOP IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["로우컷 디테일과 워싱감이 돋보이는 바디수트"],
     "price": 188000,
     "discountRate": 0,
     "discountPrice": 188000,
@@ -3433,9 +3523,7 @@
   {
     "id": "8175",
     "name": "BLURRED LOGO RAW CUT OVERSIZE HOODY IN BLACK",
-    "bullet_points": [
-      "홀로그램이 없는 경우, 정품이 아닐 수 있으니 구매 시 참고 부탁드립니다."
-    ],
+    "bullet_points": ["로고가 잘린듯한 디테일이 포인트인 루즈핏 후디"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -3479,7 +3567,7 @@
   {
     "id": "8174",
     "name": "BLURRED LOGO RAW CUT OVERSIZE HOODY IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["로고가 잘린듯한 디테일이 포인트인 루즈핏 후디"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -3523,7 +3611,7 @@
   {
     "id": "8038",
     "name": "HOOK AND EYE POINT TWO WAY TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["다양한 실루엣으로 연출 가능한 로우컷 오버핏 져지 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -3567,7 +3655,7 @@
   {
     "id": "8037",
     "name": "HOOK AND EYE POINT TWO WAY TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["다양한 실루엣으로 연출 가능한 로우컷 오버핏 져지 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -3611,7 +3699,7 @@
   {
     "id": "8036",
     "name": "HOOK AND EYE POINT TWO WAY TOP IN DARK BEIGE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["다양한 실루엣으로 연출 가능한 로우컷 오버핏 져지 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -3655,7 +3743,7 @@
   {
     "id": "8035",
     "name": "STITCH CUT OUT LONG SLEEVE TOP IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["절개라인과 배색 스티치가 포인트인 베이직 핏 져지 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -3699,7 +3787,7 @@
   {
     "id": "8034",
     "name": "STITCH CUT OUT LONG SLEEVE TOP IN BEIGE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["절개라인과 배색 스티치가 포인트인 베이직 핏 져지 탑"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -3743,7 +3831,7 @@
   {
     "id": "8033",
     "name": "LOGO EMBROIDERY OVERSIZE TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["스티치 로고 자수가 포인트인 오버사이즈 탑"],
     "price": 98000,
     "discountRate": 0,
     "discountPrice": 98000,
@@ -3787,7 +3875,7 @@
   {
     "id": "8032",
     "name": "LOGO EMBROIDERY OVERSIZE TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["스티치 로고 자수가 포인트인 오버사이즈 탑"],
     "price": 98000,
     "discountRate": 0,
     "discountPrice": 98000,
@@ -3831,7 +3919,7 @@
   {
     "id": "8031",
     "name": "LOGO EMBROIDERY OVERSIZE TOP IN BROWN",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["스티치 로고 자수가 포인트인 오버사이즈 탑"],
     "price": 98000,
     "discountRate": 0,
     "discountPrice": 98000,
@@ -3875,7 +3963,9 @@
   {
     "id": "7809",
     "name": "BACK TWIST UNBALANCE JERSEY SLEEVELESS IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "뒷판 컷아웃으로 투웨이 연출이 가능한 비대칭 넥 슬리브리스 저지탑"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -3923,7 +4013,9 @@
   {
     "id": "7810",
     "name": "BACK TWIST UNBALANCE JERSEY SLEEVELESS IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "뒷판 컷아웃으로 투웨이 연출이 가능한 비대칭 넥 슬리브리스 저지탑"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -3972,7 +4064,7 @@
   {
     "id": "7808",
     "name": "DENIM PRINTING OVERSIZE TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["시즌 데님 팬트가 프린팅된 티셔츠"],
     "price": 148000,
     "discountRate": 0,
     "discountPrice": 148000,
@@ -4020,7 +4112,7 @@
   {
     "id": "7807",
     "name": "DENIM PRINTING OVERSIZE TOP IN LIGHT GREY",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["시즌 데님 팬트가 프린팅된 티셔츠"],
     "price": 148000,
     "discountRate": 0,
     "discountPrice": 148000,
@@ -4068,7 +4160,9 @@
   {
     "id": "7790",
     "name": "SQUARE NECK CRINKLE SLEEVELESS IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "은은한 광택감과 배색 스티치가 포인트인 스퀘어낵 스트랩 탑"
+    ],
     "price": 148000,
     "discountRate": 0,
     "discountPrice": 148000,
@@ -4110,7 +4204,9 @@
   {
     "id": "7789",
     "name": "SQUARE NECK CRINKLE SLEEVELESS IN IVORY",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "은은한 광택감과 배색 스티치가 포인트인 스퀘어낵 스트랩 탑"
+    ],
     "price": 148000,
     "discountRate": 0,
     "discountPrice": 148000,
@@ -4155,7 +4251,9 @@
   {
     "id": "7803",
     "name": "CUTTING LOGO PRINT OVERSIZE T-SHIRT IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "어깨슬릿과 절개라인을 따라 컷팅된 로고프린트가 포인트인 오버핏 저지탑"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -4203,7 +4301,9 @@
   {
     "id": "7802",
     "name": "CUTTING LOGO PRINT OVERSIZE T-SHIRT IN LIME",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "어깨슬릿과 절개라인을 따라 컷팅된 로고프린트가 포인트인 오버핏 저지탑"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -4252,7 +4352,7 @@
   {
     "id": "7792",
     "name": "SPORTY BLOCK OVERSIZE TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["입체감있는 기법으로 로고를 표현한 스포티한 티셔츠"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -4298,7 +4398,7 @@
   {
     "id": "7793",
     "name": "SPORTY BLOCK OVERSIZE TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["2~5일 소요"],
     "price": 128000,
     "discountRate": 0,
     "discountPrice": 128000,
@@ -4346,7 +4446,9 @@
   {
     "id": "7539",
     "name": "BLURRED LOGO LAYERED LONG TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "뒷판 프린팅과 앞판의 자수가 포인트로 다양한 스타일링이 가능한 레이어드 티셔츠"
+    ],
     "price": 148000,
     "discountRate": 0,
     "discountPrice": 148000,
@@ -4395,7 +4497,9 @@
   {
     "id": "7538",
     "name": "BLURRED LOGO LAYERED LONG TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "뒷판 프린팅과 앞판의 자수가 포인트로 다양한 스타일링이 가능한 레이어드 티셔츠"
+    ],
     "price": 148000,
     "discountRate": 0,
     "discountPrice": 148000,
@@ -4446,7 +4550,9 @@
   {
     "id": "7537",
     "name": "SIDE SLIT SLEEVELESS SLUB KNIT TOP IN LIGHT GREY",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "어깨라인의 단추와 사이드의 트임으로 비대칭한 실루엣의 슬림 롱 니트 풀오버"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -4492,7 +4598,9 @@
   {
     "id": "7536",
     "name": "SIDE SLIT SLEEVELESS SLUB KNIT TOP IN DARK GREY",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "어깨라인의 단추와 사이드의 트임으로 비대칭한 실루엣의 슬림 롱 니트 풀오버"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -4537,7 +4645,9 @@
   {
     "id": "7535",
     "name": "HALF ZIP UP SLUB PIQUE KNIT TOP IN IVORY",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "배색 라인이 포인트인 루즈핏 하프집업 슬럽 니트 피케 풀오버"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -4583,7 +4693,9 @@
   {
     "id": "7534",
     "name": "HALF ZIP UP SLUB PIQUE KNIT TOP IN MINT",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "배색 라인이 포인트인 루즈핏 하프집업 슬럽 니트 피케 풀오버"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -4631,7 +4743,9 @@
   {
     "id": "7533",
     "name": "DAMAGED HALF SLEEVE KNIT ZIP UP IN BLACK",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "투톤 니트 소재와 데미지 디테일이 포인트인 레귤러핏 라운드넥 니트집업"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -4681,7 +4795,9 @@
   {
     "id": "7532",
     "name": "DAMAGED HALF SLEEVE KNIT ZIP UP IN BLUE",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": [
+      "투톤 니트 소재와 데미지 디테일이 포인트인 레귤러핏 라운드넥 니트집업"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -4729,7 +4845,9 @@
   {
     "id": "7530",
     "name": "RIBBED SLIM SLEEVELESS IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "사선라인의 겉으로 보이는 봉제선이 포인트인 쫀쫀한 골지 슬리브리스"
+    ],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -4773,7 +4891,9 @@
   {
     "id": "7529",
     "name": "RIBBED SLIM SLEEVELESS IN GREY",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "사선라인의 겉으로 보이는 봉제선이 포인트인 쫀쫀한 골지 슬리브리스"
+    ],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -4816,7 +4936,9 @@
   {
     "id": "7528",
     "name": "RIBBED SLIM SLEEVELESS IN KHAKI",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "사선라인의 겉으로 보이는 봉제선이 포인트인 쫀쫀한 골지 슬리브리스"
+    ],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -4862,7 +4984,9 @@
   {
     "id": "7527",
     "name": "BIG LOGO SLEEVELESS TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "블러리한 킴마틴 로고 포인트가 넥까지 연결되어 프린팅된 Y실루엣 슬리브리스"
+    ],
     "price": 108000,
     "discountRate": 0,
     "discountPrice": 108000,
@@ -4905,7 +5029,9 @@
   {
     "id": "7526",
     "name": "BIG LOGO SLEEVELESS TOP IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "블러리한 킴마틴 로고 포인트가 넥까지 연결되어 프린팅된 Y실루엣 슬리브리스"
+    ],
     "price": 108000,
     "discountRate": 0,
     "discountPrice": 108000,
@@ -4949,7 +5075,7 @@
   {
     "id": "7360",
     "name": "SQUARE NECK SLEEVELESS KNIT TOP IN BLACK",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": ["로고 메탈 장식이 포인트인 니트 슬리브리스"],
     "price": 168000,
     "discountRate": 0,
     "discountPrice": 168000,
@@ -4995,7 +5121,7 @@
   {
     "id": "7359",
     "name": "SQUARE NECK SLEEVELESS KNIT TOP IN WHITE",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": ["로고 메탈 장식이 포인트인 니트 슬리브리스"],
     "price": 168000,
     "discountRate": 0,
     "discountPrice": 168000,
@@ -5041,7 +5167,7 @@
   {
     "id": "7383",
     "name": "BACK SLIT SLIM TOP IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["시즌 테마가 프린팅된 슬림핏 백 홀 포인트 티셔츠"],
     "price": 98000,
     "discountRate": 0,
     "discountPrice": 98000,
@@ -5089,7 +5215,7 @@
   {
     "id": "7382",
     "name": "BACK SLIT SLIM TOP IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["시즌 테마가 프린팅된 슬림핏 백 홀 포인트 티셔츠"],
     "price": 98000,
     "discountRate": 0,
     "discountPrice": 98000,
@@ -5137,7 +5263,7 @@
   {
     "id": "7381",
     "name": "BACK SLIT SLIM TOP IN LIGHT KHAKI",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": ["시즌 테마가 프린팅된 슬림핏 백 홀 포인트 티셔츠"],
     "price": 98000,
     "discountRate": 0,
     "discountPrice": 98000,
@@ -5187,7 +5313,9 @@
   {
     "id": "7386",
     "name": "ROSE PRINT OVERSIZE T-SHIRT IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "양쪽 사이드 로우컷 배색이 포인트로 킴마틴 로즈 로고가 블러리하게 프린팅 된 박시핏 티셔츠"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -5235,7 +5363,9 @@
   {
     "id": "7385",
     "name": "ROSE PRINT OVERSIZE T-SHIRT IN WHITE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "양쪽 사이드 로우컷 배색이 포인트로 킴마틴 로즈 로고가 블러리하게 프린팅 된 박시핏 티셔츠"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -5284,7 +5414,9 @@
   {
     "id": "7384",
     "name": "ROSE PRINT OVERSIZE T-SHIRT IN BEIGE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "양쪽 사이드 로우컷 배색이 포인트로 킴마틴 로즈 로고가 블러리하게 프린팅 된 박시핏 티셔츠"
+    ],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -5333,7 +5465,7 @@
   {
     "id": "7388",
     "name": "SEE-THROUGH KNIT PIQUE TOP IN NAVY",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": ["비침이 있는 코튼 소재로 슬림한 핏의 골지 피케 니트"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -5382,7 +5514,7 @@
   {
     "id": "7387",
     "name": "SEE-THROUGH KNIT PIQUE TOP IN KHAKI BEIGE",
-    "bullet_points": ["단독 니트 드라이클리닝 권장"],
+    "bullet_points": ["비침이 있는 코튼 소재로 슬림한 핏의 골지 피케 니트"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -5428,7 +5560,9 @@
   {
     "id": "8533",
     "name": "COLOR MIX UNBALANCE KNIT HOODY IN IVORY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "두가지 원사를 믹스해, 투톤 조직변형으로 포인트를 준 캐주얼 후드 풀오버"
+    ],
     "price": 278000,
     "discountRate": 0,
     "discountPrice": 278000,
@@ -5472,7 +5606,9 @@
   {
     "id": "8532",
     "name": "COLOR MIX UNBALANCE KNIT HOODY IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "두가지 원사를 믹스해, 투톤 조직변형으로 포인트를 준 캐주얼 후드 풀오버"
+    ],
     "price": 278000,
     "discountRate": 0,
     "discountPrice": 278000,
@@ -5515,7 +5651,9 @@
   {
     "id": "8430",
     "name": "TWO WAY HAIRY CARDIGAN IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "헤어리한 원사로 부드러운 터치감과 보온성을 더한 니트 가디건"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -5559,7 +5697,9 @@
   {
     "id": "8429",
     "name": "TWO WAY HAIRY CARDIGAN IN CAMEL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "헤어리한 원사로 부드러운 터치감과 보온성을 더한 니트 가디건"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -5603,7 +5743,9 @@
   {
     "id": "8432",
     "name": "MUFFLER CARDIGAN IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "조직믹스와 사선버튼으로 캐주얼함을 더한 머플러 디테일의 니트 가디건"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -5647,7 +5789,9 @@
   {
     "id": "8431",
     "name": "MUFFLER CARDIGAN IN LIGHT BEIGE",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "조직믹스와 사선버튼으로 캐주얼함을 더한 머플러 디테일의 니트 가디건"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -5691,7 +5835,7 @@
   {
     "id": "8265",
     "name": "SLIT POINT SLIM KNIT TOP IN GREY",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["네크 슬릿과 소매 홀디테일이 포인트인 골지 슬림탑."],
     "price": 168000,
     "discountRate": 0,
     "discountPrice": 168000,
@@ -5734,7 +5878,7 @@
   {
     "id": "8264",
     "name": "SLIT POINT SLIM KNIT TOP IN BLACK",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["네크 슬릿과 소매 홀디테일이 포인트인 골지 슬림탑."],
     "price": 168000,
     "discountRate": 0,
     "discountPrice": 168000,
@@ -5777,7 +5921,9 @@
   {
     "id": "8875",
     "name": "WIDE COLOR DENIM PANTS IN BEIGE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "워싱후 은은한 페인트 효과를 더해 컬러감이 매력적인 루즈핏 코튼 개버딘 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -5820,7 +5966,9 @@
   {
     "id": "8876",
     "name": "WIDE COLOR DENIM PANTS IN KHAKI",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "워싱후 은은한 페인트 효과를 더해 컬러감이 매력적인 루즈핏 코튼 개버딘 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -5863,7 +6011,9 @@
   {
     "id": "8878",
     "name": "CONTRAST BERMUDA DENIM PANTS IN DARK GREY",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "절개라인 변형 및 다트로 A실루엣을 살린 캐주얼 무드의 로우웨이스트 루즈핏 데님 팬츠"
+    ],
     "price": 188000,
     "discountRate": 0,
     "discountPrice": 188000,
@@ -5906,7 +6056,9 @@
   {
     "id": "8877",
     "name": "CONTRAST BERMUDA DENIM PANTS IN LIGHT BLUE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "절개라인 변형 및 다트로 A실루엣을 살린 캐주얼 무드의 로우웨이스트 루즈핏 데님 팬츠"
+    ],
     "price": 188000,
     "discountRate": 0,
     "discountPrice": 188000,
@@ -5949,7 +6101,9 @@
   {
     "id": "8880",
     "name": "DESTRESSED WAIST PINTUCK WIDE PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "허리 끝단의 컷팅디테일로 러프한 무드를 더한 포멀한 아웃핏의 투턱 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -5992,7 +6146,9 @@
   {
     "id": "8879",
     "name": "DESTRESSED WAIST PINTUCK WIDE PANTS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "허리 끝단의 컷팅디테일로 러프한 무드를 더한 포멀한 아웃핏의 투턱 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -6035,7 +6191,9 @@
   {
     "id": "8884",
     "name": "TWISTED SEAM DENIM PANTS IN DARK GREY",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "깔끔하고 은은한 컬러감에 워싱 디테일이 가미된 커브드 실루엣 데님 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -6078,7 +6236,9 @@
   {
     "id": "8883",
     "name": "TWISTED SEAM DENIM PANTS IN BLUE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "깔끔하고 은은한 컬러감에 워싱 디테일이 가미된 커브드 실루엣 데님 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -6121,7 +6281,9 @@
   {
     "id": "8886",
     "name": "CARGO DETAIL BERMUDA PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "여유있는 실루엣과 캐주얼한 무드가 가미된 테일러드 버뮤다 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -6164,7 +6326,9 @@
   {
     "id": "8885",
     "name": "CARGO DETAIL BERMUDA PANTS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "여유있는 실루엣과 캐주얼한 무드가 가미된 테일러드 버뮤다 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -6207,7 +6371,7 @@
   {
     "id": "8529",
     "name": "SEMI BOOTS CUT VELVET DENIM PANTS IN BLACK",
-    "bullet_points": ["제조일자: 202509"],
+    "bullet_points": ["스판원단으로, 편안한 착장감의 벨벳 데님팬츠"],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6247,7 +6411,7 @@
   {
     "id": "8528",
     "name": "SEMI BOOTS CUT VELVET DENIM PANTS IN NAVY",
-    "bullet_points": ["제조일자: 202509"],
+    "bullet_points": ["스판원단으로, 편안한 착장감의 벨벳 데님팬츠"],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6289,7 +6453,7 @@
   {
     "id": "8527",
     "name": "WOOL BLENDED PARACHUTE PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["울 혼방 원단으로 캐주얼하게 제작한 파라슈트 팬츠"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -6330,7 +6494,7 @@
   {
     "id": "8526",
     "name": "WOOL BLENDED PARACHUTE PANTS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["울 혼방 원단으로 캐주얼하게 제작한 파라슈트 팬츠"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -6371,7 +6535,9 @@
   {
     "id": "8525",
     "name": "BLENDED WOOL CURVED BANDING PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "배색스티치로 포인트를 준 데님 디테일의 캐주얼한 커브드 밴딩 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -6412,7 +6578,9 @@
   {
     "id": "8524",
     "name": "BLENDED WOOL CURVED BANDING PANTS IN IVORY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "배색스티치로 포인트를 준 데님 디테일의 캐주얼한 커브드 밴딩 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -6453,7 +6621,9 @@
   {
     "id": "8523",
     "name": "BLENDED WOOL CURVED BANDING PANTS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "배색스티치로 포인트를 준 데님 디테일의 캐주얼한 커브드 밴딩 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -6493,7 +6663,9 @@
   {
     "id": "8419",
     "name": "WASHED CORDUROY VOLUME PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "워싱과 브러쉬 효과로 데님무드를 표현한 볼륨실루엣의 캐주얼 코듀로이 팬츠"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6533,7 +6705,9 @@
   {
     "id": "8418",
     "name": "WASHED CORDUROY VOLUME PANTS IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "워싱과 브러쉬 효과로 데님무드를 표현한 볼륨실루엣의 캐주얼 코듀로이 팬츠"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6573,7 +6747,9 @@
   {
     "id": "8417",
     "name": "SKIRT WRAP LAYERED PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "랩형식의 덧장이 레이어드 되어, 다양한 연출이 가능한 포멀한 무드의 트윌 팬츠"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6613,7 +6789,9 @@
   {
     "id": "8416",
     "name": "SKIRT WRAP LAYERED PANTS IN GREY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "랩형식의 덧장이 레이어드 되어, 다양한 연출이 가능한 포멀한 무드의 트윌 팬츠"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6653,7 +6831,9 @@
   {
     "id": "8415",
     "name": "UPSIDE DOWN LAYERED DENIM PANTS IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "미니 스커트가 레이어드 된 디테일의 세미 부츠컷 데님 팬츠"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -6693,7 +6873,9 @@
   {
     "id": "8414",
     "name": "UPSIDE DOWN LAYERED DENIM PANTS IN SMOKE BLUE",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "미니 스커트가 레이어드 된 디테일의 세미 부츠컷 데님 팬츠"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -6734,7 +6916,7 @@
   {
     "id": "8277",
     "name": "DIAGONAL ZIPPER BELTED PANTS IN GREY",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["사선 지퍼 디테일과 벨트가 포인트인 세미 루즈 핏 팬츠"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -6784,7 +6966,7 @@
   {
     "id": "8276",
     "name": "DIAGONAL ZIPPER BELTED PANTS IN BLACK",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["사선 지퍼 디테일과 벨트가 포인트인 세미 루즈 핏 팬츠"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -6834,7 +7016,7 @@
   {
     "id": "8273",
     "name": "UNBALANCE PLEATS PANTS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-08"],
+    "bullet_points": ["플리츠스커트와 팬츠가 믹스된듯한 언발란스한 스커트팬츠"],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6874,7 +7056,7 @@
   {
     "id": "8272",
     "name": "UNBALANCE PLEATS PANTS IN BLACK",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["플리츠스커트와 팬츠가 믹스된듯한 언발란스한 스커트팬츠"],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -6914,7 +7096,9 @@
   {
     "id": "8172",
     "name": "WASHED WIDE DENIM PANTS IN DARK GREY",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": [
+      "배색 스티치 디테일과 절개선이 포인트인 와이드 데님 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -6965,7 +7149,9 @@
   {
     "id": "8171",
     "name": "WASHED WIDE DENIM PANTS IN BLUE",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": [
+      "배색 스티치 디테일과 절개선이 포인트인 와이드 데님 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -7016,7 +7202,9 @@
   {
     "id": "8170",
     "name": "POCKET RIVET LOOSE FIT SWEAT PANTS IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "리벳 포인트와 밑단 로우컷팅이 포인트인 테리 소재 루즈핏 스웻 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -7067,7 +7255,9 @@
   {
     "id": "8169",
     "name": "POCKET RIVET LOOSE FIT SWEAT PANTS IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "리벳 포인트와 밑단 로우컷팅이 포인트인 테리 소재 루즈핏 스웻 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -7118,7 +7308,9 @@
   {
     "id": "8030",
     "name": "POCKET POINT LEATHER BERMUDA PANTS IN BLACK",
-    "bullet_points": ["가죽 드라이클리닝 권장"],
+    "bullet_points": [
+      "페이크 레더 소재로 입체포켓 디테일이 돋보이는 루즈핏 버뮤다 팬츠"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7222,7 +7414,9 @@
   {
     "id": "8028",
     "name": "CUTTING DETAIL WIDE COTTON PANTS IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "금속 부자재와 아웃 절개로 캐주얼함을 더한 와이드핏 팬츠"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7273,7 +7467,9 @@
   {
     "id": "8027",
     "name": "CUTTING DETAIL WIDE COTTON PANTS IN BEIGE",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "금속 부자재와 아웃 절개로 캐주얼함을 더한 와이드핏 팬츠"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7324,7 +7520,7 @@
   {
     "id": "8026",
     "name": "SIDE PANNEL PINTUCK DENIM PANTS IN BLUE",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": ["루즈한 실루엣의 사이드 패널이 포인트인 데님 팬츠"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7376,7 +7572,7 @@
   {
     "id": "8025",
     "name": "SIDE PANNEL PINTUCK DENIM PANTS IN DARK GREY",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": ["루즈한 실루엣의 사이드 패널이 포인트인 데님 팬츠"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7428,7 +7624,9 @@
   {
     "id": "7806",
     "name": "TWO TONE DECONSTRUCT DENIM BAGGY PANTS IN BLUE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "두가지 톤의 데님이 믹스된 디컨스트럭트 와이드 배기핏 데님 팬츠"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7484,7 +7682,9 @@
   {
     "id": "7785",
     "name": "BELTED SILKY WIDE PANTS IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "은은한 광택의 사틴소재로 가벼우면서도 착용감이 편한 밴딩 와이드 팬츠"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -7538,7 +7738,9 @@
   {
     "id": "7784",
     "name": "BELTED SILKY WIDE PANTS IN BEIGE",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "은은한 광택의 사틴소재로 가벼우면서도 착용감이 편한 밴딩 와이드 팬츠"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -7594,7 +7796,9 @@
   {
     "id": "7786",
     "name": "BANDING SPORTY BERMUDA PANTS IN CHARCOAL",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "은은한 광택감이 있는 탄탄한 타소재로 제작된 스포티한 무드의 버뮤다 팬츠"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -7640,7 +7844,9 @@
   {
     "id": "7787",
     "name": "EMBO WASHED BERMUDA DENIM PANTS IN LIGHT BLUE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "크링클 워싱과 엠보디테일로 워싱감이 매력적인 루즈핏 버뮤다 데님 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -7686,7 +7892,9 @@
   {
     "id": "7544",
     "name": "EMBO WASHED BOOTS CUT DENIM PANTS IN NAVY",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": [
+      "절개라인과 엠보워싱 디테일이 포인트인 빈티지 세미슬림 부츠컷 데님팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -7732,7 +7940,9 @@
   {
     "id": "7788",
     "name": "EMBO WASHED BERMUDA DENIM PANTS IN BLUE",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "크링클 워싱과 엠보디테일로 워싱감이 매력적인 루즈핏 버뮤다 데님 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -7776,7 +7986,9 @@
   {
     "id": "7545",
     "name": "DAMAGE WASHED BOOTS CUT DENIM PANTS IN BLUE",
-    "bullet_points": ["데님 손세탁 권장"],
+    "bullet_points": [
+      "절개라인과 빈티지한 컬러감이 포인트인 세미 슬림 부츠컷 팬츠"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -7821,7 +8033,7 @@
   {
     "id": "7541",
     "name": "STRING POINT BANDING WRAP SHORTS IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": ["랩스커트 형태의 쇼츠"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -7864,7 +8076,7 @@
   {
     "id": "7540",
     "name": "STRING POINT BANDING WRAP SHORTS IN CHARCOAL",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": ["랩스커트 형태의 쇼츠"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -7907,7 +8119,9 @@
   {
     "id": "7363",
     "name": "COTTON WIDE BERMUDA PANTS IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "패치 포켓과 절개 라인이 포인트인 캐주얼한 무드의 루즈핏 버뮤다 워크 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -7956,7 +8170,9 @@
   {
     "id": "7364",
     "name": "CAMOFLAGE WIDE BERMUDA PANTS IN CHARCOAL",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "패치 포켓과 절개 라인이 포인트로 카모플라쥬 패턴이 들어간 루즈핏 버뮤다 워크 팬츠"
+    ],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -8000,7 +8216,7 @@
   {
     "id": "7365",
     "name": "CURVED SILHOUETTE VINTAGE DENIM PANTS IN BLUE",
-    "bullet_points": ["단독 데님 손세탁 권장"],
+    "bullet_points": ["빈티지 워싱이 들어간 슬림 배기 실루엣 데님 팬츠"],
     "price": 228000,
     "discountRate": 0,
     "discountPrice": 228000,
@@ -8045,7 +8261,7 @@
   {
     "id": "7366",
     "name": "CURVED SILHOUETTE VINTAGE DENIM PANTS IN GREY",
-    "bullet_points": ["단독 데님 손세탁 권장"],
+    "bullet_points": ["빈티지 워싱이 들어간 슬림 배기 실루엣 데님 팬츠"],
     "price": 228000,
     "discountRate": 0,
     "discountPrice": 228000,
@@ -8090,7 +8306,9 @@
   {
     "id": "7368",
     "name": "SIDE STRING TRACK PANTS IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "사이드 스트링이 포인트인 가볍고 캐주얼 무드의 셋업 트랙팬츠"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -8135,7 +8353,9 @@
   {
     "id": "7367",
     "name": "SIDE STRING TRACK PANTS IN CHARCOAL",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "사이드 스트링이 포인트인 가볍고 캐주얼 무드의 셋업 트랙팬츠"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -8180,7 +8400,9 @@
   {
     "id": "8871",
     "name": "BACK OPEN HOODY JERSEY DRESS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "등의 홀디테일이 포인트인 어시메트릭한 밑단의 미디기장 저지 후디 원피스"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -8226,7 +8448,9 @@
   {
     "id": "8872",
     "name": "BACK OPEN HOODY JERSEY DRESS IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "등의 홀디테일이 포인트인 어시메트릭한 밑단의 미디기장 저지 후디 원피스"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -8272,7 +8496,9 @@
   {
     "id": "8881",
     "name": "BACK DOUBLE WAIST MAXI SKIRT IN BEIGE",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "슬림하고 단단하게 떨어지는 실루엣이 시크한 무드를 자아내는 맥시 스커트"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8315,7 +8541,9 @@
   {
     "id": "8882",
     "name": "BACK DOUBLE WAIST MAXI SKIRT IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "슬림하고 단단하게 떨어지는 실루엣이 시크한 무드를 자아내는 맥시 스커트"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8358,7 +8586,9 @@
   {
     "id": "8887",
     "name": "TWO WAY CARGO MINI SKIRT IN KHAKI",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "사이드 지퍼를 오픈하여 벨트처럼 착용시 레이어드용으로도 연출이 가능한 멀티포켓 디테일의 폴리타소재 미니 스커트"
+    ],
     "price": 178000,
     "discountRate": 0,
     "discountPrice": 178000,
@@ -8401,7 +8631,9 @@
   {
     "id": "8888",
     "name": "TWO WAY CARGO MINI SKIRT IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": [
+      "사이드 지퍼를 오픈하여 벨트처럼 착용시 레이어드용으로도 연출이 가능한 멀티포켓 디테일의 폴리타소재 미니 스커트"
+    ],
     "price": 178000,
     "discountRate": 0,
     "discountPrice": 178000,
@@ -8444,7 +8676,7 @@
   {
     "id": "8531",
     "name": "UNBALANCE FRINGE KNIT DRESS IN GREY",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["조직 믹스 슬림핏 하이넥 롱 원피스"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -8489,7 +8721,7 @@
   {
     "id": "8530",
     "name": "UNBALANCE FRINGE KNIT DRESS IN CHARCOAL",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["조직 믹스 슬림핏 하이넥 롱 원피스"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -8534,7 +8766,7 @@
   {
     "id": "8522",
     "name": "ASYMMETRIC WRAP MIDI SKIRT IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["언발란스 실루엣의 미디스커트"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8576,7 +8808,7 @@
   {
     "id": "8422",
     "name": "BUTTON POINT LAYERED JERSEY DRESS  IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["투웨이로 착용 가능한 롱 져지 원피스"],
     "price": 188000,
     "discountRate": 0,
     "discountPrice": 188000,
@@ -8620,7 +8852,7 @@
   {
     "id": "8421",
     "name": "BUTTON POINT LAYERED JERSEY DRESS  IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["투웨이로 착용 가능한 롱 져지 원피스"],
     "price": 188000,
     "discountRate": 0,
     "discountPrice": 188000,
@@ -8664,7 +8896,9 @@
   {
     "id": "8420",
     "name": "FRINGE JERSEY MIDI SKIRT IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "언발란스한 절개라인과 프린지 디테일의 H라인 미디 스커트"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8706,7 +8940,7 @@
   {
     "id": "8275",
     "name": "FOLDOVER VINTAGE WASHED DENIM SKIRT IN BLUE",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["캐주얼한 무드의 세미A라인 데님스커트"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8746,7 +8980,7 @@
   {
     "id": "8274",
     "name": "FOLDOVER VINTAGE WASHED DENIM SKIRT IN BLACK",
-    "bullet_points": ["제조일자: Aug-25"],
+    "bullet_points": ["캐주얼한 무드의 세미A라인 데님스커트"],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8786,7 +9020,9 @@
   {
     "id": "8173",
     "name": "STRIPE MIX MAXI WRAP SKIRT IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "자유롭게 연출할 수 있는 디자인이 돋보이는 스트라이프 맥시 랩 스커트"
+    ],
     "price": 218000,
     "discountRate": 0,
     "discountPrice": 218000,
@@ -8828,7 +9064,7 @@
   {
     "id": "7811",
     "name": "LAYERED TWO WAY SLIP DRESS IN BLACK",
-    "bullet_points": ["단독 드라이 권장"],
+    "bullet_points": ["투웨이로 착용 가능한 롱 슬립 원피스"],
     "price": 278000,
     "discountRate": 0,
     "discountPrice": 278000,
@@ -8878,7 +9114,9 @@
   {
     "id": "7791",
     "name": "LOGO CHARM POINT CRINKLE MINI DRESS IN BLACK",
-    "bullet_points": ["단독 손세탁 권장"],
+    "bullet_points": [
+      "킴마틴 로고 장식이 돋보이는 코튼성 크링클 소재의 미니드레스"
+    ],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -8922,7 +9160,9 @@
   {
     "id": "7543",
     "name": "UNBALANCE PLEATS BELTED MINI SKIRT IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "캔톤을 이용한 여밈과 벨트 디테일으로 캐주얼하게 착용 가능한 플리츠 미니스커트"
+    ],
     "price": 268000,
     "discountRate": 0,
     "discountPrice": 268000,
@@ -8963,7 +9203,9 @@
   {
     "id": "7542",
     "name": "UNBALANCE PLEATS BELTED MINI SKIRT IN KHAKI",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "캔톤을 이용한 여밈과 벨트 디테일으로 캐주얼하게 착용 가능한 플리츠 미니스커트"
+    ],
     "price": 268000,
     "discountRate": 0,
     "discountPrice": 268000,
@@ -9005,7 +9247,9 @@
   {
     "id": "7531",
     "name": "WRAP PLEATS SLEEVELESS LONG DRESS IN BLACK",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "로우컷과 핀턱 디테일이 포인트인 플리츠 랩스커트 형태의 슬리브리스 드레스"
+    ],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -9051,7 +9295,9 @@
   {
     "id": "7369",
     "name": "LAYERED WRAP SKIRT IN NAVY",
-    "bullet_points": ["단독 드라이클리닝 권장"],
+    "bullet_points": [
+      "앞판 레이어드 디자인으로 다양한 연출이 가능한 핀스트라이프 울 혼방 소재의 H라인 롱 스커트"
+    ],
     "price": 248000,
     "discountRate": 0,
     "discountPrice": 248000,
@@ -9101,7 +9347,7 @@
   {
     "id": "8890",
     "name": "BOLD BUCKLE LEATHER SHOULDER BAG IN BLACK",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["미니멀한 디자인의 볼드 버클 레더 숄더백"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -9134,7 +9380,7 @@
   {
     "id": "8889",
     "name": "BOLD BUCKLE LEATHER SHOULDER BAG IN BROWN",
-    "bullet_points": ["제조일자: 2026-01"],
+    "bullet_points": ["미니멀한 디자인의 볼드 버클 레더 숄더백"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -9167,7 +9413,7 @@
   {
     "id": "8520",
     "name": "FUR TRIANGLE SHOULDER BAG IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": ["폭신한 인조퍼 소재를 사용한 트라이앵글 실루엣의 숄더백"],
     "price": 198000,
     "discountRate": 0,
     "discountPrice": 198000,
@@ -9199,7 +9445,9 @@
   {
     "id": "8519",
     "name": "FUR TRIANGLE MINI BAG IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "폭신한 인조퍼 소재를 사용한 트라이앵글 실루엣의 스몰 사이즈 숄더백"
+    ],
     "price": 178000,
     "discountRate": 0,
     "discountPrice": 178000,
@@ -9231,7 +9479,9 @@
   {
     "id": "8412",
     "name": "MULTI POCKET DOUBLE STRAP BAG IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "직사각형 쉐입으로 지퍼 수납공간이 있는 멀티포켓 디자인의 미니백"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -9263,7 +9513,9 @@
   {
     "id": "8411",
     "name": "MULTI POCKET DOUBLE STRAP BAG IN BROWN",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "직사각형 쉐입으로 지퍼 수납공간이 있는 멀티포켓 디자인의 미니백"
+    ],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -9295,7 +9547,9 @@
   {
     "id": "8410",
     "name": "ZIPPER POINT MIDDLE HIGH BOOTS IN BLACK",
-    "bullet_points": ["제조일자: 2025-09"],
+    "bullet_points": [
+      "사이드 메탈 지퍼와 버클장식 디테일이 들어간 폴더블 디자인의 무릎기장 미들하이 부츠"
+    ],
     "price": 358000,
     "discountRate": 0,
     "discountPrice": 358000,
@@ -9349,9 +9603,7 @@
   {
     "id": "8168",
     "name": "STILETTO ANKLE BOOTS IN BLACK",
-    "bullet_points": [
-      "홀로그램이 없는 경우, 정품이 아닐 수 있으니 구매 시 참고 부탁드립니다."
-    ],
+    "bullet_points": ["볼드한 스트랩 디테일의 스틸레토 앵클 부츠"],
     "price": 328000,
     "discountRate": 0,
     "discountPrice": 328000,
@@ -9399,9 +9651,7 @@
   {
     "id": "8167",
     "name": "MULTI POCKET LEATHER SHOPPER BAG IN BLACK",
-    "bullet_points": [
-      "홀로그램 스티커가 없는 경우 정품이 아닐 수 있으니 주의부탁드립니다."
-    ],
+    "bullet_points": ["멀티포켓 디테일의 빅 쇼퍼백"],
     "price": 358000,
     "discountRate": 0,
     "discountPrice": 358000,
@@ -9434,9 +9684,7 @@
   {
     "id": "8166",
     "name": "MULTI POCKET LEATHER SHOPPER BAG IN GREY",
-    "bullet_points": [
-      "홀로그램 스티커가 없는 경우 정품이 아닐 수 있으니 주의부탁드립니다."
-    ],
+    "bullet_points": ["멀티포켓 디테일의 빅 쇼퍼백"],
     "price": 358000,
     "discountRate": 0,
     "discountPrice": 358000,
@@ -9469,7 +9717,7 @@
   {
     "id": "8024",
     "name": "ARCH SHAPE LEATHER BOWLING BAG IN BLACK",
-    "bullet_points": ["제조일자: Jul-25"],
+    "bullet_points": ["아치쉐입 디자인의 레더 볼링백"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -9502,7 +9750,7 @@
   {
     "id": "8023",
     "name": "ARCH SHAPE LEATHER BOWLING BAG IN GREY",
-    "bullet_points": ["제조일자: Jul-25"],
+    "bullet_points": ["아치쉐입 디자인의 레더 볼링백"],
     "price": 238000,
     "discountRate": 0,
     "discountPrice": 238000,
@@ -9535,7 +9783,7 @@
   {
     "id": "8022",
     "name": "BOLD STRAP BALLET SHOES IN BLACK",
-    "bullet_points": ["제조일자: Jul-25"],
+    "bullet_points": ["스트랩 디테일의 볼드하고 모던한 발레리나 플랫슈즈"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -9583,7 +9831,7 @@
   {
     "id": "7805",
     "name": "OPEN TOE STRAP MULE IN BLACK",
-    "bullet_points": ["제조일자: May-25"],
+    "bullet_points": ["스퀘어 오픈토 디자인의 버클 스트랩 플랫 슈즈"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -9631,7 +9879,7 @@
   {
     "id": "7804",
     "name": "OPEN TOE STRAP MULE IN IVORY",
-    "bullet_points": ["제조일자: May-25"],
+    "bullet_points": ["스퀘어 오픈토 디자인의 버클 스트랩 플랫 슈즈"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -9679,7 +9927,7 @@
   {
     "id": "7547",
     "name": "ARCH SHAPE MINI WALLET BAG IN BLACK",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["아치 쉐입디자인의 레더 더블 파우치백"],
     "price": 158000,
     "discountRate": 0,
     "discountPrice": 158000,
@@ -9711,7 +9959,7 @@
   {
     "id": "7546",
     "name": "ARCH SHAPE MINI WALLET BAG IN BLUE",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["아치 쉐입디자인의 레더 더블 파우치백"],
     "price": 158000,
     "discountRate": 0,
     "discountPrice": 158000,
@@ -9743,7 +9991,7 @@
   {
     "id": "7551",
     "name": "BUCKLE STRAP SANDAL HEELS IN BLACK",
-    "bullet_points": ["제조일자: Mar-25"],
+    "bullet_points": ["포인티드토의 슬림한 버클스트랩 슬라이드 힐"],
     "price": 308000,
     "discountRate": 0,
     "discountPrice": 308000,
@@ -9791,7 +10039,7 @@
   {
     "id": "7550",
     "name": "BUCKLE STRAP SANDAL HEELS IN BROWN",
-    "bullet_points": ["제조일자: Mar-25"],
+    "bullet_points": ["포인티드토의 슬림한 버클스트랩 슬라이드 힐"],
     "price": 308000,
     "discountRate": 0,
     "discountPrice": 308000,
@@ -9839,7 +10087,7 @@
   {
     "id": "7371",
     "name": "FRAME TWO WAY CHAIN BAG IN BLACK",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["금속 프레임 비대칭 체인 숄더백"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -9871,7 +10119,7 @@
   {
     "id": "7370",
     "name": "FRAME TWO WAY CHAIN BAG IN WHITE",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["금속 프레임 비대칭 체인 숄더백"],
     "price": 258000,
     "discountRate": 0,
     "discountPrice": 258000,
@@ -9903,7 +10151,7 @@
   {
     "id": "7378",
     "name": "BUCKLE POINT SLIDE HEELS IN BLACK",
-    "bullet_points": ["겉감 - 천연가죽 (소가죽)"],
+    "bullet_points": ["스퀘어토의 버클디테일 슬라이드 힐"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -9950,7 +10198,7 @@
   {
     "id": "7377",
     "name": "BUCKLE POINT SLIDE HEELS IN MIX",
-    "bullet_points": ["겉감 - 천연가죽 (소가죽)"],
+    "bullet_points": ["스퀘어토의 버클디테일 슬라이드 힐"],
     "price": 298000,
     "discountRate": 0,
     "discountPrice": 298000,
@@ -9998,7 +10246,7 @@
   {
     "id": "7203",
     "name": "BOLD BUCKLE LEATHER MULE IN BROWN",
-    "bullet_points": ["안감 - 합성가죽"],
+    "bullet_points": ["볼드 버클 디테일의 웨지힐 뮬 슈즈"],
     "price": 348000,
     "discountRate": 0,
     "discountPrice": 348000,
@@ -10046,7 +10294,7 @@
   {
     "id": "7204",
     "name": "BOLD BUCKLE LEATHER MULE IN WHITE",
-    "bullet_points": ["안감 - 합성가죽"],
+    "bullet_points": ["볼드 버클 디테일의 웨지힐 뮬 슈즈"],
     "price": 348000,
     "discountRate": 0,
     "discountPrice": 348000,
@@ -10093,7 +10341,7 @@
   {
     "id": "7205",
     "name": "BOLD BUCKLE LEATHER MULE IN BLACK",
-    "bullet_points": ["안감 - 합성가죽"],
+    "bullet_points": ["볼드 버클 디테일의 웨지힐 뮬 슈즈"],
     "price": 348000,
     "discountRate": 0,
     "discountPrice": 348000,
@@ -10140,9 +10388,7 @@
   {
     "id": "8165",
     "name": "BOLD LOGO EMBROIDERY FAUX LEATHER BALL CAP IN BLACK",
-    "bullet_points": [
-      "홀로그램 스티커가 없는 경우 정품이 아닐 수 있으니 주의부탁드립니다."
-    ],
+    "bullet_points": ["볼드한 로고자수 레더 볼캡"],
     "price": 78000,
     "discountRate": 0,
     "discountPrice": 78000,
@@ -10174,7 +10420,7 @@
   {
     "id": "8164",
     "name": "DOUBLE STRAP LEATHER BELT IN BLACK",
-    "bullet_points": ["천연가죽(소가죽)"],
+    "bullet_points": ["더블 스트랩 레더 벨트"],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -10206,7 +10452,7 @@
   {
     "id": "8163",
     "name": "DOUBLE STRAP LEATHER BELT IN BROWN",
-    "bullet_points": ["천연가죽(소가죽)"],
+    "bullet_points": ["더블 스트랩 레더 벨트"],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -10238,7 +10484,7 @@
   {
     "id": "7549",
     "name": "ONIX BALL NECKLACE IN BLACK",
-    "bullet_points": ["겉감 - 천연원석"],
+    "bullet_points": ["오닉스 원석소재의 심플한 네크리스"],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -10267,7 +10513,7 @@
   {
     "id": "7548",
     "name": "ONIX BALL NECKLACE IN WHITE",
-    "bullet_points": ["겉감 - 천연원석"],
+    "bullet_points": ["오닉스 원석소재의 심플한 네크리스"],
     "price": 118000,
     "discountRate": 0,
     "discountPrice": 118000,
@@ -10296,7 +10542,7 @@
   {
     "id": "7372",
     "name": "ARCH SHAPE CARD WALLET IN BLUE",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["아치 쉐입디자인의 레더 카드지갑"],
     "price": 68000,
     "discountRate": 0,
     "discountPrice": 68000,
@@ -10324,7 +10570,7 @@
   {
     "id": "7373",
     "name": "ARCH SHAPE CARD WALLET IN IVORY",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["아치 쉐입디자인의 레더 카드지갑"],
     "price": 68000,
     "discountRate": 0,
     "discountPrice": 68000,
@@ -10352,7 +10598,7 @@
   {
     "id": "7374",
     "name": "ARCH SHAPE CARD WALLET IN BLACK",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["아치 쉐입디자인의 레더 카드지갑"],
     "price": 68000,
     "discountRate": 0,
     "discountPrice": 68000,
@@ -10380,7 +10626,7 @@
   {
     "id": "7375",
     "name": "ROUND STUD LEATHER BELT IN BLACK",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["볼드한 스터드 디테일 레더 벨트"],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -10411,7 +10657,7 @@
   {
     "id": "7376",
     "name": "PYTHON SKIN LEATHER BELT IN GREY",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["파이톤 패턴 레더 벨트"],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
@@ -10442,7 +10688,7 @@
   {
     "id": "7202",
     "name": "WIDE LEATHER BELT IN BLACK",
-    "bullet_points": ["천연가죽 (소가죽)"],
+    "bullet_points": ["D링 고리 디테일의 와이드 카우레더 벨트"],
     "price": 88000,
     "discountRate": 0,
     "discountPrice": 88000,
