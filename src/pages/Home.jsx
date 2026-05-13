@@ -10,6 +10,7 @@ import MainTop from '../components/MainTop';
 import Collection from '../components/Collection';
 import ShortCut from '../components/ShortCut';
 import TimeSalePopup from '../components/TimeSalePopup';
+import MiddleBanner from '../components/MiddleBanner';
 
 export default function Home() {
     return (
@@ -24,6 +25,8 @@ export default function Home() {
                 <ShortCut />
                 {/* 베스트 아이템 */}
                 <Weeklybest />
+                {/* 중간 배너 */}
+                <MiddleBanner />
                 {/* 신상품 */}
                 <NewArrivals />
                 {/* 더 에딧 */}

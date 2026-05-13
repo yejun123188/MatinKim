@@ -20,6 +20,7 @@ export default function ProductCard({
     as: CardTag = "li",
     className = "",
     onClick,
+    rank,
 }) {
     const {
         items,
@@ -256,7 +257,11 @@ export default function ProductCard({
                     alt={displayProduct.name}
                 />
 
-                {badgeItems.length > 0 && (
+                {rank ? (
+                    <div className="badge-wrap rank-badge-wrap">
+                        <span className="rank-badge">{rank}</span>
+                    </div>
+                ) : badgeItems.length > 0 && (
                     <div className="badge-wrap">
                         {badgeItems.map((badge) => (
                             <span

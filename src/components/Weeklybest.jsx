@@ -72,7 +72,7 @@ export default function Weeklybest() {
                 >
                     <ul className="best-item-list" ref={listRef}>
                         {visibleItems.map((item, id) => (
-                            <ProductCard cate={item} key={id} />
+                            <ProductCard cate={item} key={id} rank={id + 1} />
                         ))}
                     </ul>
                 </div>

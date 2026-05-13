@@ -9,7 +9,7 @@ const EDIT_CONFIG = [
         src: "./images/collection/jeno/img_jeno_00005.jpg",
         alt: "edit1",
         title: "Matin Kim X Nct jeno",
-        subscribe: "'No Rush!'",
+        subscribe: "NCT 제노와 함께한 'No Rush!'",
         link: "/collections/1",
         subIds: ["5514", "9008"],
         useHover: false,
@@ -18,7 +18,7 @@ const EDIT_CONFIG = [
         src: "./images/collection/liz/img_liz_00012.jpg",
         alt: "edit2",
         title: "Matin kim x Liz",
-        subscribe: "'BUCKET LIST'",
+        subscribe: "리즈의 재미있는 상상력을 담은 버킷리스트",
         link: "/collections/3",
         subIds: ["8721", "8951"],
         useHover: true,  // ← 이것만 hoverImg 사용
@@ -27,7 +27,7 @@ const EDIT_CONFIG = [
         src: "./images/collection/ningning/img_ningning_00019.jpg",
         alt: "edit3",
         title: "Matin kim x Ningning",
-        subscribe: "'Record 2'",
+        subscribe: "닝닝과 함께한 마뗑킴의 겨울 컬렉션",
         link: "/collections/8",
         subIds: ["8367", "8344"],
         useHover: false,
@@ -88,11 +88,11 @@ export default function TheEdit() {
                                                         {s.discountRate > 0 ? (
                                                             <>
                                                                 <p className="discount-rate">{s.discountRate}%</p>
-                                                                <p className="discount-price">₩{s.discountPrice.toLocaleString()}</p>
-                                                                <p className="original-price">₩{s.price.toLocaleString()}</p>
+                                                                <p className="discount-price">{s.discountPrice.toLocaleString()}</p>
+                                                                <p className="original-price">{s.price.toLocaleString()}</p>
                                                             </>
                                                         ) : (
-                                                            <p className="price">₩{s.price.toLocaleString()}</p>
+                                                            <p className="price">{s.price.toLocaleString()}</p>
                                                         )}
                                                     </li>
                                                     <li className="color-list color-wrap">

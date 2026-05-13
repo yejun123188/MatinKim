@@ -660,6 +660,29 @@ $filter-line-width: 90%;
                                     border-color: g.$main-color;
                                     color: g.$white-color;
                                 }
+
+                                &.rank-badge-wrap {
+                                    position: absolute;
+                                    top: 0px;
+                                    right: auto;
+                                    left: 0px;
+                                    width: auto;
+                                    gap: 0;
+
+                                    .rank-badge {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 30px;
+                                        height: 30px;
+                                        background: g.$main-color;
+                                        border: none;
+                                        color: g.$white-color;
+                                        font-size: 0.875rem;
+                                        font-weight: g.$Bold;
+                                        line-height: 1;
+                                    }
+                                }
                             }
 
                             &::after {
