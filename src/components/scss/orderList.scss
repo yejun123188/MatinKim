@@ -206,35 +206,35 @@
           }
         }
 
-          .order-list {
-            .order-product {
-              display: grid;
-              grid-template-columns: 120px minmax(0, 1fr);
-              gap: 0 28px;
-              padding: 28px 12px;
-              @include g.userInfoListLine;
+        .order-list {
+          .order-product {
+            display: grid;
+            grid-template-columns: 120px minmax(0, 1fr);
+            gap: 0 28px;
+            padding: 28px 12px;
+            @include g.userInfoListLine;
 
-              .img-box {
-                display: contents;
+            .img-box {
+              display: contents;
 
-                img {
-                  grid-column: 1;
-                  grid-row: 1 / span 5;
-                  min-width: 120px;
-                  width: 120px;
-                  height: 160px;
-                  object-fit: cover;
-                }
+              img {
+                grid-column: 1;
+                grid-row: 1 / span 5;
+                min-width: 120px;
+                width: 120px;
+                height: 160px;
+                object-fit: cover;
+              }
 
-                .product-text {
-                  grid-column: 2;
-                  grid-row: 2 / span 3;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 5px;
-                  min-width: 0;
-                  white-space: nowrap;
-                  overflow: hidden;
+              .product-text {
+                grid-column: 2;
+                grid-row: 2 / span 3;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                min-width: 0;
+                white-space: nowrap;
+                overflow: hidden;
                 text-overflow: ellipsis;
 
                 .order-name {
@@ -253,8 +253,8 @@
                 }
 
                 .order-count {
-                font-size: 13px;
-                font-weight: g.$Regular;
+                  font-size: 13px;
+                  font-weight: g.$Regular;
                 }
 
                 .order-count {
@@ -352,6 +352,7 @@
     .order-tab-content {
       .tab-order-wrap {
         .date-filter-wrap {
+
           .date-btn-wrap,
           .custom-date-wrap {
             flex-wrap: wrap;
@@ -447,7 +448,7 @@
               min-width: 0;
             }
 
-            > button {
+            >button {
               grid-column: 1 / -1;
             }
           }

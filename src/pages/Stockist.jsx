@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./scss/Stockist.scss"
 import { useMapStore } from '../store/useMapStore';
+import { Link } from 'react-router-dom';
 
 const stockists = [
     { name: "Matin Kim GLOBAL", url: "https://matinkim.shop" },
@@ -103,10 +104,12 @@ export default function Stockist() {
 
                     {stockists.map((s, id) => (
                         <ul className="store" key={id}>
-                            <li className='store-name' >{s.name}
-                                <span><img src="/images/sub-about/arrow-up.svg" alt="" /></span>
-                            </li>
-                            <li className='store-url'><a href={s.url}>{s.url}</a></li>
+                            <Link to={s.url}>
+                                <li className='store-name' >{s.name}
+                                    <span><img src="/images/sub-about/arrow-up.svg" alt="" /></span>
+                                </li>
+                                <li className='store-url'><a href={s.url}>{s.url}</a></li>
+                            </Link>
                         </ul>
                     ))}
                 </div>
