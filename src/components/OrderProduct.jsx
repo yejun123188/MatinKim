@@ -121,12 +121,12 @@ export default function OrderProduct({
             {showHeader && showTitle && (
               <div className="order-list-title">
                 <div className="order-date">
-                  <p>{getOrderDateLabel(orderDate, representativeOrder)}</p>
-                  <p>
+                  <span>{getOrderDateLabel(orderDate, representativeOrder)}</span>
+                  <span>
                     {representativeOrder.date.slice(0, 4)}.
                     {representativeOrder.date.slice(4, 6)}.
                     {representativeOrder.date.slice(6, 8)}
-                  </p>
+                  </span>
                 </div>
                 {onDetailClick && (
                   <div className="order-detail">

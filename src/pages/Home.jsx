@@ -8,8 +8,8 @@ import MainTop from "../components/MainTop";
 import Collection from "../components/Collection";
 import ShortCut from "../components/ShortCut";
 import TimeSalePopup from "../components/TimeSalePopup";
+import MiddleBanner from "../components/MiddleBanner";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
-import "./scss/KimMatin.scss";
 
 export default function Home() {
   const { brand } = useBrandStore();
@@ -23,6 +23,7 @@ export default function Home() {
         <MainTop />
         {!isKimMatin && <ShortCut />}
         <Weeklybest />
+        {!isKimMatin && <MiddleBanner />}
         {!isKimMatin && <NewArrivals />}
         {!isKimMatin && <TheEdit />}
         {!isKimMatin && <Flagship />}
