@@ -282,6 +282,10 @@
     background: rgba(0, 0, 0, 0.32) !important;
   }
 
+  .section-banner .banner-text {
+    display: none !important;
+  }
+
   .filter-wrap {
     border-right-color: rgba(255, 255, 255, 0.16) !important;
     background: $kim-bg !important;
@@ -505,8 +509,15 @@
       border-color: rgba(255, 255, 255, 0.2) !important;
 
       .card-like-btn {
-        background: $kim-text !important;
-        border-color: $kim-text !important;
+        background: $kim-bg !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+        img {
+          filter: brightness(0) invert(1);
+        }
+
+        img.liked {
+          filter: none;
+        }
       }
 
       .card-action-btn {
@@ -527,10 +538,17 @@
   .pagination {
     .page-btn {
       border: 0 !important;
-      background: $kim-bg !important;
+      background: transparent !important;
       color: $kim-muted !important;
 
+      &:hover:not(:disabled) {
+        background: transparent !important;
+        color: $kim-text !important;
+        opacity: 1 !important;
+      }
+
       &.is-active {
+        background: transparent !important;
         color: $kim-text !important;
       }
 
@@ -646,21 +664,6 @@
     .card-size-list {
       border-top-color: rgba(255, 255, 255, 0.18) !important;
       background: #111 !important;
-    }
-
-    .card-action-bar {
-      background: #000 !important;
-      border-top-color: rgba(255, 255, 255, 0.2) !important;
-
-      .card-like-btn {
-        background: #000 !important;
-        border-color: #fff !important;
-      }
-
-      .card-action-btn {
-        background: #000 !important;
-        color: #fff !important;
-      }
     }
   }
 }
