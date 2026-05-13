@@ -17,16 +17,39 @@ const kimMatinHeroImages = [
   "/images/KIMMATIN-hero/KM_main_slider_05.jpg",
 ];
 
-export default function MainTop() {
+export default function MainTop({
+  brandOverride,
+  toggleBrandOverride,
+  isBrandSwitching = false,
+  mediaClassName = "",
+  onBrandChange,
+} = {}) {
   const { brand, setBrand } = useBrandStore();
+  const activeBrand = brandOverride || brand;
+  const activeToggleBrand = toggleBrandOverride || activeBrand;
+  const changeBrand = onBrandChange || setBrand;
 
   const isKimMatin =
-    brand === BRAND.KIMMATIN;
+    activeBrand === BRAND.KIMMATIN;
+  const isToggleKimMatin =
+    activeToggleBrand === BRAND.KIMMATIN;
 
   return (
     <div className="main-top">
+      <video
+        className="main-top-video-preload"
+        src="./videos/main-top/top-video-2160p.mp4"
+        preload="auto"
+        muted
+        playsInline
+        aria-hidden="true"
+      />
 
-      <div className="video-wrap">
+      <div
+        className={["video-wrap", mediaClassName]
+          .filter(Boolean)
+          .join(" ")}
+      >
         {isKimMatin ? (
           <Swiper
             className="kimmatin-hero-swiper"
@@ -52,6 +75,7 @@ export default function MainTop() {
             muted
             loop
             playsInline
+            preload="auto"
           />
         )}
 
@@ -62,13 +86,13 @@ export default function MainTop() {
         <div className="toggle-wrap-radi">
 
           <div
-            className={`toggle-bg ${isKimMatin ? "kim-active" : ""
+            className={`toggle-bg ${isToggleKimMatin ? "kim-active" : ""
               }`}
           >
 
             {/* 슬라이드 버튼 */}
             <div
-              className={`toggle-btn ${isKimMatin ? "kim-active" : ""
+              className={`toggle-btn ${isToggleKimMatin ? "kim-active" : ""
                 }`}
             />
 
@@ -78,10 +102,11 @@ export default function MainTop() {
               <button
                 type="button"
                 className={
-                  !isKimMatin ? "active" : ""
+                  !isToggleKimMatin ? "active" : ""
                 }
+                disabled={isBrandSwitching}
                 onClick={() =>
-                  setBrand(BRAND.MATINKIM)
+                  changeBrand(BRAND.MATINKIM)
                 }
               >
                 Matin Kim
@@ -90,10 +115,11 @@ export default function MainTop() {
               <button
                 type="button"
                 className={
-                  isKimMatin ? "active" : ""
+                  isToggleKimMatin ? "active" : ""
                 }
+                disabled={isBrandSwitching}
                 onClick={() =>
-                  setBrand(BRAND.KIMMATIN)
+                  changeBrand(BRAND.KIMMATIN)
                 }
               >
                 KIMMATIN

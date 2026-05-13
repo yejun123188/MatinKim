@@ -1,0 +1,68 @@
+.home-brand-switching {
+  overflow-x: hidden;
+}
+
+.home-brand-transition--left {
+  --home-brand-exit-x: -12vw;
+  --home-brand-enter-x: 12vw;
+}
+
+.home-brand-transition--right {
+  --home-brand-exit-x: 12vw;
+  --home-brand-enter-x: -12vw;
+}
+
+.home-brand-animate-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: opacity, transform;
+}
+
+.home-brand-switching.is-exit .home-brand-animate-item {
+  animation: homeBrandFadeOutMove 0.42s cubic-bezier(0.45, 0, 0.55, 1)
+    forwards;
+  pointer-events: none;
+}
+
+.home-brand-switching.is-enter .home-brand-animate-item {
+  animation: homeBrandFadeInMove 0.64s cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+  pointer-events: none;
+}
+
+.home-brand-switching .toggle-labels button {
+  cursor: default;
+}
+
+@keyframes homeBrandFadeOutMove {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(var(--home-brand-exit-x), 0, 0);
+  }
+}
+
+@keyframes homeBrandFadeInMove {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--home-brand-enter-x), 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-brand-switching.is-exit .home-brand-animate-item,
+  .home-brand-switching.is-enter .home-brand-animate-item {
+    animation: none;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
