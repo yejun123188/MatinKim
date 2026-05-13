@@ -9,6 +9,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
 import products2 from "../data/products2.json";
+import archiveData from "../data/archive.json";
 import { buildProductMenus } from "../utils/productMenu";
 
 
@@ -25,6 +26,39 @@ const defaultMenus = [
   { name: "MUST HAVE", link: "/musthave" },
   { name: "COLLAB", link: "/collab" },
   { name: "ALL", link: "/all" },
+];
+
+const matinKimShopMenus = [
+  {
+    name: "clothing",
+    link: "/clothing",
+    subMenu: [
+      { name: "아우터", subName: "OUTER", link: "/clothing/outerwears" },
+      { name: "상의", subName: "TOPS", link: "/clothing/tops" },
+      { name: "하의", subName: "BOTTOMS", link: "/clothing/bottoms" },
+      { name: "드레스", subName: "DRESSES", link: "/clothing/dresses" },
+    ],
+  },
+  {
+    name: "goods",
+    link: "/goods",
+    subMenu: [
+      { name: "가방", subName: "BAGS", link: "/goods/bags" },
+      { name: "신발", subName: "SHOES", link: "/goods/shoes" },
+      { name: "지갑", subName: "WALLETS", link: "/goods/wallets" },
+      { name: "모자", subName: "HATS & CAPS", link: "/goods/hats" },
+    ],
+  },
+  {
+    name: "accessories",
+    link: "/accessories",
+    subMenu: [
+      { name: "헤어", subName: "HAIR", link: "/accessories/hair" },
+      { name: "넥웨어", subName: "NECKWEAR", link: "/accessories/neckwear" },
+      { name: "파우치", subName: "POUCHES & CASES", link: "/accessories/pouches" },
+      { name: "기타", subName: "OTHERS", link: "/accessories/others" },
+    ],
+  },
 ];
 
 const photoMenu = [
@@ -68,6 +102,34 @@ const kimMatinMenus = [
   { key: "about", label: "ABOUT", link: "/kimmatin/about" },
 ];
 
+const kimMatinHeaderImages = [
+  "https://matinkim.com/images/kimmatin/archive/2026/spring/1st/2-1.jpg?v=1",
+  "https://matinkim.com/images/kimmatin/archive/2025/spring/18.jpg?v=1",
+  "https://matinkim.com/images/kimmatin/archive/2024/spring/13.jpg",
+];
+
+const findArchiveByImage = (imageSrc) =>
+  archiveData.find((archive) =>
+    archive.sections?.some((section) =>
+      section.images?.includes(imageSrc)
+    )
+  );
+
+const kimMatinPhotoMenu = kimMatinHeaderImages.map((src) => {
+  const archive = findArchiveByImage(src);
+
+  return {
+    src,
+    subtitle: "Lookbook",
+    title: archive?.title || "",
+    link: "/kimmatin/archive",
+  };
+});
+
+const kimMatinDefaultMenus = defaultMenus.filter(
+  (menu) => menu.name !== "SALE" && menu.name !== "COLLAB"
+);
+
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -88,10 +150,13 @@ export default function Header() {
   const [searchWord, setSearchWord] = useState("");
   const [recentKeywords, setRecentKeywords] = useState([]);
   const [activeBestTab, setActiveBestTab] = useState("ALL");
+  const [headerTransitionPhase, setHeaderTransitionPhase] = useState("idle");
   const searchInputRef = useRef(null);
   const isHomeIdle = isHome && !isScrolled && !isShopHovered;
   const kimMatinShopMenus = useMemo(() => buildProductMenus(products2), []);
-  const headerShopMenus = isKimMatin ? kimMatinShopMenus : menus;
+  const headerShopMenus = isKimMatin ? kimMatinShopMenus : matinKimShopMenus;
+  const headerDefaultMenus = isKimMatin ? kimMatinDefaultMenus : defaultMenus;
+  const headerPhotoMenu = isKimMatin ? kimMatinPhotoMenu : photoMenu;
 
   const searchBestItems = useMemo(() => {
     const kimBestItems = products2.filter(
@@ -180,6 +245,22 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    const handleBrandTransition = (event) => {
+      const phase = event.detail?.phase;
+
+      if (phase === "exit" || phase === "enter" || phase === "idle") {
+        setHeaderTransitionPhase(phase);
+      }
+    };
+
+    window.addEventListener("matinKimBrandTransition", handleBrandTransition);
+
+    return () => {
+      window.removeEventListener("matinKimBrandTransition", handleBrandTransition);
+    };
+  }, []);
+
+  useEffect(() => {
     if (isCartOpen || isLoginOpen || isSearchOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -242,24 +323,28 @@ export default function Header() {
 
         <div
           className={`header-wrapper ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
-            } ${!isHome || isScrolled ? "no-banner" : ""}`}
+            } ${!isHome || isScrolled ? "no-banner" : ""} ${headerTransitionPhase !== "idle" ? `header-brand-${headerTransitionPhase}` : ""
+            }`}
           onMouseLeave={() => setIsShopHovered(false)}
         >
           <div
             className={`header-show ${isHome ? "home" : "subpage"} ${isScrolled ? "scrolled" : ""
               } ${isHomeIdle ? "home-idle" : ""
-              } ${!isHome || isScrolled ? "no-banner" : ""} ${isKimMatin ? "kimmatin-header" : ""}`}
+              } ${!isHome || isScrolled ? "no-banner" : ""} ${isKimMatin ? "kimmatin-header" : ""
+              }`}
           >
             <div className="inner">
               <div className="header-left">
                 <h1>
                   <Link to="/" onClick={() => setIsShopHovered(false)}>
                     <img
-                      src={
-                        isKimMatin
-                          ? "/images/header/logo-KIMMATIN-white.svg"
-                          : "/images/header/logo-MatinKim-black.svg"
-                      }
+                      className="brand-logo brand-logo--matinkim"
+                      src="/images/header/logo-MatinKim-black.svg"
+                      alt="濡쒓퀬"
+                    />
+                    <img
+                      className="brand-logo brand-logo--kimmatin"
+                      src="/images/header/logo-KIMMATIN-white.svg"
                       alt="로고"
                     />
                   </Link>
@@ -336,14 +421,15 @@ export default function Header() {
           </div>
 
           <div
-            className={`header-active ${isShopHovered ? "active" : ""} ${isKimMatin ? "kimmatin-active" : ""}`}
+            className={`header-active ${isShopHovered ? "active" : ""} ${isKimMatin ? "kimmatin-active" : ""
+              }`}
             onMouseEnter={() => setIsShopHovered(true)}
             onClick={() => setIsShopHovered(false)}
           >
             <div className="inner">
               <div className="header-active-left">
                 <ul className="default-menu">
-                  {defaultMenus.map((m, id) => (
+                  {headerDefaultMenus.map((m, id) => (
                     <li key={id}>
                       <Link to={m.link}>
                         {m.name}
@@ -379,7 +465,7 @@ export default function Header() {
               </div>
 
               <div className="header-active-right">
-                {photoMenu.map((m, id) => (
+                {headerPhotoMenu.map((m, id) => (
                   <Link key={id} to={m.link}>
                     <div className="img-box">
                       <img src={m.src} alt="" />

@@ -2,6 +2,131 @@
      padding-bottom: 150px;
  }
 
+ html,
+ body,
+ #root {
+     min-height: 100%;
+ }
+
+ body {
+     background: #1e1e1e;
+ }
+
+ .app-shell {
+     min-height: 100vh;
+     background: #1e1e1e;
+ }
+
+ .app-shell--kimmatin {
+     background: #000;
+ }
+
+ .app-content {
+     background: #fff;
+     animation: appPageEnter 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
+ }
+
+ .app-shell--kimmatin .app-content {
+     background: #050505;
+ }
+
+ @keyframes appPageEnter {
+     from {
+         transform: translateY(18px);
+     }
+
+     to {
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes appOverlayEnter {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes appModalEnter {
+     from {
+         opacity: 0;
+         transform: translateY(22px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes appPanelEnterRight {
+     from {
+         opacity: 0;
+         transform: translateX(36px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ .cart-panel,
+ .modal-overlay-add,
+ .modal-overlay-cart-popup,
+ .pay-modal-overlay,
+ .share-modal,
+ .image-zoom-modal,
+ .image-modal {
+     animation: appOverlayEnter 0.24s ease both;
+ }
+
+ .login-page .login-dim {
+     animation: appOverlayEnter 0.24s ease both;
+ }
+
+ .login-page .login-right,
+ .cart-panel-inner {
+     animation: appPanelEnterRight 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+ }
+
+ .sale-popup,
+ .pay-modal-box,
+ .modal-overlay-add .modal-box,
+ .modal-overlay-cart-popup .modal-wrap,
+ .share-modal-content,
+ .image-zoom-modal-content,
+ .image-modal img {
+     animation: appModalEnter 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+     .app-content,
+     .login-page .login-dim,
+     .cart-panel,
+     .modal-overlay-add,
+     .modal-overlay-cart-popup,
+     .pay-modal-overlay,
+     .share-modal,
+     .image-zoom-modal,
+     .image-modal,
+     .login-page .login-right,
+     .cart-panel-inner,
+     .sale-popup,
+     .pay-modal-box,
+     .modal-overlay-add .modal-box,
+     .modal-overlay-cart-popup .modal-wrap,
+     .share-modal-content,
+     .image-zoom-modal-content,
+     .image-modal img {
+         animation: none !important;
+     }
+ }
+
+
  .sub-section {
      padding: 120px 0 80px;
  }

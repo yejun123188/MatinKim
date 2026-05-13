@@ -1,4 +1,8 @@
-import React from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import "./scss/mainTop.scss";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -25,6 +29,11 @@ export default function MainTop({
   onBrandChange,
 } = {}) {
   const { brand, setBrand } = useBrandStore();
+  const preloadVideoRef = useRef(null);
+  const [matinVideoPoster, setMatinVideoPoster] = useState("");
+  const [isMatinVideoReady, setIsMatinVideoReady] = useState(false);
+  const [showMatinToggleOverlay, setShowMatinToggleOverlay] = useState(false);
+  const toggleOverlayTimerRef = useRef(null);
   const activeBrand = brandOverride || brand;
   const activeToggleBrand = toggleBrandOverride || activeBrand;
   const changeBrand = onBrandChange || setBrand;
@@ -34,21 +43,91 @@ export default function MainTop({
   const isToggleKimMatin =
     activeToggleBrand === BRAND.KIMMATIN;
 
+  useEffect(() => {
+    if (!isKimMatin) {
+      setIsMatinVideoReady(false);
+    }
+  }, [isKimMatin]);
+
+  useEffect(() => {
+    if (isBrandSwitching && activeToggleBrand === BRAND.MATINKIM) {
+      if (toggleOverlayTimerRef.current) {
+        window.clearTimeout(toggleOverlayTimerRef.current);
+      }
+      setShowMatinToggleOverlay(true);
+      return undefined;
+    }
+
+    if (!isBrandSwitching && showMatinToggleOverlay) {
+      toggleOverlayTimerRef.current = window.setTimeout(() => {
+        setShowMatinToggleOverlay(false);
+      }, 520);
+    }
+
+    return undefined;
+  }, [activeToggleBrand, isBrandSwitching, showMatinToggleOverlay]);
+
+  useEffect(() => {
+    return () => {
+      if (toggleOverlayTimerRef.current) {
+        window.clearTimeout(toggleOverlayTimerRef.current);
+      }
+    };
+  }, []);
+
+  const captureMatinVideoPoster = () => {
+    const video = preloadVideoRef.current;
+
+    if (!video || matinVideoPoster || !video.videoWidth || !video.videoHeight) {
+      return;
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const context = canvas.getContext("2d");
+
+    if (!context) {
+      return;
+    }
+
+    try {
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      setMatinVideoPoster(canvas.toDataURL("image/jpeg", 0.86));
+    } catch {
+      setMatinVideoPoster("");
+    }
+  };
+
   return (
     <div className="main-top">
       <video
+        ref={preloadVideoRef}
         className="main-top-video-preload"
         src="./videos/main-top/top-video-2160p.mp4"
         preload="auto"
         muted
         playsInline
         aria-hidden="true"
+        onLoadedData={captureMatinVideoPoster}
       />
 
       <div
-        className={["video-wrap", mediaClassName]
+        className={[
+          "video-wrap",
+          mediaClassName,
+          !isKimMatin && "matinkim-video-wrap",
+          !isKimMatin && matinVideoPoster && "has-video-poster",
+          !isKimMatin &&
+            (isMatinVideoReady ? "is-video-ready" : "is-video-loading"),
+        ]
           .filter(Boolean)
           .join(" ")}
+        style={
+          !isKimMatin && matinVideoPoster
+            ? { backgroundImage: `url(${matinVideoPoster})` }
+            : undefined
+        }
       >
         {isKimMatin ? (
           <Swiper
@@ -76,12 +155,18 @@ export default function MainTop({
             loop
             playsInline
             preload="auto"
+            poster={matinVideoPoster || undefined}
+            onLoadedData={() => setIsMatinVideoReady(true)}
+            onCanPlay={() => setIsMatinVideoReady(true)}
           />
         )}
 
       </div>
 
-      <div className="toggle-wrap">
+      <div
+        className={`toggle-wrap ${showMatinToggleOverlay ? "show-matinkim-overlay" : ""
+          }`}
+      >
 
         <div className="toggle-wrap-radi">
 

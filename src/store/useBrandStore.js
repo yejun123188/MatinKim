@@ -8,17 +8,7 @@ export const BRAND = {
 const BRAND_STORAGE_KEY = "matin-kim-brand";
 
 const getInitialBrand = () => {
-  if (typeof window === "undefined") {
-    return BRAND.MATINKIM;
-  }
-
-  const savedBrand = window.localStorage.getItem(
-    BRAND_STORAGE_KEY
-  );
-
-  return Object.values(BRAND).includes(savedBrand)
-    ? savedBrand
-    : BRAND.MATINKIM;
+  return BRAND.MATINKIM;
 };
 
 export const useBrandStore = create((set) => ({

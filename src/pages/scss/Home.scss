@@ -1,15 +1,24 @@
+.home-brand-bg--matinkim {
+  min-height: 100vh;
+  background: #fff !important;
+}
+
+.kimmatin-home.home-brand-bg--matinkim,
+.kimmatin-home.home-brand-bg--matinkim .main-top,
+.kimmatin-home.home-brand-bg--matinkim .weeklybest,
+.kimmatin-home.home-brand-bg--matinkim .collection,
+.kimmatin-home.home-brand-bg--matinkim .insta {
+  background: #fff !important;
+}
+
+.home-brand-bg--kimmatin {
+  min-height: 100vh;
+  background: #050505 !important;
+}
+
 .home-brand-switching {
   overflow-x: hidden;
-}
-
-.home-brand-transition--left {
-  --home-brand-exit-x: -12vw;
-  --home-brand-enter-x: 12vw;
-}
-
-.home-brand-transition--right {
-  --home-brand-exit-x: 12vw;
-  --home-brand-enter-x: -12vw;
+  transition: background-color 0.16s ease;
 }
 
 .home-brand-animate-item {
@@ -19,14 +28,12 @@
 }
 
 .home-brand-switching.is-exit .home-brand-animate-item {
-  animation: homeBrandFadeOutMove 0.42s cubic-bezier(0.45, 0, 0.55, 1)
-    forwards;
+  animation: homeBrandFadeOut 0.42s cubic-bezier(0.45, 0, 0.55, 1) forwards;
   pointer-events: none;
 }
 
 .home-brand-switching.is-enter .home-brand-animate-item {
-  animation: homeBrandFadeInMove 0.64s cubic-bezier(0.16, 1, 0.3, 1)
-    forwards;
+  animation: homeBrandFadeIn 0.64s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   pointer-events: none;
 }
 
@@ -34,7 +41,62 @@
   cursor: default;
 }
 
-@keyframes homeBrandFadeOutMove {
+.brand-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.64s cubic-bezier(0.16, 1, 0.3, 1);
+
+  img {
+    display: block;
+    width: min(320px, 48vw);
+    max-height: 86px;
+    object-fit: contain;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition:
+      transform 0.64s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.brand-transition-overlay--matinkim {
+  background: #fff;
+}
+
+.brand-transition-overlay--kimmatin {
+  background: #050505;
+}
+
+.brand-transition-overlay.is-prepare,
+.brand-transition-overlay.is-exit {
+  opacity: 1;
+  transition-duration: 0.42s;
+  transition-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+
+  img {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.brand-transition-overlay.is-active img {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brand-transition-overlay.is-enter {
+  opacity: 0;
+
+  img {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes homeBrandFadeOut {
   from {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -42,14 +104,14 @@
 
   to {
     opacity: 0;
-    transform: translate3d(var(--home-brand-exit-x), 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes homeBrandFadeInMove {
+@keyframes homeBrandFadeIn {
   from {
     opacity: 0;
-    transform: translate3d(var(--home-brand-enter-x), 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
