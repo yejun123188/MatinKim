@@ -7,8 +7,20 @@ import "./scss/instagram.scss"
 export default function Instagram() {
     const [insta, setInsta] = useState([])
 
+    const shuffleArray = (array) => {
+        const arr = [...array]
+
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+                ;[arr[i], arr[j]] = [arr[j], arr[i]]
+        }
+
+        return arr
+    }
+
     useEffect(() => {
-        setInsta(instaData)
+        const randomFive = shuffleArray(instaData).slice(0, 5)
+        setInsta(randomFive)
     }, [])
 
     // 하트 클릭
@@ -35,8 +47,11 @@ export default function Instagram() {
                     <ul>
                         {insta.map((item) => (
                             <li key={item.id}>
-                                <Link to={item.linkUrl}>
-
+                                <a
+                                    href={item.linkUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <div className="img-box">
                                         <img
                                             src={item.imgUrl}
@@ -45,7 +60,6 @@ export default function Instagram() {
                                     </div>
 
                                     <div className="text-box">
-
                                         <div className='hash-wrap'>
                                             {item.hash.map((h, idx) => (
                                                 <span key={idx}>
@@ -53,26 +67,8 @@ export default function Instagram() {
                                                 </span>
                                             ))}
                                         </div>
-
-                                        {/* <button
-                                            type="button"
-                                            onClick={(e) => {
-                                                e.preventDefault()
-                                                handleHeart(item.id)
-                                            }}
-                                        >
-                                            <img
-                                                src={
-                                                    item.heartCheck
-                                                        ? "./images/insta-icon/heart-fill-icon.svg"
-                                                        : "./images/insta-icon/heart-icon.svg"
-                                                }
-                                                alt="heart"
-                                            />
-                                        </button> */}
-
                                     </div>
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>
