@@ -516,28 +516,31 @@ export const useAuthStore = create(
       },
 
       onLogout: async () => {
-        try {
-          // localStorage 먼저 제거
-          localStorage.removeItem("socialUser");
-          localStorage.removeItem("auth-storage");
+  const isConfirm = window.confirm("로그아웃 하시겠습니까?");
 
-          await signOut(auth);
+  if (!isConfirm) return;
 
-          // 상태 한번에 초기화
-          set({
-            user: null,
-            savedMoneyList: [],
-            savedMoneySummary: getSavedMoneySummary([]),
-          });
+  try {
+    localStorage.removeItem("socialUser");
+    localStorage.removeItem("auth-storage");
 
-          //wishList 직접 초기화 (import 없이)
-          const { useProductStore } = await import("./useProductStore");
-          useProductStore.setState({ wishList: [] });
+    await signOut(auth);
 
-        } catch (err) {
-          console.error("로그아웃 에러:", err);
-        }
-      },
+    set({
+      user: null,
+      savedMoneyList: [],
+      savedMoneySummary: getSavedMoneySummary([]),
+    });
+
+    const { useProductStore } = await import("./useProductStore");
+    useProductStore.setState({ wishList: [] });
+
+    alert("로그아웃 되었습니다.");
+  } catch (err) {
+    console.error("로그아웃 에러:", err);
+    alert("로그아웃 중 오류가 발생했습니다.");
+  }
+},
 
       onUpdateUserInfo: async (userInfo) => {
         const { user } = get();
