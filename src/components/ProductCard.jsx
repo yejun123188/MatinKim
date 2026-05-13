@@ -44,15 +44,11 @@ export default function ProductCard({
 
   const [previewProduct, setPreviewProduct] = useState(null);
 
-  const [selectedColor, setSelectedColor] = useState(
-    cate.colors?.[0] || ""
-  );
+  const [selectedColor, setSelectedColor] = useState(cate.colors?.[0] || "");
 
   const [selectedSize, setSelectedSize] = useState(() => {
     const availableSizeIndex = Array.isArray(cate.sizes)
-      ? cate.sizes.findIndex(
-        (size, index) => size && !cate.soldout?.[index]
-      )
+      ? cate.sizes.findIndex((size, index) => size && !cate.soldout?.[index])
       : -1;
 
     return availableSizeIndex >= 0
@@ -64,44 +60,29 @@ export default function ProductCard({
     const baseName = getProductBaseName(cate);
 
     const variants = activeItems.filter(
-      (item) =>
-        getProductBaseName(item) === baseName &&
-        item.colors?.[0]
+      (item) => getProductBaseName(item) === baseName && item.colors?.[0],
     );
 
     const sortedVariants =
       cate.colors
-        ?.map((color) =>
-          variants.find((v) => v.colors?.[0] === color)
-        )
+        ?.map((color) => variants.find((v) => v.colors?.[0] === color))
         .filter(Boolean) || [];
 
-    return sortedVariants.length > 0
-      ? sortedVariants
-      : [cate];
+    return sortedVariants.length > 0 ? sortedVariants : [cate];
   }, [activeItems, cate]);
 
   const selectedVariant =
-    colorVariants.find(
-      (v) => v.colors?.[0] === selectedColor
-    ) || cate;
+    colorVariants.find((v) => v.colors?.[0] === selectedColor) || cate;
 
-  const displayProduct =
-    previewProduct || selectedVariant || cate;
+  const displayProduct = previewProduct || selectedVariant || cate;
 
-  const selectedSizeIndex = Array.isArray(
-    selectedVariant.sizes
-  )
-    ? selectedVariant.sizes.findIndex(
-      (size) => size === selectedSize
-    )
+  const selectedSizeIndex = Array.isArray(selectedVariant.sizes)
+    ? selectedVariant.sizes.findIndex((size) => size === selectedSize)
     : -1;
 
   const selectedSoldOut =
     selectedSizeIndex !== -1 &&
-    Boolean(
-      selectedVariant.soldout?.[selectedSizeIndex]
-    );
+    Boolean(selectedVariant.soldout?.[selectedSizeIndex]);
 
   const isSoldOut =
     selectedSoldOut ||
@@ -112,34 +93,33 @@ export default function ProductCard({
   const wishKey = `${selectedVariant.id}-${selectedSize}-${selectedColor}`;
 
   const isLiked =
-    Boolean(user?.uid) &&
-    wishList.some((wish) => wish.key === wishKey);
+    Boolean(user?.uid) && wishList.some((wish) => wish.key === wishKey);
 
   const badgeItems = isSoldOut
     ? [
-      {
-        key: "sold-out",
-        label: "SOLD OUT",
-        type: "soldout",
-      },
-    ]
+        {
+          key: "sold-out",
+          label: "SOLD OUT",
+          type: "soldout",
+        },
+      ]
     : [
-      ...(cate.tag || []).map((tag) => ({
-        key: tag,
-        label: tag,
-        type: "default",
-      })),
+        ...(cate.tag || []).map((tag) => ({
+          key: tag,
+          label: tag,
+          type: "default",
+        })),
 
-      ...(cate.discountRate > 0
-        ? [
-          {
-            key: `discount-${cate.discountRate}`,
-            label: "SALE",
-            type: "discount",
-          },
-        ]
-        : []),
-    ];
+        ...(cate.discountRate > 0
+          ? [
+              {
+                key: `discount-${cate.discountRate}`,
+                label: "SALE",
+                type: "discount",
+              },
+            ]
+          : []),
+      ];
 
   useEffect(() => {
     if (user?.uid) {
@@ -169,7 +149,7 @@ export default function ProductCard({
 
     if (!user?.uid) {
       const ok = window.confirm(
-        "로그인이 필요한 서비스입니다.\n로그인하시겠습니까?"
+        "로그인이 필요한 서비스입니다.\n로그인하시겠습니까?",
       );
 
       if (ok) navigate("/login");
@@ -188,9 +168,7 @@ export default function ProductCard({
     }
 
     if (isLiked) {
-      const ok = window.confirm(
-        "위시리스트에서 상품을 취소하겠습니까?"
-      );
+      const ok = window.confirm("위시리스트에서 상품을 취소하겠습니까?");
 
       if (!ok) return;
 
@@ -204,10 +182,8 @@ export default function ProductCard({
         id: selectedVariant.id,
         name: selectedVariant.name,
         price: selectedVariant.price,
-        discountPrice:
-          selectedVariant.discountPrice,
-        discountRate:
-          selectedVariant.discountRate,
+        discountPrice: selectedVariant.discountPrice,
+        discountRate: selectedVariant.discountRate,
         mainImg: selectedVariant.mainImg,
         hoverImg: selectedVariant.hoverImg,
         selectedSize,
@@ -218,7 +194,7 @@ export default function ProductCard({
         category2: selectedVariant.category2,
         isSoldOut,
       },
-      user.uid
+      user.uid,
     );
 
     alert("위시리스트에 상품이 담겼습니다");
@@ -241,9 +217,7 @@ export default function ProductCard({
       size: selectedSize,
       color: selectedColor,
       count: 1,
-      image:
-        selectedVariant.mainImg ||
-        selectedVariant.hoverImg,
+      image: selectedVariant.mainImg || selectedVariant.hoverImg,
       key: `${selectedVariant.id}-${selectedSize}-${selectedColor}`,
     });
 
@@ -270,9 +244,7 @@ export default function ProductCard({
             size: selectedSize,
             color: selectedColor,
             quantity: 1,
-            image:
-              selectedVariant.mainImg ||
-              selectedVariant.hoverImg,
+            image: selectedVariant.mainImg || selectedVariant.hoverImg,
           },
         ],
       },
@@ -288,17 +260,13 @@ export default function ProductCard({
 
   return (
     <CardTag
-      className={`product-card${className ? ` ${className}` : ""
-        }`}
+      className={`product-card${className ? ` ${className}` : ""}`}
       onKeyDown={handleKeyDown}
       role="link"
       tabIndex={0}
       aria-label={`${cate.name} 상세페이지 이동`}
     >
-      <div
-        className="img-box"
-        onClick={handleMoveDetail}
-      >
+      <div className="img-box" onClick={handleMoveDetail}>
         <img
           className="main-img"
           src={displayProduct.mainImg}
@@ -307,19 +275,13 @@ export default function ProductCard({
 
         <img
           className="hover-img"
-          src={
-            previewProduct
-              ? displayProduct.mainImg
-              : cate.hoverImg
-          }
+          src={previewProduct ? displayProduct.mainImg : cate.hoverImg}
           alt={displayProduct.name}
         />
 
         {rank ? (
           <div className="badge-wrap rank-badge-wrap">
-            <span className="rank-badge">
-              {rank}
-            </span>
+            <span className="rank-badge">{rank}</span>
           </div>
         ) : (
           badgeItems.length > 0 && (
@@ -327,16 +289,11 @@ export default function ProductCard({
               {badgeItems.map((badge) => (
                 <span
                   key={badge.key}
-                  className={`badge ${badge.type === "discount"
-                      ? "discount-badge"
-                      : ""
-                    } ${badge.type === "soldout"
-                      ? "soldout-badge"
-                      : ""
-                    } ${badge.label === "MUST HAVE"
-                      ? "must-have-badge"
-                      : ""
-                    }`}
+                  className={`badge ${
+                    badge.type === "discount" ? "discount-badge" : ""
+                  } ${badge.type === "soldout" ? "soldout-badge" : ""} ${
+                    badge.label === "MUST HAVE" ? "must-have-badge" : ""
+                  }`}
                 >
                   {badge.label}
                 </span>
@@ -347,28 +304,20 @@ export default function ProductCard({
       </div>
 
       <div className="text-box">
-        <p className="brand-name">
-          {isKimMatin
-            ? "KIMMATIN"
-            : "MATIN KIM"}
-        </p>
+        <p className="brand-name">{isKimMatin ? "KIMMATIN" : "MATIN KIM"}</p>
 
         <h3>{cate.name}</h3>
 
         <div className="price-wrap">
           {cate.discountRate > 0 ? (
             <>
-              <span className="discount-rate">
-                {cate.discountRate}%
-              </span>
+              <span className="discount-rate">{cate.discountRate}%</span>
 
               <strong className="discount-price">
                 {cate.discountPrice.toLocaleString()}
               </strong>
 
-              <span className="price">
-                {cate.price.toLocaleString()}
-              </span>
+              <span className="price">{cate.price.toLocaleString()}</span>
             </>
           ) : (
             <strong className="discount-price">
@@ -378,12 +327,7 @@ export default function ProductCard({
         </div>
       </div>
 
-      <div
-        className="color-wrap"
-        onMouseLeave={() =>
-          setPreviewProduct(null)
-        }
-      >
+      <div className="color-wrap" onMouseLeave={() => setPreviewProduct(null)}>
         {colorVariants.map((variant, id) => {
           const color = variant.colors?.[0];
 
@@ -392,34 +336,28 @@ export default function ProductCard({
           return (
             <span
               key={`${variant.id}-${color}-${id}`}
-              className={`color-chip ${selectedColor === color
-                  ? "selected"
-                  : ""
-                }`}
+              className={`color-chip ${
+                selectedColor === color ? "selected" : ""
+              }`}
               style={getColorStyle(color)}
               aria-label={color}
               title={color}
-              onMouseEnter={() =>
-                setPreviewProduct(variant)
-              }
+              onMouseEnter={() => setPreviewProduct(variant)}
               onClick={(event) => {
                 event.stopPropagation();
 
                 setSelectedColor(color);
 
-                const nextSizeIndex =
-                  Array.isArray(variant.sizes)
-                    ? variant.sizes.findIndex(
-                      (size, index) =>
-                        size &&
-                        !variant.soldout?.[index]
+                const nextSizeIndex = Array.isArray(variant.sizes)
+                  ? variant.sizes.findIndex(
+                      (size, index) => size && !variant.soldout?.[index],
                     )
-                    : -1;
+                  : -1;
 
                 setSelectedSize(
                   nextSizeIndex >= 0
                     ? variant.sizes[nextSizeIndex]
-                    : variant.sizes?.[0] || ""
+                    : variant.sizes?.[0] || "",
                 );
               }}
             ></span>
@@ -433,35 +371,23 @@ export default function ProductCard({
             className="card-size-list"
             aria-label={`${cate.name} 사이즈 목록`}
           >
-            {selectedVariant.sizes
-              .filter(Boolean)
-              .map((size, index) => (
-                <span
-                  key={`${selectedVariant.id}-${size}-${index}`}
-                  className={`${selectedVariant.soldout?.[
-                      index
-                    ]
-                      ? "is-soldout"
-                      : ""
-                    } ${selectedSize === size
-                      ? "selected"
-                      : ""
-                    }`}
-                  onClick={(event) => {
-                    event.stopPropagation();
+            {selectedVariant.sizes.filter(Boolean).map((size, index) => (
+              <span
+                key={`${selectedVariant.id}-${size}-${index}`}
+                className={`${
+                  selectedVariant.soldout?.[index] ? "is-soldout" : ""
+                } ${selectedSize === size ? "selected" : ""}`}
+                onClick={(event) => {
+                  event.stopPropagation();
 
-                    if (
-                      !selectedVariant.soldout?.[
-                      index
-                      ]
-                    ) {
-                      setSelectedSize(size);
-                    }
-                  }}
-                >
-                  {size}
-                </span>
-              ))}
+                  if (!selectedVariant.soldout?.[index]) {
+                    setSelectedSize(size);
+                  }
+                }}
+              >
+                {size}
+              </span>
+            ))}
           </div>
         )}
 
@@ -469,18 +395,16 @@ export default function ProductCard({
         className="card-action-bar"
         aria-label={`${cate.name} 빠른 메뉴`}
         onClick={handleActionClick}
-        onKeyDown={(event) =>
-          event.stopPropagation()
-        }
+        onKeyDown={(event) => event.stopPropagation()}
       >
         <button
           type="button"
-          className={`card-like-btn ${isLiked ? "is-active" : ""
-            }`}
+          className={`card-like-btn ${isLiked ? "is-active" : ""}`}
           onClick={handleAddToWish}
           aria-label="찜하기"
         >
           <img
+            className={isLiked ? "liked" : ""}
             src={
               isLiked
                 ? "/images/pages-icon/like-hover-icon.svg"

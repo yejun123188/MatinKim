@@ -8,6 +8,8 @@ import Cart from "../pages/Cart";
 import { useAuthStore } from "../store/useAuthStore";
 import { useLoginStore } from "../store/useLoginStore";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
+import products2 from "../data/products2.json";
+import { buildProductMenus } from "../utils/productMenu";
 
 
 const topmenus = [
@@ -88,6 +90,8 @@ export default function Header() {
   const [activeBestTab, setActiveBestTab] = useState("ALL");
   const searchInputRef = useRef(null);
   const isHomeIdle = isHome && !isScrolled && !isShopHovered;
+  const kimMatinShopMenus = useMemo(() => buildProductMenus(products2), []);
+  const headerShopMenus = isKimMatin ? kimMatinShopMenus : menus;
 
   const searchBestItems = useMemo(() => {
     const sourceItems = BestItems.length > 0
@@ -119,11 +123,6 @@ export default function Header() {
   };
 
   const handleTopMenuEnter = (key) => {
-    if (isKimMatin) {
-      setIsShopHovered(false);
-      return;
-    }
-
     if (key === "shop") {
       setIsShopHovered(true);
     } else {
@@ -332,8 +331,8 @@ export default function Header() {
           </div>
 
           <div
-            className={`header-active ${!isKimMatin && isShopHovered ? "active" : ""}`}
-            onMouseEnter={() => !isKimMatin && setIsShopHovered(true)}
+            className={`header-active ${isShopHovered ? "active" : ""} ${isKimMatin ? "kimmatin-active" : ""}`}
+            onMouseEnter={() => setIsShopHovered(true)}
             onClick={() => setIsShopHovered(false)}
           >
             <div className="inner">
@@ -352,7 +351,7 @@ export default function Header() {
 
               <div className="header-active-middle">
                 <ul className="main-menu">
-                  {menus.map((menu, id) => (
+                  {headerShopMenus.map((menu, id) => (
                     <li key={id}>
                       <Link to={menu.link}>
                         {menu.name}
