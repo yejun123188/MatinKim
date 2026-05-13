@@ -34,6 +34,8 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 
 
 export default function Payment() {
+    console.log("✅ Payment 컴포넌트 진입");
+    const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase } = useAuthStore();
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase, couponList, savedMoneySummary, onFetchCoupons, onFetchSavedMoney } = useAuthStore();
     const navigate = useNavigate();
     // 상단 구조분해에 onRemoveItems 추가
@@ -119,7 +121,9 @@ export default function Payment() {
     }, [user]);
 
     const location = useLocation();
+    console.log("location.state:", location.state);
     const orderItems = location.state?.orderItems?.length ? location.state.orderItems : [];
+    console.log("orderItems in Payment:", orderItems);
     const productTotal = orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const itemCount = orderItems.reduce((sum, item) => sum + item.quantity, 0);
     const shippingFee = 0;
@@ -326,6 +330,8 @@ export default function Payment() {
             finalTotal,
         });
         const orderedKeys = orderItems.map((item) => item.key).filter(Boolean);
+        console.log("orderedKeys:", orderedKeys);  // ← 이거 추가
+        console.log("cartItem:", useProductStore.getState().cartItem);
         if (orderedKeys.length > 0) {
             onReduceItems(orderedKeys);
         } else {

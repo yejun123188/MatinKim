@@ -15,12 +15,12 @@ export default function Privacy() {
                         <div className="qna-content privacy-content">
                             <h2>Privacy Policy</h2>
 
-                            <p>
+                            <p className="qna-guide">
                                 ㈜마뗑킴 은 (이하 "회사"는) 고객님의 개인정보를 중요시하며,
                                 "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
                             </p>
 
-                            <p>
+                            <p className="qna-guide2">
                                 회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가
                                 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한
                                 조치가 취해지고 있는지 알려드립니다.
