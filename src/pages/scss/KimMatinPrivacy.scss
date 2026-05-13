@@ -1,0 +1,72 @@
+@use "../../App.scss" as g;
+
+.privacy-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+}
+
+.privacy-inner {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* 왼쪽 */
+.privacy-left {
+    width: 280px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    background: #000;
+    position: sticky;
+    top: 0;
+}
+
+/* 오른쪽 */
+.privacy-right {
+    flex: 1;
+    background: #000;
+    padding: 70px 0 120px 80px;
+    box-sizing: border-box;
+}
+
+/* 제목 */
+.privacy-right h1 {
+    margin: 0 0 120px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.2px;
+}
+
+/* section */
+.privacy-section {
+    width: 760px;
+
+}
+
+.privacy-section h2 {
+    margin: 0 0 42px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* 내용 */
+.privacy-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-left: 18px;
+}
+
+.privacy-contents li {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.95;
+    color: #d5d5d5;
+    letter-spacing: -0.2px;
+    word-break: keep-all;
+}

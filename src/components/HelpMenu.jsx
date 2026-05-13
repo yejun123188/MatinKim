@@ -2,8 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLoginStore } from "../store/useLoginStore";
 import { useAuthStore } from "../store/useAuthStore"; import { useNavigate } from "react-router-dom";
-import "./scss/HelpMenu.scss"
-
+import "./scss/HelpMenu.scss";
 
 export default function HelpMenu() {
     const location = useLocation();
@@ -30,6 +29,7 @@ export default function HelpMenu() {
     };
 
     const navigate = useNavigate();
+
 
 
 

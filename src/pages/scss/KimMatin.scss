@@ -91,7 +91,7 @@
     }
 
     .insta-list-wrap li>a {
-      background: #151515 !important;
+      background: #151515;
     }
   }
 
@@ -136,7 +136,7 @@
     }
 
     a {
-      color: inherit !important;
+      color: #fff;
     }
   }
 }
@@ -147,16 +147,25 @@
   background: #050505 !important;
   color: #fff !important;
 
-  .qna-content {
+  .qna-inner {
+    display: flex;
+    align-items: flex-start; // 각자 높이 기준 상단 정렬
+  }
+
+  .qna-content2 {
+    flex: 1;
+
     h2 {
-      color: #fff !important;
-      border-bottom-color: rgba(255, 255, 255, 0.82) !important;
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 140px;
     }
   }
 
+
   .qna-sidebar {
     li {
-      color: rgba(255, 255, 255, 0.48) !important;
+      color: #fff;
 
       &:hover,
       &.active {
@@ -166,7 +175,7 @@
 
     a,
     button {
-      color: inherit !important;
+      color: #fff;
     }
   }
 
@@ -305,7 +314,14 @@
     .size-option-count,
     .size-empty-text,
     .color-more-btn {
-      color: $kim-muted !important;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .filter-title::after,
+    .shop-by,
+    .filter-section+.filter-section::before,
+    .filter-main-menu .sub-menu::after {
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     .filter-main-label.is-active,
@@ -557,8 +573,8 @@
         background: $kim-text !important;
         color: #000 !important;
 
-        & + .card-action-btn {
-          border-left-color: rgba(0, 0, 0, 0.2) !important;
+        &+.card-action-btn {
+          border-left-color: rgba(255, 255, 255, 0.24);
         }
 
         &:hover:not(:disabled) {
@@ -634,8 +650,10 @@
       }
 
       &.is-active {
-        background: transparent !important;
-        color: $kim-text !important;
+        background: #fff;
+
+
+
       }
 
       img {
@@ -915,65 +933,14 @@
   }
 
   .related-pagination .page-btn {
-    background: transparent !important;
-    border: 0 !important;
 
-    &:hover:not(:disabled),
-    &.is-active {
-      color: $kim-text !important;
+    &.is-active,
+    &:hover:not(:disabled) {
+      color: #fff;
     }
 
     img {
       filter: brightness(0) invert(1) !important;
-    }
-  }
-
-  .image-zoom-modal {
-    background: rgba(0, 0, 0, 0.88) !important;
-  }
-
-  .image-zoom-nav,
-  .image-zoom-close {
-    background: $kim-panel !important;
-    border-color: $kim-line !important;
-    color: $kim-text !important;
-
-    img {
-      filter: brightness(0) invert(1) !important;
-    }
-  }
-
-  .share-modal {
-    background: rgba(0, 0, 0, 0.72) !important;
-  }
-
-  .share-modal-content {
-    background: $kim-panel !important;
-    color: $kim-text !important;
-  }
-
-  .share-modal-header {
-    h3,
-    .share-close {
-      color: $kim-text !important;
-    }
-  }
-
-  .share-btn {
-    color: $kim-text !important;
-
-    &:hover {
-      background: #1d1d1d !important;
-    }
-
-    span:last-child {
-      color: $kim-muted !important;
-    }
-
-    &.copy .share-icon-wrap {
-      background: #000 !important;
-      border-color: $kim-line !important;
-      color: $kim-text !important;
     }
   }
 }

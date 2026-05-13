@@ -90,26 +90,21 @@ export default function Footer() {
             <div className="footer-right">
               <ul className="sns-list">
                 <li>
-                  <Link to="https://www.instagram.com/matinkim_magazine/?hl=ko" aria-label="Instagram">
-                    <img src="/images/footer-icon/imstagram-icon.svg" alt="Instagram" />
+                  <Link
+                    to="https://www.instagram.com/kimmatin_magazine/"
+                    aria-label="Instagram"
+                  >
+                    <img
+                      src="/images/footer-icon/imstagram-icon.svg"
+                      alt="Instagram"
+                    />
                   </Link>
                 </li>
-                <li>
-                  <Link to="https://www.youtube.com/@MATINKIM-is2dm" aria-label="YouTube">
-                    <img src="/images/footer-icon/youtube-logo.svg" alt="YouTube" />
-                  </Link>
-                </li>
+
               </ul>
 
               <div className="customer-center">
-                <div className="custom-link">
-                  <Link to="/qna">
-                    <strong>Customer Center</strong>
-                    <img src="/images/footer-icon/Vector.svg" alt="" />
-                  </Link>
-                </div>
-                <p>09:30 - 18:00 / Weekend and holidays off</p>
-                <span>1877-8170</span>
+
               </div>
             </div>
           </div>

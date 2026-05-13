@@ -308,7 +308,7 @@
 
 .kimmatin-footer-dropdown {
   position: absolute;
-  right: 0px;
+  left: 0px;
   bottom: calc(100% + 10px);
   min-width: 142px;
   margin: 0;
@@ -320,7 +320,7 @@
   z-index: 5;
 
   li {
-    width: 20px;
+    position: relative;
   }
 
   a {
