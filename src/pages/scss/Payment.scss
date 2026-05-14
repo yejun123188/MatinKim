@@ -26,6 +26,151 @@
     }
 }
 
+.payment-page.kimmatin-payment-page {
+    background: #050505;
+    color: #fff;
+
+    .payment-empty img {
+        filter: brightness(0) invert(1);
+    }
+
+    .payment-summary-column {
+        border-left-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .payment-step-header p,
+    .step-title-row span,
+    .inline-fields i,
+    .faq-question i,
+    .summary-order-head span,
+    .summary-item-copy p,
+    .summary-item-copy span,
+    .delivery-note p,
+    .summary-terms,
+    .selected-method-copy,
+    .discount-empty-text {
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    .field span,
+    .check-field,
+    .discount-label,
+    .discount-box-head span,
+    .discount-box-head strong,
+    .method-card-copy strong,
+    .faq-question span,
+    .summary-order-head strong,
+    .summary-order-item>strong,
+    .summary-item-copy h3,
+    .summary-line span,
+    .summary-line strong,
+    .summary-total-row span,
+    .summary-total-row strong,
+    .delivery-note strong,
+    .summary-terms strong {
+        color: #fff;
+    }
+
+    .field input,
+    .field select,
+    .field textarea,
+    .apply-fields input,
+    .apply-fields .coupon-select {
+        border-color: rgba(255, 255, 255, 0.24);
+        background-color: #050505;
+        color: #fff;
+
+        &:focus {
+            border-color: #fff;
+        }
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.38);
+        }
+    }
+
+    .field select,
+    .apply-fields .coupon-select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%23ffffff' stroke-opacity='0.7' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    .outline-btn,
+    .method-card,
+    .discount-box {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: #0f0f0f;
+        color: #fff;
+    }
+
+    .dark-btn,
+    .apply-fields .dark-btn.small,
+    .order-submit-btn {
+        border: 1px solid #fff;
+        background: #fff;
+        color: #000;
+    }
+
+    .method-card {
+        &.is-active {
+            border-color: #fff;
+        }
+
+        .method-card-copy p {
+            color: rgba(255, 255, 255, 0.58);
+        }
+    }
+
+    .method-badges span,
+    .delivery-note {
+        background: #161616;
+        color: #fff;
+    }
+
+    .payment-faq-section,
+    .faq-item,
+    .summary-order-head,
+    .summary-order-item {
+        border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .summary-total-row {
+        border-top-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .summary-thumb {
+        background: #111;
+
+        &::after {
+            background: rgba(255, 255, 255, 0.04);
+        }
+    }
+
+    .discount-applied-row {
+        border-color: rgba(255, 255, 255, 0.24);
+        background: #111;
+    }
+
+    .discount-applied-tag {
+        color: #fff;
+    }
+
+    .discount-cancel-btn {
+        border-color: rgba(255, 255, 255, 0.28);
+        background: #050505;
+        color: #fff;
+    }
+
+    .discount-summary {
+        border-color: rgba(255, 255, 255, 0.24);
+        background: #111;
+
+        span,
+        .discount-total {
+            color: #fff;
+        }
+    }
+}
+
 .payment-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 600px;

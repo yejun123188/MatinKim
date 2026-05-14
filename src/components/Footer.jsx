@@ -100,11 +100,16 @@ export default function Footer() {
                     />
                   </Link>
                 </li>
-
               </ul>
-
               <div className="customer-center">
-
+                <div className="custom-link">
+                  <Link to="/qna">
+                    <strong>고객센터</strong>
+                    <img src="/images/footer-icon/Vector.svg" alt="화살표" />
+                  </Link>
+                </div>
+                <p>문의시간 : 09:30 ~ 18:00 / 주말·공휴일 휴무</p>
+                <span>1877-8170</span>
               </div>
             </div>
           </div>
