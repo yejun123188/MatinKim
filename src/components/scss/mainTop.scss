@@ -2,12 +2,22 @@
   position: relative;
   padding-bottom: 100px;
 
+  .main-top-video-preload {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .video-wrap {
     position: relative;
     max-width: 1980vw;
     height: 100vh;
     margin: 0 auto;
     overflow: hidden;
+    background-position: center;
+    background-size: cover;
 
     &::after {
       content: "";
@@ -54,6 +64,22 @@
     video {
       object-fit: cover;
     }
+
+    &.matinkim-video-wrap.has-video-poster {
+      background-color: #fff;
+
+      video {
+        transition: opacity 0.22s ease;
+      }
+
+      &.is-video-loading video {
+        opacity: 0;
+      }
+
+      &.is-video-ready video {
+        opacity: 1;
+      }
+    }
   }
 
   .toggle-wrap {
@@ -61,7 +87,7 @@
     bottom: 200px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
+    z-index: 2101;
   }
 
   .toggle-wrap-radi {
@@ -69,6 +95,21 @@
     width: 302px;
     height: 52px;
     border-radius: 30px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 50px;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.26);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.72s ease;
+    }
   }
 
   .toggle-wrap-radi::before {
@@ -90,6 +131,7 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+    z-index: 1;
   }
 
   .toggle-bg {
@@ -104,6 +146,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 0 5px;
+    z-index: 2;
 
     &.kim-active {
       .toggle-labels {
@@ -172,6 +215,12 @@
 
     &.kim-active {
       transform: translateX(145px);
+    }
+  }
+
+  .toggle-wrap.show-matinkim-overlay {
+    .toggle-wrap-radi::after {
+      opacity: 1;
     }
   }
 }

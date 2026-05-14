@@ -315,10 +315,24 @@
             grid-template-columns: repeat(4, var(--weeklybest-card-width));
 
             .product-card {
+                opacity: 0;
+                transform: translateY(-24px);
                 padding-bottom: 0;
 
                 .color-wrap {
                     display: none;
+                }
+            }
+        }
+
+        &.is-visible {
+            .product-card {
+                animation: weeklyCardDrop 0.7s ease forwards;
+            }
+
+            @for $i from 1 through 20 {
+                .product-card:nth-child(#{$i}) {
+                    animation-delay: #{($i - 1) * 0.05}s;
                 }
             }
         }
