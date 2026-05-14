@@ -20,19 +20,25 @@
 }
 
 .legal-menu li {
+    margin-bottom: 34px;
+}
+
+/* 링크 기본 */
+.legal-menu li a {
     font-size: 14px;
     font-weight: 400;
     color: #8f8f8f;
-    margin-bottom: 34px;
-    cursor: pointer;
+    text-decoration: none;
     transition: 0.2s;
 }
 
-.legal-menu li.active {
+/* hover */
+.legal-menu li a:hover {
     color: #fff;
-    font-weight: 600;
 }
 
-.legal-menu li:hover {
+/* active */
+.legal-menu li a.active {
     color: #fff;
+    font-weight: 600;
 }
