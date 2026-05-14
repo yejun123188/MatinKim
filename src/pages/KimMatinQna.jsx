@@ -1,19 +1,265 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import KimMatinHelpMenu from "../components/KimMatinHelpMenu";
-import "./scss/Qna.scss";
-import "./scss/KimMatin.scss";
+import React, { useState } from "react";
+import "./scss/KimMatinQna.scss";
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../store/useAuthStore";
+import HelpMenuKm from "../components/HelpMenuKm";
 
-export default function KimMatinQna() {
+export default function QnaWrite() {
+  const [form, setForm] = useState({
+    subject: "",
+    writer: "",
+    password: "",
+    email: "",
+    phone1: "010",
+    phone2: "",
+    phone3: "",
+    category: "",
+    content: "",
+    files: [],
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+
+    if (name === "files") {
+      const selectedFiles = Array.from(files || []);
+
+      setForm((prev) => ({
+        ...prev,
+        files: (() => {
+          const nextFiles = [...prev.files, ...selectedFiles];
+
+          if (nextFiles.length > 3) {
+            alert("첨부파일은 최대 3개까지 등록할 수 있습니다.");
+          }
+
+          return nextFiles.slice(0, 3);
+        })(),
+      }));
+
+      e.target.value = "";
+
+      return;
+    }
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: false,
+    }));
+  };
+
+  const handleRemoveFile = (targetIndex) => {
+    setForm((prev) => ({
+      ...prev,
+      files: prev.files.filter((_, index) => index !== targetIndex),
+    }));
+  };
+
+  const { user } = useAuthStore();
+
+  const navigate = useNavigate();
+
+  const writerName = user?.displayName || user?.name || user?.email || "회원";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const nextErrors = {
+      subject: !form.subject.trim(),
+      writer: !writerName.trim(),
+      email: !form.email.trim(),
+      category: !form.category.trim(),
+      content: !form.content.trim(),
+    };
+
+    if (Object.values(nextErrors).some(Boolean)) {
+      setErrors(nextErrors);
+
+      alert("제목, 이메일, 문의유형, 내용을 모두 작성해주세요.");
+
+      return;
+    }
+
+    const ok = window.confirm("문의를 등록하시겠습니까?");
+    if (!ok) return;
+
+    const newInquiry = {
+      id: Date.now(),
+      date: new Date().toISOString().slice(0, 10),
+      category: form.category,
+      subject: form.subject,
+      content: form.content,
+      writer: writerName,
+      email: form.email,
+
+      files: form.files.map((file) => ({
+        name: file.name,
+        url: URL.createObjectURL(file),
+        type: file.type,
+      })),
+
+      reply: "답변대기",
+    };
+
+    const saved = JSON.parse(localStorage.getItem("inquiries")) || [];
+
+    localStorage.setItem("inquiries", JSON.stringify([newInquiry, ...saved]));
+
+    alert("문의가 등록되었습니다.");
+
+    navigate("/userInfo", {
+      state: { menu: "1:1 문의" },
+    });
+  };
+
   return (
-    <section className="sub-section kimmatin-help-section">
-      <div className="inner qna-page">
+    <section className="sub-section-km">
+      <div className="inner qna-page-km">
         <div className="qna-inner">
-          <KimMatinHelpMenu />
+          <HelpMenuKm />
 
-          <div className="qna-content kimmatin-qna-write-link">
+          <div className="qna-content-km">
             <h2>1:1 문의</h2>
-            <p>상품, 주문, 배송, 교환 및 반품 관련 문의를 남겨주세요.</p>
+
+            <form className="qna-write-form-km" onSubmit={handleSubmit}>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>제목</th>
+
+                    <td>
+                      <input
+                        type="text"
+                        name="subject"
+                        value={form.subject}
+                        onChange={handleChange}
+                        className={errors.subject ? "error" : ""}
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>작성자</th>
+
+                    <td>
+                      <input
+                        type="text"
+                        value={writerName}
+                        readOnly
+                        className={errors.writer ? "error" : ""}
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>답변 받을 이메일</th>
+
+                    <td>
+                      <input
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        className={errors.email ? "error" : ""}
+                        placeholder="example@email.com"
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>문의유형</th>
+
+                    <td>
+                      <select
+                        name="category"
+                        value={form.category}
+                        onChange={handleChange}
+                        className={errors.category ? "error" : ""}
+                      >
+                        <option value="">선택하세요</option>
+
+                        <option value="주문/결제문의">주문/결제문의</option>
+
+                        <option value="배송문의">배송문의</option>
+
+                        <option value="교환/반품문의">교환/반품문의</option>
+
+                        <option value="상품문의">상품문의</option>
+
+                        <option value="기타문의">기타문의</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>내용</th>
+
+                    <td>
+                      <textarea
+                        name="content"
+                        value={form.content}
+                        onChange={handleChange}
+                        className={errors.content ? "error" : ""}
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>첨부파일</th>
+
+                    <td>
+                      <div className="file-input-row">
+                        <label className="file-select-btn">
+                          파일 선택
+                          <input
+                            type="file"
+                            name="files"
+                            multiple
+                            onChange={handleChange}
+                          />
+                        </label>
+
+                        <span className="file-status">
+                          {form.files.length > 0
+                            ? form.files.map((file) => file.name).join(", ")
+                            : "선택된 파일 없음"}
+                        </span>
+                      </div>
+
+                      {form.files.length > 0 && (
+                        <ul className="file-list">
+                          {form.files.map((file, index) => (
+                            <li key={`${file.name}-${file.lastModified}`}>
+                              <span>{file.name}</span>
+
+                              <button
+                                type="button"
+                                onClick={() => handleRemoveFile(index)}
+                              >
+                                삭제
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div className="qna-btn-wrap-km">
+                <button type="submit" className="submit-btn">
+                  등록
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
