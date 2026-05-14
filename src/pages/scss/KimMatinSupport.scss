@@ -1,0 +1,686 @@
+@use "../../App.scss" as g;
+
+.km-support-page {
+  min-height: 100vh;
+  background: #050505 !important;
+  color: #fff !important;
+  padding: 120px 0 80px !important;
+
+  .inner,
+  .qna-page,
+  .qna-inner,
+  .qna-content {
+    background: transparent !important;
+    color: #fff !important;
+  }
+
+  .qna-inner {
+    gap: 70px;
+    align-items: flex-start;
+  }
+}
+
+.km-support-inner {
+  width: min(1440px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
+}
+
+.km-support-nav {
+  flex: 0 0 120px;
+  width: 120px;
+  flex-shrink: 0;
+  padding-bottom: 30px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a,
+  button {
+    display: block;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.46) !important;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+  }
+
+  a:hover,
+  button:hover,
+  .is-active a {
+    color: #fff !important;
+    font-weight: 700 !important;
+  }
+}
+
+.km-support-content {
+  flex: 1;
+  max-width: 1080px;
+  min-width: 0;
+
+  > h2 {
+    margin: 0 0 46px;
+    padding-bottom: 34px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+.km-support-page .qna-content {
+  flex: 1;
+  max-width: 1080px;
+  min-width: 0;
+
+  h2 {
+    margin: 0 0 46px !important;
+    padding-bottom: 34px !important;
+    border-bottom: 1px solid #fff !important;
+    color: #fff !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+  }
+}
+
+.km-support-section {
+  padding: 0 0 42px;
+  margin: 0 0 42px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+
+  h3 {
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  p,
+  li {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+
+  p {
+    margin: 0 0 14px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding-left: 12px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.64);
+    }
+  }
+}
+
+.km-faq-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin: 0 0 18px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+
+  button {
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.46);
+    padding: 0;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  button:hover,
+  button.is-active {
+    color: #fff;
+  }
+}
+
+.km-faq-list {
+  border-top: 0;
+}
+
+.km-faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.km-faq-question {
+  width: 100%;
+  min-height: 74px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.68);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  text-align: left;
+  cursor: pointer;
+
+  span:first-child {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .km-faq-icon {
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 26px;
+    line-height: 1;
+    flex: 0 0 auto;
+  }
+}
+
+.km-faq-item.is-open {
+  .km-faq-question {
+    color: #fff;
+  }
+
+  .km-faq-answer {
+    background: #111;
+  }
+}
+
+.km-faq-answer {
+  padding: 26px 30px 30px;
+
+  p {
+    margin: 0 0 8px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+}
+
+.km-support-page .qna-write-form {
+  width: 100%;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  }
+
+  tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+  }
+
+  th,
+  td {
+    padding: 12px 16px;
+    vertical-align: middle;
+  }
+
+  th {
+    width: 180px;
+    padding: 18px 20px;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    background: #151515 !important;
+    vertical-align: middle;
+  }
+
+  td {
+    background: #050505 !important;
+  }
+
+  input,
+  select,
+  textarea {
+    border: 1px solid rgba(255, 255, 255, 0.32) !important;
+    background: #050505 !important;
+    color: #fff !important;
+    padding: 0 12px;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: #fff !important;
+    }
+
+    &.error {
+      border-color: #d84a4a !important;
+    }
+  }
+
+  input,
+  select {
+    height: 38px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 360px;
+  }
+
+  select {
+    width: 180px;
+    appearance: none;
+    background-image: url("../../../public/images/userinfo/input-under-btn.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 6px;
+    padding-right: 28px;
+  }
+
+  select option {
+    background: #050505 !important;
+    color: #fff !important;
+  }
+
+  textarea {
+    width: 100%;
+    height: 260px;
+    padding: 14px;
+    resize: none;
+    line-height: 1.6;
+  }
+
+  .file-input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 720px;
+  }
+
+  .file-select-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.32) !important;
+    background: #050505 !important;
+    color: #fff !important;
+    font-size: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    input[type="file"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  .file-status {
+    flex: 1;
+    min-width: 0;
+    color: rgba(255, 255, 255, 0.68) !important;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .file-list {
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.6;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    span {
+      max-width: 360px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    button {
+      min-width: 44px;
+      height: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      background: #050505 !important;
+      color: #fff !important;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}
+
+.km-support-page {
+  .qna-tabs {
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
+
+    button {
+      color: rgba(255, 255, 255, 0.54) !important;
+
+      &.active,
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
+
+  .qna-item {
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
+
+    &.open .qna-answer {
+      background: #111 !important;
+    }
+  }
+
+  .qna-question {
+    span:first-child {
+      color: rgba(255, 255, 255, 0.68) !important;
+    }
+
+    .qna-icon {
+      color: rgba(255, 255, 255, 0.54) !important;
+    }
+  }
+
+  .qna-item.open .qna-question {
+    span:first-child,
+    .qna-icon {
+      color: #fff !important;
+    }
+  }
+
+  .qna-answer {
+    color: rgba(255, 255, 255, 0.68) !important;
+  }
+
+  .guide-section,
+  .policy-block,
+  .term-item {
+    border-bottom-color: rgba(255, 255, 255, 0.16) !important;
+
+    h3 {
+      color: #fff !important;
+    }
+
+    p,
+    li {
+      color: rgba(255, 255, 255, 0.68) !important;
+    }
+
+    li::before {
+      background: rgba(255, 255, 255, 0.64) !important;
+    }
+  }
+
+  .policy-block h3,
+  .term-item h3 {
+    font-size: 18px !important;
+  }
+
+  .guide-section h3 {
+    font-size: 24px !important;
+  }
+}
+
+.km-policy-content {
+  text-align: left !important;
+
+  .policy-block {
+    padding-bottom: 34px !important;
+    margin-bottom: 34px !important;
+    border-bottom: 0 !important;
+  }
+
+  .policy-block h3 {
+    margin: 0 0 24px !important;
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-transform: uppercase;
+  }
+
+  p,
+  li,
+  td,
+  th {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    word-break: keep-all;
+  }
+
+  .km-policy-list,
+  .km-marker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .km-policy-list > li {
+    position: relative;
+    padding-left: 48px;
+
+    &::before {
+      content: "\2022";
+      position: absolute;
+      left: 28px;
+      top: 0;
+      width: auto !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: rgba(255, 255, 255, 0.82);
+    }
+  }
+
+  .km-policy-list.is-nested-contact {
+    margin-left: 64px;
+
+    > li {
+      padding-left: 28px;
+    }
+
+    > li::before {
+      left: 0;
+    }
+  }
+
+  .km-marker-list {
+    margin-left: 48px;
+
+    li {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 0;
+      padding-left: 0;
+    }
+
+    li::before {
+      content: none !important;
+    }
+
+    .km-marker {
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    &.is-deep {
+      margin-left: 92px;
+      margin-top: -12px;
+
+      li {
+        grid-template-columns: 44px minmax(0, 1fr);
+      }
+    }
+  }
+
+  .km-policy-table {
+    width: 100%;
+    margin: 22px 0 10px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    th,
+    td {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: transparent !important;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 700 !important;
+      text-align: center;
+    }
+
+    td:first-child,
+    th:first-child {
+      width: 30%;
+    }
+  }
+}
+
+.km-terms-content {
+  text-align: left !important;
+
+  .terms-box {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  .term-item {
+    padding-bottom: 30px !important;
+    margin-bottom: 30px !important;
+    border-bottom: 0 !important;
+  }
+
+  .term-item h3 {
+    margin: 0 0 18px !important;
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+
+  .term-item p {
+    margin: 0 0 8px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    word-break: keep-all;
+  }
+
+  .term-item p.is-indent {
+    padding-left: 28px;
+  }
+}
+
+.km-support-page .qna-btn-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+
+  button {
+    width: 120px;
+    height: 42px;
+    border: 1px solid #fff !important;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .submit-btn {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .km-support-page {
+    padding: 70px 0 50px;
+  }
+
+  .km-support-inner {
+    width: min(100% - 32px, 680px);
+    display: block;
+  }
+
+  .km-support-nav {
+    position: static;
+    margin-bottom: 48px;
+
+    ul {
+      flex-flow: row wrap;
+      gap: 14px 22px;
+    }
+  }
+
+  .km-support-content > h2 {
+    margin-bottom: 48px;
+    font-size: 24px;
+  }
+
+  .km-support-page .qna-write-form {
+    th,
+    td {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    th {
+      padding-top: 18px;
+    }
+  }
+}

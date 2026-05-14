@@ -14,8 +14,8 @@ const kimFooterMenus = [
   {
     title: "Legal",
     links: [
-      { label: "Guide", path: "/kimmatin/guide" },
-      { label: "Privacy Policy", path: "/kimmatin/privacy-policy" },
+      { label: "GUIDE", path: "/kimmatin/guide" },
+      { label: "PRIVACY POLICY", path: "/kimmatin/privacy-policy" },
       { label: "T&C", path: "/kimmatin/terms" },
     ],
   },
@@ -90,21 +90,26 @@ export default function Footer() {
             <div className="footer-right">
               <ul className="sns-list">
                 <li>
-                  <Link
-                    to="https://www.instagram.com/kimmatin_magazine/"
-                    aria-label="Instagram"
-                  >
-                    <img
-                      src="/images/footer-icon/imstagram-icon.svg"
-                      alt="Instagram"
-                    />
+                  <Link to="https://www.instagram.com/kimmatin_magazine/" aria-label="Instagram">
+                    <img src="/images/footer-icon/imstagram-icon.svg" alt="Instagram" />
                   </Link>
                 </li>
-
+                <li>
+                  <Link to="https://www.youtube.com/@MATINKIM-is2dm" aria-label="YouTube">
+                    <img src="/images/footer-icon/youtube-logo.svg" alt="YouTube" />
+                  </Link>
+                </li>
               </ul>
 
               <div className="customer-center">
-
+                <div className="custom-link">
+                  <Link to="/kimmatin/qna">
+                    <strong>고객센터</strong>
+                    <img src="/images/footer-icon/Vector.svg" alt="" />
+                  </Link>
+                </div>
+                <p>문의시간 : 09:30 ~ 18:00 / 주말·공휴일 휴무</p>
+                <span>1877-8170</span>
               </div>
             </div>
           </div>
