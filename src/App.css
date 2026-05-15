@@ -18,7 +18,7 @@
  }
 
  .app-shell--matinkim {
-     background: #1e1e1e;
+     background: #fff;
  }
 
  .app-shell--kimmatin {
@@ -38,7 +38,7 @@
      background: #050505;
  }
 
-@keyframes appPageEnter {
+ @keyframes appPageEnter {
      from {
          opacity: 0;
          transform: translateY(-10px);
@@ -74,12 +74,12 @@
      }
  }
 
- .app-content:not(.app-content--no-enter) .qna-inner > .qna-content,
- .app-content:not(.app-content--no-enter) .qna-inner > .qna-content2,
- .app-content:not(.app-content--no-enter) .qna-inner > .km-support-content,
-.app-content:not(.app-content--no-enter) .privacy-right,
-.app-content:not(.app-content--no-enter) .terms-right,
-.app-content:not(.app-content--no-enter) .guide-right {
+ .app-content:not(.app-content--no-enter) .qna-inner>.qna-content,
+ .app-content:not(.app-content--no-enter) .qna-inner>.qna-content2,
+ .app-content:not(.app-content--no-enter) .qna-inner>.km-support-content,
+ .app-content:not(.app-content--no-enter) .privacy-right,
+ .app-content:not(.app-content--no-enter) .terms-right,
+ .app-content:not(.app-content--no-enter) .guide-right {
      animation: appSideContentEnter 0.55s ease 0.04s both;
  }
 
@@ -147,11 +147,12 @@
  }
 
  @media (prefers-reduced-motion: reduce) {
+
      .app-content,
      .app-content--no-enter,
-     .app-content:not(.app-content--no-enter) .qna-inner > .qna-content,
-     .app-content:not(.app-content--no-enter) .qna-inner > .qna-content2,
-     .app-content:not(.app-content--no-enter) .qna-inner > .km-support-content,
+     .app-content:not(.app-content--no-enter) .qna-inner>.qna-content,
+     .app-content:not(.app-content--no-enter) .qna-inner>.qna-content2,
+     .app-content:not(.app-content--no-enter) .qna-inner>.km-support-content,
      .app-content:not(.app-content--no-enter) .privacy-right,
      .app-content:not(.app-content--no-enter) .terms-right,
      .app-content:not(.app-content--no-enter) .guide-right,
