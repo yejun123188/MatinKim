@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import data from "../data/archive.json";
 import "./scss/KimMatinArchive.scss";
 
@@ -7,7 +8,6 @@ export default function KimMatinArchive() {
   const [selectedId, setSelectedId] = useState(null);
   const [filterYear, setFilterYear] = useState("all");
   const [filterSeason, setFilterSeason] = useState("all");
-
   const years = [...new Set(data.map((c) => c.year))].sort((a, b) => b - a);
 
   const filtered = data.filter((c) => {
@@ -28,6 +28,7 @@ export default function KimMatinArchive() {
     collection.sections.reduce((sum, s) => sum + s.images.length, 0);
 
   const coverImage = (collection) => collection.sections?.[0]?.images?.[0] || "";
+
   useEffect(() => {
     if (selectedId) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -90,7 +91,7 @@ export default function KimMatinArchive() {
         </div>
 
         {/* 컬렉션 목록 */}
-        <div className="km-archive__body">
+        <div className="km-archive__body" key={`${filterYear}-${filterSeason}`}>
           {years
             .filter((year) => groupedByYear[year])
             .map((year) => ({ year, collections: groupedByYear[year] }))
@@ -138,8 +139,9 @@ export default function KimMatinArchive() {
         </div>
 
         {/* 상세 모달 */}
-        {
-          selected && (
+        {selected &&
+          createPortal(
+            (
             <div className="km-detail" onClick={() => setSelectedId(null)}>
               <div className="km-detail__panel" onClick={(e) => e.stopPropagation()}>
                 <div className="km-detail__header">
@@ -191,8 +193,9 @@ export default function KimMatinArchive() {
                 </div>
               </div>
             </div>
-          )
-        }
+            ),
+            document.body,
+          )}
       </section >
     </div>
   );

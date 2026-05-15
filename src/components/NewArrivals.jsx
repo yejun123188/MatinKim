@@ -20,7 +20,14 @@ export default function NewArrivals() {
         onNewMenus();
     }, [items.length, onFetchItem, onNewMenus]);
 
-    const visibleNewItems = NewItems.slice(54, 66);
+    const visibleNewItems = NewItems.slice(54, 66).filter(
+        (item) =>
+            !(
+                Array.isArray(item.soldout) &&
+                item.soldout.length > 0 &&
+                item.soldout.every(Boolean)
+            )
+    );
     const TOTAL = visibleNewItems.length;
 
     // 왼쪽 여백 계산

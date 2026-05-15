@@ -16,21 +16,17 @@ $transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     background: $c-bg;
     color: $c-white;
     box-sizing: border-box;
-
-    @media (max-width: 768px) {
-        padding: 0 20px 100px;
-    }
 }
 
 .kim-about {
-    width: 100%;
-    max-width: 1440px;
+    width: min(1440px, calc(100% - 80px));
     margin: 0 auto;
-    padding: 50px 40px 160px;
+    padding: 50px 0 160px;
     background: black;
 
     @media (max-width: 768px) {
-        padding: 40px 20px 100px;
+        width: calc(100% - 40px);
+        padding: 40px 0 100px;
     }
 }
 
@@ -81,13 +77,18 @@ $transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 // ─── Content ──────────────────────────────────
 
 .kma__content {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: kimAboutContentEnter 0.55s ease 0.04s both;
+}
 
-    &.is-visible {
+@keyframes kimAboutContentEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
     }
 }
 

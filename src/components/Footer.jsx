@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
 import "./scss/footer.scss";
 
@@ -30,9 +30,14 @@ const kimFooterMenus = [
 ];
 
 export default function Footer() {
+  const { pathname } = useLocation();
   const { brand } = useBrandStore();
   const isKimMatin = brand === BRAND.KIMMATIN;
   const [openMenu, setOpenMenu] = useState(null);
+
+  useEffect(() => {
+    setOpenMenu(null);
+  }, [pathname]);
 
   if (isKimMatin) {
     return (
@@ -72,7 +77,9 @@ export default function Footer() {
                       <ul className="kimmatin-footer-dropdown">
                         {menu.links.map((link) => (
                           <li key={link.path}>
-                            <Link to={link.path}>{link.label}</Link>
+                            <Link to={link.path} onClick={() => setOpenMenu(null)}>
+                              {link.label}
+                            </Link>
                           </li>
                         ))}
                       </ul>

@@ -205,6 +205,11 @@ export default function Header() {
     setIsSearchOpen(true);
   };
 
+  const handleLogoClick = () => {
+    setIsShopHovered(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleCloseSearch = () => {
     setIsSearchOpen(false);
   };
@@ -336,7 +341,7 @@ export default function Header() {
             <div className="inner">
               <div className="header-left">
                 <h1>
-                  <Link to="/" onClick={() => setIsShopHovered(false)}>
+                  <Link to="/" onClick={handleLogoClick}>
                     <img
                       className="brand-logo brand-logo--matinkim"
                       src="/images/header/logo-MatinKim-black.svg"

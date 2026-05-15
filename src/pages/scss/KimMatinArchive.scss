@@ -19,15 +19,15 @@ $transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .km-archive {
-  width: 100%;
-  max-width: 1440px;
+  width: min(1440px, calc(100% - 80px));
   margin: 0 auto;
-  padding: 0 40px 160px;
+  padding: 0 0 160px;
   background: $color-white;
   color: $color-black;
 
   @media (max-width: 768px) {
-    padding: 0 20px 100px;
+    width: calc(100% - 40px);
+    padding: 0 0 100px;
   }
 }
 
@@ -237,13 +237,10 @@ $transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
   background: rgba(10, 10, 10, 0.92);
   z-index: 11000;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  padding: 24px;
   animation: fadeIn 0.3s ease;
-
-  @media (min-width: 769px) {
-    align-items: center;
-  }
 }
 
 @keyframes fadeIn {
@@ -258,14 +255,14 @@ $transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 
 .km-detail__panel {
   width: 100%;
-  max-width: 760px;
-  max-height: 82vh;
+  max-width: 640px;
+  max-height: 72vh;
   background: $color-black;
   overflow-y: auto;
   animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   @media (min-width: 769px) {
-    max-height: 82vh;
+    max-height: 72vh;
   }
 
   scrollbar-width: thin;
@@ -391,5 +388,21 @@ $transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   &:hover {
     transform: scale(1.02);
+  }
+}
+
+.km-archive__body {
+  animation: kimArchiveBodyEnter 0.7s ease 0.12s both;
+}
+
+@keyframes kimArchiveBodyEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

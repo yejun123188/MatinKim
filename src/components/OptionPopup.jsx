@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import products from "../data/products";
 import { useProductStore } from "../store/useProductStore";
@@ -108,7 +109,7 @@ export default function OptionPopup({ open, data, onClose }) {
     onClose();
   };
 
-  return (
+  return createPortal(
     <div className={`option-bg ${open ? "open" : "close"}`} onClick={onClose}>
       <div className="option-pop-wrap" onClick={(e) => e.stopPropagation()}>
         <div className="op-check">
@@ -191,6 +192,7 @@ export default function OptionPopup({ open, data, onClose }) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

@@ -152,11 +152,15 @@ export default function ProductList() {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
   const [isPageVisible, setIsPageVisible] = useState(false);
+  const [filterAnimationKey, setFilterAnimationKey] = useState(0);
   const { brand } = useBrandStore();
   const isKimMatin = brand === BRAND.KIMMATIN;
   const normalizedMainCate = isKimMatin
     ? getProductMainCategory(mainCate || "")
     : mainCate;
+  const triggerFilterListAnimation = () => {
+    setFilterAnimationKey((prev) => prev + 1);
+  };
 
   // 카테고리별 필터링 및 옵션 생성 함수를 동적으로 선택
   const categoryFilterMap = {
@@ -255,6 +259,7 @@ export default function ProductList() {
     setSelectedColor("");
     setSelectedSize("");
     setSelectedSubCategory("");
+    setFilterAnimationKey(0);
   }, [mainCate, subCategory, tagCategory]);
 
   useEffect(() => {
@@ -490,6 +495,7 @@ export default function ProductList() {
     priceRange.max !== categoryMaxPrice;
 
   const resetFilters = () => {
+    triggerFilterListAnimation();
     setExcludeSoldOut(false);
     setSelectedColor("");
     setSelectedSize("");
@@ -509,17 +515,29 @@ export default function ProductList() {
             shopMenus={isKimMatin ? kimMatinShopMenus : undefined}
             showCategoryFilter={hasSubCategoryFilter}
             colorCount={colorCount}
-            onPriceChange={setPriceRange}
+            onPriceChange={(value) => {
+              triggerFilterListAnimation();
+              setPriceRange(value);
+            }}
             minPrice={categoryMinPrice}
             maxPrice={safeMaxPrice}
             categoryOptions={categoryOptions}
             selectedCategory={selectedSubCategory}
-            onCategoryChange={setSelectedSubCategory}
+            onCategoryChange={(value) => {
+              triggerFilterListAnimation();
+              setSelectedSubCategory(value);
+            }}
             selectedColor={selectedColor}
-            onColorChange={setSelectedColor}
+            onColorChange={(value) => {
+              triggerFilterListAnimation();
+              setSelectedColor(value);
+            }}
             sizeOptions={sizeOptions}
             selectedSize={selectedSize}
-            onSizeChange={setSelectedSize}
+            onSizeChange={(value) => {
+              triggerFilterListAnimation();
+              setSelectedSize(value);
+            }}
           />
         </div>
         <div
@@ -553,9 +571,10 @@ export default function ProductList() {
                   <input
                     type="checkbox"
                     checked={excludeSoldOut}
-                    onChange={(event) =>
-                      setExcludeSoldOut(event.target.checked)
-                    }
+                    onChange={(event) => {
+                      triggerFilterListAnimation();
+                      setExcludeSoldOut(event.target.checked);
+                    }}
                   />
                   <span>품절 상품 제외</span>
                 </label>
@@ -564,7 +583,10 @@ export default function ProductList() {
                     <button
                       type="button"
                       className="filter-tag"
-                      onClick={() => setSelectedColor("")}
+                      onClick={() => {
+                        triggerFilterListAnimation();
+                        setSelectedColor("");
+                      }}
                     >
                       색상: {selectedColor}
                       <span className="tag-remove">×</span>
@@ -574,7 +596,10 @@ export default function ProductList() {
                     <button
                       type="button"
                       className="filter-tag"
-                      onClick={() => setSelectedSize("")}
+                      onClick={() => {
+                        triggerFilterListAnimation();
+                        setSelectedSize("");
+                      }}
                     >
                       사이즈: {selectedSize}
                       <span className="tag-remove">×</span>
@@ -584,7 +609,10 @@ export default function ProductList() {
                     <button
                       type="button"
                       className="filter-tag"
-                      onClick={() => setSelectedSubCategory("")}
+                      onClick={() => {
+                        triggerFilterListAnimation();
+                        setSelectedSubCategory("");
+                      }}
                     >
                       {selectedSubCategory}
                       <span className="tag-remove">×</span>
@@ -595,12 +623,13 @@ export default function ProductList() {
                     <button
                       type="button"
                       className="filter-tag"
-                      onClick={() =>
+                      onClick={() => {
+                        triggerFilterListAnimation();
                         setPriceRange({
                           min: categoryMinPrice,
                           max: categoryMaxPrice,
-                        })
-                      }
+                        });
+                      }}
                     >
                       가격: {priceRange.min.toLocaleString()} -{" "}
                       {priceRange.max.toLocaleString()}
@@ -644,7 +673,10 @@ export default function ProductList() {
               </div>
             </div>
           </div>
-          <div className="product-list">
+          <div
+            className={`product-list ${filterAnimationKey > 0 ? "is-filter-animated" : ""}`}
+            key={filterAnimationKey}
+          >
             {/* 상품리스트 */}
             <ul>
               {pagedItems.map((cate) => (

@@ -24,6 +24,7 @@ export default function Floating() {
     const [products, setProducts] = useState([]);
     const [open, setOpen] = useState(false);
     const [showTopButton, setShowTopButton] = useState(false);
+    const [isBrandSwitching, setIsBrandSwitching] = useState(false);
 
     const loadProducts = useCallback(() => {
         setProducts(getRecentViewedProducts());
@@ -52,6 +53,19 @@ export default function Floating() {
         window.addEventListener("scroll", handleScroll, { passive: true });
         handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const handleBrandTransition = (event) => {
+            const phase = event.detail?.phase;
+            setIsBrandSwitching(phase === "prepare" || phase === "exit" || phase === "enter");
+            if (phase === "prepare" || phase === "exit" || phase === "enter") {
+                setOpen(false);
+            }
+        };
+
+        window.addEventListener("matinKimBrandTransition", handleBrandTransition);
+        return () => window.removeEventListener("matinKimBrandTransition", handleBrandTransition);
     }, []);
 
     const handleToggle = () => {
@@ -83,7 +97,7 @@ export default function Floating() {
         kimMatinProductIds.has(product.id) ? "KIMMATIN" : "MATIN KIM";
 
     return (
-        <aside className={`floating-recent-viewed ${open ? "open" : ""} ${isKimMatin ? "kimmatin-floating" : ""}`}>
+        <aside className={`floating-recent-viewed ${open ? "open" : ""} ${isKimMatin ? "kimmatin-floating" : ""} ${isBrandSwitching ? "is-brand-switching" : ""}`}>
             <div className={`floating-panel ${open ? "open" : ""}`} aria-hidden={!open}>
                 <div className="floating-panel-header">
                     <div>

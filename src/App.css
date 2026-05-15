@@ -9,11 +9,15 @@
  }
 
  body {
-     background: #1e1e1e;
+     background: #fff;
  }
 
  .app-shell {
      min-height: 100vh;
+     background: #fff;
+ }
+
+ .app-shell--matinkim {
      background: #1e1e1e;
  }
 
@@ -26,6 +30,10 @@
      animation: appPageEnter 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
  }
 
+ .app-content--no-enter {
+     animation: none;
+ }
+
  .app-shell--kimmatin .app-content {
      background: #050505;
  }
@@ -33,11 +41,46 @@
 @keyframes appPageEnter {
      from {
          opacity: 0;
+         transform: translateY(-10px);
      }
 
      to {
          opacity: 1;
+         transform: none;
      }
+ }
+
+ @keyframes appSideNavEnter {
+     from {
+         opacity: 0;
+         transform: translateX(-16px);
+     }
+
+     to {
+         opacity: 1;
+         transform: none;
+     }
+ }
+
+ @keyframes appSideContentEnter {
+     from {
+         opacity: 0;
+         transform: translateY(-10px);
+     }
+
+     to {
+         opacity: 1;
+         transform: none;
+     }
+ }
+
+ .app-content:not(.app-content--no-enter) .qna-inner > .qna-content,
+ .app-content:not(.app-content--no-enter) .qna-inner > .qna-content2,
+ .app-content:not(.app-content--no-enter) .qna-inner > .km-support-content,
+.app-content:not(.app-content--no-enter) .privacy-right,
+.app-content:not(.app-content--no-enter) .terms-right,
+.app-content:not(.app-content--no-enter) .guide-right {
+     animation: appSideContentEnter 0.55s ease 0.04s both;
  }
 
  @keyframes appOverlayEnter {
@@ -105,6 +148,13 @@
 
  @media (prefers-reduced-motion: reduce) {
      .app-content,
+     .app-content--no-enter,
+     .app-content:not(.app-content--no-enter) .qna-inner > .qna-content,
+     .app-content:not(.app-content--no-enter) .qna-inner > .qna-content2,
+     .app-content:not(.app-content--no-enter) .qna-inner > .km-support-content,
+     .app-content:not(.app-content--no-enter) .privacy-right,
+     .app-content:not(.app-content--no-enter) .terms-right,
+     .app-content:not(.app-content--no-enter) .guide-right,
      .login-page .login-dim,
      .cart-panel,
      .modal-overlay-add,

@@ -13,6 +13,18 @@ $breakpoints: (
     }
 }
 
+@keyframes collectionListEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .collections {
     .collections-title {
         padding: 40px 0;
@@ -31,6 +43,7 @@ $breakpoints: (
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
         height: 100%;
+        animation: collectionListEnter 0.7s ease 0.12s both;
 
         @include respond-to(tablet) {
             grid-template-columns: repeat(2, 1fr);

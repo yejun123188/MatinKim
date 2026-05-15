@@ -86,8 +86,16 @@ export default function Home() {
       window.clearTimeout(timerId)
     );
     timersRef.current = [];
+    window.dispatchEvent(
+      new CustomEvent("matinKimBrandTransition", {
+        detail: { phase: "prepare", nextBrand },
+      })
+    );
 
     const startTransition = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
       setToggleBrand(nextBrand);
       if (nextBrand === BRAND.KIMMATIN) {
         preloadImages(kimMatinPreloadImages);
@@ -140,9 +148,11 @@ export default function Home() {
 
     if (scrollTop > 8) {
       scrollPendingRef.current = true;
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
 
-      const scrollDelay = Math.min(760, Math.max(360, scrollTop * 0.28));
+      const scrollDelay = 80;
       const scrollTimer = window.setTimeout(() => {
         scrollPendingRef.current = false;
         startTransition();

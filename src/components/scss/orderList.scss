@@ -97,7 +97,10 @@
         color: #555;
 
         cursor: pointer;
-        transition: background 0.15s, border-color 0.15s, color 0.15s;
+        transition:
+          background 0.15s,
+          border-color 0.15s,
+          color 0.15s;
 
         &:hover {
           border-color: #aaa;
@@ -159,13 +162,9 @@
 
         cursor: pointer;
       }
-
-
-
     }
 
     .show-btn {
-
       background: #111;
       color: #fff;
       border: 1px solid #111;
@@ -246,7 +245,7 @@
     flex-direction: column;
     gap: 0;
 
-    &+.order-list-wrap {
+    & + .order-list-wrap {
       margin-top: 24px;
     }
   }
@@ -441,7 +440,10 @@
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
-    transition: background 0.18s, color 0.18s, border-color 0.18s;
+    transition:
+      background 0.18s,
+      color 0.18s,
+      border-color 0.18s;
     white-space: nowrap;
 
     &--filled {
@@ -506,6 +508,78 @@
   }
 }
 
+// ========================================
+// DESKTOP
+// ========================================
+
+@media (min-width: 1281px) {
+  .order-list-section {
+    .order-list {
+      .order-product {
+        grid-template-columns: minmax(0, 1fr) 180px max-content;
+        gap: 28px;
+        align-items: center;
+
+        .img-box {
+          width: 600px;
+          grid-column: 1;
+          grid-row: 1;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          min-width: 0;
+
+          img {
+            flex: 0 0 120px;
+            grid-column: auto;
+            grid-row: auto;
+          }
+
+          .product-text {
+            grid-column: auto;
+            grid-row: auto;
+            flex: 1 1 auto;
+          }
+        }
+
+        .text-box {
+          display: contents;
+
+          .status {
+            grid-column: 1;
+            grid-row: 1;
+            align-self: start;
+            justify-self: start;
+            margin-left: 140px;
+          }
+
+          .order-no {
+            grid-column: 2;
+            grid-row: 1;
+            width: 180px;
+            justify-self: center;
+            justify-content: center;
+          }
+
+          .order-btn-wrap {
+            grid-column: 3;
+            grid-row: 1;
+            justify-content: flex-end;
+            margin-top: 0;
+          }
+        }
+      }
+
+      .order-product:has(.status) {
+        .img-box {
+          .product-text {
+            padding-top: 36px;
+          }
+        }
+      }
+    }
+  }
+}
 
 // ========================================
 // TABLET
