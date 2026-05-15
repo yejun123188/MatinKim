@@ -14,37 +14,30 @@ const statusCode = {
   조회불가: "NONE",
 };
 
+// 배송완료 → 짧게 표시
+const statusLabel = {
+  배송완료: "배송완료",
+};
+
 const formatPrice = (price) => `₩ ${Number(price || 0).toLocaleString()}`;
 const formatCount = (count) => `${Number(count || 1).toLocaleString()}개`;
 
 const getOrderDateLabel = (orderDate, order) => {
   if (orderDate !== "취소/반품") return orderDate;
-
   if (order.status.startsWith("취소")) return "취소요청완료";
   if (order.status.startsWith("반품")) return "반품요청완료";
   if (order.status.startsWith("교환")) return "교환요청완료";
-
   return orderDate;
 };
 
 const renderButtons = (
   status,
   order,
-  {
-    onOrderClick,
-    onCancelClick,
-    onExchangeClick,
-    onReturnClick,
-    onTrackingClick,
-  },
+  { onOrderClick, onCancelClick, onExchangeClick, onReturnClick, onTrackingClick },
 ) => {
   if (status === "결제완료" || status === "배송준비중") {
     return (
-      <button
-        type="button"
-        className="btn"
-        onClick={() => onCancelClick?.(order)}
-      >
+      <button type="button" className="btn btn--ghost" onClick={() => onCancelClick?.(order)}>
         주문취소
       </button>
     );
@@ -52,11 +45,7 @@ const renderButtons = (
 
   if (status === "배송시작" || status === "배송중") {
     return (
-      <button
-        type="button"
-        className="btn"
-        onClick={() => onTrackingClick?.(order)}
-      >
+      <button type="button" className="btn btn--ghost" onClick={() => onTrackingClick?.(order)}>
         배송조회
       </button>
     );
@@ -65,18 +54,10 @@ const renderButtons = (
   if (status === "배송완료") {
     return (
       <div className="order-btn">
-        <button
-          type="button"
-          className="btn"
-          onClick={() => onExchangeClick?.(order)}
-        >
+        <button type="button" className="btn btn--filled" onClick={() => onExchangeClick?.(order)}>
           교환신청
         </button>
-        <button
-          type="button"
-          className="btn"
-          onClick={() => onReturnClick?.(order)}
-        >
+        <button type="button" className="btn btn--ghost" onClick={() => onReturnClick?.(order)}>
           반품신청
         </button>
       </div>
@@ -84,7 +65,7 @@ const renderButtons = (
   }
 
   return (
-    <button type="button" className="btn" onClick={() => onOrderClick?.(order)}>
+    <button type="button" className="btn btn--filled" onClick={() => onOrderClick?.(order)}>
       상품주문
     </button>
   );
@@ -108,38 +89,32 @@ export default function OrderProduct({
   return (
     <>
       {orderNumbers.map((orderNumber) => {
-        const groupedOrders = orders.filter(
-          (order) => order.orderNumber === orderNumber,
-        );
+        const groupedOrders = orders.filter((order) => order.orderNumber === orderNumber);
         const representativeOrder = groupedOrders[0];
-        const showTitle = groupedOrders.some(
-          (order) => order.status !== "조회불가",
-        );
+        const showTitle = groupedOrders.some((order) => order.status !== "조회불가");
 
         return (
           <div className="order-list-wrap" key={orderNumber}>
             {showHeader && showTitle && (
               <div className="order-list-title">
-                <div className="order-date">
-                  <span>{getOrderDateLabel(orderDate, representativeOrder)}</span>
-                  <span>
+                <div className="order-list-box">
+                  <span className="order-title__status">
+                    {getOrderDateLabel(orderDate, representativeOrder)}
+                  </span>
+                  <span className="order-title__date">
                     {representativeOrder.date.slice(0, 4)}.
                     {representativeOrder.date.slice(4, 6)}.
                     {representativeOrder.date.slice(6, 8)}
                   </span>
                 </div>
                 {onDetailClick && (
-                  <div className="order-detail">
-                    <button
-                      type="button"
-                      className="order-detail-btn"
-                      onClick={() =>
-                        onDetailClick(representativeOrder.orderDetailId)
-                      }
-                    >
-                      주문 상세보기 {">"}
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    className="order-detail-btn"
+                    onClick={() => onDetailClick(representativeOrder.orderDetailId)}
+                  >
+                    주문 상세보기 {">"}
+                  </button>
                 )}
               </div>
             )}
@@ -161,10 +136,9 @@ export default function OrderProduct({
                   <div className="text-box">
                     {order.status !== "조회불가" && (
                       <>
-                        <div
-                          className={`status status-${statusCode[order.status]}`}
-                        >
-                          {order.status}
+                        <div className={`status status-${statusCode[order.status]}`}>
+                          <img src="/images/icon/check.svg" alt="" />
+                          {statusLabel[order.status] ?? order.status}
                         </div>
 
                         {showOrderNumber && (

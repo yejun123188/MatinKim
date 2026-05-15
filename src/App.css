@@ -23,6 +23,7 @@
 
  .app-content {
      background: #fff;
+     transform: none;
      animation: appPageEnter 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
  }
 
@@ -32,11 +33,11 @@
 
  @keyframes appPageEnter {
      from {
-         transform: translateY(18px);
+         opacity: 0.96;
      }
 
      to {
-         transform: translateY(0);
+         opacity: 1;
      }
  }
 
