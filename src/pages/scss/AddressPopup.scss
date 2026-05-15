@@ -4,7 +4,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
-    z-index: 1000;
+    z-index: 11000;
     @include g.myFlex(center, 0, center);
 
     animation: overlayFadeIn 0.25s ease forwards; // 오버레이 페이드인

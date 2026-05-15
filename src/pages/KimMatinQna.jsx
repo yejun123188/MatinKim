@@ -1,10 +1,23 @@
 import React, { useState } from "react";
-import "./scss/KimMatinQna.scss";
 import { useNavigate } from "react-router-dom";
+import KimMatinSupportNav from "../components/KimMatinSupportNav";
 import { useAuthStore } from "../store/useAuthStore";
-import HelpMenuKm from "../components/HelpMenuKm";
+import "./scss/QnaWrite.scss";
+import "./scss/KimMatinSupport.scss";
 
-export default function QnaWrite() {
+const inquiryCategories = [
+  "주문/결제문의",
+  "배송문의",
+  "교환/반품문의",
+  "상품문의",
+  "기타문의",
+];
+
+export default function KimMatinQna() {
+  const { user } = useAuthStore();
+  const navigate = useNavigate();
+  const writerName = user?.displayName || user?.name || user?.email || "회원";
+
   const [form, setForm] = useState({
     subject: "",
     writer: "",
@@ -17,7 +30,6 @@ export default function QnaWrite() {
     content: "",
     files: [],
   });
-
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -40,7 +52,6 @@ export default function QnaWrite() {
       }));
 
       e.target.value = "";
-
       return;
     }
 
@@ -62,12 +73,6 @@ export default function QnaWrite() {
     }));
   };
 
-  const { user } = useAuthStore();
-
-  const navigate = useNavigate();
-
-  const writerName = user?.displayName || user?.name || user?.email || "회원";
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -81,9 +86,7 @@ export default function QnaWrite() {
 
     if (Object.values(nextErrors).some(Boolean)) {
       setErrors(nextErrors);
-
       alert("제목, 이메일, 문의유형, 내용을 모두 작성해주세요.");
-
       return;
     }
 
@@ -98,42 +101,38 @@ export default function QnaWrite() {
       content: form.content,
       writer: writerName,
       email: form.email,
-
+      brand: "KIMMATIN",
       files: form.files.map((file) => ({
         name: file.name,
         url: URL.createObjectURL(file),
         type: file.type,
       })),
-
       reply: "답변대기",
     };
 
     const saved = JSON.parse(localStorage.getItem("inquiries")) || [];
-
     localStorage.setItem("inquiries", JSON.stringify([newInquiry, ...saved]));
 
     alert("문의가 등록되었습니다.");
-
     navigate("/userInfo", {
       state: { menu: "1:1 문의" },
     });
   };
 
   return (
-    <section className="sub-section-km">
-      <div className="inner qna-page-km">
+    <section className="sub-section km-support-page">
+      <div className="inner qna-page">
         <div className="qna-inner">
-          <HelpMenuKm />
+          <KimMatinSupportNav />
 
-          <div className="qna-content-km">
+          <div className="qna-content">
             <h2>1:1 문의</h2>
 
-            <form className="qna-write-form-km" onSubmit={handleSubmit}>
+            <form className="qna-write-form" onSubmit={handleSubmit}>
               <table>
                 <tbody>
                   <tr>
                     <th>제목</th>
-
                     <td>
                       <input
                         type="text"
@@ -147,7 +146,6 @@ export default function QnaWrite() {
 
                   <tr>
                     <th>작성자</th>
-
                     <td>
                       <input
                         type="text"
@@ -160,7 +158,6 @@ export default function QnaWrite() {
 
                   <tr>
                     <th>답변 받을 이메일</th>
-
                     <td>
                       <input
                         type="email"
@@ -175,7 +172,6 @@ export default function QnaWrite() {
 
                   <tr>
                     <th>문의유형</th>
-
                     <td>
                       <select
                         name="category"
@@ -184,23 +180,17 @@ export default function QnaWrite() {
                         className={errors.category ? "error" : ""}
                       >
                         <option value="">선택하세요</option>
-
-                        <option value="주문/결제문의">주문/결제문의</option>
-
-                        <option value="배송문의">배송문의</option>
-
-                        <option value="교환/반품문의">교환/반품문의</option>
-
-                        <option value="상품문의">상품문의</option>
-
-                        <option value="기타문의">기타문의</option>
+                        {inquiryCategories.map((category) => (
+                          <option value={category} key={category}>
+                            {category}
+                          </option>
+                        ))}
                       </select>
                     </td>
                   </tr>
 
                   <tr>
                     <th>내용</th>
-
                     <td>
                       <textarea
                         name="content"
@@ -213,7 +203,6 @@ export default function QnaWrite() {
 
                   <tr>
                     <th>첨부파일</th>
-
                     <td>
                       <div className="file-input-row">
                         <label className="file-select-btn">
@@ -239,10 +228,7 @@ export default function QnaWrite() {
                             <li key={`${file.name}-${file.lastModified}`}>
                               <span>{file.name}</span>
 
-                              <button
-                                type="button"
-                                onClick={() => handleRemoveFile(index)}
-                              >
+                              <button type="button" onClick={() => handleRemoveFile(index)}>
                                 삭제
                               </button>
                             </li>
@@ -254,7 +240,7 @@ export default function QnaWrite() {
                 </tbody>
               </table>
 
-              <div className="qna-btn-wrap-km">
+              <div className="qna-btn-wrap">
                 <button type="submit" className="submit-btn">
                   등록
                 </button>

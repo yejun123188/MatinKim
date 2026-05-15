@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import KimMatinSupportNav from "../components/KimMatinSupportNav";
 import { faqTabs, qnadata } from "../data/Qna";
-import "./scss/KimMatin.scss";
-import HelpMenuKm from "../components/HelpMenuKm";
-
+import "./scss/Qna.scss";
+import "./scss/KimMatinSupport.scss";
 
 export default function KimMatinFaq() {
   const [activeTab, setActiveTab] = useState("top5");
@@ -14,17 +14,19 @@ export default function KimMatinFaq() {
   };
 
   return (
-    <section className="sub-section kimmatin-help-section">
+    <section className="sub-section km-support-page">
       <div className="inner qna-page">
         <div className="qna-inner">
-          <HelpMenuKm />
+          <KimMatinSupportNav />
 
-          <div className="qna-content2">
+          <div className="qna-content">
             <h2>FAQ</h2>
+
             <div className="qna-tabs">
               {faqTabs.map((tab) => (
                 <button
                   key={tab.key}
+                  type="button"
                   className={activeTab === tab.key ? "active" : ""}
                   onClick={() => handleTabClick(tab.key)}
                 >
