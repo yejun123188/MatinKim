@@ -33,7 +33,7 @@ export default function Cart({ onClose }) {
     const navigate = useNavigate();
     const { openLogin } = useLoginStore();
 
-    const [checkedItems, setCheckedItems] = useState([]);
+    const [checkedItems, setCheckedItems] = useState(() => cartItem.map((item) => item.key));
     const [editingKey, setEditingKey] = useState(null);
     const [tempOption, setTempOption] = useState({ size: "", color: "" });
     // 편집 중 미리보기: 이름·이미지
@@ -45,7 +45,7 @@ export default function Cart({ onClose }) {
     const cartItems = cartItem;
     const formatPrice = (price) => `₩${price.toLocaleString()}`;
 
-    const allChecked = cartItems.length > 0 && checkedItems.length === cartItems.length;
+    const allChecked = cartItems.length > 0 && cartItems.every((item) => checkedItems.includes(item.key));
 
     const handleAllCheck = () => {
         setCheckedItems(allChecked ? [] : cartItems.map((item) => item.key));
