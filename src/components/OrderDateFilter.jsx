@@ -45,13 +45,13 @@ export const getQuickRangeValues = (type, baseDate = new Date()) => {
   const nextRange =
     type === "today"
       ? {
-          startDate: formatDate(today),
-          endDate: formatDate(today),
-        }
+        startDate: formatDate(today),
+        endDate: formatDate(today),
+      }
       : {
-          startDate: formatDate(start),
-          endDate: formatDate(today),
-        };
+        startDate: formatDate(start),
+        endDate: formatDate(today),
+      };
 
   return {
     ...nextRange,
@@ -202,7 +202,7 @@ export default function OrderDateFilter({
               />
               <img src="/images/userinfo/input-under-btn.svg" alt="under btn" />
             </div>
-            <button type="button" onClick={handleRangeSubmit}>
+            <button className="show-btn" type="button" onClick={handleRangeSubmit}>
               조회
             </button>
           </div>

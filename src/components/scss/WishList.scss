@@ -3,6 +3,10 @@
 .wishlist-wrap {
   width: 100%;
 
+  input[type="checkbox"] {
+    accent-color: g.$main-color;
+  }
+
   .top {
     display: flex;
     align-items: center;
@@ -148,6 +152,7 @@
           }
 
           .text-box {
+
             .title,
             .discount-price,
             .price2 {
