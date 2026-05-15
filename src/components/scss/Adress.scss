@@ -43,7 +43,7 @@
 
     .item-left {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 16px;
 
       .content {
@@ -191,6 +191,7 @@
 
   .address-bottom {
     .bottom-button-box {
+
       .Bbtn,
       .Wbtn {
         flex: 1;
