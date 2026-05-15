@@ -30,13 +30,13 @@
      background: #050505;
  }
 
- @keyframes appPageEnter {
+@keyframes appPageEnter {
      from {
-         transform: translateY(18px);
+         opacity: 0;
      }
 
      to {
-         transform: translateY(0);
+         opacity: 1;
      }
  }
 

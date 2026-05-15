@@ -166,7 +166,7 @@
 .image-zoom-modal {
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    z-index: 11000;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
@@ -176,7 +176,8 @@
 
 .image-zoom-modal-content {
     position: relative;
-    max-height: 100vh;
+    width: min(82vw, 920px);
+    max-height: 82vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -185,7 +186,7 @@
     img {
         display: block;
         width: 100%;
-        max-height: calc(100vh - 80px);
+        max-height: 82vh;
         object-fit: contain;
     }
 }
@@ -1031,7 +1032,7 @@
     background: rgba(0, 0, 0, 0.45);
     display: flex;
     justify-content: center;
-    z-index: 1000;
+    z-index: 11000;
     animation: fadeIn 0.2s ease;
 
     @media (min-width: 768px) {
