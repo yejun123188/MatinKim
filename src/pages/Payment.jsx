@@ -35,7 +35,7 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 
 
 export default function Payment() {
-    console.log("✅ Payment 컴포넌트 진입");
+    console.log("Payment 컴포넌트 진입");
 
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase, couponList, savedMoneySummary, onFetchCoupons, onFetchSavedMoney } = useAuthStore();
     const { brand } = useBrandStore();
