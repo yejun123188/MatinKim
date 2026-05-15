@@ -41,8 +41,7 @@ export default function Payment() {
     const { brand } = useBrandStore();
     const isKimMatin = brand === BRAND.KIMMATIN;
     const navigate = useNavigate();
-    // 상단 구조분해에 onRemoveItems 추가
-    const { onClearCart, onReduceItems } = useProductStore();
+    const { onReduceItems } = useProductStore();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -333,13 +332,9 @@ export default function Payment() {
             discounts: { promoDiscount, pointDiscount: appliedPoint, couponDiscount },
             finalTotal,
         });
-        const orderedKeys = orderItems.map((item) => item.key).filter(Boolean);
-        console.log("orderedKeys:", orderedKeys);  // ← 이거 추가
-        console.log("cartItem:", useProductStore.getState().cartItem);
-        if (orderedKeys.length > 0) {
-            onReduceItems(orderedKeys);
-        } else {
-            onClearCart();
+        const cartOrderItems = orderItems.filter((item) => item.key);
+        if (cartOrderItems.length > 0) {
+            onReduceItems(cartOrderItems);
         }
 
         if (user) {
