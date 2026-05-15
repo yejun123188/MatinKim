@@ -1,11 +1,12 @@
 @use "../../App.scss" as g;
 
 .time-sale-section {
-    position: absolute;
+    position: fixed;
     top: 200px;
     left: 100px;
     z-index: 100;
     cursor: pointer;
+    padding-bottom: 0;
 }
 
 .sale-popup {
