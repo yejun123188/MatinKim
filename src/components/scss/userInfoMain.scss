@@ -56,7 +56,7 @@
             align-items: flex-end;
             gap: 12px;
 
-            > div {
+            >div {
               min-width: 0;
             }
 
@@ -120,7 +120,7 @@
                 }
               }
 
-              img:hover + span {
+              img:hover+span {
                 opacity: 1;
                 transition: opacity 0.5s ease;
               }
@@ -391,8 +391,10 @@
 
     .my-order,
     .my-wish {
+
       .order-list,
       .wish-list {
+
         .order-product,
         .wish-product {
           min-width: 340px;
@@ -477,8 +479,10 @@
 
     .my-order,
     .my-wish {
+
       .order-list,
       .wish-list {
+
         .order-product,
         .wish-product {
           align-items: center;
