@@ -289,14 +289,26 @@ export const useProductStore = create((set, get) => ({
   },
   onReduceItems: (orderedItems) => {
     const cart = get().cartItem;
+    const orderedByKey = (orderedItems || []).reduce((acc, ordered) => {
+      const key = typeof ordered === "string" ? ordered : ordered?.key;
+      if (!key) return acc;
+
+      const quantity =
+        typeof ordered === "string"
+          ? Infinity
+          : Number(ordered.quantity ?? ordered.count ?? 1);
+
+      acc[key] = (acc[key] || 0) + quantity;
+      return acc;
+    }, {});
 
     const updateCart = cart.reduce((acc, cartItem) => {
-      const ordered = orderedItems.find((o) => o.key === cartItem.key);
-      if (!ordered) {
+      const orderedQuantity = orderedByKey[cartItem.key];
+      if (!orderedQuantity) {
         // 주문 안 한 상품은 그대로
         acc.push(cartItem);
       } else {
-        const remaining = cartItem.count - ordered.quantity;
+        const remaining = cartItem.count - orderedQuantity;
         if (remaining > 0) {
           // 수량이 남으면 차감해서 유지
           acc.push({ ...cartItem, count: remaining });
@@ -325,22 +337,28 @@ export const useProductStore = create((set, get) => ({
     set({});
   },
   onUpdateOption: (key, { size, color, id, image, name }) => {
-    set((state) => ({
-      cartItem: state.cartItem.map((item) => {
-        if (item.key !== key) return item;
-        const newId = id ?? item.id;
-        const newKey = `${newId}-${size}-${color}`;
-        return {
-          ...item,
-          key: newKey,
-          size,
-          color,
-          id: newId,
-          image: image ?? item.image,
-          name: name ?? item.name,
-        };
-      }),
-    }));
+    const cart = get().cartItem;
+    const updateCart = cart.map((item) => {
+      if (item.key !== key) return item;
+      const newId = id ?? item.id;
+      const newKey = `${newId}-${size}-${color}`;
+      return {
+        ...item,
+        key: newKey,
+        size,
+        color,
+        id: newId,
+        image: image ?? item.image,
+        name: name ?? item.name,
+      };
+    });
+
+    localStorage.setItem("cartItem", JSON.stringify(updateCart));
+    set({
+      cartItem: updateCart,
+      cartCount: updateCart.length,
+      totalPrice: get().onTotal(updateCart),
+    });
   },
   //~~~위시리스트~~~~~~~~~~~~~~~~~~~~~
   // wishList: [],

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/Payment.scss";
 import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
-import { createOrder, ORDER_MENU } from "../store/orderStorage";
+import { createOrder, ORDER_MENU } from "../utils/orderStorage";
 import { useProductStore } from "../store/useProductStore";
 import PaymentModal from "./PaymentModal";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
@@ -303,14 +303,6 @@ export default function Payment() {
         setShowPayModal(false);
         setIsSubmitting(true);
 
-        if (user) {
-            const isSaved = await onRecordPurchase(finalTotal, 1);
-            setIsSubmitting(false);
-            if (!isSaved) return;
-        } else {
-            setIsSubmitting(false);
-        }
-
         const shippingInfo = useSame
             ? {
                 receiver: orderForm.name,
@@ -323,7 +315,7 @@ export default function Payment() {
             }
             : form;
 
-        const orderNumber = createOrder({
+        const createdOrder = createOrder({
             orderItems,
             orderForm,
             shippingInfo,
@@ -332,13 +324,21 @@ export default function Payment() {
             discounts: { promoDiscount, pointDiscount: appliedPoint, couponDiscount },
             finalTotal,
         });
+        const orderNumber = createdOrder.orderNumber;
         const cartOrderItems = orderItems.filter((item) => item.key);
         if (cartOrderItems.length > 0) {
             onReduceItems(cartOrderItems);
         }
 
+        setIsSubmitting(false);
+
         if (user) {
-            navigate("/userInfo", { state: { menu: ORDER_MENU } });
+            onRecordPurchase(finalTotal, 1, orderNumber).then((isSaved) => {
+                if (!isSaved) {
+                    console.warn("Purchase record failed, but order was created.");
+                }
+            });
+            navigate("/userInfo?menu=orders", { replace: true, state: { menu: ORDER_MENU } });
         } else {
             navigate("/order-complete", {
                 state: { orderNumber, orderItems, finalTotal, shippingInfo, payment: activeMethod.title, isGuest: true },

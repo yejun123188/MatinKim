@@ -218,18 +218,23 @@
           justify-content: center;
 
           .status {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: g.$size-14-main;
-            color: #000;
-            margin-bottom: 10px;
+            align-self: flex-start;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 6px;
+
+            img {
+              width: 12px;
+              height: 12px;
+              margin-right: 3px;
+            }
 
             .dot {
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background: #04d500;
+              display: none;
             }
           }
 
@@ -252,7 +257,7 @@
           }
 
           .status-DONE {
-            color: g.$text-sub-color2;
+            color: #111;
           }
         }
       }

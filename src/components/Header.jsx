@@ -122,7 +122,9 @@ const kimMatinPhotoMenu = kimMatinHeaderImages.map((src) => {
     src,
     subtitle: "Lookbook",
     title: archive?.title || "",
-    link: "/kimmatin/archive",
+    link: archive
+      ? `/kimmatin/archive?collection=${archive.collectionId}`
+      : "/kimmatin/archive",
   };
 });
 

@@ -20,6 +20,7 @@ const EXIT_DURATION = 420;
 const ENTER_DURATION = 640;
 const BACKGROUND_LEAD_DURATION = 160;
 const BRAND_READY_DELAY = 420;
+const SCROLL_TOP_TIMEOUT = 900;
 
 const kimMatinPreloadImages = [
   "/images/KIMMATIN-hero/KM_main_slider_01.jpg",
@@ -140,6 +141,31 @@ export default function Home() {
       timersRef.current = [prepareTimer, exitTimer, enterTimer];
     };
 
+    const waitForScrollTop = () =>
+      new Promise((resolve) => {
+        const startedAt = window.performance.now();
+
+        const checkScroll = () => {
+          const currentTop =
+            window.scrollY ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
+
+          if (
+            currentTop <= 2 ||
+            window.performance.now() - startedAt > SCROLL_TOP_TIMEOUT
+          ) {
+            resolve();
+            return;
+          }
+
+          window.requestAnimationFrame(checkScroll);
+        };
+
+        window.requestAnimationFrame(checkScroll);
+      });
+
     const scrollTop =
       window.scrollY ||
       document.documentElement.scrollTop ||
@@ -148,17 +174,12 @@ export default function Home() {
 
     if (scrollTop > 8) {
       scrollPendingRef.current = true;
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
-      const scrollDelay = 80;
-      const scrollTimer = window.setTimeout(() => {
+      waitForScrollTop().then(() => {
         scrollPendingRef.current = false;
         startTransition();
-      }, scrollDelay);
-
-      timersRef.current = [scrollTimer];
+      });
       return;
     }
 

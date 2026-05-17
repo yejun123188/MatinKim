@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/OrderComplete.scss";
+import { ORDER_MENU } from "../utils/orderStorage";
 
 const formatPrice = (value) => `₩${value.toLocaleString()}`;
 
@@ -81,7 +82,7 @@ export default function OrderComplete() {
                         비회원 주문조회
                     </button>
                 ) : (
-                    <button className="btn-dark-go" onClick={() => navigate("/userInfo")}>
+                    <button className="btn-dark-go" onClick={() => navigate("/userInfo?menu=orders", { state: { menu: ORDER_MENU } })}>
                         주문내역 보기
                     </button>
                 )}

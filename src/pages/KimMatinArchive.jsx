@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import data from "../data/archive.json";
 import "./scss/KimMatinArchive.scss";
 
 
 export default function KimMatinArchive() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState(null);
   const [filterYear, setFilterYear] = useState("all");
   const [filterSeason, setFilterSeason] = useState("all");
@@ -28,6 +31,21 @@ export default function KimMatinArchive() {
     collection.sections.reduce((sum, s) => sum + s.images.length, 0);
 
   const coverImage = (collection) => collection.sections?.[0]?.images?.[0] || "";
+
+  const closeDetail = () => {
+    setSelectedId(null);
+    if (new URLSearchParams(location.search).has("collection")) {
+      navigate("/kimmatin/archive", { replace: true });
+    }
+  };
+
+  useEffect(() => {
+    const collectionId = Number(new URLSearchParams(location.search).get("collection"));
+
+    if (data.some((collection) => collection.collectionId === collectionId)) {
+      setSelectedId(collectionId);
+    }
+  }, [location.search]);
 
   useEffect(() => {
     if (selectedId) {
@@ -142,7 +160,7 @@ export default function KimMatinArchive() {
         {selected &&
           createPortal(
             (
-            <div className="km-detail" onClick={() => setSelectedId(null)}>
+            <div className="km-detail" onClick={closeDetail}>
               <div className="km-detail__panel" onClick={(e) => e.stopPropagation()}>
                 <div className="km-detail__header">
                   <div>
@@ -153,7 +171,7 @@ export default function KimMatinArchive() {
                   </div>
                   <button
                     className="km-detail__close"
-                    onClick={() => setSelectedId(null)}
+                    onClick={closeDetail}
                     aria-label="닫기"
                   >
                     ✕

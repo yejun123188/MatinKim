@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import "./scss/CartPopop.scss"
 import { useProductStore } from '../store/useProductStore';
@@ -34,7 +35,7 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
     const recommendList = mode === "wish" ? wishList : BestItems;
     const recommendTitle = mode === "wish" ? "MY WISHLIST" : "BEST ITEM";
 
-    return (
+    const popup = (
         <div className='modal-overlay-cart-popup' onClick={onClose}>
             <div className='modal-wrap' onClick={(e) => e.stopPropagation()}>
 
@@ -130,4 +131,6 @@ export default function CartPopup({ product, selectedColor, selectedSize, quanti
             </div>
         </div>
     );
+
+    return createPortal(popup, document.body);
 }
