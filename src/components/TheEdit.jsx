@@ -52,7 +52,7 @@ export default function TheEdit() {
                         observer.disconnect();
                     }
                 },
-                { threshold: 0.2, rootMargin: "0px 0px -700px 0px" }
+                { threshold: 0.1, rootMargin: "0px 0px -15% 0px" }
             );
 
             if (sectionRef.current) observer.observe(sectionRef.current);
