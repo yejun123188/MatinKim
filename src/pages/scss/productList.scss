@@ -3,6 +3,18 @@
 $filter-line-color: rgba(g.$main-color, 0.12);
 $filter-line-width: 90%;
 
+@keyframes productFilterListEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .product-list-wrap {
   .inner {
     @include g.myFlex(flex-start, 24px, stretch);
@@ -573,6 +585,10 @@ $filter-line-width: 90%;
       }
 
       .product-list {
+        &.is-filter-animated {
+          animation: productFilterListEnter 0.7s ease 0.12s both;
+        }
+
         ul {
           display: flex;
           flex-wrap: wrap;

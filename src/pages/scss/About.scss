@@ -18,4 +18,20 @@
             color: g.$text-sub-color;
         }
     }
+
+    .about-route-content {
+        animation: aboutContentEnter 0.7s ease 0.12s both;
+    }
+}
+
+@keyframes aboutContentEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }

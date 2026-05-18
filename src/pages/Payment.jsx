@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/Payment.scss";
 import { useAuthStore } from "../store/useAuthStore";
 import AddressPopup from "./AddressPopup";
-import { createOrder, ORDER_MENU } from "../store/orderStorage";
+import { createOrder, ORDER_MENU } from "../utils/orderStorage";
 import { useProductStore } from "../store/useProductStore";
 import PaymentModal from "./PaymentModal";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
@@ -35,14 +35,13 @@ const getItemThumbnail = (item) => item.image || item.mainImg || item.hoverImg |
 
 
 export default function Payment() {
-    console.log("✅ Payment 컴포넌트 진입");
+    console.log("Payment 컴포넌트 진입");
 
     const { user, userAddress, onFetchAddress, onAddAddress, onRecordPurchase, couponList, savedMoneySummary, onFetchCoupons, onFetchSavedMoney } = useAuthStore();
     const { brand } = useBrandStore();
     const isKimMatin = brand === BRAND.KIMMATIN;
     const navigate = useNavigate();
-    // 상단 구조분해에 onRemoveItems 추가
-    const { onClearCart, onReduceItems } = useProductStore();
+    const { onReduceItems } = useProductStore();
 
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -304,14 +303,6 @@ export default function Payment() {
         setShowPayModal(false);
         setIsSubmitting(true);
 
-        if (user) {
-            const isSaved = await onRecordPurchase(finalTotal, 1);
-            setIsSubmitting(false);
-            if (!isSaved) return;
-        } else {
-            setIsSubmitting(false);
-        }
-
         const shippingInfo = useSame
             ? {
                 receiver: orderForm.name,
@@ -324,7 +315,7 @@ export default function Payment() {
             }
             : form;
 
-        const orderNumber = createOrder({
+        const createdOrder = createOrder({
             orderItems,
             orderForm,
             shippingInfo,
@@ -333,17 +324,21 @@ export default function Payment() {
             discounts: { promoDiscount, pointDiscount: appliedPoint, couponDiscount },
             finalTotal,
         });
-        const orderedKeys = orderItems.map((item) => item.key).filter(Boolean);
-        console.log("orderedKeys:", orderedKeys);  // ← 이거 추가
-        console.log("cartItem:", useProductStore.getState().cartItem);
-        if (orderedKeys.length > 0) {
-            onReduceItems(orderedKeys);
-        } else {
-            onClearCart();
+        const orderNumber = createdOrder.orderNumber;
+        const cartOrderItems = orderItems.filter((item) => item.key);
+        if (cartOrderItems.length > 0) {
+            onReduceItems(cartOrderItems);
         }
 
+        setIsSubmitting(false);
+
         if (user) {
-            navigate("/userInfo", { state: { menu: ORDER_MENU } });
+            onRecordPurchase(finalTotal, 1, orderNumber).then((isSaved) => {
+                if (!isSaved) {
+                    console.warn("Purchase record failed, but order was created.");
+                }
+            });
+            navigate("/userInfo?menu=orders", { replace: true, state: { menu: ORDER_MENU } });
         } else {
             navigate("/order-complete", {
                 state: { orderNumber, orderItems, finalTotal, shippingInfo, payment: activeMethod.title, isGuest: true },

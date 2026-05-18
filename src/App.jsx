@@ -66,6 +66,45 @@ function App() {
   const { isLoginOpen, guestMode, guestOrderItems, closeLogin } = useLoginStore();
   const { brand } = useBrandStore();
   const isKimMatin = brand === BRAND.KIMMATIN;
+  const isUserInfoPage = pathname.startsWith("/userInfo");
+  const routeAnimationKey = (() => {
+    if (pathname.startsWith("/userInfo")) return "userInfo";
+    if (pathname.startsWith("/kimmatin/about")) return "kimmatin-about";
+    if (pathname.startsWith("/kimmatin/archive")) return "kimmatin-archive";
+    if (
+      pathname === "/kimmatin/faq" ||
+      pathname === "/kimmatin/qna" ||
+      pathname === "/kimmatin/guide" ||
+      pathname === "/kimmatin/privacy-policy" ||
+      pathname === "/kimmatin/terms"
+    ) {
+      return "kimmatin-support";
+    }
+    if (
+      pathname === "/qna" ||
+      pathname === "/board" ||
+      pathname === "/guide" ||
+      pathname === "/privacy" ||
+      pathname === "/agreement" ||
+      pathname === "/product-authentication"
+    ) {
+      return "matinkim-support";
+    }
+    if (pathname.startsWith("/about")) return "about";
+    if (
+      pathname === "/search" ||
+      pathname === "/" ||
+      pathname.startsWith("/products/") ||
+      pathname.startsWith("/project") ||
+      pathname.startsWith("/collections") ||
+      pathname.startsWith("/payment") ||
+      pathname.startsWith("/cart") ||
+      pathname.startsWith("/order")
+    ) {
+      return pathname;
+    }
+    return "shop";
+  })();
 
   useEffect(() => {
     initAuth();
@@ -86,7 +125,7 @@ function App() {
     <div className={`app-shell ${isKimMatin ? "app-shell--kimmatin" : "app-shell--matinkim"}`}>
       <Header />
       <ScrollToTop />
-      <div className="app-content" key={pathname}>
+      <div className={`app-content ${isUserInfoPage ? "app-content--no-enter" : ""}`} key={routeAnimationKey}>
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />

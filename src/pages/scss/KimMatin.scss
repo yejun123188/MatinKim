@@ -150,6 +150,7 @@
   .qna-inner {
     display: flex;
     align-items: flex-start; // 각자 높이 기준 상단 정렬
+    background: #050505 !important;
   }
 
   .qna-content2 {
@@ -573,7 +574,7 @@
         background: #000 !important;
         color: $kim-text !important;
 
-        & + .card-action-btn {
+        &+.card-action-btn {
           border-left-color: $kim-line !important;
         }
 
@@ -755,6 +756,7 @@
   }
 
   .option-card {
+
     strong,
     .option-card-top {
       color: $kim-text !important;
@@ -834,6 +836,7 @@
   }
 
   .size-table-wrap {
+
     th,
     td {
       border-bottom-color: rgba(255, 255, 255, 0.18) !important;
@@ -841,6 +844,7 @@
     }
 
     tbody tr:first-child {
+
       th,
       td {
         background: rgba(255, 255, 255, 0.06) !important;
@@ -851,6 +855,7 @@
     }
 
     tbody tr:last-child {
+
       th,
       td {
         border-bottom-color: rgba(255, 255, 255, 0.28) !important;
@@ -942,7 +947,7 @@
         background: #000 !important;
         color: $kim-text !important;
 
-        & + .card-action-btn {
+        &+.card-action-btn {
           border-left-color: $kim-line !important;
         }
 
@@ -970,6 +975,15 @@
     background: rgba(0, 0, 0, 0.88) !important;
   }
 
+  .image-zoom-modal-content {
+    width: min(72vw, 760px) !important;
+    max-height: 72vh !important;
+
+    img {
+      max-height: 72vh !important;
+    }
+  }
+
   .image-zoom-nav,
   .image-zoom-close {
     background: $kim-panel !important;
@@ -983,6 +997,7 @@
 
   .share-modal {
     background: rgba(0, 0, 0, 0.72) !important;
+    align-items: center !important;
   }
 
   .share-modal-content {
@@ -991,6 +1006,7 @@
   }
 
   .share-modal-header {
+
     h3,
     .share-close {
       color: $kim-text !important;

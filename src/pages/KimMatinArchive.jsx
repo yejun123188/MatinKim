@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import data from "../data/archive.json";
 import "./scss/KimMatinArchive.scss";
 
 
 export default function KimMatinArchive() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState(null);
   const [filterYear, setFilterYear] = useState("all");
   const [filterSeason, setFilterSeason] = useState("all");
-
   const years = [...new Set(data.map((c) => c.year))].sort((a, b) => b - a);
 
   const filtered = data.filter((c) => {
@@ -28,6 +31,22 @@ export default function KimMatinArchive() {
     collection.sections.reduce((sum, s) => sum + s.images.length, 0);
 
   const coverImage = (collection) => collection.sections?.[0]?.images?.[0] || "";
+
+  const closeDetail = () => {
+    setSelectedId(null);
+    if (new URLSearchParams(location.search).has("collection")) {
+      navigate("/kimmatin/archive", { replace: true });
+    }
+  };
+
+  useEffect(() => {
+    const collectionId = Number(new URLSearchParams(location.search).get("collection"));
+
+    if (data.some((collection) => collection.collectionId === collectionId)) {
+      setSelectedId(collectionId);
+    }
+  }, [location.search]);
+
   useEffect(() => {
     if (selectedId) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -90,7 +109,7 @@ export default function KimMatinArchive() {
         </div>
 
         {/* 컬렉션 목록 */}
-        <div className="km-archive__body">
+        <div className="km-archive__body" key={`${filterYear}-${filterSeason}`}>
           {years
             .filter((year) => groupedByYear[year])
             .map((year) => ({ year, collections: groupedByYear[year] }))
@@ -138,9 +157,10 @@ export default function KimMatinArchive() {
         </div>
 
         {/* 상세 모달 */}
-        {
-          selected && (
-            <div className="km-detail" onClick={() => setSelectedId(null)}>
+        {selected &&
+          createPortal(
+            (
+            <div className="km-detail" onClick={closeDetail}>
               <div className="km-detail__panel" onClick={(e) => e.stopPropagation()}>
                 <div className="km-detail__header">
                   <div>
@@ -151,7 +171,7 @@ export default function KimMatinArchive() {
                   </div>
                   <button
                     className="km-detail__close"
-                    onClick={() => setSelectedId(null)}
+                    onClick={closeDetail}
                     aria-label="닫기"
                   >
                     ✕
@@ -191,8 +211,9 @@ export default function KimMatinArchive() {
                 </div>
               </div>
             </div>
-          )
-        }
+            ),
+            document.body,
+          )}
       </section >
     </div>
   );

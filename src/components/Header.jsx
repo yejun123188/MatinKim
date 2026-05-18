@@ -122,7 +122,9 @@ const kimMatinPhotoMenu = kimMatinHeaderImages.map((src) => {
     src,
     subtitle: "Lookbook",
     title: archive?.title || "",
-    link: "/kimmatin/archive",
+    link: archive
+      ? `/kimmatin/archive?collection=${archive.collectionId}`
+      : "/kimmatin/archive",
   };
 });
 
@@ -203,6 +205,11 @@ export default function Header() {
   const handleSearchClick = () => {
     setIsShopHovered(false);
     setIsSearchOpen(true);
+  };
+
+  const handleLogoClick = () => {
+    setIsShopHovered(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleCloseSearch = () => {
@@ -336,7 +343,7 @@ export default function Header() {
             <div className="inner">
               <div className="header-left">
                 <h1>
-                  <Link to="/" onClick={() => setIsShopHovered(false)}>
+                  <Link to="/" onClick={handleLogoClick}>
                     <img
                       className="brand-logo brand-logo--matinkim"
                       src="/images/header/logo-MatinKim-black.svg"

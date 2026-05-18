@@ -238,7 +238,9 @@ export const createOrder = ({
     payment,
     deliveryCost,
     orders: orderItems.map((item, index) => {
-      const [color = "-", size = "-"] = String(item.option || "").split(" / ");
+      const optionParts = String(item.option || "").split(" / ");
+      const color = item.color || item.selectedColor || optionParts[0] || "-";
+      const size = item.size || item.selectedSize || optionParts[1] || "-";
 
       return {
         id: `${id}-${index + 1}`,

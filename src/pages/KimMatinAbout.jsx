@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./scss/KimMatinAbout.scss";
 
 const sections = ["BRAND", "STOCKIST", "CONTACT"];
@@ -110,15 +111,17 @@ const contactData = [
 ];
 
 export default function KimMatinAbout() {
-  const [active, setActive] = useState("BRAND");
-  const [visible, setVisible] = useState(true);
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const activeFromPath = location.pathname.endsWith("/stockist")
+    ? "STOCKIST"
+    : location.pathname.endsWith("/contact")
+      ? "CONTACT"
+      : "BRAND";
   const handleTab = (s) => {
-    setVisible(false);
-    setTimeout(() => {
-      setActive(s);
-      setVisible(true);
-    }, 60);
+    if (s === activeFromPath) return;
+
+    navigate(`/kimmatin/about/${s.toLowerCase()}`, { replace: true });
   };
 
   return (
@@ -129,7 +132,7 @@ export default function KimMatinAbout() {
           {sections.map((s) => (
             <button
               key={s}
-              className={`kma__nav-btn ${active === s ? "is-active" : ""}`}
+              className={`kma__nav-btn ${activeFromPath === s ? "is-active" : ""}`}
               onClick={() => handleTab(s)}
             >
               {s}
@@ -137,8 +140,8 @@ export default function KimMatinAbout() {
           ))}
         </nav>
 
-        <div className={`kma__content ${visible ? "is-visible" : ""}`}>
-          {active === "BRAND" && (
+        <div className="kma__content" key={activeFromPath}>
+          {activeFromPath === "BRAND" && (
             <div className="kma__brand">
               <div className="kma__brand-left">
                 <p className="kma__index">01 — BRAND</p>
@@ -174,7 +177,7 @@ export default function KimMatinAbout() {
             </div>
           )}
 
-          {active === "STOCKIST" && (
+          {activeFromPath === "STOCKIST" && (
             <div className="kma__stockist">
               <p className="kma__index">02 — STOCKIST</p>
               <h2 className="kma__title">OFFLINE STORE</h2>
@@ -195,7 +198,7 @@ export default function KimMatinAbout() {
             </div>
           )}
 
-          {active === "CONTACT" && (
+          {activeFromPath === "CONTACT" && (
             <div className="kma__contact">
               <p className="kma__index">03 — CONTACT</p>
               <h2 className="kma__title">GET IN TOUCH</h2>

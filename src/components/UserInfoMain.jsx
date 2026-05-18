@@ -70,6 +70,13 @@ const parseOrderDate = (dateString) => {
   return Number.isNaN(time) ? null : time;
 };
 
+const getOrderSortTime = (order) => {
+  const createdAtTime = new Date(order.createdAt || "").getTime();
+  if (!Number.isNaN(createdAtTime)) return createdAtTime;
+
+  return parseOrderDate(order.date) || 0;
+};
+
 export default function UserInfoMain() {
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [cartItem, setCartItem] = useState(null);
@@ -130,7 +137,8 @@ export default function UserInfoMain() {
         if (!orderDateTime) return false;
 
         return now - orderDateTime < DELIVERY_COMPLETE_MS;
-      });
+      })
+      .sort((a, b) => getOrderSortTime(b) - getOrderSortTime(a));
   }, [now]);
 
   const displayName = user?.name || user?.nickname || userInfo.name;
@@ -244,7 +252,8 @@ export default function UserInfoMain() {
                   </div>
 
                   <div className="text-box">
-                    <div className={`status status-${statusCode[order.status]}`}>
+                    <div className={`status status-${statusCode[order.status] || "ORDER"}`}>
+                      <img src="/images/icon/check.svg" alt="" />
                       {order.status === "배송중" && (
                         <span className="dot"></span>
                       )}

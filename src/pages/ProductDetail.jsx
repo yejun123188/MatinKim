@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { useProductStore } from "../store/useProductStore";
@@ -980,7 +981,9 @@ export default function ProductDetail() {
       </div>
 
       {/* 이미지 줌 모달 */}
-      {isZoomOpen && (
+      {isZoomOpen &&
+        createPortal(
+          (
         <div
           className="image-zoom-modal"
           role="dialog"
@@ -1029,7 +1032,9 @@ export default function ProductDetail() {
             </button>
           </div>
         </div>
-      )}
+          ),
+          document.body,
+        )}
 
       {/* 장바구니 팝업 */}
       {showCartPopup && (
@@ -1051,7 +1056,9 @@ export default function ProductDetail() {
       {showLogin && <Login onClose={() => setShowLogin(false)} />}
 
       {/* 공유하기 모달 */}
-      {showShare && (
+      {showShare &&
+        createPortal(
+          (
         <div className="share-modal" onClick={() => setShowShare(false)}>
           <div
             className="share-modal-content"
@@ -1101,7 +1108,9 @@ export default function ProductDetail() {
             </div>
           </div>
         </div>
-      )}
+          ),
+          document.body,
+        )}
     </main>
   );
 }

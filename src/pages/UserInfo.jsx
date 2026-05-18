@@ -16,9 +16,10 @@ import InquiryList from "../components/InquiryList";
 import RecentViewedProducts from "../components/RecentViewedProducts";
 import UserAccountEdit from "../components/UserAccountEdit";
 import { BRAND, useBrandStore } from "../store/useBrandStore";
+import { ORDER_MENU } from "../utils/orderStorage";
 
 const myMenu = "마이페이지";
-const orderMenu = "주문내역";
+const orderMenu = ORDER_MENU;
 const requestActions = new Set(["cancel", "exchange", "return"]);
 
 export default function UserInfo() {
@@ -27,7 +28,9 @@ export default function UserInfo() {
   const { id: orderId, action } = useParams();
   const { onLogout } = useAuthStore();
   const { setBrand } = useBrandStore();
-  const selectMenu = orderId ? orderMenu : location.state?.menu || myMenu;
+  const menuParam = new URLSearchParams(location.search).get("menu");
+  const stateMenu = menuParam === "orders" ? orderMenu : location.state?.menu;
+  const selectMenu = orderId ? orderMenu : stateMenu || myMenu;
 
   useEffect(() => {
     setBrand(BRAND.MATINKIM);

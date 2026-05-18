@@ -172,7 +172,7 @@ export default function PaymentModal({ method, finalTotal, onSuccess, onClose })
                         <div className="pay-done-icon">✓</div>
                         <strong>결제가 완료되었습니다</strong>
                         <p>{formatPrice(finalTotal)}</p>
-                        <button className="pay-submit-btn" onClick={onSuccess}>
+                        <button type="button" className="pay-submit-btn" onClick={onSuccess}>
                             주문 확인하기
                         </button>
                     </div>

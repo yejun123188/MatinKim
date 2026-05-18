@@ -41,7 +41,7 @@ export default function OrderLookup() {
 
     return (
         <main className="order-lookup-page">
-            <div className="guest-order-header">
+            <div className="guest-order-header1">
                 <h2>Welcome At Matin Kim</h2>
             </div>
             <h1>비회원 주문조회</h1>

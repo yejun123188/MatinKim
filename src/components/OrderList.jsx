@@ -22,6 +22,22 @@ const isWithinDateRange = (orderDate, range) => {
   );
 };
 
+const getOrderSortTime = (order) => {
+  const createdAtTime = new Date(order.createdAt || "").getTime();
+  if (!Number.isNaN(createdAtTime)) return createdAtTime;
+
+  const dateKey = String(order.date || "");
+  if (/^\d{8}$/.test(dateKey)) {
+    const year = dateKey.slice(0, 4);
+    const month = dateKey.slice(4, 6);
+    const day = dateKey.slice(6, 8);
+    const dateTime = new Date(`${year}-${month}-${day}`).getTime();
+    if (!Number.isNaN(dateTime)) return dateTime;
+  }
+
+  return 0;
+};
+
 export default function OrderList() {
   const navigate = useNavigate();
 
@@ -56,7 +72,7 @@ export default function OrderList() {
           createdAt: orderDetail.createdAt,
           orderDetailId: orderDetail.id,
         })),
-      ),
+      ).sort((a, b) => getOrderSortTime(b) - getOrderSortTime(a)),
     [now],
   );
 

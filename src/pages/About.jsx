@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import Brand from './Brand'
+import React, { useEffect } from 'react'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import "./scss/About.scss"
 
 export default function About() {
+    const { pathname } = useLocation();
+    const isStockist = pathname.endsWith("/stockist");
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
-    const [btnactive, setBtnActive] = useState(true);
+
     return (
         <section className='sub-section about'>
             <div className="button-box inner">
 
                 <ul className="button-list">
-                    <li className={btnactive ? "active" : ""} onClick={() => setBtnActive(true)}><Link to={"brand"} >BRAND & INFO</Link ></li>
-                    <li className={btnactive ? "" : "active"} onClick={() => setBtnActive(false)}><Link to={"stockist"}>STOCKIST</Link></li>
+                    <li className={isStockist ? "" : "active"}><Link to={"brand"} >BRAND & INFO</Link ></li>
+                    <li className={isStockist ? "active" : ""}><Link to={"stockist"}>STOCKIST</Link></li>
                 </ul>
             </div>
-            <Outlet></Outlet>
+            <div className="about-route-content" key={pathname}>
+                <Outlet></Outlet>
+            </div>
         </section>
     )
 }
